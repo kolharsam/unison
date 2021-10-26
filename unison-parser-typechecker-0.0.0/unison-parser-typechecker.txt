@@ -25,7 +25,7 @@ RawMerge :: e -> Set (RawHash h) -> Raw h e
 newtype RawHash a
 RawHash :: Hash -> RawHash a
 [unRawHash] :: RawHash a -> Hash
-head_ :: forall m_alLq h_alLr e_alLs. Lens' (Causal m_alLq h_alLr e_alLs) e_alLs
+head_ :: forall m_amec h_amed e_amee. Lens' (Causal m_amec h_amed e_amee) e_amee
 one :: Hashable e => e -> Causal m h e
 cons :: (Applicative m, Hashable e) => e -> Causal m h e -> Causal m h e
 cons' :: Hashable e => e -> RawHash h -> m (Causal m h e) -> Causal m h e
@@ -516,6 +516,10 @@ instance GHC.Classes.Eq Unison.Hashing.V2.LabeledDependency.LabeledDependency
 
 module Unison.Hashing.V2.Type
 
+-- | Types are represented as ABTs over the base functor F, with variables
+--   in <tt>v</tt>
+type Type v a = Term F v a
+
 -- | Base functor for types in the Unison language
 data F a
 Ref :: Reference -> F a
@@ -526,191 +530,23 @@ Effect :: a -> a -> F a
 Effects :: [a] -> F a
 Forall :: a -> F a
 IntroOuter :: a -> F a
-
--- | Types are represented as ABTs over the base functor F, with variables
---   in <tt>v</tt>
-type Type v a = Term F v a
-wrapV :: Ord v => Type v a -> Type (V v) a
-freeVars :: Type v a -> Set v
 bindExternal :: Var v => [(v, Reference)] -> Type v a -> Type v a
 bindReferences :: Var v => Set v -> Map Name Reference -> Type v a -> ResolutionResult v a (Type v a)
-bindNames :: Var v => Set v -> Map Name Reference -> Type v a -> ResolutionResult v a (Type v a)
-newtype Monotype v a
-Monotype :: Type v a -> Monotype v a
-[getPolytype] :: Monotype v a -> Type v a
-monotype :: Var v => Type v a -> Maybe (Monotype v a)
-arity :: Type v a -> Int
-pattern Ref' :: Reference -> Term F v a
-pattern Arrow' :: Term F v a -> Term F v a -> Term F v a
-pattern Arrow'' :: Ord v => Term F v a -> [Type v a] -> Type v a -> Term F v a
-pattern Arrows' :: [Type v a] -> Type v a
-pattern EffectfulArrows' :: Type v a -> [(Maybe [Type v a], Type v a)] -> Type v a
-pattern Ann' :: Term F v a -> Kind -> Term F v a
-pattern App' :: Term F v a -> Term F v a -> Term F v a
-pattern Apps' :: Type v a -> [Type v a] -> Type v a
-pattern Pure' :: Ord v => Type v a -> Type v a
-pattern Effects' :: [Term F v a] -> Term F v a
-pattern Effect1' :: Term F v a -> Term F v a -> Term F v a
-pattern Effect' :: Ord v => [Type v a] -> Type v a -> Type v a
-pattern Effect'' :: Ord v => [Type v a] -> Type v a -> Type v a
-pattern Effect0' :: Ord v => [Type v a] -> Type v a -> Type v a
-pattern Forall' :: Var v => Subst F v a -> Term F v a
-pattern IntroOuter' :: Var v => Subst F v a -> Term F v a
-pattern IntroOuterNamed' :: v -> Term F v a -> Term F v a
-pattern ForallsNamed' :: [v] -> Type v a -> Type v a
-pattern ForallNamed' :: v -> Term F v a -> Term F v a
-pattern Var' :: forall f v a. v -> Term f v a
-pattern Cycle' :: forall f v a. [v] -> Term f v a -> Term f v a
-pattern Abs' :: (Foldable f, Functor f, Var v) => Subst f v a -> Term f v a
-unPure :: Ord v => Type v a -> Maybe (Type v a)
-unArrows :: Type v a -> Maybe [Type v a]
-unEffectfulArrows :: Type v a -> Maybe (Type v a, [(Maybe [Type v a], Type v a)])
-unApps :: Type v a -> Maybe (Type v a, [Type v a])
-unIntroOuters :: Type v a -> Maybe ([v], Type v a)
-stripIntroOuters :: Type v a -> Type v a
-unForalls :: Type v a -> Maybe ([v], Type v a)
-unEffect0 :: Ord v => Type v a -> ([Type v a], Type v a)
-unEffects1 :: Ord v => Type v a -> Maybe ([Type v a], Type v a)
-
--- | True if the given type is a function, possibly quantified
-isArrow :: Var v => Type v a -> Bool
-ref :: Ord v => a -> Reference -> Type v a
-refId :: Ord v => a -> Id -> Type v a
-termLink :: Ord v => a -> Type v a
-typeLink :: Ord v => a -> Type v a
-derivedBase32Hex :: Ord v => Reference -> a -> Type v a
-intRef :: Reference
-natRef :: Reference
-floatRef :: Reference
-booleanRef :: Reference
-textRef :: Reference
-charRef :: Reference
-listRef :: Reference
-bytesRef :: Reference
-effectRef :: Reference
-termLinkRef :: Reference
-typeLinkRef :: Reference
-builtinIORef :: Reference
-fileHandleRef :: Reference
-filePathRef :: Reference
-threadIdRef :: Reference
-socketRef :: Reference
-mvarRef :: Reference
-tvarRef :: Reference
-tlsRef :: Reference
-stmRef :: Reference
-tlsClientConfigRef :: Reference
-tlsServerConfigRef :: Reference
-tlsSignedCertRef :: Reference
-tlsPrivateKeyRef :: Reference
-tlsCipherRef :: Reference
-tlsVersionRef :: Reference
-hashAlgorithmRef :: Reference
-codeRef :: Reference
-valueRef :: Reference
-anyRef :: Reference
-any :: Ord v => a -> Type v a
-builtin :: Ord v => a -> Text -> Type v a
-int :: Ord v => a -> Type v a
-nat :: Ord v => a -> Type v a
-float :: Ord v => a -> Type v a
-boolean :: Ord v => a -> Type v a
-text :: Ord v => a -> Type v a
-char :: Ord v => a -> Type v a
-fileHandle :: Ord v => a -> Type v a
-threadId :: Ord v => a -> Type v a
-builtinIO :: Ord v => a -> Type v a
-socket :: Ord v => a -> Type v a
-list :: Ord v => a -> Type v a
-bytes :: Ord v => a -> Type v a
-effectType :: Ord v => a -> Type v a
-code :: Ord v => a -> Type v a
-value :: Ord v => a -> Type v a
-app :: Ord v => a -> Type v a -> Type v a -> Type v a
-apps :: Ord v => Type v a -> [(a, Type v a)] -> Type v a
-app' :: (Ord v, Semigroup a) => Type v a -> Type v a -> Type v a
-apps' :: (Semigroup a, Ord v) => Type v a -> [Type v a] -> Type v a
-arrow :: Ord v => a -> Type v a -> Type v a -> Type v a
-arrow' :: (Semigroup a, Ord v) => Type v a -> Type v a -> Type v a
-ann :: Ord v => a -> Type v a -> Kind -> Type v a
-forall :: Ord v => a -> v -> Type v a -> Type v a
-introOuter :: Ord v => a -> v -> Type v a -> Type v a
-iff :: Var v => Type v ()
-iff' :: Var v => a -> Type v a
-iff2 :: Var v => a -> Type v a
-andor :: Ord v => Type v ()
-andor' :: Ord v => a -> Type v a
-var :: Ord v => a -> v -> Type v a
-v' :: Var v => Text -> Type v ()
-av' :: Var v => a -> Text -> Type v a
-forall' :: Var v => a -> [Text] -> Type v a -> Type v a
-foralls :: Ord v => a -> [v] -> Type v a -> Type v a
-arrows :: Ord v => [(a, Type v a)] -> Type v a -> Type v a
-effect :: Ord v => a -> [Type v a] -> Type v a -> Type v a
-effects :: Ord v => a -> [Type v a] -> Type v a
-effect1 :: Ord v => a -> Type v a -> Type v a -> Type v a
-flattenEffects :: Type v a -> [Type v a]
-effectV :: Ord v => a -> (a, Type v a) -> (a, Type v a) -> Type v a
-stripEffect :: Ord v => Type v a -> ([Type v a], Type v a)
-flipApply :: Var v => Type v () -> Type v ()
-generalize' :: Var v => Type -> Type v a -> Type v a
-
--- | Bind the given variables with an outer <a>forall</a>, if they are used
---   in <tt>t</tt>.
-generalize :: Ord v => [v] -> Type v a -> Type v a
-unforall :: Type v a -> Type v a
-unforall' :: Type v a -> ([v], Type v a)
 dependencies :: Ord v => Type v a -> Set Reference
-updateDependencies :: Ord v => Map Reference Reference -> Type v a -> Type v a
-usesEffects :: Ord v => Type v a -> Bool
-freeEffectVars :: Ord v => Type v a -> Set v
-existentializeArrows :: (Ord v, Monad m) => m v -> Type v a -> m (Type v a)
-purifyArrows :: Ord v => Type v a -> Type v a
-removeEffectVars :: Var v => Set v -> Type v a -> Type v a
-removeAllEffectVars :: Var v => Type v a -> Type v a
-removePureEffects :: Var v => Type v a -> Type v a
-editFunctionResult :: forall v a. Ord v => (Type v a -> Type v a) -> Type v a -> Type v a
-functionResult :: Type v a -> Maybe (Type v a)
-
--- | Bind all free variables (not in <tt>except</tt>) that start with a
---   lowercase letter and are unqualified with an outer <a>forall</a>. `a
---   -&gt; a` becomes `∀ a . a -&gt; a` `B -&gt; B` becomes `B -&gt; B`
---   (not changed) `.foo -&gt; .foo` becomes `.foo -&gt; .foo` (not
---   changed) `.foo.bar -&gt; blarrg.woot` becomes `.foo.bar -&gt;
---   blarrg.woot` (unchanged)
-generalizeLowercase :: Var v => Set v -> Type v a -> Type v a
-freeVarsToOuters :: Ord v => Set v -> Type v a -> Type v a
-
--- | This function removes all variable shadowing from the types and
---   reduces fresh ids to the minimum possible to avoid ambiguity. Useful
---   when showing two different types.
-cleanupVars :: Var v => [Type v a] -> [Type v a]
-cleanupVarsMap :: Var v => [Type v a] -> Map v v
-cleanupVars1' :: Var v => Map v v -> Type v a -> Type v a
-
--- | This function removes all variable shadowing from the type and reduces
---   fresh ids to the minimum possible to avoid ambiguity.
-cleanupVars1 :: Var v => Type v a -> Type v a
-cleanupAbilityLists :: Var v => Type v a -> Type v a
-cleanups :: Var v => [Type v a] -> [Type v a]
-cleanup :: Var v => Type v a -> Type v a
 toReference :: (Var v, Show v) => Type v a -> Reference
 toReferenceMentions :: (Var v, Show v) => Type v a -> Set Reference
-hashComponents :: Var v => Map v (Type v a) -> Map v (Id, Type v a)
+booleanRef :: Reference
+charRef :: Reference
+effectRef :: Reference
+floatRef :: Reference
+intRef :: Reference
+listRef :: Reference
+natRef :: Reference
+textRef :: Reference
 instance Data.Traversable.Traversable Unison.Hashing.V2.Type.F
-instance GHC.Classes.Ord a => GHC.Classes.Ord (Unison.Hashing.V2.Type.F a)
-instance GHC.Classes.Eq a => GHC.Classes.Eq (Unison.Hashing.V2.Type.F a)
-instance GHC.Generics.Generic1 Unison.Hashing.V2.Type.F
-instance GHC.Generics.Generic (Unison.Hashing.V2.Type.F a)
 instance GHC.Base.Functor Unison.Hashing.V2.Type.F
 instance Data.Foldable.Foldable Unison.Hashing.V2.Type.F
-instance Unison.ABT.Var v => GHC.Classes.Eq (Unison.Hashing.V2.Type.Monotype v a)
-instance GHC.Show.Show v => GHC.Show.Show (Unison.Hashing.V2.Type.Monotype v a)
-instance Prelude.Extras.Eq1 Unison.Hashing.V2.Type.F
-instance Prelude.Extras.Ord1 Unison.Hashing.V2.Type.F
-instance Prelude.Extras.Show1 Unison.Hashing.V2.Type.F
 instance Unison.Hashable.Hashable1 Unison.Hashing.V2.Type.F
-instance GHC.Show.Show a => GHC.Show.Show (Unison.Hashing.V2.Type.F a)
 
 module Unison.Hashing.V2.Pattern
 type ConstructorId = Int
@@ -753,9 +589,10 @@ instance GHC.Classes.Eq (Unison.Hashing.V2.Pattern.Pattern loc)
 instance Unison.Hashable.Hashable Unison.Hashing.V2.Pattern.SeqOp
 
 module Unison.Hashing.V2.Term
-type ConstructorId = ConstructorId
-data MatchCase loc a
-MatchCase :: Pattern loc -> Maybe a -> a -> MatchCase loc a
+
+-- | Like `Term v`, but with an annotation of type <tt>a</tt> at every
+--   level in the tree
+type Term v a = Term2 v a a v a
 
 -- | Base functor for terms in the Unison language We need <tt>typeVar</tt>
 --   because the term and type variables may differ.
@@ -783,201 +620,10 @@ Let :: IsTop -> a -> a -> F typeVar typeAnn patternAnn a
 Match :: a -> [MatchCase patternAnn a] -> F typeVar typeAnn patternAnn a
 TermLink :: Referent -> F typeVar typeAnn patternAnn a
 TypeLink :: Reference -> F typeVar typeAnn patternAnn a
-type IsTop = Bool
-
--- | Like `Term v`, but with an annotation of type <tt>a</tt> at every
---   level in the tree
-type Term v a = Term2 v a a v a
-
--- | Allow type variables and term variables to differ
-type Term' vt v a = Term2 vt a a v a
-
--- | Allow type variables, term variables, type annotations and term
---   annotations to all differ
-type Term2 vt at ap v a = Term (F vt at ap) v a
-
--- | Like `Term v a`, but with only () for type and pattern annotations.
-type Term3 v a = Term2 v () () v a
-
--- | Terms are represented as ABTs over the base functor F, with variables
---   in <tt>v</tt>
-type Term0 v = Term v ()
-
--- | Terms with type variables in <tt>vt</tt>, and term variables in
---   <tt>v</tt>
-type Term0' vt v = Term' vt v ()
-prepareTDNR :: Var v => Term (F vt b ap) v b -> Term (F vt b ap) v b
-amap :: Ord v => (a -> a2) -> Term v a -> Term v a2
-patternMap :: (Pattern ap -> Pattern ap2) -> Term2 vt at ap v a -> Term2 vt at ap2 v a
-vmap :: Ord v2 => (v -> v2) -> Term v a -> Term v2 a
-vtmap :: Ord vt2 => (vt -> vt2) -> Term' vt v a -> Term' vt2 v a
-typeMap :: Ord vt2 => (Type vt at -> Type vt2 at2) -> Term2 vt at ap v a -> Term2 vt2 at2 ap v a
-extraMap' :: (Ord vt, Ord vt') => (vt -> vt') -> (at -> at') -> (ap -> ap') -> Term2 vt at ap v a -> Term2 vt' at' ap' v a
-extraMap :: (Ord vt, Ord vt') => (vt -> vt') -> (at -> at') -> (ap -> ap') -> F vt at ap a -> F vt' at' ap' a
-matchCaseExtraMap :: (loc -> loc') -> MatchCase loc a -> MatchCase loc' a
-unannotate :: forall vt at ap v a. Ord v => Term2 vt at ap v a -> Term0' vt v
-wrapV :: Ord v => Term v a -> Term (V v) a
-
--- | All variables mentioned in the given term. Includes both term and type
---   variables, both free and bound.
-allVars :: Ord v => Term v a -> Set v
-freeVars :: Term' vt v a -> Set v
-freeTypeVars :: Ord vt => Term' vt v a -> Set vt
-freeTypeVarAnnotations :: Ord vt => Term' vt v a -> Map vt [a]
-substTypeVars :: (Ord v, Var vt) => [(vt, Type vt b)] -> Term' vt v a -> Term' vt v a
-substTypeVar :: (Ord v, Var vt) => vt -> Type vt b -> Term' vt v a -> Term' vt v a
-renameTypeVar :: (Ord v, Var vt) => vt -> vt -> Term' vt v a -> Term' vt v a
-generalizeTypeSignatures :: (Var vt, Var v) => Term' vt v a -> Term' vt v a
-pattern Var' :: forall f v a. v -> Term f v a
-pattern Cycle' :: forall f v a. [v] -> Term f v a -> Term f v a
-pattern Abs' :: (Foldable f, Functor f, Var v) => Subst f v a -> Term f v a
-pattern Int' :: Int64 -> Term (F typeVar typeAnn patternAnn) v a
-pattern Nat' :: Word64 -> Term (F typeVar typeAnn patternAnn) v a
-pattern Float' :: Double -> Term (F typeVar typeAnn patternAnn) v a
-pattern Boolean' :: Bool -> Term (F typeVar typeAnn patternAnn) v a
-pattern Text' :: Text -> Term (F typeVar typeAnn patternAnn) v a
-pattern Char' :: Char -> Term (F typeVar typeAnn patternAnn) v a
-pattern Blank' :: forall typeVar typeAnn patternAnn v a. Blank typeAnn -> Term (F typeVar typeAnn patternAnn) v a
-pattern Ref' :: Reference -> Term (F typeVar typeAnn patternAnn) v a
-pattern TermLink' :: Referent -> Term (F typeVar typeAnn patternAnn) v a
-pattern TypeLink' :: Reference -> Term (F typeVar typeAnn patternAnn) v a
-pattern Builtin' :: Text -> Term (F typeVar typeAnn patternAnn) v a
-pattern App' :: Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Match' :: Term (F typeVar typeAnn patternAnn) v a -> [MatchCase patternAnn (Term (F typeVar typeAnn patternAnn) v a)] -> Term (F typeVar typeAnn patternAnn) v a
-pattern Constructor' :: Reference -> ConstructorId -> Term (F typeVar typeAnn patternAnn) v a
-pattern Request' :: Reference -> ConstructorId -> Term (F typeVar typeAnn patternAnn) v a
-pattern RequestOrCtor' :: Reference -> ConstructorId -> Term2 vt at ap v a
-pattern If' :: Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern And' :: Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Or' :: Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Handle' :: Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Apps' :: Term2 vt at ap v a -> [Term2 vt at ap v a] -> Term2 vt at ap v a
-pattern AppsPred' :: Term2 vt at ap v a -> [Term2 vt at ap v a] -> (Term2 vt at ap v a, Term2 vt at ap v a -> Bool)
-pattern BinaryApp' :: Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern BinaryApps' :: [(Term2 vt at ap v a, Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern BinaryAppsPred' :: [(Term2 vt at ap v a, Term2 vt at ap v a)] -> Term2 vt at ap v a -> (Term2 vt at ap v a, Term2 vt at ap v a -> Bool)
-pattern Ann' :: Term (F typeVar typeAnn patternAnn) v a -> Type typeVar typeAnn -> Term (F typeVar typeAnn patternAnn) v a
-pattern List' :: Seq (Term (F typeVar typeAnn patternAnn) v a) -> Term (F typeVar typeAnn patternAnn) v a
-pattern Lam' :: Var v => Subst (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Delay' :: Ord v => Term2 vt at ap v a -> Term2 vt at ap v a
-unDelay :: Ord v => Term2 vt at ap v a -> Maybe (Term2 vt at ap v a)
-pattern LamNamed' :: forall typeVar typeAnn patternAnn v a. v -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern LamsNamed' :: forall vt at ap v a. [v] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern LamsNamedOpt' :: forall vt at ap v a. [v] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern LamsNamedPred' :: forall vt at ap v a. [v] -> Term2 vt at ap v a -> (Term2 vt at ap v a, v -> Bool)
-pattern LamsNamedOrDelay' :: Var v => [v] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern Let1' :: Var v => Term' vt v a -> Subst (F vt a a) v a -> Term' vt v a
-pattern Let1Top' :: Var v => IsTop -> Term' vt v a -> Subst (F vt a a) v a -> Term' vt v a
-pattern Let1Named' :: forall typeVar typeAnn patternAnn v a. v -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Let1NamedTop' :: forall typeVar typeAnn patternAnn v a. IsTop -> v -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a -> Term (F typeVar typeAnn patternAnn) v a
-pattern Lets' :: forall vt at ap v a. [(IsTop, v, Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern LetRecNamed' :: forall vt at ap v a. [(v, Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern LetRecNamedTop' :: forall vt at ap v a. IsTop -> [(v, Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-pattern LetRec' :: (Monad m, Var v) => ((v -> m v) -> m ([(v, Term2 vt at ap v a)], Term2 vt at ap v a)) -> Term2 vt at ap v a
-pattern LetRecTop' :: (Monad m, Var v) => IsTop -> ((v -> m v) -> m ([(v, Term2 vt at ap v a)], Term2 vt at ap v a)) -> Term2 vt at ap v a
-pattern LetRecNamedAnnotated' :: forall vt v a. a -> [((a, v), Term' vt v a)] -> Term' vt v a -> Term' vt v a
-pattern LetRecNamedAnnotatedTop' :: forall vt v a. IsTop -> a -> [((a, v), Term' vt v a)] -> Term' vt v a -> Term' vt v a
-fresh :: Var v => Term0 v -> v -> v
-var :: a -> v -> Term2 vt at ap v a
-var' :: Var v => Text -> Term0' vt v
-ref :: Ord v => a -> Reference -> Term2 vt at ap v a
-pattern Referent' :: Referent -> Term2 vt at ap v a
-unReferent :: Term2 vt at ap v a -> Maybe Referent
-refId :: Ord v => a -> Id -> Term2 vt at ap v a
-termLink :: Ord v => a -> Referent -> Term2 vt at ap v a
-typeLink :: Ord v => a -> Reference -> Term2 vt at ap v a
-builtin :: Ord v => a -> Text -> Term2 vt at ap v a
-float :: Ord v => a -> Double -> Term2 vt at ap v a
-boolean :: Ord v => a -> Bool -> Term2 vt at ap v a
-int :: Ord v => a -> Int64 -> Term2 vt at ap v a
-nat :: Ord v => a -> Word64 -> Term2 vt at ap v a
-text :: Ord v => a -> Text -> Term2 vt at ap v a
-char :: Ord v => a -> Char -> Term2 vt at ap v a
-watch :: (Var v, Semigroup a) => a -> String -> Term v a -> Term v a
-watchMaybe :: (Var v, Semigroup a) => Maybe String -> Term v a -> Term v a
-blank :: Ord v => a -> Term2 vt at ap v a
-placeholder :: Ord v => a -> String -> Term2 vt a ap v a
-resolve :: Ord v => at -> ab -> String -> Term2 vt ab ap v at
-constructor :: Ord v => a -> Reference -> ConstructorId -> Term2 vt at ap v a
-request :: Ord v => a -> Reference -> ConstructorId -> Term2 vt at ap v a
-app_ :: Ord v => Term0' vt v -> Term0' vt v -> Term0' vt v
-app :: Ord v => a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-match :: Ord v => a -> Term2 vt at a v a -> [MatchCase a (Term2 vt at a v a)] -> Term2 vt at a v a
-handle :: Ord v => a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-and :: Ord v => a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-or :: Ord v => a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-list :: Ord v => a -> [Term2 vt at ap v a] -> Term2 vt at ap v a
-list' :: Ord v => a -> Seq (Term2 vt at ap v a) -> Term2 vt at ap v a
-apps :: Ord v => Term2 vt at ap v a -> [(a, Term2 vt at ap v a)] -> Term2 vt at ap v a
-apps' :: (Ord v, Semigroup a) => Term2 vt at ap v a -> [Term2 vt at ap v a] -> Term2 vt at ap v a
-iff :: Ord v => a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a -> Term2 vt at ap v a
-ann_ :: Ord v => Term0' vt v -> Type vt () -> Term0' vt v
-ann :: Ord v => a -> Term2 vt at ap v a -> Type vt at -> Term2 vt at ap v a
-lam :: Ord v => a -> v -> Term2 vt at ap v a -> Term2 vt at ap v a
-delay :: Var v => a -> Term2 vt at ap v a -> Term2 vt at ap v a
-lam' :: Ord v => a -> [v] -> Term2 vt at ap v a -> Term2 vt at ap v a
-lam'' :: Ord v => [(a, v)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-isLam :: Term2 vt at ap v a -> Bool
-arity :: Term2 vt at ap v a -> Int
-unLetRecNamedAnnotated :: Term' vt v a -> Maybe (IsTop, a, [((a, v), Term' vt v a)], Term' vt v a)
-letRec' :: (Ord v, Monoid a) => Bool -> [(v, Term' vt v a)] -> Term' vt v a -> Term' vt v a
-consLetRec :: Ord v => Bool -> a -> (a, v, Term' vt v a) -> Term' vt v a -> Term' vt v a
-letRec :: Ord v => Bool -> a -> [((a, v), Term' vt v a)] -> Term' vt v a -> Term' vt v a
-
--- | Smart constructor for let rec blocks. Each binding in the block may
---   reference any other binding in the block in its body (including
---   itself), and the output expression may also reference any binding in
---   the block.
-letRec_ :: Ord v => IsTop -> [(v, Term0' vt v)] -> Term0' vt v -> Term0' vt v
-
--- | Smart constructor for let blocks. Each binding in the block may
---   reference only previous bindings in the block, not including itself.
---   The output expression may reference any binding in the block. todo:
---   delete me
-let1_ :: Ord v => IsTop -> [(v, Term0' vt v)] -> Term0' vt v -> Term0' vt v
-
--- | annotations are applied to each nested Let expression
-let1 :: Ord v => IsTop -> [((a, v), Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-let1' :: (Semigroup a, Ord v) => IsTop -> [(v, Term2 vt at ap v a)] -> Term2 vt at ap v a -> Term2 vt at ap v a
-unLet1 :: Var v => Term' vt v a -> Maybe (IsTop, Term' vt v a, Subst (F vt a a) v a)
-
--- | Satisfies `unLet (let' bs e) == Just (bs, e)`
-unLet :: Term2 vt at ap v a -> Maybe ([(IsTop, v, Term2 vt at ap v a)], Term2 vt at ap v a)
-
--- | Satisfies `unLetRec (letRec bs e) == Just (bs, e)`
-unLetRecNamed :: Term2 vt at ap v a -> Maybe (IsTop, [(v, Term2 vt at ap v a)], Term2 vt at ap v a)
-unLetRec :: (Monad m, Var v) => Term2 vt at ap v a -> Maybe (IsTop, (v -> m v) -> m ([(v, Term2 vt at ap v a)], Term2 vt at ap v a))
-unApps :: Term2 vt at ap v a -> Maybe (Term2 vt at ap v a, [Term2 vt at ap v a])
-unAppsPred :: (Term2 vt at ap v a, Term2 vt at ap v a -> Bool) -> Maybe (Term2 vt at ap v a, [Term2 vt at ap v a])
-unBinaryApp :: Term2 vt at ap v a -> Maybe (Term2 vt at ap v a, Term2 vt at ap v a, Term2 vt at ap v a)
-unBinaryApps :: Term2 vt at ap v a -> Maybe ([(Term2 vt at ap v a, Term2 vt at ap v a)], Term2 vt at ap v a)
-unBinaryAppsPred :: (Term2 vt at ap v a, Term2 vt at ap v a -> Bool) -> Maybe ([(Term2 vt at ap v a, Term2 vt at ap v a)], Term2 vt at ap v a)
-unLams' :: Term2 vt at ap v a -> Maybe ([v], Term2 vt at ap v a)
-unLamsOpt' :: Term2 vt at ap v a -> Maybe ([v], Term2 vt at ap v a)
-unLamsUntilDelay' :: Var v => Term2 vt at ap v a -> Maybe ([v], Term2 vt at ap v a)
-unLamsPred' :: (Term2 vt at ap v a, v -> Bool) -> Maybe ([v], Term2 vt at ap v a)
-unReqOrCtor :: Term2 vt at ap v a -> Maybe (Reference, ConstructorId)
-dependencies :: (Ord v, Ord vt) => Term2 vt at ap v a -> Set Reference
-termDependencies :: (Ord v, Ord vt) => Term2 vt at ap v a -> Set Reference
-typeDependencies :: (Ord v, Ord vt) => Term2 vt at ap v a -> Set Reference
-constructorDependencies :: (Ord v, Ord vt) => Term2 vt at ap v a -> Set Reference
-generalizedDependencies :: (Ord v, Ord vt, Ord r) => (Reference -> r) -> (Reference -> r) -> (Reference -> r) -> (Reference -> ConstructorId -> r) -> (Reference -> r) -> (Reference -> ConstructorId -> r) -> (Reference -> r) -> Term2 vt at ap v a -> Set r
-labeledDependencies :: (Ord v, Ord vt) => Term2 vt at ap v a -> Set LabeledDependency
-updateDependencies :: Ord v => Map Reference Reference -> Map Reference Reference -> Term v a -> Term v a
-
--- | If the outermost term is a function application, perform substitution
---   of the argument into the body
-betaReduce :: Var v => Term0 v -> Term0 v
-betaNormalForm :: Var v => Term0 v -> Term0 v
-etaNormalForm :: Ord v => Term0 v -> Term0 v
-etaReduceEtaVars :: Var v => Term0 v -> Term0 v
-unhashComponent :: forall v a. Var v => Map Reference (Term v a) -> Map Reference (v, Term v a)
+data MatchCase loc a
+MatchCase :: Pattern loc -> Maybe a -> a -> MatchCase loc a
 hashComponents :: Var v => Map v (Term v a) -> Map v (Id, Term v a)
 hashClosedTerm :: Var v => Term v a -> Id
-hashConstructor' :: (Reference -> ConstructorId -> Term0 Symbol) -> Reference -> ConstructorId -> Reference
-hashConstructor :: Reference -> ConstructorId -> Reference
-hashRequest :: Reference -> ConstructorId -> Reference
-fromReferent :: Ord v => a -> Referent -> Term2 vt at ap v a
 instance Data.Traversable.Traversable (Unison.Hashing.V2.Term.MatchCase loc)
 instance GHC.Generics.Generic1 (Unison.Hashing.V2.Term.MatchCase loc)
 instance GHC.Generics.Generic (Unison.Hashing.V2.Term.MatchCase loc a)
@@ -991,10 +637,6 @@ instance GHC.Generics.Generic (Unison.Hashing.V2.Term.F typeVar typeAnn patternA
 instance GHC.Base.Functor (Unison.Hashing.V2.Term.F typeVar typeAnn patternAnn)
 instance Data.Foldable.Foldable (Unison.Hashing.V2.Term.F typeVar typeAnn patternAnn)
 instance Unison.Var.Var v => Unison.Hashable.Hashable1 (Unison.Hashing.V2.Term.F v a p)
-instance (GHC.Classes.Eq a, Unison.ABT.Var v) => Prelude.Extras.Eq1 (Unison.Hashing.V2.Term.F v a p)
-instance GHC.Show.Show v => Prelude.Extras.Show1 (Unison.Hashing.V2.Term.F v a p)
-instance (Unison.ABT.Var vt, GHC.Classes.Eq at, GHC.Classes.Eq a) => GHC.Classes.Eq (Unison.Hashing.V2.Term.F vt at p a)
-instance (GHC.Show.Show v, GHC.Show.Show a) => GHC.Show.Show (Unison.Hashing.V2.Term.F v a0 p a)
 
 module Unison.Hashing.V2.DataDeclaration
 data DataDeclaration v a
@@ -1032,15 +674,7 @@ instance GHC.Show.Show Unison.Hashing.V2.DataDeclaration.Modifier
 instance GHC.Classes.Ord Unison.Hashing.V2.DataDeclaration.Modifier
 instance GHC.Classes.Eq Unison.Hashing.V2.DataDeclaration.Modifier
 instance GHC.Base.Functor (Unison.Hashing.V2.DataDeclaration.DataDeclaration v)
-instance (GHC.Show.Show a, GHC.Show.Show v) => GHC.Show.Show (Unison.Hashing.V2.DataDeclaration.DataDeclaration v a)
-instance (GHC.Classes.Eq a, Unison.ABT.Var v) => GHC.Classes.Eq (Unison.Hashing.V2.DataDeclaration.DataDeclaration v a)
 instance GHC.Base.Functor (Unison.Hashing.V2.DataDeclaration.EffectDeclaration v)
-instance (GHC.Show.Show a, GHC.Show.Show v) => GHC.Show.Show (Unison.Hashing.V2.DataDeclaration.EffectDeclaration v a)
-instance (Unison.ABT.Var v, GHC.Classes.Eq a) => GHC.Classes.Eq (Unison.Hashing.V2.DataDeclaration.EffectDeclaration v a)
-instance (GHC.Show.Show a, GHC.Show.Show v) => GHC.Show.Show (Unison.Hashing.V2.DataDeclaration.DeclOrBuiltin v a)
-instance (Unison.ABT.Var v, GHC.Classes.Eq a) => GHC.Classes.Eq (Unison.Hashing.V2.DataDeclaration.DeclOrBuiltin v a)
-instance Prelude.Extras.Show1 Unison.Hashing.V2.DataDeclaration.F
-instance GHC.Show.Show a => GHC.Show.Show (Unison.Hashing.V2.DataDeclaration.F a)
 instance Data.Foldable.Foldable Unison.Hashing.V2.DataDeclaration.F
 instance GHC.Base.Functor Unison.Hashing.V2.DataDeclaration.F
 instance Unison.Hashable.Hashable1 Unison.Hashing.V2.DataDeclaration.F
@@ -1051,7 +685,6 @@ type ResolutionResult v a r = Either Seq ResolutionFailure v a r
 hashDecls :: Var v => Map v (DataDeclaration v a) -> ResolutionResult v a [(v, Id, DataDeclaration v a)]
 hashClosedTerm :: Var v => Term v a -> Id
 hashTermComponents :: Var v => Map v (Term v a) -> Map v (Id, Term v a)
-hashTypeComponents :: Var v => Map v (Type v a) -> Map v (Id, Type v a)
 typeToReference :: Var v => Type v a -> Reference
 typeToReferenceMentions :: Var v => Type v a -> Set Reference
 
@@ -2312,7 +1945,7 @@ type Star r n = Star r n
 type Hash = RawHash Raw
 type EditHash = Hash
 pattern Hash :: Hash -> RawHash a
-branch0 :: Star Referent NameSegment -> Star Reference NameSegment -> Map NameSegment (Branch m) -> Map NameSegment (EditHash, m Patch) -> Branch0 m
+branch0 :: forall m. Star Referent NameSegment -> Star Reference NameSegment -> Map NameSegment (Branch m) -> Map NameSegment (EditHash, m Patch) -> Branch0 m
 one :: Branch0 m -> Branch m
 cons :: Applicative m => Branch0 m -> Branch m -> Branch m
 uncons :: Applicative m => Branch m -> m (Maybe (Branch0 m, Branch m))
@@ -2327,7 +1960,7 @@ isOne :: Branch m -> Bool
 before :: Monad m => Branch m -> Branch m -> m Bool
 lca :: Monad m => Branch m -> Branch m -> m (Maybe (Branch m))
 diff0 :: Monad m => Branch0 m -> Branch0 m -> m BranchDiff
-history :: forall m_a4dsi m_a4dFG. Iso (Branch m_a4dsi) (Branch m_a4dFG) (UnwrappedBranch m_a4dsi) (UnwrappedBranch m_a4dFG)
+history :: forall m_a3CeT m_a3Csh. Iso (Branch m_a3CeT) (Branch m_a3Csh) (UnwrappedBranch m_a3CeT) (UnwrappedBranch m_a3Csh)
 head :: Branch m -> Branch0 m
 headHash :: Branch m -> Hash
 children :: Lens' (Branch0 m) (Map NameSegment (Branch m))
@@ -2362,7 +1995,7 @@ modifyAtM :: forall n m. Functor n => Applicative m => Path -> (Branch m -> n (B
 children0 :: IndexedTraversal' NameSegment (Branch0 m) (Branch0 m)
 terms :: Lens' (Branch0 m) (Star Referent NameSegment)
 types :: Lens' (Branch0 m) (Star Reference NameSegment)
-edits :: forall m_a4dse. Lens' (Branch0 m_a4dse) (Map NameSegment (EditHash, m_a4dse Patch))
+edits :: forall m_a3CeP. Lens' (Branch0 m_a3CeP) (Map NameSegment (EditHash, m_a3CeP Patch))
 deepReferents :: Branch0 m -> Set Referent
 deepTypeReferences :: Branch0 m -> Set Reference
 cachedRead :: forall m. MonadIO m => Cache m -> Deserialize m Raw Raw -> (EditHash -> m Patch) -> Hash -> m (Branch m)
@@ -4082,7 +3715,7 @@ type Pretty = Pretty ColorText
 createCodebase :: MonadIO m => Init m v a -> DebugName -> CodebasePath -> m (Either Pretty (m (), Codebase m v a))
 
 -- | try to init a codebase where none exists and then exit regardless
---   (i.e. `ucm -codebase dir init`)
+--   (i.e. `ucm --codebase dir init`)
 initCodebaseAndExit :: MonadIO m => Init m Symbol Ann -> DebugName -> Maybe CodebasePath -> m ()
 openOrCreateCodebase :: MonadIO m => Init m v a -> DebugName -> CodebaseInitOptions -> m (InitResult m v a)
 openNewUcmCodebaseOrExit :: MonadIO m => Init m Symbol Ann -> DebugName -> CodebasePath -> m (m (), Codebase m Symbol Ann)
@@ -4127,11 +3760,18 @@ instance GHC.Classes.Eq Unison.CommandLine.InputPattern.IsOptional
 instance GHC.Show.Show Unison.CommandLine.InputPattern.IsOptional
 instance GHC.Show.Show Unison.CommandLine.InputPattern.ArgumentType
 
+
+-- | Duplicate of the Unison.Util.SyntaxText module, but we expect these to
+--   evolve separately. This is the version which is outward facing to the
+--   server frontend.
 module Unison.Server.Syntax
 type SyntaxText = AnnotatedText Element
+type SyntaxSegment = Segment Element
 convertElement :: Element Reference -> Element
 type UnisonHash = Text
 type HashQualifiedName = Text
+
+-- | The elements of the Unison grammar, for syntax highlighting purposes
 data Element
 NumericLiteral :: Element
 TextLiteral :: Element
@@ -4141,10 +3781,12 @@ BooleanLiteral :: Element
 Blank :: Element
 Var :: Element
 TypeReference :: UnisonHash -> Element
+DataConstructorReference :: UnisonHash -> Element
+AbilityConstructorReference :: UnisonHash -> Element
 TermReference :: UnisonHash -> Element
 Op :: SeqOp -> Element
-Constructor :: Element
-Request :: Element
+
+-- | Constructor Are these even used? | Request
 AbilityBraces :: Element
 ControlKeyword :: Element
 TypeOperator :: Element
@@ -4165,7 +3807,15 @@ LinkKeyword :: Element
 DocDelimiter :: Element
 DocKeyword :: Element
 syntax :: Element -> SyntaxText -> SyntaxText
+firstReference :: SyntaxText -> Maybe UnisonHash
+reference :: SyntaxSegment -> Maybe UnisonHash
+
+-- | Convert a <a>SyntaxText</a> to a <a>String</a>, ignoring syntax markup
 toPlain :: SyntaxText -> String
+toHtml :: SyntaxText -> Html ()
+nameToHtml :: Name -> Html ()
+segmentToHtml :: SyntaxSegment -> Html ()
+elementToClassName :: Element -> Text
 instance GHC.Generics.Generic Unison.Server.Syntax.Element
 instance GHC.Show.Show Unison.Server.Syntax.Element
 instance GHC.Classes.Ord Unison.Server.Syntax.Element
@@ -4555,7 +4205,6 @@ type ResultT notes f = MaybeT (WriterT notes f)
 data Note v loc
 Parsing :: Err v -> Note v loc
 NameResolutionFailures :: [ResolutionFailure v loc] -> Note v loc
-InvalidPath :: Path -> Term v loc -> Note v loc
 UnknownSymbol :: v -> loc -> Note v loc
 TypeError :: ErrorNote v loc -> Note v loc
 TypeInfo :: InfoNote v loc -> Note v loc
@@ -4603,9 +4252,9 @@ Env :: [Type v loc] -> TypeLookup v loc -> Map Name [NamedReference v loc] -> En
 [_ambientAbilities] :: Env v loc -> [Type v loc]
 [_typeLookup] :: Env v loc -> TypeLookup v loc
 [_termsByShortname] :: Env v loc -> Map Name [NamedReference v loc]
-typeLookup :: forall v_a7r4k loc_a7r4l. Lens' (Env v_a7r4k loc_a7r4l) (TypeLookup v_a7r4k loc_a7r4l)
-termsByShortname :: forall v_a7r4k loc_a7r4l. Lens' (Env v_a7r4k loc_a7r4l) (Map Name [NamedReference v_a7r4k loc_a7r4l])
-ambientAbilities :: forall v_a7r4k loc_a7r4l. Lens' (Env v_a7r4k loc_a7r4l) [Type v_a7r4k loc_a7r4l]
+typeLookup :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) (TypeLookup v_a6HIN loc_a6HIO)
+termsByShortname :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) (Map Name [NamedReference v_a6HIN loc_a6HIO])
+ambientAbilities :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) [Type v_a6HIN loc_a6HIO]
 
 -- | Infer the type of a <a>Term</a>, using a function to resolve the type
 --   of <tt>Ref</tt> constructors contained in that term.
@@ -4729,7 +4378,6 @@ countTypeUsages :: (Var v, Ord v) => PrettyPrintEnv -> Type v a -> PrintAnnotati
 countPatternUsages :: PrettyPrintEnv -> Pattern loc -> PrintAnnotation
 countHQ :: HashQualified Name -> PrintAnnotation
 countName :: Name -> PrintAnnotation
-splitName :: Name -> [(Prefix, Suffix)]
 joinName :: Prefix -> Suffix -> Name
 dotConcat :: [Text] -> Text
 noImportRefs :: Reference -> Bool
@@ -5337,7 +4985,6 @@ instance GHC.Classes.Eq Unison.Server.Types.NamedType
 instance GHC.Generics.Generic Unison.Server.Types.FoundEntry
 instance GHC.Show.Show Unison.Server.Types.FoundEntry
 instance GHC.Classes.Eq Unison.Server.Types.FoundEntry
-instance Data.OpenApi.Internal.Schema.ToSchema Unison.Name.Name
 instance Web.Internal.HttpApiData.FromHttpApiData Unison.Server.Types.Suffixify
 instance Data.OpenApi.Internal.ParamSchema.ToParamSchema Unison.Server.Types.Suffixify
 instance Data.OpenApi.Internal.ParamSchema.ToParamSchema Unison.Codebase.ShortBranchHash.ShortBranchHash
@@ -5364,6 +5011,7 @@ instance Data.Aeson.Types.ToJSON.ToJSON Unison.Server.Types.TypeTag
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.Server.Types.TermDefinition
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.Server.Types.TermTag
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.Name.Name
+instance Data.OpenApi.Internal.Schema.ToSchema Unison.Name.Name
 instance Web.Internal.HttpApiData.FromHttpApiData Unison.Codebase.ShortBranchHash.ShortBranchHash
 instance (Data.Aeson.Types.ToJSON.ToJSON b, Data.Aeson.Types.ToJSON.ToJSON a) => Data.Aeson.Types.ToJSON.ToJSON (Unison.Codebase.Editor.DisplayObject.DisplayObject b a)
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.ShortHash.ShortHash
@@ -5378,6 +5026,39 @@ instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Doc.Doc
 instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Doc.SpecialForm
 instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Doc.Src
 instance Data.OpenApi.Internal.Schema.ToSchema a => Data.OpenApi.Internal.Schema.ToSchema (Unison.Server.Doc.Ref a)
+
+
+-- | Render Unison.Server.Doc and embedded source to Html
+module Unison.Server.Doc.AsHtml
+data NamedLinkHref
+Href :: Text -> NamedLinkHref
+ReferenceHref :: Text -> NamedLinkHref
+InvalidHref :: NamedLinkHref
+data EmbeddedSource
+EmbeddedSource :: SyntaxText -> SyntaxText -> EmbeddedSource
+Builtin :: SyntaxText -> EmbeddedSource
+embeddedSource :: Ref (UnisonHash, DisplayObject SyntaxText Src) -> Maybe EmbeddedSource
+inlineCode :: [Attribute] -> Html () -> Html ()
+codeBlock :: [Attribute] -> Html () -> Html ()
+normalizeHref :: NamedLinkHref -> Doc -> NamedLinkHref
+data IsFolded
+IsFolded :: Bool -> [Html ()] -> [Html ()] -> IsFolded
+Disabled :: Html () -> IsFolded
+foldedToHtml :: [Attribute] -> IsFolded -> Html ()
+foldedToHtmlSource :: Bool -> EmbeddedSource -> Html ()
+
+-- | Merge adjacent Word elements in a list to 1 element with a string of
+--   words separated by space— useful for rendering to the dom without
+--   creating dom elements for each and every word in the doc, but instead
+--   rely on textNodes
+mergeWords :: [Doc] -> [Doc]
+toHtml :: Doc -> Html ()
+
+-- | Unison Doc allows endlessly deep section nesting with titles, but HTML
+--   only supports to h1-h6, so we clamp the sectionLevel when converting
+h :: Nat -> Html () -> Html ()
+badge :: Html () -> Html ()
+textToClass :: Text -> Text
 
 module Unison.Server.Backend
 type SyntaxText = SyntaxText' Reference
@@ -5531,19 +5212,19 @@ backendListEntryToNamespaceObject :: Var v => PrettyPrintEnv -> Maybe Width -> S
 serve :: Var v => Handler () -> Codebase IO v Ann -> Maybe ShortBranchHash -> Maybe NamespaceFQN -> Maybe NamespaceFQN -> Handler (APIHeaders NamespaceListing)
 instance GHC.Show.Show Unison.Server.Endpoints.NamespaceListing.NamedNamespace
 instance GHC.Generics.Generic Unison.Server.Endpoints.NamespaceListing.NamedNamespace
+instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.NamedPatch
 instance GHC.Show.Show Unison.Server.Endpoints.NamespaceListing.NamedPatch
 instance GHC.Generics.Generic Unison.Server.Endpoints.NamespaceListing.NamedPatch
 instance GHC.Show.Show Unison.Server.Endpoints.NamespaceListing.NamespaceObject
 instance GHC.Generics.Generic Unison.Server.Endpoints.NamespaceListing.NamespaceObject
 instance GHC.Show.Show Unison.Server.Endpoints.NamespaceListing.NamespaceListing
 instance GHC.Generics.Generic Unison.Server.Endpoints.NamespaceListing.NamespaceListing
+instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.KindExpression
 instance GHC.Show.Show Unison.Server.Endpoints.NamespaceListing.KindExpression
 instance GHC.Generics.Generic Unison.Server.Endpoints.NamespaceListing.KindExpression
 instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.NamespaceListing
 instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.NamespaceObject
 instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.NamedNamespace
-instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.NamedPatch
-instance Data.OpenApi.Internal.Schema.ToSchema Unison.Server.Endpoints.NamespaceListing.KindExpression
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.Server.Endpoints.NamespaceListing.KindExpression
 instance Servant.Docs.Internal.ToSample Unison.Server.Endpoints.NamespaceListing.NamespaceListing
 instance Data.Aeson.Types.ToJSON.ToJSON Unison.Server.Endpoints.NamespaceListing.NamespaceListing

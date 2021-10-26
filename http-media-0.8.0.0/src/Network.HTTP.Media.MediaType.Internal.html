@@ -31,7 +31,7 @@
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CI</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>  </span><span class="hs-comment">-- ^ The sub type of the MediaType</span><span>
 </span><span id="line-30"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="parameters"><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#Parameters"><span class="hs-identifier hs-type">Parameters</span></a></span><span>     </span><span class="hs-comment">-- ^ The parameters of the MediaType</span><span>
-</span><span id="line-31"></span><span>    </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679043008"><span id="local-6989586621679043010"><span class="annot"><span class="annottext">MediaType -&gt; MediaType -&gt; Bool
+</span><span id="line-31"></span><span>    </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679043012"><span id="local-6989586621679043014"><span class="annot"><span class="annottext">MediaType -&gt; MediaType -&gt; Bool
 (MediaType -&gt; MediaType -&gt; Bool)
 -&gt; (MediaType -&gt; MediaType -&gt; Bool) -&gt; Eq MediaType
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -39,7 +39,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: MediaType -&gt; MediaType -&gt; Bool
 == :: MediaType -&gt; MediaType -&gt; Bool
 $c== :: MediaType -&gt; MediaType -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042992"><span id="local-6989586621679042994"><span id="local-6989586621679042996"><span id="local-6989586621679042998"><span id="local-6989586621679043000"><span id="local-6989586621679043002"><span id="local-6989586621679043004"><span class="annot"><span class="annottext">Eq MediaType
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042996"><span id="local-6989586621679042998"><span id="local-6989586621679043000"><span id="local-6989586621679043002"><span id="local-6989586621679043004"><span id="local-6989586621679043006"><span id="local-6989586621679043008"><span class="annot"><span class="annottext">Eq MediaType
 Eq MediaType
 -&gt; (MediaType -&gt; MediaType -&gt; Ordering)
 -&gt; (MediaType -&gt; MediaType -&gt; Bool)
@@ -79,8 +79,8 @@ $ccompare :: MediaType -&gt; MediaType -&gt; Ordering
 $cp1Ord :: Eq MediaType
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-32"></span><span>
-</span><span id="line-33"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679042986"><span id="local-6989586621679042989"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-34"></span><span>    </span><span id="local-6989586621679042984"><span class="annot"><span class="annottext">show :: MediaType -&gt; String
+</span><span id="line-33"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679042990"><span id="local-6989586621679042993"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-34"></span><span>    </span><span id="local-6989586621679042988"><span class="annot"><span class="annottext">show :: MediaType -&gt; String
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; String
 </span><span class="hs-identifier hs-var">BS.unpack</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; String)
 -&gt; (MediaType -&gt; ByteString) -&gt; MediaType -&gt; String
@@ -90,9 +90,9 @@ forall h. RenderHeader h =&gt; h -&gt; ByteString
 </span><a href="Network.HTTP.Media.RenderHeader.html#renderHeader"><span class="hs-identifier hs-var">renderHeader</span></a></span><span>
 </span><span id="line-35"></span><span>
 </span><span id="line-36"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IsString</span></span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-37"></span><span>    </span><span id="local-6989586621679042977"><span class="annot"><span class="annottext">fromString :: String -&gt; MediaType
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromString</span></span></span><span> </span><span id="local-6989586621679042976"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679042976"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(MediaType -&gt; Maybe MediaType -&gt; MediaType)
+</span><span id="line-37"></span><span>    </span><span id="local-6989586621679042981"><span class="annot"><span class="annottext">fromString :: String -&gt; MediaType
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromString</span></span></span><span> </span><span id="local-6989586621679042980"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679042980"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(MediaType -&gt; Maybe MediaType -&gt; MediaType)
 -&gt; Maybe MediaType -&gt; MediaType -&gt; MediaType
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; Maybe MediaType -&gt; MediaType
@@ -103,7 +103,7 @@ forall a. Accept a =&gt; ByteString -&gt; Maybe a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679042976"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(MediaType -&gt; MediaType) -&gt; MediaType -&gt; MediaType
+</span><a href="#local-6989586621679042980"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(MediaType -&gt; MediaType) -&gt; MediaType -&gt; MediaType
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-38"></span><span>        </span><span class="annot"><span class="annottext">String -&gt; MediaType
@@ -114,29 +114,29 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Invalid media type literal &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679042976"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><a href="#local-6989586621679042980"><span class="hs-identifier hs-var">str</span></a></span><span>
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Network.HTTP.Media.Accept.html#Accept"><span class="hs-identifier hs-type">Accept</span></a></span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-41"></span><span>    </span><span id="local-6989586621679042965"><span class="annot"><span class="annottext">parseAccept :: ByteString -&gt; Maybe MediaType
-</span><a href="#local-6989586621679042965"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseAccept</span></a></span></span><span> </span><span id="local-6989586621679042964"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042964"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-42"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679042963"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042962"><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">ps</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Maybe (ByteString, [ByteString])
+</span><span id="line-41"></span><span>    </span><span id="local-6989586621679042969"><span class="annot"><span class="annottext">parseAccept :: ByteString -&gt; Maybe MediaType
+</span><a href="#local-6989586621679042969"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseAccept</span></a></span></span><span> </span><span id="local-6989586621679042968"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679042968"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-42"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679042967"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679042967"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042966"><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679042966"><span class="hs-identifier hs-var">ps</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Maybe (ByteString, [ByteString])
 forall a. [a] -&gt; Maybe (a, [a])
-</span><a href="#local-6989586621679042961"><span class="hs-identifier hs-var">uncons</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString) -&gt; [ByteString] -&gt; [ByteString]
+</span><a href="#local-6989586621679042965"><span class="hs-identifier hs-var">uncons</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString) -&gt; [ByteString] -&gt; [ByteString]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
 </span><a href="Network.HTTP.Media.Utils.html#trimBS"><span class="hs-identifier hs-var">trimBS</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; ByteString -&gt; [ByteString]
 </span><span class="hs-identifier hs-var">BS.split</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">';'</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042964"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-43"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679042959"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042959"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042958"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042958"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; ByteString -&gt; Maybe (ByteString, ByteString)
+</span><a href="#local-6989586621679042968"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-43"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679042963"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042962"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; ByteString -&gt; Maybe (ByteString, ByteString)
 </span><a href="Network.HTTP.Media.Utils.html#breakChar"><span class="hs-identifier hs-var">breakChar</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'/'</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679042967"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-44"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; Maybe ()
 forall (f :: * -&gt; *). Alternative f =&gt; Bool -&gt; f ()
 </span><span class="hs-identifier hs-var">guard</span></span><span> </span><span class="annot"><span class="annottext">(Bool -&gt; Maybe ()) -&gt; Bool -&gt; Maybe ()
@@ -144,31 +144,31 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042959"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042958"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042959"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042958"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span class="hs-special">)</span><span>
-</span><span id="line-45"></span><span>        </span><span id="local-6989586621679042952"><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042952"><span class="hs-identifier hs-var">ps'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(Parameters -&gt; ByteString -&gt; Maybe Parameters)
+</span><span id="line-45"></span><span>        </span><span id="local-6989586621679042956"><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042956"><span class="hs-identifier hs-var">ps'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(Parameters -&gt; ByteString -&gt; Maybe Parameters)
 -&gt; Parameters -&gt; [ByteString] -&gt; Maybe Parameters
 forall (t :: * -&gt; *) (m :: * -&gt; *) b a.
 (Foldable t, Monad m) =&gt;
 (b -&gt; a -&gt; m b) -&gt; b -&gt; t a -&gt; m b
 </span><span class="hs-identifier hs-var">foldM</span></span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; ByteString -&gt; Maybe Parameters
-</span><a href="#local-6989586621679042951"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042955"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span class="annot"><span class="annottext">Parameters
 forall k a. Map k a
 </span><span class="hs-identifier hs-var">Map.empty</span></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">ps</span></a></span><span>
+</span><a href="#local-6989586621679042966"><span class="hs-identifier hs-var">ps</span></a></span><span>
 </span><span id="line-46"></span><span>        </span><span class="annot"><span class="annottext">MediaType -&gt; Maybe MediaType
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(MediaType -&gt; Maybe MediaType) -&gt; MediaType -&gt; Maybe MediaType
@@ -177,35 +177,35 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-var">MediaType</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
 forall s. FoldCase s =&gt; s -&gt; CI s
 </span><span class="hs-identifier hs-var">CI.mk</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042959"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
+</span><a href="#local-6989586621679042963"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
 forall s. FoldCase s =&gt; s -&gt; CI s
 </span><span class="hs-identifier hs-var">CI.mk</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679042958"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042952"><span class="hs-identifier hs-var">ps'</span></a></span><span>
+</span><a href="#local-6989586621679042962"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042956"><span class="hs-identifier hs-var">ps'</span></a></span><span>
 </span><span id="line-47"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-48"></span><span>        </span><span id="local-6989586621679042961"><span class="annot"><span class="annottext">uncons :: [a] -&gt; Maybe (a, [a])
-</span><a href="#local-6989586621679042961"><span class="hs-identifier hs-var hs-var">uncons</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe (a, [a])
+</span><span id="line-48"></span><span>        </span><span id="local-6989586621679042965"><span class="annot"><span class="annottext">uncons :: [a] -&gt; Maybe (a, [a])
+</span><a href="#local-6989586621679042965"><span class="hs-identifier hs-var hs-var">uncons</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe (a, [a])
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-49"></span><span>        </span><span class="annot"><a href="#local-6989586621679042961"><span class="hs-identifier hs-var">uncons</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679042948"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679042948"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679042947"><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621679042947"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a, [a]) -&gt; Maybe (a, [a])
+</span><span id="line-49"></span><span>        </span><span class="annot"><a href="#local-6989586621679042965"><span class="hs-identifier hs-var">uncons</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679042952"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679042952"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679042951"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679042951"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a, [a]) -&gt; Maybe (a, [a])
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679042948"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679042952"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679042951"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-50"></span><span>        </span><span id="local-6989586621679042950"><span class="annot"><span class="annottext">both :: (t -&gt; b) -&gt; (t, t) -&gt; (b, b)
+</span><a href="#local-6989586621679042950"><span class="hs-identifier hs-var hs-var">both</span></a></span></span><span> </span><span id="local-6989586621679042949"><span class="annot"><span class="annottext">t -&gt; b
+</span><a href="#local-6989586621679042949"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679042948"><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621679042948"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042947"><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621679042947"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">t -&gt; b
+</span><a href="#local-6989586621679042949"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621679042948"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">t -&gt; b
+</span><a href="#local-6989586621679042949"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
 </span><a href="#local-6989586621679042947"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-50"></span><span>        </span><span id="local-6989586621679042946"><span class="annot"><span class="annottext">both :: (t -&gt; b) -&gt; (t, t) -&gt; (b, b)
-</span><a href="#local-6989586621679042946"><span class="hs-identifier hs-var hs-var">both</span></a></span></span><span> </span><span id="local-6989586621679042945"><span class="annot"><span class="annottext">t -&gt; b
-</span><a href="#local-6989586621679042945"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679042944"><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679042944"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679042943"><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679042943"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">t -&gt; b
-</span><a href="#local-6989586621679042945"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679042944"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">t -&gt; b
-</span><a href="#local-6989586621679042945"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679042943"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-51"></span><span>        </span><span id="local-6989586621679042951"><span class="annot"><span class="annottext">insert :: Parameters -&gt; ByteString -&gt; Maybe Parameters
-</span><a href="#local-6989586621679042951"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span id="local-6989586621679042942"><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042942"><span class="hs-identifier hs-var">ps</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-51"></span><span>        </span><span id="local-6989586621679042955"><span class="annot"><span class="annottext">insert :: Parameters -&gt; ByteString -&gt; Maybe Parameters
+</span><a href="#local-6989586621679042955"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span id="local-6989586621679042946"><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042946"><span class="hs-identifier hs-var">ps</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-52"></span><span>          </span><span class="annot"><span class="annottext">((ByteString, ByteString) -&gt; Parameters)
 -&gt; Maybe (ByteString, ByteString) -&gt; Maybe Parameters
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -218,7 +218,7 @@ forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Parameters -&gt; Parameters
 forall k a. Ord k =&gt; k -&gt; a -&gt; Map k a -&gt; Map k a
 </span><span class="hs-identifier hs-var">Map.insert</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042942"><span class="hs-identifier hs-var">ps</span></a></span><span> </span><span class="annot"><span class="annottext">((CI ByteString, CI ByteString) -&gt; Parameters)
+</span><a href="#local-6989586621679042946"><span class="hs-identifier hs-var">ps</span></a></span><span> </span><span class="annot"><span class="annottext">((CI ByteString, CI ByteString) -&gt; Parameters)
 -&gt; ((ByteString, ByteString) -&gt; (CI ByteString, CI ByteString))
 -&gt; (ByteString, ByteString)
 -&gt; Parameters
@@ -226,7 +226,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; CI ByteString)
 -&gt; (ByteString, ByteString) -&gt; (CI ByteString, CI ByteString)
 forall t b. (t -&gt; b) -&gt; (t, t) -&gt; (b, b)
-</span><a href="#local-6989586621679042946"><span class="hs-identifier hs-var">both</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
+</span><a href="#local-6989586621679042950"><span class="hs-identifier hs-var">both</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
 forall s. FoldCase s =&gt; s -&gt; CI s
 </span><span class="hs-identifier hs-var">CI.mk</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe (ByteString, ByteString) -&gt; Maybe Parameters)
 -&gt; (ByteString -&gt; Maybe (ByteString, ByteString))
@@ -237,160 +237,160 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><a href="Network.HTTP.Media.Utils.html#breakChar"><span class="hs-identifier hs-var">breakChar</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'='</span></span><span>
 </span><span id="line-53"></span><span>
-</span><span id="line-54"></span><span>    </span><span id="local-6989586621679042939"><span class="annot"><span class="annottext">matches :: MediaType -&gt; MediaType -&gt; Bool
-</span><a href="Network.HTTP.Media.Accept.html#matches"><span class="hs-identifier hs-var hs-var hs-var hs-var">matches</span></a></span></span><span> </span><span id="local-6989586621679042937"><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042936"><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span></span><span>
+</span><span id="line-54"></span><span>    </span><span id="local-6989586621679042943"><span class="annot"><span class="annottext">matches :: MediaType -&gt; MediaType -&gt; Bool
+</span><a href="Network.HTTP.Media.Accept.html#matches"><span class="hs-identifier hs-var hs-var hs-var hs-var">matches</span></a></span></span><span> </span><span id="local-6989586621679042941"><span class="annot"><span class="annottext">MediaType
+</span><a href="#local-6989586621679042941"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042940"><span class="annot"><span class="annottext">MediaType
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span></span><span>
 </span><span id="line-55"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042935"><span class="hs-identifier hs-var">params</span></a></span><span>
+</span><a href="#local-6989586621679042939"><span class="hs-identifier hs-var">params</span></a></span><span>
 </span><span id="line-56"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042941"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042935"><span class="hs-identifier hs-var">params</span></a></span><span>
+</span><a href="#local-6989586621679042939"><span class="hs-identifier hs-var">params</span></a></span><span>
 </span><span id="line-57"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>         </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042934"><span class="hs-identifier hs-var">main</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042938"><span class="hs-identifier hs-var">main</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">sub</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">sub</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042935"><span class="hs-identifier hs-var">params</span></a></span><span>
+</span><a href="#local-6989586621679042939"><span class="hs-identifier hs-var">params</span></a></span><span>
 </span><span id="line-58"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-59"></span><span>        </span><span id="local-6989586621679042934"><span class="annot"><span class="annottext">main :: Bool
-</span><a href="#local-6989586621679042934"><span class="hs-identifier hs-var hs-var">main</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
+</span><span id="line-59"></span><span>        </span><span id="local-6989586621679042938"><span class="annot"><span class="annottext">main :: Bool
+</span><a href="#local-6989586621679042938"><span class="hs-identifier hs-var hs-var">main</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042941"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-60"></span><span>        </span><span id="local-6989586621679042933"><span class="annot"><span class="annottext">sub :: Bool
-</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var hs-var">sub</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-60"></span><span>        </span><span id="local-6989586621679042937"><span class="annot"><span class="annottext">sub :: Bool
+</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var hs-var">sub</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042941"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-61"></span><span>        </span><span id="local-6989586621679042935"><span class="annot"><span class="annottext">params :: Bool
-</span><a href="#local-6989586621679042935"><span class="hs-identifier hs-var hs-var">params</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; Bool
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-61"></span><span>        </span><span id="local-6989586621679042939"><span class="annot"><span class="annottext">params :: Bool
+</span><a href="#local-6989586621679042939"><span class="hs-identifier hs-var hs-var">params</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; Bool
 forall k a. Map k a -&gt; Bool
 </span><span class="hs-identifier hs-var">Map.null</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042937"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; Parameters -&gt; Bool
+</span><a href="#local-6989586621679042941"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; Parameters -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042936"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><a href="#local-6989586621679042940"><span class="hs-identifier hs-var">b</span></a></span><span>
 </span><span id="line-62"></span><span>
-</span><span id="line-63"></span><span>    </span><span id="local-6989586621679042931"><span class="annot"><span class="annottext">moreSpecificThan :: MediaType -&gt; MediaType -&gt; Bool
-</span><a href="Network.HTTP.Media.Accept.html#moreSpecificThan"><span class="hs-identifier hs-var hs-var hs-var hs-var">moreSpecificThan</span></a></span></span><span> </span><span id="local-6989586621679042929"><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042928"><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042928"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; MediaType -&gt; Bool
+</span><span id="line-63"></span><span>    </span><span id="local-6989586621679042935"><span class="annot"><span class="annottext">moreSpecificThan :: MediaType -&gt; MediaType -&gt; Bool
+</span><a href="Network.HTTP.Media.Accept.html#moreSpecificThan"><span class="hs-identifier hs-var hs-var hs-var hs-var">moreSpecificThan</span></a></span></span><span> </span><span id="local-6989586621679042933"><span class="annot"><span class="annottext">MediaType
+</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042932"><span class="annot"><span class="annottext">MediaType
+</span><a href="#local-6989586621679042932"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">MediaType
+</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; MediaType -&gt; Bool
 forall a. Accept a =&gt; a -&gt; a -&gt; Bool
 </span><a href="Network.HTTP.Media.Accept.html#matches"><span class="hs-operator hs-var">`matches`</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042928"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042932"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Bool -&gt; Bool) -&gt; Bool -&gt; Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-64"></span><span>        </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042927"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042931"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042926"><span class="hs-identifier hs-var">params</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042930"><span class="hs-identifier hs-var">params</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span>
 </span><span id="line-65"></span><span>        </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042927"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042931"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042925"><span class="hs-identifier hs-var">subB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">subB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042926"><span class="hs-identifier hs-var">params</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042930"><span class="hs-identifier hs-var">params</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span>
 </span><span id="line-66"></span><span>        </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042927"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042931"><span class="hs-identifier hs-var">anyB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042925"><span class="hs-identifier hs-var">subB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">subB</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679042926"><span class="hs-identifier hs-var">params</span></a></span><span>
+</span><a href="#local-6989586621679042930"><span class="hs-identifier hs-var">params</span></a></span><span>
 </span><span id="line-67"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-68"></span><span>        </span><span id="local-6989586621679042927"><span class="annot"><span class="annottext">anyB :: Bool
-</span><a href="#local-6989586621679042927"><span class="hs-identifier hs-var hs-var">anyB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
+</span><span id="line-68"></span><span>        </span><span id="local-6989586621679042931"><span class="annot"><span class="annottext">anyB :: Bool
+</span><a href="#local-6989586621679042931"><span class="hs-identifier hs-var hs-var">anyB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#mainType"><span class="hs-identifier hs-var hs-var">mainType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042928"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042932"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span>
-</span><span id="line-69"></span><span>        </span><span id="local-6989586621679042925"><span class="annot"><span class="annottext">subB :: Bool
-</span><a href="#local-6989586621679042925"><span class="hs-identifier hs-var hs-var">subB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
+</span><span id="line-69"></span><span>        </span><span id="local-6989586621679042929"><span class="annot"><span class="annottext">subB :: Bool
+</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var hs-var">subB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; CI ByteString
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#subType"><span class="hs-identifier hs-var hs-var">subType</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042928"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
+</span><a href="#local-6989586621679042932"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;*&quot;</span></span><span>
-</span><span id="line-70"></span><span>        </span><span id="local-6989586621679042926"><span class="annot"><span class="annottext">params :: Bool
-</span><a href="#local-6989586621679042926"><span class="hs-identifier hs-var hs-var">params</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
+</span><span id="line-70"></span><span>        </span><span id="local-6989586621679042930"><span class="annot"><span class="annottext">params :: Bool
+</span><a href="#local-6989586621679042930"><span class="hs-identifier hs-var hs-var">params</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Parameters -&gt; Bool
 forall k a. Map k a -&gt; Bool
 </span><span class="hs-identifier hs-var">Map.null</span></span><span> </span><span class="annot"><span class="annottext">(Parameters -&gt; Bool) -&gt; Parameters -&gt; Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042929"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679042933"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Parameters -&gt; Bool
 forall k a. Map k a -&gt; Bool
 </span><span class="hs-identifier hs-var">Map.null</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">MediaType -&gt; Parameters
 </span><a href="Network.HTTP.Media.MediaType.Internal.html#parameters"><span class="hs-identifier hs-var hs-var">parameters</span></a></span><span> </span><span class="annot"><span class="annottext">MediaType
-</span><a href="#local-6989586621679042928"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679042932"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-71"></span><span>
-</span><span id="line-72"></span><span>    </span><span id="local-6989586621679042924"><span class="annot"><span class="annottext">hasExtensionParameters :: Proxy MediaType -&gt; Bool
+</span><span id="line-72"></span><span>    </span><span id="local-6989586621679042928"><span class="annot"><span class="annottext">hasExtensionParameters :: Proxy MediaType -&gt; Bool
 </span><a href="Network.HTTP.Media.Accept.html#hasExtensionParameters"><span class="hs-identifier hs-var hs-var hs-var hs-var">hasExtensionParameters</span></a></span></span><span> </span><span class="annot"><span class="annottext">Proxy MediaType
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-73"></span><span>
 </span><span id="line-74"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Network.HTTP.Media.RenderHeader.html#RenderHeader"><span class="hs-identifier hs-type">RenderHeader</span></a></span><span> </span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-75"></span><span>    </span><span id="local-6989586621679042920"><span class="annot"><span class="annottext">renderHeader :: MediaType -&gt; ByteString
-</span><a href="#local-6989586621679042920"><span class="hs-identifier hs-var hs-var hs-var hs-var">renderHeader</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span><span> </span><span id="local-6989586621679042919"><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679042919"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042918"><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679042918"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679042917"><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042917"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-75"></span><span>    </span><span id="local-6989586621679042924"><span class="annot"><span class="annottext">renderHeader :: MediaType -&gt; ByteString
+</span><a href="#local-6989586621679042924"><span class="hs-identifier hs-var hs-var hs-var hs-var">renderHeader</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP.Media.MediaType.Internal.html#MediaType"><span class="hs-identifier hs-type">MediaType</span></a></span><span> </span><span id="local-6989586621679042923"><span class="annot"><span class="annottext">CI ByteString
+</span><a href="#local-6989586621679042923"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679042922"><span class="annot"><span class="annottext">CI ByteString
+</span><a href="#local-6989586621679042922"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679042921"><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042921"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-76"></span><span>        </span><span class="annot"><span class="annottext">(CI ByteString -&gt; CI ByteString -&gt; ByteString -&gt; ByteString)
 -&gt; ByteString -&gt; Parameters -&gt; ByteString
 forall k a b. (k -&gt; a -&gt; b -&gt; b) -&gt; b -&gt; Map k a -&gt; b
 </span><span class="hs-identifier hs-var">Map.foldrWithKey</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; CI ByteString -&gt; ByteString -&gt; ByteString
 forall a. (Semigroup a, IsString a) =&gt; CI a -&gt; CI a -&gt; a -&gt; a
-</span><a href="#local-6989586621679042915"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
+</span><a href="#local-6989586621679042919"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679042919"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
+</span><a href="#local-6989586621679042923"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;/&quot;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
@@ -398,13 +398,13 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679042918"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Parameters
-</span><a href="#local-6989586621679042917"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679042922"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Parameters
+</span><a href="#local-6989586621679042921"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-77"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-78"></span><span>        </span><span id="local-6989586621679042915"><span class="annot"><span class="annottext">f :: CI a -&gt; CI a -&gt; a -&gt; a
-</span><a href="#local-6989586621679042915"><span class="hs-identifier hs-var hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679042914"><span class="annot"><span class="annottext">CI a
-</span><a href="#local-6989586621679042914"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span id="local-6989586621679042913"><span class="annot"><span class="annottext">CI a
-</span><a href="#local-6989586621679042913"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
+</span><span id="line-78"></span><span>        </span><span id="local-6989586621679042919"><span class="annot"><span class="annottext">f :: CI a -&gt; CI a -&gt; a -&gt; a
+</span><a href="#local-6989586621679042919"><span class="hs-identifier hs-var hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679042918"><span class="annot"><span class="annottext">CI a
+</span><a href="#local-6989586621679042918"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span id="local-6989586621679042917"><span class="annot"><span class="annottext">CI a
+</span><a href="#local-6989586621679042917"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-string">&quot;;&quot;</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
@@ -412,7 +412,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">CI a -&gt; a
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">CI a
-</span><a href="#local-6989586621679042914"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
+</span><a href="#local-6989586621679042918"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-string">&quot;=&quot;</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
@@ -420,7 +420,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">CI a -&gt; a
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">CI a
-</span><a href="#local-6989586621679042913"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679042917"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-79"></span><span>
 </span><span id="line-80"></span><span>
 </span><span id="line-81"></span><span class="hs-comment">------------------------------------------------------------------------------</span><span>

@@ -27,6 +27,19 @@ module Unison.Prelude
 --   the side effect of outputting the trace message.
 trace :: String -> a -> a
 
+-- | The function <tt>coerce</tt> allows you to safely convert between
+--   values of types that have the same representation with no run-time
+--   overhead. In the simplest case you can use it instead of a newtype
+--   constructor, to go from the newtype's concrete type to the abstract
+--   type. But it also works in more complicated settings, e.g. converting
+--   a list of newtypes to a list of concrete types.
+--   
+--   This function is runtime-representation polymorphic, but the
+--   <tt>RuntimeRep</tt> type argument is marked as <tt>Inferred</tt>,
+--   meaning that it is not available for visible type application. This
+--   means the typechecker will accept <tt>coerce @Int @Age 42</tt>.
+coerce :: forall (k :: RuntimeRep) (a :: TYPE k) (b :: TYPE k). Coercible a b => a -> b
+
 -- | Conditional failure of <a>Alternative</a> computations. Defined by
 --   
 --   <pre>
@@ -602,6 +615,64 @@ data Word64
 data Either a b
 Left :: a -> Either a b
 Right :: b -> Either a b
+
+-- | <tt>Coercible</tt> is a two-parameter class that has instances for
+--   types <tt>a</tt> and <tt>b</tt> if the compiler can infer that they
+--   have the same representation. This class does not have regular
+--   instances; instead they are created on-the-fly during type-checking.
+--   Trying to manually declare an instance of <tt>Coercible</tt> is an
+--   error.
+--   
+--   Nevertheless one can pretend that the following three kinds of
+--   instances exist. First, as a trivial base-case:
+--   
+--   <pre>
+--   instance Coercible a a
+--   </pre>
+--   
+--   Furthermore, for every type constructor there is an instance that
+--   allows to coerce under the type constructor. For example, let
+--   <tt>D</tt> be a prototypical type constructor (<tt>data</tt> or
+--   <tt>newtype</tt>) with three type arguments, which have roles
+--   <tt>nominal</tt>, <tt>representational</tt> resp. <tt>phantom</tt>.
+--   Then there is an instance of the form
+--   
+--   <pre>
+--   instance Coercible b b' =&gt; Coercible (D a b c) (D a b' c')
+--   </pre>
+--   
+--   Note that the <tt>nominal</tt> type arguments are equal, the
+--   <tt>representational</tt> type arguments can differ, but need to have
+--   a <tt>Coercible</tt> instance themself, and the <tt>phantom</tt> type
+--   arguments can be changed arbitrarily.
+--   
+--   The third kind of instance exists for every <tt>newtype NT = MkNT
+--   T</tt> and comes in two variants, namely
+--   
+--   <pre>
+--   instance Coercible a T =&gt; Coercible a NT
+--   </pre>
+--   
+--   <pre>
+--   instance Coercible T b =&gt; Coercible NT b
+--   </pre>
+--   
+--   This instance is only usable if the constructor <tt>MkNT</tt> is in
+--   scope.
+--   
+--   If, as a library author of a type constructor like <tt>Set a</tt>, you
+--   want to prevent a user of your module to write <tt>coerce :: Set T
+--   -&gt; Set NT</tt>, you need to set the role of <tt>Set</tt>'s type
+--   parameter to <tt>nominal</tt>, by writing
+--   
+--   <pre>
+--   type role Set nominal
+--   </pre>
+--   
+--   For more details about this feature, please refer to <a>Safe
+--   Coercions</a> by Joachim Breitner, Richard A. Eisenberg, Simon Peyton
+--   Jones and Stephanie Weirich.
+class a ~R# b => Coercible (a :: k) (b :: k)
 
 -- | Monads in which <a>IO</a> computations may be embedded. Any monad
 --   built by applying a sequence of monad transformers to the <a>IO</a>
@@ -1913,6 +1984,14 @@ mzero :: MonadPlus m => m a
 --   mplus = (<a>&lt;|&gt;</a>)
 --   </pre>
 mplus :: MonadPlus m => m a -> m a -> m a
+
+-- | Request a CallStack.
+--   
+--   NOTE: The implicit parameter <tt>?callStack :: CallStack</tt> is an
+--   implementation detail and <b>should not</b> be considered part of the
+--   <a>CallStack</a> API, we may decide to change the implementation in
+--   the future.
+type HasCallStack = ?callStack :: CallStack
 
 -- | The <tt>SomeException</tt> type is the root of the exception type
 --   hierarchy. When an exception of type <tt>e</tt> is thrown, behind the

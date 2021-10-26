@@ -149,8 +149,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-61"></span><span class="hs-comment">-- | @since 0.8.2</span><span>
 </span><span id="line-62"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseDecsWithMode"><span class="hs-identifier hs-type">parseDecsWithMode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseMode</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Dec</span></span><span class="hs-special">]</span><span>
 </span><span id="line-63"></span><span id="parseDecsWithMode"><span class="annot"><span class="annottext">parseDecsWithMode :: ParseMode -&gt; String -&gt; Either String [Dec]
-</span><a href="Language.Haskell.Meta.Parse.html#parseDecsWithMode"><span class="hs-identifier hs-var hs-var">parseDecsWithMode</span></a></span></span><span> </span><span id="local-6989586621679120106"><span class="annot"><span class="annottext">ParseMode
-</span><a href="#local-6989586621679120106"><span class="hs-identifier hs-var">parseMode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String [Dec])
+</span><a href="Language.Haskell.Meta.Parse.html#parseDecsWithMode"><span class="hs-identifier hs-var hs-var">parseDecsWithMode</span></a></span></span><span> </span><span id="local-6989586621679117988"><span class="annot"><span class="annottext">ParseMode
+</span><a href="#local-6989586621679117988"><span class="hs-identifier hs-var">parseMode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String [Dec])
 -&gt; ([Decl SrcSpanInfo] -&gt; Either String [Dec])
 -&gt; Either String [Decl SrcSpanInfo]
 -&gt; Either String [Dec]
@@ -174,7 +174,7 @@ forall a. ToDecs a =&gt; a -&gt; [Dec]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ParseMode -&gt; String -&gt; Either String [Decl SrcSpanInfo]
 </span><a href="Language.Haskell.Meta.Parse.html#parseHsDeclsWithMode"><span class="hs-identifier hs-var">parseHsDeclsWithMode</span></a></span><span> </span><span class="annot"><span class="annottext">ParseMode
-</span><a href="#local-6989586621679120106"><span class="hs-identifier hs-var">parseMode</span></a></span><span>
+</span><a href="#local-6989586621679117988"><span class="hs-identifier hs-var">parseMode</span></a></span><span>
 </span><span id="line-65"></span><span>
 </span><span id="line-66"></span><span class="hs-comment">-----------------------------------------------------------------------------</span><span>
 </span><span id="line-67"></span><span>
@@ -222,20 +222,20 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span id="line-88"></span><span>                      </span><span class="hs-special">,</span><span class="annot"><span class="annottext">KnownExtension
 </span><span class="hs-identifier hs-var">TypeApplications</span></span><span class="hs-special">]</span><span>
 </span><span id="line-89"></span><span>
-</span><span id="line-90"></span><span id="local-6989586621679120150"><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-type">parseResultToEither</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseResult</span></span><span> </span><span class="annot"><a href="#local-6989586621679120150"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="#local-6989586621679120150"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-90"></span><span id="local-6989586621679118032"><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-type">parseResultToEither</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseResult</span></span><span> </span><span class="annot"><a href="#local-6989586621679118032"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="#local-6989586621679118032"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-91"></span><span id="parseResultToEither"><span class="annot"><span class="annottext">parseResultToEither :: ParseResult a -&gt; Either String a
-</span><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-var hs-var">parseResultToEither</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ParseOk</span></span><span> </span><span id="local-6989586621679120087"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679120087"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a -&gt; Either String a
+</span><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-var hs-var">parseResultToEither</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ParseOk</span></span><span> </span><span id="local-6989586621679117969"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679117969"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a -&gt; Either String a
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679120087"><span class="hs-identifier hs-var">a</span></a></span><span>
-</span><span id="line-92"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-var">parseResultToEither</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ParseFailed</span></span><span> </span><span id="local-6989586621679120085"><span class="annot"><span class="annottext">SrcLoc
-</span><a href="#local-6989586621679120085"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679120084"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679120084"><span class="hs-identifier hs-var">e</span></a></span></span><span class="hs-special">)</span><span>
-</span><span id="line-93"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679120083"><span class="annot"><span class="annottext">line :: Int
-</span><a href="#local-6989586621679120083"><span class="hs-identifier hs-var hs-var">line</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SrcLoc -&gt; Int
+</span><a href="#local-6989586621679117969"><span class="hs-identifier hs-var">a</span></a></span><span>
+</span><span id="line-92"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseResultToEither"><span class="hs-identifier hs-var">parseResultToEither</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ParseFailed</span></span><span> </span><span id="local-6989586621679117967"><span class="annot"><span class="annottext">SrcLoc
+</span><a href="#local-6989586621679117967"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679117966"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679117966"><span class="hs-identifier hs-var">e</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-93"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679117965"><span class="annot"><span class="annottext">line :: Int
+</span><a href="#local-6989586621679117965"><span class="hs-identifier hs-var hs-var">line</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SrcLoc -&gt; Int
 </span><span class="hs-identifier hs-var hs-var">Hs.srcLine</span></span><span> </span><span class="annot"><span class="annottext">SrcLoc
-</span><a href="#local-6989586621679120085"><span class="hs-identifier hs-var">loc</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679117967"><span class="hs-identifier hs-var">loc</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span>
@@ -245,11 +245,11 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">unlines</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Int -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679120083"><span class="hs-identifier hs-var">line</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">SrcLoc -&gt; String
+</span><a href="#local-6989586621679117965"><span class="hs-identifier hs-var">line</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">SrcLoc -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">SrcLoc
-</span><a href="#local-6989586621679120085"><span class="hs-identifier hs-var">loc</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679120084"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679117967"><span class="hs-identifier hs-var">loc</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679117966"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><span id="line-95"></span><span>
 </span><span id="line-96"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseHsModule"><span class="hs-identifier hs-type">parseHsModule</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Hs.Module</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hs.SrcSpanInfo</span></span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span id="parseHsModule"><span class="annot"><span class="annottext">parseHsModule :: String -&gt; Either String (Module SrcSpanInfo)
@@ -306,8 +306,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-103"></span><span class="hs-comment">-- | @since 0.8.2</span><span>
 </span><span id="line-104"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseHsDeclsWithMode"><span class="hs-identifier hs-type">parseHsDeclsWithMode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseMode</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Hs.Decl</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hs.SrcSpanInfo</span></span><span class="hs-special">]</span><span>
 </span><span id="line-105"></span><span id="parseHsDeclsWithMode"><span class="annot"><span class="annottext">parseHsDeclsWithMode :: ParseMode -&gt; String -&gt; Either String [Decl SrcSpanInfo]
-</span><a href="Language.Haskell.Meta.Parse.html#parseHsDeclsWithMode"><span class="hs-identifier hs-var hs-var">parseHsDeclsWithMode</span></a></span></span><span> </span><span id="local-6989586621679120078"><span class="annot"><span class="annottext">ParseMode
-</span><a href="#local-6989586621679120078"><span class="hs-identifier hs-var">parseMode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String [Decl SrcSpanInfo])
+</span><a href="Language.Haskell.Meta.Parse.html#parseHsDeclsWithMode"><span class="hs-identifier hs-var hs-var">parseHsDeclsWithMode</span></a></span></span><span> </span><span id="local-6989586621679117960"><span class="annot"><span class="annottext">ParseMode
+</span><a href="#local-6989586621679117960"><span class="hs-identifier hs-var">parseMode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String [Decl SrcSpanInfo])
 -&gt; (Module SrcSpanInfo -&gt; Either String [Decl SrcSpanInfo])
 -&gt; Either String (Module SrcSpanInfo)
 -&gt; Either String [Decl SrcSpanInfo]
@@ -340,7 +340,7 @@ forall a. ParseResult a -&gt; Either String a
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ParseMode -&gt; String -&gt; ParseResult (Module SrcSpanInfo)
 </span><span class="hs-identifier hs-var">parseModuleWithMode</span></span><span> </span><span class="annot"><span class="annottext">ParseMode
-</span><a href="#local-6989586621679120078"><span class="hs-identifier hs-var">parseMode</span></a></span><span>
+</span><a href="#local-6989586621679117960"><span class="hs-identifier hs-var">parseMode</span></a></span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span>
 </span><span id="line-109"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#parseHsType"><span class="hs-identifier hs-type">parseHsType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Hs.Type</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hs.SrcSpanInfo</span></span><span class="hs-special">)</span><span>
@@ -397,17 +397,17 @@ forall a. Pretty a =&gt; a -&gt; String
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Maybe (ModuleHead SrcSpanInfo)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">[ModulePragma SrcSpanInfo]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">[ImportDecl SrcSpanInfo]
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679120072"><span class="annot"><span class="annottext">[Decl SrcSpanInfo]
-</span><a href="#local-6989586621679120072"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Decl SrcSpanInfo]
-</span><a href="#local-6989586621679120072"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-125"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#moduleDecls"><span class="hs-identifier hs-var">moduleDecls</span></a></span><span> </span><span id="local-6989586621679120071"><span class="annot"><span class="annottext">Module SrcSpanInfo
-</span><a href="#local-6989586621679120071"><span class="hs-identifier hs-var">m</span></a></span></span><span>                     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Module SrcSpanInfo -&gt; [Decl SrcSpanInfo]
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679117954"><span class="annot"><span class="annottext">[Decl SrcSpanInfo]
+</span><a href="#local-6989586621679117954"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Decl SrcSpanInfo]
+</span><a href="#local-6989586621679117954"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-125"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#moduleDecls"><span class="hs-identifier hs-var">moduleDecls</span></a></span><span> </span><span id="local-6989586621679117953"><span class="annot"><span class="annottext">Module SrcSpanInfo
+</span><a href="#local-6989586621679117953"><span class="hs-identifier hs-var">m</span></a></span></span><span>                     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Module SrcSpanInfo -&gt; [Decl SrcSpanInfo]
 forall (f :: * -&gt; *) e a.
 (Functor f, Show (f ())) =&gt;
 String -&gt; f e -&gt; a
 </span><a href="Language.Haskell.Meta.Syntax.Translate.html#todo"><span class="hs-identifier hs-var">todo</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">Module SrcSpanInfo
-</span><a href="#local-6989586621679120071"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679117953"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-126"></span><span class="hs-comment">-- TODO</span><span>
 </span><span id="line-127"></span><span class="hs-comment">--             (Hs.XmlPage _ _ _ _ _ _ _)</span><span>
 </span><span id="line-128"></span><span class="hs-comment">--          (Hs.XmlHybrid _ _ _ _ _ _ _ _ _)</span><span>
@@ -417,8 +417,8 @@ String -&gt; f e -&gt; a
 </span><span id="line-132"></span><span>
 </span><span id="line-133"></span><span class="annot"><a href="Language.Haskell.Meta.Parse.html#emptyHsModule"><span class="hs-identifier hs-type">emptyHsModule</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hs.Module</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hs.SrcSpanInfo</span></span><span>
 </span><span id="line-134"></span><span id="emptyHsModule"><span class="annot"><span class="annottext">emptyHsModule :: String -&gt; Module SrcSpanInfo
-</span><a href="Language.Haskell.Meta.Parse.html#emptyHsModule"><span class="hs-identifier hs-var hs-var">emptyHsModule</span></a></span></span><span> </span><span id="local-6989586621679120069"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679120069"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Language.Haskell.Meta.Parse.html#emptyHsModule"><span class="hs-identifier hs-var hs-var">emptyHsModule</span></a></span></span><span> </span><span id="local-6989586621679117951"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679117951"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SrcSpanInfo
 -&gt; Maybe (ModuleHead SrcSpanInfo)
 -&gt; [ModulePragma SrcSpanInfo]
@@ -453,7 +453,7 @@ l
 forall l. l -&gt; String -&gt; ModuleName l
 </span><span class="hs-identifier hs-var">Hs.ModuleName</span></span><span> </span><span class="annot"><span class="annottext">SrcSpanInfo
 </span><a href="Language.Haskell.Meta.Parse.html#noSrcSpanInfo"><span class="hs-identifier hs-var">noSrcSpanInfo</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679120069"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe (WarningText SrcSpanInfo)
+</span><a href="#local-6989586621679117951"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe (WarningText SrcSpanInfo)
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe (ExportSpecList SrcSpanInfo)
 forall a. Maybe a

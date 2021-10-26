@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_36tiMaSxgvvBysx0FrSbhJ"><span id="%24con2tag_HDLNKh4o7SHD5BwOvBvQC6"></span></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Unison.Codebase.TermEdit</span><span> </span><span class="hs-keyword">where</span><span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_GlKFivuHBpI1Zqs34tQSjn"><span id="%24con2tag_Cxoo8GRPy3I2625AJbUQcQ"></span></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Unison.Codebase.TermEdit</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-2"></span><span>
 </span><span id="line-3"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Hashable</span></span><span class="hs-special">)</span><span>
 </span><span id="line-4"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">H</span></span><span>
 </span><span id="line-5"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Reference</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Reference</span></span><span class="hs-special">)</span><span>
 </span><span id="line-6"></span><span>
 </span><span id="line-7"></span><span class="hs-keyword">data</span><span> </span><span id="TermEdit"><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-var">TermEdit</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Replace"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-var">Replace</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Typing"><span class="hs-identifier hs-type">Typing</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Deprecate"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Deprecate"><span class="hs-identifier hs-var">Deprecate</span></a></span></span><span>
-</span><span id="line-8"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681965403"><span id="local-6989586621681965405"><span class="annot"><span class="annottext">TermEdit -&gt; TermEdit -&gt; Bool
+</span><span id="line-8"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681724183"><span id="local-6989586621681724185"><span class="annot"><span class="annottext">TermEdit -&gt; TermEdit -&gt; Bool
 (TermEdit -&gt; TermEdit -&gt; Bool)
 -&gt; (TermEdit -&gt; TermEdit -&gt; Bool) -&gt; Eq TermEdit
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -13,7 +13,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: TermEdit -&gt; TermEdit -&gt; Bool
 == :: TermEdit -&gt; TermEdit -&gt; Bool
 $c== :: TermEdit -&gt; TermEdit -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681965387"><span id="local-6989586621681965389"><span id="local-6989586621681965391"><span id="local-6989586621681965393"><span id="local-6989586621681965395"><span id="local-6989586621681965397"><span id="local-6989586621681965399"><span class="annot"><span class="annottext">Eq TermEdit
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681724167"><span id="local-6989586621681724169"><span id="local-6989586621681724171"><span id="local-6989586621681724173"><span id="local-6989586621681724175"><span id="local-6989586621681724177"><span id="local-6989586621681724179"><span class="annot"><span class="annottext">Eq TermEdit
 Eq TermEdit
 -&gt; (TermEdit -&gt; TermEdit -&gt; Ordering)
 -&gt; (TermEdit -&gt; TermEdit -&gt; Bool)
@@ -51,7 +51,7 @@ $c&lt; :: TermEdit -&gt; TermEdit -&gt; Bool
 compare :: TermEdit -&gt; TermEdit -&gt; Ordering
 $ccompare :: TermEdit -&gt; TermEdit -&gt; Ordering
 $cp1Ord :: Eq TermEdit
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681965380"><span id="local-6989586621681965382"><span id="local-6989586621681965384"><span class="annot"><span class="annottext">Int -&gt; TermEdit -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681724160"><span id="local-6989586621681724162"><span id="local-6989586621681724164"><span class="annot"><span class="annottext">Int -&gt; TermEdit -&gt; ShowS
 [TermEdit] -&gt; ShowS
 TermEdit -&gt; String
 (Int -&gt; TermEdit -&gt; ShowS)
@@ -68,10 +68,10 @@ $cshowsPrec :: Int -&gt; TermEdit -&gt; ShowS
 </span><span id="line-9"></span><span>
 </span><span id="line-10"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#references"><span class="hs-identifier hs-type">references</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-type">TermEdit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span class="hs-special">]</span><span>
 </span><span id="line-11"></span><span id="references"><span class="annot"><span class="annottext">references :: TermEdit -&gt; [Reference]
-</span><a href="Unison.Codebase.TermEdit.html#references"><span class="hs-identifier hs-var hs-var">references</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681965377"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965377"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="annot"><span class="annottext">Typing
+</span><a href="Unison.Codebase.TermEdit.html#references"><span class="hs-identifier hs-var hs-var">references</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681724157"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681724157"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="annot"><span class="annottext">Typing
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965377"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621681724157"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-12"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#references"><span class="hs-identifier hs-var">references</span></a></span><span> </span><span class="annot"><span class="annottext">TermEdit
 </span><a href="Unison.Codebase.TermEdit.html#Deprecate"><span class="hs-identifier hs-var">Deprecate</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
 </span><span id="line-13"></span><span>
@@ -79,7 +79,7 @@ $cshowsPrec :: Int -&gt; TermEdit -&gt; ShowS
 </span><span id="line-15"></span><span class="hs-comment">-- Replacements with a Subtype can be automatically propagated but may result in dependents getting more general types, so requires re-inference.</span><span>
 </span><span id="line-16"></span><span class="hs-comment">-- Replacements of a Different type need to be manually propagated by the programmer.</span><span>
 </span><span id="line-17"></span><span class="hs-keyword">data</span><span> </span><span id="Typing"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Typing"><span class="hs-identifier hs-var">Typing</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Same"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Same"><span class="hs-identifier hs-var">Same</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Subtype"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Subtype"><span class="hs-identifier hs-var">Subtype</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Different"><span class="annot"><a href="Unison.Codebase.TermEdit.html#Different"><span class="hs-identifier hs-var">Different</span></a></span></span><span>
-</span><span id="line-18"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681965370"><span id="local-6989586621681965372"><span class="annot"><span class="annottext">Typing -&gt; Typing -&gt; Bool
+</span><span id="line-18"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681724150"><span id="local-6989586621681724152"><span class="annot"><span class="annottext">Typing -&gt; Typing -&gt; Bool
 (Typing -&gt; Typing -&gt; Bool)
 -&gt; (Typing -&gt; Typing -&gt; Bool) -&gt; Eq Typing
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -87,7 +87,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Typing -&gt; Typing -&gt; Bool
 == :: Typing -&gt; Typing -&gt; Bool
 $c== :: Typing -&gt; Typing -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681965355"><span id="local-6989586621681965357"><span id="local-6989586621681965359"><span id="local-6989586621681965361"><span id="local-6989586621681965363"><span id="local-6989586621681965365"><span id="local-6989586621681965367"><span class="annot"><span class="annottext">Eq Typing
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681724135"><span id="local-6989586621681724137"><span id="local-6989586621681724139"><span id="local-6989586621681724141"><span id="local-6989586621681724143"><span id="local-6989586621681724145"><span id="local-6989586621681724147"><span class="annot"><span class="annottext">Eq Typing
 Eq Typing
 -&gt; (Typing -&gt; Typing -&gt; Ordering)
 -&gt; (Typing -&gt; Typing -&gt; Bool)
@@ -125,7 +125,7 @@ $c&lt; :: Typing -&gt; Typing -&gt; Bool
 compare :: Typing -&gt; Typing -&gt; Ordering
 $ccompare :: Typing -&gt; Typing -&gt; Ordering
 $cp1Ord :: Eq Typing
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681965349"><span id="local-6989586621681965351"><span id="local-6989586621681965353"><span class="annot"><span class="annottext">Int -&gt; Typing -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681724129"><span id="local-6989586621681724131"><span id="local-6989586621681724133"><span class="annot"><span class="annottext">Int -&gt; Typing -&gt; ShowS
 [Typing] -&gt; ShowS
 Typing -&gt; String
 (Int -&gt; Typing -&gt; ShowS)
@@ -141,7 +141,7 @@ $cshowsPrec :: Int -&gt; Typing -&gt; ShowS
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-19"></span><span>
 </span><span id="line-20"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable</span></span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Typing"><span class="hs-identifier hs-type">Typing</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-21"></span><span>  </span><span id="local-6989586621681965346"><span class="annot"><span class="annottext">tokens :: Typing -&gt; [Token h]
+</span><span id="line-21"></span><span>  </span><span id="local-6989586621681724126"><span class="annot"><span class="annottext">tokens :: Typing -&gt; [Token h]
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></span></span><span> </span><span class="annot"><span class="annottext">Typing
 </span><a href="Unison.Codebase.TermEdit.html#Same"><span class="hs-identifier hs-var">Same</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
@@ -159,10 +159,10 @@ forall h. Word8 -&gt; Token h
 </span><span class="hs-number">2</span></span><span class="hs-special">]</span><span>
 </span><span id="line-24"></span><span>
 </span><span id="line-25"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable</span></span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-type">TermEdit</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-26"></span><span>  </span><span id="local-6989586621681965342"><span class="annot"><span class="annottext">tokens :: TermEdit -&gt; [Token h]
-</span><a href="#local-6989586621681965342"><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681965341"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965341"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span id="local-6989586621681965340"><span class="annot"><span class="annottext">Typing
-</span><a href="#local-6989586621681965340"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><span id="line-26"></span><span>  </span><span id="local-6989586621681724122"><span class="annot"><span class="annottext">tokens :: TermEdit -&gt; [Token h]
+</span><a href="#local-6989586621681724122"><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681724121"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681724121"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span id="local-6989586621681724120"><span class="annot"><span class="annottext">Typing
+</span><a href="#local-6989586621681724120"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">H.Tag</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
@@ -170,12 +170,12 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; [Token h]
 forall t h. (Hashable t, Accumulate h) =&gt; t -&gt; [Token h]
 </span><span class="hs-identifier hs-var">H.tokens</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965341"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
+</span><a href="#local-6989586621681724121"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Typing -&gt; [Token h]
 forall t h. (Hashable t, Accumulate h) =&gt; t -&gt; [Token h]
 </span><span class="hs-identifier hs-var">H.tokens</span></span><span> </span><span class="annot"><span class="annottext">Typing
-</span><a href="#local-6989586621681965340"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621681724120"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-27"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">tokens</span></span><span> </span><span class="annot"><span class="annottext">TermEdit
 </span><a href="Unison.Codebase.TermEdit.html#Deprecate"><span class="hs-identifier hs-var">Deprecate</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
@@ -184,12 +184,12 @@ forall h. Word8 -&gt; Token h
 </span><span id="line-28"></span><span>
 </span><span id="line-29"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#toReference"><span class="hs-identifier hs-type">toReference</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-type">TermEdit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span>
 </span><span id="line-30"></span><span id="toReference"><span class="annot"><span class="annottext">toReference :: TermEdit -&gt; Maybe Reference
-</span><a href="Unison.Codebase.TermEdit.html#toReference"><span class="hs-identifier hs-var hs-var">toReference</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681965338"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965338"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="annot"><span class="annottext">Typing
+</span><a href="Unison.Codebase.TermEdit.html#toReference"><span class="hs-identifier hs-var hs-var">toReference</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span id="local-6989586621681724118"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681724118"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="annot"><span class="annottext">Typing
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe Reference
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681965338"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621681724118"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-31"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#toReference"><span class="hs-identifier hs-var">toReference</span></a></span><span> </span><span class="annot"><span class="annottext">TermEdit
 </span><a href="Unison.Codebase.TermEdit.html#Deprecate"><span class="hs-identifier hs-var">Deprecate</span></a></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Reference
 forall a. Maybe a
@@ -197,9 +197,9 @@ forall a. Maybe a
 </span><span id="line-32"></span><span>
 </span><span id="line-33"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#isTypePreserving"><span class="hs-identifier hs-type">isTypePreserving</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-type">TermEdit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-34"></span><span id="isTypePreserving"><span class="annot"><span class="annottext">isTypePreserving :: TermEdit -&gt; Bool
-</span><a href="Unison.Codebase.TermEdit.html#isTypePreserving"><span class="hs-identifier hs-var hs-var">isTypePreserving</span></a></span></span><span> </span><span id="local-6989586621681965336"><span class="annot"><span class="annottext">TermEdit
-</span><a href="#local-6989586621681965336"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TermEdit
-</span><a href="#local-6989586621681965336"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="Unison.Codebase.TermEdit.html#isTypePreserving"><span class="hs-identifier hs-var hs-var">isTypePreserving</span></a></span></span><span> </span><span id="local-6989586621681724116"><span class="annot"><span class="annottext">TermEdit
+</span><a href="#local-6989586621681724116"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TermEdit
+</span><a href="#local-6989586621681724116"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-35"></span><span>  </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Typing
 </span><a href="Unison.Codebase.TermEdit.html#Same"><span class="hs-identifier hs-var">Same</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool
@@ -214,9 +214,9 @@ forall a. Maybe a
 </span><span id="line-38"></span><span>
 </span><span id="line-39"></span><span class="annot"><a href="Unison.Codebase.TermEdit.html#isSame"><span class="hs-identifier hs-type">isSame</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-type">TermEdit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-40"></span><span id="isSame"><span class="annot"><span class="annottext">isSame :: TermEdit -&gt; Bool
-</span><a href="Unison.Codebase.TermEdit.html#isSame"><span class="hs-identifier hs-var hs-var">isSame</span></a></span></span><span> </span><span id="local-6989586621681965334"><span class="annot"><span class="annottext">TermEdit
-</span><a href="#local-6989586621681965334"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TermEdit
-</span><a href="#local-6989586621681965334"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="Unison.Codebase.TermEdit.html#isSame"><span class="hs-identifier hs-var hs-var">isSame</span></a></span></span><span> </span><span id="local-6989586621681724114"><span class="annot"><span class="annottext">TermEdit
+</span><a href="#local-6989586621681724114"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TermEdit
+</span><a href="#local-6989586621681724114"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-41"></span><span>  </span><span class="annot"><a href="Unison.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-type">Replace</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Typing
 </span><a href="Unison.Codebase.TermEdit.html#Same"><span class="hs-identifier hs-var">Same</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool

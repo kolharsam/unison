@@ -63,7 +63,7 @@
 </span><span id="line-60"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Trailing"><span class="annot"><a href="Control.Debounce.Internal.html#Trailing"><span class="hs-identifier hs-var">Trailing</span></a></span></span><span>
 </span><span id="line-61"></span><span>  </span><span class="hs-comment">-- ^ Start a cooldown period and perform the action when the period ends. If another trigger</span><span>
 </span><span id="line-62"></span><span>  </span><span class="hs-comment">-- happens during the cooldown, it has no effect.</span><span>
-</span><span id="line-63"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679029528"><span id="local-6989586621679029530"><span id="local-6989586621679029532"><span class="annot"><span class="annottext">Int -&gt; DebounceEdge -&gt; ShowS
+</span><span id="line-63"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679029532"><span id="local-6989586621679029534"><span id="local-6989586621679029536"><span class="annot"><span class="annottext">Int -&gt; DebounceEdge -&gt; ShowS
 [DebounceEdge] -&gt; ShowS
 DebounceEdge -&gt; String
 (Int -&gt; DebounceEdge -&gt; ShowS)
@@ -78,7 +78,7 @@ show :: DebounceEdge -&gt; String
 $cshow :: DebounceEdge -&gt; String
 showsPrec :: Int -&gt; DebounceEdge -&gt; ShowS
 $cshowsPrec :: Int -&gt; DebounceEdge -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679029523"><span id="local-6989586621679029525"><span class="annot"><span class="annottext">DebounceEdge -&gt; DebounceEdge -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679029527"><span id="local-6989586621679029529"><span class="annot"><span class="annottext">DebounceEdge -&gt; DebounceEdge -&gt; Bool
 (DebounceEdge -&gt; DebounceEdge -&gt; Bool)
 -&gt; (DebounceEdge -&gt; DebounceEdge -&gt; Bool) -&gt; Eq DebounceEdge
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -110,12 +110,12 @@ $c== :: DebounceEdge -&gt; DebounceEdge -&gt; Bool
 </span><span id="line-80"></span><span>
 </span><span id="line-81"></span><span class="annot"><a href="Control.Debounce.Internal.html#mkDebounceInternal"><span class="hs-identifier hs-type">mkDebounceInternal</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MVar</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Control.Debounce.Internal.html#DebounceSettings"><span class="hs-identifier hs-type">DebounceSettings</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-82"></span><span id="mkDebounceInternal"><span class="annot"><span class="annottext">mkDebounceInternal :: MVar () -&gt; (Int -&gt; IO ()) -&gt; DebounceSettings -&gt; IO (IO ())
-</span><a href="Control.Debounce.Internal.html#mkDebounceInternal"><span class="hs-identifier hs-var hs-var">mkDebounceInternal</span></a></span></span><span> </span><span id="local-6989586621679029521"><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">baton</span></a></span></span><span> </span><span id="local-6989586621679029520"><span class="annot"><span class="annottext">Int -&gt; IO ()
-</span><a href="#local-6989586621679029520"><span class="hs-identifier hs-var">delayFn</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Control.Debounce.Internal.html#DebounceSettings"><span class="hs-identifier hs-type">DebounceSettings</span></a></span><span> </span><span id="local-6989586621679029519"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679029519"><span class="hs-identifier hs-var">freq</span></a></span></span><span> </span><span id="local-6989586621679029518"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679029518"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span id="local-6989586621679029517"><span class="annot"><span class="annottext">DebounceEdge
-</span><a href="#local-6989586621679029517"><span class="hs-identifier hs-var">edge</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="Control.Debounce.Internal.html#mkDebounceInternal"><span class="hs-identifier hs-var hs-var">mkDebounceInternal</span></a></span></span><span> </span><span id="local-6989586621679029525"><span class="annot"><span class="annottext">MVar ()
+</span><a href="#local-6989586621679029525"><span class="hs-identifier hs-var">baton</span></a></span></span><span> </span><span id="local-6989586621679029524"><span class="annot"><span class="annottext">Int -&gt; IO ()
+</span><a href="#local-6989586621679029524"><span class="hs-identifier hs-var">delayFn</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Control.Debounce.Internal.html#DebounceSettings"><span class="hs-identifier hs-type">DebounceSettings</span></a></span><span> </span><span id="local-6989586621679029523"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679029523"><span class="hs-identifier hs-var">freq</span></a></span></span><span> </span><span id="local-6989586621679029522"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679029522"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span id="local-6989586621679029521"><span class="annot"><span class="annottext">DebounceEdge
+</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">edge</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-83"></span><span>    </span><span class="annot"><span class="annottext">IO () -&gt; IO ()
 forall a. IO a -&gt; IO a
 </span><span class="hs-identifier hs-var">mask_</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
@@ -135,22 +135,22 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-84"></span><span>        </span><span class="annot"><span class="annottext">MVar () -&gt; IO ()
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">baton</span></a></span><span>
+</span><a href="#local-6989586621679029525"><span class="hs-identifier hs-var">baton</span></a></span><span>
 </span><span id="line-85"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">DebounceEdge
-</span><a href="#local-6989586621679029517"><span class="hs-identifier hs-var">edge</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">edge</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-86"></span><span>          </span><span class="annot"><span class="annottext">DebounceEdge
 </span><a href="Control.Debounce.Internal.html#Leading"><span class="hs-identifier hs-var">Leading</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-87"></span><span>            </span><span class="annot"><span class="annottext">IO () -&gt; IO ()
 </span><a href="Control.Debounce.Internal.html#ignoreExc"><span class="hs-identifier hs-var">ignoreExc</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679029518"><span class="hs-identifier hs-var">action</span></a></span><span>
+</span><a href="#local-6989586621679029522"><span class="hs-identifier hs-var">action</span></a></span><span>
 </span><span id="line-88"></span><span>            </span><span class="annot"><span class="annottext">Int -&gt; IO ()
-</span><a href="#local-6989586621679029520"><span class="hs-identifier hs-var">delayFn</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679029519"><span class="hs-identifier hs-var">freq</span></a></span><span>
+</span><a href="#local-6989586621679029524"><span class="hs-identifier hs-var">delayFn</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679029523"><span class="hs-identifier hs-var">freq</span></a></span><span>
 </span><span id="line-89"></span><span>          </span><span class="annot"><span class="annottext">DebounceEdge
 </span><a href="Control.Debounce.Internal.html#Trailing"><span class="hs-identifier hs-var">Trailing</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-90"></span><span>            </span><span class="annot"><span class="annottext">Int -&gt; IO ()
-</span><a href="#local-6989586621679029520"><span class="hs-identifier hs-var">delayFn</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679029519"><span class="hs-identifier hs-var">freq</span></a></span><span>
+</span><a href="#local-6989586621679029524"><span class="hs-identifier hs-var">delayFn</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679029523"><span class="hs-identifier hs-var">freq</span></a></span><span>
 </span><span id="line-91"></span><span>            </span><span class="hs-comment">-- Empty the baton of any other activations during the interval</span><span>
 </span><span id="line-92"></span><span>            </span><span class="annot"><span class="annottext">IO (Maybe ()) -&gt; IO ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
@@ -159,10 +159,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MVar () -&gt; IO (Maybe ())
 forall a. MVar a -&gt; IO (Maybe a)
 </span><span class="hs-identifier hs-var">tryTakeMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">baton</span></a></span><span>
+</span><a href="#local-6989586621679029525"><span class="hs-identifier hs-var">baton</span></a></span><span>
 </span><span id="line-93"></span><span>            </span><span class="annot"><span class="annottext">IO () -&gt; IO ()
 </span><a href="Control.Debounce.Internal.html#ignoreExc"><span class="hs-identifier hs-var">ignoreExc</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679029518"><span class="hs-identifier hs-var">action</span></a></span><span>
+</span><a href="#local-6989586621679029522"><span class="hs-identifier hs-var">action</span></a></span><span>
 </span><span id="line-94"></span><span>
 </span><span id="line-95"></span><span>    </span><span class="annot"><span class="annottext">IO () -&gt; IO (IO ())
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -175,7 +175,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MVar () -&gt; () -&gt; IO Bool
 forall a. MVar a -&gt; a -&gt; IO Bool
 </span><span class="hs-identifier hs-var">tryPutMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679029521"><span class="hs-identifier hs-var">baton</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679029525"><span class="hs-identifier hs-var">baton</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-96"></span><span>
 </span><span id="line-97"></span><span class="annot"><a href="Control.Debounce.Internal.html#ignoreExc"><span class="hs-identifier hs-type">ignoreExc</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-98"></span><span id="ignoreExc"><span class="annot"><span class="annottext">ignoreExc :: IO () -&gt; IO ()

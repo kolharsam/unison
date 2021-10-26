@@ -85,24 +85,24 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-59"></span><span>
 </span><span id="line-60"></span><span class="annot"><a href="Data.String.Here.Interpolated.html#quoteInterp"><span class="hs-identifier hs-type">quoteInterp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Exp</span></span><span>
 </span><span id="line-61"></span><span id="quoteInterp"><span class="annot"><span class="annottext">quoteInterp :: String -&gt; Q Exp
-</span><a href="Data.String.Here.Interpolated.html#quoteInterp"><span class="hs-identifier hs-var hs-var">quoteInterp</span></a></span></span><span> </span><span id="local-6989586621679070646"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070646"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ParseError -&gt; Q Exp)
+</span><a href="Data.String.Here.Interpolated.html#quoteInterp"><span class="hs-identifier hs-var hs-var">quoteInterp</span></a></span></span><span> </span><span id="local-6989586621679070075"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679070075"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ParseError -&gt; Q Exp)
 -&gt; ([StringPart] -&gt; Q Exp)
 -&gt; Either ParseError [StringPart]
 -&gt; Q Exp
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
 </span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; ParseError -&gt; Q Exp
 </span><a href="Data.String.Here.Interpolated.html#handleError"><span class="hs-identifier hs-var">handleError</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070646"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[StringPart] -&gt; Q Exp
+</span><a href="#local-6989586621679070075"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[StringPart] -&gt; Q Exp
 </span><a href="Data.String.Here.Interpolated.html#combineParts"><span class="hs-identifier hs-var">combineParts</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Either ParseError [StringPart]
 </span><a href="Data.String.Here.Interpolated.html#parseInterp"><span class="hs-identifier hs-var">parseInterp</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070646"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679070075"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span class="annot"><a href="Data.String.Here.Interpolated.html#handleError"><span class="hs-identifier hs-type">handleError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseError</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Exp</span></span><span>
 </span><span id="line-64"></span><span id="handleError"><span class="annot"><span class="annottext">handleError :: String -&gt; ParseError -&gt; Q Exp
-</span><a href="Data.String.Here.Interpolated.html#handleError"><span class="hs-identifier hs-var hs-var">handleError</span></a></span></span><span> </span><span id="local-6989586621679070641"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070641"><span class="hs-identifier hs-var">expStr</span></a></span></span><span> </span><span id="local-6989586621679070640"><span class="annot"><span class="annottext">ParseError
-</span><a href="#local-6989586621679070640"><span class="hs-identifier hs-var">parseError</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
+</span><a href="Data.String.Here.Interpolated.html#handleError"><span class="hs-identifier hs-var hs-var">handleError</span></a></span></span><span> </span><span id="local-6989586621679070070"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679070070"><span class="hs-identifier hs-var">expStr</span></a></span></span><span> </span><span id="local-6989586621679070069"><span class="annot"><span class="annottext">ParseError
+</span><a href="#local-6989586621679070069"><span class="hs-identifier hs-var">parseError</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
 forall a. HasCallStack =&gt; String -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Q Exp) -&gt; String -&gt; Q Exp
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -112,7 +112,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-66"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070641"><span class="hs-identifier hs-var">expStr</span></a></span><span>
+</span><a href="#local-6989586621679070070"><span class="hs-identifier hs-var">expStr</span></a></span><span>
 </span><span id="line-67"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
@@ -122,46 +122,46 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">ParseError -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">ParseError
-</span><a href="#local-6989586621679070640"><span class="hs-identifier hs-var">parseError</span></a></span><span>
+</span><a href="#local-6989586621679070069"><span class="hs-identifier hs-var">parseError</span></a></span><span>
 </span><span id="line-69"></span><span>
 </span><span id="line-70"></span><span class="annot"><a href="Data.String.Here.Interpolated.html#combineParts"><span class="hs-identifier hs-type">combineParts</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Data.String.Here.Interpolated.html#StringPart"><span class="hs-identifier hs-type">StringPart</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Exp</span></span><span>
 </span><span id="line-71"></span><span id="combineParts"><span class="annot"><span class="annottext">combineParts :: [StringPart] -&gt; Q Exp
 </span><a href="Data.String.Here.Interpolated.html#combineParts"><span class="hs-identifier hs-var hs-var">combineParts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Q Exp] -&gt; Q Exp
-</span><a href="#local-6989586621679070637"><span class="hs-identifier hs-var">combine</span></a></span><span> </span><span class="annot"><span class="annottext">([Q Exp] -&gt; Q Exp)
+</span><a href="#local-6989586621679070066"><span class="hs-identifier hs-var">combine</span></a></span><span> </span><span class="annot"><span class="annottext">([Q Exp] -&gt; Q Exp)
 -&gt; ([StringPart] -&gt; [Q Exp]) -&gt; [StringPart] -&gt; Q Exp
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(StringPart -&gt; Q Exp) -&gt; [StringPart] -&gt; [Q Exp]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">StringPart -&gt; Q Exp
-</span><a href="#local-6989586621679070636"><span class="hs-identifier hs-var">toExpQ</span></a></span><span>
+</span><a href="#local-6989586621679070065"><span class="hs-identifier hs-var">toExpQ</span></a></span><span>
 </span><span id="line-72"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-73"></span><span>    </span><span id="local-6989586621679070636"><span class="annot"><span class="annottext">toExpQ :: StringPart -&gt; Q Exp
-</span><a href="#local-6989586621679070636"><span class="hs-identifier hs-var hs-var">toExpQ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Lit"><span class="hs-identifier hs-type">Lit</span></a></span><span> </span><span id="local-6989586621679070635"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070635"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
+</span><span id="line-73"></span><span>    </span><span id="local-6989586621679070065"><span class="annot"><span class="annottext">toExpQ :: StringPart -&gt; Q Exp
+</span><a href="#local-6989586621679070065"><span class="hs-identifier hs-var hs-var">toExpQ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Lit"><span class="hs-identifier hs-type">Lit</span></a></span><span> </span><span id="local-6989586621679070064"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679070064"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
 </span><span class="hs-identifier hs-var">stringE</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070635"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span class="annot"><a href="#local-6989586621679070636"><span class="hs-identifier hs-var">toExpQ</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Esc"><span class="hs-identifier hs-type">Esc</span></a></span><span> </span><span id="local-6989586621679070633"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070633"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
+</span><a href="#local-6989586621679070064"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-74"></span><span>    </span><span class="annot"><a href="#local-6989586621679070065"><span class="hs-identifier hs-var">toExpQ</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Esc"><span class="hs-identifier hs-type">Esc</span></a></span><span> </span><span id="local-6989586621679070062"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679070062"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
 </span><span class="hs-identifier hs-var">stringE</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070633"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-75"></span><span>    </span><span class="annot"><a href="#local-6989586621679070636"><span class="hs-identifier hs-var">toExpQ</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Anti"><span class="hs-identifier hs-type">Anti</span></a></span><span> </span><span id="local-6989586621679070632"><span class="annot"><span class="annottext">Q Exp
-</span><a href="#local-6989586621679070632"><span class="hs-identifier hs-var">expq</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span class="hs-identifier">toString</span><span> </span><span class="">$expq</span><span class="hs-special">|]</span><span>
-</span><span id="line-76"></span><span>    </span><span id="local-6989586621679070637"><span class="annot"><span class="annottext">combine :: [Q Exp] -&gt; Q Exp
-</span><a href="#local-6989586621679070637"><span class="hs-identifier hs-var hs-var">combine</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
+</span><a href="#local-6989586621679070062"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-75"></span><span>    </span><span class="annot"><a href="#local-6989586621679070065"><span class="hs-identifier hs-var">toExpQ</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.String.Here.Interpolated.html#Anti"><span class="hs-identifier hs-type">Anti</span></a></span><span> </span><span id="local-6989586621679070061"><span class="annot"><span class="annottext">Q Exp
+</span><a href="#local-6989586621679070061"><span class="hs-identifier hs-var">expq</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span class="hs-identifier">toString</span><span> </span><span class="">$expq</span><span class="hs-special">|]</span><span>
+</span><span id="line-76"></span><span>    </span><span id="local-6989586621679070066"><span class="annot"><span class="annottext">combine :: [Q Exp] -&gt; Q Exp
+</span><a href="#local-6989586621679070066"><span class="hs-identifier hs-var hs-var">combine</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Q Exp
 </span><span class="hs-identifier hs-var">stringE</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span>
-</span><span id="line-77"></span><span>    </span><span class="annot"><a href="#local-6989586621679070637"><span class="hs-identifier hs-var">combine</span></a></span><span> </span><span id="local-6989586621679070631"><span class="annot"><span class="annottext">[Q Exp]
-</span><a href="#local-6989586621679070631"><span class="hs-identifier hs-var">parts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Q Exp -&gt; Q Exp -&gt; Q Exp) -&gt; [Q Exp] -&gt; Q Exp
+</span><span id="line-77"></span><span>    </span><span class="annot"><a href="#local-6989586621679070066"><span class="hs-identifier hs-var">combine</span></a></span><span> </span><span id="local-6989586621679070060"><span class="annot"><span class="annottext">[Q Exp]
+</span><a href="#local-6989586621679070060"><span class="hs-identifier hs-var">parts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Q Exp -&gt; Q Exp -&gt; Q Exp) -&gt; [Q Exp] -&gt; Q Exp
 forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; a -&gt; a) -&gt; t a -&gt; a
-</span><span class="hs-identifier hs-var">foldr1</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679070629"><span class="annot"><span class="annottext">Q Exp
-</span><a href="#local-6989586621679070629"><span class="hs-identifier hs-var">subExpr</span></a></span></span><span> </span><span id="local-6989586621679070628"><span class="annot"><span class="annottext">Q Exp
-</span><a href="#local-6989586621679070628"><span class="hs-identifier hs-var">acc</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[|</span><span class="">$subExpr</span><span> </span><span class="hs-operator">&lt;&gt;</span><span> </span><span class="">$acc</span><span class="hs-special">|]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Q Exp]
-</span><a href="#local-6989586621679070631"><span class="hs-identifier hs-var">parts</span></a></span><span>
+</span><span class="hs-identifier hs-var">foldr1</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679070058"><span class="annot"><span class="annottext">Q Exp
+</span><a href="#local-6989586621679070058"><span class="hs-identifier hs-var">subExpr</span></a></span></span><span> </span><span id="local-6989586621679070057"><span class="annot"><span class="annottext">Q Exp
+</span><a href="#local-6989586621679070057"><span class="hs-identifier hs-var">acc</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[|</span><span class="">$subExpr</span><span> </span><span class="hs-operator">&lt;&gt;</span><span> </span><span class="">$acc</span><span class="hs-special">|]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Q Exp]
+</span><a href="#local-6989586621679070060"><span class="hs-identifier hs-var">parts</span></a></span><span>
 </span><span id="line-78"></span><span>
-</span><span id="line-79"></span><span id="local-6989586621679070626"><span id="local-6989586621679070627"><span class="annot"><a href="Data.String.Here.Interpolated.html#toString"><span class="hs-identifier hs-type">toString</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621679070627"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span> </span><span class="annot"><a href="#local-6989586621679070627"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span> </span><span class="annot"><a href="#local-6989586621679070626"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IsString</span></span><span> </span><span class="annot"><a href="#local-6989586621679070626"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679070627"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679070626"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
+</span><span id="line-79"></span><span id="local-6989586621679070055"><span id="local-6989586621679070056"><span class="annot"><a href="Data.String.Here.Interpolated.html#toString"><span class="hs-identifier hs-type">toString</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621679070056"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span> </span><span class="annot"><a href="#local-6989586621679070056"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span> </span><span class="annot"><a href="#local-6989586621679070055"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IsString</span></span><span> </span><span class="annot"><a href="#local-6989586621679070055"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679070056"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679070055"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
 </span><span id="line-80"></span><span id="toString"><span class="annot"><span class="annottext">toString :: a -&gt; b
-</span><a href="Data.String.Here.Interpolated.html#toString"><span class="hs-identifier hs-var hs-var">toString</span></a></span></span><span> </span><span id="local-6989586621679070624"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679070624"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">b -&gt; Maybe b -&gt; b
+</span><a href="Data.String.Here.Interpolated.html#toString"><span class="hs-identifier hs-var hs-var">toString</span></a></span></span><span> </span><span id="local-6989586621679070053"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679070053"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">b -&gt; Maybe b -&gt; b
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; b
 forall a. IsString a =&gt; String -&gt; a
@@ -170,10 +170,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679070624"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; Maybe b
+</span><a href="#local-6989586621679070053"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; Maybe b
 forall a b. (Typeable a, Typeable b) =&gt; a -&gt; Maybe b
 </span><span class="hs-identifier hs-var">cast</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679070624"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679070053"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-81"></span><span>
 </span><span id="line-82"></span><span class="annot"><a href="Data.String.Here.Interpolated.html#parseInterp"><span class="hs-identifier hs-type">parseInterp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ParseError</span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Data.String.Here.Interpolated.html#StringPart"><span class="hs-identifier hs-type">StringPart</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-83"></span><span id="parseInterp"><span class="annot"><span class="annottext">parseInterp :: String -&gt; Either ParseError [StringPart]
@@ -294,7 +294,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; HsChompState -&gt; ParsecT String () Identity String
 forall (m :: * -&gt; *) s a. Monad m =&gt; StateT s m a -&gt; s -&gt; m a
 </span><span class="hs-identifier hs-var">evalStateT</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070601"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; ParsecT String () Identity String)
+</span><a href="#local-6989586621679070030"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; ParsecT String () Identity String)
 -&gt; HsChompState -&gt; ParsecT String () Identity String
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; Int -&gt; String -&gt; Bool -&gt; HsChompState
@@ -304,10 +304,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-106"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-107"></span><span>    </span><span id="local-6989586621679070601"><span class="annot"><span class="annottext">go :: StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070601"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-108"></span><span>      </span><span id="local-6989586621679070600"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ParsecT String () Identity Char
+</span><span id="line-107"></span><span>    </span><span id="local-6989586621679070030"><span class="annot"><span class="annottext">go :: StateT HsChompState (ParsecT String () Identity) String
+</span><a href="#local-6989586621679070030"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-108"></span><span>      </span><span id="local-6989586621679070029"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ParsecT String () Identity Char
 -&gt; StateT HsChompState (ParsecT String () Identity) Char
 forall (t :: (* -&gt; *) -&gt; * -&gt; *) (m :: * -&gt; *) a.
 (MonadTrans t, Monad m) =&gt;
@@ -323,18 +323,18 @@ forall s (m :: * -&gt; *). MonadState s m =&gt; (s -&gt; s) -&gt; m ()
 -&gt; (HsChompState -&gt; HsChompState)
 -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070596"><span class="annot"><span class="annottext">st :: HsChompState
-</span><a href="#local-6989586621679070596"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070595"><span class="annot"><span class="annottext">String
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070025"><span class="annot"><span class="annottext">st :: HsChompState
+</span><a href="#local-6989586621679070025"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070024"><span class="annot"><span class="annottext">String
 consumed :: String
 consumed :: HsChompState -&gt; String
-</span><a href="#local-6989586621679070595"><span class="hs-identifier hs-var hs-var">consumed</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070596"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">consumed :: String
+</span><a href="#local-6989586621679070024"><span class="hs-identifier hs-var hs-var">consumed</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HsChompState
+</span><a href="#local-6989586621679070025"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">consumed :: String
 </span><a href="Data.String.Here.Interpolated.html#consumed"><span class="hs-identifier hs-var">consumed</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; String -&gt; String
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; String -&gt; String
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070595"><span class="hs-identifier hs-var">consumed</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-110"></span><span>      </span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070591"><span id="local-6989586621679070592"><span id="local-6989586621679070593"><span id="local-6989586621679070594"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679070024"><span class="hs-identifier hs-var">consumed</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-110"></span><span>      </span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070020"><span id="local-6989586621679070021"><span id="local-6989586621679070022"><span id="local-6989586621679070023"><span class="annot"><span class="annottext">Bool
 Int
 String
 QuoteState
@@ -346,52 +346,52 @@ prevCharWasIdentChar :: HsChompState -&gt; Bool
 consumed :: HsChompState -&gt; String
 braceCt :: HsChompState -&gt; Int
 quoteState :: HsChompState -&gt; QuoteState
-</span><a href="#local-6989586621679070591"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) HsChompState
+</span><a href="#local-6989586621679070020"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) HsChompState
 forall s (m :: * -&gt; *). MonadState s m =&gt; m s
 </span><span class="hs-identifier hs-var">get</span></span><span>
-</span><span id="line-111"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679070589"><span class="annot"><span class="annottext">next :: StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var hs-var">next</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; StateT HsChompState (ParsecT String () Identity) ()
+</span><span id="line-111"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679070018"><span class="annot"><span class="annottext">next :: StateT HsChompState (ParsecT String () Identity) String
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var hs-var">next</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *). MonadState HsChompState m =&gt; Char -&gt; m ()
-</span><a href="#local-6989586621679070588"><span class="hs-identifier hs-var">setIdentifierCharState</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
+</span><a href="#local-6989586621679070017"><span class="hs-identifier hs-var">setIdentifierCharState</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070601"><span class="hs-identifier hs-var">go</span></a></span><span>
+</span><a href="#local-6989586621679070030"><span class="hs-identifier hs-var">go</span></a></span><span>
 </span><span id="line-112"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">QuoteState
-</span><a href="#local-6989586621679070594"><span class="hs-identifier hs-var">quoteState</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679070023"><span class="hs-identifier hs-var">quoteState</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-113"></span><span>        </span><span class="annot"><span class="annottext">QuoteState
 </span><a href="Data.String.Here.Interpolated.html#None"><span class="hs-identifier hs-var">None</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-114"></span><span>          </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'{'</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *). MonadState HsChompState m =&gt; Int -&gt; m ()
-</span><a href="#local-6989586621679070587"><span class="hs-identifier hs-var">incBraceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679070016"><span class="hs-identifier hs-var">incBraceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-115"></span><span>          </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'}'</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679070593"><span class="hs-identifier hs-var">braceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679070022"><span class="hs-identifier hs-var">braceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *). MonadState HsChompState m =&gt; Int -&gt; m ()
-</span><a href="#local-6989586621679070587"><span class="hs-identifier hs-var">incBraceCt</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679070016"><span class="hs-identifier hs-var">incBraceCt</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-116"></span><span>              </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 forall u. StateT HsChompState (ParsecT String u Identity) ()
-</span><a href="#local-6989586621679070585"><span class="hs-identifier hs-var">stepBack</span></a></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
+</span><a href="#local-6989586621679070014"><span class="hs-identifier hs-var">stepBack</span></a></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
@@ -404,18 +404,18 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">tail</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679070592"><span class="hs-identifier hs-var">consumed</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679070021"><span class="hs-identifier hs-var">consumed</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-117"></span><span>          </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'\''</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool
 -&gt; StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679070591"><span class="hs-identifier hs-var">prevCharWasIdentChar</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
+</span><a href="#local-6989586621679070020"><span class="hs-identifier hs-var">prevCharWasIdentChar</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">(QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ())
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">(QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ())
 -&gt; QuoteState
 -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -427,31 +427,31 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-119"></span><span>          </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'&quot;'</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
 </span><a href="Data.String.Here.Interpolated.html#Double"><span class="hs-identifier hs-var">Double</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Unescaped"><span class="hs-identifier hs-var">Unescaped</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-120"></span><span>          </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-121"></span><span>        </span><span class="annot"><a href="Data.String.Here.Interpolated.html#Single"><span class="hs-identifier hs-type">Single</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Unescaped"><span class="hs-identifier hs-var">Unescaped</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'\\'</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
 </span><a href="Data.String.Here.Interpolated.html#Single"><span class="hs-identifier hs-var">Single</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Escaped"><span class="hs-identifier hs-var">Escaped</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-122"></span><span>                                         </span><span class="annot"><span class="annottext">Char
@@ -459,35 +459,35 @@ QuoteState -&gt; m ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">QuoteState
 </span><a href="Data.String.Here.Interpolated.html#None"><span class="hs-identifier hs-var">None</span></a></span><span>
 </span><span id="line-123"></span><span>                                         </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-124"></span><span>                               </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-125"></span><span>        </span><span class="annot"><a href="Data.String.Here.Interpolated.html#Single"><span class="hs-identifier hs-type">Single</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Escaped"><span class="hs-identifier hs-var">Escaped</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
 </span><a href="Data.String.Here.Interpolated.html#Single"><span class="hs-identifier hs-var">Single</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Unescaped"><span class="hs-identifier hs-var">Unescaped</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-126"></span><span>        </span><span class="annot"><a href="Data.String.Here.Interpolated.html#Double"><span class="hs-identifier hs-type">Double</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Unescaped"><span class="hs-identifier hs-var">Unescaped</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070600"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679070029"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'\\'</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
 </span><a href="Data.String.Here.Interpolated.html#Double"><span class="hs-identifier hs-var">Double</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Escaped"><span class="hs-identifier hs-var">Escaped</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-127"></span><span>                                         </span><span class="annot"><span class="annottext">Char
@@ -495,29 +495,29 @@ QuoteState -&gt; m ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="annot"><span class="annottext">QuoteState
 </span><a href="Data.String.Here.Interpolated.html#None"><span class="hs-identifier hs-var">None</span></a></span><span>
 </span><span id="line-128"></span><span>                                         </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-129"></span><span>                               </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
 </span><span id="line-130"></span><span>        </span><span class="annot"><a href="Data.String.Here.Interpolated.html#Double"><span class="hs-identifier hs-type">Double</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Escaped"><span class="hs-identifier hs-var">Escaped</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">QuoteState -&gt; StateT HsChompState (ParsecT String () Identity) ()
 forall (m :: * -&gt; *).
 MonadState HsChompState m =&gt;
 QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var">setQuoteState</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EscapeState -&gt; QuoteState
 </span><a href="Data.String.Here.Interpolated.html#Double"><span class="hs-identifier hs-var">Double</span></a></span><span> </span><span class="annot"><span class="annottext">EscapeState
 </span><a href="Data.String.Here.Interpolated.html#Unescaped"><span class="hs-identifier hs-var">Unescaped</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) ()
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 -&gt; StateT HsChompState (ParsecT String () Identity) String
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">StateT HsChompState (ParsecT String () Identity) String
-</span><a href="#local-6989586621679070589"><span class="hs-identifier hs-var">next</span></a></span><span>
-</span><span id="line-131"></span><span>    </span><span id="local-6989586621679070585"><span class="annot"><span class="annottext">stepBack :: StateT HsChompState (ParsecT String u Identity) ()
-</span><a href="#local-6989586621679070585"><span class="hs-identifier hs-var hs-var">stepBack</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ParsecT String u Identity ()
+</span><a href="#local-6989586621679070018"><span class="hs-identifier hs-var">next</span></a></span><span>
+</span><span id="line-131"></span><span>    </span><span id="local-6989586621679070014"><span class="annot"><span class="annottext">stepBack :: StateT HsChompState (ParsecT String u Identity) ()
+</span><a href="#local-6989586621679070014"><span class="hs-identifier hs-var hs-var">stepBack</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ParsecT String u Identity ()
 -&gt; StateT HsChompState (ParsecT String u Identity) ()
 forall (t :: (* -&gt; *) -&gt; * -&gt; *) (m :: * -&gt; *) a.
 (MonadTrans t, Monad m) =&gt;
@@ -533,14 +533,14 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall s u (m :: * -&gt; *).
 (State s u -&gt; State s u) -&gt; ParsecT s u m (State s u)
 </span><span class="hs-identifier hs-var">updateParserState</span></span><span>
-</span><span id="line-133"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679070579"><span class="annot"><span class="annottext">State String u
-</span><a href="#local-6989586621679070579"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">State String u
-</span><a href="#local-6989586621679070579"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">statePos :: SourcePos
+</span><span id="line-133"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679070008"><span class="annot"><span class="annottext">State String u
+</span><a href="#local-6989586621679070008"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">State String u
+</span><a href="#local-6989586621679070008"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">statePos :: SourcePos
 </span><span class="hs-identifier hs-var">statePos</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SourcePos -&gt; Int -&gt; SourcePos
 </span><span class="hs-identifier hs-var">incSourceColumn</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">State String u -&gt; SourcePos
 forall s u. State s u -&gt; SourcePos
 </span><span class="hs-identifier hs-var hs-var">statePos</span></span><span> </span><span class="annot"><span class="annottext">State String u
-</span><a href="#local-6989586621679070579"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679070008"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span class="hs-special">}</span><span class="hs-special">)</span><span>
 </span><span id="line-134"></span><span>        </span><span class="annot"><span class="annottext">ParsecT String u Identity (State String u)
 -&gt; ParsecT String u Identity String
@@ -562,61 +562,61 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-char">'}'</span></span><span class="annot"><span class="annottext">Char -&gt; String -&gt; String
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="hs-special">)</span><span>
-</span><span id="line-136"></span><span>    </span><span id="local-6989586621679070587"><span class="annot"><span class="annottext">incBraceCt :: Int -&gt; m ()
-</span><a href="#local-6989586621679070587"><span class="hs-identifier hs-var hs-var">incBraceCt</span></a></span></span><span> </span><span id="local-6989586621679070574"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679070574"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
+</span><span id="line-136"></span><span>    </span><span id="local-6989586621679070016"><span class="annot"><span class="annottext">incBraceCt :: Int -&gt; m ()
+</span><a href="#local-6989586621679070016"><span class="hs-identifier hs-var hs-var">incBraceCt</span></a></span></span><span> </span><span id="local-6989586621679070003"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679070003"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
 forall s (m :: * -&gt; *). MonadState s m =&gt; (s -&gt; s) -&gt; m ()
 </span><span class="hs-identifier hs-var">modify</span></span><span> </span><span class="annot"><span class="annottext">((HsChompState -&gt; HsChompState) -&gt; m ())
 -&gt; (HsChompState -&gt; HsChompState) -&gt; m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070573"><span class="annot"><span class="annottext">st :: HsChompState
-</span><a href="#local-6989586621679070573"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070572"><span class="annot"><span class="annottext">Int
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070002"><span class="annot"><span class="annottext">st :: HsChompState
+</span><a href="#local-6989586621679070002"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Data.String.Here.Interpolated.html#HsChompState"><span class="hs-identifier hs-type">HsChompState</span></a></span><span> </span><span class="hs-special">{</span><span id="local-6989586621679070001"><span class="annot"><span class="annottext">Int
 braceCt :: Int
 braceCt :: HsChompState -&gt; Int
-</span><a href="#local-6989586621679070572"><span class="hs-identifier hs-var hs-var">braceCt</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621679070001"><span class="hs-identifier hs-var hs-var">braceCt</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-137"></span><span>      </span><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070573"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">braceCt :: Int
+</span><a href="#local-6989586621679070002"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">braceCt :: Int
 </span><a href="Data.String.Here.Interpolated.html#braceCt"><span class="hs-identifier hs-var">braceCt</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679070572"><span class="hs-identifier hs-var">braceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679070001"><span class="hs-identifier hs-var">braceCt</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679070574"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-138"></span><span>    </span><span id="local-6989586621679070581"><span class="annot"><span class="annottext">setQuoteState :: QuoteState -&gt; m ()
-</span><a href="#local-6989586621679070581"><span class="hs-identifier hs-var hs-var">setQuoteState</span></a></span></span><span> </span><span id="local-6989586621679070570"><span class="annot"><span class="annottext">QuoteState
-</span><a href="#local-6989586621679070570"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
+</span><a href="#local-6989586621679070003"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-138"></span><span>    </span><span id="local-6989586621679070010"><span class="annot"><span class="annottext">setQuoteState :: QuoteState -&gt; m ()
+</span><a href="#local-6989586621679070010"><span class="hs-identifier hs-var hs-var">setQuoteState</span></a></span></span><span> </span><span id="local-6989586621679069999"><span class="annot"><span class="annottext">QuoteState
+</span><a href="#local-6989586621679069999"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
 forall s (m :: * -&gt; *). MonadState s m =&gt; (s -&gt; s) -&gt; m ()
 </span><span class="hs-identifier hs-var">modify</span></span><span> </span><span class="annot"><span class="annottext">((HsChompState -&gt; HsChompState) -&gt; m ())
 -&gt; (HsChompState -&gt; HsChompState) -&gt; m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070569"><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070569"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070569"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">quoteState :: QuoteState
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679069998"><span class="annot"><span class="annottext">HsChompState
+</span><a href="#local-6989586621679069998"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HsChompState
+</span><a href="#local-6989586621679069998"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">quoteState :: QuoteState
 </span><a href="Data.String.Here.Interpolated.html#quoteState"><span class="hs-identifier hs-var">quoteState</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">QuoteState
-</span><a href="#local-6989586621679070570"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-139"></span><span>    </span><span id="local-6989586621679070588"><span class="annot"><span class="annottext">setIdentifierCharState :: Char -&gt; m ()
-</span><a href="#local-6989586621679070588"><span class="hs-identifier hs-var hs-var">setIdentifierCharState</span></a></span></span><span> </span><span id="local-6989586621679070568"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070568"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
+</span><a href="#local-6989586621679069999"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-139"></span><span>    </span><span id="local-6989586621679070017"><span class="annot"><span class="annottext">setIdentifierCharState :: Char -&gt; m ()
+</span><a href="#local-6989586621679070017"><span class="hs-identifier hs-var hs-var">setIdentifierCharState</span></a></span></span><span> </span><span id="local-6989586621679069997"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679069997"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(HsChompState -&gt; HsChompState) -&gt; m ()
 forall s (m :: * -&gt; *). MonadState s m =&gt; (s -&gt; s) -&gt; m ()
 </span><span class="hs-identifier hs-var">modify</span></span><span> </span><span class="annot"><span class="annottext">((HsChompState -&gt; HsChompState) -&gt; m ())
 -&gt; (HsChompState -&gt; HsChompState) -&gt; m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679070567"><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070567"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679069996"><span class="annot"><span class="annottext">HsChompState
+</span><a href="#local-6989586621679069996"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-140"></span><span>      </span><span class="annot"><span class="annottext">HsChompState
-</span><a href="#local-6989586621679070567"><span class="hs-identifier hs-var">st</span></a></span><span>
+</span><a href="#local-6989586621679069996"><span class="hs-identifier hs-var">st</span></a></span><span>
 </span><span id="line-141"></span><span>        </span><span class="hs-special">{</span><span class="annot"><span class="annottext">prevCharWasIdentChar :: Bool
 </span><a href="Data.String.Here.Interpolated.html#prevCharWasIdentChar"><span class="hs-identifier hs-var">prevCharWasIdentChar</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Bool] -&gt; Bool
 forall (t :: * -&gt; *). Foldable t =&gt; t Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">or</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isLetter</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070568"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><a href="#local-6989586621679069997"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isDigit</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070568"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070568"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679069997"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679069997"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'_'</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679070568"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679069997"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'\''</span></span><span class="hs-special">]</span><span class="hs-special">}</span><span>
@@ -661,7 +661,7 @@ forall s u (m :: * -&gt; *) a. ParsecT s u m a -&gt; ParsecT s u m a
 -&gt; ParsecT String () Identity String
 forall u end.
 ParsecT String u Identity end -&gt; ParsecT String u Identity String
-</span><a href="#local-6989586621679070562"><span class="hs-identifier hs-var">litCharTil</span></a></span><span> </span><span class="annot"><span class="annottext">(ParsecT String () Identity String
+</span><a href="#local-6989586621679069991"><span class="hs-identifier hs-var">litCharTil</span></a></span><span> </span><span class="annot"><span class="annottext">(ParsecT String () Identity String
  -&gt; ParsecT String () Identity String)
 -&gt; ParsecT String () Identity String
 -&gt; ParsecT String () Identity String
@@ -704,13 +704,13 @@ ParsecT s u m a -&gt; ParsecT s u m a -&gt; ParsecT s u m a
 </span><span class="hs-operator hs-var">&lt;|&gt;</span></span><span> </span><span class="annot"><span class="annottext">ParsecT String () Identity () -&gt; ParsecT String () Identity String
 forall u end.
 ParsecT String u Identity end -&gt; ParsecT String u Identity String
-</span><a href="#local-6989586621679070562"><span class="hs-identifier hs-var">litCharTil</span></a></span><span> </span><span class="annot"><span class="annottext">ParsecT String () Identity ()
+</span><a href="#local-6989586621679069991"><span class="hs-identifier hs-var">litCharTil</span></a></span><span> </span><span class="annot"><span class="annottext">ParsecT String () Identity ()
 forall s (m :: * -&gt; *) t u.
 (Stream s m t, Show t) =&gt;
 ParsecT s u m ()
 </span><span class="hs-identifier hs-var">eof</span></span><span>
-</span><span id="line-150"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679070562"><span class="annot"><span class="annottext">litCharTil :: ParsecT String u Identity end -&gt; ParsecT String u Identity String
-</span><a href="#local-6989586621679070562"><span class="hs-identifier hs-var hs-var">litCharTil</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ParsecT String u Identity Char
+</span><span id="line-150"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679069991"><span class="annot"><span class="annottext">litCharTil :: ParsecT String u Identity end -&gt; ParsecT String u Identity String
+</span><a href="#local-6989586621679069991"><span class="hs-identifier hs-var hs-var">litCharTil</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ParsecT String u Identity Char
 -&gt; ParsecT String u Identity end
 -&gt; ParsecT String u Identity String
 forall s (m :: * -&gt; *) t u a end.

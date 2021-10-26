@@ -1,51 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_LcUJIUNtO1h8I9Acwyifmm"></span><span class="hs-pragma">{-# LANGUAGE DerivingVia #-}</span><span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_9ZbBwe6dlbr1gsYbNkvOht"></span><span class="hs-pragma">{-# LANGUAGE DeriveAnyClass #-}</span><span>
 </span><span id="line-2"></span><span class="hs-pragma">{-# LANGUAGE DeriveGeneric #-}</span><span>
-</span><span id="line-3"></span><span class="hs-pragma">{-# LANGUAGE DeriveAnyClass #-}</span><span>
-</span><span id="line-4"></span><span class="hs-pragma">{-# LANGUAGE StandaloneDeriving #-}</span><span>
-</span><span id="line-5"></span><span class="hs-pragma">{-# OPTIONS_GHC -Wno-orphans #-}</span><span>
-</span><span id="line-6"></span><span>
-</span><span id="line-7"></span><span class="hs-comment">-- Duplicate of the Unison.Util.SyntaxText module, but we expect these to</span><span>
-</span><span id="line-8"></span><span class="hs-comment">-- evolve separately. This is the version which is outward facing</span><span>
-</span><span id="line-9"></span><span class="hs-comment">-- to the server frontend.</span><span>
-</span><span id="line-10"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Unison.Server.Syntax</span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-11"></span><span>
-</span><span id="line-12"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span>                     </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="hs-identifier">ToJSON</span></span><span> </span><span class="hs-special">)</span><span>
-</span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.OpenApi</span></span><span>                   </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="hs-identifier">ToSchema</span></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span> </span><span class="hs-special">)</span><span>
-</span><span id="line-14"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Unison.Prelude</span></span><span>
-</span><span id="line-15"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.HashQualified</span></span><span>           </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">HashQualified</span></span><span>
-</span><span id="line-16"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Unison.Pattern</span></span><span>                 </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="hs-identifier">SeqOp</span></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span> </span><span class="hs-special">)</span><span>
-</span><span id="line-17"></span><span>
-</span><span id="line-18"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Unison.Util.AnnotatedText.html"><span class="hs-identifier">Unison.Util.AnnotatedText</span></a></span><span>      </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier">AnnotatedText</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
-</span><span id="line-19"></span><span>                                                </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier">Segment</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
-</span><span id="line-20"></span><span>                                                </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#annotate"><span class="hs-identifier">annotate</span></a></span><span>
-</span><span id="line-21"></span><span>                                                </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#segment"><span class="hs-identifier">segment</span></a></span><span>
-</span><span id="line-22"></span><span>                                                </span><span class="hs-special">)</span><span>
-</span><span id="line-23"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Util.SyntaxText.html"><span class="hs-identifier">Unison.Util.SyntaxText</span></a></span><span>        </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">SyntaxText</span></span><span>
-</span><span id="line-24"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Unison.Reference</span></span><span>               </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="hs-identifier">Reference</span></span><span> </span><span class="hs-special">)</span><span>
-</span><span id="line-25"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Reference</span></span><span>              </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference</span></span><span>
-</span><span id="line-26"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Referent</span></span><span>               </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Referent</span></span><span>
-</span><span id="line-27"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Proxy</span></span><span>                     </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="hs-identifier">Proxy</span></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span> </span><span class="hs-special">)</span><span>
-</span><span id="line-28"></span><span>
-</span><span id="line-29"></span><span class="hs-keyword">type</span><span> </span><span id="SyntaxText"><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-var">SyntaxText</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span>
-</span><span id="line-30"></span><span>
-</span><span id="line-31"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621682007792"><span id="local-6989586621682007794"><span id="local-6989586621682007796"><span id="local-6989586621682007798"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span></span></span></span></span><span>
-</span><span id="line-32"></span><span>
-</span><span id="line-33"></span><span id="local-6989586621682007788"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span></span><span>
-</span><span id="line-34"></span><span>
-</span><span id="line-35"></span><span id="local-6989586621682007786"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621682007778"><span id="local-6989586621682007780"><span id="local-6989586621682007782"><span id="local-6989586621682007784"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="#local-6989586621682007786"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><a href="#local-6989586621682007786"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span></span></span></span><span>
-</span><span id="line-36"></span><span>
-</span><span id="line-37"></span><span id="local-6989586621682007774"><span id="local-6989586621682007777"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="#local-6989586621682007777"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><a href="#local-6989586621682007777"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-3"></span><span class="hs-pragma">{-# LANGUAGE DerivingVia #-}</span><span>
+</span><span id="line-4"></span><span class="hs-pragma">{-# LANGUAGE OverloadedStrings #-}</span><span>
+</span><span id="line-5"></span><span class="hs-pragma">{-# LANGUAGE StandaloneDeriving #-}</span><span>
+</span><span id="line-6"></span><span class="hs-pragma">{-# OPTIONS_GHC -Wno-orphans #-}</span><span>
+</span><span id="line-7"></span><span>
+</span><span id="line-8"></span><span class="hs-comment">-- | Duplicate of the Unison.Util.SyntaxText module, but we expect these to</span><span>
+</span><span id="line-9"></span><span class="hs-comment">-- evolve separately. This is the version which is outward facing</span><span>
+</span><span id="line-10"></span><span class="hs-comment">-- to the server frontend.</span><span>
+</span><span id="line-11"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Unison.Server.Syntax</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-12"></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ToJSON</span></span><span class="hs-special">)</span><span>
+</span><span id="line-14"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.List</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">List</span></span><span>
+</span><span id="line-15"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.List.NonEmpty</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">List.NonEmpty</span></span><span>
+</span><span id="line-16"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.OpenApi</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ToSchema</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.Proxy</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Proxy</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Lucid</span></span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Lucid</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">L</span></span><span>
+</span><span id="line-21"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.HashQualified</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">HashQualified</span></span><span>
+</span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Name</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Name</span></span><span class="hs-special">)</span><span>
+</span><span id="line-23"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Name</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Name</span></span><span>
+</span><span id="line-24"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.NameSegment</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">NameSegment</span></span><span>
+</span><span id="line-25"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Pattern</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">SeqOp</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-26"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Prelude</span></span><span>
+</span><span id="line-27"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Reference</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Reference</span></span><span class="hs-special">)</span><span>
+</span><span id="line-28"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Reference</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference</span></span><span>
+</span><span id="line-29"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Referent</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Referent</span></span><span>
+</span><span id="line-30"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html"><span class="hs-identifier">Unison.Util.AnnotatedText</span></a></span><span>
+</span><span id="line-31"></span><span>  </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier">AnnotatedText</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><span id="line-32"></span><span>    </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier">Segment</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><span id="line-33"></span><span>    </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#annotate"><span class="hs-identifier">annotate</span></a></span><span class="hs-special">,</span><span>
+</span><span id="line-34"></span><span>    </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#segment"><span class="hs-identifier">segment</span></a></span><span class="hs-special">,</span><span>
+</span><span id="line-35"></span><span>  </span><span class="hs-special">)</span><span>
+</span><span id="line-36"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Util.SyntaxText.html"><span class="hs-identifier">Unison.Util.SyntaxText</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">SyntaxText</span></span><span>
+</span><span id="line-37"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.List.Extra</span></span><span>
 </span><span id="line-38"></span><span>
-</span><span id="line-39"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621682007766"><span id="local-6989586621682007768"><span id="local-6989586621682007770"><span id="local-6989586621682007772"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span></span></span></span></span><span>
+</span><span id="line-39"></span><span class="hs-keyword">type</span><span> </span><span id="SyntaxText"><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-var">SyntaxText</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span>
 </span><span id="line-40"></span><span>
-</span><span id="line-41"></span><span id="local-6989586621682007763"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span></span><span>
+</span><span id="line-41"></span><span class="hs-keyword">type</span><span> </span><span id="SyntaxSegment"><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxSegment"><span class="hs-identifier hs-var">SyntaxSegment</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span>
 </span><span id="line-42"></span><span>
-</span><span id="line-43"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621682007755"><span id="local-6989586621682007757"><span id="local-6989586621682007759"><span id="local-6989586621682007761"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span></span></span></span></span><span>
+</span><span id="line-43"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681762955"><span id="local-6989586621681762957"><span id="local-6989586621681762959"><span id="local-6989586621681762961"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span></span></span></span></span><span>
 </span><span id="line-44"></span><span>
-</span><span id="line-45"></span><span id="local-6989586621682007752"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span></span><span>
+</span><span id="line-45"></span><span id="local-6989586621681762951"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span></span><span>
 </span><span id="line-46"></span><span>
-</span><span id="line-47"></span><span id="local-6989586621682007751"><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="#local-6989586621682007751"><span class="hs-identifier hs-type">r</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621682007751"><span class="hs-identifier hs-type">r</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-48"></span><span>  </span><span id="local-6989586621682007748"><span class="annot"><span class="annottext">declareNamedSchema :: Proxy (Seq r) -&gt; Declare (Definitions Schema) NamedSchema
+</span><span id="line-47"></span><span id="local-6989586621681762949"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681762941"><span id="local-6989586621681762943"><span id="local-6989586621681762945"><span id="local-6989586621681762947"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="#local-6989586621681762949"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681762949"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span></span></span></span><span>
+</span><span id="line-48"></span><span>
+</span><span id="line-49"></span><span id="local-6989586621681762937"><span id="local-6989586621681762940"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="#local-6989586621681762940"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681762940"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-50"></span><span>
+</span><span id="line-51"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681762929"><span id="local-6989586621681762931"><span id="local-6989586621681762933"><span id="local-6989586621681762935"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span></span></span></span></span><span>
+</span><span id="line-52"></span><span>
+</span><span id="line-53"></span><span id="local-6989586621681762926"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span></span><span>
+</span><span id="line-54"></span><span>
+</span><span id="line-55"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681762918"><span id="local-6989586621681762920"><span id="local-6989586621681762922"><span id="local-6989586621681762924"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span></span></span></span></span><span>
+</span><span id="line-56"></span><span>
+</span><span id="line-57"></span><span id="local-6989586621681762915"><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">anyclass</span></span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span></span><span>
+</span><span id="line-58"></span><span>
+</span><span id="line-59"></span><span id="local-6989586621681762914"><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="annot"><a href="#local-6989586621681762914"><span class="hs-identifier hs-type">r</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToSchema</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621681762914"><span class="hs-identifier hs-type">r</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-60"></span><span>  </span><span id="local-6989586621681762911"><span class="annot"><span class="annottext">declareNamedSchema :: Proxy (Seq r) -&gt; Declare (Definitions Schema) NamedSchema
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">declareNamedSchema</span></span></span><span> </span><span class="annot"><span class="annottext">Proxy (Seq r)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Proxy [r] -&gt; Declare (Definitions Schema) NamedSchema
 forall a.
@@ -53,158 +65,162 @@ ToSchema a =&gt;
 Proxy a -&gt; Declare (Definitions Schema) NamedSchema
 </span><span class="hs-identifier hs-var">declareNamedSchema</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Proxy [r]
 forall k (t :: k). Proxy t
-</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621682007751"><span class="hs-identifier hs-type">r</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span></span><span>
-</span><span id="line-49"></span><span>
-</span><span id="line-50"></span><span class="annot"><a href="Unison.Server.Syntax.html#convertElement"><span class="hs-identifier hs-type">convertElement</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Element"><span class="hs-identifier hs-type">SyntaxText.Element</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span>
-</span><span id="line-51"></span><span id="convertElement"><span class="annot"><span class="annottext">convertElement :: Element Reference -&gt; Element
+</span><span class="hs-identifier hs-var">Proxy</span></span><span> </span><span class="hs-glyph">@</span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681762914"><span class="hs-identifier hs-type">r</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span></span><span>
+</span><span id="line-61"></span><span>
+</span><span id="line-62"></span><span class="annot"><a href="Unison.Server.Syntax.html#convertElement"><span class="hs-identifier hs-type">convertElement</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Element"><span class="hs-identifier hs-type">SyntaxText.Element</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span>
+</span><span id="line-63"></span><span id="convertElement"><span class="annot"><span class="annottext">convertElement :: Element Reference -&gt; Element
 </span><a href="Unison.Server.Syntax.html#convertElement"><span class="hs-identifier hs-var hs-var">convertElement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-52"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#NumericLiteral"><span class="hs-identifier hs-var">SyntaxText.NumericLiteral</span></a></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-64"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#NumericLiteral"><span class="hs-identifier hs-var">SyntaxText.NumericLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#NumericLiteral"><span class="hs-identifier hs-var">NumericLiteral</span></a></span><span>
-</span><span id="line-53"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#TextLiteral"><span class="hs-identifier hs-var">SyntaxText.TextLiteral</span></a></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-65"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#TextLiteral"><span class="hs-identifier hs-var">SyntaxText.TextLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#TextLiteral"><span class="hs-identifier hs-var">TextLiteral</span></a></span><span>
-</span><span id="line-54"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#BytesLiteral"><span class="hs-identifier hs-var">SyntaxText.BytesLiteral</span></a></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-66"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#BytesLiteral"><span class="hs-identifier hs-var">SyntaxText.BytesLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#BytesLiteral"><span class="hs-identifier hs-var">BytesLiteral</span></a></span><span>
-</span><span id="line-55"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#CharLiteral"><span class="hs-identifier hs-var">SyntaxText.CharLiteral</span></a></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-67"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#CharLiteral"><span class="hs-identifier hs-var">SyntaxText.CharLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#CharLiteral"><span class="hs-identifier hs-var">CharLiteral</span></a></span><span>
-</span><span id="line-56"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#BooleanLiteral"><span class="hs-identifier hs-var">SyntaxText.BooleanLiteral</span></a></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-68"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#BooleanLiteral"><span class="hs-identifier hs-var">SyntaxText.BooleanLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#BooleanLiteral"><span class="hs-identifier hs-var">BooleanLiteral</span></a></span><span>
-</span><span id="line-57"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#Blank"><span class="hs-identifier hs-var">SyntaxText.Blank</span></a></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-69"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#Blank"><span class="hs-identifier hs-var">SyntaxText.Blank</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#Blank"><span class="hs-identifier hs-var">Blank</span></a></span><span>
-</span><span id="line-58"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#Var"><span class="hs-identifier hs-var">SyntaxText.Var</span></a></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-70"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#Var"><span class="hs-identifier hs-var">SyntaxText.Var</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#Var"><span class="hs-identifier hs-var">Var</span></a></span><span>
-</span><span id="line-59"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Referent"><span class="hs-identifier hs-type">SyntaxText.Referent</span></a></span><span>  </span><span id="local-6989586621682007729"><span class="annot"><span class="annottext">Referent' Reference
-</span><a href="#local-6989586621682007729"><span class="hs-identifier hs-var">r</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
+</span><span id="line-71"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Referent"><span class="hs-identifier hs-type">SyntaxText.Referent</span></a></span><span> </span><span id="local-6989586621681762892"><span class="annot"><span class="annottext">Referent' Reference
+</span><a href="#local-6989586621681762892"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
 </span><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-var">TermReference</span></a></span><span> </span><span class="annot"><span class="annottext">(UnisonHash -&gt; Element) -&gt; UnisonHash -&gt; Element
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Referent' Reference -&gt; UnisonHash
 </span><span class="hs-identifier hs-var">Referent.toText</span></span><span> </span><span class="annot"><span class="annottext">Referent' Reference
-</span><a href="#local-6989586621682007729"><span class="hs-identifier hs-var">r</span></a></span><span>
-</span><span id="line-60"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Reference"><span class="hs-identifier hs-type">SyntaxText.Reference</span></a></span><span> </span><span id="local-6989586621682007725"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621682007725"><span class="hs-identifier hs-var">r</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
+</span><a href="#local-6989586621681762892"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-72"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Reference"><span class="hs-identifier hs-type">SyntaxText.Reference</span></a></span><span> </span><span id="local-6989586621681762888"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681762888"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
 </span><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-var">TypeReference</span></a></span><span> </span><span class="annot"><span class="annottext">(UnisonHash -&gt; Element) -&gt; UnisonHash -&gt; Element
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; UnisonHash
 </span><span class="hs-identifier hs-var">Reference.toText</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621682007725"><span class="hs-identifier hs-var">r</span></a></span><span>
-</span><span id="line-61"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Op"><span class="hs-identifier hs-type">SyntaxText.Op</span></a></span><span>        </span><span id="local-6989586621682007721"><span class="annot"><span class="annottext">SeqOp
-</span><a href="#local-6989586621682007721"><span class="hs-identifier hs-var">s</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SeqOp -&gt; Element
+</span><a href="#local-6989586621681762888"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-73"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#Op"><span class="hs-identifier hs-type">SyntaxText.Op</span></a></span><span> </span><span id="local-6989586621681762884"><span class="annot"><span class="annottext">SeqOp
+</span><a href="#local-6989586621681762884"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SeqOp -&gt; Element
 </span><a href="Unison.Server.Syntax.html#Op"><span class="hs-identifier hs-var">Op</span></a></span><span> </span><span class="annot"><span class="annottext">SeqOp
-</span><a href="#local-6989586621682007721"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-62"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#AbilityBraces"><span class="hs-identifier hs-var">SyntaxText.AbilityBraces</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762884"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-74"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#AbilityBraces"><span class="hs-identifier hs-var">SyntaxText.AbilityBraces</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#AbilityBraces"><span class="hs-identifier hs-var">AbilityBraces</span></a></span><span>
-</span><span id="line-63"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#ControlKeyword"><span class="hs-identifier hs-var">SyntaxText.ControlKeyword</span></a></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-75"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#ControlKeyword"><span class="hs-identifier hs-var">SyntaxText.ControlKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#ControlKeyword"><span class="hs-identifier hs-var">ControlKeyword</span></a></span><span>
-</span><span id="line-64"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#TypeOperator"><span class="hs-identifier hs-var">SyntaxText.TypeOperator</span></a></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-76"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#TypeOperator"><span class="hs-identifier hs-var">SyntaxText.TypeOperator</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#TypeOperator"><span class="hs-identifier hs-var">TypeOperator</span></a></span><span>
-</span><span id="line-65"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#BindingEquals"><span class="hs-identifier hs-var">SyntaxText.BindingEquals</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-77"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#BindingEquals"><span class="hs-identifier hs-var">SyntaxText.BindingEquals</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#BindingEquals"><span class="hs-identifier hs-var">BindingEquals</span></a></span><span>
-</span><span id="line-66"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><span id="line-78"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
 </span><a href="Unison.Util.SyntaxText.html#TypeAscriptionColon"><span class="hs-identifier hs-var">SyntaxText.TypeAscriptionColon</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#TypeAscriptionColon"><span class="hs-identifier hs-var">TypeAscriptionColon</span></a></span><span>
-</span><span id="line-67"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DataTypeKeyword"><span class="hs-identifier hs-var">SyntaxText.DataTypeKeyword</span></a></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-79"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DataTypeKeyword"><span class="hs-identifier hs-var">SyntaxText.DataTypeKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DataTypeKeyword"><span class="hs-identifier hs-var">DataTypeKeyword</span></a></span><span>
-</span><span id="line-68"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DataTypeParams"><span class="hs-identifier hs-var">SyntaxText.DataTypeParams</span></a></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-80"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DataTypeParams"><span class="hs-identifier hs-var">SyntaxText.DataTypeParams</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DataTypeParams"><span class="hs-identifier hs-var">DataTypeParams</span></a></span><span>
-</span><span id="line-69"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#Unit"><span class="hs-identifier hs-var">SyntaxText.Unit</span></a></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-81"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#Unit"><span class="hs-identifier hs-var">SyntaxText.Unit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#Unit"><span class="hs-identifier hs-var">Unit</span></a></span><span>
-</span><span id="line-70"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DataTypeModifier"><span class="hs-identifier hs-var">SyntaxText.DataTypeModifier</span></a></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-82"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DataTypeModifier"><span class="hs-identifier hs-var">SyntaxText.DataTypeModifier</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DataTypeModifier"><span class="hs-identifier hs-var">DataTypeModifier</span></a></span><span>
-</span><span id="line-71"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#UseKeyword"><span class="hs-identifier hs-var">SyntaxText.UseKeyword</span></a></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-83"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#UseKeyword"><span class="hs-identifier hs-var">SyntaxText.UseKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#UseKeyword"><span class="hs-identifier hs-var">UseKeyword</span></a></span><span>
-</span><span id="line-72"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#UsePrefix"><span class="hs-identifier hs-var">SyntaxText.UsePrefix</span></a></span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-84"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#UsePrefix"><span class="hs-identifier hs-var">SyntaxText.UsePrefix</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#UsePrefix"><span class="hs-identifier hs-var">UsePrefix</span></a></span><span>
-</span><span id="line-73"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#UseSuffix"><span class="hs-identifier hs-var">SyntaxText.UseSuffix</span></a></span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-85"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#UseSuffix"><span class="hs-identifier hs-var">SyntaxText.UseSuffix</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#UseSuffix"><span class="hs-identifier hs-var">UseSuffix</span></a></span><span>
-</span><span id="line-74"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#HashQualifier"><span class="hs-identifier hs-type">SyntaxText.HashQualifier</span></a></span><span> </span><span id="local-6989586621682007694"><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621682007694"><span class="hs-identifier hs-var">n</span></a></span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
+</span><span id="line-86"></span><span>  </span><span class="annot"><a href="Unison.Util.SyntaxText.html#HashQualifier"><span class="hs-identifier hs-type">SyntaxText.HashQualifier</span></a></span><span> </span><span id="local-6989586621681762857"><span class="annot"><span class="annottext">HashQualified Name
+</span><a href="#local-6989586621681762857"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Element
 </span><a href="Unison.Server.Syntax.html#HashQualifier"><span class="hs-identifier hs-var">HashQualifier</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HashQualified Name -&gt; UnisonHash
 forall n. Show n =&gt; HashQualified n -&gt; UnisonHash
 </span><span class="hs-identifier hs-var">HashQualified.toText</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621682007694"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-75"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DelayForceChar"><span class="hs-identifier hs-var">SyntaxText.DelayForceChar</span></a></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762857"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-87"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DelayForceChar"><span class="hs-identifier hs-var">SyntaxText.DelayForceChar</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DelayForceChar"><span class="hs-identifier hs-var">DelayForceChar</span></a></span><span>
-</span><span id="line-76"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DelimiterChar"><span class="hs-identifier hs-var">SyntaxText.DelimiterChar</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-88"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DelimiterChar"><span class="hs-identifier hs-var">SyntaxText.DelimiterChar</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DelimiterChar"><span class="hs-identifier hs-var">DelimiterChar</span></a></span><span>
-</span><span id="line-77"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#Parenthesis"><span class="hs-identifier hs-var">SyntaxText.Parenthesis</span></a></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-89"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#Parenthesis"><span class="hs-identifier hs-var">SyntaxText.Parenthesis</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#Parenthesis"><span class="hs-identifier hs-var">Parenthesis</span></a></span><span>
-</span><span id="line-78"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#LinkKeyword"><span class="hs-identifier hs-var">SyntaxText.LinkKeyword</span></a></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-90"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#LinkKeyword"><span class="hs-identifier hs-var">SyntaxText.LinkKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#LinkKeyword"><span class="hs-identifier hs-var">LinkKeyword</span></a></span><span>
-</span><span id="line-79"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DocDelimiter"><span class="hs-identifier hs-var">SyntaxText.DocDelimiter</span></a></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-91"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DocDelimiter"><span class="hs-identifier hs-var">SyntaxText.DocDelimiter</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DocDelimiter"><span class="hs-identifier hs-var">DocDelimiter</span></a></span><span>
-</span><span id="line-80"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
-</span><a href="Unison.Util.SyntaxText.html#DocKeyword"><span class="hs-identifier hs-var">SyntaxText.DocKeyword</span></a></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
+</span><span id="line-92"></span><span>  </span><span class="annot"><span class="annottext">Element Reference
+</span><a href="Unison.Util.SyntaxText.html#DocKeyword"><span class="hs-identifier hs-var">SyntaxText.DocKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Element
 </span><a href="Unison.Server.Syntax.html#DocKeyword"><span class="hs-identifier hs-var">DocKeyword</span></a></span><span>
-</span><span id="line-81"></span><span>
-</span><span id="line-82"></span><span class="hs-keyword">type</span><span> </span><span id="UnisonHash"><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-var">UnisonHash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
-</span><span id="line-83"></span><span class="hs-keyword">type</span><span> </span><span id="HashQualifiedName"><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifiedName"><span class="hs-identifier hs-var">HashQualifiedName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
-</span><span id="line-84"></span><span>
-</span><span id="line-85"></span><span class="hs-comment">-- The elements of the Unison grammar, for syntax highlighting purposes</span><span>
-</span><span id="line-86"></span><span id="local-6989586621682007676"><span id="local-6989586621682007677"></span></span><span class="hs-keyword">data</span><span> </span><span id="Element"><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-var">Element</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="NumericLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#NumericLiteral"><span class="hs-identifier hs-var">NumericLiteral</span></a></span></span><span>
-</span><span id="line-87"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="TextLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#TextLiteral"><span class="hs-identifier hs-var">TextLiteral</span></a></span></span><span>
-</span><span id="line-88"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="BytesLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#BytesLiteral"><span class="hs-identifier hs-var">BytesLiteral</span></a></span></span><span>
-</span><span id="line-89"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="CharLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#CharLiteral"><span class="hs-identifier hs-var">CharLiteral</span></a></span></span><span>
-</span><span id="line-90"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="BooleanLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#BooleanLiteral"><span class="hs-identifier hs-var">BooleanLiteral</span></a></span></span><span>
-</span><span id="line-91"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Blank"><span class="annot"><a href="Unison.Server.Syntax.html#Blank"><span class="hs-identifier hs-var">Blank</span></a></span></span><span>
-</span><span id="line-92"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Var"><span class="annot"><a href="Unison.Server.Syntax.html#Var"><span class="hs-identifier hs-var">Var</span></a></span></span><span>
-</span><span id="line-93"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="TypeReference"><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-var">TypeReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
-</span><span id="line-94"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="TermReference"><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-var">TermReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
-</span><span id="line-95"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Op"><span class="annot"><a href="Unison.Server.Syntax.html#Op"><span class="hs-identifier hs-var">Op</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span><span>
-</span><span id="line-96"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Constructor"><span class="annot"><a href="Unison.Server.Syntax.html#Constructor"><span class="hs-identifier hs-var">Constructor</span></a></span></span><span>
-</span><span id="line-97"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Request"><span class="annot"><a href="Unison.Server.Syntax.html#Request"><span class="hs-identifier hs-var">Request</span></a></span></span><span>
-</span><span id="line-98"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="AbilityBraces"><span class="annot"><a href="Unison.Server.Syntax.html#AbilityBraces"><span class="hs-identifier hs-var">AbilityBraces</span></a></span></span><span>
-</span><span id="line-99"></span><span>             </span><span class="hs-comment">-- let|handle|in|where|match|with|cases|-&gt;|if|then|else|and|or</span><span>
-</span><span id="line-100"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="ControlKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#ControlKeyword"><span class="hs-identifier hs-var">ControlKeyword</span></a></span></span><span>
-</span><span id="line-101"></span><span>             </span><span class="hs-comment">-- forall|-&gt;</span><span>
-</span><span id="line-102"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="TypeOperator"><span class="annot"><a href="Unison.Server.Syntax.html#TypeOperator"><span class="hs-identifier hs-var">TypeOperator</span></a></span></span><span>
-</span><span id="line-103"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="BindingEquals"><span class="annot"><a href="Unison.Server.Syntax.html#BindingEquals"><span class="hs-identifier hs-var">BindingEquals</span></a></span></span><span>
-</span><span id="line-104"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="TypeAscriptionColon"><span class="annot"><a href="Unison.Server.Syntax.html#TypeAscriptionColon"><span class="hs-identifier hs-var">TypeAscriptionColon</span></a></span></span><span>
-</span><span id="line-105"></span><span>             </span><span class="hs-comment">-- type|ability</span><span>
-</span><span id="line-106"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DataTypeKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeKeyword"><span class="hs-identifier hs-var">DataTypeKeyword</span></a></span></span><span>
-</span><span id="line-107"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DataTypeParams"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeParams"><span class="hs-identifier hs-var">DataTypeParams</span></a></span></span><span>
-</span><span id="line-108"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Unit"><span class="annot"><a href="Unison.Server.Syntax.html#Unit"><span class="hs-identifier hs-var">Unit</span></a></span></span><span>
-</span><span id="line-109"></span><span>             </span><span class="hs-comment">-- unique</span><span>
-</span><span id="line-110"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DataTypeModifier"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeModifier"><span class="hs-identifier hs-var">DataTypeModifier</span></a></span></span><span>
-</span><span id="line-111"></span><span>             </span><span class="hs-comment">-- `use Foo bar` is keyword, prefix, suffix</span><span>
-</span><span id="line-112"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="UseKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#UseKeyword"><span class="hs-identifier hs-var">UseKeyword</span></a></span></span><span>
-</span><span id="line-113"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="UsePrefix"><span class="annot"><a href="Unison.Server.Syntax.html#UsePrefix"><span class="hs-identifier hs-var">UsePrefix</span></a></span></span><span>
-</span><span id="line-114"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="UseSuffix"><span class="annot"><a href="Unison.Server.Syntax.html#UseSuffix"><span class="hs-identifier hs-var">UseSuffix</span></a></span></span><span>
-</span><span id="line-115"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="HashQualifier"><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifier"><span class="hs-identifier hs-var">HashQualifier</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifiedName"><span class="hs-identifier hs-type">HashQualifiedName</span></a></span><span>
-</span><span id="line-116"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DelayForceChar"><span class="annot"><a href="Unison.Server.Syntax.html#DelayForceChar"><span class="hs-identifier hs-var">DelayForceChar</span></a></span></span><span>
-</span><span id="line-117"></span><span>             </span><span class="hs-comment">-- ? , ` [ ] @ |</span><span>
-</span><span id="line-118"></span><span>             </span><span class="hs-comment">-- Currently not all commas in the pretty-print output are marked up as DelimiterChar - we miss</span><span>
-</span><span id="line-119"></span><span>             </span><span class="hs-comment">-- out characters emitted by Pretty.hs helpers like Pretty.commas.</span><span>
-</span><span id="line-120"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DelimiterChar"><span class="annot"><a href="Unison.Server.Syntax.html#DelimiterChar"><span class="hs-identifier hs-var">DelimiterChar</span></a></span></span><span>
-</span><span id="line-121"></span><span>             </span><span class="hs-comment">-- ! '</span><span>
-</span><span id="line-122"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="Parenthesis"><span class="annot"><a href="Unison.Server.Syntax.html#Parenthesis"><span class="hs-identifier hs-var">Parenthesis</span></a></span></span><span>
-</span><span id="line-123"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="LinkKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#LinkKeyword"><span class="hs-identifier hs-var">LinkKeyword</span></a></span></span><span> </span><span class="hs-comment">-- `typeLink` and `termLink`</span><span>
-</span><span id="line-124"></span><span>             </span><span class="hs-comment">-- [: :] @[]</span><span>
-</span><span id="line-125"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DocDelimiter"><span class="annot"><a href="Unison.Server.Syntax.html#DocDelimiter"><span class="hs-identifier hs-var">DocDelimiter</span></a></span></span><span>
-</span><span id="line-126"></span><span>             </span><span class="hs-comment">-- the 'include' in @[include], etc</span><span>
-</span><span id="line-127"></span><span>             </span><span class="hs-glyph">|</span><span> </span><span id="DocKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#DocKeyword"><span class="hs-identifier hs-var">DocKeyword</span></a></span></span><span>
-</span><span id="line-128"></span><span>             </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621682007670"><span id="local-6989586621682007672"><span class="annot"><span class="annottext">Element -&gt; Element -&gt; Bool
+</span><span id="line-93"></span><span>
+</span><span id="line-94"></span><span class="hs-keyword">type</span><span> </span><span id="UnisonHash"><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-var">UnisonHash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-95"></span><span>
+</span><span id="line-96"></span><span class="hs-keyword">type</span><span> </span><span id="HashQualifiedName"><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifiedName"><span class="hs-identifier hs-var">HashQualifiedName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-97"></span><span>
+</span><span id="line-98"></span><span class="hs-comment">-- | The elements of the Unison grammar, for syntax highlighting purposes</span><span>
+</span><span id="line-99"></span><span id="local-6989586621681762839"><span id="local-6989586621681762840"></span></span><span class="hs-keyword">data</span><span> </span><span id="Element"><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-var">Element</span></a></span></span><span>
+</span><span id="line-100"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="NumericLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#NumericLiteral"><span class="hs-identifier hs-var">NumericLiteral</span></a></span></span><span>
+</span><span id="line-101"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="TextLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#TextLiteral"><span class="hs-identifier hs-var">TextLiteral</span></a></span></span><span>
+</span><span id="line-102"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="BytesLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#BytesLiteral"><span class="hs-identifier hs-var">BytesLiteral</span></a></span></span><span>
+</span><span id="line-103"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="CharLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#CharLiteral"><span class="hs-identifier hs-var">CharLiteral</span></a></span></span><span>
+</span><span id="line-104"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="BooleanLiteral"><span class="annot"><a href="Unison.Server.Syntax.html#BooleanLiteral"><span class="hs-identifier hs-var">BooleanLiteral</span></a></span></span><span>
+</span><span id="line-105"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Blank"><span class="annot"><a href="Unison.Server.Syntax.html#Blank"><span class="hs-identifier hs-var">Blank</span></a></span></span><span>
+</span><span id="line-106"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Var"><span class="annot"><a href="Unison.Server.Syntax.html#Var"><span class="hs-identifier hs-var">Var</span></a></span></span><span>
+</span><span id="line-107"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="TypeReference"><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-var">TypeReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-108"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DataConstructorReference"><span class="annot"><a href="Unison.Server.Syntax.html#DataConstructorReference"><span class="hs-identifier hs-var">DataConstructorReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-109"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="AbilityConstructorReference"><span class="annot"><a href="Unison.Server.Syntax.html#AbilityConstructorReference"><span class="hs-identifier hs-var">AbilityConstructorReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-110"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="TermReference"><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-var">TermReference</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-111"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Op"><span class="annot"><a href="Unison.Server.Syntax.html#Op"><span class="hs-identifier hs-var">Op</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SeqOp</span></span><span>
+</span><span id="line-112"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- | Constructor Are these even used?</span><span>
+</span><span id="line-113"></span><span>    </span><span class="hs-comment">-- | Request</span><span>
+</span><span id="line-114"></span><span>    </span><span id="AbilityBraces"><span class="annot"><a href="Unison.Server.Syntax.html#AbilityBraces"><span class="hs-identifier hs-var">AbilityBraces</span></a></span></span><span>
+</span><span id="line-115"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- let|handle|in|where|match|with|cases|-&gt;|if|then|else|and|or</span><span>
+</span><span id="line-116"></span><span>    </span><span id="ControlKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#ControlKeyword"><span class="hs-identifier hs-var">ControlKeyword</span></a></span></span><span>
+</span><span id="line-117"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- forall|-&gt;</span><span>
+</span><span id="line-118"></span><span>    </span><span id="TypeOperator"><span class="annot"><a href="Unison.Server.Syntax.html#TypeOperator"><span class="hs-identifier hs-var">TypeOperator</span></a></span></span><span>
+</span><span id="line-119"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="BindingEquals"><span class="annot"><a href="Unison.Server.Syntax.html#BindingEquals"><span class="hs-identifier hs-var">BindingEquals</span></a></span></span><span>
+</span><span id="line-120"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="TypeAscriptionColon"><span class="annot"><a href="Unison.Server.Syntax.html#TypeAscriptionColon"><span class="hs-identifier hs-var">TypeAscriptionColon</span></a></span></span><span>
+</span><span id="line-121"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- type|ability</span><span>
+</span><span id="line-122"></span><span>    </span><span id="DataTypeKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeKeyword"><span class="hs-identifier hs-var">DataTypeKeyword</span></a></span></span><span>
+</span><span id="line-123"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DataTypeParams"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeParams"><span class="hs-identifier hs-var">DataTypeParams</span></a></span></span><span>
+</span><span id="line-124"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Unit"><span class="annot"><a href="Unison.Server.Syntax.html#Unit"><span class="hs-identifier hs-var">Unit</span></a></span></span><span>
+</span><span id="line-125"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- unique</span><span>
+</span><span id="line-126"></span><span>    </span><span id="DataTypeModifier"><span class="annot"><a href="Unison.Server.Syntax.html#DataTypeModifier"><span class="hs-identifier hs-var">DataTypeModifier</span></a></span></span><span>
+</span><span id="line-127"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- `use Foo bar` is keyword, prefix, suffix</span><span>
+</span><span id="line-128"></span><span>    </span><span id="UseKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#UseKeyword"><span class="hs-identifier hs-var">UseKeyword</span></a></span></span><span>
+</span><span id="line-129"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="UsePrefix"><span class="annot"><a href="Unison.Server.Syntax.html#UsePrefix"><span class="hs-identifier hs-var">UsePrefix</span></a></span></span><span>
+</span><span id="line-130"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="UseSuffix"><span class="annot"><a href="Unison.Server.Syntax.html#UseSuffix"><span class="hs-identifier hs-var">UseSuffix</span></a></span></span><span>
+</span><span id="line-131"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="HashQualifier"><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifier"><span class="hs-identifier hs-var">HashQualifier</span></a></span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifiedName"><span class="hs-identifier hs-type">HashQualifiedName</span></a></span><span>
+</span><span id="line-132"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DelayForceChar"><span class="annot"><a href="Unison.Server.Syntax.html#DelayForceChar"><span class="hs-identifier hs-var">DelayForceChar</span></a></span></span><span>
+</span><span id="line-133"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- ? , ` [ ] @ |</span><span>
+</span><span id="line-134"></span><span>    </span><span class="hs-comment">-- Currently not all commas in the pretty-print output are marked up as DelimiterChar - we miss</span><span>
+</span><span id="line-135"></span><span>    </span><span class="hs-comment">-- out characters emitted by Pretty.hs helpers like Pretty.commas.</span><span>
+</span><span id="line-136"></span><span>    </span><span id="DelimiterChar"><span class="annot"><a href="Unison.Server.Syntax.html#DelimiterChar"><span class="hs-identifier hs-var">DelimiterChar</span></a></span></span><span>
+</span><span id="line-137"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- ! '</span><span>
+</span><span id="line-138"></span><span>    </span><span id="Parenthesis"><span class="annot"><a href="Unison.Server.Syntax.html#Parenthesis"><span class="hs-identifier hs-var">Parenthesis</span></a></span></span><span>
+</span><span id="line-139"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="LinkKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#LinkKeyword"><span class="hs-identifier hs-var">LinkKeyword</span></a></span></span><span> </span><span class="hs-comment">-- `typeLink` and `termLink`</span><span>
+</span><span id="line-140"></span><span>  </span><span class="hs-comment">-- [: :] @[]</span><span>
+</span><span id="line-141"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DocDelimiter"><span class="annot"><a href="Unison.Server.Syntax.html#DocDelimiter"><span class="hs-identifier hs-var">DocDelimiter</span></a></span></span><span>
+</span><span id="line-142"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="hs-comment">-- the 'include' in @[include], etc</span><span>
+</span><span id="line-143"></span><span>    </span><span id="DocKeyword"><span class="annot"><a href="Unison.Server.Syntax.html#DocKeyword"><span class="hs-identifier hs-var">DocKeyword</span></a></span></span><span>
+</span><span id="line-144"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681762833"><span id="local-6989586621681762835"><span class="annot"><span class="annottext">Element -&gt; Element -&gt; Bool
 (Element -&gt; Element -&gt; Bool)
 -&gt; (Element -&gt; Element -&gt; Bool) -&gt; Eq Element
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -212,7 +228,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Element -&gt; Element -&gt; Bool
 == :: Element -&gt; Element -&gt; Bool
 $c== :: Element -&gt; Element -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621682007654"><span id="local-6989586621682007656"><span id="local-6989586621682007658"><span id="local-6989586621682007660"><span id="local-6989586621682007662"><span id="local-6989586621682007664"><span id="local-6989586621682007666"><span class="annot"><span class="annottext">Eq Element
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681762817"><span id="local-6989586621681762819"><span id="local-6989586621681762821"><span id="local-6989586621681762823"><span id="local-6989586621681762825"><span id="local-6989586621681762827"><span id="local-6989586621681762829"><span class="annot"><span class="annottext">Eq Element
 Eq Element
 -&gt; (Element -&gt; Element -&gt; Ordering)
 -&gt; (Element -&gt; Element -&gt; Bool)
@@ -250,7 +266,7 @@ $c&lt; :: Element -&gt; Element -&gt; Bool
 compare :: Element -&gt; Element -&gt; Ordering
 $ccompare :: Element -&gt; Element -&gt; Ordering
 $cp1Ord :: Eq Element
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621682007647"><span id="local-6989586621682007649"><span id="local-6989586621682007651"><span class="annot"><span class="annottext">Int -&gt; Element -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681762810"><span id="local-6989586621681762812"><span id="local-6989586621681762814"><span class="annot"><span class="annottext">Int -&gt; Element -&gt; ShowS
 [Element] -&gt; ShowS
 Element -&gt; String
 (Int -&gt; Element -&gt; ShowS)
@@ -272,18 +288,61 @@ forall a.
 $cto :: forall x. Rep Element x -&gt; Element
 $cfrom :: forall x. Element -&gt; Rep Element x
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">Generic</span></span><span class="hs-special">)</span><span>
-</span><span id="line-129"></span><span>
-</span><span id="line-130"></span><span class="annot"><a href="Unison.Server.Syntax.html#syntax"><span class="hs-identifier hs-type">syntax</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span>
-</span><span id="line-131"></span><span id="syntax"><span class="annot"><span class="annottext">syntax :: Element -&gt; SyntaxText -&gt; SyntaxText
+</span><span id="line-145"></span><span>
+</span><span id="line-146"></span><span class="annot"><a href="Unison.Server.Syntax.html#syntax"><span class="hs-identifier hs-type">syntax</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span>
+</span><span id="line-147"></span><span id="syntax"><span class="annot"><span class="annottext">syntax :: Element -&gt; SyntaxText -&gt; SyntaxText
 </span><a href="Unison.Server.Syntax.html#syntax"><span class="hs-identifier hs-var hs-var">syntax</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Element -&gt; SyntaxText -&gt; SyntaxText
 forall a. a -&gt; AnnotatedText a -&gt; AnnotatedText a
 </span><a href="Unison.Util.AnnotatedText.html#annotate"><span class="hs-identifier hs-var">annotate</span></a></span><span>
-</span><span id="line-132"></span><span>
-</span><span id="line-133"></span><span class="hs-comment">-- Convert a `SyntaxText` to a `String`, ignoring syntax markup</span><span>
-</span><span id="line-134"></span><span class="annot"><a href="Unison.Server.Syntax.html#toPlain"><span class="hs-identifier hs-type">toPlain</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
-</span><span id="line-135"></span><span id="toPlain"><span class="annot"><span class="annottext">toPlain :: SyntaxText -&gt; String
-</span><a href="Unison.Server.Syntax.html#toPlain"><span class="hs-identifier hs-var hs-var">toPlain</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span id="local-6989586621682007639"><span class="annot"><span class="annottext">Seq (Segment Element)
-</span><a href="#local-6989586621682007639"><span class="hs-identifier hs-var">at</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[String] -&gt; String
+</span><span id="line-148"></span><span>
+</span><span id="line-149"></span><span class="annot"><a href="Unison.Server.Syntax.html#firstReference"><span class="hs-identifier hs-type">firstReference</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-150"></span><span id="firstReference"><span class="annot"><span class="annottext">firstReference :: SyntaxText -&gt; Maybe UnisonHash
+</span><a href="Unison.Server.Syntax.html#firstReference"><span class="hs-identifier hs-var hs-var">firstReference</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span id="local-6989586621681762802"><span class="annot"><span class="annottext">Seq (Segment Element)
+</span><a href="#local-6989586621681762802"><span class="hs-identifier hs-var">segments</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-151"></span><span>  </span><span class="annot"><span class="annottext">(Segment Element -&gt; Maybe UnisonHash)
+-&gt; [Segment Element] -&gt; Maybe UnisonHash
+forall a b. (a -&gt; Maybe b) -&gt; [a] -&gt; Maybe b
+</span><span class="hs-identifier hs-var">firstJust</span></span><span> </span><span class="annot"><span class="annottext">Segment Element -&gt; Maybe UnisonHash
+</span><a href="Unison.Server.Syntax.html#reference"><span class="hs-identifier hs-var">reference</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq (Segment Element) -&gt; [Segment Element]
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
+</span><span class="hs-identifier hs-var">toList</span></span><span> </span><span class="annot"><span class="annottext">Seq (Segment Element)
+</span><a href="#local-6989586621681762802"><span class="hs-identifier hs-var">segments</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-152"></span><span>
+</span><span id="line-153"></span><span class="annot"><a href="Unison.Server.Syntax.html#reference"><span class="hs-identifier hs-type">reference</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxSegment"><span class="hs-identifier hs-type">SyntaxSegment</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#UnisonHash"><span class="hs-identifier hs-type">UnisonHash</span></a></span><span>
+</span><span id="line-154"></span><span id="reference"><span class="annot"><span class="annottext">reference :: Segment Element -&gt; Maybe UnisonHash
+</span><a href="Unison.Server.Syntax.html#reference"><span class="hs-identifier hs-var hs-var">reference</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681762797"><span class="annot"><span class="annottext">Maybe Element
+</span><a href="#local-6989586621681762797"><span class="hs-identifier hs-var">el</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-155"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681762796"><span class="annot"><span class="annottext">reference' :: Element -&gt; Maybe UnisonHash
+</span><a href="#local-6989586621681762796"><span class="hs-identifier hs-var hs-var">reference'</span></a></span></span><span> </span><span id="local-6989586621681762795"><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762795"><span class="hs-identifier hs-var">el'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-156"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762795"><span class="hs-identifier hs-var">el'</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-157"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-type">TermReference</span></a></span><span> </span><span id="local-6989586621681762794"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762794"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762794"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-158"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-type">TypeReference</span></a></span><span> </span><span id="local-6989586621681762793"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762793"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762793"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-159"></span><span>          </span><span class="annot"><span class="annottext">Element
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe UnisonHash
+forall a. Maybe a
+</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><span id="line-160"></span><span>   </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Maybe Element
+</span><a href="#local-6989586621681762797"><span class="hs-identifier hs-var">el</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Element -&gt; (Element -&gt; Maybe UnisonHash) -&gt; Maybe UnisonHash
+forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
+</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Element -&gt; Maybe UnisonHash
+</span><a href="#local-6989586621681762796"><span class="hs-identifier hs-var">reference'</span></a></span><span>
+</span><span id="line-161"></span><span>
+</span><span id="line-162"></span><span class="hs-comment">-- | Convert a `SyntaxText` to a `String`, ignoring syntax markup</span><span>
+</span><span id="line-163"></span><span class="annot"><a href="Unison.Server.Syntax.html#toPlain"><span class="hs-identifier hs-type">toPlain</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
+</span><span id="line-164"></span><span id="toPlain"><span class="annot"><span class="annottext">toPlain :: SyntaxText -&gt; String
+</span><a href="Unison.Server.Syntax.html#toPlain"><span class="hs-identifier hs-var hs-var">toPlain</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span id="local-6989586621681762791"><span class="annot"><span class="annottext">Seq (Segment Element)
+</span><a href="#local-6989586621681762791"><span class="hs-identifier hs-var">at</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[String] -&gt; String
 forall (m :: * -&gt; *) a. Monad m =&gt; m (m a) -&gt; m a
 </span><span class="hs-identifier hs-var">join</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq String -&gt; [String]
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
@@ -294,6 +353,373 @@ forall a. Segment a -&gt; String
 </span><a href="Unison.Util.AnnotatedText.html#segment"><span class="hs-identifier hs-var hs-var">segment</span></a></span><span> </span><span class="annot"><span class="annottext">(Segment Element -&gt; String) -&gt; Seq (Segment Element) -&gt; Seq String
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Seq (Segment Element)
-</span><a href="#local-6989586621682007639"><span class="hs-identifier hs-var">at</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-136"></span><span>
-</span><span id="line-137"></span></pre></body></html>
+</span><a href="#local-6989586621681762791"><span class="hs-identifier hs-var">at</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-165"></span><span>
+</span><span id="line-166"></span><span class="hs-comment">-- HTML -----------------------------------------------------------------------</span><span>
+</span><span id="line-167"></span><span>
+</span><span id="line-168"></span><span class="annot"><a href="Unison.Server.Syntax.html#toHtml"><span class="hs-identifier hs-type">toHtml</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxText"><span class="hs-identifier hs-type">SyntaxText</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Html</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-169"></span><span id="toHtml"><span class="annot"><span class="annottext">toHtml :: SyntaxText -&gt; Html ()
+</span><a href="Unison.Server.Syntax.html#toHtml"><span class="hs-identifier hs-var hs-var">toHtml</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#AnnotatedText"><span class="hs-identifier hs-type">AnnotatedText</span></a></span><span> </span><span id="local-6989586621681762788"><span class="annot"><span class="annottext">Seq (Segment Element)
+</span><a href="#local-6989586621681762788"><span class="hs-identifier hs-var">segments</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-170"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681762787"><span class="annot"><span class="annottext">renderedSegments :: Seq (Html ())
+</span><a href="#local-6989586621681762787"><span class="hs-identifier hs-var hs-var">renderedSegments</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-171"></span><span>        </span><span class="annot"><span class="annottext">(Segment Element -&gt; Html ())
+-&gt; Seq (Segment Element) -&gt; Seq (Html ())
+forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
+</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Segment Element -&gt; Html ()
+</span><a href="Unison.Server.Syntax.html#segmentToHtml"><span class="hs-identifier hs-var">segmentToHtml</span></a></span><span> </span><span class="annot"><span class="annottext">Seq (Segment Element)
+</span><a href="#local-6989586621681762788"><span class="hs-identifier hs-var">segments</span></a></span><span>
+</span><span id="line-172"></span><span>   </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;syntax&quot;</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">(Html () -&gt; Html ()) -&gt; Html () -&gt; Html ()
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Html ()] -&gt; Html ()
+forall (t :: * -&gt; *) (m :: * -&gt; *) a.
+(Foldable t, Monad m) =&gt;
+t (m a) -&gt; m ()
+</span><span class="hs-identifier hs-var">sequence_</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq (Html ()) -&gt; [Html ()]
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
+</span><span class="hs-identifier hs-var">toList</span></span><span> </span><span class="annot"><span class="annottext">Seq (Html ())
+</span><a href="#local-6989586621681762787"><span class="hs-identifier hs-var">renderedSegments</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-173"></span><span>
+</span><span id="line-174"></span><span class="annot"><a href="Unison.Server.Syntax.html#nameToHtml"><span class="hs-identifier hs-type">nameToHtml</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Html</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-175"></span><span id="nameToHtml"><span class="annot"><span class="annottext">nameToHtml :: Name -&gt; Html ()
+</span><a href="Unison.Server.Syntax.html#nameToHtml"><span class="hs-identifier hs-var hs-var">nameToHtml</span></a></span></span><span> </span><span id="local-6989586621681762781"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621681762781"><span class="hs-identifier hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-176"></span><span>  </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;fqn&quot;</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">(Html () -&gt; Html ()) -&gt; Html () -&gt; Html ()
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Html ()] -&gt; Html ()
+forall (t :: * -&gt; *) (m :: * -&gt; *) a.
+(Foldable t, Monad m) =&gt;
+t (m a) -&gt; m ()
+</span><span class="hs-identifier hs-var">sequence_</span></span><span> </span><span class="annot"><span class="annottext">[Html ()]
+</span><a href="#local-6989586621681762780"><span class="hs-identifier hs-var">parts</span></a></span><span>
+</span><span id="line-177"></span><span>  </span><span class="hs-keyword">where</span><span>
+</span><span id="line-178"></span><span>    </span><span id="local-6989586621681762779"><span class="annot"><span class="annottext">segments :: [Html ()]
+</span><a href="#local-6989586621681762779"><span class="hs-identifier hs-var hs-var">segments</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-179"></span><span>      </span><span class="annot"><span class="annottext">(NameSegment -&gt; Html ()) -&gt; [NameSegment] -&gt; [Html ()]
+forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
+</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Html () -&gt; Html ()
+</span><a href="#local-6989586621681762778"><span class="hs-identifier hs-var">segment</span></a></span><span> </span><span class="annot"><span class="annottext">(Html () -&gt; Html ())
+-&gt; (NameSegment -&gt; Html ()) -&gt; NameSegment -&gt; Html ()
+forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Html ()
+forall a (m :: * -&gt; *). (ToHtml a, Monad m) =&gt; a -&gt; HtmlT m ()
+</span><span class="hs-identifier hs-var">L.toHtml</span></span><span> </span><span class="annot"><span class="annottext">(UnisonHash -&gt; Html ())
+-&gt; (NameSegment -&gt; UnisonHash) -&gt; NameSegment -&gt; Html ()
+forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; UnisonHash
+</span><span class="hs-identifier hs-var hs-var">NameSegment.toText</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">([NameSegment] -&gt; [Html ()]) -&gt; [NameSegment] -&gt; [Html ()]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">NonEmpty NameSegment -&gt; [NameSegment]
+forall a. NonEmpty a -&gt; [a]
+</span><span class="hs-identifier hs-var">List.NonEmpty.toList</span></span><span> </span><span class="annot"><span class="annottext">(NonEmpty NameSegment -&gt; [NameSegment])
+-&gt; NonEmpty NameSegment -&gt; [NameSegment]
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Name -&gt; NonEmpty NameSegment
+</span><span class="hs-identifier hs-var">Name.segments</span></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621681762781"><span class="hs-identifier hs-var">name</span></a></span><span>
+</span><span id="line-180"></span><span>
+</span><span id="line-181"></span><span>    </span><span id="local-6989586621681762778"><span class="annot"><span class="annottext">segment :: Html () -&gt; Html ()
+</span><a href="#local-6989586621681762778"><span class="hs-identifier hs-var hs-var">segment</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-182"></span><span>      </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;segment&quot;</span></span><span class="hs-special">]</span><span>
+</span><span id="line-183"></span><span>
+</span><span id="line-184"></span><span>    </span><span id="local-6989586621681762772"><span class="annot"><span class="annottext">sep :: Html ()
+</span><a href="#local-6989586621681762772"><span class="hs-identifier hs-var hs-var">sep</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-185"></span><span>      </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;sep &quot;</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">Html ()
+</span><span class="hs-string">&quot;.&quot;</span></span><span>
+</span><span id="line-186"></span><span>
+</span><span id="line-187"></span><span>    </span><span id="local-6989586621681762780"><span class="annot"><span class="annottext">parts :: [Html ()]
+</span><a href="#local-6989586621681762780"><span class="hs-identifier hs-var hs-var">parts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-188"></span><span>      </span><span class="annot"><span class="annottext">Html () -&gt; [Html ()] -&gt; [Html ()]
+forall a. a -&gt; [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">List.intersperse</span></span><span> </span><span class="annot"><span class="annottext">Html ()
+</span><a href="#local-6989586621681762772"><span class="hs-identifier hs-var">sep</span></a></span><span> </span><span class="annot"><span class="annottext">[Html ()]
+</span><a href="#local-6989586621681762779"><span class="hs-identifier hs-var">segments</span></a></span><span>
+</span><span id="line-189"></span><span>
+</span><span id="line-190"></span><span class="annot"><a href="Unison.Server.Syntax.html#segmentToHtml"><span class="hs-identifier hs-type">segmentToHtml</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#SyntaxSegment"><span class="hs-identifier hs-type">SyntaxSegment</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Html</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-191"></span><span id="segmentToHtml"><span class="annot"><span class="annottext">segmentToHtml :: Segment Element -&gt; Html ()
+</span><a href="Unison.Server.Syntax.html#segmentToHtml"><span class="hs-identifier hs-var hs-var">segmentToHtml</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Util.AnnotatedText.html#Segment"><span class="hs-identifier hs-type">Segment</span></a></span><span> </span><span id="local-6989586621681762770"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681762770"><span class="hs-identifier hs-var">segmentText</span></a></span></span><span> </span><span id="local-6989586621681762769"><span class="annot"><span class="annottext">Maybe Element
+</span><a href="#local-6989586621681762769"><span class="hs-identifier hs-var">element</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-192"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681762768"><span class="annot"><span class="annottext">sText :: UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var hs-var">sText</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UnisonHash
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681762770"><span class="hs-identifier hs-var">segmentText</span></a></span><span>
+</span><span id="line-193"></span><span>
+</span><span id="line-194"></span><span>      </span><span id="local-6989586621681762766"><span class="annot"><span class="annottext">el :: Element
+</span><a href="#local-6989586621681762766"><span class="hs-identifier hs-var hs-var">el</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Element -&gt; Maybe Element -&gt; Element
+forall a. a -&gt; Maybe a -&gt; a
+</span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#Blank"><span class="hs-identifier hs-var">Blank</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Element
+</span><a href="#local-6989586621681762769"><span class="hs-identifier hs-var">element</span></a></span><span>
+</span><span id="line-195"></span><span>
+</span><span id="line-196"></span><span>      </span><span id="local-6989586621681762764"><span class="annot"><span class="annottext">ref :: Maybe UnisonHash
+</span><a href="#local-6989586621681762764"><span class="hs-identifier hs-var hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-197"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762766"><span class="hs-identifier hs-var">el</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-198"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-type">TypeReference</span></a></span><span> </span><span id="local-6989586621681762763"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762763"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-199"></span><span>            </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762763"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-200"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-type">TermReference</span></a></span><span> </span><span id="local-6989586621681762762"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762762"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-201"></span><span>            </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762762"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-202"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#AbilityConstructorReference"><span class="hs-identifier hs-type">AbilityConstructorReference</span></a></span><span> </span><span id="local-6989586621681762761"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762761"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-203"></span><span>            </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762761"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-204"></span><span>          </span><span class="annot"><a href="Unison.Server.Syntax.html#DataConstructorReference"><span class="hs-identifier hs-type">DataConstructorReference</span></a></span><span> </span><span id="local-6989586621681762760"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762760"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-205"></span><span>            </span><span class="annot"><span class="annottext">UnisonHash -&gt; Maybe UnisonHash
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762760"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-206"></span><span>          </span><span class="annot"><span class="annottext">Element
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-207"></span><span>            </span><span class="annot"><span class="annottext">Maybe UnisonHash
+forall a. Maybe a
+</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><span id="line-208"></span><span>
+</span><span id="line-209"></span><span>      </span><span id="local-6989586621681762759"><span class="annot"><span class="annottext">isFQN :: Bool
+</span><a href="#local-6989586621681762759"><span class="hs-identifier hs-var hs-var">isFQN</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-210"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681762758"><span class="annot"><span class="annottext">isFQN_ :: Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var hs-var">isFQN_</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-211"></span><span>              </span><span class="annot"><span class="annottext">UnisonHash -&gt; UnisonHash -&gt; Bool
+</span><span class="hs-identifier hs-var">Text.isInfixOf</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;.&quot;</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var">sText</span></a></span><span>
+</span><span id="line-212"></span><span>         </span><span class="hs-keyword">in</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762766"><span class="hs-identifier hs-var">el</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-213"></span><span>              </span><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-type">TypeReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-214"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var">isFQN_</span></a></span><span>
+</span><span id="line-215"></span><span>              </span><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-type">TermReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-216"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var">isFQN_</span></a></span><span>
+</span><span id="line-217"></span><span>              </span><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifier"><span class="hs-identifier hs-type">HashQualifier</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-218"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var">isFQN_</span></a></span><span>
+</span><span id="line-219"></span><span>              </span><span class="annot"><a href="Unison.Server.Syntax.html#DataConstructorReference"><span class="hs-identifier hs-type">DataConstructorReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-220"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var">isFQN_</span></a></span><span>
+</span><span id="line-221"></span><span>              </span><span class="annot"><a href="Unison.Server.Syntax.html#AbilityConstructorReference"><span class="hs-identifier hs-type">AbilityConstructorReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-222"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762758"><span class="hs-identifier hs-var">isFQN_</span></a></span><span>
+</span><span id="line-223"></span><span>              </span><span class="annot"><span class="annottext">Element
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-224"></span><span>                </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">False</span></span><span>
+</span><span id="line-225"></span><span>
+</span><span id="line-226"></span><span>      </span><span id="local-6989586621681762756"><span class="annot"><span class="annottext">className :: UnisonHash
+</span><a href="#local-6989586621681762756"><span class="hs-identifier hs-var hs-var">className</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-227"></span><span>        </span><span class="annot"><span class="annottext">Element -&gt; UnisonHash
+</span><a href="Unison.Server.Syntax.html#elementToClassName"><span class="hs-identifier hs-var">elementToClassName</span></a></span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762766"><span class="hs-identifier hs-var">el</span></a></span><span>
+</span><span id="line-228"></span><span>
+</span><span id="line-229"></span><span>      </span><span id="local-6989586621681762754"><span class="annot"><span class="annottext">content :: Html ()
+</span><a href="#local-6989586621681762754"><span class="hs-identifier hs-var hs-var">content</span></a></span></span><span>
+</span><span id="line-230"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; UnisonHash -&gt; Bool
+</span><span class="hs-identifier hs-var">Text.isInfixOf</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;-&gt;&quot;</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var">sText</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;arrow&quot;</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">(Html () -&gt; Html ()) -&gt; Html () -&gt; Html ()
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Html ()
+forall a (m :: * -&gt; *). (ToHtml a, Monad m) =&gt; a -&gt; HtmlT m ()
+</span><span class="hs-identifier hs-var">L.toHtml</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var">sText</span></a></span><span>
+</span><span id="line-231"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621681762759"><span class="hs-identifier hs-var">isFQN</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Html ()
+</span><a href="Unison.Server.Syntax.html#nameToHtml"><span class="hs-identifier hs-var">nameToHtml</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HasCallStack =&gt; UnisonHash -&gt; Name
+UnisonHash -&gt; Name
+</span><span class="hs-identifier hs-var">Name.unsafeFromText</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var">sText</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-232"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; Html ()
+forall a (m :: * -&gt; *). (ToHtml a, Monad m) =&gt; a -&gt; HtmlT m ()
+</span><span class="hs-identifier hs-var">L.toHtml</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762768"><span class="hs-identifier hs-var">sText</span></a></span><span>
+</span><span id="line-233"></span><span>   </span><span class="hs-keyword">in</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe UnisonHash
+</span><a href="#local-6989586621681762764"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-234"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681762752"><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762752"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-235"></span><span>          </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762756"><span class="hs-identifier hs-var">className</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">UnisonHash -&gt; UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">data_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;ref&quot;</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762752"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">Html ()
+</span><a href="#local-6989586621681762754"><span class="hs-identifier hs-var">content</span></a></span><span>
+</span><span id="line-236"></span><span>        </span><span class="annot"><span class="annottext">Maybe UnisonHash
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-237"></span><span>          </span><span class="annot"><span class="annottext">[Attribute] -&gt; Html () -&gt; Html ()
+forall arg result. Term arg result =&gt; arg -&gt; result
+</span><span class="hs-identifier hs-var">span_</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">UnisonHash -&gt; Attribute
+</span><span class="hs-identifier hs-var">class_</span></span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><a href="#local-6989586621681762756"><span class="hs-identifier hs-var">className</span></a></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">Html ()
+</span><a href="#local-6989586621681762754"><span class="hs-identifier hs-var">content</span></a></span><span>
+</span><span id="line-238"></span><span>
+</span><span id="line-239"></span><span class="annot"><a href="Unison.Server.Syntax.html#elementToClassName"><span class="hs-identifier hs-type">elementToClassName</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Server.Syntax.html#Element"><span class="hs-identifier hs-type">Element</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-240"></span><span id="elementToClassName"><span class="annot"><span class="annottext">elementToClassName :: Element -&gt; UnisonHash
+</span><a href="Unison.Server.Syntax.html#elementToClassName"><span class="hs-identifier hs-var hs-var">elementToClassName</span></a></span></span><span> </span><span id="local-6989586621681762750"><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762750"><span class="hs-identifier hs-var">el</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-241"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Element
+</span><a href="#local-6989586621681762750"><span class="hs-identifier hs-var">el</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-242"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#NumericLiteral"><span class="hs-identifier hs-var">NumericLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-243"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;numeric-literal&quot;</span></span><span>
+</span><span id="line-244"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#TextLiteral"><span class="hs-identifier hs-var">TextLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-245"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;text-literal&quot;</span></span><span>
+</span><span id="line-246"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#BytesLiteral"><span class="hs-identifier hs-var">BytesLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-247"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;bytes-literal&quot;</span></span><span>
+</span><span id="line-248"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#CharLiteral"><span class="hs-identifier hs-var">CharLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-249"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;char-literal&quot;</span></span><span>
+</span><span id="line-250"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#BooleanLiteral"><span class="hs-identifier hs-var">BooleanLiteral</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-251"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;boolean-literal&quot;</span></span><span>
+</span><span id="line-252"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#Blank"><span class="hs-identifier hs-var">Blank</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-253"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;blank&quot;</span></span><span>
+</span><span id="line-254"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#Var"><span class="hs-identifier hs-var">Var</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-255"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;var&quot;</span></span><span>
+</span><span id="line-256"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#TypeReference"><span class="hs-identifier hs-type">TypeReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-257"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;type-reference&quot;</span></span><span>
+</span><span id="line-258"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#TermReference"><span class="hs-identifier hs-type">TermReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-259"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;term-reference&quot;</span></span><span>
+</span><span id="line-260"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#DataConstructorReference"><span class="hs-identifier hs-type">DataConstructorReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-261"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;data-constructor-reference&quot;</span></span><span>
+</span><span id="line-262"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#AbilityConstructorReference"><span class="hs-identifier hs-type">AbilityConstructorReference</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-263"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;ability-constructor-reference&quot;</span></span><span>
+</span><span id="line-264"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#Op"><span class="hs-identifier hs-type">Op</span></a></span><span> </span><span id="local-6989586621681762749"><span class="annot"><span class="annottext">SeqOp
+</span><a href="#local-6989586621681762749"><span class="hs-identifier hs-var">seqOp</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-265"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">SeqOp
+</span><a href="#local-6989586621681762749"><span class="hs-identifier hs-var">seqOp</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-266"></span><span>        </span><span class="annot"><span class="annottext">SeqOp
+</span><span class="hs-identifier hs-var">Cons</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-267"></span><span>          </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;op cons&quot;</span></span><span>
+</span><span id="line-268"></span><span>        </span><span class="annot"><span class="annottext">SeqOp
+</span><span class="hs-identifier hs-var">Snoc</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-269"></span><span>          </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;op snoc&quot;</span></span><span>
+</span><span id="line-270"></span><span>        </span><span class="annot"><span class="annottext">SeqOp
+</span><span class="hs-identifier hs-var">Concat</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-271"></span><span>          </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;op concat&quot;</span></span><span>
+</span><span id="line-272"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#AbilityBraces"><span class="hs-identifier hs-var">AbilityBraces</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-273"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;ability-braces&quot;</span></span><span>
+</span><span id="line-274"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#ControlKeyword"><span class="hs-identifier hs-var">ControlKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-275"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;control-keyword&quot;</span></span><span>
+</span><span id="line-276"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#TypeOperator"><span class="hs-identifier hs-var">TypeOperator</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-277"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;type-operator&quot;</span></span><span>
+</span><span id="line-278"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#BindingEquals"><span class="hs-identifier hs-var">BindingEquals</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-279"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;binding-equals&quot;</span></span><span>
+</span><span id="line-280"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#TypeAscriptionColon"><span class="hs-identifier hs-var">TypeAscriptionColon</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-281"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;type-ascription-colon&quot;</span></span><span>
+</span><span id="line-282"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DataTypeKeyword"><span class="hs-identifier hs-var">DataTypeKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;data-type-keyword&quot;</span></span><span>
+</span><span id="line-283"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DataTypeParams"><span class="hs-identifier hs-var">DataTypeParams</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-284"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;data-type-params&quot;</span></span><span>
+</span><span id="line-285"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#Unit"><span class="hs-identifier hs-var">Unit</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-286"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;unit&quot;</span></span><span>
+</span><span id="line-287"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DataTypeModifier"><span class="hs-identifier hs-var">DataTypeModifier</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-288"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;data-type-modifier&quot;</span></span><span>
+</span><span id="line-289"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#UseKeyword"><span class="hs-identifier hs-var">UseKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-290"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;use-keyword&quot;</span></span><span>
+</span><span id="line-291"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#UsePrefix"><span class="hs-identifier hs-var">UsePrefix</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-292"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;use-prefix&quot;</span></span><span>
+</span><span id="line-293"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#UseSuffix"><span class="hs-identifier hs-var">UseSuffix</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-294"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;use-suffix&quot;</span></span><span>
+</span><span id="line-295"></span><span>    </span><span class="annot"><a href="Unison.Server.Syntax.html#HashQualifier"><span class="hs-identifier hs-type">HashQualifier</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-296"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;hash-qualifier&quot;</span></span><span>
+</span><span id="line-297"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DelayForceChar"><span class="hs-identifier hs-var">DelayForceChar</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-298"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;delay-force-char&quot;</span></span><span>
+</span><span id="line-299"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DelimiterChar"><span class="hs-identifier hs-var">DelimiterChar</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-300"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;delimeter-char&quot;</span></span><span>
+</span><span id="line-301"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#Parenthesis"><span class="hs-identifier hs-var">Parenthesis</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-302"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;parenthesis&quot;</span></span><span>
+</span><span id="line-303"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#LinkKeyword"><span class="hs-identifier hs-var">LinkKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-304"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;link-keyword&quot;</span></span><span>
+</span><span id="line-305"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DocDelimiter"><span class="hs-identifier hs-var">DocDelimiter</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-306"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;doc-delimeter&quot;</span></span><span>
+</span><span id="line-307"></span><span>    </span><span class="annot"><span class="annottext">Element
+</span><a href="Unison.Server.Syntax.html#DocKeyword"><span class="hs-identifier hs-var">DocKeyword</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-308"></span><span>      </span><span class="annot"><span class="annottext">UnisonHash
+</span><span class="hs-string">&quot;doc-keyword&quot;</span></span><span>
+</span><span id="line-309"></span></pre></body></html>

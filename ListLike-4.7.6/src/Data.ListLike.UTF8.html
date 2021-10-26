@@ -45,8 +45,8 @@ Re-exported by &quot;Data.ListLike&quot;.
 </span><span id="line-45"></span><span class="hs-identifier">utf8rnf</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">rnf</span><span> </span><span class="hs-operator">.</span><span> </span><span class="hs-identifier">UTF8.toRep</span><span class="hs-cpp">
 #endif
 </span><span>
-</span><span id="line-48"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100405"><span id="local-6989586621679100407"><span id="local-6989586621679100410"><span id="local-6989586621679100412"><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-49"></span><span>    </span><span id="local-6989586621679100403"><span class="annot"><span class="annottext">foldl :: (a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
+</span><span id="line-48"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100406"><span id="local-6989586621679100408"><span id="local-6989586621679100411"><span id="local-6989586621679100413"><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-49"></span><span>    </span><span id="local-6989586621679100404"><span class="annot"><span class="annottext">foldl :: (a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
 </span><a href="Data.ListLike.FoldableLL.html#foldl"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
 forall string index a.
 UTF8Bytes string index =&gt;
@@ -54,7 +54,7 @@ UTF8Bytes string index =&gt;
 </span><span class="hs-identifier hs-var">UTF8.foldl</span></span><span>
 </span><span id="line-50"></span><span>    </span><span class="hs-comment">-- foldl' = UTF8.foldl'</span><span>
 </span><span id="line-51"></span><span>    </span><span class="hs-comment">-- foldl1 = UTF8.foldl1</span><span>
-</span><span id="line-52"></span><span>    </span><span id="local-6989586621679100400"><span class="annot"><span class="annottext">foldr :: (Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
+</span><span id="line-52"></span><span>    </span><span id="local-6989586621679100401"><span class="annot"><span class="annottext">foldr :: (Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
 </span><a href="Data.ListLike.FoldableLL.html#foldr"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
 forall string index a.
 UTF8Bytes string index =&gt;
@@ -63,42 +63,42 @@ UTF8Bytes string index =&gt;
 </span><span id="line-53"></span><span>    </span><span class="hs-comment">-- foldr' = UTF8.foldr'</span><span>
 </span><span id="line-54"></span><span>    </span><span class="hs-comment">-- foldr1 = UTF8.foldr1</span><span>
 </span><span id="line-55"></span><span>
-</span><span id="line-56"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100395"><span class="annot"><span class="hs-identifier hs-type">IsList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-56"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100396"><span class="annot"><span class="hs-identifier hs-type">IsList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-57"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="Item"><span class="annot"><span class="hs-identifier hs-var">Item</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
-</span><span id="line-58"></span><span>    </span><span id="local-6989586621679100392"><span class="annot"><span class="annottext">toList :: UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
+</span><span id="line-58"></span><span>    </span><span id="local-6989586621679100393"><span class="annot"><span class="annottext">toList :: UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">toList</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; String
 </span><span class="hs-identifier hs-var">UTF8.toString</span></span><span>
-</span><span id="line-59"></span><span>    </span><span id="local-6989586621679100390"><span class="annot"><span class="annottext">fromList :: [Item (UTF8 ByteString)] -&gt; UTF8 ByteString
+</span><span id="line-59"></span><span>    </span><span id="local-6989586621679100391"><span class="annot"><span class="annottext">fromList :: [Item (UTF8 ByteString)] -&gt; UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromList</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Item (UTF8 ByteString)] -&gt; UTF8 ByteString
 forall full item. ListLike full item =&gt; [item] -&gt; full
 </span><a href="Data.ListLike.Base.html#fromList%27"><span class="hs-identifier hs-var">LL.fromList'</span></a></span><span> </span><span class="hs-comment">-- LL.map id</span><span>
 </span><span id="line-60"></span><span>
-</span><span id="line-61"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100245"><span id="local-6989586621679100247"><span id="local-6989586621679100249"><span id="local-6989586621679100251"><span id="local-6989586621679100253"><span id="local-6989586621679100255"><span id="local-6989586621679100257"><span id="local-6989586621679100259"><span id="local-6989586621679100261"><span id="local-6989586621679100263"><span id="local-6989586621679100265"><span id="local-6989586621679100267"><span id="local-6989586621679100269"><span id="local-6989586621679100271"><span id="local-6989586621679100273"><span id="local-6989586621679100275"><span id="local-6989586621679100277"><span id="local-6989586621679100279"><span id="local-6989586621679100281"><span id="local-6989586621679100283"><span id="local-6989586621679100285"><span id="local-6989586621679100287"><span id="local-6989586621679100289"><span id="local-6989586621679100291"><span id="local-6989586621679100293"><span id="local-6989586621679100295"><span id="local-6989586621679100297"><span id="local-6989586621679100299"><span id="local-6989586621679100301"><span id="local-6989586621679100303"><span id="local-6989586621679100305"><span id="local-6989586621679100307"><span id="local-6989586621679100309"><span id="local-6989586621679100311"><span id="local-6989586621679100313"><span id="local-6989586621679100315"><span id="local-6989586621679100317"><span id="local-6989586621679100319"><span id="local-6989586621679100321"><span id="local-6989586621679100323"><span id="local-6989586621679100325"><span id="local-6989586621679100327"><span id="local-6989586621679100329"><span id="local-6989586621679100331"><span id="local-6989586621679100335"><span id="local-6989586621679100337"><span id="local-6989586621679100339"><span id="local-6989586621679100344"><span id="local-6989586621679100346"><span id="local-6989586621679100348"><span id="local-6989586621679100350"><span id="local-6989586621679100352"><span id="local-6989586621679100354"><span id="local-6989586621679100356"><span id="local-6989586621679100358"><span id="local-6989586621679100360"><span id="local-6989586621679100362"><span id="local-6989586621679100364"><span id="local-6989586621679100366"><span id="local-6989586621679100370"><span id="local-6989586621679100373"><span id="local-6989586621679100377"><span id="local-6989586621679100379"><span id="local-6989586621679100381"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-62"></span><span>    </span><span id="local-6989586621679100243"><span class="annot"><span class="annottext">empty :: UTF8 ByteString
+</span><span id="line-61"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100246"><span id="local-6989586621679100248"><span id="local-6989586621679100250"><span id="local-6989586621679100252"><span id="local-6989586621679100254"><span id="local-6989586621679100256"><span id="local-6989586621679100258"><span id="local-6989586621679100260"><span id="local-6989586621679100262"><span id="local-6989586621679100264"><span id="local-6989586621679100266"><span id="local-6989586621679100268"><span id="local-6989586621679100270"><span id="local-6989586621679100272"><span id="local-6989586621679100274"><span id="local-6989586621679100276"><span id="local-6989586621679100278"><span id="local-6989586621679100280"><span id="local-6989586621679100282"><span id="local-6989586621679100284"><span id="local-6989586621679100286"><span id="local-6989586621679100288"><span id="local-6989586621679100290"><span id="local-6989586621679100292"><span id="local-6989586621679100294"><span id="local-6989586621679100296"><span id="local-6989586621679100298"><span id="local-6989586621679100300"><span id="local-6989586621679100302"><span id="local-6989586621679100304"><span id="local-6989586621679100306"><span id="local-6989586621679100308"><span id="local-6989586621679100310"><span id="local-6989586621679100312"><span id="local-6989586621679100314"><span id="local-6989586621679100316"><span id="local-6989586621679100318"><span id="local-6989586621679100320"><span id="local-6989586621679100322"><span id="local-6989586621679100324"><span id="local-6989586621679100326"><span id="local-6989586621679100328"><span id="local-6989586621679100330"><span id="local-6989586621679100332"><span id="local-6989586621679100336"><span id="local-6989586621679100338"><span id="local-6989586621679100340"><span id="local-6989586621679100345"><span id="local-6989586621679100347"><span id="local-6989586621679100349"><span id="local-6989586621679100351"><span id="local-6989586621679100353"><span id="local-6989586621679100355"><span id="local-6989586621679100357"><span id="local-6989586621679100359"><span id="local-6989586621679100361"><span id="local-6989586621679100363"><span id="local-6989586621679100365"><span id="local-6989586621679100367"><span id="local-6989586621679100371"><span id="local-6989586621679100374"><span id="local-6989586621679100378"><span id="local-6989586621679100380"><span id="local-6989586621679100382"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-62"></span><span>    </span><span id="local-6989586621679100244"><span class="annot"><span class="annottext">empty :: UTF8 ByteString
 </span><a href="Data.ListLike.Base.html#empty"><span class="hs-identifier hs-var hs-var hs-var hs-var">empty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span>
-</span><span id="line-63"></span><span>    </span><span id="local-6989586621679100241"><span class="annot"><span class="annottext">singleton :: Char -&gt; UTF8 ByteString
-</span><a href="Data.ListLike.Base.html#singleton"><span class="hs-identifier hs-var hs-var hs-var hs-var">singleton</span></a></span></span><span> </span><span id="local-6989586621679100239"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679100239"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
+</span><span id="line-63"></span><span>    </span><span id="local-6989586621679100242"><span class="annot"><span class="annottext">singleton :: Char -&gt; UTF8 ByteString
+</span><a href="Data.ListLike.Base.html#singleton"><span class="hs-identifier hs-var hs-var hs-var hs-var">singleton</span></a></span></span><span> </span><span id="local-6989586621679100240"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679100240"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 String -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromString</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679100239"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679100240"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-64"></span><span>    </span><span class="hs-comment">-- cons = UTF8.cons</span><span>
 </span><span id="line-65"></span><span>    </span><span class="hs-comment">-- snoc = UTF8.snoc</span><span>
 </span><span id="line-66"></span><span>    </span><span class="hs-comment">-- append = UTF8.append</span><span>
-</span><span id="line-67"></span><span>    </span><span id="local-6989586621679100237"><span class="annot"><span class="annottext">uncons :: UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
+</span><span id="line-67"></span><span>    </span><span id="local-6989586621679100238"><span class="annot"><span class="annottext">uncons :: UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
 </span><a href="Data.ListLike.Base.html#uncons"><span class="hs-identifier hs-var hs-var hs-var hs-var">uncons</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; Maybe (Char, UTF8 string)
 </span><span class="hs-identifier hs-var">UTF8.uncons</span></span><span>
-</span><span id="line-68"></span><span>    </span><span id="local-6989586621679100234"><span class="annot"><span class="annottext">head :: UTF8 ByteString -&gt; Char
+</span><span id="line-68"></span><span>    </span><span id="local-6989586621679100235"><span class="annot"><span class="annottext">head :: UTF8 ByteString -&gt; Char
 </span><a href="Data.ListLike.Base.html#head"><span class="hs-identifier hs-var hs-var hs-var hs-var">head</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; Char
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">((Char, UTF8 ByteString) -&gt; Char)
@@ -121,7 +121,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall full item. ListLike full item =&gt; full -&gt; Maybe (item, full)
 </span><a href="Data.ListLike.Base.html#uncons"><span class="hs-identifier hs-var">uncons</span></a></span><span>
 </span><span id="line-69"></span><span>    </span><span class="hs-comment">-- last = UTF8.last</span><span>
-</span><span id="line-70"></span><span>    </span><span id="local-6989586621679100230"><span class="annot"><span class="annottext">tail :: UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-70"></span><span>    </span><span id="local-6989586621679100231"><span class="annot"><span class="annottext">tail :: UTF8 ByteString -&gt; UTF8 ByteString
 </span><a href="Data.ListLike.Base.html#tail"><span class="hs-identifier hs-var hs-var hs-var hs-var">tail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; UTF8 ByteString
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">((Char, UTF8 ByteString) -&gt; UTF8 ByteString)
@@ -144,16 +144,16 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall full item. ListLike full item =&gt; full -&gt; Maybe (item, full)
 </span><a href="Data.ListLike.Base.html#uncons"><span class="hs-identifier hs-var">uncons</span></a></span><span>
 </span><span id="line-71"></span><span>    </span><span class="hs-comment">-- init = UTF8.init</span><span>
-</span><span id="line-72"></span><span>    </span><span id="local-6989586621679100228"><span class="annot"><span class="annottext">null :: UTF8 ByteString -&gt; Bool
-</span><a href="Data.ListLike.Base.html#null"><span class="hs-identifier hs-var hs-var hs-var hs-var">null</span></a></span></span><span> </span><span id="local-6989586621679100226"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100226"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Int
+</span><span id="line-72"></span><span>    </span><span id="local-6989586621679100229"><span class="annot"><span class="annottext">null :: UTF8 ByteString -&gt; Bool
+</span><a href="Data.ListLike.Base.html#null"><span class="hs-identifier hs-var hs-var hs-var hs-var">null</span></a></span></span><span> </span><span id="local-6989586621679100227"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679100227"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Int
 forall string index. UTF8Bytes string index =&gt; UTF8 string -&gt; index
 </span><span class="hs-identifier hs-var">UTF8.length</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100226"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679100227"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span>
-</span><span id="line-73"></span><span>    </span><span id="local-6989586621679100224"><span class="annot"><span class="annottext">length :: UTF8 ByteString -&gt; Int
+</span><span id="line-73"></span><span>    </span><span id="local-6989586621679100225"><span class="annot"><span class="annottext">length :: UTF8 ByteString -&gt; Int
 </span><a href="Data.ListLike.Base.html#length"><span class="hs-identifier hs-var hs-var hs-var hs-var">length</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Int
 forall string index. UTF8Bytes string index =&gt; UTF8 string -&gt; index
 </span><span class="hs-identifier hs-var">UTF8.length</span></span><span>
@@ -169,19 +169,19 @@ forall string index. UTF8Bytes string index =&gt; UTF8 string -&gt; index
 </span><span id="line-83"></span><span>    </span><span class="hs-comment">-- maximum = UTF8.maximum</span><span>
 </span><span id="line-84"></span><span>    </span><span class="hs-comment">-- minimum = UTF8.minimum</span><span>
 </span><span id="line-85"></span><span>    </span><span class="hs-comment">-- replicate = UTF8.replicate</span><span>
-</span><span id="line-86"></span><span>    </span><span id="local-6989586621679100222"><span class="annot"><span class="annottext">take :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-86"></span><span>    </span><span id="local-6989586621679100223"><span class="annot"><span class="annottext">take :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 </span><a href="Data.ListLike.Base.html#take"><span class="hs-identifier hs-var hs-var hs-var hs-var">take</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 index -&gt; UTF8 string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.take</span></span><span>
-</span><span id="line-87"></span><span>    </span><span id="local-6989586621679100219"><span class="annot"><span class="annottext">drop :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-87"></span><span>    </span><span id="local-6989586621679100220"><span class="annot"><span class="annottext">drop :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 </span><a href="Data.ListLike.Base.html#drop"><span class="hs-identifier hs-var hs-var hs-var hs-var">drop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 index -&gt; UTF8 string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.drop</span></span><span>
-</span><span id="line-88"></span><span>    </span><span id="local-6989586621679100216"><span class="annot"><span class="annottext">splitAt :: Int -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
+</span><span id="line-88"></span><span>    </span><span id="local-6989586621679100217"><span class="annot"><span class="annottext">splitAt :: Int -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 </span><a href="Data.ListLike.Base.html#splitAt"><span class="hs-identifier hs-var hs-var hs-var hs-var">splitAt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
@@ -189,7 +189,7 @@ index -&gt; UTF8 string -&gt; (UTF8 string, UTF8 string)
 </span><span class="hs-identifier hs-var">UTF8.splitAt</span></span><span>
 </span><span id="line-89"></span><span>    </span><span class="hs-comment">-- takeWhile = UTF8.takeWhile</span><span>
 </span><span id="line-90"></span><span>    </span><span class="hs-comment">-- dropWhile = UTF8.dropWhile</span><span>
-</span><span id="line-91"></span><span>    </span><span id="local-6989586621679100213"><span class="annot"><span class="annottext">span :: (Char -&gt; Bool)
+</span><span id="line-91"></span><span>    </span><span id="local-6989586621679100214"><span class="annot"><span class="annottext">span :: (Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 </span><a href="Data.ListLike.Base.html#span"><span class="hs-identifier hs-var hs-var hs-var hs-var">span</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
@@ -197,7 +197,7 @@ forall string index.
 UTF8Bytes string index =&gt;
 (Char -&gt; Bool) -&gt; UTF8 string -&gt; (UTF8 string, UTF8 string)
 </span><span class="hs-identifier hs-var">UTF8.span</span></span><span>
-</span><span id="line-92"></span><span>    </span><span id="local-6989586621679100210"><span class="annot"><span class="annottext">break :: (Char -&gt; Bool)
+</span><span id="line-92"></span><span>    </span><span id="local-6989586621679100211"><span class="annot"><span class="annottext">break :: (Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 </span><a href="Data.ListLike.Base.html#break"><span class="hs-identifier hs-var hs-var hs-var hs-var">break</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
@@ -249,69 +249,69 @@ UTF8Bytes string index =&gt;
 </span><span id="line-134"></span><span>    </span><span class="hs-comment">-- genericSplitAt i = UTF8.splitAt (fromIntegral i)</span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-comment">-- genericReplicate i = UTF8.replicate (fromIntegral i)</span><span>
 </span><span id="line-136"></span><span>
-</span><span id="line-137"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100185"><span id="local-6989586621679100187"><span id="local-6989586621679100189"><span id="local-6989586621679100191"><span id="local-6989586621679100193"><span id="local-6989586621679100195"><span id="local-6989586621679100197"><span id="local-6989586621679100199"><span class="annot"><a href="Data.ListLike.IO.html#ListLikeIO"><span class="hs-identifier hs-type">ListLikeIO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-138"></span><span>    </span><span id="local-6989586621679100183"><span class="annot"><span class="annottext">hGetLine :: Handle -&gt; IO (UTF8 ByteString)
-</span><a href="Data.ListLike.IO.html#hGetLine"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetLine</span></a></span></span><span> </span><span id="local-6989586621679100181"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100181"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><span id="line-137"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100186"><span id="local-6989586621679100188"><span id="local-6989586621679100190"><span id="local-6989586621679100192"><span id="local-6989586621679100194"><span id="local-6989586621679100196"><span id="local-6989586621679100198"><span id="local-6989586621679100200"><span class="annot"><a href="Data.ListLike.IO.html#ListLikeIO"><span class="hs-identifier hs-type">ListLikeIO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-138"></span><span>    </span><span id="local-6989586621679100184"><span class="annot"><span class="annottext">hGetLine :: Handle -&gt; IO (UTF8 ByteString)
+</span><a href="Data.ListLike.IO.html#hGetLine"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetLine</span></a></span></span><span> </span><span id="local-6989586621679100182"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100182"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.hGetLine</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100181"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-139"></span><span>    </span><span id="local-6989586621679100177"><span class="annot"><span class="annottext">hGetContents :: Handle -&gt; IO (UTF8 ByteString)
-</span><a href="Data.ListLike.IO.html#hGetContents"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetContents</span></a></span></span><span> </span><span id="local-6989586621679100175"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100175"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679100182"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-139"></span><span>    </span><span id="local-6989586621679100178"><span class="annot"><span class="annottext">hGetContents :: Handle -&gt; IO (UTF8 ByteString)
+</span><a href="Data.ListLike.IO.html#hGetContents"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetContents</span></a></span></span><span> </span><span id="local-6989586621679100176"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100176"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.hGetContents</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100175"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-140"></span><span>    </span><span id="local-6989586621679100173"><span class="annot"><span class="annottext">hGet :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
-</span><a href="Data.ListLike.IO.html#hGet"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGet</span></a></span></span><span> </span><span id="local-6989586621679100171"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100171"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100170"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100170"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679100176"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-140"></span><span>    </span><span id="local-6989586621679100174"><span class="annot"><span class="annottext">hGet :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
+</span><a href="Data.ListLike.IO.html#hGet"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGet</span></a></span></span><span> </span><span id="local-6989586621679100172"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100172"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100171"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100171"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.hGet</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100171"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100170"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-141"></span><span>    </span><span id="local-6989586621679100168"><span class="annot"><span class="annottext">hGetNonBlocking :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
-</span><a href="Data.ListLike.IO.html#hGetNonBlocking"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetNonBlocking</span></a></span></span><span> </span><span id="local-6989586621679100166"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100166"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100165"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100165"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679100172"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100171"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-141"></span><span>    </span><span id="local-6989586621679100169"><span class="annot"><span class="annottext">hGetNonBlocking :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
+</span><a href="Data.ListLike.IO.html#hGetNonBlocking"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetNonBlocking</span></a></span></span><span> </span><span id="local-6989586621679100167"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100167"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100166"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100166"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.hGetNonBlocking</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100166"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100165"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-142"></span><span>    </span><span id="local-6989586621679100163"><span class="annot"><span class="annottext">hPutStr :: Handle -&gt; UTF8 ByteString -&gt; IO ()
-</span><a href="Data.ListLike.IO.html#hPutStr"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStr</span></a></span></span><span> </span><span id="local-6989586621679100161"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100161"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100160"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100160"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
+</span><a href="#local-6989586621679100167"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100166"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-142"></span><span>    </span><span id="local-6989586621679100164"><span class="annot"><span class="annottext">hPutStr :: Handle -&gt; UTF8 ByteString -&gt; IO ()
+</span><a href="Data.ListLike.IO.html#hPutStr"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStr</span></a></span></span><span> </span><span id="local-6989586621679100162"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100162"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100161"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679100161"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
 </span><span class="hs-identifier hs-var">BS.hPutStr</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100161"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
+</span><a href="#local-6989586621679100162"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100160"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-143"></span><span>    </span><span id="local-6989586621679100157"><span class="annot"><span class="annottext">hPutStrLn :: Handle -&gt; UTF8 ByteString -&gt; IO ()
-</span><a href="Data.ListLike.IO.html#hPutStrLn"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStrLn</span></a></span></span><span> </span><span id="local-6989586621679100155"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100155"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100154"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100154"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
+</span><a href="#local-6989586621679100161"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-143"></span><span>    </span><span id="local-6989586621679100158"><span class="annot"><span class="annottext">hPutStrLn :: Handle -&gt; UTF8 ByteString -&gt; IO ()
+</span><a href="Data.ListLike.IO.html#hPutStrLn"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStrLn</span></a></span></span><span> </span><span id="local-6989586621679100156"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679100156"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679100155"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679100155"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
 </span><span class="hs-identifier hs-var">BSC.hPutStrLn</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679100155"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
+</span><a href="#local-6989586621679100156"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100154"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679100155"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-144"></span><span>    </span><span class="hs-comment">-- getLine = BS.getLine</span><span>
 </span><span id="line-145"></span><span>    </span><span class="hs-comment">-- getContents = BS.getContents</span><span>
 </span><span id="line-146"></span><span>    </span><span class="hs-comment">-- putStr = BS.putStr</span><span>
@@ -326,40 +326,40 @@ forall string. UTF8 string -&gt; string
 </span><span id="line-155"></span><span>    </span><span class="hs-identifier">fromString</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">UTF8.fromString</span><span class="hs-cpp">
 #endif
 </span><span>
-</span><span id="line-158"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100135"><span id="local-6989586621679100137"><span id="local-6989586621679100139"><span id="local-6989586621679100141"><span id="local-6989586621679100143"><span id="local-6989586621679100145"><span id="local-6989586621679100147"><span id="local-6989586621679100149"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-159"></span><span>    </span><span id="local-6989586621679100133"><span class="annot"><span class="annottext">toString :: UTF8 ByteString -&gt; String
+</span><span id="line-158"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100136"><span id="local-6989586621679100138"><span id="local-6989586621679100140"><span id="local-6989586621679100142"><span id="local-6989586621679100144"><span id="local-6989586621679100146"><span id="local-6989586621679100148"><span id="local-6989586621679100150"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-159"></span><span>    </span><span id="local-6989586621679100134"><span class="annot"><span class="annottext">toString :: UTF8 ByteString -&gt; String
 </span><a href="Data.ListLike.String.html#toString"><span class="hs-identifier hs-var hs-var hs-var hs-var">toString</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; String
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; String
 </span><span class="hs-identifier hs-var">UTF8.toString</span></span><span>
 </span><span id="line-160"></span><span>
-</span><span id="line-161"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100127"><span id="local-6989586621679100129"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-162"></span><span>  </span><span id="local-6989586621679100125"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100125"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679100124"><span class="annot"><span class="annottext">&lt;&gt; :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span id="local-6989586621679100123"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100123"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><span id="line-161"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100128"><span id="local-6989586621679100130"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-162"></span><span>  </span><span id="local-6989586621679100126"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679100126"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679100125"><span class="annot"><span class="annottext">&lt;&gt; :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span id="local-6989586621679100124"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679100124"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString) -&gt; ByteString -&gt; UTF8 ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100125"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
+</span><a href="#local-6989586621679100126"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679100123"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><a href="#local-6989586621679100124"><span class="hs-identifier hs-var">b</span></a></span><span>
 </span><span id="line-163"></span><span>
-</span><span id="line-164"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100118"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-165"></span><span>  </span><span id="local-6989586621679100116"><span class="annot"><span class="annottext">mempty :: UTF8 ByteString
+</span><span id="line-164"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100119"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-165"></span><span>  </span><span id="local-6989586621679100117"><span class="annot"><span class="annottext">mempty :: UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 String -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromString</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
-</span><span id="line-166"></span><span>  </span><span id="local-6989586621679100115"><span class="annot"><span class="annottext">mappend :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-166"></span><span>  </span><span id="local-6989586621679100116"><span class="annot"><span class="annottext">mappend :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">mappend</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span>
@@ -367,17 +367,17 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span id="line-168"></span><span class="hs-comment">--------------------------------------------------</span><span>
 </span><span id="line-169"></span><span class="hs-comment">-- UTF8 Lazy.ByteString</span><span>
 </span><span id="line-170"></span><span>
-</span><span id="line-171"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100105"><span id="local-6989586621679100107"><span id="local-6989586621679100110"><span id="local-6989586621679100112"><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-172"></span><span>    </span><span id="local-6989586621679100104"><span class="annot"><span class="annottext">foldl :: (a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
-</span><a href="#local-6989586621679100104"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
+</span><span id="line-171"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100106"><span id="local-6989586621679100108"><span id="local-6989586621679100111"><span id="local-6989586621679100113"><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-172"></span><span>    </span><span id="local-6989586621679100105"><span class="annot"><span class="annottext">foldl :: (a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
+</span><a href="#local-6989586621679100105"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 ByteString -&gt; a
 forall string index a.
 UTF8Bytes string index =&gt;
 (a -&gt; Char -&gt; a) -&gt; a -&gt; UTF8 string -&gt; a
 </span><span class="hs-identifier hs-var">UTF8.foldl</span></span><span>
 </span><span id="line-173"></span><span>    </span><span class="hs-comment">-- foldl' = UTF8.foldl'</span><span>
 </span><span id="line-174"></span><span>    </span><span class="hs-comment">-- foldl1 = UTF8.foldl1</span><span>
-</span><span id="line-175"></span><span>    </span><span id="local-6989586621679100103"><span class="annot"><span class="annottext">foldr :: (Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
-</span><a href="#local-6989586621679100103"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
+</span><span id="line-175"></span><span>    </span><span id="local-6989586621679100104"><span class="annot"><span class="annottext">foldr :: (Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
+</span><a href="#local-6989586621679100104"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; b -&gt; b) -&gt; b -&gt; UTF8 ByteString -&gt; b
 forall string index a.
 UTF8Bytes string index =&gt;
 (Char -&gt; a -&gt; a) -&gt; a -&gt; UTF8 string -&gt; a
@@ -385,43 +385,43 @@ UTF8Bytes string index =&gt;
 </span><span id="line-176"></span><span>    </span><span class="hs-comment">-- foldr' = UTF8.foldr'</span><span>
 </span><span id="line-177"></span><span>    </span><span class="hs-comment">-- foldr1 = UTF8.foldr1</span><span>
 </span><span id="line-178"></span><span>
-</span><span id="line-179"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100100"><span class="annot"><span class="hs-identifier hs-type">IsList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-179"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679100101"><span class="annot"><span class="hs-identifier hs-type">IsList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-180"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="Item"><span class="annot"><span class="hs-identifier hs-var">Item</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
-</span><span id="line-181"></span><span>    </span><span id="local-6989586621679100098"><span class="annot"><span class="annottext">toList :: UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
+</span><span id="line-181"></span><span>    </span><span id="local-6989586621679100099"><span class="annot"><span class="annottext">toList :: UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">toList</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; [Item (UTF8 ByteString)]
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; String
 </span><span class="hs-identifier hs-var">UTF8.toString</span></span><span>
-</span><span id="line-182"></span><span>    </span><span id="local-6989586621679100097"><span class="annot"><span class="annottext">fromList :: [Item (UTF8 ByteString)] -&gt; UTF8 ByteString
+</span><span id="line-182"></span><span>    </span><span id="local-6989586621679100098"><span class="annot"><span class="annottext">fromList :: [Item (UTF8 ByteString)] -&gt; UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromList</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Item (UTF8 ByteString)] -&gt; UTF8 ByteString
 forall full item. ListLike full item =&gt; [item] -&gt; full
 </span><a href="Data.ListLike.Base.html#fromList%27"><span class="hs-identifier hs-var">LL.fromList'</span></a></span><span> </span><span class="hs-comment">-- LL.map id</span><span>
 </span><span id="line-183"></span><span>
-</span><span id="line-184"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099953"><span id="local-6989586621679099955"><span id="local-6989586621679099957"><span id="local-6989586621679099959"><span id="local-6989586621679099961"><span id="local-6989586621679099963"><span id="local-6989586621679099965"><span id="local-6989586621679099967"><span id="local-6989586621679099969"><span id="local-6989586621679099971"><span id="local-6989586621679099973"><span id="local-6989586621679099975"><span id="local-6989586621679099977"><span id="local-6989586621679099979"><span id="local-6989586621679099981"><span id="local-6989586621679099983"><span id="local-6989586621679099985"><span id="local-6989586621679099987"><span id="local-6989586621679099989"><span id="local-6989586621679099991"><span id="local-6989586621679099993"><span id="local-6989586621679099995"><span id="local-6989586621679099997"><span id="local-6989586621679099999"><span id="local-6989586621679100001"><span id="local-6989586621679100003"><span id="local-6989586621679100005"><span id="local-6989586621679100007"><span id="local-6989586621679100009"><span id="local-6989586621679100011"><span id="local-6989586621679100013"><span id="local-6989586621679100015"><span id="local-6989586621679100017"><span id="local-6989586621679100019"><span id="local-6989586621679100021"><span id="local-6989586621679100023"><span id="local-6989586621679100025"><span id="local-6989586621679100027"><span id="local-6989586621679100029"><span id="local-6989586621679100031"><span id="local-6989586621679100033"><span id="local-6989586621679100035"><span id="local-6989586621679100037"><span id="local-6989586621679100039"><span id="local-6989586621679100043"><span id="local-6989586621679100045"><span id="local-6989586621679100047"><span id="local-6989586621679100052"><span id="local-6989586621679100054"><span id="local-6989586621679100056"><span id="local-6989586621679100058"><span id="local-6989586621679100060"><span id="local-6989586621679100062"><span id="local-6989586621679100064"><span id="local-6989586621679100066"><span id="local-6989586621679100068"><span id="local-6989586621679100070"><span id="local-6989586621679100072"><span id="local-6989586621679100074"><span id="local-6989586621679100078"><span id="local-6989586621679100081"><span id="local-6989586621679100085"><span id="local-6989586621679100087"><span id="local-6989586621679100089"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-185"></span><span>    </span><span id="local-6989586621679099952"><span class="annot"><span class="annottext">empty :: UTF8 ByteString
-</span><a href="#local-6989586621679099952"><span class="hs-identifier hs-var hs-var hs-var hs-var">empty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
+</span><span id="line-184"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099954"><span id="local-6989586621679099956"><span id="local-6989586621679099958"><span id="local-6989586621679099960"><span id="local-6989586621679099962"><span id="local-6989586621679099964"><span id="local-6989586621679099966"><span id="local-6989586621679099968"><span id="local-6989586621679099970"><span id="local-6989586621679099972"><span id="local-6989586621679099974"><span id="local-6989586621679099976"><span id="local-6989586621679099978"><span id="local-6989586621679099980"><span id="local-6989586621679099982"><span id="local-6989586621679099984"><span id="local-6989586621679099986"><span id="local-6989586621679099988"><span id="local-6989586621679099990"><span id="local-6989586621679099992"><span id="local-6989586621679099994"><span id="local-6989586621679099996"><span id="local-6989586621679099998"><span id="local-6989586621679100000"><span id="local-6989586621679100002"><span id="local-6989586621679100004"><span id="local-6989586621679100006"><span id="local-6989586621679100008"><span id="local-6989586621679100010"><span id="local-6989586621679100012"><span id="local-6989586621679100014"><span id="local-6989586621679100016"><span id="local-6989586621679100018"><span id="local-6989586621679100020"><span id="local-6989586621679100022"><span id="local-6989586621679100024"><span id="local-6989586621679100026"><span id="local-6989586621679100028"><span id="local-6989586621679100030"><span id="local-6989586621679100032"><span id="local-6989586621679100034"><span id="local-6989586621679100036"><span id="local-6989586621679100038"><span id="local-6989586621679100040"><span id="local-6989586621679100044"><span id="local-6989586621679100046"><span id="local-6989586621679100048"><span id="local-6989586621679100053"><span id="local-6989586621679100055"><span id="local-6989586621679100057"><span id="local-6989586621679100059"><span id="local-6989586621679100061"><span id="local-6989586621679100063"><span id="local-6989586621679100065"><span id="local-6989586621679100067"><span id="local-6989586621679100069"><span id="local-6989586621679100071"><span id="local-6989586621679100073"><span id="local-6989586621679100075"><span id="local-6989586621679100079"><span id="local-6989586621679100082"><span id="local-6989586621679100086"><span id="local-6989586621679100088"><span id="local-6989586621679100090"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-185"></span><span>    </span><span id="local-6989586621679099953"><span class="annot"><span class="annottext">empty :: UTF8 ByteString
+</span><a href="#local-6989586621679099953"><span class="hs-identifier hs-var hs-var hs-var hs-var">empty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span>
-</span><span id="line-186"></span><span>    </span><span id="local-6989586621679099951"><span class="annot"><span class="annottext">singleton :: Char -&gt; UTF8 ByteString
-</span><a href="#local-6989586621679099951"><span class="hs-identifier hs-var hs-var hs-var hs-var">singleton</span></a></span></span><span> </span><span id="local-6989586621679099950"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679099950"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
+</span><span id="line-186"></span><span>    </span><span id="local-6989586621679099952"><span class="annot"><span class="annottext">singleton :: Char -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099952"><span class="hs-identifier hs-var hs-var hs-var hs-var">singleton</span></a></span></span><span> </span><span id="local-6989586621679099951"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679099951"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 String -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromString</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679099950"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679099951"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-187"></span><span>    </span><span class="hs-comment">-- cons = UTF8.cons</span><span>
 </span><span id="line-188"></span><span>    </span><span class="hs-comment">-- snoc = UTF8.snoc</span><span>
 </span><span id="line-189"></span><span>    </span><span class="hs-comment">-- append = UTF8.append</span><span>
-</span><span id="line-190"></span><span>    </span><span id="local-6989586621679099949"><span class="annot"><span class="annottext">uncons :: UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
-</span><a href="#local-6989586621679099949"><span class="hs-identifier hs-var hs-var hs-var hs-var">uncons</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
+</span><span id="line-190"></span><span>    </span><span id="local-6989586621679099950"><span class="annot"><span class="annottext">uncons :: UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
+</span><a href="#local-6989586621679099950"><span class="hs-identifier hs-var hs-var hs-var hs-var">uncons</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Maybe (Char, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; Maybe (Char, UTF8 string)
 </span><span class="hs-identifier hs-var">UTF8.uncons</span></span><span>
-</span><span id="line-191"></span><span>    </span><span id="local-6989586621679099948"><span class="annot"><span class="annottext">head :: UTF8 ByteString -&gt; Char
-</span><a href="#local-6989586621679099948"><span class="hs-identifier hs-var hs-var hs-var hs-var">head</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; Char
+</span><span id="line-191"></span><span>    </span><span id="local-6989586621679099949"><span class="annot"><span class="annottext">head :: UTF8 ByteString -&gt; Char
+</span><a href="#local-6989586621679099949"><span class="hs-identifier hs-var hs-var hs-var hs-var">head</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; Char
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">((Char, UTF8 ByteString) -&gt; Char)
 -&gt; (UTF8 ByteString -&gt; (Char, UTF8 ByteString))
@@ -443,8 +443,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall full item. ListLike full item =&gt; full -&gt; Maybe (item, full)
 </span><a href="Data.ListLike.Base.html#uncons"><span class="hs-identifier hs-var">uncons</span></a></span><span>
 </span><span id="line-192"></span><span>    </span><span class="hs-comment">-- last = UTF8.last</span><span>
-</span><span id="line-193"></span><span>    </span><span id="local-6989586621679099947"><span class="annot"><span class="annottext">tail :: UTF8 ByteString -&gt; UTF8 ByteString
-</span><a href="#local-6989586621679099947"><span class="hs-identifier hs-var hs-var hs-var hs-var">tail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; UTF8 ByteString
+</span><span id="line-193"></span><span>    </span><span id="local-6989586621679099948"><span class="annot"><span class="annottext">tail :: UTF8 ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099948"><span class="hs-identifier hs-var hs-var hs-var hs-var">tail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, UTF8 ByteString) -&gt; UTF8 ByteString
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">((Char, UTF8 ByteString) -&gt; UTF8 ByteString)
 -&gt; (UTF8 ByteString -&gt; (Char, UTF8 ByteString))
@@ -466,17 +466,17 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall full item. ListLike full item =&gt; full -&gt; Maybe (item, full)
 </span><a href="Data.ListLike.Base.html#uncons"><span class="hs-identifier hs-var">uncons</span></a></span><span>
 </span><span id="line-194"></span><span>    </span><span class="hs-comment">-- init = UTF8.init</span><span>
-</span><span id="line-195"></span><span>    </span><span id="local-6989586621679099946"><span class="annot"><span class="annottext">null :: UTF8 ByteString -&gt; Bool
-</span><a href="#local-6989586621679099946"><span class="hs-identifier hs-var hs-var hs-var hs-var">null</span></a></span></span><span> </span><span id="local-6989586621679099945"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099945"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Int64
+</span><span id="line-195"></span><span>    </span><span id="local-6989586621679099947"><span class="annot"><span class="annottext">null :: UTF8 ByteString -&gt; Bool
+</span><a href="#local-6989586621679099947"><span class="hs-identifier hs-var hs-var hs-var hs-var">null</span></a></span></span><span> </span><span id="local-6989586621679099946"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679099946"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; Int64
 forall string index. UTF8Bytes string index =&gt; UTF8 string -&gt; index
 </span><span class="hs-identifier hs-var">UTF8.length</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099945"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; Int64 -&gt; Bool
+</span><a href="#local-6989586621679099946"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; Int64 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int64
 </span><span class="hs-number">0</span></span><span>
-</span><span id="line-196"></span><span>    </span><span id="local-6989586621679099944"><span class="annot"><span class="annottext">length :: UTF8 ByteString -&gt; Int
-</span><a href="#local-6989586621679099944"><span class="hs-identifier hs-var hs-var hs-var hs-var">length</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
+</span><span id="line-196"></span><span>    </span><span id="local-6989586621679099945"><span class="annot"><span class="annottext">length :: UTF8 ByteString -&gt; Int
+</span><a href="#local-6989586621679099945"><span class="hs-identifier hs-var hs-var hs-var hs-var">length</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
 forall a. Num a =&gt; Integer -&gt; a
 </span><span class="hs-identifier hs-var">fromInteger</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; Int)
 -&gt; (UTF8 ByteString -&gt; Integer) -&gt; UTF8 ByteString -&gt; Int
@@ -501,8 +501,8 @@ forall string index. UTF8Bytes string index =&gt; UTF8 string -&gt; index
 </span><span id="line-206"></span><span>    </span><span class="hs-comment">-- maximum = UTF8.maximum</span><span>
 </span><span id="line-207"></span><span>    </span><span class="hs-comment">-- minimum = UTF8.minimum</span><span>
 </span><span id="line-208"></span><span>    </span><span class="hs-comment">-- replicate = UTF8.replicate</span><span>
-</span><span id="line-209"></span><span>    </span><span id="local-6989586621679099943"><span class="annot"><span class="annottext">take :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
-</span><a href="#local-6989586621679099943"><span class="hs-identifier hs-var hs-var hs-var hs-var">take</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-209"></span><span>    </span><span id="local-6989586621679099944"><span class="annot"><span class="annottext">take :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099944"><span class="hs-identifier hs-var hs-var hs-var hs-var">take</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 index -&gt; UTF8 string -&gt; UTF8 string
@@ -516,8 +516,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Integer
 forall a. Integral a =&gt; a -&gt; Integer
 </span><span class="hs-identifier hs-var">toInteger</span></span><span>
-</span><span id="line-210"></span><span>    </span><span id="local-6989586621679099942"><span class="annot"><span class="annottext">drop :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
-</span><a href="#local-6989586621679099942"><span class="hs-identifier hs-var hs-var hs-var hs-var">drop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-210"></span><span>    </span><span id="local-6989586621679099943"><span class="annot"><span class="annottext">drop :: Int -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099943"><span class="hs-identifier hs-var hs-var hs-var hs-var">drop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 index -&gt; UTF8 string -&gt; UTF8 string
@@ -531,8 +531,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Integer
 forall a. Integral a =&gt; a -&gt; Integer
 </span><span class="hs-identifier hs-var">toInteger</span></span><span>
-</span><span id="line-211"></span><span>    </span><span id="local-6989586621679099941"><span class="annot"><span class="annottext">splitAt :: Int -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
-</span><a href="#local-6989586621679099941"><span class="hs-identifier hs-var hs-var hs-var hs-var">splitAt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
+</span><span id="line-211"></span><span>    </span><span id="local-6989586621679099942"><span class="annot"><span class="annottext">splitAt :: Int -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
+</span><a href="#local-6989586621679099942"><span class="hs-identifier hs-var hs-var hs-var hs-var">splitAt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
 index -&gt; UTF8 string -&gt; (UTF8 string, UTF8 string)
@@ -551,17 +551,17 @@ forall a. Integral a =&gt; a -&gt; Integer
 </span><span class="hs-identifier hs-var">toInteger</span></span><span>
 </span><span id="line-212"></span><span>    </span><span class="hs-comment">-- takeWhile = UTF8.takeWhile</span><span>
 </span><span id="line-213"></span><span>    </span><span class="hs-comment">-- dropWhile = UTF8.dropWhile</span><span>
-</span><span id="line-214"></span><span>    </span><span id="local-6989586621679099940"><span class="annot"><span class="annottext">span :: (Char -&gt; Bool)
+</span><span id="line-214"></span><span>    </span><span id="local-6989586621679099941"><span class="annot"><span class="annottext">span :: (Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
-</span><a href="#local-6989586621679099940"><span class="hs-identifier hs-var hs-var hs-var hs-var">span</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
+</span><a href="#local-6989586621679099941"><span class="hs-identifier hs-var hs-var hs-var hs-var">span</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
 (Char -&gt; Bool) -&gt; UTF8 string -&gt; (UTF8 string, UTF8 string)
 </span><span class="hs-identifier hs-var">UTF8.span</span></span><span>
-</span><span id="line-215"></span><span>    </span><span id="local-6989586621679099939"><span class="annot"><span class="annottext">break :: (Char -&gt; Bool)
+</span><span id="line-215"></span><span>    </span><span id="local-6989586621679099940"><span class="annot"><span class="annottext">break :: (Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
-</span><a href="#local-6989586621679099939"><span class="hs-identifier hs-var hs-var hs-var hs-var">break</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
+</span><a href="#local-6989586621679099940"><span class="hs-identifier hs-var hs-var hs-var hs-var">break</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool)
 -&gt; UTF8 ByteString -&gt; (UTF8 ByteString, UTF8 ByteString)
 forall string index.
 UTF8Bytes string index =&gt;
@@ -611,10 +611,10 @@ UTF8Bytes string index =&gt;
 </span><span id="line-257"></span><span>    </span><span class="hs-comment">-- genericSplitAt i = UTF8.splitAt (fromIntegral i)</span><span>
 </span><span id="line-258"></span><span>    </span><span class="hs-comment">-- genericReplicate i = UTF8.replicate (fromIntegral i)</span><span>
 </span><span id="line-259"></span><span>
-</span><span id="line-260"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099916"><span id="local-6989586621679099918"><span id="local-6989586621679099920"><span id="local-6989586621679099922"><span id="local-6989586621679099924"><span id="local-6989586621679099926"><span id="local-6989586621679099928"><span id="local-6989586621679099930"><span class="annot"><a href="Data.ListLike.IO.html#ListLikeIO"><span class="hs-identifier hs-type">ListLikeIO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-261"></span><span>    </span><span id="local-6989586621679099915"><span class="annot"><span class="annottext">hGetLine :: Handle -&gt; IO (UTF8 ByteString)
-</span><a href="#local-6989586621679099915"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetLine</span></a></span></span><span> </span><span id="local-6989586621679099914"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099914"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><span id="line-260"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099917"><span id="local-6989586621679099919"><span id="local-6989586621679099921"><span id="local-6989586621679099923"><span id="local-6989586621679099925"><span id="local-6989586621679099927"><span id="local-6989586621679099929"><span id="local-6989586621679099931"><span class="annot"><a href="Data.ListLike.IO.html#ListLikeIO"><span class="hs-identifier hs-type">ListLikeIO</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-261"></span><span>    </span><span id="local-6989586621679099916"><span class="annot"><span class="annottext">hGetLine :: Handle -&gt; IO (UTF8 ByteString)
+</span><a href="#local-6989586621679099916"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetLine</span></a></span></span><span> </span><span id="local-6989586621679099915"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099915"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; (ByteString -&gt; ByteString) -&gt; ByteString -&gt; UTF8 ByteString
@@ -625,59 +625,59 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.hGetLine</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099914"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-262"></span><span>    </span><span id="local-6989586621679099912"><span class="annot"><span class="annottext">hGetContents :: Handle -&gt; IO (UTF8 ByteString)
-</span><a href="#local-6989586621679099912"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetContents</span></a></span></span><span> </span><span id="local-6989586621679099911"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099911"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099915"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-262"></span><span>    </span><span id="local-6989586621679099913"><span class="annot"><span class="annottext">hGetContents :: Handle -&gt; IO (UTF8 ByteString)
+</span><a href="#local-6989586621679099913"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetContents</span></a></span></span><span> </span><span id="local-6989586621679099912"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099912"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BSL.hGetContents</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099911"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-263"></span><span>    </span><span id="local-6989586621679099909"><span class="annot"><span class="annottext">hGet :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
-</span><a href="#local-6989586621679099909"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGet</span></a></span></span><span> </span><span id="local-6989586621679099908"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099908"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099907"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679099907"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099912"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-263"></span><span>    </span><span id="local-6989586621679099910"><span class="annot"><span class="annottext">hGet :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
+</span><a href="#local-6989586621679099910"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGet</span></a></span></span><span> </span><span id="local-6989586621679099909"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099909"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099908"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679099908"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BSL.hGet</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099908"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679099907"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-264"></span><span>    </span><span id="local-6989586621679099905"><span class="annot"><span class="annottext">hGetNonBlocking :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
-</span><a href="#local-6989586621679099905"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetNonBlocking</span></a></span></span><span> </span><span id="local-6989586621679099904"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099904"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099903"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679099903"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><a href="#local-6989586621679099909"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679099908"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-264"></span><span>    </span><span id="local-6989586621679099906"><span class="annot"><span class="annottext">hGetNonBlocking :: Handle -&gt; Int -&gt; IO (UTF8 ByteString)
+</span><a href="#local-6989586621679099906"><span class="hs-identifier hs-var hs-var hs-var hs-var">hGetNonBlocking</span></a></span></span><span> </span><span id="local-6989586621679099905"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099905"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099904"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679099904"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString)
 -&gt; IO ByteString -&gt; IO (UTF8 ByteString)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BSL.hGetNonBlocking</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099904"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679099903"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-265"></span><span>    </span><span id="local-6989586621679099901"><span class="annot"><span class="annottext">hPutStr :: Handle -&gt; UTF8 ByteString -&gt; IO ()
-</span><a href="#local-6989586621679099901"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStr</span></a></span></span><span> </span><span id="local-6989586621679099900"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099900"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099899"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099899"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
+</span><a href="#local-6989586621679099905"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679099904"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-265"></span><span>    </span><span id="local-6989586621679099902"><span class="annot"><span class="annottext">hPutStr :: Handle -&gt; UTF8 ByteString -&gt; IO ()
+</span><a href="#local-6989586621679099902"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStr</span></a></span></span><span> </span><span id="local-6989586621679099901"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099901"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099900"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679099900"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
 </span><span class="hs-identifier hs-var">BSL.hPutStr</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099900"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
+</span><a href="#local-6989586621679099901"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099899"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-266"></span><span>    </span><span id="local-6989586621679099897"><span class="annot"><span class="annottext">hPutStrLn :: Handle -&gt; UTF8 ByteString -&gt; IO ()
-</span><a href="#local-6989586621679099897"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStrLn</span></a></span></span><span> </span><span id="local-6989586621679099896"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099896"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099895"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099895"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
+</span><a href="#local-6989586621679099900"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-266"></span><span>    </span><span id="local-6989586621679099898"><span class="annot"><span class="annottext">hPutStrLn :: Handle -&gt; UTF8 ByteString -&gt; IO ()
+</span><a href="#local-6989586621679099898"><span class="hs-identifier hs-var hs-var hs-var hs-var">hPutStrLn</span></a></span></span><span> </span><span id="local-6989586621679099897"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679099897"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621679099896"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679099896"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
 </span><span class="hs-identifier hs-var">BSLC.hPutStrLn</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679099896"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
+</span><a href="#local-6989586621679099897"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099895"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679099896"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-267"></span><span>    </span><span class="hs-comment">-- getLine = BSL.getLine</span><span>
 </span><span id="line-268"></span><span>    </span><span class="hs-comment">-- getContents = BSL.getContents</span><span>
 </span><span id="line-269"></span><span>    </span><span class="hs-comment">-- putStr = BSL.putStr</span><span>
@@ -692,43 +692,43 @@ forall string. UTF8 string -&gt; string
 </span><span id="line-278"></span><span>    </span><span class="hs-identifier">fromString</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">UTF8.fromString</span><span class="hs-cpp">
 #endif
 </span><span>
-</span><span id="line-281"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099876"><span id="local-6989586621679099878"><span id="local-6989586621679099880"><span id="local-6989586621679099882"><span id="local-6989586621679099884"><span id="local-6989586621679099886"><span id="local-6989586621679099888"><span id="local-6989586621679099890"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-282"></span><span>    </span><span id="local-6989586621679099875"><span class="annot"><span class="annottext">toString :: UTF8 ByteString -&gt; String
-</span><a href="#local-6989586621679099875"><span class="hs-identifier hs-var hs-var hs-var hs-var">toString</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; String
+</span><span id="line-281"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099877"><span id="local-6989586621679099879"><span id="local-6989586621679099881"><span id="local-6989586621679099883"><span id="local-6989586621679099885"><span id="local-6989586621679099887"><span id="local-6989586621679099889"><span id="local-6989586621679099891"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-282"></span><span>    </span><span id="local-6989586621679099876"><span class="annot"><span class="annottext">toString :: UTF8 ByteString -&gt; String
+</span><a href="#local-6989586621679099876"><span class="hs-identifier hs-var hs-var hs-var hs-var">toString</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; String
 forall string index.
 UTF8Bytes string index =&gt;
 UTF8 string -&gt; String
 </span><span class="hs-identifier hs-var">UTF8.toString</span></span><span>
 </span><span id="line-283"></span><span>
-</span><span id="line-284"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099870"><span id="local-6989586621679099872"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-285"></span><span>  </span><span id="local-6989586621679099869"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099869"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679099868"><span class="annot"><span class="annottext">&lt;&gt; :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span id="local-6989586621679099867"><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099867"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
+</span><span id="line-284"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099871"><span id="local-6989586621679099873"><span class="annot"><span class="hs-identifier hs-type">Semigroup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-285"></span><span>  </span><span id="local-6989586621679099870"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679099870"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679099869"><span class="annot"><span class="annottext">&lt;&gt; :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span class="hs-operator hs-var hs-var hs-var hs-var">&lt;&gt;</span></span></span><span> </span><span id="local-6989586621679099868"><span class="annot"><span class="annottext">UTF8 ByteString
+</span><a href="#local-6989586621679099868"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; UTF8 ByteString
 forall string. string -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromRep</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; UTF8 ByteString) -&gt; ByteString -&gt; UTF8 ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099869"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
+</span><a href="#local-6989586621679099870"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; ByteString
 forall string. UTF8 string -&gt; string
 </span><span class="hs-identifier hs-var">UTF8.toRep</span></span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString
-</span><a href="#local-6989586621679099867"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><a href="#local-6989586621679099868"><span class="hs-identifier hs-var">b</span></a></span><span>
 </span><span id="line-286"></span><span>
-</span><span id="line-287"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099862"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-288"></span><span>  </span><span id="local-6989586621679099861"><span class="annot"><span class="annottext">mempty :: UTF8 ByteString
+</span><span id="line-287"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679099863"><span class="annot"><span class="hs-identifier hs-type">Monoid</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">UTF8</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BSL.ByteString</span></span><span class="hs-special">)</span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-288"></span><span>  </span><span id="local-6989586621679099862"><span class="annot"><span class="annottext">mempty :: UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">mempty</span></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; UTF8 ByteString
 forall string index.
 UTF8Bytes string index =&gt;
 String -&gt; UTF8 string
 </span><span class="hs-identifier hs-var">UTF8.fromString</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
-</span><span id="line-289"></span><span>  </span><span id="local-6989586621679099860"><span class="annot"><span class="annottext">mappend :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
+</span><span id="line-289"></span><span>  </span><span id="local-6989586621679099861"><span class="annot"><span class="annottext">mappend :: UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">mappend</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTF8 ByteString -&gt; UTF8 ByteString -&gt; UTF8 ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span>
 </span><span id="line-290"></span><span>
-</span><span id="line-291"></span><span class="hs-pragma">{-# RULES</span><span> </span><span class="annot"><span class="hs-pragma">&quot;fromListLike/a&quot;</span></span><span> </span><span class="annot"><a href="Data.ListLike.Base.html#fromListLike"><span class="hs-pragma hs-type">fromListLike</span></a></span><span> </span><span class="hs-pragma">=</span><span> </span><span id="local-6989586621679099858"><span class="annot"><span class="hs-pragma hs-type">id</span></span><span> </span><span class="hs-pragma">::</span><span> </span><span class="annot"><a href="#local-6989586621679099858"><span class="hs-pragma hs-type">a</span></a></span><span> </span><span class="hs-pragma">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679099858"><span class="hs-pragma hs-type">a</span></a></span></span><span> </span><span class="hs-pragma">#-}</span><span>
+</span><span id="line-291"></span><span class="hs-pragma">{-# RULES</span><span> </span><span class="annot"><span class="hs-pragma">&quot;fromListLike/a&quot;</span></span><span> </span><span class="annot"><a href="Data.ListLike.Base.html#fromListLike"><span class="hs-pragma hs-type">fromListLike</span></a></span><span> </span><span class="hs-pragma">=</span><span> </span><span id="local-6989586621679099859"><span class="annot"><span class="hs-pragma hs-type">id</span></span><span> </span><span class="hs-pragma">::</span><span> </span><span class="annot"><a href="#local-6989586621679099859"><span class="hs-pragma hs-type">a</span></a></span><span> </span><span class="hs-pragma">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679099859"><span class="hs-pragma hs-type">a</span></a></span></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-292"></span></pre></body></html>

@@ -113,14 +113,14 @@
 </span><a href="Network.HPACK.Token.html#isPseudo"><span class="hs-identifier hs-var hs-var">isPseudo</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>        </span><span class="hs-comment">-- ^ is this a pseudo header key?</span><span>
 </span><span id="line-111"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="tokenKey"><span class="annot"><span class="annottext">Token -&gt; CI ByteString
 </span><a href="Network.HPACK.Token.html#tokenKey"><span class="hs-identifier hs-var hs-var">tokenKey</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CI</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-comment">-- ^ Case insensitive header key</span><span>
-</span><span id="line-112"></span><span>  </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679085247"><span id="local-6989586621679085249"><span class="annot"><span class="annottext">Token -&gt; Token -&gt; Bool
+</span><span id="line-112"></span><span>  </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679085246"><span id="local-6989586621679085248"><span class="annot"><span class="annottext">Token -&gt; Token -&gt; Bool
 (Token -&gt; Token -&gt; Bool) -&gt; (Token -&gt; Token -&gt; Bool) -&gt; Eq Token
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 /= :: Token -&gt; Token -&gt; Bool
 $c/= :: Token -&gt; Token -&gt; Bool
 == :: Token -&gt; Token -&gt; Bool
 $c== :: Token -&gt; Token -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679085240"><span id="local-6989586621679085242"><span id="local-6989586621679085244"><span class="annot"><span class="annottext">Int -&gt; Token -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679085239"><span id="local-6989586621679085241"><span id="local-6989586621679085243"><span class="annot"><span class="annottext">Int -&gt; Token -&gt; ShowS
 [Token] -&gt; ShowS
 Token -&gt; String
 (Int -&gt; Token -&gt; ShowS)
@@ -142,11 +142,11 @@ $cshowsPrec :: Int -&gt; Token -&gt; ShowS
 </span><a href="Network.HPACK.Token.html#tokenCIKey"><span class="hs-identifier hs-var hs-var">tokenCIKey</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679085238"><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679085238"><span class="hs-identifier hs-var">ci</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679085237"><span class="annot"><span class="annottext">CI ByteString
+</span><a href="#local-6989586621679085237"><span class="hs-identifier hs-var">ci</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679085238"><span class="hs-identifier hs-var">ci</span></a></span><span>
+</span><a href="#local-6989586621679085237"><span class="hs-identifier hs-var">ci</span></a></span><span>
 </span><span id="line-118"></span><span>
 </span><span id="line-119"></span><span class="hs-comment">-- | Extracting a folded header key from a token.</span><span>
 </span><span id="line-120"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#tokenFoldedKey"><span class="hs-pragma hs-type">tokenFoldedKey</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
@@ -155,11 +155,11 @@ forall s. CI s -&gt; s
 </span><a href="Network.HPACK.Token.html#tokenFoldedKey"><span class="hs-identifier hs-var hs-var">tokenFoldedKey</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679085237"><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679085237"><span class="hs-identifier hs-var">ci</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679085236"><span class="annot"><span class="annottext">CI ByteString
+</span><a href="#local-6989586621679085236"><span class="hs-identifier hs-var">ci</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CI ByteString -&gt; ByteString
 forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">foldedCase</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
-</span><a href="#local-6989586621679085237"><span class="hs-identifier hs-var">ci</span></a></span><span>
+</span><a href="#local-6989586621679085236"><span class="hs-identifier hs-var">ci</span></a></span><span>
 </span><span id="line-123"></span><span>
 </span><span id="line-124"></span><span class="annot"><a href="Network.HPACK.Token.html#tokenAuthority"><span class="hs-identifier hs-type">tokenAuthority</span></a></span><span>                </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span>
 </span><span id="line-125"></span><span class="annot"><a href="Network.HPACK.Token.html#tokenMethod"><span class="hs-identifier hs-type">tokenMethod</span></a></span><span>                   </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span>
@@ -789,9 +789,9 @@ forall s. CI s -&gt; s
 </span><span id="line-297"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#isCookieTokenIx"><span class="hs-pragma hs-type">isCookieTokenIx</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-298"></span><span class="annot"><a href="Network.HPACK.Token.html#isCookieTokenIx"><span class="hs-identifier hs-type">isCookieTokenIx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-299"></span><span id="isCookieTokenIx"><span class="annot"><span class="annottext">isCookieTokenIx :: Int -&gt; Bool
-</span><a href="Network.HPACK.Token.html#isCookieTokenIx"><span class="hs-identifier hs-var hs-var">isCookieTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085235"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085235"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085235"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="Network.HPACK.Token.html#isCookieTokenIx"><span class="hs-identifier hs-var hs-var">isCookieTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085234"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085234"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085234"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="Network.HPACK.Token.html#cookieTokenIx"><span class="hs-identifier hs-var">cookieTokenIx</span></a></span><span>
@@ -800,9 +800,9 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span id="line-302"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#isMaxTokenIx"><span class="hs-pragma hs-type">isMaxTokenIx</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-303"></span><span class="annot"><a href="Network.HPACK.Token.html#isMaxTokenIx"><span class="hs-identifier hs-type">isMaxTokenIx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-304"></span><span id="isMaxTokenIx"><span class="annot"><span class="annottext">isMaxTokenIx :: Int -&gt; Bool
-</span><a href="Network.HPACK.Token.html#isMaxTokenIx"><span class="hs-identifier hs-var hs-var">isMaxTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085234"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085234"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085234"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="Network.HPACK.Token.html#isMaxTokenIx"><span class="hs-identifier hs-var hs-var">isMaxTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085233"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085233"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085233"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="Network.HPACK.Token.html#maxTokenIx"><span class="hs-identifier hs-var">maxTokenIx</span></a></span><span>
@@ -811,9 +811,9 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span id="line-307"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#isStaticTokenIx"><span class="hs-pragma hs-type">isStaticTokenIx</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-308"></span><span class="annot"><a href="Network.HPACK.Token.html#isStaticTokenIx"><span class="hs-identifier hs-type">isStaticTokenIx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-309"></span><span id="isStaticTokenIx"><span class="annot"><span class="annottext">isStaticTokenIx :: Int -&gt; Bool
-</span><a href="Network.HPACK.Token.html#isStaticTokenIx"><span class="hs-identifier hs-var hs-var">isStaticTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085233"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085233"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085233"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="Network.HPACK.Token.html#isStaticTokenIx"><span class="hs-identifier hs-var hs-var">isStaticTokenIx</span></a></span></span><span> </span><span id="local-6989586621679085232"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085232"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085232"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="Network.HPACK.Token.html#maxStaticTokenIx"><span class="hs-identifier hs-var">maxStaticTokenIx</span></a></span><span>
@@ -822,10 +822,10 @@ forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span id="line-312"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#isStaticToken"><span class="hs-pragma hs-type">isStaticToken</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-313"></span><span class="annot"><a href="Network.HPACK.Token.html#isStaticToken"><span class="hs-identifier hs-type">isStaticToken</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-314"></span><span id="isStaticToken"><span class="annot"><span class="annottext">isStaticToken :: Token -&gt; Bool
-</span><a href="Network.HPACK.Token.html#isStaticToken"><span class="hs-identifier hs-var hs-var">isStaticToken</span></a></span></span><span> </span><span id="local-6989586621679085231"><span class="annot"><span class="annottext">Token
-</span><a href="#local-6989586621679085231"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; Int
+</span><a href="Network.HPACK.Token.html#isStaticToken"><span class="hs-identifier hs-var hs-var">isStaticToken</span></a></span></span><span> </span><span id="local-6989586621679085230"><span class="annot"><span class="annottext">Token
+</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; Int
 </span><a href="Network.HPACK.Token.html#tokenIx"><span class="hs-identifier hs-var hs-var">tokenIx</span></a></span><span> </span><span class="annot"><span class="annottext">Token
-</span><a href="#local-6989586621679085231"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="Network.HPACK.Token.html#maxStaticTokenIx"><span class="hs-identifier hs-var">maxStaticTokenIx</span></a></span><span>
@@ -847,638 +847,638 @@ forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span> </span><span class="annot"><span class="annottext">CI ByteString
 </span><span class="hs-string">&quot;&quot;</span></span><span>
-</span><span id="line-326"></span><span class="annot"><a href="Network.HPACK.Token.html#toToken"><span class="hs-identifier hs-var">toToken</span></a></span><span> </span><span id="local-6989586621679085230"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-326"></span><span class="annot"><a href="Network.HPACK.Token.html#toToken"><span class="hs-identifier hs-var">toToken</span></a></span><span> </span><span id="local-6989586621679085229"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085228"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-327"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;te&quot;</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenTE"><span class="hs-identifier hs-var">tokenTE</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-328"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">3</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-329"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">97</span></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;via&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenVia"><span class="hs-identifier hs-var">tokenVia</span></a></span><span>
 </span><span id="line-330"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;age&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAge"><span class="hs-identifier hs-var">tokenAge</span></a></span><span>
 </span><span id="line-331"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-332"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-333"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;date&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenDate"><span class="hs-identifier hs-var">tokenDate</span></a></span><span>
 </span><span id="line-334"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">103</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;etag&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenEtag"><span class="hs-identifier hs-var">tokenEtag</span></a></span><span>
 </span><span id="line-335"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">107</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;link&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenLink"><span class="hs-identifier hs-var">tokenLink</span></a></span><span>
 </span><span id="line-336"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">109</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;from&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenFrom"><span class="hs-identifier hs-var">tokenFrom</span></a></span><span>
 </span><span id="line-337"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">116</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;host&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenHost"><span class="hs-identifier hs-var">tokenHost</span></a></span><span>
 </span><span id="line-338"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">121</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;vary&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenVary"><span class="hs-identifier hs-var">tokenVary</span></a></span><span>
 </span><span id="line-339"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-340"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">5</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-341"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;range&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenRange"><span class="hs-identifier hs-var">tokenRange</span></a></span><span>
 </span><span id="line-342"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">104</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;:path&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenPath"><span class="hs-identifier hs-var">tokenPath</span></a></span><span>
 </span><span id="line-343"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">119</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;allow&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAllow"><span class="hs-identifier hs-var">tokenAllow</span></a></span><span>
 </span><span id="line-344"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-345"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">6</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-346"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;cookie&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenCookie"><span class="hs-identifier hs-var">tokenCookie</span></a></span><span>
 </span><span id="line-347"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;origin&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenOrigin"><span class="hs-identifier hs-var">tokenOrigin</span></a></span><span>
 </span><span id="line-348"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">114</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;server&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenServer"><span class="hs-identifier hs-var">tokenServer</span></a></span><span>
 </span><span id="line-349"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">116</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;expect&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenExpect"><span class="hs-identifier hs-var">tokenExpect</span></a></span><span>
 </span><span id="line-350"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;accept&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccept"><span class="hs-identifier hs-var">tokenAccept</span></a></span><span>
 </span><span id="line-351"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-352"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-353"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">99</span></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;alt-svc&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAltSvc"><span class="hs-identifier hs-var">tokenAltSvc</span></a></span><span>
 </span><span id="line-354"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">100</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;:method&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenMethod"><span class="hs-identifier hs-var">tokenMethod</span></a></span><span>
 </span><span id="line-355"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;:scheme&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenScheme"><span class="hs-identifier hs-var">tokenScheme</span></a></span><span>
 </span><span id="line-356"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;purpose&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenPurpose"><span class="hs-identifier hs-var">tokenPurpose</span></a></span><span>
 </span><span id="line-357"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">104</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;refresh&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenRefresh"><span class="hs-identifier hs-var">tokenRefresh</span></a></span><span>
 </span><span id="line-358"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">114</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;referer&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenReferer"><span class="hs-identifier hs-var">tokenReferer</span></a></span><span>
 </span><span id="line-359"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;expires&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenExpires"><span class="hs-identifier hs-var">tokenExpires</span></a></span><span>
 </span><span id="line-360"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;:status&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenStatus"><span class="hs-identifier hs-var">tokenStatus</span></a></span><span>
 </span><span id="line-361"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-362"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-363"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;if-range&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenIfRange"><span class="hs-identifier hs-var">tokenIfRange</span></a></span><span>
 </span><span id="line-364"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">104</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;if-match&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenIfMatch"><span class="hs-identifier hs-var">tokenIfMatch</span></a></span><span>
 </span><span id="line-365"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;location&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenLocation"><span class="hs-identifier hs-var">tokenLocation</span></a></span><span>
 </span><span id="line-366"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-367"></span><span>
 </span><span id="line-368"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">9</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-369"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">100</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;forwarded&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenForwarded"><span class="hs-identifier hs-var">tokenForwarded</span></a></span><span>
 </span><span id="line-370"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">116</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;expect-ct&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenExpectCt"><span class="hs-identifier hs-var">tokenExpectCt</span></a></span><span>
 </span><span id="line-371"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-372"></span><span>
 </span><span id="line-373"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">10</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-374"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">97</span></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;early-data&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenEarlyData"><span class="hs-identifier hs-var">tokenEarlyData</span></a></span><span>
 </span><span id="line-375"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;set-cookie&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenSetCookie"><span class="hs-identifier hs-var">tokenSetCookie</span></a></span><span>
 </span><span id="line-376"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;connection&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenConnection"><span class="hs-identifier hs-var">tokenConnection</span></a></span><span>
 </span><span id="line-377"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">116</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;user-agent&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenUserAgent"><span class="hs-identifier hs-var">tokenUserAgent</span></a></span><span>
 </span><span id="line-378"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">121</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;:authority&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAuthority"><span class="hs-identifier hs-var">tokenAuthority</span></a></span><span>
 </span><span id="line-379"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-380"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">11</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-381"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">114</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;retry-after&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenRetryAfter"><span class="hs-identifier hs-var">tokenRetryAfter</span></a></span><span>
 </span><span id="line-382"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-383"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">12</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-384"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-type&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentType"><span class="hs-identifier hs-var">tokenContentType</span></a></span><span>
 </span><span id="line-385"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;max-forwards&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenMaxForwards"><span class="hs-identifier hs-var">tokenMaxForwards</span></a></span><span>
 </span><span id="line-386"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-387"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">13</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-388"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">100</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;last-modified&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenLastModified"><span class="hs-identifier hs-var">tokenLastModified</span></a></span><span>
 </span><span id="line-389"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-range&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentRange"><span class="hs-identifier hs-var">tokenContentRange</span></a></span><span>
 </span><span id="line-390"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">104</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;if-none-match&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenIfNoneMatch"><span class="hs-identifier hs-var">tokenIfNoneMatch</span></a></span><span>
 </span><span id="line-391"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">108</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;cache-control&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenCacheControl"><span class="hs-identifier hs-var">tokenCacheControl</span></a></span><span>
 </span><span id="line-392"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;authorization&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAuthorization"><span class="hs-identifier hs-var">tokenAuthorization</span></a></span><span>
 </span><span id="line-393"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;accept-ranges&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAcceptRanges"><span class="hs-identifier hs-var">tokenAcceptRanges</span></a></span><span>
 </span><span id="line-394"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-395"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">14</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-396"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">104</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-length&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentLength"><span class="hs-identifier hs-var">tokenContentLength</span></a></span><span>
 </span><span id="line-397"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">116</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;accept-charset&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAcceptCharset"><span class="hs-identifier hs-var">tokenAcceptCharset</span></a></span><span>
 </span><span id="line-398"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-399"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">15</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-400"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;accept-language&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAcceptLanguage"><span class="hs-identifier hs-var">tokenAcceptLanguage</span></a></span><span>
 </span><span id="line-401"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">103</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;accept-encoding&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAcceptEncoding"><span class="hs-identifier hs-var">tokenAcceptEncoding</span></a></span><span>
 </span><span id="line-402"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">114</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;x-forwarded-for&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenXForwardedFor"><span class="hs-identifier hs-var">tokenXForwardedFor</span></a></span><span>
 </span><span id="line-403"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;x-frame-options&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenXFrameOptions"><span class="hs-identifier hs-var">tokenXFrameOptions</span></a></span><span>
 </span><span id="line-404"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-405"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">16</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-406"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-language&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentLanguage"><span class="hs-identifier hs-var">tokenContentLanguage</span></a></span><span>
 </span><span id="line-407"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;www-authenticate&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenWwwAuthenticate"><span class="hs-identifier hs-var">tokenWwwAuthenticate</span></a></span><span>
 </span><span id="line-408"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">103</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-encoding&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentEncoding"><span class="hs-identifier hs-var">tokenContentEncoding</span></a></span><span>
 </span><span id="line-409"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-location&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentLocation"><span class="hs-identifier hs-var">tokenContentLocation</span></a></span><span>
 </span><span id="line-410"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;x-xss-protection&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenXXssProtection"><span class="hs-identifier hs-var">tokenXXssProtection</span></a></span><span>
 </span><span id="line-411"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-412"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">17</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-413"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;if-modified-since&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenIfModifiedSince"><span class="hs-identifier hs-var">tokenIfModifiedSince</span></a></span><span>
 </span><span id="line-414"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">103</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;transfer-encoding&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenTransferEncoding"><span class="hs-identifier hs-var">tokenTransferEncoding</span></a></span><span>
 </span><span id="line-415"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-416"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">18</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-417"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;proxy-authenticate&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenProxyAuthenticate"><span class="hs-identifier hs-var">tokenProxyAuthenticate</span></a></span><span>
 </span><span id="line-418"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-419"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">19</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-420"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">101</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;if-unmodified-since&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenIfUnmodifiedSince"><span class="hs-identifier hs-var">tokenIfUnmodifiedSince</span></a></span><span>
 </span><span id="line-421"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;proxy-authorization&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenProxyAuthorization"><span class="hs-identifier hs-var">tokenProxyAuthorization</span></a></span><span>
 </span><span id="line-422"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-disposition&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentDisposition"><span class="hs-identifier hs-var">tokenContentDisposition</span></a></span><span>
 </span><span id="line-423"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;timing-allow-origin&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenTimingAllowOrigin"><span class="hs-identifier hs-var">tokenTimingAllowOrigin</span></a></span><span>
 </span><span id="line-424"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-425"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">22</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-426"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;x-content-type-options&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenXContentTypeOptions"><span class="hs-identifier hs-var">tokenXContentTypeOptions</span></a></span><span>
 </span><span id="line-427"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-428"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">23</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-429"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">121</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;content-security-policy&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenContentSecurityPolicy"><span class="hs-identifier hs-var">tokenContentSecurityPolicy</span></a></span><span>
 </span><span id="line-430"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-431"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">25</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-432"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;upgrade-insecure-requests&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenUpgradeInsecureRequests"><span class="hs-identifier hs-var">tokenUpgradeInsecureRequests</span></a></span><span>
 </span><span id="line-433"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">121</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;strict-transport-security&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenStrictTransportSecurity"><span class="hs-identifier hs-var">tokenStrictTransportSecurity</span></a></span><span>
 </span><span id="line-434"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-435"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">27</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-436"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">110</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-allow-origin&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlAllowOrigin"><span class="hs-identifier hs-var">tokenAccessControlAllowOrigin</span></a></span><span>
 </span><span id="line-437"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-438"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">28</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-439"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-allow-headers&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlAllowHeaders"><span class="hs-identifier hs-var">tokenAccessControlAllowHeaders</span></a></span><span>
 </span><span id="line-440"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-allow-methods&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlAllowMethods"><span class="hs-identifier hs-var">tokenAccessControlAllowMethods</span></a></span><span>
 </span><span id="line-441"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-442"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">29</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-443"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">100</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-request-method&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlRequestMethod"><span class="hs-identifier hs-var">tokenAccessControlRequestMethod</span></a></span><span>
 </span><span id="line-444"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-expose-headers&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlExposeHeaders"><span class="hs-identifier hs-var">tokenAccessControlExposeHeaders</span></a></span><span>
 </span><span id="line-445"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-446"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">30</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-447"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-request-headers&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlRequestHeaders"><span class="hs-identifier hs-var">tokenAccessControlRequestHeaders</span></a></span><span>
 </span><span id="line-448"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-449"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">32</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var">lst</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-450"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">115</span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var">===</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;access-control-allow-credentials&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenAccessControlAllowCredentials"><span class="hs-identifier hs-var">tokenAccessControlAllowCredentials</span></a></span><span>
 </span><span id="line-451"></span><span>        </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier">_</span></span><span>                                               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-452"></span><span>    </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var">mkTokenMax</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-453"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-454"></span><span>    </span><span id="local-6989586621679085229"><span class="annot"><span class="annottext">len :: Int
-</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
+</span><span id="line-454"></span><span>    </span><span id="local-6989586621679085228"><span class="annot"><span class="annottext">len :: Int
+</span><a href="#local-6989586621679085228"><span class="hs-identifier hs-var hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
 </span><span class="hs-identifier hs-var">B.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
-</span><span id="line-455"></span><span>    </span><span id="local-6989586621679085226"><span class="annot"><span class="annottext">lst :: Word8
-</span><a href="#local-6989586621679085226"><span class="hs-identifier hs-var hs-var">lst</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Word8
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><span id="line-455"></span><span>    </span><span id="local-6989586621679085225"><span class="annot"><span class="annottext">lst :: Word8
+</span><a href="#local-6989586621679085225"><span class="hs-identifier hs-var hs-var">lst</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Word8
 </span><span class="hs-identifier hs-var">B.last</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085230"><span class="hs-identifier hs-var">bs</span></a></span><span>
-</span><span id="line-456"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679085222"><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679085222"><span class="hs-identifier hs-var">fp1</span></a></span></span><span> </span><span id="local-6989586621679085221"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085221"><span class="hs-identifier hs-var">off1</span></a></span></span><span> </span><span id="local-6989586621679085220"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085220"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679085228"><span class="annot"><span class="annottext">=== :: ByteString -&gt; ByteString -&gt; Bool
-</span><a href="#local-6989586621679085228"><span class="hs-operator hs-var hs-var">===</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679085219"><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679085219"><span class="hs-identifier hs-var">fp2</span></a></span></span><span> </span><span id="local-6989586621679085218"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085218"><span class="hs-identifier hs-var">off2</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085229"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><span id="line-456"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679085221"><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="#local-6989586621679085221"><span class="hs-identifier hs-var">fp1</span></a></span></span><span> </span><span id="local-6989586621679085220"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085220"><span class="hs-identifier hs-var">off1</span></a></span></span><span> </span><span id="local-6989586621679085219"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085219"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679085227"><span class="annot"><span class="annottext">=== :: ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679085227"><span class="hs-operator hs-var hs-var">===</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679085218"><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="#local-6989586621679085218"><span class="hs-identifier hs-var">fp2</span></a></span></span><span> </span><span id="local-6989586621679085217"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085217"><span class="hs-identifier hs-var">off2</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO Bool -&gt; Bool
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">unsafeDupablePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO Bool -&gt; Bool) -&gt; IO Bool -&gt; Bool
@@ -1487,64 +1487,64 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-457"></span><span>      </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
 forall a b. ForeignPtr a -&gt; (Ptr a -&gt; IO b) -&gt; IO b
 </span><span class="hs-identifier hs-var">withForeignPtr</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679085222"><span class="hs-identifier hs-var">fp1</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO Bool) -&gt; IO Bool)
--&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
-forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679085217"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679085217"><span class="hs-identifier hs-var">p1</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-458"></span><span>      </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
-forall a b. ForeignPtr a -&gt; (Ptr a -&gt; IO b) -&gt; IO b
-</span><span class="hs-identifier hs-var">withForeignPtr</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679085219"><span class="hs-identifier hs-var">fp2</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO Bool) -&gt; IO Bool)
+</span><a href="#local-6989586621679085221"><span class="hs-identifier hs-var">fp1</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO Bool) -&gt; IO Bool)
 -&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679085216"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679085216"><span class="hs-identifier hs-var">p2</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-459"></span><span>        </span><span id="local-6989586621679085215"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679085215"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Int -&gt; IO CInt
+</span><a href="#local-6989586621679085216"><span class="hs-identifier hs-var">p1</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-458"></span><span>      </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
+forall a b. ForeignPtr a -&gt; (Ptr a -&gt; IO b) -&gt; IO b
+</span><span class="hs-identifier hs-var">withForeignPtr</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="#local-6989586621679085218"><span class="hs-identifier hs-var">fp2</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO Bool) -&gt; IO Bool)
+-&gt; (Ptr Word8 -&gt; IO Bool) -&gt; IO Bool
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679085215"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679085215"><span class="hs-identifier hs-var">p2</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-459"></span><span>        </span><span id="local-6989586621679085214"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Int -&gt; IO CInt
 </span><span class="hs-identifier hs-var">memcmp</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679085217"><span class="hs-identifier hs-var">p1</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
+</span><a href="#local-6989586621679085216"><span class="hs-identifier hs-var">p1</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085221"><span class="hs-identifier hs-var">off1</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679085216"><span class="hs-identifier hs-var">p2</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
+</span><a href="#local-6989586621679085220"><span class="hs-identifier hs-var">off1</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679085215"><span class="hs-identifier hs-var">p2</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085218"><span class="hs-identifier hs-var">off2</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679085220"><span class="hs-identifier hs-var">siz</span></a></span><span>
+</span><a href="#local-6989586621679085217"><span class="hs-identifier hs-var">off2</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679085219"><span class="hs-identifier hs-var">siz</span></a></span><span>
 </span><span id="line-460"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Bool -&gt; IO Bool) -&gt; Bool -&gt; IO Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679085215"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
+</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-461"></span><span>
 </span><span id="line-462"></span><span class="annot"><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-type">mkTokenMax</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-type">Token</span></a></span><span>
 </span><span id="line-463"></span><span id="mkTokenMax"><span class="annot"><span class="annottext">mkTokenMax :: ByteString -&gt; Token
-</span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var hs-var">mkTokenMax</span></a></span></span><span> </span><span id="local-6989586621679085214"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Bool -&gt; Bool -&gt; CI ByteString -&gt; Token
+</span><a href="Network.HPACK.Token.html#mkTokenMax"><span class="hs-identifier hs-var hs-var">mkTokenMax</span></a></span></span><span> </span><span id="local-6989586621679085213"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Bool -&gt; Bool -&gt; CI ByteString -&gt; Token
 </span><a href="Network.HPACK.Token.html#Token"><span class="hs-identifier hs-var">Token</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="Network.HPACK.Token.html#maxTokenIx"><span class="hs-identifier hs-var">maxTokenIx</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
+</span><a href="#local-6989586621679085212"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
 forall s. FoldCase s =&gt; s -&gt; CI s
 </span><span class="hs-identifier hs-var">mk</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-464"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-465"></span><span>    </span><span id="local-6989586621679085213"><span class="annot"><span class="annottext">p :: Bool
-</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
+</span><span id="line-465"></span><span>    </span><span id="local-6989586621679085212"><span class="annot"><span class="annottext">p :: Bool
+</span><a href="#local-6989586621679085212"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
 </span><span class="hs-identifier hs-var">B.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-466"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Word8
 </span><span class="hs-identifier hs-var">B.head</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679085214"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679085213"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">58</span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool

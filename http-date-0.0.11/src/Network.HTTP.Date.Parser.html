@@ -20,17 +20,17 @@
 </span><span id="line-20"></span><span>
 </span><span id="line-21"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#parseHTTPDate"><span class="hs-identifier hs-type">parseHTTPDate</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Network.HTTP.Date.Types.html#HTTPDate"><span class="hs-identifier hs-type">HTTPDate</span></a></span><span>
 </span><span id="line-22"></span><span id="parseHTTPDate"><span class="annot"><span class="annottext">parseHTTPDate :: ByteString -&gt; Maybe HTTPDate
-</span><a href="Network.HTTP.Date.Parser.html#parseHTTPDate"><span class="hs-identifier hs-var hs-var">parseHTTPDate</span></a></span></span><span> </span><span id="local-6989586621679044900"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679044900"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Parser HTTPDate -&gt; ByteString -&gt; Either String HTTPDate
+</span><a href="Network.HTTP.Date.Parser.html#parseHTTPDate"><span class="hs-identifier hs-var hs-var">parseHTTPDate</span></a></span></span><span> </span><span id="local-6989586621679044922"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679044922"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Parser HTTPDate -&gt; ByteString -&gt; Either String HTTPDate
 forall a. Parser a -&gt; ByteString -&gt; Either String a
 </span><span class="hs-identifier hs-var">parseOnly</span></span><span> </span><span class="annot"><span class="annottext">Parser HTTPDate
 </span><a href="Network.HTTP.Date.Parser.html#rfc1123Date"><span class="hs-identifier hs-var">rfc1123Date</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679044900"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-23"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679044897"><span class="annot"><span class="annottext">HTTPDate
-</span><a href="#local-6989586621679044897"><span class="hs-identifier hs-var">ut</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HTTPDate -&gt; Maybe HTTPDate
+</span><a href="#local-6989586621679044922"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-23"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679044919"><span class="annot"><span class="annottext">HTTPDate
+</span><a href="#local-6989586621679044919"><span class="hs-identifier hs-var">ut</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HTTPDate -&gt; Maybe HTTPDate
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">HTTPDate
-</span><a href="#local-6989586621679044897"><span class="hs-identifier hs-var">ut</span></a></span><span>
+</span><a href="#local-6989586621679044919"><span class="hs-identifier hs-var">ut</span></a></span><span>
 </span><span id="line-24"></span><span>    </span><span class="annot"><span class="annottext">Either String HTTPDate
 </span><span class="hs-identifier">_</span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe HTTPDate
 forall a. Maybe a
@@ -39,8 +39,8 @@ forall a. Maybe a
 </span><span id="line-26"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#rfc1123Date"><span class="hs-identifier hs-type">rfc1123Date</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><a href="Network.HTTP.Date.Types.html#HTTPDate"><span class="hs-identifier hs-type">HTTPDate</span></a></span><span>
 </span><span id="line-27"></span><span id="rfc1123Date"><span class="annot"><span class="annottext">rfc1123Date :: Parser HTTPDate
 </span><a href="Network.HTTP.Date.Parser.html#rfc1123Date"><span class="hs-identifier hs-var hs-var">rfc1123Date</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-28"></span><span>    </span><span id="local-6989586621679044896"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044896"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-28"></span><span>    </span><span id="local-6989586621679044918"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044918"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#wkday"><span class="hs-identifier hs-var">wkday</span></a></span><span>
 </span><span id="line-29"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString ByteString -&gt; Parser ByteString ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
@@ -50,17 +50,17 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Parser ByteString ByteString
 </span><span class="hs-identifier hs-var">string</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;, &quot;</span></span><span>
-</span><span id="line-30"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679044892"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044892"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044891"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044891"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044890"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044890"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Int, Int, Int)
+</span><span id="line-30"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679044914"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044914"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044913"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044913"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044912"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044912"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Int, Int, Int)
 </span><a href="Network.HTTP.Date.Parser.html#date1"><span class="hs-identifier hs-var">date1</span></a></span><span>
 </span><span id="line-31"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString ()
 </span><a href="Network.HTTP.Date.Parser.html#sp"><span class="hs-identifier hs-var">sp</span></a></span><span>
-</span><span id="line-32"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679044887"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044887"><span class="hs-identifier hs-var">h</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044886"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044886"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044885"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044885"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Int, Int, Int)
+</span><span id="line-32"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679044909"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044909"><span class="hs-identifier hs-var">h</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044908"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044908"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679044907"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044907"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Int, Int, Int)
 </span><a href="Network.HTTP.Date.Parser.html#time"><span class="hs-identifier hs-var">time</span></a></span><span>
 </span><span id="line-33"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString ()
 </span><a href="Network.HTTP.Date.Parser.html#sp"><span class="hs-identifier hs-var">sp</span></a></span><span>
@@ -92,25 +92,25 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Network.HTTP.Date.Types.html#defaultHTTPDate"><span class="hs-identifier hs-var">defaultHTTPDate</span></a></span><span> </span><span class="hs-special">{</span><span>
 </span><span id="line-38"></span><span>        </span><span class="annot"><span class="annottext">hdYear :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdYear"><span class="hs-identifier hs-var">hdYear</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044892"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><a href="#local-6989586621679044914"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-39"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdMonth :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdMonth"><span class="hs-identifier hs-var">hdMonth</span></a></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044891"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679044913"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-40"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdDay :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdDay"><span class="hs-identifier hs-var">hdDay</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044890"><span class="hs-identifier hs-var">d</span></a></span><span>
+</span><a href="#local-6989586621679044912"><span class="hs-identifier hs-var">d</span></a></span><span>
 </span><span id="line-41"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdHour :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdHour"><span class="hs-identifier hs-var">hdHour</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044887"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><a href="#local-6989586621679044909"><span class="hs-identifier hs-var">h</span></a></span><span>
 </span><span id="line-42"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdMinute :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdMinute"><span class="hs-identifier hs-var">hdMinute</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044886"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621679044908"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-43"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdSecond :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdSecond"><span class="hs-identifier hs-var">hdSecond</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044885"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679044907"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-44"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">hdWkday :: Int
 </span><a href="Network.HTTP.Date.Types.html#hdWkday"><span class="hs-identifier hs-var">hdWkday</span></a></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044896"><span class="hs-identifier hs-var">w</span></a></span><span>
+</span><a href="#local-6989586621679044918"><span class="hs-identifier hs-var">w</span></a></span><span>
 </span><span id="line-45"></span><span>      </span><span class="hs-special">}</span><span>
 </span><span id="line-46"></span><span>
 </span><span id="line-47"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#wkday"><span class="hs-identifier hs-type">wkday</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
@@ -173,31 +173,31 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; a -&gt; f b -&gt; f a
 </span><span id="line-56"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#date1"><span class="hs-identifier hs-type">date1</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">)</span><span>
 </span><span id="line-57"></span><span id="date1"><span class="annot"><span class="annottext">date1 :: Parser (Int, Int, Int)
 </span><a href="Network.HTTP.Date.Parser.html#date1"><span class="hs-identifier hs-var hs-var">date1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-58"></span><span>    </span><span id="local-6989586621679044873"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044873"><span class="hs-identifier hs-var">d</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
-</span><a href="#local-6989586621679044872"><span class="hs-identifier hs-var">day</span></a></span><span>
+</span><span id="line-58"></span><span>    </span><span id="local-6989586621679044895"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044895"><span class="hs-identifier hs-var">d</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><a href="#local-6989586621679044894"><span class="hs-identifier hs-var">day</span></a></span><span>
 </span><span id="line-59"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString ()
 </span><a href="Network.HTTP.Date.Parser.html#sp"><span class="hs-identifier hs-var">sp</span></a></span><span>
-</span><span id="line-60"></span><span>    </span><span id="local-6989586621679044871"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044871"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-60"></span><span>    </span><span id="local-6989586621679044893"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044893"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#month"><span class="hs-identifier hs-var">month</span></a></span><span>
 </span><span id="line-61"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString ()
 </span><a href="Network.HTTP.Date.Parser.html#sp"><span class="hs-identifier hs-var">sp</span></a></span><span>
-</span><span id="line-62"></span><span>    </span><span id="local-6989586621679044869"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044869"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
-</span><a href="#local-6989586621679044868"><span class="hs-identifier hs-var">year</span></a></span><span>
+</span><span id="line-62"></span><span>    </span><span id="local-6989586621679044891"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044891"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><a href="#local-6989586621679044890"><span class="hs-identifier hs-var">year</span></a></span><span>
 </span><span id="line-63"></span><span>    </span><span class="annot"><span class="annottext">(Int, Int, Int) -&gt; Parser (Int, Int, Int)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044869"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044871"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044873"><span class="hs-identifier hs-var">d</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044891"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044893"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044895"><span class="hs-identifier hs-var">d</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-64"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-65"></span><span>   </span><span id="local-6989586621679044872"><span class="annot"><span class="annottext">day :: Parser Int
-</span><a href="#local-6989586621679044872"><span class="hs-identifier hs-var hs-var">day</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-65"></span><span>   </span><span id="local-6989586621679044894"><span class="annot"><span class="annottext">day :: Parser Int
+</span><a href="#local-6989586621679044894"><span class="hs-identifier hs-var hs-var">day</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-var">digit2</span></a></span><span>
-</span><span id="line-66"></span><span>   </span><span id="local-6989586621679044868"><span class="annot"><span class="annottext">year :: Parser Int
-</span><a href="#local-6989586621679044868"><span class="hs-identifier hs-var hs-var">year</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-66"></span><span>   </span><span id="local-6989586621679044890"><span class="annot"><span class="annottext">year :: Parser Int
+</span><a href="#local-6989586621679044890"><span class="hs-identifier hs-var hs-var">year</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit4"><span class="hs-identifier hs-var">digit4</span></a></span><span>
 </span><span id="line-67"></span><span>
 </span><span id="line-68"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#sp"><span class="hs-identifier hs-type">sp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
@@ -211,8 +211,8 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; a -&gt; f b -&gt; f a
 </span><span id="line-71"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#time"><span class="hs-identifier hs-type">time</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span id="time"><span class="annot"><span class="annottext">time :: Parser (Int, Int, Int)
 </span><a href="Network.HTTP.Date.Parser.html#time"><span class="hs-identifier hs-var hs-var">time</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-73"></span><span>    </span><span id="local-6989586621679044864"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044864"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-73"></span><span>    </span><span id="local-6989586621679044886"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044886"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-var">digit2</span></a></span><span>
 </span><span id="line-74"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString Char -&gt; Parser ByteString ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
@@ -222,8 +222,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Parser ByteString Char
 </span><span class="hs-identifier hs-var">char</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">':'</span></span><span>
-</span><span id="line-75"></span><span>    </span><span id="local-6989586621679044863"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044863"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-75"></span><span>    </span><span id="local-6989586621679044885"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044885"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-var">digit2</span></a></span><span>
 </span><span id="line-76"></span><span>    </span><span class="annot"><span class="annottext">Parser ByteString Char -&gt; Parser ByteString ()
 forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
@@ -233,15 +233,15 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Parser ByteString Char
 </span><span class="hs-identifier hs-var">char</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">':'</span></span><span>
-</span><span id="line-77"></span><span>    </span><span id="local-6989586621679044862"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044862"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
+</span><span id="line-77"></span><span>    </span><span id="local-6989586621679044884"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044884"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-var">digit2</span></a></span><span>
 </span><span id="line-78"></span><span>    </span><span class="annot"><span class="annottext">(Int, Int, Int) -&gt; Parser (Int, Int, Int)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044864"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044863"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044862"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044886"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044885"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044884"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-79"></span><span>
 </span><span id="line-80"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#month"><span class="hs-identifier hs-type">month</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-81"></span><span id="month"><span class="annot"><span class="annottext">month :: Parser Int
@@ -343,14 +343,14 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; a -&gt; f b -&gt; f a
 </span><span id="line-94"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-type">digit2</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-95"></span><span id="digit2"><span class="annot"><span class="annottext">digit2 :: Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit2"><span class="hs-identifier hs-var hs-var">digit2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-96"></span><span>    </span><span id="local-6989586621679044861"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044861"><span class="hs-identifier hs-var">x1</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-96"></span><span>    </span><span id="local-6989586621679044883"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044883"><span class="hs-identifier hs-var">x1</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
 </span><span class="hs-identifier hs-var">digit</span></span><span>
-</span><span id="line-97"></span><span>    </span><span id="local-6989586621679044857"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044857"><span class="hs-identifier hs-var">x2</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-97"></span><span>    </span><span id="local-6989586621679044879"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044879"><span class="hs-identifier hs-var">x2</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
@@ -360,37 +360,37 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Parser Int) -&gt; Int -&gt; Parser Int
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044861"><span class="hs-identifier hs-var">x1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679044883"><span class="hs-identifier hs-var">x1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">10</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044857"><span class="hs-identifier hs-var">x2</span></a></span><span>
+</span><a href="#local-6989586621679044879"><span class="hs-identifier hs-var">x2</span></a></span><span>
 </span><span id="line-99"></span><span>
 </span><span id="line-100"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#digit4"><span class="hs-identifier hs-type">digit4</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-101"></span><span id="digit4"><span class="annot"><span class="annottext">digit4 :: Parser Int
 </span><a href="Network.HTTP.Date.Parser.html#digit4"><span class="hs-identifier hs-var hs-var">digit4</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-102"></span><span>    </span><span id="local-6989586621679044854"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044854"><span class="hs-identifier hs-var">x1</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-102"></span><span>    </span><span id="local-6989586621679044876"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044876"><span class="hs-identifier hs-var">x1</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
 </span><span class="hs-identifier hs-var">digit</span></span><span>
-</span><span id="line-103"></span><span>    </span><span id="local-6989586621679044853"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044853"><span class="hs-identifier hs-var">x2</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-103"></span><span>    </span><span id="local-6989586621679044875"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044875"><span class="hs-identifier hs-var">x2</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
 </span><span class="hs-identifier hs-var">digit</span></span><span>
-</span><span id="line-104"></span><span>    </span><span id="local-6989586621679044852"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044852"><span class="hs-identifier hs-var">x3</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-104"></span><span>    </span><span id="local-6989586621679044874"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044874"><span class="hs-identifier hs-var">x3</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
 </span><span class="hs-identifier hs-var">digit</span></span><span>
-</span><span id="line-105"></span><span>    </span><span id="local-6989586621679044851"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044851"><span class="hs-identifier hs-var">x4</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><span id="line-105"></span><span>    </span><span id="local-6989586621679044873"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679044873"><span class="hs-identifier hs-var">x4</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var">toInt</span></a></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Int) -&gt; Parser ByteString Char -&gt; Parser Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Parser ByteString Char
@@ -400,32 +400,32 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Parser Int) -&gt; Int -&gt; Parser Int
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044854"><span class="hs-identifier hs-var">x1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679044876"><span class="hs-identifier hs-var">x1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1000</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044853"><span class="hs-identifier hs-var">x2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679044875"><span class="hs-identifier hs-var">x2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">100</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044852"><span class="hs-identifier hs-var">x3</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679044874"><span class="hs-identifier hs-var">x3</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">10</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679044851"><span class="hs-identifier hs-var">x4</span></a></span><span>
+</span><a href="#local-6989586621679044873"><span class="hs-identifier hs-var">x4</span></a></span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span class="annot"><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-type">toInt</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-109"></span><span id="toInt"><span class="annot"><span class="annottext">toInt :: Char -&gt; Int
-</span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var hs-var">toInt</span></a></span></span><span> </span><span id="local-6989586621679044850"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679044850"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
+</span><a href="Network.HTTP.Date.Parser.html#toInt"><span class="hs-identifier hs-var hs-var">toInt</span></a></span></span><span> </span><span id="local-6989586621679044872"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679044872"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><span class="hs-identifier hs-var">ord</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679044850"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679044872"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Int
 </span><span class="hs-identifier hs-var">ord</span></span><span> </span><span class="annot"><span class="annottext">Char

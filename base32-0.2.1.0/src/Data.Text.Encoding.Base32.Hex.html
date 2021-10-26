@@ -107,21 +107,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-90"></span><span class="hs-comment">--   :: 'Text' -&gt; 'Either' ('Base32Error' 'UnicodeException') 'Text'</span><span>
 </span><span id="line-91"></span><span class="hs-comment">-- @</span><span>
 </span><span id="line-92"></span><span class="hs-comment">--</span><span>
-</span><span id="line-93"></span><span id="local-6989586621679060024"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32With"><span class="hs-identifier hs-type">decodeBase32With</span></a></span><span>
-</span><span id="line-94"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060024"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
+</span><span id="line-93"></span><span id="local-6989586621679060028"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32With"><span class="hs-identifier hs-type">decodeBase32With</span></a></span><span>
+</span><span id="line-94"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060028"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
 </span><span id="line-95"></span><span>      </span><span class="hs-comment">-- ^ convert a bytestring to text (e.g. 'T.decodeUtf8'')</span><span>
 </span><span id="line-96"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-97"></span><span>      </span><span class="hs-comment">-- ^ Input text to decode</span><span>
-</span><span id="line-98"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060024"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
+</span><span id="line-98"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060028"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
 </span><span id="line-99"></span><span id="decodeBase32With"><span class="annot"><span class="annottext">decodeBase32With :: (ByteString -&gt; Either err Text)
 -&gt; ByteString -&gt; Either (Base32Error err) Text
-</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32With"><span class="hs-identifier hs-var hs-var">decodeBase32With</span></a></span></span><span> </span><span id="local-6989586621679060023"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060023"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060022"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060022"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
+</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32With"><span class="hs-identifier hs-var hs-var">decodeBase32With</span></a></span></span><span> </span><span id="local-6989586621679060027"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
+</span><a href="#local-6989586621679060027"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060026"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060026"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Hex.html#decodeBase32"><span class="hs-identifier hs-var">B32H.decodeBase32</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060022"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-100"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060021"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060021"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
+</span><a href="#local-6989586621679060026"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-100"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060025"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679060025"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(Base32Error err -&gt; Either (Base32Error err) Text)
 -&gt; Base32Error err -&gt; Either (Base32Error err) Text
@@ -129,9 +129,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Base32Error err
 forall e. Text -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#DecodeError"><span class="hs-identifier hs-var">DecodeError</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060021"><span class="hs-identifier hs-var">de</span></a></span><span>
-</span><span id="line-101"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060019"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060019"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
+</span><a href="#local-6989586621679060025"><span class="hs-identifier hs-var">de</span></a></span><span>
+</span><span id="line-101"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060023"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060023"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
 -&gt; Either err Text -&gt; Either (Base32Error err) Text
 forall (p :: * -&gt; * -&gt; *) a b c.
 Bifunctor p =&gt;
@@ -139,8 +139,8 @@ Bifunctor p =&gt;
 </span><span class="hs-identifier hs-var">first</span></span><span> </span><span class="annot"><span class="annottext">err -&gt; Base32Error err
 forall e. e -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#ConversionError"><span class="hs-identifier hs-var">ConversionError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060023"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060019"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679060027"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060023"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-102"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32With"><span class="hs-pragma hs-type">decodeBase32With</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-103"></span><span>
 </span><span id="line-104"></span><span class="hs-comment">-- | Encode a 'Text' value in Base32hex without padding. Note that for Base32hex,</span><span>
@@ -214,21 +214,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-155"></span><span class="hs-comment">--   :: 'ByteString' -&gt; 'Either' ('Base32Error' 'UnicodeException') 'Text'</span><span>
 </span><span id="line-156"></span><span class="hs-comment">-- @</span><span>
 </span><span id="line-157"></span><span class="hs-comment">--</span><span>
-</span><span id="line-158"></span><span id="local-6989586621679060015"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32UnpaddedWith"><span class="hs-identifier hs-type">decodeBase32UnpaddedWith</span></a></span><span>
-</span><span id="line-159"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060015"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
+</span><span id="line-158"></span><span id="local-6989586621679060019"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32UnpaddedWith"><span class="hs-identifier hs-type">decodeBase32UnpaddedWith</span></a></span><span>
+</span><span id="line-159"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060019"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
 </span><span id="line-160"></span><span>      </span><span class="hs-comment">-- ^ convert a bytestring to text (e.g. 'T.decodeUtf8'')</span><span>
 </span><span id="line-161"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-162"></span><span>      </span><span class="hs-comment">-- ^ Input text to decode</span><span>
-</span><span id="line-163"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060015"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
+</span><span id="line-163"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060019"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
 </span><span id="line-164"></span><span id="decodeBase32UnpaddedWith"><span class="annot"><span class="annottext">decodeBase32UnpaddedWith :: (ByteString -&gt; Either err Text)
 -&gt; ByteString -&gt; Either (Base32Error err) Text
-</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32UnpaddedWith"><span class="hs-identifier hs-var hs-var">decodeBase32UnpaddedWith</span></a></span></span><span> </span><span id="local-6989586621679060014"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060014"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060013"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060013"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
+</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32UnpaddedWith"><span class="hs-identifier hs-var hs-var">decodeBase32UnpaddedWith</span></a></span></span><span> </span><span id="local-6989586621679060018"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
+</span><a href="#local-6989586621679060018"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060017"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060017"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Hex.html#decodeBase32Unpadded"><span class="hs-identifier hs-var">B32H.decodeBase32Unpadded</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060013"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-165"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060012"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060012"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
+</span><a href="#local-6989586621679060017"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-165"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060016"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679060016"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(Base32Error err -&gt; Either (Base32Error err) Text)
 -&gt; Base32Error err -&gt; Either (Base32Error err) Text
@@ -236,9 +236,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Base32Error err
 forall e. Text -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#DecodeError"><span class="hs-identifier hs-var">DecodeError</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060012"><span class="hs-identifier hs-var">de</span></a></span><span>
-</span><span id="line-166"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060011"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060011"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
+</span><a href="#local-6989586621679060016"><span class="hs-identifier hs-var">de</span></a></span><span>
+</span><span id="line-166"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060015"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060015"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
 -&gt; Either err Text -&gt; Either (Base32Error err) Text
 forall (p :: * -&gt; * -&gt; *) a b c.
 Bifunctor p =&gt;
@@ -246,8 +246,8 @@ Bifunctor p =&gt;
 </span><span class="hs-identifier hs-var">first</span></span><span> </span><span class="annot"><span class="annottext">err -&gt; Base32Error err
 forall e. e -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#ConversionError"><span class="hs-identifier hs-var">ConversionError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060014"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060011"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679060018"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060015"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-167"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32UnpaddedWith"><span class="hs-pragma hs-type">decodeBase32UnpaddedWith</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-168"></span><span>
 </span><span id="line-169"></span><span>
@@ -300,21 +300,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-204"></span><span class="hs-comment">--   :: 'ByteString' -&gt; 'Either' ('Base32Error' 'UnicodeException') 'Text'</span><span>
 </span><span id="line-205"></span><span class="hs-comment">-- @</span><span>
 </span><span id="line-206"></span><span class="hs-comment">--</span><span>
-</span><span id="line-207"></span><span id="local-6989586621679060009"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32PaddedWith"><span class="hs-identifier hs-type">decodeBase32PaddedWith</span></a></span><span>
-</span><span id="line-208"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060009"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
+</span><span id="line-207"></span><span id="local-6989586621679060013"><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32PaddedWith"><span class="hs-identifier hs-type">decodeBase32PaddedWith</span></a></span><span>
+</span><span id="line-208"></span><span>    </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="#local-6989586621679060013"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
 </span><span id="line-209"></span><span>      </span><span class="hs-comment">-- ^ convert a bytestring to text (e.g. 'T.decodeUtf8'')</span><span>
 </span><span id="line-210"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-211"></span><span>      </span><span class="hs-comment">-- ^ Input text to decode</span><span>
-</span><span id="line-212"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060009"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
+</span><span id="line-212"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Text.Encoding.Base32.Error.html#Base32Error"><span class="hs-identifier hs-type">Base32Error</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679060013"><span class="hs-identifier hs-type">err</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span></span><span>
 </span><span id="line-213"></span><span id="decodeBase32PaddedWith"><span class="annot"><span class="annottext">decodeBase32PaddedWith :: (ByteString -&gt; Either err Text)
 -&gt; ByteString -&gt; Either (Base32Error err) Text
-</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32PaddedWith"><span class="hs-identifier hs-var hs-var">decodeBase32PaddedWith</span></a></span></span><span> </span><span id="local-6989586621679060008"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060008"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060007"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060007"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
+</span><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32PaddedWith"><span class="hs-identifier hs-var hs-var">decodeBase32PaddedWith</span></a></span></span><span> </span><span id="local-6989586621679060012"><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
+</span><a href="#local-6989586621679060012"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679060011"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060011"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Hex.html#decodeBase32Padded"><span class="hs-identifier hs-var">B32H.decodeBase32Padded</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060007"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-214"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060006"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060006"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
+</span><a href="#local-6989586621679060011"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-214"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679060010"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679060010"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Base32Error err -&gt; Either (Base32Error err) Text
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(Base32Error err -&gt; Either (Base32Error err) Text)
 -&gt; Base32Error err -&gt; Either (Base32Error err) Text
@@ -322,9 +322,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Base32Error err
 forall e. Text -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#DecodeError"><span class="hs-identifier hs-var">DecodeError</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679060006"><span class="hs-identifier hs-var">de</span></a></span><span>
-</span><span id="line-215"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060005"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060005"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
+</span><a href="#local-6989586621679060010"><span class="hs-identifier hs-var">de</span></a></span><span>
+</span><span id="line-215"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679060009"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060009"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(err -&gt; Base32Error err)
 -&gt; Either err Text -&gt; Either (Base32Error err) Text
 forall (p :: * -&gt; * -&gt; *) a b c.
 Bifunctor p =&gt;
@@ -332,8 +332,8 @@ Bifunctor p =&gt;
 </span><span class="hs-identifier hs-var">first</span></span><span> </span><span class="annot"><span class="annottext">err -&gt; Base32Error err
 forall e. e -&gt; Base32Error e
 </span><a href="Data.Text.Encoding.Base32.Error.html#ConversionError"><span class="hs-identifier hs-var">ConversionError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either err Text
-</span><a href="#local-6989586621679060008"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679060005"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679060012"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679060009"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-216"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Text.Encoding.Base32.Hex.html#decodeBase32PaddedWith"><span class="hs-pragma hs-type">decodeBase32PaddedWith</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-217"></span><span>
 </span><span id="line-218"></span><span class="hs-comment">-- -- -- | Leniently decode an unpadded Base32hex-encoded 'Text'. This function</span><span>

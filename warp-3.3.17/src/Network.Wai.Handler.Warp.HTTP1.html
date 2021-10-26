@@ -38,36 +38,36 @@
 -&gt; Handle
 -&gt; ByteString
 -&gt; IO ()
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#http1"><span class="hs-identifier hs-var hs-var">http1</span></a></span></span><span> </span><span id="local-6989586621679103689"><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103689"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103688"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103688"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103687"><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103687"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103686"><span class="annot"><span class="annottext">Transport
-</span><a href="#local-6989586621679103686"><span class="hs-identifier hs-var">transport</span></a></span></span><span> </span><span id="local-6989586621679103685"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103684"><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103684"><span class="hs-identifier hs-var">origAddr</span></a></span></span><span> </span><span id="local-6989586621679103683"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103683"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103682"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103682"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-33"></span><span>    </span><span id="local-6989586621679103681"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103681"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO (IORef Bool)
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#http1"><span class="hs-identifier hs-var hs-var">http1</span></a></span></span><span> </span><span id="local-6989586621679103707"><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103707"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103706"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103706"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103705"><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103705"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103704"><span class="annot"><span class="annottext">Transport
+</span><a href="#local-6989586621679103704"><span class="hs-identifier hs-var">transport</span></a></span></span><span> </span><span id="local-6989586621679103703"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103703"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103702"><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103702"><span class="hs-identifier hs-var">origAddr</span></a></span></span><span> </span><span id="local-6989586621679103701"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103701"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103700"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103700"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-33"></span><span>    </span><span id="local-6989586621679103699"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103699"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO (IORef Bool)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
-</span><span id="line-34"></span><span>    </span><span id="local-6989586621679103680"><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103680"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString -&gt; IO Source
+</span><span id="line-34"></span><span>    </span><span id="local-6989586621679103698"><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103698"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString -&gt; IO Source
 </span><a href="Network.Wai.Handler.Warp.Types.html#mkSource"><span class="hs-identifier hs-var">mkSource</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Connection -&gt; IORef Bool -&gt; Int -&gt; IO ByteString
-</span><a href="#local-6989586621679103678"><span class="hs-identifier hs-var">wrappedRecv</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103687"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103681"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Settings -&gt; Int
+</span><a href="#local-6989586621679103696"><span class="hs-identifier hs-var">wrappedRecv</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103705"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103699"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Settings -&gt; Int
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsSlowlorisSize"><span class="hs-identifier hs-var hs-var">settingsSlowlorisSize</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103689"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103707"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-35"></span><span>    </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.Types.html#leftoverSource"><span class="hs-identifier hs-var">leftoverSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103680"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103682"><span class="hs-identifier hs-var">bs0</span></a></span><span>
-</span><span id="line-36"></span><span>    </span><span id="local-6989586621679103675"><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103675"><span class="hs-identifier hs-var">addr</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO SockAddr
-</span><a href="#local-6989586621679103674"><span class="hs-identifier hs-var">getProxyProtocolAddr</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103680"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><a href="#local-6989586621679103698"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103700"><span class="hs-identifier hs-var">bs0</span></a></span><span>
+</span><span id="line-36"></span><span>    </span><span id="local-6989586621679103693"><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103693"><span class="hs-identifier hs-var">addr</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO SockAddr
+</span><a href="#local-6989586621679103692"><span class="hs-identifier hs-var">getProxyProtocolAddr</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103698"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-37"></span><span>    </span><span class="annot"><span class="annottext">Settings
 -&gt; InternalInfo
 -&gt; Connection
@@ -79,181 +79,181 @@ forall a. a -&gt; IO (IORef a)
 -&gt; Source
 -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#http1server"><span class="hs-identifier hs-var">http1server</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103689"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103688"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103687"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Transport
-</span><a href="#local-6989586621679103686"><span class="hs-identifier hs-var">transport</span></a></span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103675"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103683"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103681"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103680"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><a href="#local-6989586621679103707"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103706"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103705"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Transport
+</span><a href="#local-6989586621679103704"><span class="hs-identifier hs-var">transport</span></a></span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103703"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103693"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103701"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103699"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103698"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-38"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-39"></span><span>    </span><span id="local-6989586621679103678"><span class="annot"><span class="annottext">wrappedRecv :: Connection -&gt; IORef Bool -&gt; Int -&gt; IO ByteString
-</span><a href="#local-6989586621679103678"><span class="hs-identifier hs-var hs-var">wrappedRecv</span></a></span></span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Connection"><span class="hs-identifier hs-type">Connection</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">connRecv :: Connection -&gt; IO ByteString
-</span><a href="Network.Wai.Handler.Warp.Types.html#connRecv"><span class="hs-identifier hs-var">connRecv</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="local-6989586621679103670"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103670"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span class="hs-special">}</span><span> </span><span id="local-6989586621679103669"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103669"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103668"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103668"><span class="hs-identifier hs-var">slowlorisSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-40"></span><span>        </span><span id="local-6989586621679103667"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103670"><span class="hs-identifier hs-var">recv</span></a></span><span>
+</span><span id="line-39"></span><span>    </span><span id="local-6989586621679103696"><span class="annot"><span class="annottext">wrappedRecv :: Connection -&gt; IORef Bool -&gt; Int -&gt; IO ByteString
+</span><a href="#local-6989586621679103696"><span class="hs-identifier hs-var hs-var">wrappedRecv</span></a></span></span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Connection"><span class="hs-identifier hs-type">Connection</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">connRecv :: Connection -&gt; IO ByteString
+</span><a href="Network.Wai.Handler.Warp.Types.html#connRecv"><span class="hs-identifier hs-var">connRecv</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="local-6989586621679103688"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103688"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span class="hs-special">}</span><span> </span><span id="local-6989586621679103687"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103687"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103686"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103686"><span class="hs-identifier hs-var">slowlorisSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-40"></span><span>        </span><span id="local-6989586621679103685"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103688"><span class="hs-identifier hs-var">recv</span></a></span><span>
 </span><span id="line-41"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-42"></span><span>            </span><span class="annot"><span class="annottext">IORef Bool -&gt; Bool -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103669"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103687"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-43"></span><span>            </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Int
 </span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103668"><span class="hs-identifier hs-var">slowlorisSize</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679103686"><span class="hs-identifier hs-var">slowlorisSize</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">T.tickle</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103683"><span class="hs-identifier hs-var">th</span></a></span><span>
+</span><a href="#local-6989586621679103701"><span class="hs-identifier hs-var">th</span></a></span><span>
 </span><span id="line-44"></span><span>        </span><span class="annot"><span class="annottext">ByteString -&gt; IO ByteString
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679103685"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-45"></span><span>
-</span><span id="line-46"></span><span>    </span><span id="local-6989586621679103674"><span class="annot"><span class="annottext">getProxyProtocolAddr :: Source -&gt; IO SockAddr
-</span><a href="#local-6989586621679103674"><span class="hs-identifier hs-var hs-var">getProxyProtocolAddr</span></a></span></span><span> </span><span id="local-6989586621679103661"><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-46"></span><span>    </span><span id="local-6989586621679103692"><span class="annot"><span class="annottext">getProxyProtocolAddr :: Source -&gt; IO SockAddr
+</span><a href="#local-6989586621679103692"><span class="hs-identifier hs-var hs-var">getProxyProtocolAddr</span></a></span></span><span> </span><span id="local-6989586621679103679"><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-47"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; ProxyProtocol
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsProxyProtocol"><span class="hs-identifier hs-var hs-var">settingsProxyProtocol</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103689"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679103707"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-48"></span><span>            </span><span class="annot"><span class="annottext">ProxyProtocol
 </span><a href="Network.Wai.Handler.Warp.Settings.html#ProxyProtocolNone"><span class="hs-identifier hs-var">ProxyProtocolNone</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-49"></span><span>                </span><span class="annot"><span class="annottext">SockAddr -&gt; IO SockAddr
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103684"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
+</span><a href="#local-6989586621679103702"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
 </span><span id="line-50"></span><span>            </span><span class="annot"><span class="annottext">ProxyProtocol
 </span><a href="Network.Wai.Handler.Warp.Settings.html#ProxyProtocolRequired"><span class="hs-identifier hs-var">ProxyProtocolRequired</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-51"></span><span>                </span><span id="local-6989586621679103657"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
+</span><span id="line-51"></span><span>                </span><span id="local-6989586621679103675"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103675"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
 </span><a href="Network.Wai.Handler.Warp.Types.html#readSource"><span class="hs-identifier hs-var">readSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-52"></span><span>                </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO SockAddr
-</span><a href="#local-6989586621679103655"><span class="hs-identifier hs-var">parseProxyProtocolHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var">seg</span></a></span><span>
+</span><a href="#local-6989586621679103673"><span class="hs-identifier hs-var">parseProxyProtocolHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103675"><span class="hs-identifier hs-var">seg</span></a></span><span>
 </span><span id="line-53"></span><span>            </span><span class="annot"><span class="annottext">ProxyProtocol
 </span><a href="Network.Wai.Handler.Warp.Settings.html#ProxyProtocolOptional"><span class="hs-identifier hs-var">ProxyProtocolOptional</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-54"></span><span>                </span><span id="local-6989586621679103653"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
+</span><span id="line-54"></span><span>                </span><span id="local-6989586621679103671"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103671"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
 </span><a href="Network.Wai.Handler.Warp.Types.html#readSource"><span class="hs-identifier hs-var">readSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-55"></span><span>                </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.isPrefixOf</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;PROXY &quot;</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">seg</span></a></span><span>
+</span><a href="#local-6989586621679103671"><span class="hs-identifier hs-var">seg</span></a></span><span>
 </span><span id="line-56"></span><span>                    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO SockAddr
-</span><a href="#local-6989586621679103655"><span class="hs-identifier hs-var">parseProxyProtocolHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">seg</span></a></span><span>
+</span><a href="#local-6989586621679103673"><span class="hs-identifier hs-var">parseProxyProtocolHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103671"><span class="hs-identifier hs-var">seg</span></a></span><span>
 </span><span id="line-57"></span><span>                    </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.Types.html#leftoverSource"><span class="hs-identifier hs-var">leftoverSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">seg</span></a></span><span>
+</span><a href="#local-6989586621679103679"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103671"><span class="hs-identifier hs-var">seg</span></a></span><span>
 </span><span id="line-58"></span><span>                            </span><span class="annot"><span class="annottext">SockAddr -&gt; IO SockAddr
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103684"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
+</span><a href="#local-6989586621679103702"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
 </span><span id="line-59"></span><span>
-</span><span id="line-60"></span><span>    </span><span id="local-6989586621679103655"><span class="annot"><span class="annottext">parseProxyProtocolHeader :: Source -&gt; ByteString -&gt; IO SockAddr
-</span><a href="#local-6989586621679103655"><span class="hs-identifier hs-var hs-var">parseProxyProtocolHeader</span></a></span></span><span> </span><span id="local-6989586621679103651"><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103651"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span id="local-6989586621679103650"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103650"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-61"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103649"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103649"><span class="hs-identifier hs-var">header</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679103648"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103648"><span class="hs-identifier hs-var">seg'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; (ByteString, ByteString)
+</span><span id="line-60"></span><span>    </span><span id="local-6989586621679103673"><span class="annot"><span class="annottext">parseProxyProtocolHeader :: Source -&gt; ByteString -&gt; IO SockAddr
+</span><a href="#local-6989586621679103673"><span class="hs-identifier hs-var hs-var">parseProxyProtocolHeader</span></a></span></span><span> </span><span id="local-6989586621679103669"><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103669"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span id="local-6989586621679103668"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103668"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-61"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103667"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">header</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679103666"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103666"><span class="hs-identifier hs-var">seg'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; (ByteString, ByteString)
 </span><span class="hs-identifier hs-var">BS.break</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0x0d</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103650"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="hs-comment">-- 0x0d == CR</span><span>
-</span><span id="line-62"></span><span>            </span><span id="local-6989586621679103646"><span class="annot"><span class="annottext">maybeAddr :: Maybe SockAddr
-</span><a href="#local-6989586621679103646"><span class="hs-identifier hs-var hs-var">maybeAddr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; ByteString -&gt; [ByteString]
+</span><a href="#local-6989586621679103668"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="hs-comment">-- 0x0d == CR</span><span>
+</span><span id="line-62"></span><span>            </span><span id="local-6989586621679103664"><span class="annot"><span class="annottext">maybeAddr :: Maybe SockAddr
+</span><a href="#local-6989586621679103664"><span class="hs-identifier hs-var hs-var">maybeAddr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; ByteString -&gt; [ByteString]
 </span><span class="hs-identifier hs-var">BS.split</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0x20</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103649"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="hs-comment">-- 0x20 == space</span><span>
+</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="hs-comment">-- 0x20 == space</span><span>
 </span><span id="line-63"></span><span>                </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;PROXY&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><span class="hs-string">&quot;TCP4&quot;</span></span><span class="hs-special">,</span><span id="local-6989586621679103644"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103644"><span class="hs-identifier hs-var">clientAddr</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679103643"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103643"><span class="hs-identifier hs-var">clientPort</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><span class="hs-string">&quot;TCP4&quot;</span></span><span class="hs-special">,</span><span id="local-6989586621679103662"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103662"><span class="hs-identifier hs-var">clientAddr</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679103661"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">clientPort</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-identifier">_</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-64"></span><span>                    </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103642"><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103641"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReadS IPv4
+</span><a href="#local-6989586621679103660"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103660"><span class="annot"><span class="annottext">IPv4
+</span><a href="#local-6989586621679103660"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103659"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679103659"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReadS IPv4
 forall a. Read a =&gt; ReadS a
 </span><span class="hs-identifier hs-var">reads</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; String
-</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103644"><span class="hs-identifier hs-var">clientAddr</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String -&gt; Bool
+</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103662"><span class="hs-identifier hs-var">clientAddr</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-65"></span><span>                        </span><span class="hs-special">[</span><span id="local-6989586621679103637"><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679103637"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe SockAddr
+</span><a href="#local-6989586621679103659"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-65"></span><span>                        </span><span class="hs-special">[</span><span id="local-6989586621679103655"><span class="annot"><span class="annottext">IPv4
+</span><a href="#local-6989586621679103655"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe SockAddr
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PortNumber -&gt; HostAddress -&gt; SockAddr
 </span><span class="hs-identifier hs-var">SockAddrInet</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; PortNumber
 forall a. Integral a =&gt; ByteString -&gt; a
 </span><a href="Network.Wai.Handler.Warp.ReadInt.html#readInt"><span class="hs-identifier hs-var">readInt</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103643"><span class="hs-identifier hs-var">clientPort</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103661"><span class="hs-identifier hs-var">clientPort</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-66"></span><span>                                                       </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IPv4 -&gt; HostAddress
 </span><span class="hs-identifier hs-var">toHostAddress</span></span><span> </span><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679103637"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103655"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-67"></span><span>                        </span><span class="annot"><span class="annottext">[IPv4]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe SockAddr
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-68"></span><span>                </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;PROXY&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><span class="hs-string">&quot;TCP6&quot;</span></span><span class="hs-special">,</span><span id="local-6989586621679103635"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103635"><span class="hs-identifier hs-var">clientAddr</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679103634"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103634"><span class="hs-identifier hs-var">clientPort</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><span class="hs-string">&quot;TCP6&quot;</span></span><span class="hs-special">,</span><span id="local-6989586621679103653"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">clientAddr</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679103652"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103652"><span class="hs-identifier hs-var">clientPort</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-identifier">_</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-69"></span><span>                    </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679103633"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103633"><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679103633"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103632"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679103632"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReadS IPv6
+</span><a href="#local-6989586621679103651"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103651"><span class="annot"><span class="annottext">IPv6
+</span><a href="#local-6989586621679103651"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103650"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679103650"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReadS IPv6
 forall a. Read a =&gt; ReadS a
 </span><span class="hs-identifier hs-var">reads</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; String
-</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103635"><span class="hs-identifier hs-var">clientAddr</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String -&gt; Bool
+</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103653"><span class="hs-identifier hs-var">clientAddr</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679103632"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-70"></span><span>                        </span><span class="hs-special">[</span><span id="local-6989586621679103631"><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679103631"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe SockAddr
+</span><a href="#local-6989586621679103650"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-70"></span><span>                        </span><span class="hs-special">[</span><span id="local-6989586621679103649"><span class="annot"><span class="annottext">IPv6
+</span><a href="#local-6989586621679103649"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe SockAddr
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PortNumber
 -&gt; HostAddress -&gt; HostAddress6 -&gt; HostAddress -&gt; SockAddr
 </span><span class="hs-identifier hs-var">SockAddrInet6</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; PortNumber
 forall a. Integral a =&gt; ByteString -&gt; a
 </span><a href="Network.Wai.Handler.Warp.ReadInt.html#readInt"><span class="hs-identifier hs-var">readInt</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103634"><span class="hs-identifier hs-var">clientPort</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103652"><span class="hs-identifier hs-var">clientPort</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-71"></span><span>                                                        </span><span class="annot"><span class="annottext">HostAddress
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-72"></span><span>                                                        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IPv6 -&gt; HostAddress6
 </span><span class="hs-identifier hs-var">toHostAddress6</span></span><span> </span><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679103631"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103649"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-73"></span><span>                                                        </span><span class="annot"><span class="annottext">HostAddress
 </span><span class="hs-number">0</span></span><span class="hs-special">)</span><span>
 </span><span id="line-74"></span><span>                        </span><span class="annot"><span class="annottext">[IPv6]
@@ -267,35 +267,35 @@ forall a. Maybe a
 </span><span id="line-76"></span><span>                    </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe SockAddr
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103684"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
+</span><a href="#local-6989586621679103702"><span class="hs-identifier hs-var">origAddr</span></a></span><span>
 </span><span id="line-77"></span><span>                </span><span class="annot"><span class="annottext">[ByteString]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-78"></span><span>                    </span><span class="annot"><span class="annottext">Maybe SockAddr
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-79"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe SockAddr
-</span><a href="#local-6989586621679103646"><span class="hs-identifier hs-var">maybeAddr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679103664"><span class="hs-identifier hs-var">maybeAddr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-80"></span><span>            </span><span class="annot"><span class="annottext">Maybe SockAddr
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">InvalidRequest -&gt; IO SockAddr
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; InvalidRequest
 </span><a href="Network.Wai.Handler.Warp.Types.html#BadProxyHeader"><span class="hs-identifier hs-var">BadProxyHeader</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; String
-</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103649"><span class="hs-identifier hs-var">header</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-81"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103629"><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103629"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO ()
+</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var">decodeAscii</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103667"><span class="hs-identifier hs-var">header</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-81"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103647"><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103647"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="annot"><span class="annottext">Source -&gt; ByteString -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.Types.html#leftoverSource"><span class="hs-identifier hs-var">leftoverSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103651"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; ByteString -&gt; ByteString
+</span><a href="#local-6989586621679103669"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.drop</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103648"><span class="hs-identifier hs-var">seg'</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- drop CRLF</span><span>
+</span><a href="#local-6989586621679103666"><span class="hs-identifier hs-var">seg'</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- drop CRLF</span><span>
 </span><span id="line-82"></span><span>                         </span><span class="annot"><span class="annottext">SockAddr -&gt; IO SockAddr
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103629"><span class="hs-identifier hs-var">a</span></a></span><span>
+</span><a href="#local-6989586621679103647"><span class="hs-identifier hs-var">a</span></a></span><span>
 </span><span id="line-83"></span><span>
-</span><span id="line-84"></span><span>    </span><span id="local-6989586621679103639"><span class="annot"><span class="annottext">decodeAscii :: ByteString -&gt; String
-</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var hs-var">decodeAscii</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Char) -&gt; [Word8] -&gt; String
+</span><span id="line-84"></span><span>    </span><span id="local-6989586621679103657"><span class="annot"><span class="annottext">decodeAscii :: ByteString -&gt; String
+</span><a href="#local-6989586621679103657"><span class="hs-identifier hs-var hs-var">decodeAscii</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Char) -&gt; [Word8] -&gt; String
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; Char
 </span><span class="hs-identifier hs-var">chr</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Char) -&gt; (Word8 -&gt; Int) -&gt; Word8 -&gt; Char
@@ -319,35 +319,35 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; IORef Bool
 -&gt; Source
 -&gt; IO ()
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#http1server"><span class="hs-identifier hs-var hs-var">http1server</span></a></span></span><span> </span><span id="local-6989586621679103624"><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103623"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103622"><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103621"><span class="annot"><span class="annottext">Transport
-</span><a href="#local-6989586621679103621"><span class="hs-identifier hs-var">transport</span></a></span></span><span> </span><span id="local-6989586621679103620"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103620"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103619"><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103619"><span class="hs-identifier hs-var">addr</span></a></span></span><span> </span><span id="local-6989586621679103618"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103617"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103617"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103616"><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103616"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#http1server"><span class="hs-identifier hs-var hs-var">http1server</span></a></span></span><span> </span><span id="local-6989586621679103642"><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103641"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103640"><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103640"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103639"><span class="annot"><span class="annottext">Transport
+</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var">transport</span></a></span></span><span> </span><span id="local-6989586621679103638"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103638"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103637"><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103637"><span class="hs-identifier hs-var">addr</span></a></span></span><span> </span><span id="local-6989586621679103636"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103636"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103635"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103635"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103634"><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103634"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-88"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO ()
-</span><a href="#local-6989586621679103615"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103633"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="annot"><span class="annottext">IO () -&gt; (SomeException -&gt; IO ()) -&gt; IO ()
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 m a -&gt; (SomeException -&gt; m a) -&gt; m a
 </span><span class="hs-operator hs-var">`UnliftIO.catchAny`</span></span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; IO ()
-</span><a href="#local-6989586621679103613"><span class="hs-identifier hs-var">handler</span></a></span><span>
+</span><a href="#local-6989586621679103631"><span class="hs-identifier hs-var">handler</span></a></span><span>
 </span><span id="line-89"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-90"></span><span>    </span><span id="local-6989586621679103613"><span class="annot"><span class="annottext">handler :: SomeException -&gt; IO ()
-</span><a href="#local-6989586621679103613"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span id="local-6989586621679103612"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">e</span></a></span></span><span>
+</span><span id="line-90"></span><span>    </span><span id="local-6989586621679103631"><span class="annot"><span class="annottext">handler :: SomeException -&gt; IO ()
+</span><a href="#local-6989586621679103631"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span id="local-6989586621679103630"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103630"><span class="hs-identifier hs-var">e</span></a></span></span><span>
 </span><span id="line-91"></span><span>      </span><span class="hs-comment">-- See comment below referencing</span><span>
 </span><span id="line-92"></span><span>      </span><span class="hs-comment">-- https://github.com/yesodweb/wai/issues/618</span><span>
 </span><span id="line-93"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="annottext">NoKeepAliveRequest
 </span><a href="Network.Wai.Handler.Warp.Request.html#NoKeepAliveRequest"><span class="hs-identifier hs-var">NoKeepAliveRequest</span></a></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Maybe NoKeepAliveRequest
 forall e. Exception e =&gt; SomeException -&gt; Maybe e
 </span><span class="hs-identifier hs-var">fromException</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
+</span><a href="#local-6989586621679103630"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-94"></span><span>      </span><span class="hs-comment">-- No valid request</span><span>
@@ -355,7 +355,7 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>   </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Maybe InvalidRequest
 forall e. Exception e =&gt; SomeException -&gt; Maybe e
 </span><span class="hs-identifier hs-var">fromException</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
+</span><a href="#local-6989586621679103630"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-96"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
@@ -370,28 +370,28 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 -&gt; SomeException
 -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#sendErrorResponse"><span class="hs-identifier hs-var">sendErrorResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103617"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103640"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103636"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103635"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Request
 </span><span class="hs-identifier hs-var">defaultRequest</span></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">remoteHost :: SockAddr
 </span><span class="hs-identifier hs-var">remoteHost</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103619"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103637"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103630"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-98"></span><span>          </span><span class="annot"><span class="annottext">SomeException -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103630"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-99"></span><span>
-</span><span id="line-100"></span><span>    </span><span id="local-6989586621679103615"><span class="annot"><span class="annottext">loop :: Bool -&gt; IO ()
-</span><a href="#local-6989586621679103615"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679103606"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103606"><span class="hs-identifier hs-var">firstRequest</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-101"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679103605"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103605"><span class="hs-identifier hs-var">req</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103604"><span class="annot"><span class="annottext">Maybe (IORef Int)
-</span><a href="#local-6989586621679103604"><span class="hs-identifier hs-var">mremainingRef</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103603"><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103603"><span class="hs-identifier hs-var">idxhdr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103602"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span id="line-100"></span><span>    </span><span id="local-6989586621679103633"><span class="annot"><span class="annottext">loop :: Bool -&gt; IO ()
+</span><a href="#local-6989586621679103633"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679103624"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">firstRequest</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-101"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679103623"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">req</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103622"><span class="annot"><span class="annottext">Maybe (IORef Int)
+</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">mremainingRef</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103621"><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103621"><span class="hs-identifier hs-var">idxhdr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103620"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103620"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool
 -&gt; Settings
 -&gt; Connection
 -&gt; InternalInfo
@@ -401,16 +401,16 @@ forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 -&gt; Transport
 -&gt; IO (Request, Maybe (IORef Int), IndexedHeader, IO ByteString)
 </span><a href="Network.Wai.Handler.Warp.Request.html#recvRequest"><span class="hs-identifier hs-var">recvRequest</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103606"><span class="hs-identifier hs-var">firstRequest</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">SockAddr
-</span><a href="#local-6989586621679103619"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103616"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">Transport
-</span><a href="#local-6989586621679103621"><span class="hs-identifier hs-var">transport</span></a></span><span>
-</span><span id="line-102"></span><span>        </span><span id="local-6989586621679103600"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103600"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">firstRequest</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103640"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103636"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">SockAddr
+</span><a href="#local-6989586621679103637"><span class="hs-identifier hs-var">addr</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103634"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">Transport
+</span><a href="#local-6989586621679103639"><span class="hs-identifier hs-var">transport</span></a></span><span>
+</span><span id="line-102"></span><span>        </span><span id="local-6989586621679103618"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
 -&gt; InternalInfo
 -&gt; Connection
 -&gt; Application
@@ -423,30 +423,30 @@ forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 -&gt; IO ByteString
 -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#processRequest"><span class="hs-identifier hs-var">processRequest</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103620"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103617"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103616"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103605"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (IORef Int)
-</span><a href="#local-6989586621679103604"><span class="hs-identifier hs-var">mremainingRef</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103603"><span class="hs-identifier hs-var">idxhdr</span></a></span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span>
+</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103641"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103640"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103638"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103636"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103635"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103634"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (IORef Int)
+</span><a href="#local-6989586621679103622"><span class="hs-identifier hs-var">mremainingRef</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103621"><span class="hs-identifier hs-var">idxhdr</span></a></span><span> </span><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103620"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span>
 </span><span id="line-103"></span><span>            </span><span class="annot"><span class="annottext">IO Bool -&gt; (SomeException -&gt; IO Bool) -&gt; IO Bool
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 m a -&gt; (SomeException -&gt; m a) -&gt; m a
-</span><span class="hs-operator hs-var">`UnliftIO.catchAny`</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679103598"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103598"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span class="hs-operator hs-var">`UnliftIO.catchAny`</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679103616"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103616"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-104"></span><span>                </span><span class="annot"><span class="annottext">Settings -&gt; Maybe Request -&gt; SomeException -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsOnException"><span class="hs-identifier hs-var hs-var">settingsOnException</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103624"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
+</span><a href="#local-6989586621679103642"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103605"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103598"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103623"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103616"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-105"></span><span>                </span><span class="hs-comment">-- Don't throw the error again to prevent calling settingsOnException twice.</span><span>
 </span><span id="line-106"></span><span>                </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -465,10 +465,10 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-117"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103600"><span class="hs-identifier hs-var">keepAlive</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679103618"><span class="hs-identifier hs-var">keepAlive</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO ()
-</span><a href="#local-6989586621679103615"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103633"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-118"></span><span>
 </span><span id="line-119"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP1.html#processRequest"><span class="hs-identifier hs-type">processRequest</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Settings.html#Settings"><span class="hs-identifier hs-type">Settings</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#InternalInfo"><span class="hs-identifier hs-type">InternalInfo</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Connection"><span class="hs-identifier hs-type">Connection</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Application</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">T.Handle</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IORef</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Source"><span class="hs-identifier hs-type">Source</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IORef</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Header.html#IndexedHeader"><span class="hs-identifier hs-type">IndexedHeader</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
@@ -484,28 +484,28 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; IndexedHeader
 -&gt; IO ByteString
 -&gt; IO Bool
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#processRequest"><span class="hs-identifier hs-var hs-var">processRequest</span></a></span></span><span> </span><span id="local-6989586621679103596"><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103595"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103595"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103594"><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103593"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103593"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103592"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103591"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103591"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103590"><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103590"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span id="local-6989586621679103589"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103589"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103588"><span class="annot"><span class="annottext">Maybe (IORef Int)
-</span><a href="#local-6989586621679103588"><span class="hs-identifier hs-var">mremainingRef</span></a></span></span><span> </span><span id="local-6989586621679103587"><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103587"><span class="hs-identifier hs-var">idxhdr</span></a></span></span><span> </span><span id="local-6989586621679103586"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#processRequest"><span class="hs-identifier hs-var hs-var">processRequest</span></a></span></span><span> </span><span id="local-6989586621679103614"><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103614"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103613"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103613"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103612"><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103611"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103611"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103610"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103609"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103609"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103608"><span class="annot"><span class="annottext">Source
+</span><a href="#local-6989586621679103608"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span id="local-6989586621679103607"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103607"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103606"><span class="annot"><span class="annottext">Maybe (IORef Int)
+</span><a href="#local-6989586621679103606"><span class="hs-identifier hs-var">mremainingRef</span></a></span></span><span> </span><span id="local-6989586621679103605"><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103605"><span class="hs-identifier hs-var">idxhdr</span></a></span></span><span> </span><span id="local-6989586621679103604"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103604"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-121"></span><span>    </span><span class="hs-comment">-- Let the application run for as long as it wants</span><span>
 </span><span id="line-122"></span><span>    </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">T.pause</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span>
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span>
 </span><span id="line-123"></span><span>
 </span><span id="line-124"></span><span>    </span><span class="hs-comment">-- In the event that some scarce resource was acquired during</span><span>
 </span><span id="line-125"></span><span>    </span><span class="hs-comment">-- creating the request, we need to make sure that we don't get</span><span>
 </span><span id="line-126"></span><span>    </span><span class="hs-comment">-- an async exception before calling the ResponseSource.</span><span>
-</span><span id="line-127"></span><span>    </span><span id="local-6989586621679103584"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103584"><span class="hs-identifier hs-var">keepAliveRef</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO (IORef Bool)
+</span><span id="line-127"></span><span>    </span><span id="local-6989586621679103602"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">keepAliveRef</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO (IORef Bool)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">(Bool -&gt; IO (IORef Bool)) -&gt; Bool -&gt; IO (IORef Bool)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -513,8 +513,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. HasCallStack =&gt; String -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;keepAliveRef not filled&quot;</span></span><span>
-</span><span id="line-128"></span><span>    </span><span id="local-6989586621679103582"><span class="annot"><span class="annottext">Either SomeException ResponseReceived
-</span><a href="#local-6989586621679103582"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ResponseReceived -&gt; IO (Either SomeException ResponseReceived)
+</span><span id="line-128"></span><span>    </span><span id="local-6989586621679103600"><span class="annot"><span class="annottext">Either SomeException ResponseReceived
+</span><a href="#local-6989586621679103600"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ResponseReceived -&gt; IO (Either SomeException ResponseReceived)
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 m a -&gt; m (Either SomeException a)
@@ -523,25 +523,25 @@ m a -&gt; m (Either SomeException a)
 -&gt; IO (Either SomeException ResponseReceived)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103593"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103589"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">((Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived)
+</span><a href="#local-6989586621679103611"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103607"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">((Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived)
 -&gt; (Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679103580"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103580"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679103598"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103598"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-129"></span><span>        </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">T.resume</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span>
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span>
 </span><span id="line-130"></span><span>        </span><span class="hs-comment">-- FIXME consider forcing evaluation of the res here to</span><span>
 </span><span id="line-131"></span><span>        </span><span class="hs-comment">-- send more meaningful error messages to the user.</span><span>
 </span><span id="line-132"></span><span>        </span><span class="hs-comment">-- However, it may affect performance.</span><span>
 </span><span id="line-133"></span><span>        </span><span class="annot"><span class="annottext">IORef Bool -&gt; Bool -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103591"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103609"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
-</span><span id="line-134"></span><span>        </span><span id="local-6989586621679103578"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103578"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
+</span><span id="line-134"></span><span>        </span><span id="local-6989586621679103596"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
 -&gt; Connection
 -&gt; InternalInfo
 -&gt; Handle
@@ -551,44 +551,44 @@ forall a. IORef a -&gt; a -&gt; IO ()
 -&gt; Response
 -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.Response.html#sendResponse"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103595"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103589"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103587"><span class="hs-identifier hs-var">idxhdr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
+</span><a href="#local-6989586621679103614"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103613"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103607"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103605"><span class="hs-identifier hs-var">idxhdr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Source -&gt; IO ByteString
 </span><a href="Network.Wai.Handler.Warp.Types.html#readSource"><span class="hs-identifier hs-var">readSource</span></a></span><span> </span><span class="annot"><span class="annottext">Source
-</span><a href="#local-6989586621679103590"><span class="hs-identifier hs-var">src</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103580"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679103608"><span class="hs-identifier hs-var">src</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103598"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-135"></span><span>        </span><span class="annot"><span class="annottext">IORef Bool -&gt; Bool -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103584"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103578"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
+</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
 </span><span id="line-136"></span><span>        </span><span class="annot"><span class="annottext">ResponseReceived -&gt; IO ResponseReceived
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">ResponseReceived
 </span><span class="hs-identifier hs-var">ResponseReceived</span></span><span>
 </span><span id="line-137"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either SomeException ResponseReceived
-</span><a href="#local-6989586621679103582"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679103600"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-138"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="annot"><span class="annottext">ResponseReceived
 </span><span class="hs-identifier hs-var">ResponseReceived</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-139"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103576"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span class="hs-special">)</span><span>
-</span><span id="line-140"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#ExceptionInsideResponseBody"><span class="hs-identifier hs-type">ExceptionInsideResponseBody</span></a></span><span> </span><span id="local-6989586621679103574"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103574"><span class="hs-identifier hs-var">e'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Maybe ExceptionInsideResponseBody
+</span><span id="line-139"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103594"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span class="hs-special">)</span><span>
+</span><span id="line-140"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#ExceptionInsideResponseBody"><span class="hs-identifier hs-type">ExceptionInsideResponseBody</span></a></span><span> </span><span id="local-6989586621679103592"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">e'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Maybe ExceptionInsideResponseBody
 forall e. Exception e =&gt; SomeException -&gt; Maybe e
 </span><span class="hs-identifier hs-var">fromException</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; IO ()
+</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103574"><span class="hs-identifier hs-var">e'</span></a></span><span>
+</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">e'</span></a></span><span>
 </span><span id="line-141"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-142"></span><span>                </span><span id="local-6989586621679103573"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103573"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
+</span><span id="line-142"></span><span>                </span><span id="local-6989586621679103591"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103591"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Settings
 -&gt; InternalInfo
 -&gt; Connection
 -&gt; Handle
@@ -597,31 +597,31 @@ forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 -&gt; SomeException
 -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#sendErrorResponse"><span class="hs-identifier hs-var">sendErrorResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103595"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103591"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103589"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103614"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103613"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103612"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103609"><span class="hs-identifier hs-var">istatus</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103607"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-143"></span><span>                </span><span class="annot"><span class="annottext">Settings -&gt; Maybe Request -&gt; SomeException -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsOnException"><span class="hs-identifier hs-var hs-var">settingsOnException</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
+</span><a href="#local-6989586621679103614"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103589"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103607"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103594"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-144"></span><span>                </span><span class="annot"><span class="annottext">IORef Bool -&gt; Bool -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103584"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103573"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
+</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103591"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
 </span><span id="line-145"></span><span>
-</span><span id="line-146"></span><span>    </span><span id="local-6989586621679103572"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103572"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Bool -&gt; IO Bool
+</span><span id="line-146"></span><span>    </span><span id="local-6989586621679103590"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103590"><span class="hs-identifier hs-var">keepAlive</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Bool -&gt; IO Bool
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103584"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span>
+</span><a href="#local-6989586621679103602"><span class="hs-identifier hs-var">keepAliveRef</span></a></span><span>
 </span><span id="line-147"></span><span>
 </span><span id="line-148"></span><span>    </span><span class="hs-comment">-- We just send a Response and it takes a time to</span><span>
 </span><span id="line-149"></span><span>    </span><span class="hs-comment">-- receive a Request again. If we immediately call recv,</span><span>
@@ -635,41 +635,41 @@ forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">Conc.yield</span></span><span>
 </span><span id="line-157"></span><span>
 </span><span id="line-158"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103572"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
+</span><a href="#local-6989586621679103590"><span class="hs-identifier hs-var">keepAlive</span></a></span><span>
 </span><span id="line-159"></span><span>      </span><span class="hs-keyword">then</span><span>
 </span><span id="line-160"></span><span>        </span><span class="hs-comment">-- If there is an unknown or large amount of data to still be read</span><span>
 </span><span id="line-161"></span><span>        </span><span class="hs-comment">-- from the request body, simple drop this connection instead of</span><span>
 </span><span id="line-162"></span><span>        </span><span class="hs-comment">-- reading it all in to satisfy a keep-alive request.</span><span>
 </span><span id="line-163"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; Maybe Int
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsMaximumBodyFlush"><span class="hs-identifier hs-var hs-var">settingsMaximumBodyFlush</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103596"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679103614"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-164"></span><span>            </span><span class="annot"><span class="annottext">Maybe Int
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-165"></span><span>                </span><span class="annot"><span class="annottext">IO ByteString -&gt; IO ()
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushEntireBody"><span class="hs-identifier hs-var">flushEntireBody</span></a></span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span>
+</span><a href="#local-6989586621679103604"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span>
 </span><span id="line-166"></span><span>                </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">T.resume</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span>
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span>
 </span><span id="line-167"></span><span>                </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
-</span><span id="line-168"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103569"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103569"><span class="hs-identifier hs-var">maxToRead</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-169"></span><span>                </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103568"><span class="annot"><span class="annottext">tryKeepAlive :: IO Bool
-</span><a href="#local-6989586621679103568"><span class="hs-identifier hs-var hs-var">tryKeepAlive</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-168"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103587"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103587"><span class="hs-identifier hs-var">maxToRead</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-169"></span><span>                </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103586"><span class="annot"><span class="annottext">tryKeepAlive :: IO Bool
+</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var hs-var">tryKeepAlive</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-170"></span><span>                        </span><span class="hs-comment">-- flush the rest of the request body</span><span>
-</span><span id="line-171"></span><span>                        </span><span id="local-6989586621679103567"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103567"><span class="hs-identifier hs-var">isComplete</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString -&gt; Int -&gt; IO Bool
+</span><span id="line-171"></span><span>                        </span><span id="local-6989586621679103585"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103585"><span class="hs-identifier hs-var">isComplete</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString -&gt; Int -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushBody"><span class="hs-identifier hs-var">flushBody</span></a></span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103569"><span class="hs-identifier hs-var">maxToRead</span></a></span><span>
+</span><a href="#local-6989586621679103604"><span class="hs-identifier hs-var">nextBodyFlush</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103587"><span class="hs-identifier hs-var">maxToRead</span></a></span><span>
 </span><span id="line-172"></span><span>                        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103567"><span class="hs-identifier hs-var">isComplete</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="#local-6989586621679103585"><span class="hs-identifier hs-var">isComplete</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-173"></span><span>                            </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">T.resume</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103592"><span class="hs-identifier hs-var">th</span></a></span><span>
+</span><a href="#local-6989586621679103610"><span class="hs-identifier hs-var">th</span></a></span><span>
 </span><span id="line-174"></span><span>                            </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
@@ -680,21 +680,21 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-177"></span><span>                </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe (IORef Int)
-</span><a href="#local-6989586621679103588"><span class="hs-identifier hs-var">mremainingRef</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-178"></span><span>                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103565"><span class="annot"><span class="annottext">IORef Int
-</span><a href="#local-6989586621679103565"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-179"></span><span>                        </span><span id="local-6989586621679103564"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103564"><span class="hs-identifier hs-var">remaining</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Int -&gt; IO Int
+</span><a href="#local-6989586621679103606"><span class="hs-identifier hs-var">mremainingRef</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-178"></span><span>                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103583"><span class="annot"><span class="annottext">IORef Int
+</span><a href="#local-6989586621679103583"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-179"></span><span>                        </span><span id="local-6989586621679103582"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103582"><span class="hs-identifier hs-var">remaining</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Int -&gt; IO Int
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Int
-</span><a href="#local-6989586621679103565"><span class="hs-identifier hs-var">ref</span></a></span><span>
+</span><a href="#local-6989586621679103583"><span class="hs-identifier hs-var">ref</span></a></span><span>
 </span><span id="line-180"></span><span>                        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103564"><span class="hs-identifier hs-var">remaining</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679103582"><span class="hs-identifier hs-var">remaining</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103569"><span class="hs-identifier hs-var">maxToRead</span></a></span><span> </span><span class="hs-keyword">then</span><span>
+</span><a href="#local-6989586621679103587"><span class="hs-identifier hs-var">maxToRead</span></a></span><span> </span><span class="hs-keyword">then</span><span>
 </span><span id="line-181"></span><span>                            </span><span class="annot"><span class="annottext">IO Bool
-</span><a href="#local-6989586621679103568"><span class="hs-identifier hs-var">tryKeepAlive</span></a></span><span>
+</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var">tryKeepAlive</span></a></span><span>
 </span><span id="line-182"></span><span>                          </span><span class="hs-keyword">else</span><span>
 </span><span id="line-183"></span><span>                            </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -702,7 +702,7 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-184"></span><span>                    </span><span class="annot"><span class="annottext">Maybe (IORef Int)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO Bool
-</span><a href="#local-6989586621679103568"><span class="hs-identifier hs-var">tryKeepAlive</span></a></span><span>
+</span><a href="#local-6989586621679103586"><span class="hs-identifier hs-var">tryKeepAlive</span></a></span><span>
 </span><span id="line-185"></span><span>      </span><span class="hs-keyword">else</span><span>
 </span><span id="line-186"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -718,24 +718,24 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 -&gt; Request
 -&gt; SomeException
 -&gt; IO Bool
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#sendErrorResponse"><span class="hs-identifier hs-var hs-var">sendErrorResponse</span></a></span></span><span> </span><span id="local-6989586621679103562"><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103562"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103561"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103561"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103560"><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103560"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103559"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103559"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103558"><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103558"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103557"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103557"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103556"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103556"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-190"></span><span>    </span><span id="local-6989586621679103555"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103555"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Bool -&gt; IO Bool
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#sendErrorResponse"><span class="hs-identifier hs-var hs-var">sendErrorResponse</span></a></span></span><span> </span><span id="local-6989586621679103580"><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103580"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103579"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103579"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103578"><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103578"><span class="hs-identifier hs-var">conn</span></a></span></span><span> </span><span id="local-6989586621679103577"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103577"><span class="hs-identifier hs-var">th</span></a></span></span><span> </span><span id="local-6989586621679103576"><span class="annot"><span class="annottext">IORef Bool
+</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">istatus</span></a></span></span><span> </span><span id="local-6989586621679103575"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103575"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103574"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103574"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-190"></span><span>    </span><span id="local-6989586621679103573"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103573"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef Bool -&gt; IO Bool
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Bool
-</span><a href="#local-6989586621679103558"><span class="hs-identifier hs-var">istatus</span></a></span><span>
+</span><a href="#local-6989586621679103576"><span class="hs-identifier hs-var">istatus</span></a></span><span>
 </span><span id="line-191"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Bool
-</span><a href="#local-6989586621679103554"><span class="hs-identifier hs-var">shouldSendErrorResponse</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103556"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679103572"><span class="hs-identifier hs-var">shouldSendErrorResponse</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103574"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103555"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="hs-keyword">then</span><span>
+</span><a href="#local-6989586621679103573"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="hs-keyword">then</span><span>
 </span><span id="line-192"></span><span>        </span><span class="annot"><span class="annottext">Settings
 -&gt; Connection
 -&gt; InternalInfo
@@ -746,95 +746,95 @@ forall a. IORef a -&gt; IO a
 -&gt; Response
 -&gt; IO Bool
 </span><a href="Network.Wai.Handler.Warp.Response.html#sendResponse"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103562"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
-</span><a href="#local-6989586621679103560"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103561"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679103559"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103557"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103580"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">Connection
+</span><a href="#local-6989586621679103578"><span class="hs-identifier hs-var">conn</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103579"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679103577"><span class="hs-identifier hs-var">th</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103575"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
 </span><a href="Network.Wai.Handler.Warp.Header.html#defaultIndexRequestHeader"><span class="hs-identifier hs-var">defaultIndexRequestHeader</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; IO ByteString
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-identifier hs-var">BS.empty</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103550"><span class="hs-identifier hs-var">errorResponse</span></a></span><span>
+</span><a href="#local-6989586621679103568"><span class="hs-identifier hs-var">errorResponse</span></a></span><span>
 </span><span id="line-193"></span><span>      </span><span class="hs-keyword">else</span><span>
 </span><span id="line-194"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-195"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-196"></span><span>    </span><span id="local-6989586621679103554"><span class="annot"><span class="annottext">shouldSendErrorResponse :: SomeException -&gt; Bool
-</span><a href="#local-6989586621679103554"><span class="hs-identifier hs-var hs-var">shouldSendErrorResponse</span></a></span></span><span> </span><span id="local-6989586621679103549"><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103549"><span class="hs-identifier hs-var">se</span></a></span></span><span>
+</span><span id="line-196"></span><span>    </span><span id="local-6989586621679103572"><span class="annot"><span class="annottext">shouldSendErrorResponse :: SomeException -&gt; Bool
+</span><a href="#local-6989586621679103572"><span class="hs-identifier hs-var hs-var">shouldSendErrorResponse</span></a></span></span><span> </span><span id="local-6989586621679103567"><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103567"><span class="hs-identifier hs-var">se</span></a></span></span><span>
 </span><span id="line-197"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest
 </span><a href="Network.Wai.Handler.Warp.Types.html#ConnectionClosedByPeer"><span class="hs-identifier hs-var">ConnectionClosedByPeer</span></a></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Maybe InvalidRequest
 forall e. Exception e =&gt; SomeException -&gt; Maybe e
 </span><span class="hs-identifier hs-var">fromException</span></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103549"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103567"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-198"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>                                       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
-</span><span id="line-199"></span><span>    </span><span id="local-6989586621679103550"><span class="annot"><span class="annottext">errorResponse :: Response
-</span><a href="#local-6989586621679103550"><span class="hs-identifier hs-var hs-var">errorResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; SomeException -&gt; Response
+</span><span id="line-199"></span><span>    </span><span id="local-6989586621679103568"><span class="annot"><span class="annottext">errorResponse :: Response
+</span><a href="#local-6989586621679103568"><span class="hs-identifier hs-var hs-var">errorResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; SomeException -&gt; Response
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsOnExceptionResponse"><span class="hs-identifier hs-var hs-var">settingsOnExceptionResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103562"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
-</span><a href="#local-6989586621679103556"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679103580"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><a href="#local-6989586621679103574"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-200"></span><span>
 </span><span id="line-201"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP1.html#flushEntireBody"><span class="hs-identifier hs-type">flushEntireBody</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-202"></span><span id="flushEntireBody"><span class="annot"><span class="annottext">flushEntireBody :: IO ByteString -&gt; IO ()
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushEntireBody"><span class="hs-identifier hs-var hs-var">flushEntireBody</span></a></span></span><span> </span><span id="local-6989586621679103546"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103546"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushEntireBody"><span class="hs-identifier hs-var hs-var">flushEntireBody</span></a></span></span><span> </span><span id="local-6989586621679103564"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103564"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-203"></span><span>    </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679103545"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="#local-6989586621679103563"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-204"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-205"></span><span>    </span><span id="local-6989586621679103545"><span class="annot"><span class="annottext">loop :: IO ()
-</span><a href="#local-6989586621679103545"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-206"></span><span>        </span><span id="local-6989586621679103544"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103544"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103546"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><span id="line-205"></span><span>    </span><span id="local-6989586621679103563"><span class="annot"><span class="annottext">loop :: IO ()
+</span><a href="#local-6989586621679103563"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-206"></span><span>        </span><span id="local-6989586621679103562"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103562"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103564"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-207"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103544"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679103545"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="#local-6989586621679103562"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679103563"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-208"></span><span>
 </span><span id="line-209"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP1.html#flushBody"><span class="hs-identifier hs-type">flushBody</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-comment">-- ^ get next chunk</span><span>
 </span><span id="line-210"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-comment">-- ^ maximum to flush</span><span>
 </span><span id="line-211"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span> </span><span class="hs-comment">-- ^ True == flushed the entire body, False == we didn't</span><span>
 </span><span id="line-212"></span><span id="flushBody"><span class="annot"><span class="annottext">flushBody :: IO ByteString -&gt; Int -&gt; IO Bool
-</span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushBody"><span class="hs-identifier hs-var hs-var">flushBody</span></a></span></span><span> </span><span id="local-6989586621679103543"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103543"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Bool
-</span><a href="#local-6989586621679103542"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP1.html#flushBody"><span class="hs-identifier hs-var hs-var">flushBody</span></a></span></span><span> </span><span id="local-6989586621679103561"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103561"><span class="hs-identifier hs-var">src</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Bool
+</span><a href="#local-6989586621679103560"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-213"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-214"></span><span>    </span><span id="local-6989586621679103542"><span class="annot"><span class="annottext">loop :: Int -&gt; IO Bool
-</span><a href="#local-6989586621679103542"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679103541"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103541"><span class="hs-identifier hs-var">toRead</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-215"></span><span>        </span><span id="local-6989586621679103540"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103540"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679103543"><span class="hs-identifier hs-var">src</span></a></span><span>
-</span><span id="line-216"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103539"><span class="annot"><span class="annottext">toRead' :: Int
-</span><a href="#local-6989586621679103539"><span class="hs-identifier hs-var hs-var">toRead'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103541"><span class="hs-identifier hs-var">toRead</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-214"></span><span>    </span><span id="local-6989586621679103560"><span class="annot"><span class="annottext">loop :: Int -&gt; IO Bool
+</span><a href="#local-6989586621679103560"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679103559"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103559"><span class="hs-identifier hs-var">toRead</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-215"></span><span>        </span><span id="local-6989586621679103558"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679103558"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679103561"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><span id="line-216"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103557"><span class="annot"><span class="annottext">toRead' :: Int
+</span><a href="#local-6989586621679103557"><span class="hs-identifier hs-var hs-var">toRead'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103559"><span class="hs-identifier hs-var">toRead</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int
 </span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103540"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679103558"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-217"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-218"></span><span>            </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-219"></span><span>                </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103540"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
+</span><a href="#local-6989586621679103558"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-220"></span><span>                </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103539"><span class="hs-identifier hs-var">toRead'</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679103557"><span class="hs-identifier hs-var">toRead'</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Bool
-</span><a href="#local-6989586621679103542"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679103539"><span class="hs-identifier hs-var">toRead'</span></a></span><span>
+</span><a href="#local-6989586621679103560"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679103557"><span class="hs-identifier hs-var">toRead'</span></a></span><span>
 </span><span id="line-221"></span><span>                </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a

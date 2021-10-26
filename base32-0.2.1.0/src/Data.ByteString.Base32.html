@@ -99,21 +99,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-90"></span><span class="hs-comment">--</span><span>
 </span><span id="line-91"></span><span class="annot"><a href="Data.ByteString.Base32.html#decodeBase32"><span class="hs-identifier hs-type">decodeBase32</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-92"></span><span id="decodeBase32"><span class="annot"><span class="annottext">decodeBase32 :: ByteString -&gt; Either Text ByteString
-</span><a href="Data.ByteString.Base32.html#decodeBase32"><span class="hs-identifier hs-var hs-var">decodeBase32</span></a></span></span><span> </span><span id="local-6989586621679059699"><span class="annot"><span class="annottext">bs :: ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="Data.ByteString.Base32.html#decodeBase32"><span class="hs-identifier hs-var hs-var">decodeBase32</span></a></span></span><span> </span><span id="local-6989586621679059703"><span class="annot"><span class="annottext">bs :: ByteString
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059697"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059697"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059701"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059701"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-93"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059697"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059701"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-94"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (Either Text ByteString) -&gt; Either Text ByteString
@@ -124,9 +124,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-95"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (Either Text ByteString) -&gt; Either Text ByteString
@@ -138,10 +138,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;======&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-96"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -150,17 +150,17 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;====&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">5</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -169,17 +169,17 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">3</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;===&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-98"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -188,14 +188,14 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">5</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059699"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059703"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;=&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-99"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -203,9 +203,9 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Base32-encoded bytestring has invalid size&quot;</span></span><span>
 </span><span id="line-100"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-101"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059696"><span class="annot"><span class="annottext">r :: Int
-</span><a href="#local-6989586621679059696"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059697"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-101"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059700"><span class="annot"><span class="annottext">r :: Int
+</span><a href="#local-6989586621679059700"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059701"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">`rem`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">8</span></span><span>
@@ -260,21 +260,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-141"></span><span class="hs-comment">--</span><span>
 </span><span id="line-142"></span><span class="annot"><a href="Data.ByteString.Base32.html#decodeBase32Unpadded"><span class="hs-identifier hs-type">decodeBase32Unpadded</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-143"></span><span id="decodeBase32Unpadded"><span class="annot"><span class="annottext">decodeBase32Unpadded :: ByteString -&gt; Either Text ByteString
-</span><a href="Data.ByteString.Base32.html#decodeBase32Unpadded"><span class="hs-identifier hs-var hs-var">decodeBase32Unpadded</span></a></span></span><span> </span><span id="local-6989586621679059689"><span class="annot"><span class="annottext">bs :: ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="Data.ByteString.Base32.html#decodeBase32Unpadded"><span class="hs-identifier hs-var hs-var">decodeBase32Unpadded</span></a></span></span><span> </span><span id="local-6989586621679059693"><span class="annot"><span class="annottext">bs :: ByteString
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059688"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059692"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059692"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-144"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059692"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-145"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -283,15 +283,15 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-146"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (Either Text ByteString) -&gt; Either Text ByteString
@@ -303,10 +303,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;======&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-147"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -315,17 +315,17 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;====&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-148"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">5</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -334,17 +334,17 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;===&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-149"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
@@ -353,14 +353,14 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.Internal.html#validateLastNPads"><span class="hs-identifier hs-var">validateLastNPads</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">(IO (Either Text ByteString) -&gt; Either Text ByteString)
 -&gt; IO (Either Text ByteString) -&gt; Either Text ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.append</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059693"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;=&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-150"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -368,9 +368,9 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Base32-encoded bytestring has invalid size&quot;</span></span><span>
 </span><span id="line-151"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-152"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059687"><span class="annot"><span class="annottext">r :: Int
-</span><a href="#local-6989586621679059687"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-152"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059691"><span class="annot"><span class="annottext">r :: Int
+</span><a href="#local-6989586621679059691"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059692"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">`rem`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">8</span></span><span>
@@ -390,21 +390,21 @@ forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span id="line-166"></span><span class="hs-comment">--</span><span>
 </span><span id="line-167"></span><span class="annot"><a href="Data.ByteString.Base32.html#decodeBase32Padded"><span class="hs-identifier hs-type">decodeBase32Padded</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-168"></span><span id="decodeBase32Padded"><span class="annot"><span class="annottext">decodeBase32Padded :: ByteString -&gt; Either Text ByteString
-</span><a href="Data.ByteString.Base32.html#decodeBase32Padded"><span class="hs-identifier hs-var hs-var">decodeBase32Padded</span></a></span></span><span> </span><span id="local-6989586621679059686"><span class="annot"><span class="annottext">bs :: ByteString
-</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="Data.ByteString.Base32.html#decodeBase32Padded"><span class="hs-identifier hs-var hs-var">decodeBase32Padded</span></a></span></span><span> </span><span id="local-6989586621679059690"><span class="annot"><span class="annottext">bs :: ByteString
+</span><a href="#local-6989586621679059690"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059685"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059685"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679059689"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-169"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059685"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059690"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-170"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059684"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -412,7 +412,7 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Base32-encoded bytestring has invalid size&quot;</span></span><span>
 </span><span id="line-171"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059684"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">3</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -420,7 +420,7 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Base32-encoded bytestring has invalid size&quot;</span></span><span>
 </span><span id="line-172"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059684"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">6</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -428,7 +428,7 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Base32-encoded bytestring has invalid size&quot;</span></span><span>
 </span><span id="line-173"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059684"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either Text ByteString
@@ -444,11 +444,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Either Text ByteString)
 </span><a href="Data.ByteString.Base32.Internal.Head.html#decodeBase32_"><span class="hs-identifier hs-var">decodeBase32_</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 </span><a href="Data.ByteString.Base32.Internal.Tables.html#stdDecodeTable"><span class="hs-identifier hs-var">stdDecodeTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679059690"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-175"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-176"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059684"><span class="annot"><span class="annottext">r :: Int
-</span><a href="#local-6989586621679059684"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679059685"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-176"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679059688"><span class="annot"><span class="annottext">r :: Int
+</span><a href="#local-6989586621679059688"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679059689"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">`rem`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">8</span></span><span>
@@ -479,15 +479,15 @@ forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span id="line-201"></span><span class="hs-comment">--</span><span>
 </span><span id="line-202"></span><span class="annot"><a href="Data.ByteString.Base32.html#isBase32"><span class="hs-identifier hs-type">isBase32</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-203"></span><span id="isBase32"><span class="annot"><span class="annottext">isBase32 :: ByteString -&gt; Bool
-</span><a href="Data.ByteString.Base32.html#isBase32"><span class="hs-identifier hs-var hs-var">isBase32</span></a></span></span><span> </span><span id="local-6989586621679059682"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059682"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
+</span><a href="Data.ByteString.Base32.html#isBase32"><span class="hs-identifier hs-var hs-var">isBase32</span></a></span></span><span> </span><span id="local-6989586621679059686"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><a href="Data.ByteString.Base32.html#isValidBase32"><span class="hs-identifier hs-var">isValidBase32</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059682"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Either Text ByteString -&gt; Bool
 forall a b. Either a b -&gt; Bool
 </span><span class="hs-identifier hs-var">isRight</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Base32.html#decodeBase32"><span class="hs-identifier hs-var">decodeBase32</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059682"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679059686"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-204"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.ByteString.Base32.html#isBase32"><span class="hs-pragma hs-type">isBase32</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-205"></span><span>
 </span><span id="line-206"></span><span class="hs-comment">-- | Tell whether a 'ByteString' value is a valid Base32 format.</span><span>

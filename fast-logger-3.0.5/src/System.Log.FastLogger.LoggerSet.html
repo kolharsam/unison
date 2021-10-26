@@ -41,49 +41,49 @@
 </span><span id="line-41"></span><span class="hs-comment">-- | Creating a new 'LoggerSet' using a file.</span><span>
 </span><span id="line-42"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSet"><span class="hs-identifier hs-type">newFileLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-43"></span><span id="newFileLoggerSet"><span class="annot"><span class="annottext">newFileLoggerSet :: BufSize -&gt; FilePath -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSet"><span class="hs-identifier hs-var hs-var">newFileLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046399"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046399"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046398"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046398"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
+</span><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSet"><span class="hs-identifier hs-var hs-var">newFileLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046427"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046427"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046426"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046426"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
 </span><a href="System.Log.FastLogger.FileIO.html#openFileFD"><span class="hs-identifier hs-var">openFileFD</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046398"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
+</span><a href="#local-6989586621679046426"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; FD -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var">newFDLoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046399"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046427"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; Maybe FilePath
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046398"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046426"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-44"></span><span>
 </span><span id="line-45"></span><span class="hs-comment">-- | Creating a new 'LoggerSet' using a file.</span><span>
 </span><span id="line-46"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSetN"><span class="hs-identifier hs-type">newFileLoggerSetN</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-47"></span><span id="newFileLoggerSetN"><span class="annot"><span class="annottext">newFileLoggerSetN :: BufSize -&gt; Maybe BufSize -&gt; FilePath -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSetN"><span class="hs-identifier hs-var hs-var">newFileLoggerSetN</span></a></span></span><span> </span><span id="local-6989586621679046395"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046395"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046394"><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span id="local-6989586621679046393"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046393"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
+</span><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSetN"><span class="hs-identifier hs-var hs-var">newFileLoggerSetN</span></a></span></span><span> </span><span id="local-6989586621679046423"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046423"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046422"><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046422"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span id="local-6989586621679046421"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046421"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
 </span><a href="System.Log.FastLogger.FileIO.html#openFileFD"><span class="hs-identifier hs-var">openFileFD</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046393"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
+</span><a href="#local-6989586621679046421"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; FD -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var">newFDLoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046395"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">mn</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; Maybe FilePath
+</span><a href="#local-6989586621679046423"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046422"><span class="hs-identifier hs-var">mn</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; Maybe FilePath
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046393"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046421"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-comment">-- | Creating a new 'LoggerSet' using stdout.</span><span>
 </span><span id="line-50"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newStdoutLoggerSet"><span class="hs-identifier hs-type">newStdoutLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-51"></span><span id="newStdoutLoggerSet"><span class="annot"><span class="annottext">newStdoutLoggerSet :: BufSize -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newStdoutLoggerSet"><span class="hs-identifier hs-var hs-var">newStdoutLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046392"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046392"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO FD
+</span><a href="System.Log.FastLogger.LoggerSet.html#newStdoutLoggerSet"><span class="hs-identifier hs-var hs-var">newStdoutLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046420"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046420"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO FD
 </span><a href="System.Log.FastLogger.FileIO.html#getStdoutFD"><span class="hs-identifier hs-var">getStdoutFD</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; FD -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var">newFDLoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046392"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046420"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
 forall a. Maybe a
@@ -92,13 +92,13 @@ forall a. Maybe a
 </span><span id="line-53"></span><span class="hs-comment">-- | Creating a new 'LoggerSet' using stderr.</span><span>
 </span><span id="line-54"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newStderrLoggerSet"><span class="hs-identifier hs-type">newStderrLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-55"></span><span id="newStderrLoggerSet"><span class="annot"><span class="annottext">newStderrLoggerSet :: BufSize -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newStderrLoggerSet"><span class="hs-identifier hs-var hs-var">newStderrLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046390"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046390"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO FD
+</span><a href="System.Log.FastLogger.LoggerSet.html#newStderrLoggerSet"><span class="hs-identifier hs-var hs-var">newStderrLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046418"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046418"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO FD
 </span><a href="System.Log.FastLogger.FileIO.html#getStderrFD"><span class="hs-identifier hs-var">getStderrFD</span></a></span><span> </span><span class="annot"><span class="annottext">IO FD -&gt; (FD -&gt; IO LoggerSet) -&gt; IO LoggerSet
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; FD -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var">newFDLoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046390"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046418"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
 forall a. Maybe a
@@ -111,73 +111,73 @@ forall a. Maybe a
 </span><span id="line-61"></span><span class="hs-comment">--   Please note that the minimum 'BufSize' is 1.</span><span>
 </span><span id="line-62"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newLoggerSet"><span class="hs-identifier hs-type">newLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-63"></span><span id="newLoggerSet"><span class="annot"><span class="annottext">newLoggerSet :: BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newLoggerSet"><span class="hs-identifier hs-var hs-var">newLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046388"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046388"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046387"><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046387"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO LoggerSet
+</span><a href="System.Log.FastLogger.LoggerSet.html#newLoggerSet"><span class="hs-identifier hs-var hs-var">newLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046416"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046416"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046415"><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046415"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO LoggerSet
 -&gt; (FilePath -&gt; IO LoggerSet) -&gt; Maybe FilePath -&gt; IO LoggerSet
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
 </span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newStdoutLoggerSet"><span class="hs-identifier hs-var">newStdoutLoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046388"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; FilePath -&gt; IO LoggerSet
+</span><a href="#local-6989586621679046416"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; Maybe BufSize -&gt; FilePath -&gt; IO LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#newFileLoggerSetN"><span class="hs-identifier hs-var">newFileLoggerSetN</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046388"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046387"><span class="hs-identifier hs-var">mn</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046416"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046415"><span class="hs-identifier hs-var">mn</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-64"></span><span>
 </span><span id="line-65"></span><span class="hs-comment">-- | Creating a new 'LoggerSet' using a FD.</span><span>
 </span><span id="line-66"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-type">newFDLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.IO.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Log.FastLogger.FileIO.html#FD"><span class="hs-identifier hs-type">FD</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span>
 </span><span id="line-67"></span><span id="newFDLoggerSet"><span class="annot"><span class="annottext">newFDLoggerSet :: BufSize -&gt; Maybe BufSize -&gt; Maybe FilePath -&gt; FD -&gt; IO LoggerSet
-</span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var hs-var">newFDLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046385"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046385"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046384"><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046384"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span id="local-6989586621679046383"><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046383"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span id="local-6989586621679046382"><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046382"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-68"></span><span>    </span><span id="local-6989586621679046381"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046381"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
-</span><a href="#local-6989586621679046384"><span class="hs-identifier hs-var">mn</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-69"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679046380"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046380"><span class="hs-identifier hs-var">n'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO BufSize
+</span><a href="System.Log.FastLogger.LoggerSet.html#newFDLoggerSet"><span class="hs-identifier hs-var hs-var">newFDLoggerSet</span></a></span></span><span> </span><span id="local-6989586621679046413"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046413"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span id="local-6989586621679046412"><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046412"><span class="hs-identifier hs-var">mn</span></a></span></span><span> </span><span id="local-6989586621679046411"><span class="annot"><span class="annottext">Maybe FilePath
+</span><a href="#local-6989586621679046411"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span id="local-6989586621679046410"><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046410"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-68"></span><span>    </span><span id="local-6989586621679046409"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046409"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe BufSize
+</span><a href="#local-6989586621679046412"><span class="hs-identifier hs-var">mn</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-69"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679046408"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046408"><span class="hs-identifier hs-var">n'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO BufSize
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046380"><span class="hs-identifier hs-var">n'</span></a></span><span>
+</span><a href="#local-6989586621679046408"><span class="hs-identifier hs-var">n'</span></a></span><span>
 </span><span id="line-70"></span><span>      </span><span class="annot"><span class="annottext">Maybe BufSize
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">IO BufSize
 </span><span class="hs-identifier hs-var">getNumCapabilities</span></span><span>
-</span><span id="line-71"></span><span>    </span><span id="local-6989586621679046379"><span class="annot"><span class="annottext">[Logger]
-</span><a href="#local-6989586621679046379"><span class="hs-identifier hs-var">loggers</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO Logger -&gt; IO [Logger]
+</span><span id="line-71"></span><span>    </span><span id="local-6989586621679046407"><span class="annot"><span class="annottext">[Logger]
+</span><a href="#local-6989586621679046407"><span class="hs-identifier hs-var">loggers</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO Logger -&gt; IO [Logger]
 forall (m :: * -&gt; *) a. Applicative m =&gt; BufSize -&gt; m a -&gt; m [a]
 </span><span class="hs-identifier hs-var">replicateM</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046381"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">(IO Logger -&gt; IO [Logger]) -&gt; IO Logger -&gt; IO [Logger]
+</span><a href="#local-6989586621679046409"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">(IO Logger -&gt; IO [Logger]) -&gt; IO Logger -&gt; IO [Logger]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO Logger
 </span><a href="System.Log.FastLogger.Logger.html#newLogger"><span class="hs-identifier hs-var">newLogger</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Ord a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-identifier hs-var">max</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046385"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-72"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046375"><span class="annot"><span class="annottext">arr :: Array BufSize Logger
-</span><a href="#local-6989586621679046375"><span class="hs-identifier hs-var hs-var">arr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(BufSize, BufSize) -&gt; [Logger] -&gt; Array BufSize Logger
+</span><a href="#local-6989586621679046413"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-72"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046403"><span class="annot"><span class="annottext">arr :: Array BufSize Logger
+</span><a href="#local-6989586621679046403"><span class="hs-identifier hs-var hs-var">arr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(BufSize, BufSize) -&gt; [Logger] -&gt; Array BufSize Logger
 forall i e. Ix i =&gt; (i, i) -&gt; [e] -&gt; Array i e
 </span><span class="hs-identifier hs-var">listArray</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">0</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046381"><span class="hs-identifier hs-var">n</span></a></span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679046409"><span class="hs-identifier hs-var">n</span></a></span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Logger]
-</span><a href="#local-6989586621679046379"><span class="hs-identifier hs-var">loggers</span></a></span><span>
-</span><span id="line-73"></span><span>    </span><span id="local-6989586621679046374"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046374"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FD -&gt; IO (IORef FD)
+</span><a href="#local-6989586621679046407"><span class="hs-identifier hs-var">loggers</span></a></span><span>
+</span><span id="line-73"></span><span>    </span><span id="local-6989586621679046402"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046402"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FD -&gt; IO (IORef FD)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046382"><span class="hs-identifier hs-var">fd</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span id="local-6989586621679046372"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046372"><span class="hs-identifier hs-var">flush</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DebounceSettings -&gt; IO (IO ())
+</span><a href="#local-6989586621679046410"><span class="hs-identifier hs-var">fd</span></a></span><span>
+</span><span id="line-74"></span><span>    </span><span id="local-6989586621679046400"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679046400"><span class="hs-identifier hs-var">flush</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DebounceSettings -&gt; IO (IO ())
 </span><span class="hs-identifier hs-var">mkDebounce</span></span><span> </span><span class="annot"><span class="annottext">DebounceSettings
 </span><span class="hs-identifier hs-var">defaultDebounceSettings</span></span><span>
 </span><span id="line-75"></span><span>        </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">debounceAction :: IO ()
 </span><span class="hs-identifier hs-var">debounceAction</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Array BufSize Logger -&gt; IO ()
 </span><a href="System.Log.FastLogger.LoggerSet.html#flushLogStrRaw"><span class="hs-identifier hs-var">flushLogStrRaw</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046374"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046375"><span class="hs-identifier hs-var">arr</span></a></span><span>
+</span><a href="#local-6989586621679046402"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046403"><span class="hs-identifier hs-var">arr</span></a></span><span>
 </span><span id="line-76"></span><span>        </span><span class="hs-special">}</span><span>
 </span><span id="line-77"></span><span>    </span><span class="annot"><span class="annottext">LoggerSet -&gt; IO LoggerSet
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -186,10 +186,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
 -&gt; IORef FD -&gt; Array BufSize Logger -&gt; IO () -&gt; LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-var">LoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046383"><span class="hs-identifier hs-var">mfile</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046374"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046375"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046372"><span class="hs-identifier hs-var">flush</span></a></span><span>
+</span><a href="#local-6989586621679046411"><span class="hs-identifier hs-var">mfile</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046402"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046403"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679046400"><span class="hs-identifier hs-var">flush</span></a></span><span>
 </span><span id="line-78"></span><span>
 </span><span id="line-79"></span><span class="hs-comment">-- | Writing a log message to the corresponding buffer.</span><span>
 </span><span id="line-80"></span><span class="hs-comment">--   If the buffer becomes full, the log messages in the buffer</span><span>
@@ -197,13 +197,13 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-82"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#pushLogStr"><span class="hs-identifier hs-type">pushLogStr</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LogStr.html#LogStr"><span class="hs-identifier hs-type">LogStr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-83"></span><span id="pushLogStr"><span class="annot"><span class="annottext">pushLogStr :: LoggerSet -&gt; LogStr -&gt; IO ()
 </span><a href="System.Log.FastLogger.LoggerSet.html#pushLogStr"><span class="hs-identifier hs-var hs-var">pushLogStr</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046370"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046370"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046369"><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046369"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span id="local-6989586621679046368"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046368"><span class="hs-identifier hs-var">flush</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046367"><span class="annot"><span class="annottext">LogStr
-</span><a href="#local-6989586621679046367"><span class="hs-identifier hs-var">logmsg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-84"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679046366"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046398"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046398"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046397"><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046397"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span id="local-6989586621679046396"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679046396"><span class="hs-identifier hs-var">flush</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046395"><span class="annot"><span class="annottext">LogStr
+</span><a href="#local-6989586621679046395"><span class="hs-identifier hs-var">logmsg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-84"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679046394"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ThreadId
 </span><span class="hs-identifier hs-var">myThreadId</span></span><span> </span><span class="annot"><span class="annottext">IO ThreadId
 -&gt; (ThreadId -&gt; IO (BufSize, Bool)) -&gt; IO (BufSize, Bool)
@@ -212,57 +212,57 @@ forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-identifier hs-var">threadCapability</span></span><span>
 </span><span id="line-85"></span><span>    </span><span class="hs-comment">-- The number of capability could be dynamically changed.</span><span>
 </span><span id="line-86"></span><span>    </span><span class="hs-comment">-- So, let's check the upper boundary of the array.</span><span>
-</span><span id="line-87"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046365"><span class="annot"><span class="annottext">u :: BufSize
-</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var hs-var">u</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(BufSize, BufSize) -&gt; BufSize
+</span><span id="line-87"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046393"><span class="annot"><span class="annottext">u :: BufSize
+</span><a href="#local-6989586621679046393"><span class="hs-identifier hs-var hs-var">u</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(BufSize, BufSize) -&gt; BufSize
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">((BufSize, BufSize) -&gt; BufSize) -&gt; (BufSize, BufSize) -&gt; BufSize
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; (BufSize, BufSize)
 forall i e. Array i e -&gt; (i, i)
 </span><span class="hs-identifier hs-var">bounds</span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046369"><span class="hs-identifier hs-var">arr</span></a></span><span>
-</span><span id="line-88"></span><span>        </span><span id="local-6989586621679046364"><span class="annot"><span class="annottext">lim :: BufSize
-</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var hs-var">lim</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679046397"><span class="hs-identifier hs-var">arr</span></a></span><span>
+</span><span id="line-88"></span><span>        </span><span id="local-6989586621679046392"><span class="annot"><span class="annottext">lim :: BufSize
+</span><a href="#local-6989586621679046392"><span class="hs-identifier hs-var hs-var">lim</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046393"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">1</span></span><span>
-</span><span id="line-89"></span><span>        </span><span id="local-6989586621679046362"><span class="annot"><span class="annottext">j :: BufSize
-</span><a href="#local-6989586621679046362"><span class="hs-identifier hs-var hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><span id="line-89"></span><span>        </span><span id="local-6989586621679046390"><span class="annot"><span class="annottext">j :: BufSize
+</span><a href="#local-6989586621679046390"><span class="hs-identifier hs-var hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">lim</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679046392"><span class="hs-identifier hs-var">lim</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-90"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679046394"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">`mod`</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">lim</span></a></span><span>
-</span><span id="line-91"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046359"><span class="annot"><span class="annottext">logger :: Logger
-</span><a href="#local-6989586621679046359"><span class="hs-identifier hs-var hs-var">logger</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046369"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
+</span><a href="#local-6989586621679046392"><span class="hs-identifier hs-var">lim</span></a></span><span>
+</span><span id="line-91"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046387"><span class="annot"><span class="annottext">logger :: Logger
+</span><a href="#local-6989586621679046387"><span class="hs-identifier hs-var hs-var">logger</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046397"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
 forall i e. Ix i =&gt; Array i e -&gt; i -&gt; e
 </span><span class="hs-glyph hs-var">!</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046362"><span class="hs-identifier hs-var">j</span></a></span><span>
+</span><a href="#local-6989586621679046390"><span class="hs-identifier hs-var">j</span></a></span><span>
 </span><span id="line-92"></span><span>    </span><span class="annot"><span class="annottext">IORef FD -&gt; Logger -&gt; LogStr -&gt; IO ()
 </span><a href="System.Log.FastLogger.Logger.html#pushLog"><span class="hs-identifier hs-var">pushLog</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046370"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="annot"><span class="annottext">Logger
-</span><a href="#local-6989586621679046359"><span class="hs-identifier hs-var">logger</span></a></span><span> </span><span class="annot"><span class="annottext">LogStr
-</span><a href="#local-6989586621679046367"><span class="hs-identifier hs-var">logmsg</span></a></span><span>
+</span><a href="#local-6989586621679046398"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="annot"><span class="annottext">Logger
+</span><a href="#local-6989586621679046387"><span class="hs-identifier hs-var">logger</span></a></span><span> </span><span class="annot"><span class="annottext">LogStr
+</span><a href="#local-6989586621679046395"><span class="hs-identifier hs-var">logmsg</span></a></span><span>
 </span><span id="line-93"></span><span>    </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046368"><span class="hs-identifier hs-var">flush</span></a></span><span>
+</span><a href="#local-6989586621679046396"><span class="hs-identifier hs-var">flush</span></a></span><span>
 </span><span id="line-94"></span><span>
 </span><span id="line-95"></span><span class="hs-comment">-- | Same as 'pushLogStr' but also appends a newline.</span><span>
 </span><span id="line-96"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#pushLogStrLn"><span class="hs-identifier hs-type">pushLogStrLn</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LogStr.html#LogStr"><span class="hs-identifier hs-type">LogStr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span id="pushLogStrLn"><span class="annot"><span class="annottext">pushLogStrLn :: LoggerSet -&gt; LogStr -&gt; IO ()
-</span><a href="System.Log.FastLogger.LoggerSet.html#pushLogStrLn"><span class="hs-identifier hs-var hs-var">pushLogStrLn</span></a></span></span><span> </span><span id="local-6989586621679046357"><span class="annot"><span class="annottext">LoggerSet
-</span><a href="#local-6989586621679046357"><span class="hs-identifier hs-var">loggerSet</span></a></span></span><span> </span><span id="local-6989586621679046356"><span class="annot"><span class="annottext">LogStr
-</span><a href="#local-6989586621679046356"><span class="hs-identifier hs-var">logStr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LoggerSet -&gt; LogStr -&gt; IO ()
+</span><a href="System.Log.FastLogger.LoggerSet.html#pushLogStrLn"><span class="hs-identifier hs-var hs-var">pushLogStrLn</span></a></span></span><span> </span><span id="local-6989586621679046385"><span class="annot"><span class="annottext">LoggerSet
+</span><a href="#local-6989586621679046385"><span class="hs-identifier hs-var">loggerSet</span></a></span></span><span> </span><span id="local-6989586621679046384"><span class="annot"><span class="annottext">LogStr
+</span><a href="#local-6989586621679046384"><span class="hs-identifier hs-var">logStr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LoggerSet -&gt; LogStr -&gt; IO ()
 </span><a href="System.Log.FastLogger.LoggerSet.html#pushLogStr"><span class="hs-identifier hs-var">pushLogStr</span></a></span><span> </span><span class="annot"><span class="annottext">LoggerSet
-</span><a href="#local-6989586621679046357"><span class="hs-identifier hs-var">loggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">LogStr
-</span><a href="#local-6989586621679046356"><span class="hs-identifier hs-var">logStr</span></a></span><span> </span><span class="annot"><span class="annottext">LogStr -&gt; LogStr -&gt; LogStr
+</span><a href="#local-6989586621679046385"><span class="hs-identifier hs-var">loggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">LogStr
+</span><a href="#local-6989586621679046384"><span class="hs-identifier hs-var">logStr</span></a></span><span> </span><span class="annot"><span class="annottext">LogStr -&gt; LogStr -&gt; LogStr
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">LogStr
 </span><span class="hs-string">&quot;\n&quot;</span></span><span class="hs-special">)</span><span>
@@ -279,43 +279,43 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span id="line-108"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#flushLogStr"><span class="hs-identifier hs-type">flushLogStr</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-109"></span><span id="flushLogStr"><span class="annot"><span class="annottext">flushLogStr :: LoggerSet -&gt; IO ()
 </span><a href="System.Log.FastLogger.LoggerSet.html#flushLogStr"><span class="hs-identifier hs-var hs-var">flushLogStr</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046355"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046355"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span id="local-6989586621679046354"><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046354"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046383"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046383"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span id="local-6989586621679046382"><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046382"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="annot"><span class="annottext">IO ()
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Array BufSize Logger -&gt; IO ()
 </span><a href="System.Log.FastLogger.LoggerSet.html#flushLogStrRaw"><span class="hs-identifier hs-var">flushLogStrRaw</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046355"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046354"><span class="hs-identifier hs-var">arr</span></a></span><span>
+</span><a href="#local-6989586621679046383"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046382"><span class="hs-identifier hs-var">arr</span></a></span><span>
 </span><span id="line-110"></span><span>
 </span><span id="line-111"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#flushLogStrRaw"><span class="hs-identifier hs-type">flushLogStrRaw</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IORef</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.FileIO.html#FD"><span class="hs-identifier hs-type">FD</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Array</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.Logger.html#Logger"><span class="hs-identifier hs-type">Logger</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-112"></span><span id="flushLogStrRaw"><span class="annot"><span class="annottext">flushLogStrRaw :: IORef FD -&gt; Array BufSize Logger -&gt; IO ()
-</span><a href="System.Log.FastLogger.LoggerSet.html#flushLogStrRaw"><span class="hs-identifier hs-var hs-var">flushLogStrRaw</span></a></span></span><span> </span><span id="local-6989586621679046353"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046353"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046352"><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046352"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-113"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046351"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046351"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046350"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046350"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; (BufSize, BufSize)
+</span><a href="System.Log.FastLogger.LoggerSet.html#flushLogStrRaw"><span class="hs-identifier hs-var hs-var">flushLogStrRaw</span></a></span></span><span> </span><span id="local-6989586621679046381"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046381"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046380"><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046380"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-113"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046379"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046379"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046378"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046378"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; (BufSize, BufSize)
 forall i e. Array i e -&gt; (i, i)
 </span><span class="hs-identifier hs-var">bounds</span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046352"><span class="hs-identifier hs-var">arr</span></a></span><span>
+</span><a href="#local-6989586621679046380"><span class="hs-identifier hs-var">arr</span></a></span><span>
 </span><span id="line-114"></span><span>    </span><span class="annot"><span class="annottext">(BufSize -&gt; IO ()) -&gt; [BufSize] -&gt; IO ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m ()
 </span><span class="hs-identifier hs-var">mapM_</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046348"><span class="hs-identifier hs-var">flushIt</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046351"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046350"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679046376"><span class="hs-identifier hs-var">flushIt</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046379"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046378"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-115"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-116"></span><span>    </span><span id="local-6989586621679046348"><span class="annot"><span class="annottext">flushIt :: BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046348"><span class="hs-identifier hs-var hs-var">flushIt</span></a></span></span><span> </span><span id="local-6989586621679046347"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046347"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Logger -&gt; IO ()
+</span><span id="line-116"></span><span>    </span><span id="local-6989586621679046376"><span class="annot"><span class="annottext">flushIt :: BufSize -&gt; IO ()
+</span><a href="#local-6989586621679046376"><span class="hs-identifier hs-var hs-var">flushIt</span></a></span></span><span> </span><span id="local-6989586621679046375"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046375"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Logger -&gt; IO ()
 </span><a href="System.Log.FastLogger.Logger.html#flushLog"><span class="hs-identifier hs-var">flushLog</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046353"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046352"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
+</span><a href="#local-6989586621679046381"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046380"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
 forall i e. Ix i =&gt; Array i e -&gt; i -&gt; e
 </span><span class="hs-glyph hs-var">!</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046347"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046375"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="hs-comment">-- | Renewing the internal file information in 'LoggerSet'.</span><span>
 </span><span id="line-119"></span><span class="hs-comment">--   This does nothing for stdout and stderr.</span><span>
@@ -328,112 +328,112 @@ forall i e. Ix i =&gt; Array i e -&gt; i -&gt; e
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-122"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#renewLoggerSet"><span class="hs-identifier hs-var">renewLoggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679046345"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046345"><span class="hs-identifier hs-var">file</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046344"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046344"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><span id="line-122"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#renewLoggerSet"><span class="hs-identifier hs-var">renewLoggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679046373"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046373"><span class="hs-identifier hs-var">file</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046372"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046372"><span class="hs-identifier hs-var">fref</span></a></span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">IO ()
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-123"></span><span>    </span><span id="local-6989586621679046343"><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046343"><span class="hs-identifier hs-var">newfd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
+</span><span id="line-123"></span><span>    </span><span id="local-6989586621679046371"><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046371"><span class="hs-identifier hs-var">newfd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FD
 </span><a href="System.Log.FastLogger.FileIO.html#openFileFD"><span class="hs-identifier hs-var">openFileFD</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046345"><span class="hs-identifier hs-var">file</span></a></span><span>
-</span><span id="line-124"></span><span>    </span><span id="local-6989586621679046342"><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046342"><span class="hs-identifier hs-var">oldfd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; (FD -&gt; (FD, FD)) -&gt; IO FD
+</span><a href="#local-6989586621679046373"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><span id="line-124"></span><span>    </span><span id="local-6989586621679046370"><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046370"><span class="hs-identifier hs-var">oldfd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; (FD -&gt; (FD, FD)) -&gt; IO FD
 forall a b. IORef a -&gt; (a -&gt; (a, b)) -&gt; IO b
 </span><span class="hs-identifier hs-var">atomicModifyIORef'</span></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046344"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679046340"><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046340"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046343"><span class="hs-identifier hs-var">newfd</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046340"><span class="hs-identifier hs-var">fd</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046372"><span class="hs-identifier hs-var">fref</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679046368"><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046368"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046371"><span class="hs-identifier hs-var">newfd</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046368"><span class="hs-identifier hs-var">fd</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-125"></span><span>    </span><span class="annot"><span class="annottext">FD -&gt; IO ()
 </span><a href="System.Log.FastLogger.FileIO.html#closeFD"><span class="hs-identifier hs-var">closeFD</span></a></span><span> </span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046342"><span class="hs-identifier hs-var">oldfd</span></a></span><span>
+</span><a href="#local-6989586621679046370"><span class="hs-identifier hs-var">oldfd</span></a></span><span>
 </span><span id="line-126"></span><span>
 </span><span id="line-127"></span><span class="hs-comment">-- | Flushing the buffers, closing the internal file information</span><span>
 </span><span id="line-128"></span><span class="hs-comment">--   and freeing the buffers.</span><span>
 </span><span id="line-129"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#rmLoggerSet"><span class="hs-identifier hs-type">rmLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-130"></span><span id="rmLoggerSet"><span class="annot"><span class="annottext">rmLoggerSet :: LoggerSet -&gt; IO ()
-</span><a href="System.Log.FastLogger.LoggerSet.html#rmLoggerSet"><span class="hs-identifier hs-var hs-var">rmLoggerSet</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span id="local-6989586621679046338"><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046338"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span id="local-6989586621679046337"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046337"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046336"><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046336"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="System.Log.FastLogger.LoggerSet.html#rmLoggerSet"><span class="hs-identifier hs-var hs-var">rmLoggerSet</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span id="local-6989586621679046366"><span class="annot"><span class="annottext">Maybe FilePath
+</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span id="local-6989586621679046365"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var">fdref</span></a></span></span><span> </span><span id="local-6989586621679046364"><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">arr</span></a></span></span><span> </span><span class="annot"><span class="annottext">IO ()
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-131"></span><span>    </span><span id="local-6989586621679046335"><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046335"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; IO FD
+</span><span id="line-131"></span><span>    </span><span id="local-6989586621679046363"><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046363"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; IO FD
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046337"><span class="hs-identifier hs-var">fdref</span></a></span><span>
+</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var">fdref</span></a></span><span>
 </span><span id="line-132"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FD -&gt; Bool
 </span><a href="System.Log.FastLogger.FileIO.html#isFDValid"><span class="hs-identifier hs-var">isFDValid</span></a></span><span> </span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046335"><span class="hs-identifier hs-var">fd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046363"><span class="hs-identifier hs-var">fd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-133"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046331"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046331"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046330"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046330"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; (BufSize, BufSize)
+</span><span id="line-133"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046359"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046359"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046358"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046358"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; (BufSize, BufSize)
 forall i e. Array i e -&gt; (i, i)
 </span><span class="hs-identifier hs-var">bounds</span></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046336"><span class="hs-identifier hs-var">arr</span></a></span><span>
-</span><span id="line-134"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046329"><span class="annot"><span class="annottext">nums :: [BufSize]
-</span><a href="#local-6989586621679046329"><span class="hs-identifier hs-var hs-var">nums</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046331"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046330"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">arr</span></a></span><span>
+</span><span id="line-134"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679046357"><span class="annot"><span class="annottext">nums :: [BufSize]
+</span><a href="#local-6989586621679046357"><span class="hs-identifier hs-var hs-var">nums</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046359"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046358"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-135"></span><span>        </span><span class="annot"><span class="annottext">(BufSize -&gt; IO ()) -&gt; [BufSize] -&gt; IO ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m ()
 </span><span class="hs-identifier hs-var">mapM_</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046328"><span class="hs-identifier hs-var">flushIt</span></a></span><span> </span><span class="annot"><span class="annottext">[BufSize]
-</span><a href="#local-6989586621679046329"><span class="hs-identifier hs-var">nums</span></a></span><span>
+</span><a href="#local-6989586621679046356"><span class="hs-identifier hs-var">flushIt</span></a></span><span> </span><span class="annot"><span class="annottext">[BufSize]
+</span><a href="#local-6989586621679046357"><span class="hs-identifier hs-var">nums</span></a></span><span>
 </span><span id="line-136"></span><span>        </span><span class="annot"><span class="annottext">(BufSize -&gt; IO ()) -&gt; [BufSize] -&gt; IO ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m ()
 </span><span class="hs-identifier hs-var">mapM_</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046327"><span class="hs-identifier hs-var">freeIt</span></a></span><span> </span><span class="annot"><span class="annottext">[BufSize]
-</span><a href="#local-6989586621679046329"><span class="hs-identifier hs-var">nums</span></a></span><span>
+</span><a href="#local-6989586621679046355"><span class="hs-identifier hs-var">freeIt</span></a></span><span> </span><span class="annot"><span class="annottext">[BufSize]
+</span><a href="#local-6989586621679046357"><span class="hs-identifier hs-var">nums</span></a></span><span>
 </span><span id="line-137"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe FilePath -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isJust</span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046338"><span class="hs-identifier hs-var">mfile</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046366"><span class="hs-identifier hs-var">mfile</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FD -&gt; IO ()
 </span><a href="System.Log.FastLogger.FileIO.html#closeFD"><span class="hs-identifier hs-var">closeFD</span></a></span><span> </span><span class="annot"><span class="annottext">FD
-</span><a href="#local-6989586621679046335"><span class="hs-identifier hs-var">fd</span></a></span><span>
+</span><a href="#local-6989586621679046363"><span class="hs-identifier hs-var">fd</span></a></span><span>
 </span><span id="line-138"></span><span>        </span><span class="annot"><span class="annottext">IORef FD -&gt; FD -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046337"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="annot"><span class="annottext">FD
+</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="annot"><span class="annottext">FD
 </span><a href="System.Log.FastLogger.FileIO.html#invalidFD"><span class="hs-identifier hs-var">invalidFD</span></a></span><span>
 </span><span id="line-139"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-140"></span><span>    </span><span id="local-6989586621679046328"><span class="annot"><span class="annottext">flushIt :: BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046328"><span class="hs-identifier hs-var hs-var">flushIt</span></a></span></span><span> </span><span id="local-6989586621679046323"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046323"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Logger -&gt; IO ()
+</span><span id="line-140"></span><span>    </span><span id="local-6989586621679046356"><span class="annot"><span class="annottext">flushIt :: BufSize -&gt; IO ()
+</span><a href="#local-6989586621679046356"><span class="hs-identifier hs-var hs-var">flushIt</span></a></span></span><span> </span><span id="local-6989586621679046351"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046351"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef FD -&gt; Logger -&gt; IO ()
 </span><a href="System.Log.FastLogger.Logger.html#flushLog"><span class="hs-identifier hs-var">flushLog</span></a></span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046337"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046336"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
+</span><a href="#local-6989586621679046365"><span class="hs-identifier hs-var">fdref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
 forall i e. Ix i =&gt; Array i e -&gt; i -&gt; e
 </span><span class="hs-glyph hs-var">!</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046323"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-141"></span><span>    </span><span id="local-6989586621679046327"><span class="annot"><span class="annottext">freeIt :: BufSize -&gt; IO ()
-</span><a href="#local-6989586621679046327"><span class="hs-identifier hs-var hs-var">freeIt</span></a></span></span><span> </span><span id="local-6989586621679046322"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046322"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="#local-6989586621679046351"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-141"></span><span>    </span><span id="local-6989586621679046355"><span class="annot"><span class="annottext">freeIt :: BufSize -&gt; IO ()
+</span><a href="#local-6989586621679046355"><span class="hs-identifier hs-var hs-var">freeIt</span></a></span></span><span> </span><span id="local-6989586621679046350"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679046350"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-142"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.Logger.html#Logger"><span class="hs-identifier hs-type">Logger</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046320"><span class="annot"><span class="annottext">MVar Buffer
-</span><a href="#local-6989586621679046320"><span class="hs-identifier hs-var">mbuf</span></a></span></span><span> </span><span class="annot"><span class="annottext">IORef LogStr
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679046348"><span class="annot"><span class="annottext">MVar Buffer
+</span><a href="#local-6989586621679046348"><span class="hs-identifier hs-var">mbuf</span></a></span></span><span> </span><span class="annot"><span class="annottext">IORef LogStr
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046336"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
+</span><a href="#local-6989586621679046364"><span class="hs-identifier hs-var">arr</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger -&gt; BufSize -&gt; Logger
 forall i e. Ix i =&gt; Array i e -&gt; i -&gt; e
 </span><span class="hs-glyph hs-var">!</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679046322"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679046350"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-143"></span><span>        </span><span class="annot"><span class="annottext">MVar Buffer -&gt; IO Buffer
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar Buffer
-</span><a href="#local-6989586621679046320"><span class="hs-identifier hs-var">mbuf</span></a></span><span> </span><span class="annot"><span class="annottext">IO Buffer -&gt; (Buffer -&gt; IO ()) -&gt; IO ()
+</span><a href="#local-6989586621679046348"><span class="hs-identifier hs-var">mbuf</span></a></span><span> </span><span class="annot"><span class="annottext">IO Buffer -&gt; (Buffer -&gt; IO ()) -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Buffer -&gt; IO ()
 </span><a href="System.Log.FastLogger.IO.html#freeBuffer"><span class="hs-identifier hs-var">freeBuffer</span></a></span><span>
@@ -442,20 +442,20 @@ forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span id="line-146"></span><span class="hs-comment">--   'LoggerSet' and the old file path.</span><span>
 </span><span id="line-147"></span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#replaceLoggerSet"><span class="hs-identifier hs-type">replaceLoggerSet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span class="hs-special">)</span><span>
 </span><span id="line-148"></span><span id="replaceLoggerSet"><span class="annot"><span class="annottext">replaceLoggerSet :: LoggerSet -&gt; FilePath -&gt; (LoggerSet, Maybe FilePath)
-</span><a href="System.Log.FastLogger.LoggerSet.html#replaceLoggerSet"><span class="hs-identifier hs-var hs-var">replaceLoggerSet</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span id="local-6989586621679046318"><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046318"><span class="hs-identifier hs-var">current_path</span></a></span></span><span> </span><span id="local-6989586621679046317"><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046317"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679046316"><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046316"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679046315"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046315"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046314"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046314"><span class="hs-identifier hs-var">new_file_path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.Log.FastLogger.LoggerSet.html#replaceLoggerSet"><span class="hs-identifier hs-var hs-var">replaceLoggerSet</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-type">LoggerSet</span></a></span><span> </span><span id="local-6989586621679046346"><span class="annot"><span class="annottext">Maybe FilePath
+</span><a href="#local-6989586621679046346"><span class="hs-identifier hs-var">current_path</span></a></span></span><span> </span><span id="local-6989586621679046345"><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046345"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679046344"><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046344"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679046343"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679046343"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679046342"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046342"><span class="hs-identifier hs-var">new_file_path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-149"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe FilePath
 -&gt; IORef FD -&gt; Array BufSize Logger -&gt; IO () -&gt; LoggerSet
 </span><a href="System.Log.FastLogger.LoggerSet.html#LoggerSet"><span class="hs-identifier hs-var">LoggerSet</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; Maybe FilePath
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046314"><span class="hs-identifier hs-var">new_file_path</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IORef FD
-</span><a href="#local-6989586621679046317"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
-</span><a href="#local-6989586621679046316"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679046315"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
-</span><a href="#local-6989586621679046318"><span class="hs-identifier hs-var">current_path</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679046342"><span class="hs-identifier hs-var">new_file_path</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IORef FD
+</span><a href="#local-6989586621679046345"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Array BufSize Logger
+</span><a href="#local-6989586621679046344"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679046343"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Maybe FilePath
+</span><a href="#local-6989586621679046346"><span class="hs-identifier hs-var">current_path</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-150"></span></pre></body></html>

@@ -27,27 +27,27 @@
 </span><span id="line-27"></span><span>
 </span><span id="line-28"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#fixHeaders"><span class="hs-identifier hs-type">fixHeaders</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span>
 </span><span id="line-29"></span><span id="fixHeaders"><span class="annot"><span class="annottext">fixHeaders :: ResponseHeaders -&gt; ResponseHeaders
-</span><a href="Network.HTTP2.Arch.HPACK.html#fixHeaders"><span class="hs-identifier hs-var hs-var">fixHeaders</span></a></span></span><span> </span><span id="local-6989586621679089365"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679089365"><span class="hs-identifier hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
+</span><a href="Network.HTTP2.Arch.HPACK.html#fixHeaders"><span class="hs-identifier hs-var hs-var">fixHeaders</span></a></span></span><span> </span><span id="local-6989586621679089364"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679089364"><span class="hs-identifier hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.HTTP2.Arch.HPACK.html#deleteUnnecessaryHeaders"><span class="hs-identifier hs-var">deleteUnnecessaryHeaders</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679089365"><span class="hs-identifier hs-var">hdr</span></a></span><span>
+</span><a href="#local-6989586621679089364"><span class="hs-identifier hs-var">hdr</span></a></span><span>
 </span><span id="line-30"></span><span>
 </span><span id="line-31"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#deleteUnnecessaryHeaders"><span class="hs-identifier hs-type">deleteUnnecessaryHeaders</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span>
 </span><span id="line-32"></span><span id="deleteUnnecessaryHeaders"><span class="annot"><span class="annottext">deleteUnnecessaryHeaders :: ResponseHeaders -&gt; ResponseHeaders
-</span><a href="Network.HTTP2.Arch.HPACK.html#deleteUnnecessaryHeaders"><span class="hs-identifier hs-var hs-var">deleteUnnecessaryHeaders</span></a></span></span><span> </span><span id="local-6989586621679089363"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679089363"><span class="hs-identifier hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((HeaderName, ByteString) -&gt; Bool)
+</span><a href="Network.HTTP2.Arch.HPACK.html#deleteUnnecessaryHeaders"><span class="hs-identifier hs-var hs-var">deleteUnnecessaryHeaders</span></a></span></span><span> </span><span id="local-6989586621679089362"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679089362"><span class="hs-identifier hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((HeaderName, ByteString) -&gt; Bool)
 -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="annot"><span class="annottext">(HeaderName, ByteString) -&gt; Bool
 forall b. (HeaderName, b) -&gt; Bool
-</span><a href="#local-6989586621679089362"><span class="hs-identifier hs-var">del</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679089363"><span class="hs-identifier hs-var">hdr</span></a></span><span>
+</span><a href="#local-6989586621679089361"><span class="hs-identifier hs-var">del</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679089362"><span class="hs-identifier hs-var">hdr</span></a></span><span>
 </span><span id="line-33"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-34"></span><span>    </span><span id="local-6989586621679089362"><span class="annot"><span class="annottext">del :: (HeaderName, b) -&gt; Bool
-</span><a href="#local-6989586621679089362"><span class="hs-identifier hs-var hs-var">del</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679089361"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679089361"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">b
+</span><span id="line-34"></span><span>    </span><span id="local-6989586621679089361"><span class="annot"><span class="annottext">del :: (HeaderName, b) -&gt; Bool
+</span><a href="#local-6989586621679089361"><span class="hs-identifier hs-var hs-var">del</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679089360"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679089360"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">b
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679089361"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; [HeaderName] -&gt; Bool
+</span><a href="#local-6989586621679089360"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; [HeaderName] -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`notElem`</span></span><span> </span><span class="annot"><span class="annottext">[HeaderName]
 </span><a href="Network.HTTP2.Arch.HPACK.html#headersToBeRemoved"><span class="hs-identifier hs-var">headersToBeRemoved</span></a></span><span>
@@ -84,7 +84,7 @@ forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 -&gt; BufferSize
 -&gt; TokenHeaderList
 -&gt; IO (TokenHeaderList, BufferSize)
-</span><a href="Network.HTTP2.Arch.HPACK.html#hpackEncodeHeader"><span class="hs-identifier hs-var hs-var">hpackEncodeHeader</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089335"><span id="local-6989586621679089336"><span id="local-6989586621679089337"><span id="local-6989586621679089338"><span id="local-6989586621679089339"><span id="local-6989586621679089340"><span id="local-6989586621679089341"><span id="local-6989586621679089342"><span id="local-6989586621679089343"><span id="local-6989586621679089344"><span id="local-6989586621679089345"><span id="local-6989586621679089346"><span id="local-6989586621679089347"><span id="local-6989586621679089348"><span id="local-6989586621679089349"><span id="local-6989586621679089350"><span id="local-6989586621679089351"><span class="annot"><span class="annottext">TVar BufferSize
+</span><a href="Network.HTTP2.Arch.HPACK.html#hpackEncodeHeader"><span class="hs-identifier hs-var hs-var">hpackEncodeHeader</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089334"><span id="local-6989586621679089335"><span id="local-6989586621679089336"><span id="local-6989586621679089337"><span id="local-6989586621679089338"><span id="local-6989586621679089339"><span id="local-6989586621679089340"><span id="local-6989586621679089341"><span id="local-6989586621679089342"><span id="local-6989586621679089343"><span id="local-6989586621679089344"><span id="local-6989586621679089345"><span id="local-6989586621679089346"><span id="local-6989586621679089347"><span id="local-6989586621679089348"><span id="local-6989586621679089349"><span id="local-6989586621679089350"><span class="annot"><span class="annottext">TVar BufferSize
 IORef Bool
 IORef BufferSize
 IORef (Maybe BufferSize)
@@ -130,10 +130,10 @@ firstSettings :: IORef Bool
 http2settings :: IORef Settings
 roleInfo :: RoleInfo
 role :: Role
-</span><a href="Network.HTTP2.Arch.Context.html#emptyFrameRate"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span id="local-6989586621679089317"><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679089317"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679089316"><span class="annot"><span class="annottext">BufferSize
-</span><a href="#local-6989586621679089316"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679089315"><span class="annot"><span class="annottext">TokenHeaderList
-</span><a href="#local-6989586621679089315"><span class="hs-identifier hs-var">ths</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.HTTP2.Arch.Context.html#emptyFrameRate"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span id="local-6989586621679089316"><span class="annot"><span class="annottext">Buffer
+</span><a href="#local-6989586621679089316"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679089315"><span class="annot"><span class="annottext">BufferSize
+</span><a href="#local-6989586621679089315"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679089314"><span class="annot"><span class="annottext">TokenHeaderList
+</span><a href="#local-6989586621679089314"><span class="hs-identifier hs-var">ths</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-55"></span><span>    </span><span class="annot"><span class="annottext">Buffer
 -&gt; BufferSize
 -&gt; EncodeStrategy
@@ -142,12 +142,12 @@ role :: Role
 -&gt; TokenHeaderList
 -&gt; IO (TokenHeaderList, BufferSize)
 </span><a href="Network.HPACK.HeaderBlock.Encode.html#encodeTokenHeader"><span class="hs-identifier hs-var">encodeTokenHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679089317"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">BufferSize
-</span><a href="#local-6989586621679089316"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">EncodeStrategy
+</span><a href="#local-6989586621679089316"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">BufferSize
+</span><a href="#local-6989586621679089315"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">EncodeStrategy
 </span><a href="Network.HTTP2.Arch.HPACK.html#strategy"><span class="hs-identifier hs-var">strategy</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="annot"><span class="annottext">DynamicTable
-</span><a href="#local-6989586621679089340"><span class="hs-identifier hs-var">encodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">TokenHeaderList
-</span><a href="#local-6989586621679089315"><span class="hs-identifier hs-var">ths</span></a></span><span>
+</span><a href="#local-6989586621679089339"><span class="hs-identifier hs-var">encodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">TokenHeaderList
+</span><a href="#local-6989586621679089314"><span class="hs-identifier hs-var">ths</span></a></span><span>
 </span><span id="line-56"></span><span>
 </span><span id="line-57"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#hpackEncodeHeaderLoop"><span class="hs-identifier hs-type">hpackEncodeHeaderLoop</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Buffer</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BufferSize</span></span><span>
 </span><span id="line-58"></span><span>                      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HPACK.Types.html#TokenHeaderList"><span class="hs-identifier hs-type">TokenHeaderList</span></a></span><span>
@@ -157,7 +157,7 @@ role :: Role
 -&gt; BufferSize
 -&gt; TokenHeaderList
 -&gt; IO (TokenHeaderList, BufferSize)
-</span><a href="Network.HTTP2.Arch.HPACK.html#hpackEncodeHeaderLoop"><span class="hs-identifier hs-var hs-var">hpackEncodeHeaderLoop</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089297"><span id="local-6989586621679089298"><span id="local-6989586621679089299"><span id="local-6989586621679089300"><span id="local-6989586621679089301"><span id="local-6989586621679089302"><span id="local-6989586621679089303"><span id="local-6989586621679089304"><span id="local-6989586621679089305"><span id="local-6989586621679089306"><span id="local-6989586621679089307"><span id="local-6989586621679089308"><span id="local-6989586621679089309"><span id="local-6989586621679089310"><span id="local-6989586621679089311"><span id="local-6989586621679089312"><span id="local-6989586621679089313"><span class="annot"><span class="annottext">TVar BufferSize
+</span><a href="Network.HTTP2.Arch.HPACK.html#hpackEncodeHeaderLoop"><span class="hs-identifier hs-var hs-var">hpackEncodeHeaderLoop</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089296"><span id="local-6989586621679089297"><span id="local-6989586621679089298"><span id="local-6989586621679089299"><span id="local-6989586621679089300"><span id="local-6989586621679089301"><span id="local-6989586621679089302"><span id="local-6989586621679089303"><span id="local-6989586621679089304"><span id="local-6989586621679089305"><span id="local-6989586621679089306"><span id="local-6989586621679089307"><span id="local-6989586621679089308"><span id="local-6989586621679089309"><span id="local-6989586621679089310"><span id="local-6989586621679089311"><span id="local-6989586621679089312"><span class="annot"><span class="annottext">TVar BufferSize
 IORef Bool
 IORef BufferSize
 IORef (Maybe BufferSize)
@@ -203,10 +203,10 @@ firstSettings :: Context -&gt; IORef Bool
 http2settings :: Context -&gt; IORef Settings
 roleInfo :: Context -&gt; RoleInfo
 role :: Context -&gt; Role
-</span><a href="#local-6989586621679089297"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span id="local-6989586621679089296"><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679089296"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679089295"><span class="annot"><span class="annottext">BufferSize
-</span><a href="#local-6989586621679089295"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679089294"><span class="annot"><span class="annottext">TokenHeaderList
-</span><a href="#local-6989586621679089294"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621679089296"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span id="local-6989586621679089295"><span class="annot"><span class="annottext">Buffer
+</span><a href="#local-6989586621679089295"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679089294"><span class="annot"><span class="annottext">BufferSize
+</span><a href="#local-6989586621679089294"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span id="local-6989586621679089293"><span class="annot"><span class="annottext">TokenHeaderList
+</span><a href="#local-6989586621679089293"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-61"></span><span>    </span><span class="annot"><span class="annottext">Buffer
 -&gt; BufferSize
 -&gt; EncodeStrategy
@@ -215,37 +215,37 @@ role :: Context -&gt; Role
 -&gt; TokenHeaderList
 -&gt; IO (TokenHeaderList, BufferSize)
 </span><a href="Network.HPACK.HeaderBlock.Encode.html#encodeTokenHeader"><span class="hs-identifier hs-var">encodeTokenHeader</span></a></span><span> </span><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679089296"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">BufferSize
-</span><a href="#local-6989586621679089295"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">EncodeStrategy
+</span><a href="#local-6989586621679089295"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">BufferSize
+</span><a href="#local-6989586621679089294"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">EncodeStrategy
 </span><a href="Network.HTTP2.Arch.HPACK.html#strategy"><span class="hs-identifier hs-var">strategy</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span> </span><span class="annot"><span class="annottext">DynamicTable
-</span><a href="#local-6989586621679089302"><span class="hs-identifier hs-var">encodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">TokenHeaderList
-</span><a href="#local-6989586621679089294"><span class="hs-identifier hs-var">hs</span></a></span><span>
+</span><a href="#local-6989586621679089301"><span class="hs-identifier hs-var">encodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">TokenHeaderList
+</span><a href="#local-6989586621679089293"><span class="hs-identifier hs-var">hs</span></a></span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-64"></span><span>
 </span><span id="line-65"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeHeader"><span class="hs-identifier hs-type">hpackDecodeHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#HeaderBlockFragment"><span class="hs-identifier hs-type">HeaderBlockFragment</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Network.HPACK.HeaderBlock.Decode.html#HeaderTable"><span class="hs-identifier hs-type">HeaderTable</span></a></span><span>
 </span><span id="line-66"></span><span id="hpackDecodeHeader"><span class="annot"><span class="annottext">hpackDecodeHeader :: ByteString -&gt; Context -&gt; IO HeaderTable
-</span><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeHeader"><span class="hs-identifier hs-var hs-var">hpackDecodeHeader</span></a></span></span><span> </span><span id="local-6989586621679089292"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679089292"><span class="hs-identifier hs-var">hdrblk</span></a></span></span><span> </span><span id="local-6989586621679089291"><span class="annot"><span class="annottext">Context
-</span><a href="#local-6989586621679089291"><span class="hs-identifier hs-var">ctx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-67"></span><span>    </span><span id="local-6989586621679089290"><span class="annot"><span class="annottext">tbl :: HeaderTable
-</span><a href="#local-6989586621679089290"><span class="hs-identifier hs-var">tbl</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="annottext">TokenHeaderList
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679089289"><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089289"><span class="hs-identifier hs-var">vt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Context -&gt; IO HeaderTable
+</span><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeHeader"><span class="hs-identifier hs-var hs-var">hpackDecodeHeader</span></a></span></span><span> </span><span id="local-6989586621679089291"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679089291"><span class="hs-identifier hs-var">hdrblk</span></a></span></span><span> </span><span id="local-6989586621679089290"><span class="annot"><span class="annottext">Context
+</span><a href="#local-6989586621679089290"><span class="hs-identifier hs-var">ctx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-67"></span><span>    </span><span id="local-6989586621679089289"><span class="annot"><span class="annottext">tbl :: HeaderTable
+</span><a href="#local-6989586621679089289"><span class="hs-identifier hs-var">tbl</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="annottext">TokenHeaderList
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679089288"><span class="annot"><span class="annottext">ValueTable
+</span><a href="#local-6989586621679089288"><span class="hs-identifier hs-var">vt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Context -&gt; IO HeaderTable
 </span><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeTrailer"><span class="hs-identifier hs-var">hpackDecodeTrailer</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679089292"><span class="hs-identifier hs-var">hdrblk</span></a></span><span> </span><span class="annot"><span class="annottext">Context
-</span><a href="#local-6989586621679089291"><span class="hs-identifier hs-var">ctx</span></a></span><span>
+</span><a href="#local-6989586621679089291"><span class="hs-identifier hs-var">hdrblk</span></a></span><span> </span><span class="annot"><span class="annottext">Context
+</span><a href="#local-6989586621679089290"><span class="hs-identifier hs-var">ctx</span></a></span><span>
 </span><span id="line-68"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Context -&gt; Bool
 </span><a href="Network.HTTP2.Arch.Context.html#isClient"><span class="hs-identifier hs-var">isClient</span></a></span><span> </span><span class="annot"><span class="annottext">Context
-</span><a href="#local-6989586621679089291"><span class="hs-identifier hs-var">ctx</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679089290"><span class="hs-identifier hs-var">ctx</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">ValueTable -&gt; Bool
 </span><a href="Network.HTTP2.Arch.HPACK.html#checkRequestHeader"><span class="hs-identifier hs-var">checkRequestHeader</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089289"><span class="hs-identifier hs-var">vt</span></a></span><span> </span><span class="hs-keyword">then</span><span>
+</span><a href="#local-6989586621679089288"><span class="hs-identifier hs-var">vt</span></a></span><span> </span><span class="hs-keyword">then</span><span>
 </span><span id="line-69"></span><span>        </span><span class="annot"><span class="annottext">HeaderTable -&gt; IO HeaderTable
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">HeaderTable
-</span><a href="#local-6989586621679089290"><span class="hs-identifier hs-var">tbl</span></a></span><span>
+</span><a href="#local-6989586621679089289"><span class="hs-identifier hs-var">tbl</span></a></span><span>
 </span><span id="line-70"></span><span>      </span><span class="hs-keyword">else</span><span>
 </span><span id="line-71"></span><span>        </span><span class="annot"><span class="annottext">HTTP2Error -&gt; IO HeaderTable
 forall e a. Exception e =&gt; e -&gt; IO a
@@ -258,8 +258,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-72"></span><span>
 </span><span id="line-73"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeTrailer"><span class="hs-identifier hs-type">hpackDecodeTrailer</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#HeaderBlockFragment"><span class="hs-identifier hs-type">HeaderBlockFragment</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Network.HPACK.HeaderBlock.Decode.html#HeaderTable"><span class="hs-identifier hs-type">HeaderTable</span></a></span><span>
 </span><span id="line-74"></span><span id="hpackDecodeTrailer"><span class="annot"><span class="annottext">hpackDecodeTrailer :: ByteString -&gt; Context -&gt; IO HeaderTable
-</span><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeTrailer"><span class="hs-identifier hs-var hs-var">hpackDecodeTrailer</span></a></span></span><span> </span><span id="local-6989586621679089282"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679089282"><span class="hs-identifier hs-var">hdrblk</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089265"><span id="local-6989586621679089266"><span id="local-6989586621679089267"><span id="local-6989586621679089268"><span id="local-6989586621679089269"><span id="local-6989586621679089270"><span id="local-6989586621679089271"><span id="local-6989586621679089272"><span id="local-6989586621679089273"><span id="local-6989586621679089274"><span id="local-6989586621679089275"><span id="local-6989586621679089276"><span id="local-6989586621679089277"><span id="local-6989586621679089278"><span id="local-6989586621679089279"><span id="local-6989586621679089280"><span id="local-6989586621679089281"><span class="annot"><span class="annottext">TVar BufferSize
+</span><a href="Network.HTTP2.Arch.HPACK.html#hpackDecodeTrailer"><span class="hs-identifier hs-var hs-var">hpackDecodeTrailer</span></a></span></span><span> </span><span id="local-6989586621679089281"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679089281"><span class="hs-identifier hs-var">hdrblk</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Context.html#Context"><span class="hs-identifier hs-type">Context</span></a></span><span class="hs-special">{</span><span id="local-6989586621679089264"><span id="local-6989586621679089265"><span id="local-6989586621679089266"><span id="local-6989586621679089267"><span id="local-6989586621679089268"><span id="local-6989586621679089269"><span id="local-6989586621679089270"><span id="local-6989586621679089271"><span id="local-6989586621679089272"><span id="local-6989586621679089273"><span id="local-6989586621679089274"><span id="local-6989586621679089275"><span id="local-6989586621679089276"><span id="local-6989586621679089277"><span id="local-6989586621679089278"><span id="local-6989586621679089279"><span id="local-6989586621679089280"><span class="annot"><span class="annottext">TVar BufferSize
 IORef Bool
 IORef BufferSize
 IORef (Maybe BufferSize)
@@ -305,17 +305,17 @@ firstSettings :: Context -&gt; IORef Bool
 http2settings :: Context -&gt; IORef Settings
 roleInfo :: Context -&gt; RoleInfo
 role :: Context -&gt; Role
-</span><a href="#local-6989586621679089265"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DynamicTable -&gt; ByteString -&gt; IO HeaderTable
+</span><a href="#local-6989586621679089264"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DynamicTable -&gt; ByteString -&gt; IO HeaderTable
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#decodeTokenHeader"><span class="hs-identifier hs-var">decodeTokenHeader</span></a></span><span> </span><span class="annot"><span class="annottext">DynamicTable
-</span><a href="#local-6989586621679089269"><span class="hs-identifier hs-var">decodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679089282"><span class="hs-identifier hs-var">hdrblk</span></a></span><span> </span><span class="annot"><span class="annottext">IO HeaderTable -&gt; (DecodeError -&gt; IO HeaderTable) -&gt; IO HeaderTable
+</span><a href="#local-6989586621679089268"><span class="hs-identifier hs-var">decodeDynamicTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679089281"><span class="hs-identifier hs-var">hdrblk</span></a></span><span> </span><span class="annot"><span class="annottext">IO HeaderTable -&gt; (DecodeError -&gt; IO HeaderTable) -&gt; IO HeaderTable
 forall e a. Exception e =&gt; IO a -&gt; (e -&gt; IO a) -&gt; IO a
 </span><span class="hs-operator hs-var">`E.catch`</span></span><span> </span><span class="annot"><span class="annottext">DecodeError -&gt; IO HeaderTable
 forall a. DecodeError -&gt; IO a
-</span><a href="#local-6989586621679089262"><span class="hs-identifier hs-var">handl</span></a></span><span>
+</span><a href="#local-6989586621679089261"><span class="hs-identifier hs-var">handl</span></a></span><span>
 </span><span id="line-75"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-76"></span><span>    </span><span id="local-6989586621679089262"><span class="annot"><span class="annottext">handl :: DecodeError -&gt; IO a
-</span><a href="#local-6989586621679089262"><span class="hs-identifier hs-var hs-var">handl</span></a></span></span><span> </span><span class="annot"><span class="annottext">DecodeError
+</span><span id="line-76"></span><span>    </span><span id="local-6989586621679089261"><span class="annot"><span class="annottext">handl :: DecodeError -&gt; IO a
+</span><a href="#local-6989586621679089261"><span class="hs-identifier hs-var hs-var">handl</span></a></span></span><span> </span><span class="annot"><span class="annottext">DecodeError
 </span><a href="Network.HPACK.Types.html#IllegalHeaderName"><span class="hs-identifier hs-var">IllegalHeaderName</span></a></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-77"></span><span>        </span><span class="annot"><span class="annottext">HTTP2Error -&gt; IO a
 forall e a. Exception e =&gt; e -&gt; IO a
@@ -325,7 +325,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Network.HTTP2.Frame.Types.html#ConnectionError"><span class="hs-identifier hs-var">ConnectionError</span></a></span><span> </span><span class="annot"><span class="annottext">ErrorCodeId
 </span><a href="Network.HTTP2.Frame.Types.html#ProtocolError"><span class="hs-identifier hs-var">ProtocolError</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;the header key is illegal&quot;</span></span><span>
-</span><span id="line-78"></span><span>    </span><span class="annot"><a href="#local-6989586621679089262"><span class="hs-identifier hs-var">handl</span></a></span><span> </span><span class="annot"><span class="annottext">DecodeError
+</span><span id="line-78"></span><span>    </span><span class="annot"><a href="#local-6989586621679089261"><span class="hs-identifier hs-var">handl</span></a></span><span> </span><span class="annot"><span class="annottext">DecodeError
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-79"></span><span>        </span><span class="annot"><span class="annottext">HTTP2Error -&gt; IO a
 forall e a. Exception e =&gt; e -&gt; IO a
@@ -339,44 +339,44 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-81"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#checkRequestHeader"><span class="hs-pragma hs-type">checkRequestHeader</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-82"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#checkRequestHeader"><span class="hs-identifier hs-type">checkRequestHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HPACK.HeaderBlock.Decode.html#ValueTable"><span class="hs-identifier hs-type">ValueTable</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-83"></span><span id="checkRequestHeader"><span class="annot"><span class="annottext">checkRequestHeader :: ValueTable -&gt; Bool
-</span><a href="Network.HTTP2.Arch.HPACK.html#checkRequestHeader"><span class="hs-identifier hs-var hs-var">checkRequestHeader</span></a></span></span><span> </span><span id="local-6989586621679089259"><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span></span><span>
+</span><a href="Network.HTTP2.Arch.HPACK.html#checkRequestHeader"><span class="hs-identifier hs-var hs-var">checkRequestHeader</span></a></span></span><span> </span><span id="local-6989586621679089258"><span class="annot"><span class="annottext">ValueTable
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span></span><span>
 </span><span id="line-84"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; (ByteString -&gt; Bool) -&gt; Bool
 forall a. Maybe a -&gt; (a -&gt; Bool) -&gt; Bool
 </span><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-var">just</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">mMethod</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679089257"><span class="hs-identifier hs-var">mMethod</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;CONNECT&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089256"><span class="hs-identifier hs-var">mPath</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679089255"><span class="hs-identifier hs-var">mPath</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089254"><span class="hs-identifier hs-var">mScheme</span></a></span><span>
+</span><a href="#local-6989586621679089253"><span class="hs-identifier hs-var">mScheme</span></a></span><span>
 </span><span id="line-85"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isJust</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089252"><span class="hs-identifier hs-var">mStatus</span></a></span><span>              </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089251"><span class="hs-identifier hs-var">mStatus</span></a></span><span>              </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-86"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">mMethod</span></a></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089257"><span class="hs-identifier hs-var">mMethod</span></a></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-87"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089254"><span class="hs-identifier hs-var">mScheme</span></a></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089253"><span class="hs-identifier hs-var">mScheme</span></a></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-88"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089256"><span class="hs-identifier hs-var">mPath</span></a></span><span>             </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089255"><span class="hs-identifier hs-var">mPath</span></a></span><span>             </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-89"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089256"><span class="hs-identifier hs-var">mPath</span></a></span><span>       </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Maybe ByteString -&gt; Bool
+</span><a href="#local-6989586621679089255"><span class="hs-identifier hs-var">mPath</span></a></span><span>       </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Maybe ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe ByteString
 forall a. a -&gt; Maybe a
@@ -386,12 +386,12 @@ forall a. a -&gt; Maybe a
 </span><span id="line-90"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isJust</span></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089251"><span class="hs-identifier hs-var">mConnection</span></a></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089250"><span class="hs-identifier hs-var">mConnection</span></a></span><span>          </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-91"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; (ByteString -&gt; Bool) -&gt; Bool
 forall a. Maybe a -&gt; (a -&gt; Bool) -&gt; Bool
 </span><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-var">just</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe ByteString
-</span><a href="#local-6989586621679089250"><span class="hs-identifier hs-var">mTE</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679089249"><span class="hs-identifier hs-var">mTE</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;trailers&quot;</span></span><span class="hs-special">)</span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
@@ -400,50 +400,50 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>                   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-93"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-94"></span><span>    </span><span id="local-6989586621679089252"><span class="annot"><span class="annottext">mStatus :: Maybe ByteString
-</span><a href="#local-6989586621679089252"><span class="hs-identifier hs-var hs-var">mStatus</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><span id="line-94"></span><span>    </span><span id="local-6989586621679089251"><span class="annot"><span class="annottext">mStatus :: Maybe ByteString
+</span><a href="#local-6989586621679089251"><span class="hs-identifier hs-var hs-var">mStatus</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenStatus"><span class="hs-identifier hs-var">tokenStatus</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
-</span><span id="line-95"></span><span>    </span><span id="local-6989586621679089254"><span class="annot"><span class="annottext">mScheme :: Maybe ByteString
-</span><a href="#local-6989586621679089254"><span class="hs-identifier hs-var hs-var">mScheme</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><span id="line-95"></span><span>    </span><span id="local-6989586621679089253"><span class="annot"><span class="annottext">mScheme :: Maybe ByteString
+</span><a href="#local-6989586621679089253"><span class="hs-identifier hs-var hs-var">mScheme</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenScheme"><span class="hs-identifier hs-var">tokenScheme</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
-</span><span id="line-96"></span><span>    </span><span id="local-6989586621679089256"><span class="annot"><span class="annottext">mPath :: Maybe ByteString
-</span><a href="#local-6989586621679089256"><span class="hs-identifier hs-var hs-var">mPath</span></a></span></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><span id="line-96"></span><span>    </span><span id="local-6989586621679089255"><span class="annot"><span class="annottext">mPath :: Maybe ByteString
+</span><a href="#local-6989586621679089255"><span class="hs-identifier hs-var hs-var">mPath</span></a></span></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenPath"><span class="hs-identifier hs-var">tokenPath</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
-</span><span id="line-97"></span><span>    </span><span id="local-6989586621679089258"><span class="annot"><span class="annottext">mMethod :: Maybe ByteString
-</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var hs-var">mMethod</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><span id="line-97"></span><span>    </span><span id="local-6989586621679089257"><span class="annot"><span class="annottext">mMethod :: Maybe ByteString
+</span><a href="#local-6989586621679089257"><span class="hs-identifier hs-var hs-var">mMethod</span></a></span></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenMethod"><span class="hs-identifier hs-var">tokenMethod</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
-</span><span id="line-98"></span><span>    </span><span id="local-6989586621679089251"><span class="annot"><span class="annottext">mConnection :: Maybe ByteString
-</span><a href="#local-6989586621679089251"><span class="hs-identifier hs-var hs-var">mConnection</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><span id="line-98"></span><span>    </span><span id="local-6989586621679089250"><span class="annot"><span class="annottext">mConnection :: Maybe ByteString
+</span><a href="#local-6989586621679089250"><span class="hs-identifier hs-var hs-var">mConnection</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenConnection"><span class="hs-identifier hs-var">tokenConnection</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
-</span><span id="line-99"></span><span>    </span><span id="local-6989586621679089250"><span class="annot"><span class="annottext">mTE :: Maybe ByteString
-</span><a href="#local-6989586621679089250"><span class="hs-identifier hs-var hs-var">mTE</span></a></span></span><span>         </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><span id="line-99"></span><span>    </span><span id="local-6989586621679089249"><span class="annot"><span class="annottext">mTE :: Maybe ByteString
+</span><a href="#local-6989586621679089249"><span class="hs-identifier hs-var hs-var">mTE</span></a></span></span><span>         </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token -&gt; ValueTable -&gt; Maybe ByteString
 </span><a href="Network.HPACK.HeaderBlock.Decode.html#getHeaderValue"><span class="hs-identifier hs-var">getHeaderValue</span></a></span><span> </span><span class="annot"><span class="annottext">Token
 </span><a href="Network.HPACK.Token.html#tokenTE"><span class="hs-identifier hs-var">tokenTE</span></a></span><span> </span><span class="annot"><span class="annottext">ValueTable
-</span><a href="#local-6989586621679089259"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
+</span><a href="#local-6989586621679089258"><span class="hs-identifier hs-var">reqvt</span></a></span><span>
 </span><span id="line-100"></span><span>
 </span><span id="line-101"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-pragma hs-type">just</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
-</span><span id="line-102"></span><span id="local-6989586621679089377"><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-type">just</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679089377"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621679089377"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span></span><span>
+</span><span id="line-102"></span><span id="local-6989586621679089376"><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-type">just</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679089376"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621679089376"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span></span><span>
 </span><span id="line-103"></span><span id="just"><span class="annot"><span class="annottext">just :: Maybe a -&gt; (a -&gt; Bool) -&gt; Bool
 </span><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-var hs-var">just</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>  </span><span class="annot"><span class="annottext">a -&gt; Bool
 </span><span class="hs-identifier">_</span></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span>
-</span><span id="line-104"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-var">just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679089241"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679089241"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679089240"><span class="annot"><span class="annottext">a -&gt; Bool
-</span><a href="#local-6989586621679089240"><span class="hs-identifier hs-var">p</span></a></span></span><span>
+</span><span id="line-104"></span><span class="annot"><a href="Network.HTTP2.Arch.HPACK.html#just"><span class="hs-identifier hs-var">just</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679089240"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679089240"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679089239"><span class="annot"><span class="annottext">a -&gt; Bool
+</span><a href="#local-6989586621679089239"><span class="hs-identifier hs-var">p</span></a></span></span><span>
 </span><span id="line-105"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">a -&gt; Bool
-</span><a href="#local-6989586621679089240"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679089241"><span class="hs-identifier hs-var">x</span></a></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679089239"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679089240"><span class="hs-identifier hs-var">x</span></a></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-106"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool

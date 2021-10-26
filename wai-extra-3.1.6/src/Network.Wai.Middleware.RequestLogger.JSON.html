@@ -31,14 +31,14 @@
 </span><span id="line-31"></span><span>
 </span><span id="line-32"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSON"><span class="hs-identifier hs-type">formatAsJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.html#OutputFormatterWithDetails"><span class="hs-identifier hs-type">OutputFormatterWithDetails</span></a></span><span>
 </span><span id="line-33"></span><span id="formatAsJSON"><span class="annot"><span class="annottext">formatAsJSON :: OutputFormatterWithDetails
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSON"><span class="hs-identifier hs-var hs-var">formatAsJSON</span></a></span></span><span> </span><span id="local-6989586621679104402"><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104402"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679104401"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104401"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104400"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104400"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span id="local-6989586621679104399"><span class="annot"><span class="annottext">Maybe Integer
-</span><a href="#local-6989586621679104399"><span class="hs-identifier hs-var">responseSize</span></a></span></span><span> </span><span id="local-6989586621679104398"><span class="annot"><span class="annottext">NominalDiffTime
-</span><a href="#local-6989586621679104398"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span id="local-6989586621679104397"><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104397"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104396"><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679104396"><span class="hs-identifier hs-var">response</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSON"><span class="hs-identifier hs-var hs-var">formatAsJSON</span></a></span></span><span> </span><span id="local-6989586621679104422"><span class="annot"><span class="annottext">ZonedDate
+</span><a href="#local-6989586621679104422"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679104421"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104421"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104420"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679104420"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span id="local-6989586621679104419"><span class="annot"><span class="annottext">Maybe Integer
+</span><a href="#local-6989586621679104419"><span class="hs-identifier hs-var">responseSize</span></a></span></span><span> </span><span id="local-6989586621679104418"><span class="annot"><span class="annottext">NominalDiffTime
+</span><a href="#local-6989586621679104418"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span id="local-6989586621679104417"><span class="annot"><span class="annottext">[ZonedDate]
+</span><a href="#local-6989586621679104417"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104416"><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679104416"><span class="hs-identifier hs-var">response</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-34"></span><span>  </span><span class="annot"><span class="annottext">ByteString -&gt; LogStr
 forall msg. ToLogStr msg =&gt; msg -&gt; LogStr
 </span><span class="hs-identifier hs-var">toLogStr</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; ByteString
@@ -53,11 +53,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Request -&gt; [ZonedDate] -&gt; Maybe NominalDiffTime -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestToJSON"><span class="hs-identifier hs-var">requestToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104401"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104397"><span class="hs-identifier hs-var">reqBody</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NominalDiffTime -&gt; Maybe NominalDiffTime
+</span><a href="#local-6989586621679104421"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">[ZonedDate]
+</span><a href="#local-6989586621679104417"><span class="hs-identifier hs-var">reqBody</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NominalDiffTime -&gt; Maybe NominalDiffTime
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">NominalDiffTime
-</span><a href="#local-6989586621679104398"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104418"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-37"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;response&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -69,19 +69,19 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; Int
 </span><span class="hs-identifier hs-var hs-var">statusCode</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104400"><span class="hs-identifier hs-var">status</span></a></span><span>
+</span><a href="#local-6989586621679104420"><span class="hs-identifier hs-var">status</span></a></span><span>
 </span><span id="line-40"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;size&quot;</span></span><span>   </span><span class="annot"><span class="annottext">Text -&gt; Maybe Integer -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Maybe Integer
-</span><a href="#local-6989586621679104399"><span class="hs-identifier hs-var">responseSize</span></a></span><span>
+</span><a href="#local-6989586621679104419"><span class="hs-identifier hs-var">responseSize</span></a></span><span>
 </span><span id="line-41"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;body&quot;</span></span><span>   </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span>
 </span><span id="line-42"></span><span>          </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Status -&gt; Int
 </span><span class="hs-identifier hs-var hs-var">statusCode</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104400"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679104420"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">400</span></span><span>
@@ -101,7 +101,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">BB.toLazyByteString</span></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; Maybe Text) -&gt; Builder -&gt; Maybe Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679104396"><span class="hs-identifier hs-var">response</span></a></span><span>
+</span><a href="#local-6989586621679104416"><span class="hs-identifier hs-var">response</span></a></span><span>
 </span><span id="line-44"></span><span>            </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Maybe Text
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
@@ -112,7 +112,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104402"><span class="hs-identifier hs-var">date</span></a></span><span>
+</span><a href="#local-6989586621679104422"><span class="hs-identifier hs-var">date</span></a></span><span>
 </span><span id="line-47"></span><span>      </span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">LogStr -&gt; LogStr -&gt; LogStr
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">LogStr
@@ -127,15 +127,15 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span id="line-55"></span><span class="hs-comment">-- @since 3.0.27</span><span>
 </span><span id="line-56"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSONWithHeaders"><span class="hs-identifier hs-type">formatAsJSONWithHeaders</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.html#OutputFormatterWithDetailsAndHeaders"><span class="hs-identifier hs-type">OutputFormatterWithDetailsAndHeaders</span></a></span><span>
 </span><span id="line-57"></span><span id="formatAsJSONWithHeaders"><span class="annot"><span class="annottext">formatAsJSONWithHeaders :: OutputFormatterWithDetailsAndHeaders
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSONWithHeaders"><span class="hs-identifier hs-var hs-var">formatAsJSONWithHeaders</span></a></span></span><span> </span><span id="local-6989586621679104390"><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104390"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679104389"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104389"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104388"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104388"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span id="local-6989586621679104387"><span class="annot"><span class="annottext">Maybe Integer
-</span><a href="#local-6989586621679104387"><span class="hs-identifier hs-var">resSize</span></a></span></span><span> </span><span id="local-6989586621679104386"><span class="annot"><span class="annottext">NominalDiffTime
-</span><a href="#local-6989586621679104386"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span id="local-6989586621679104385"><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104385"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104384"><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679104384"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span id="local-6989586621679104383"><span class="annot"><span class="annottext">[Header]
-</span><a href="#local-6989586621679104383"><span class="hs-identifier hs-var">resHeaders</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#formatAsJSONWithHeaders"><span class="hs-identifier hs-var hs-var">formatAsJSONWithHeaders</span></a></span></span><span> </span><span id="local-6989586621679104410"><span class="annot"><span class="annottext">ZonedDate
+</span><a href="#local-6989586621679104410"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679104409"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104409"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104408"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679104408"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span id="local-6989586621679104407"><span class="annot"><span class="annottext">Maybe Integer
+</span><a href="#local-6989586621679104407"><span class="hs-identifier hs-var">resSize</span></a></span></span><span> </span><span id="local-6989586621679104406"><span class="annot"><span class="annottext">NominalDiffTime
+</span><a href="#local-6989586621679104406"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span id="local-6989586621679104405"><span class="annot"><span class="annottext">[ZonedDate]
+</span><a href="#local-6989586621679104405"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104404"><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679104404"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span id="local-6989586621679104403"><span class="annot"><span class="annottext">[Header]
+</span><a href="#local-6989586621679104403"><span class="hs-identifier hs-var">resHeaders</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-58"></span><span>  </span><span class="annot"><span class="annottext">ByteString -&gt; LogStr
 forall msg. ToLogStr msg =&gt; msg -&gt; LogStr
 </span><span class="hs-identifier hs-var">toLogStr</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Value -&gt; ByteString
@@ -150,11 +150,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Request -&gt; [ZonedDate] -&gt; Maybe NominalDiffTime -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestToJSON"><span class="hs-identifier hs-var">requestToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104389"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104385"><span class="hs-identifier hs-var">reqBody</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NominalDiffTime -&gt; Maybe NominalDiffTime
+</span><a href="#local-6989586621679104409"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">[ZonedDate]
+</span><a href="#local-6989586621679104405"><span class="hs-identifier hs-var">reqBody</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">NominalDiffTime -&gt; Maybe NominalDiffTime
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">NominalDiffTime
-</span><a href="#local-6989586621679104386"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104406"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-61"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;response&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -165,25 +165,25 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; Int
 </span><span class="hs-identifier hs-var hs-var">statusCode</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104388"><span class="hs-identifier hs-var">status</span></a></span><span>
+</span><a href="#local-6989586621679104408"><span class="hs-identifier hs-var">status</span></a></span><span>
 </span><span id="line-63"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;size&quot;</span></span><span>   </span><span class="annot"><span class="annottext">Text -&gt; Maybe Integer -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Maybe Integer
-</span><a href="#local-6989586621679104387"><span class="hs-identifier hs-var">resSize</span></a></span><span>
+</span><a href="#local-6989586621679104407"><span class="hs-identifier hs-var">resSize</span></a></span><span>
 </span><span id="line-64"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;headers&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">[Header] -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#responseHeadersToJSON"><span class="hs-identifier hs-var">responseHeadersToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">[Header]
-</span><a href="#local-6989586621679104383"><span class="hs-identifier hs-var">resHeaders</span></a></span><span>
+</span><a href="#local-6989586621679104403"><span class="hs-identifier hs-var">resHeaders</span></a></span><span>
 </span><span id="line-65"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;body&quot;</span></span><span>   </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span>
 </span><span id="line-66"></span><span>          </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Status -&gt; Int
 </span><span class="hs-identifier hs-var hs-var">statusCode</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679104388"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679104408"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">400</span></span><span>
@@ -203,7 +203,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">BB.toLazyByteString</span></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; Maybe Text) -&gt; Builder -&gt; Maybe Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679104384"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679104404"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-68"></span><span>            </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Maybe Text
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
@@ -214,7 +214,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104390"><span class="hs-identifier hs-var">date</span></a></span><span>
+</span><a href="#local-6989586621679104410"><span class="hs-identifier hs-var">date</span></a></span><span>
 </span><span id="line-71"></span><span>      </span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">LogStr -&gt; LogStr -&gt; LogStr
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">LogStr
@@ -276,10 +276,10 @@ forall a. Read a =&gt; String -&gt; a
 </span><span id="line-105"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">NominalDiffTime</span></span><span> </span><span class="hs-comment">-- ^ Optional request duration</span><span>
 </span><span id="line-106"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-107"></span><span id="requestToJSON"><span class="annot"><span class="annottext">requestToJSON :: Request -&gt; [ZonedDate] -&gt; Maybe NominalDiffTime -&gt; Value
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestToJSON"><span class="hs-identifier hs-var hs-var">requestToJSON</span></a></span></span><span> </span><span id="local-6989586621679104372"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104371"><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104371"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104370"><span class="annot"><span class="annottext">Maybe NominalDiffTime
-</span><a href="#local-6989586621679104370"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestToJSON"><span class="hs-identifier hs-var hs-var">requestToJSON</span></a></span></span><span> </span><span id="local-6989586621679104392"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104391"><span class="annot"><span class="annottext">[ZonedDate]
+</span><a href="#local-6989586621679104391"><span class="hs-identifier hs-var">reqBody</span></a></span></span><span> </span><span id="local-6989586621679104390"><span class="annot"><span class="annottext">Maybe NominalDiffTime
+</span><a href="#local-6989586621679104390"><span class="hs-identifier hs-var">duration</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-108"></span><span>  </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span> </span><span class="annot"><span class="annottext">([Pair] -&gt; Value) -&gt; [Pair] -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -291,7 +291,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; ZonedDate
 </span><span class="hs-identifier hs-var hs-var">requestMethod</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-110"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;path&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -299,7 +299,7 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; ZonedDate
 </span><span class="hs-identifier hs-var hs-var">rawPathInfo</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-111"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;queryString&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Value] -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -308,14 +308,14 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">QueryItem -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#queryItemToJSON"><span class="hs-identifier hs-var">queryItemToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; [QueryItem]
 </span><span class="hs-identifier hs-var hs-var">queryString</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-112"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;size&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">RequestBodyLength -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestBodyLengthToJSON"><span class="hs-identifier hs-var">requestBodyLengthToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestBodyLength
 </span><span class="hs-identifier hs-var hs-var">requestBodyLength</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-113"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;body&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -323,28 +323,28 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[ZonedDate] -&gt; ZonedDate
 </span><span class="hs-identifier hs-var">S8.concat</span></span><span> </span><span class="annot"><span class="annottext">[ZonedDate]
-</span><a href="#local-6989586621679104371"><span class="hs-identifier hs-var">reqBody</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104391"><span class="hs-identifier hs-var">reqBody</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-114"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;remoteHost&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var">sockToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; SockAddr
 </span><span class="hs-identifier hs-var hs-var">remoteHost</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-115"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;httpVersion&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">HttpVersion -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#httpVersionToJSON"><span class="hs-identifier hs-var">httpVersionToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; HttpVersion
 </span><span class="hs-identifier hs-var hs-var">httpVersion</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-116"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;headers&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">[Header] -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestHeadersToJSON"><span class="hs-identifier hs-var">requestHeadersToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; [Header]
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104392"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-117"></span><span>    </span><span class="hs-special">]</span><span>
 </span><span id="line-118"></span><span>    </span><span class="annot"><span class="annottext">[Pair] -&gt; [Pair] -&gt; [Pair]
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
@@ -368,7 +368,7 @@ forall r. PrintfType r =&gt; String -&gt; r
 -&gt; (NominalDiffTime -&gt; Double) -&gt; NominalDiffTime -&gt; String
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Rational -&gt; Double
-</span><a href="#local-6989586621679104356"><span class="hs-identifier hs-var">rationalToDouble</span></a></span><span> </span><span class="annot"><span class="annottext">(Rational -&gt; Double)
+</span><a href="#local-6989586621679104376"><span class="hs-identifier hs-var">rationalToDouble</span></a></span><span> </span><span class="annot"><span class="annottext">(Rational -&gt; Double)
 -&gt; (NominalDiffTime -&gt; Rational) -&gt; NominalDiffTime -&gt; Double
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Rational -&gt; Rational -&gt; Rational
@@ -382,19 +382,19 @@ forall a. Real a =&gt; a -&gt; Rational
 </span><span class="hs-identifier hs-var">toRational</span></span><span> </span><span class="annot"><span class="annottext">(NominalDiffTime -&gt; Pair) -&gt; Maybe NominalDiffTime -&gt; Maybe Pair
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe NominalDiffTime
-</span><a href="#local-6989586621679104370"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104390"><span class="hs-identifier hs-var">duration</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-120"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-121"></span><span>    </span><span class="annot"><a href="#local-6989586621679104356"><span class="hs-identifier hs-type">rationalToDouble</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Rational</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Double</span></span><span>
-</span><span id="line-122"></span><span>    </span><span id="local-6989586621679104356"><span class="annot"><span class="annottext">rationalToDouble :: Rational -&gt; Double
-</span><a href="#local-6989586621679104356"><span class="hs-identifier hs-var hs-var">rationalToDouble</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Rational -&gt; Double
+</span><span id="line-121"></span><span>    </span><span class="annot"><a href="#local-6989586621679104376"><span class="hs-identifier hs-type">rationalToDouble</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Rational</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Double</span></span><span>
+</span><span id="line-122"></span><span>    </span><span id="local-6989586621679104376"><span class="annot"><span class="annottext">rationalToDouble :: Rational -&gt; Double
+</span><a href="#local-6989586621679104376"><span class="hs-identifier hs-var hs-var">rationalToDouble</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Rational -&gt; Double
 forall a. Fractional a =&gt; Rational -&gt; a
 </span><span class="hs-identifier hs-var">fromRational</span></span><span>
 </span><span id="line-123"></span><span>
 </span><span id="line-124"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-type">sockToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SockAddr</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-125"></span><span id="sockToJSON"><span class="annot"><span class="annottext">sockToJSON :: SockAddr -&gt; Value
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var hs-var">sockToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrInet</span></span><span> </span><span id="local-6989586621679104352"><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679104352"><span class="hs-identifier hs-var">pn</span></a></span></span><span> </span><span id="local-6989586621679104351"><span class="annot"><span class="annottext">Word32
-</span><a href="#local-6989586621679104351"><span class="hs-identifier hs-var">ha</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var hs-var">sockToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrInet</span></span><span> </span><span id="local-6989586621679104372"><span class="annot"><span class="annottext">PortNumber
+</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">pn</span></a></span></span><span> </span><span id="local-6989586621679104371"><span class="annot"><span class="annottext">Word32
+</span><a href="#local-6989586621679104371"><span class="hs-identifier hs-var">ha</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-126"></span><span>  </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span>
 </span><span id="line-127"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
@@ -402,18 +402,18 @@ forall a. Fractional a =&gt; Rational -&gt; a
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">PortNumber -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#portToJSON"><span class="hs-identifier hs-var">portToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679104352"><span class="hs-identifier hs-var">pn</span></a></span><span>
+</span><a href="#local-6989586621679104372"><span class="hs-identifier hs-var">pn</span></a></span><span>
 </span><span id="line-128"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;hostAddress&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Word32 -&gt; Text
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#word32ToHostAddress"><span class="hs-identifier hs-var">word32ToHostAddress</span></a></span><span> </span><span class="annot"><span class="annottext">Word32
-</span><a href="#local-6989586621679104351"><span class="hs-identifier hs-var">ha</span></a></span><span>
+</span><a href="#local-6989586621679104371"><span class="hs-identifier hs-var">ha</span></a></span><span>
 </span><span id="line-129"></span><span>    </span><span class="hs-special">]</span><span>
-</span><span id="line-130"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var">sockToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrInet6</span></span><span> </span><span id="local-6989586621679104348"><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679104348"><span class="hs-identifier hs-var">pn</span></a></span></span><span> </span><span class="annot"><span class="annottext">Word32
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679104347"><span class="annot"><span class="annottext">HostAddress6
-</span><a href="#local-6989586621679104347"><span class="hs-identifier hs-var">ha</span></a></span></span><span> </span><span class="annot"><span class="annottext">Word32
+</span><span id="line-130"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var">sockToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrInet6</span></span><span> </span><span id="local-6989586621679104368"><span class="annot"><span class="annottext">PortNumber
+</span><a href="#local-6989586621679104368"><span class="hs-identifier hs-var">pn</span></a></span></span><span> </span><span class="annot"><span class="annottext">Word32
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679104367"><span class="annot"><span class="annottext">HostAddress6
+</span><a href="#local-6989586621679104367"><span class="hs-identifier hs-var">ha</span></a></span></span><span> </span><span class="annot"><span class="annottext">Word32
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-131"></span><span>  </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span>
@@ -422,21 +422,21 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">PortNumber -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#portToJSON"><span class="hs-identifier hs-var">portToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679104348"><span class="hs-identifier hs-var">pn</span></a></span><span>
+</span><a href="#local-6989586621679104368"><span class="hs-identifier hs-var">pn</span></a></span><span>
 </span><span id="line-133"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;hostAddress&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; HostAddress6 -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">HostAddress6
-</span><a href="#local-6989586621679104347"><span class="hs-identifier hs-var">ha</span></a></span><span>
+</span><a href="#local-6989586621679104367"><span class="hs-identifier hs-var">ha</span></a></span><span>
 </span><span id="line-134"></span><span>    </span><span class="hs-special">]</span><span>
-</span><span id="line-135"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var">sockToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrUnix</span></span><span> </span><span id="local-6989586621679104345"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679104345"><span class="hs-identifier hs-var">sock</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-135"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#sockToJSON"><span class="hs-identifier hs-var">sockToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SockAddrUnix</span></span><span> </span><span id="local-6989586621679104365"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679104365"><span class="hs-identifier hs-var">sock</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-136"></span><span>  </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;unix&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679104345"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="hs-special">]</span><span class="hs-cpp">
+</span><a href="#local-6989586621679104365"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="hs-special">]</span><span class="hs-cpp">
 #if !MIN_VERSION_network(3,0,0)
 </span><span class="hs-identifier">sockToJSON</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">SockAddrCan</span><span> </span><span class="hs-identifier">i</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-139"></span><span>  </span><span class="hs-identifier">object</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-string">&quot;can&quot;</span><span> </span><span class="hs-operator">.=</span><span> </span><span class="hs-identifier">i</span><span> </span><span class="hs-special">]</span><span class="hs-cpp">
@@ -444,19 +444,19 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span>
 </span><span id="line-142"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#queryItemToJSON"><span class="hs-identifier hs-type">queryItemToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">QueryItem</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-143"></span><span id="queryItemToJSON"><span class="annot"><span class="annottext">queryItemToJSON :: QueryItem -&gt; Value
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#queryItemToJSON"><span class="hs-identifier hs-var hs-var">queryItemToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679104344"><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104344"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679104343"><span class="annot"><span class="annottext">Maybe ZonedDate
-</span><a href="#local-6989586621679104343"><span class="hs-identifier hs-var">mValue</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Maybe Text) -&gt; Value
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#queryItemToJSON"><span class="hs-identifier hs-var hs-var">queryItemToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679104364"><span class="annot"><span class="annottext">ZonedDate
+</span><a href="#local-6989586621679104364"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679104363"><span class="annot"><span class="annottext">Maybe ZonedDate
+</span><a href="#local-6989586621679104363"><span class="hs-identifier hs-var">mValue</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Maybe Text) -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104344"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(ZonedDate -&gt; Text) -&gt; Maybe ZonedDate -&gt; Maybe Text
+</span><a href="#local-6989586621679104364"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(ZonedDate -&gt; Text) -&gt; Maybe ZonedDate -&gt; Maybe Text
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe ZonedDate
-</span><a href="#local-6989586621679104343"><span class="hs-identifier hs-var">mValue</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104363"><span class="hs-identifier hs-var">mValue</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-144"></span><span>
 </span><span id="line-145"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestHeadersToJSON"><span class="hs-identifier hs-type">requestHeadersToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-146"></span><span id="requestHeadersToJSON"><span class="annot"><span class="annottext">requestHeadersToJSON :: [Header] -&gt; Value
@@ -467,20 +467,20 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Header -&gt; Value) -&gt; [Header] -&gt; [Value]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
-</span><a href="#local-6989586621679104340"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><a href="#local-6989586621679104360"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-147"></span><span>  </span><span class="hs-comment">-- Redact cookies</span><span>
-</span><span id="line-148"></span><span>  </span><span id="local-6989586621679104340"><span class="annot"><span class="annottext">hToJ :: Header -&gt; Value
-</span><a href="#local-6989586621679104340"><span class="hs-identifier hs-var hs-var">hToJ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
+</span><span id="line-148"></span><span>  </span><span id="local-6989586621679104360"><span class="annot"><span class="annottext">hToJ :: Header -&gt; Value
+</span><a href="#local-6989586621679104360"><span class="hs-identifier hs-var hs-var">hToJ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-string">&quot;Cookie&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ZonedDate
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Text) -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Cookie&quot;</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;-RDCT-&quot;</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-149"></span><span>  </span><span class="annot"><a href="#local-6989586621679104340"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span id="local-6989586621679104339"><span class="annot"><span class="annottext">Header
-</span><a href="#local-6989586621679104339"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
+</span><span id="line-149"></span><span>  </span><span class="annot"><a href="#local-6989586621679104360"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span id="local-6989586621679104359"><span class="annot"><span class="annottext">Header
+</span><a href="#local-6989586621679104359"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#headerToJSON"><span class="hs-identifier hs-var">headerToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">Header
-</span><a href="#local-6989586621679104339"><span class="hs-identifier hs-var">hd</span></a></span><span>
+</span><a href="#local-6989586621679104359"><span class="hs-identifier hs-var">hd</span></a></span><span>
 </span><span id="line-150"></span><span>
 </span><span id="line-151"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#responseHeadersToJSON"><span class="hs-identifier hs-type">responseHeadersToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-152"></span><span id="responseHeadersToJSON"><span class="annot"><span class="annottext">responseHeadersToJSON :: [Header] -&gt; Value
@@ -491,26 +491,26 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Header -&gt; Value) -&gt; [Header] -&gt; [Value]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
-</span><a href="#local-6989586621679104337"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><a href="#local-6989586621679104357"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-153"></span><span>  </span><span class="hs-comment">-- Redact cookies</span><span>
-</span><span id="line-154"></span><span>  </span><span id="local-6989586621679104337"><span class="annot"><span class="annottext">hToJ :: Header -&gt; Value
-</span><a href="#local-6989586621679104337"><span class="hs-identifier hs-var hs-var">hToJ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
+</span><span id="line-154"></span><span>  </span><span id="local-6989586621679104357"><span class="annot"><span class="annottext">hToJ :: Header -&gt; Value
+</span><a href="#local-6989586621679104357"><span class="hs-identifier hs-var hs-var">hToJ</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-string">&quot;Set-Cookie&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ZonedDate
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Text) -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Set-Cookie&quot;</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;-RDCT-&quot;</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-155"></span><span>  </span><span class="annot"><a href="#local-6989586621679104337"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span id="local-6989586621679104336"><span class="annot"><span class="annottext">Header
-</span><a href="#local-6989586621679104336"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
+</span><span id="line-155"></span><span>  </span><span class="annot"><a href="#local-6989586621679104357"><span class="hs-identifier hs-var">hToJ</span></a></span><span> </span><span id="local-6989586621679104356"><span class="annot"><span class="annottext">Header
+</span><a href="#local-6989586621679104356"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Header -&gt; Value
 </span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#headerToJSON"><span class="hs-identifier hs-var">headerToJSON</span></a></span><span> </span><span class="annot"><span class="annottext">Header
-</span><a href="#local-6989586621679104336"><span class="hs-identifier hs-var">hd</span></a></span><span>
+</span><a href="#local-6989586621679104356"><span class="hs-identifier hs-var">hd</span></a></span><span>
 </span><span id="line-156"></span><span>
 </span><span id="line-157"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#headerToJSON"><span class="hs-identifier hs-type">headerToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-158"></span><span id="headerToJSON"><span class="annot"><span class="annottext">headerToJSON :: Header -&gt; Value
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#headerToJSON"><span class="hs-identifier hs-var hs-var">headerToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679104335"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679104335"><span class="hs-identifier hs-var">headerName</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679104334"><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104334"><span class="hs-identifier hs-var">header</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Text) -&gt; Value
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#headerToJSON"><span class="hs-identifier hs-var hs-var">headerToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679104355"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679104355"><span class="hs-identifier hs-var">headerName</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679104354"><span class="annot"><span class="annottext">ZonedDate
+</span><a href="#local-6989586621679104354"><span class="hs-identifier hs-var">header</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text, Text) -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
@@ -522,10 +522,10 @@ forall s. CI s -&gt; s
 </span><span class="hs-identifier hs-var hs-var">original</span></span><span> </span><span class="annot"><span class="annottext">(HeaderName -&gt; Text) -&gt; HeaderName -&gt; Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679104335"><span class="hs-identifier hs-var">headerName</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
+</span><a href="#local-6989586621679104355"><span class="hs-identifier hs-var">headerName</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">OnDecodeError -&gt; ZonedDate -&gt; Text
 </span><span class="hs-identifier hs-var">decodeUtf8With</span></span><span> </span><span class="annot"><span class="annottext">OnDecodeError
 </span><span class="hs-identifier hs-var">lenientDecode</span></span><span> </span><span class="annot"><span class="annottext">ZonedDate
-</span><a href="#local-6989586621679104334"><span class="hs-identifier hs-var">header</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104354"><span class="hs-identifier hs-var">header</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-159"></span><span>
 </span><span id="line-160"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#portToJSON"><span class="hs-identifier hs-type">portToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-161"></span><span id="portToJSON"><span class="annot"><span class="annottext">portToJSON :: PortNumber -&gt; Value
@@ -540,16 +540,16 @@ forall a. Integral a =&gt; a -&gt; Integer
 </span><span id="line-162"></span><span>
 </span><span id="line-163"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#httpVersionToJSON"><span class="hs-identifier hs-type">httpVersionToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HttpVersion</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-164"></span><span id="httpVersionToJSON"><span class="annot"><span class="annottext">httpVersionToJSON :: HttpVersion -&gt; Value
-</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#httpVersionToJSON"><span class="hs-identifier hs-var hs-var">httpVersionToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">HttpVersion</span></span><span> </span><span id="local-6989586621679104332"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679104332"><span class="hs-identifier hs-var">major</span></a></span></span><span> </span><span id="local-6989586621679104331"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679104331"><span class="hs-identifier hs-var">minor</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value
+</span><a href="Network.Wai.Middleware.RequestLogger.JSON.html#httpVersionToJSON"><span class="hs-identifier hs-var hs-var">httpVersionToJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">HttpVersion</span></span><span> </span><span id="local-6989586621679104352"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679104352"><span class="hs-identifier hs-var">major</span></a></span></span><span> </span><span id="local-6989586621679104351"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679104351"><span class="hs-identifier hs-var">minor</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value
 </span><span class="hs-identifier hs-var">String</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Value) -&gt; Text -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">T.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679104332"><span class="hs-identifier hs-var">major</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+</span><a href="#local-6989586621679104352"><span class="hs-identifier hs-var">major</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;.&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
@@ -558,7 +558,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-identifier hs-var">T.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679104331"><span class="hs-identifier hs-var">minor</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104351"><span class="hs-identifier hs-var">minor</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-165"></span><span>
 </span><span id="line-166"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestBodyLengthToJSON"><span class="hs-identifier hs-type">requestBodyLengthToJSON</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RequestBodyLength</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Value</span></span><span>
 </span><span id="line-167"></span><span id="requestBodyLengthToJSON"><span class="annot"><span class="annottext">requestBodyLengthToJSON :: RequestBodyLength -&gt; Value
@@ -566,9 +566,9 @@ forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">ChunkedBody</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value
 </span><span class="hs-identifier hs-var">String</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;Unknown&quot;</span></span><span>
-</span><span id="line-168"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestBodyLengthToJSON"><span class="hs-identifier hs-var">requestBodyLengthToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">KnownLength</span></span><span> </span><span id="local-6989586621679104327"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104327"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Value
+</span><span id="line-168"></span><span class="annot"><a href="Network.Wai.Middleware.RequestLogger.JSON.html#requestBodyLengthToJSON"><span class="hs-identifier hs-var">requestBodyLengthToJSON</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">KnownLength</span></span><span> </span><span id="local-6989586621679104347"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104347"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104327"><span class="hs-identifier hs-var">l</span></a></span><span>
+</span><a href="#local-6989586621679104347"><span class="hs-identifier hs-var">l</span></a></span><span>
 </span><span id="line-169"></span></pre></body></html>

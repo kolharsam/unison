@@ -239,7 +239,7 @@ CUIntMax :: Word64 -> CUIntMax
 --   concrete types of <a>Foreign.C.Types#platform</a> are
 --   platform-specific.)</i>
 newtype CClock
-CClock :: Word64 -> CClock
+CClock :: Int64 -> CClock
 
 -- | Haskell type representing the C <tt>time_t</tt> type. <i>(The concrete
 --   types of <a>Foreign.C.Types#platform</a> are platform-specific.)</i>
@@ -256,7 +256,7 @@ CUSeconds :: Word32 -> CUSeconds
 --   concrete types of <a>Foreign.C.Types#platform</a> are
 --   platform-specific.)</i>
 newtype CSUSeconds
-CSUSeconds :: Int32 -> CSUSeconds
+CSUSeconds :: Int64 -> CSUSeconds
 
 -- | Haskell type representing the C <tt>float</tt> type. <i>(The concrete
 --   types of <a>Foreign.C.Types#platform</a> are platform-specific.)</i>
@@ -269,7 +269,7 @@ data CDouble
 newtype COff
 COff :: Int64 -> COff
 newtype CMode
-CMode :: Word16 -> CMode
+CMode :: Word32 -> CMode
 
 module Basement.Compat.CallStack
 

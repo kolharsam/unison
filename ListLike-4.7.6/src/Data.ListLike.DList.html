@@ -21,60 +21,60 @@
 </span><span id="line-21"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Control.Category</span></span><span>
 </span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.Char</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Char</span></span><span class="hs-special">)</span><span>
 </span><span id="line-23"></span><span>
-</span><span id="line-24"></span><span id="local-6989586621679096964"><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><a href="#local-6989586621679096964"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679096964"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-25"></span><span>  </span><span id="local-6989586621679096956"><span class="annot"><span class="annottext">foldl :: (a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
+</span><span id="line-24"></span><span id="local-6989586621679096965"><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Data.ListLike.FoldableLL.html#FoldableLL"><span class="hs-identifier hs-type">FoldableLL</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><a href="#local-6989586621679096965"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679096965"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-25"></span><span>  </span><span id="local-6989586621679096957"><span class="annot"><span class="annottext">foldl :: (a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
 </span><a href="Data.ListLike.FoldableLL.html#foldl"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
 forall (t :: * -&gt; *) b a.
 Foldable t =&gt;
 (b -&gt; a -&gt; b) -&gt; b -&gt; t a -&gt; b
 </span><span class="hs-identifier hs-var">F.foldl</span></span><span>
-</span><span id="line-26"></span><span>  </span><span id="local-6989586621679096953"><span class="annot"><span class="annottext">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
+</span><span id="line-26"></span><span>  </span><span id="local-6989586621679096954"><span class="annot"><span class="annottext">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
 </span><a href="Data.ListLike.FoldableLL.html#foldr"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
 forall a b. (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
 </span><span class="hs-identifier hs-var">D.foldr</span></span><span>
-</span><span id="line-27"></span><span>  </span><span id="local-6989586621679096950"><span class="annot"><span class="annottext">foldl1 :: (a -&gt; a -&gt; a) -&gt; DList a -&gt; a
+</span><span id="line-27"></span><span>  </span><span id="local-6989586621679096951"><span class="annot"><span class="annottext">foldl1 :: (a -&gt; a -&gt; a) -&gt; DList a -&gt; a
 </span><a href="Data.ListLike.FoldableLL.html#foldl1"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a -&gt; a) -&gt; DList a -&gt; a
 forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; a -&gt; a) -&gt; t a -&gt; a
 </span><span class="hs-identifier hs-var">F.foldl1</span></span><span>
-</span><span id="line-28"></span><span>  </span><span id="local-6989586621679096947"><span class="annot"><span class="annottext">foldr1 :: (a -&gt; a -&gt; a) -&gt; DList a -&gt; a
+</span><span id="line-28"></span><span>  </span><span id="local-6989586621679096948"><span class="annot"><span class="annottext">foldr1 :: (a -&gt; a -&gt; a) -&gt; DList a -&gt; a
 </span><a href="Data.ListLike.FoldableLL.html#foldr1"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a -&gt; a) -&gt; DList a -&gt; a
 forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; a -&gt; a) -&gt; t a -&gt; a
 </span><span class="hs-identifier hs-var">F.foldr1</span></span><span>
-</span><span id="line-29"></span><span>  </span><span id="local-6989586621679096944"><span class="annot"><span class="annottext">foldl' :: (a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
+</span><span id="line-29"></span><span>  </span><span id="local-6989586621679096945"><span class="annot"><span class="annottext">foldl' :: (a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
 </span><a href="Data.ListLike.FoldableLL.html#foldl%27"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldl'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a -&gt; a) -&gt; a -&gt; DList a -&gt; a
 forall (t :: * -&gt; *) b a.
 Foldable t =&gt;
 (b -&gt; a -&gt; b) -&gt; b -&gt; t a -&gt; b
 </span><span class="hs-identifier hs-var">F.foldl'</span></span><span>
-</span><span id="line-30"></span><span>  </span><span id="local-6989586621679096941"><span class="annot"><span class="annottext">foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
+</span><span id="line-30"></span><span>  </span><span id="local-6989586621679096942"><span class="annot"><span class="annottext">foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
 </span><a href="Data.ListLike.FoldableLL.html#foldr%27"><span class="hs-identifier hs-var hs-var hs-var hs-var">foldr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; b -&gt; b) -&gt; b -&gt; DList a -&gt; b
 forall (t :: * -&gt; *) a b.
 Foldable t =&gt;
 (a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b
 </span><span class="hs-identifier hs-var">F.foldr'</span></span></span><span>
 </span><span id="line-31"></span><span>
-</span><span id="line-32"></span><span id="local-6989586621679096938"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679096792"><span id="local-6989586621679096794"><span id="local-6989586621679096796"><span id="local-6989586621679096798"><span id="local-6989586621679096800"><span id="local-6989586621679096802"><span id="local-6989586621679096804"><span id="local-6989586621679096806"><span id="local-6989586621679096808"><span id="local-6989586621679096810"><span id="local-6989586621679096812"><span id="local-6989586621679096814"><span id="local-6989586621679096816"><span id="local-6989586621679096818"><span id="local-6989586621679096820"><span id="local-6989586621679096822"><span id="local-6989586621679096824"><span id="local-6989586621679096826"><span id="local-6989586621679096828"><span id="local-6989586621679096830"><span id="local-6989586621679096832"><span id="local-6989586621679096834"><span id="local-6989586621679096836"><span id="local-6989586621679096838"><span id="local-6989586621679096840"><span id="local-6989586621679096842"><span id="local-6989586621679096844"><span id="local-6989586621679096846"><span id="local-6989586621679096848"><span id="local-6989586621679096850"><span id="local-6989586621679096852"><span id="local-6989586621679096854"><span id="local-6989586621679096856"><span id="local-6989586621679096858"><span id="local-6989586621679096860"><span id="local-6989586621679096862"><span id="local-6989586621679096864"><span id="local-6989586621679096866"><span id="local-6989586621679096868"><span id="local-6989586621679096870"><span id="local-6989586621679096872"><span id="local-6989586621679096874"><span id="local-6989586621679096876"><span id="local-6989586621679096878"><span id="local-6989586621679096880"><span id="local-6989586621679096882"><span id="local-6989586621679096884"><span id="local-6989586621679096886"><span id="local-6989586621679096888"><span id="local-6989586621679096890"><span id="local-6989586621679096892"><span id="local-6989586621679096894"><span id="local-6989586621679096897"><span id="local-6989586621679096899"><span id="local-6989586621679096901"><span id="local-6989586621679096903"><span id="local-6989586621679096905"><span id="local-6989586621679096907"><span id="local-6989586621679096909"><span id="local-6989586621679096911"><span id="local-6989586621679096913"><span id="local-6989586621679096916"><span id="local-6989586621679096918"><span id="local-6989586621679096921"><span id="local-6989586621679096924"><span id="local-6989586621679096926"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><a href="#local-6989586621679096938"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679096938"><span class="hs-identifier hs-type">a</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-33"></span><span>  </span><span id="local-6989586621679096790"><span class="annot"><span class="annottext">empty :: DList a
+</span><span id="line-32"></span><span id="local-6989586621679096939"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679096793"><span id="local-6989586621679096795"><span id="local-6989586621679096797"><span id="local-6989586621679096799"><span id="local-6989586621679096801"><span id="local-6989586621679096803"><span id="local-6989586621679096805"><span id="local-6989586621679096807"><span id="local-6989586621679096809"><span id="local-6989586621679096811"><span id="local-6989586621679096813"><span id="local-6989586621679096815"><span id="local-6989586621679096817"><span id="local-6989586621679096819"><span id="local-6989586621679096821"><span id="local-6989586621679096823"><span id="local-6989586621679096825"><span id="local-6989586621679096827"><span id="local-6989586621679096829"><span id="local-6989586621679096831"><span id="local-6989586621679096833"><span id="local-6989586621679096835"><span id="local-6989586621679096837"><span id="local-6989586621679096839"><span id="local-6989586621679096841"><span id="local-6989586621679096843"><span id="local-6989586621679096845"><span id="local-6989586621679096847"><span id="local-6989586621679096849"><span id="local-6989586621679096851"><span id="local-6989586621679096853"><span id="local-6989586621679096855"><span id="local-6989586621679096857"><span id="local-6989586621679096859"><span id="local-6989586621679096861"><span id="local-6989586621679096863"><span id="local-6989586621679096865"><span id="local-6989586621679096867"><span id="local-6989586621679096869"><span id="local-6989586621679096871"><span id="local-6989586621679096873"><span id="local-6989586621679096875"><span id="local-6989586621679096877"><span id="local-6989586621679096879"><span id="local-6989586621679096881"><span id="local-6989586621679096883"><span id="local-6989586621679096885"><span id="local-6989586621679096887"><span id="local-6989586621679096889"><span id="local-6989586621679096891"><span id="local-6989586621679096893"><span id="local-6989586621679096895"><span id="local-6989586621679096898"><span id="local-6989586621679096900"><span id="local-6989586621679096902"><span id="local-6989586621679096904"><span id="local-6989586621679096906"><span id="local-6989586621679096908"><span id="local-6989586621679096910"><span id="local-6989586621679096912"><span id="local-6989586621679096914"><span id="local-6989586621679096917"><span id="local-6989586621679096919"><span id="local-6989586621679096922"><span id="local-6989586621679096925"><span id="local-6989586621679096927"><span class="annot"><a href="Data.ListLike.Base.html#ListLike"><span class="hs-identifier hs-type">ListLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><a href="#local-6989586621679096939"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679096939"><span class="hs-identifier hs-type">a</span></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-33"></span><span>  </span><span id="local-6989586621679096791"><span class="annot"><span class="annottext">empty :: DList a
 </span><a href="Data.ListLike.Base.html#empty"><span class="hs-identifier hs-var hs-var hs-var hs-var">empty</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DList a
 forall a. DList a
 </span><span class="hs-identifier hs-var">D.empty</span></span><span>
-</span><span id="line-34"></span><span>  </span><span id="local-6989586621679096787"><span class="annot"><span class="annottext">singleton :: a -&gt; DList a
+</span><span id="line-34"></span><span>  </span><span id="local-6989586621679096788"><span class="annot"><span class="annottext">singleton :: a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#singleton"><span class="hs-identifier hs-var hs-var hs-var hs-var">singleton</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a -&gt; DList a
 forall a. a -&gt; DList a
 </span><span class="hs-identifier hs-var">D.singleton</span></span><span>
-</span><span id="line-35"></span><span>  </span><span id="local-6989586621679096784"><span class="annot"><span class="annottext">cons :: a -&gt; DList a -&gt; DList a
+</span><span id="line-35"></span><span>  </span><span id="local-6989586621679096785"><span class="annot"><span class="annottext">cons :: a -&gt; DList a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#cons"><span class="hs-identifier hs-var hs-var hs-var hs-var">cons</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a -&gt; DList a -&gt; DList a
 forall a. a -&gt; DList a -&gt; DList a
 </span><span class="hs-identifier hs-var">D.cons</span></span><span>
-</span><span id="line-36"></span><span>  </span><span id="local-6989586621679096781"><span class="annot"><span class="annottext">snoc :: DList a -&gt; a -&gt; DList a
+</span><span id="line-36"></span><span>  </span><span id="local-6989586621679096782"><span class="annot"><span class="annottext">snoc :: DList a -&gt; a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#snoc"><span class="hs-identifier hs-var hs-var hs-var hs-var">snoc</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DList a -&gt; a -&gt; DList a
 forall a. DList a -&gt; a -&gt; DList a
 </span><span class="hs-identifier hs-var">D.snoc</span></span><span>
-</span><span id="line-37"></span><span>  </span><span id="local-6989586621679096778"><span class="annot"><span class="annottext">append :: DList a -&gt; DList a -&gt; DList a
+</span><span id="line-37"></span><span>  </span><span id="local-6989586621679096779"><span class="annot"><span class="annottext">append :: DList a -&gt; DList a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#append"><span class="hs-identifier hs-var hs-var hs-var hs-var">append</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DList a -&gt; DList a -&gt; DList a
 forall a. DList a -&gt; DList a -&gt; DList a
 </span><span class="hs-identifier hs-var">D.append</span></span><span>
-</span><span id="line-38"></span><span>  </span><span id="local-6989586621679096775"><span class="annot"><span class="annottext">head :: DList a -&gt; a
+</span><span id="line-38"></span><span>  </span><span id="local-6989586621679096776"><span class="annot"><span class="annottext">head :: DList a -&gt; a
 </span><a href="Data.ListLike.Base.html#head"><span class="hs-identifier hs-var hs-var hs-var hs-var">head</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DList a -&gt; a
 forall a. DList a -&gt; a
 </span><span class="hs-identifier hs-var">D.head</span></span><span class="hs-cpp">
@@ -89,7 +89,7 @@ forall a. DList a -&gt; a
 </span><span id="line-47"></span><span>  </span><span class="hs-comment">-- The following tail function restores the spirit of difference</span><span>
 </span><span id="line-48"></span><span>  </span><span class="hs-comment">-- lists, at the cost of breaking data abstraction, i.e.,</span><span>
 </span><span id="line-49"></span><span>  </span><span class="hs-comment">-- using the constructor and destructor of the newtype DList.</span><span>
-</span><span id="line-50"></span><span>  </span><span id="local-6989586621679096772"><span class="annot"><span class="annottext">tail :: DList a -&gt; DList a
+</span><span id="line-50"></span><span>  </span><span id="local-6989586621679096773"><span class="annot"><span class="annottext">tail :: DList a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#tail"><span class="hs-identifier hs-var hs-var hs-var hs-var">tail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; DList a
 forall a. ([a] -&gt; [a]) -&gt; DList a
 </span><span class="hs-identifier hs-var">UnsafeDList</span></span><span> </span><span class="annot"><span class="annottext">(([a] -&gt; [a]) -&gt; DList a)
@@ -114,11 +114,11 @@ forall a. DList a -&gt; [a] -&gt; [a]
 #else
 </span><span>  </span><span class="hs-identifier">tail</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">D.tail</span><span class="hs-cpp">
 #endif
-</span><span>  </span><span id="local-6989586621679096768"><span class="annot"><span class="annottext">rigidMap :: (a -&gt; a) -&gt; DList a -&gt; DList a
+</span><span>  </span><span id="local-6989586621679096769"><span class="annot"><span class="annottext">rigidMap :: (a -&gt; a) -&gt; DList a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#rigidMap"><span class="hs-identifier hs-var hs-var hs-var hs-var">rigidMap</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a) -&gt; DList a -&gt; DList a
 forall a b. (a -&gt; b) -&gt; DList a -&gt; DList b
 </span><span class="hs-identifier hs-var">D.map</span></span><span>
-</span><span id="line-55"></span><span>  </span><span id="local-6989586621679096765"><span class="annot"><span class="annottext">null :: DList a -&gt; Bool
+</span><span id="line-55"></span><span>  </span><span id="local-6989586621679096766"><span class="annot"><span class="annottext">null :: DList a -&gt; Bool
 </span><a href="Data.ListLike.Base.html#null"><span class="hs-identifier hs-var hs-var hs-var hs-var">null</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; Bool
 forall full item. ListLike full item =&gt; full -&gt; Bool
 </span><a href="Data.ListLike.Base.html#null"><span class="hs-identifier hs-var">null</span></a></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; Bool) -&gt; (DList a -&gt; [a]) -&gt; DList a -&gt; Bool
@@ -130,18 +130,18 @@ forall a. DList a -&gt; [a]
 </span><span class="hs-identifier hs-var">D.toList</span></span><span>
 </span><span id="line-56"></span><span>  </span><span class="hs-comment">--toList = D.toList</span><span>
 </span><span id="line-57"></span><span>  </span><span class="hs-comment">--fromList = D.fromList</span><span>
-</span><span id="line-58"></span><span>  </span><span id="local-6989586621679096762"><span class="annot"><span class="annottext">replicate :: Int -&gt; a -&gt; DList a
+</span><span id="line-58"></span><span>  </span><span id="local-6989586621679096763"><span class="annot"><span class="annottext">replicate :: Int -&gt; a -&gt; DList a
 </span><a href="Data.ListLike.Base.html#replicate"><span class="hs-identifier hs-var hs-var hs-var hs-var">replicate</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; a -&gt; DList a
 forall a. Int -&gt; a -&gt; DList a
 </span><span class="hs-identifier hs-var">D.replicate</span></span></span><span>
 </span><span id="line-59"></span><span>
-</span><span id="line-60"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679096746"><span id="local-6989586621679096748"><span id="local-6989586621679096750"><span id="local-6989586621679096752"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span class="hs-special">)</span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-61"></span><span>  </span><span id="local-6989586621679096744"><span class="annot"><span class="annottext">toString :: DList Char -&gt; String
+</span><span id="line-60"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679096747"><span id="local-6989586621679096749"><span id="local-6989586621679096751"><span id="local-6989586621679096753"><span class="annot"><a href="Data.ListLike.String.html#StringLike"><span class="hs-identifier hs-type">StringLike</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">DList</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span class="hs-special">)</span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-61"></span><span>  </span><span id="local-6989586621679096745"><span class="annot"><span class="annottext">toString :: DList Char -&gt; String
 </span><a href="Data.ListLike.String.html#toString"><span class="hs-identifier hs-var hs-var hs-var hs-var">toString</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DList Char -&gt; String
 forall a. DList a -&gt; [a]
 </span><span class="hs-identifier hs-var">D.toList</span></span><span>
 </span><span id="line-62"></span><span>  </span><span class="hs-comment">-- fromString = D.fromList</span><span>
-</span><span id="line-63"></span><span>  </span><span id="local-6989586621679096742"><span class="annot"><span class="annottext">lines :: DList Char -&gt; full
+</span><span id="line-63"></span><span>  </span><span id="local-6989586621679096743"><span class="annot"><span class="annottext">lines :: DList Char -&gt; full
 </span><a href="Data.ListLike.String.html#lines"><span class="hs-identifier hs-var hs-var hs-var hs-var">lines</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; DList Char) -&gt; [String] -&gt; full
 forall full item full' item'.
 (ListLike full item, ListLike full' item') =&gt;
@@ -162,7 +162,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DList Char -&gt; String
 forall a. DList a -&gt; [a]
 </span><span class="hs-identifier hs-var">D.toList</span></span><span>
-</span><span id="line-64"></span><span>  </span><span id="local-6989586621679096737"><span class="annot"><span class="annottext">words :: DList Char -&gt; full
+</span><span id="line-64"></span><span>  </span><span id="local-6989586621679096738"><span class="annot"><span class="annottext">words :: DList Char -&gt; full
 </span><a href="Data.ListLike.String.html#words"><span class="hs-identifier hs-var hs-var hs-var hs-var">words</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; DList Char) -&gt; [String] -&gt; full
 forall full item full' item'.
 (ListLike full item, ListLike full' item') =&gt;
@@ -183,7 +183,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DList Char -&gt; String
 forall a. DList a -&gt; [a]
 </span><span class="hs-identifier hs-var">D.toList</span></span><span>
-</span><span id="line-65"></span><span>  </span><span id="local-6989586621679096734"><span class="annot"><span class="annottext">unlines :: full -&gt; DList Char
+</span><span id="line-65"></span><span>  </span><span id="local-6989586621679096735"><span class="annot"><span class="annottext">unlines :: full -&gt; DList Char
 </span><a href="Data.ListLike.String.html#unlines"><span class="hs-identifier hs-var hs-var hs-var hs-var">unlines</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; DList Char
 forall a. [a] -&gt; DList a
 </span><span class="hs-identifier hs-var">D.fromList</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DList Char) -&gt; (full -&gt; String) -&gt; full -&gt; DList Char
@@ -202,7 +202,7 @@ forall full item full' item'.
 </span><a href="Data.ListLike.Base.html#map"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">DList Char -&gt; String
 forall a. DList a -&gt; [a]
 </span><span class="hs-identifier hs-var">D.toList</span></span><span>
-</span><span id="line-66"></span><span>  </span><span id="local-6989586621679096731"><span class="annot"><span class="annottext">unwords :: full -&gt; DList Char
+</span><span id="line-66"></span><span>  </span><span id="local-6989586621679096732"><span class="annot"><span class="annottext">unwords :: full -&gt; DList Char
 </span><a href="Data.ListLike.String.html#unwords"><span class="hs-identifier hs-var hs-var hs-var hs-var">unwords</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; DList Char
 forall a. [a] -&gt; DList a
 </span><span class="hs-identifier hs-var">D.fromList</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DList Char) -&gt; (full -&gt; String) -&gt; full -&gt; DList Char

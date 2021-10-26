@@ -311,6 +311,7 @@ reverseSegments' :: Text -> [Text]
 isEmpty :: NameSegment -> Bool
 isPrefixOf :: NameSegment -> NameSegment -> Bool
 toString :: NameSegment -> String
+toTextBuilder :: NameSegment -> Builder
 instance GHC.Classes.Ord Unison.NameSegment.NameSegment
 instance GHC.Classes.Eq Unison.NameSegment.NameSegment
 instance Unison.Util.Alphabetical.Alphabetical Unison.NameSegment.NameSegment
@@ -369,111 +370,21 @@ freshIn :: Var v => Set v -> v -> v
 data V v
 Free :: v -> V v
 Bound :: v -> V v
-unvar :: V v -> v
-newtype Path s t a b m
-Path :: (s -> Maybe (a, b -> Maybe t, m)) -> Path s t a b m
-[focus] :: Path s t a b m -> s -> Maybe (a, b -> Maybe t, m)
-here :: Monoid m => Path s t s t m
-type Path' f g m = forall a v. Var v => Path (Term f v a) (Term f (V v) a) (Term g v a) (Term g (V v) a) m
-compose :: Monoid m => Path s t a b m -> Path a b a' b' m -> Path s t a' b' m
-at :: Path s t a b m -> s -> Maybe a
-modify' :: Path s t a b m -> (m -> a -> b) -> s -> Maybe t
-wrap :: (Functor f, Foldable f, Var v) => v -> Term f (V v) a -> (V v, Term f (V v) a)
-wrap' :: (Functor f, Foldable f, Var v) => v -> Term f (V v) a -> (V v -> Term f (V v) a -> c) -> c
-
--- | Return the list of all variables bound by this ABT
-bound' :: Foldable f => Term f v a -> [v]
-annotateBound' :: (Ord v, Functor f, Foldable f) => Term f v a0 -> Term f v [v]
-annotateBound :: (Ord v, Foldable f, Functor f) => Term f v a -> Term f v (a, Set v)
-annotateBound'' :: (Ord v, Functor f, Foldable f) => Term f v a -> Term f v (a, [v])
-
--- | Return the set of all variables bound by this ABT
-bound :: (Ord v, Foldable f) => Term f v a -> Set v
-
--- | <a>True</a> if the term has no free variables, <a>False</a> otherwise
-isClosed :: Term f v a -> Bool
-
--- | <a>True</a> if <tt>v</tt> is a member of the set of free variables of
---   <tt>t</tt>
-isFreeIn :: Ord v => v -> Term f v a -> Bool
-
--- | Replace the annotation with the given argument.
-annotate :: a -> Term f v a -> Term f v a
-vmap :: (Functor f, Foldable f, Ord v2) => (v -> v2) -> Term f v a -> Term f v2 a
-vmapM :: (Applicative m, Traversable f, Foldable f, Ord v2) => (v -> m v2) -> Term f v a -> m (Term f v2 a)
-amap :: (Functor f, Foldable f, Ord v) => (a -> a2) -> Term f v a -> Term f v a2
-amap' :: (Functor f, Foldable f, Ord v) => (Term f v a -> a -> a2) -> Term f v a -> Term f v a2
-extraMap :: Functor g => (forall k. f k -> g k) -> Term f v a -> Term g v a
-pattern Var' :: forall f v a. v -> Term f v a
-pattern Cycle' :: forall f v a. [v] -> Term f v a -> Term f v a
-pattern Abs' :: (Foldable f, Functor f, Var v) => Subst f v a -> Term f v a
-pattern AbsN' :: forall f v a. [v] -> Term f v a -> Term f v a
-pattern Tm' :: f (Term f v a) -> Term f v a
-pattern CycleA' :: forall f v a. a -> [(a, v)] -> Term f v a -> Term f v a
-pattern AbsNA' :: forall f v a. [(a, v)] -> Term f v a -> Term f v a
-pattern Abs1NA' :: forall f v a. [(a, v)] -> Term f v a -> Term f v a
-unabsA :: Term f v a -> ([(a, v)], Term f v a)
-unabs1A :: Term f v a -> Maybe ([(a, v)], Term f v a)
-var :: v -> Term f v ()
-annotatedVar :: a -> v -> Term f v a
-abs :: Ord v => v -> Term f v () -> Term f v ()
-abs' :: Ord v => a -> v -> Term f v a -> Term f v a
-absr :: (Functor f, Foldable f, Var v) => v -> Term f (V v) () -> Term f (V v) ()
-
--- | Rebuild an <a>abs</a>, renaming <tt>v</tt> to avoid capturing any
---   `Free v` in <tt>body</tt>.
-absr' :: (Functor f, Foldable f, Var v) => a -> v -> Term f (V v) a -> Term f (V v) a
-absChain :: Ord v => [v] -> Term f v () -> Term f v ()
-absCycle :: Ord v => [v] -> Term f v () -> Term f v ()
-absChain' :: Ord v => [(a, v)] -> Term f v a -> Term f v a
-tm :: (Foldable f, Ord v) => f (Term f v ()) -> Term f v ()
-tm' :: (Foldable f, Ord v) => a -> f (Term f v a) -> Term f v a
-cycle :: Term f v () -> Term f v ()
-cycle' :: a -> Term f v a -> Term f v a
-cycler' :: (Functor f, Foldable f, Var v) => a -> [v] -> Term f (V v) a -> Term f (V v) a
-cycler :: (Functor f, Foldable f, Var v) => [v] -> Term f (V v) () -> Term f (V v) ()
-into :: (Foldable f, Ord v) => ABT f v (Term f v ()) -> Term f v ()
-into' :: (Foldable f, Ord v) => a -> ABT f v (Term f v a) -> Term f v a
-
--- | renames <tt>old</tt> to <tt>new</tt> in the given term, ignoring
---   subtrees that bind <tt>old</tt>
-rename :: (Foldable f, Functor f, Var v) => v -> v -> Term f v a -> Term f v a
-renames :: (Foldable f, Functor f, Var v) => Map v v -> Term f v a -> Term f v a
-changeVars :: (Foldable f, Functor f, Var v) => Map v v -> Term f v a -> Term f v a
-
--- | Produce a variable which is free in both terms
-freshInBoth :: Var v => Term f v a -> Term f v a -> v -> v
+data Subst f v a
+Subst :: (forall m v'. Monad m => (v -> m v') -> m v') -> (Term f v a -> Term f v a) -> (forall b. Term f v b -> Term f v a) -> v -> Subst f v a
+[freshen] :: Subst f v a -> forall m v'. Monad m => (v -> m v') -> m v'
+[bind] :: Subst f v a -> Term f v a -> Term f v a
+[bindInheritAnnotation] :: Subst f v a -> forall b. Term f v b -> Term f v a
+[variable] :: Subst f v a -> v
 fresh :: Var v => Term f v a -> v -> v
-freshEverywhere :: (Foldable f, Var v) => Term f v a -> v -> v
-allVars :: Foldable f => Term f v a -> [v]
-freshes :: Var v => Term f v a -> [v] -> [v]
-freshes' :: Var v => Set v -> [v] -> [v]
+unvar :: V v -> v
 
 -- | Freshens the given variable wrt. the set of used variables tracked by
 --   state. Adds the result to the set of used variables.
 freshenS :: (Var v, MonadState (Set v) m) => v -> m v
 
--- | A more general version of <a>freshenS</a> that uses a lens to focus on
---   used variables inside state.
-freshenS' :: (Var v, MonadState s m) => Lens' s (Set v) -> v -> m v
-
--- | `subst v e body` substitutes <tt>e</tt> for <tt>v</tt> in
---   <tt>body</tt>, avoiding capture by renaming abstractions in
---   <tt>body</tt>
-subst :: (Foldable f, Functor f, Var v) => v -> Term f v a -> Term f v a -> Term f v a
-subst' :: (Foldable f, Functor f, Var v) => (a -> Term f v a) -> v -> Set v -> Term f v a -> Term f v a
-substInheritAnnotation :: (Foldable f, Functor f, Var v) => v -> Term f v b -> Term f v a -> Term f v a
-substsInheritAnnotation :: (Foldable f, Functor f, Var v) => [(v, Term f v b)] -> Term f v a -> Term f v a
-
--- | `substs [(t1,v1), (t2,v2), ...] body` performs multiple simultaneous
---   substitutions, avoiding capture
-substs :: (Foldable f, Functor f, Var v) => [(v, Term f v a)] -> Term f v a -> Term f v a
-occurrences :: (Foldable f, Var v) => v -> Term f v a -> Int
-rebuildUp :: (Ord v, Foldable f, Functor f) => (f (Term f v a) -> f (Term f v a)) -> Term f v a -> Term f v a
-rebuildUp' :: (Ord v, Foldable f, Functor f) => (Term f v a -> Term f v a) -> Term f v a -> Term f v a
-freeVarOccurrences :: (Traversable f, Ord v) => Set v -> Term f v a -> [(v, a)]
-foreachSubterm :: (Traversable f, Applicative g, Ord v) => (Term f v a -> g b) -> Term f v a -> g [b]
-subterms :: (Ord v, Traversable f) => Term f v a -> [Term f v a]
+-- | Produce a variable which is free in both terms
+freshInBoth :: Var v => Term f v a -> Term f v a -> v -> v
 
 -- | `visit f t` applies an effectful function to each subtree of
 --   <tt>t</tt> and sequences the results. When <tt>f</tt> returns
@@ -485,49 +396,82 @@ visit :: (Traversable f, Applicative g, Ord v) => (Term f v a -> Maybe (g (Term 
 
 -- | Apply an effectful function to an ABT tree top down, sequencing the
 --   results.
-visit' :: (Traversable f, Applicative g, Monad g, Ord v) => (f (Term f v a) -> g (f (Term f v a))) -> Term f v a -> g (Term f v a)
+visit' :: (Traversable f, Monad g, Ord v) => (f (Term f v a) -> g (f (Term f v a))) -> Term f v a -> g (Term f v a)
 
 -- | <a>visit</a> specialized to the <tt>Identity</tt> effect.
 visitPure :: (Traversable f, Ord v) => (Term f v a -> Maybe (Term f v a)) -> Term f v a -> Term f v a
+changeVars :: (Foldable f, Functor f, Var v) => Map v v -> Term f v a -> Term f v a
+allVars :: Foldable f => Term f v a -> [v]
+subterms :: (Ord v, Traversable f) => Term f v a -> [Term f v a]
+annotateBound :: (Ord v, Foldable f, Functor f) => Term f v a -> Term f v (a, Set v)
+rebuildUp :: (Ord v, Foldable f, Functor f) => (f (Term f v a) -> f (Term f v a)) -> Term f v a -> Term f v a
+rebuildUp' :: (Ord v, Foldable f, Functor f) => (Term f v a -> Term f v a) -> Term f v a -> Term f v a
+reannotateUp :: (Ord v, Foldable f, Functor f, Monoid b) => (Term f v a -> b) -> Term f v a -> Term f v (a, b)
 rewriteDown :: (Traversable f, Ord v) => (Term f v a -> Term f v a) -> Term f v a -> Term f v a
-data Subst f v a
-Subst :: (forall m v'. Monad m => (v -> m v') -> m v') -> (Term f v a -> Term f v a) -> (forall b. Term f v b -> Term f v a) -> v -> Subst f v a
-[freshen] :: Subst f v a -> forall m v'. Monad m => (v -> m v') -> m v'
-[bind] :: Subst f v a -> Term f v a -> Term f v a
-[bindInheritAnnotation] :: Subst f v a -> forall b. Term f v b -> Term f v a
-[variable] :: Subst f v a -> v
-unabs1 :: (Foldable f, Functor f, Var v) => Term f v a -> Maybe (Subst f v a)
-unabs :: Term f v a -> ([v], Term f v a)
-reabs :: Ord v => [v] -> Term f v () -> Term f v ()
 transform :: (Ord v, Foldable g, Functor f) => (forall a. f a -> g a) -> Term f v a -> Term g v a
 transformM :: (Ord v, Monad m, Traversable g) => (forall a. f a -> m (g a)) -> Term f v a -> m (Term g v a)
-reannotateUp :: (Ord v, Foldable f, Functor f, Monoid b) => (Term f v a -> b) -> Term f v a -> Term f v (a, b)
+foreachSubterm :: (Traversable f, Applicative g, Ord v) => (Term f v a -> g b) -> Term f v a -> g [b]
+freeVarOccurrences :: (Traversable f, Ord v) => Set v -> Term f v a -> [(v, a)]
+
+-- | <a>True</a> if <tt>v</tt> is a member of the set of free variables of
+--   <tt>t</tt>
+isFreeIn :: Ord v => v -> Term f v a -> Bool
+occurrences :: (Foldable f, Var v) => v -> Term f v a -> Int
+extraMap :: Functor g => (forall k. f k -> g k) -> Term f v a -> Term g v a
+vmap :: (Functor f, Foldable f, Ord v2) => (v -> v2) -> Term f v a -> Term f v2 a
+vmapM :: (Applicative m, Traversable f, Foldable f, Ord v2) => (v -> m v2) -> Term f v a -> m (Term f v2 a)
+amap :: (Functor f, Foldable f, Ord v) => (a -> a2) -> Term f v a -> Term f v a2
+
+-- | renames <tt>old</tt> to <tt>new</tt> in the given term, ignoring
+--   subtrees that bind <tt>old</tt>
+rename :: (Foldable f, Functor f, Var v) => v -> v -> Term f v a -> Term f v a
+renames :: (Foldable f, Functor f, Var v) => Map v v -> Term f v a -> Term f v a
+
+-- | `subst v e body` substitutes <tt>e</tt> for <tt>v</tt> in
+--   <tt>body</tt>, avoiding capture by renaming abstractions in
+--   <tt>body</tt>
+subst :: (Foldable f, Functor f, Var v) => v -> Term f v a -> Term f v a -> Term f v a
+
+-- | `substs [(t1,v1), (t2,v2), ...] body` performs multiple simultaneous
+--   substitutions, avoiding capture
+substs :: (Foldable f, Functor f, Var v) => [(v, Term f v a)] -> Term f v a -> Term f v a
+substInheritAnnotation :: (Foldable f, Functor f, Var v) => v -> Term f v b -> Term f v a -> Term f v a
+substsInheritAnnotation :: (Foldable f, Functor f, Var v) => [(v, Term f v b)] -> Term f v a -> Term f v a
+find :: (Ord v, Foldable f, Functor f) => (Term f v a -> FindAction x) -> Term f v a -> [x]
+find' :: (Ord v, Foldable f, Functor f) => (Term f v a -> Bool) -> Term f v a -> [Term f v a]
 data FindAction x
 Found :: x -> FindAction x
 Prune :: FindAction x
 Continue :: FindAction x
-find :: (Ord v, Foldable f, Functor f) => (Term f v a -> FindAction x) -> Term f v a -> [x]
-find' :: (Ord v, Foldable f, Functor f) => (Term f v a -> Bool) -> Term f v a -> [Term f v a]
+
+-- | Replace the annotation with the given argument.
+annotate :: a -> Term f v a -> Term f v a
+annotatedVar :: a -> v -> Term f v a
+var :: v -> Term f v ()
+tm :: (Foldable f, Ord v) => f (Term f v ()) -> Term f v ()
+tm' :: (Foldable f, Ord v) => a -> f (Term f v a) -> Term f v a
+abs :: Ord v => v -> Term f v () -> Term f v ()
+absChain :: Ord v => [v] -> Term f v () -> Term f v ()
+absChain' :: Ord v => [(a, v)] -> Term f v a -> Term f v a
+abs' :: Ord v => a -> v -> Term f v a -> Term f v a
+absr :: (Functor f, Foldable f, Var v) => v -> Term f (V v) () -> Term f (V v) ()
+unabs :: Term f v a -> ([v], Term f v a)
+cycle :: Term f v () -> Term f v ()
+cycle' :: a -> Term f v a -> Term f v a
+cycler :: (Functor f, Foldable f, Var v) => [v] -> Term f (V v) () -> Term f (V v) ()
+pattern Abs' :: (Foldable f, Functor f, Var v) => Subst f v a -> Term f v a
+pattern AbsN' :: forall f v a. [v] -> Term f v a -> Term f v a
+pattern Var' :: forall f v a. v -> Term f v a
+pattern Cycle' :: forall f v a. [v] -> Term f v a -> Term f v a
+pattern CycleA' :: forall f v a. a -> [(a, v)] -> Term f v a -> Term f v a
+pattern Tm' :: f (Term f v a) -> Term f v a
 components :: Var v => [(v, Term f v a)] -> [[(v, Term f v a)]]
-orderedComponents' :: Var v => [(v, Term f v a)] -> [[(v, Term f v a)]]
 orderedComponents :: Var v => [(v, Term f v a)] -> [[(v, Term f v a)]]
-hashComponent :: (Functor f, Hashable1 f, Foldable f, Eq v, Show v, Ord v, Ord h, Accumulate h) => Map v (Term f v a) -> (h, [(v, Term f v a)])
-hashComponents :: (Functor f, Hashable1 f, Foldable f, Eq v, Show v, Var v, Ord h, Accumulate h) => (h -> Word64 -> Word64 -> Term f v ()) -> Map v (Term f v a) -> [(h, [(v, Term f v a)])]
-data Component f a
-Component :: [a] -> a -> Component f a
-Embed :: f a -> Component f a
 
 -- | We ignore annotations in the <a>Term</a>, as these should never affect
 --   the meaning of the term.
 hash :: forall f v a h. (Functor f, Hashable1 f, Eq v, Show v, Ord h, Accumulate h) => Term f v a -> h
-
--- | Use the <a>hash</a> function to efficiently remove duplicates from the
---   list, preserving order.
-distinct :: forall f v h a proxy. (Functor f, Hashable1 f, Eq v, Show v, Ord h, Accumulate h) => proxy h -> [Term f v a] -> [Term f v a]
-
--- | Use the <a>hash</a> function to remove elements from <tt>t1s</tt> that
---   exist in <tt>t2s</tt>, preserving order.
-subtract :: forall f v h a proxy. (Functor f, Hashable1 f, Eq v, Show v, Ord h, Accumulate h) => proxy h -> [Term f v a] -> [Term f v a] -> [Term f v a]
+hashComponents :: (Functor f, Hashable1 f, Foldable f, Eq v, Show v, Var v, Ord h, Accumulate h) => (h -> Word64 -> Word64 -> Term f v ()) -> Map v (Term f v a) -> [(h, [(v, Term f v a)])]
 instance Data.Traversable.Traversable f => Data.Traversable.Traversable (Unison.ABT.ABT f v)
 instance Data.Foldable.Foldable f => Data.Foldable.Foldable (Unison.ABT.ABT f v)
 instance GHC.Base.Functor f => GHC.Base.Functor (Unison.ABT.ABT f v)
@@ -540,8 +484,6 @@ instance Data.Foldable.Foldable f => Data.Foldable.Foldable (Unison.ABT.Componen
 instance Data.Traversable.Traversable f => Data.Traversable.Traversable (Unison.ABT.Component f)
 instance GHC.Base.Functor f => GHC.Base.Functor (Unison.ABT.Component f)
 instance (Unison.Hashable.Hashable1 f, GHC.Base.Functor f) => Unison.Hashable.Hashable1 (Unison.ABT.Component f)
-instance GHC.Base.Semigroup (Unison.ABT.Path s t a b m)
-instance GHC.Base.Monoid (Unison.ABT.Path s t a b m)
 instance Unison.ABT.Var v => Unison.ABT.Var (Unison.ABT.V v)
 instance (Data.Foldable.Foldable f, GHC.Base.Functor f, Prelude.Extras.Eq1 f, Unison.ABT.Var v) => GHC.Classes.Eq (Unison.ABT.Term f v a)
 instance (Data.Foldable.Foldable f, GHC.Base.Functor f, Prelude.Extras.Ord1 f, Unison.ABT.Var v) => GHC.Classes.Ord (Unison.ABT.Term f v a)
@@ -683,63 +625,323 @@ instance GHC.Classes.Eq Unison.Symbol.Symbol
 instance GHC.Classes.Ord Unison.Symbol.Symbol
 instance GHC.Show.Show Unison.Symbol.Symbol
 
+module Unison.OldName
+type OldName = Text
+oldCompareSuffix :: OldName -> OldName -> Ordering
+oldCountSegments :: OldName -> Int
+oldEndsWithSegments :: OldName -> OldName -> Bool
+oldFromSegment :: NameSegment -> OldName
+oldFromString :: String -> OldName
+oldIsAbsolute :: OldName -> Bool
+oldIsPrefixOf :: OldName -> OldName -> Bool
+oldJoinDot :: OldName -> OldName -> OldName
+oldMakeAbsolute :: OldName -> OldName
+oldParent :: OldName -> Maybe OldName
+oldReverseSegments :: OldName -> [NameSegment]
+oldSearchBySuffix :: Ord r => OldName -> Relation OldName r -> Set r
+oldSegments :: OldName -> [NameSegment]
+oldShortestUniqueSuffix :: Ord r => OldName -> r -> Relation OldName r -> OldName
+oldSortNames :: [OldName] -> [OldName]
+oldStripNamePrefix :: OldName -> OldName -> Maybe OldName
+oldSuffixFrom :: OldName -> OldName -> Maybe OldName
+oldSuffixes :: OldName -> [OldName]
+oldToString :: OldName -> String
+oldToVar :: Var v => OldName -> v
+oldUnqualified :: OldName -> OldName
+oldUnsafeFromString :: String -> OldName
+oldUnsafeFromText :: Text -> OldName
+
 module Unison.Name
-newtype Name
-Name :: Text -> Name
+
+-- | A name is an absolute-or-relative non-empty list of name segments.
+data Name
 class Convert a b
 convert :: Convert a b => a -> b
 class Parse a b
 parse :: Parse a b => a -> Maybe b
-endsWithSegments :: Name -> Name -> Bool
-fromString :: IsString a => String -> a
-isPrefixOf :: Name -> Name -> Bool
-joinDot :: Name -> Name -> Name
-makeAbsolute :: Name -> Name
+
+-- | Cons a name segment onto the head of a relative name. Monotonic with
+--   respect to ordering: it is safe to use <tt>cons s</tt> as the first
+--   argument to <tt>Map.mapKeysMonotonic</tt>.
+--   
+--   <i>Precondition</i>: the name is relative
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of segments.
+cons :: HasCallStack => NameSegment -> Name -> Name
+joinDot :: HasCallStack => Name -> Name -> Name
+
+-- | Construct a relative name from a name segment.
+--   
+--   <i>O(1)</i>.
+fromSegment :: NameSegment -> Name
+
+-- | Construct a relative name from a list of name segments.
+--   
+--   <pre>
+--   &gt;&gt;&gt; fromSegments ("a" :| ["b", "c"])
+--   "a.b.c"
+--   </pre>
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+fromSegments :: NonEmpty NameSegment -> Name
+
+-- | Unsafely parse a name from a string literal.
+--   
+--   See <a>unsafeFromText</a>.
+unsafeFromString :: String -> Name
+
+-- | Unsafely parse a name from a string literal.
+--   
+--   Performs very minor validation (a name can't be empty, nor contain a
+--   <tt>#</tt> character [at least currently?]) but makes no attempt at
+--   rejecting bogus names like "foo...bar...baz".
+unsafeFromText :: HasCallStack => Text -> Name
+
+-- | Unsafely parse a name from a var, by first rendering the var as a
+--   string.
+--   
+--   See <a>unsafeFromText</a>.
+unsafeFromVar :: Var v => v -> Name
+
+-- | Return the number of name segments in a name.
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+countSegments :: Name -> Int
+
+-- | Is this name absolute?
+--   
+--   <i>O(1)</i>.
 isAbsolute :: Name -> Bool
+
+-- | <tt>isPrefixOf x y</tt> returns whether <tt>x</tt> is a prefix of (or
+--   equivalent to) <tt>y</tt>, which is false if one name is relative and
+--   the other is absolute.
+--   
+--   <pre>
+--   &gt;&gt;&gt; isPrefixOf "a.b" "a.b.c"
+--   True
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; isPrefixOf "a.b.c" "a.b.c"
+--   True
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; isPrefixOf ".a.b" "a.b.c"
+--   False
+--   </pre>
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+isPrefixOf :: Name -> Name -> Bool
+
+-- | Like <a>endsWithSegments</a>, but accepts a list of name segments in
+--   reverse order.
+--   
+--   Slightly more efficient than <a>endsWithSegments</a>.
+endsWithReverseSegments :: Name -> [NameSegment] -> Bool
+
+-- | <tt>endsWithSegments x y</tt> returns whether <tt>x</tt> ends with
+--   <tt>y</tt>.
+--   
+--   <pre>
+--   &gt;&gt;&gt; endsWithSegments "a.b.c" ["b", "c"]
+--   True
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; endsWithSegments "a.b.c" ["d"]
+--   False
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; endsWithSegments "a.b.c" []
+--   True
+--   </pre>
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+endsWithSegments :: Name -> [NameSegment] -> Bool
+
+-- | Return the name segments of a name, in reverse order.
+--   
+--   <pre>
+--   &gt;&gt;&gt; reverseSegments "a.b.c"
+--   "c" :| ["b", "a"]
+--   </pre>
+--   
+--   <i>O(1)</i>.
+reverseSegments :: Name -> NonEmpty NameSegment
+
+-- | Return the name segments of a name.
+--   
+--   <pre>
+--   &gt;&gt;&gt; segments "a.b.c"
+--   "a" :| ["b", "c"]
+--   </pre>
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+segments :: Name -> NonEmpty NameSegment
+
+-- | Return all relative suffixes of a name, in descending-length order.
+--   The returned list will always be non-empty.
+--   
+--   <pre>
+--   &gt;&gt;&gt; suffixes "a.b.c"
+--   ["a.b.c", "a.b", "c"]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; suffixes ".a.b.c"
+--   ["a.b.c", "a.b", "c"]
+--   </pre>
+suffixes :: Name -> [Name]
+
+-- | Make a name absolute. No-op if the name is already absolute.
+--   
+--   <i>O(1)</i>.
+makeAbsolute :: Name -> Name
+
+-- | Make a name relative. No-op if the name is already relative.
+--   
+--   <i>O(1)</i>.
+makeRelative :: Name -> Name
+
+-- | Compute the "parent" of a name, unless the name is only a single
+--   segment, in which case it has no parent.
+--   
+--   <pre>
+--   &gt;&gt;&gt; parent "a.b.c"
+--   Just "b.c"
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; parent ".a.b.c"
+--   Just ".a.b"
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; parent "a"
+--   Nothing
+--   </pre>
 parent :: Name -> Maybe Name
-class Eq n => Alphabetical n
-compareAlphabetical :: Alphabetical n => n -> n -> Ordering
+
+-- | <tt>stripNamePrefix x y</tt> strips prefix <tt>x</tt> from name
+--   <tt>y</tt>, and returns the resulting name. Returns <tt>Nothing</tt>
+--   <tt>x</tt> is not a proper (meaning shorter-than) prefix of
+--   <tt>y</tt>.
+--   
+--   <pre>
+--   &gt;&gt;&gt; stripNamePrefix "a.b" "a.b.c"
+--   Just "c"
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; stripNamePrefix ".a.b" "a.b.c"
+--   Nothing
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; stripNamePrefix "a.b.c" "a.b.c"
+--   Nothing
+--   </pre>
+stripNamePrefix :: Name -> Name -> Maybe Name
+
+-- | Drop all leading segments from a name, retaining only the last segment
+--   as a relative name.
+--   
+--   <pre>
+--   &gt;&gt;&gt; unqualified "a.b.c"
+--   "c"
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; unqualified ".a.b.c"
+--   "c"
+--   </pre>
+unqualified :: Name -> Name
 sortNames :: [Name] -> [Name]
 sortNamed :: (a -> Name) -> [a] -> [a]
-sortNameds :: (a -> [Name]) -> [a] -> [a]
 sortByText :: (a -> Text) -> [a] -> [a]
-
--- | Like sortNamed, but takes an additional backup comparison function if
---   two names are equal.
-sortNamed' :: (a -> Name) -> (a -> a -> Ordering) -> [a] -> [a]
-stripNamePrefix :: Name -> Name -> Maybe Name
-stripPrefixes :: Name -> Name
-segments :: Name -> [NameSegment]
-reverseSegments :: Name -> [NameSegment]
-countSegments :: Name -> Int
-compareSuffix :: Name -> Name -> Ordering
-segments' :: Text -> [Text]
-suffixes :: Name -> [Name]
 searchBySuffix :: Ord r => Name -> Relation Name r -> Set r
 suffixFrom :: Name -> Name -> Maybe Name
-shortestUniqueSuffix :: Ord r => Name -> r -> Relation Name r -> Name
+shortestUniqueSuffix :: forall r. Ord r => Name -> r -> Relation Name r -> Name
+
+-- | Convert a name to a string representation.
 toString :: Name -> String
+
+-- | Convert a name to a string representation.
 toText :: Name -> Text
+
+-- | Convert a name to a string representation, then parse that as a var.
 toVar :: Var v => Name -> v
-unqualified :: Name -> Name
-unqualified' :: Text -> Text
-unsafeFromText :: Text -> Name
-unsafeFromString :: String -> Name
-fromSegment :: NameSegment -> Name
-fromVar :: Var v => v -> Name
-instance GHC.Generics.Generic Unison.Name.Name
+
+-- | Return all "splits" of a relative name, which pair a possibly-empty
+--   prefix of name segments with a suffix, such that the original name is
+--   equivalent to <tt>prefix + suffix</tt>.
+--   
+--   Note: always returns a non-empty list, but (currently) does not use
+--   <tt>NonEmpty</tt> for convenience, as none of the call-sites care if
+--   the list is empty or not.
+--   
+--   <pre>
+--   &gt; splits foo.bar.baz
+--   
+--     prefix    suffix
+--     ------    ------
+--     ∅         foo.bar.baz
+--     foo       bar.baz
+--     foo.bar   baz
+--   </pre>
+--   
+--   <i>Precondition</i>: the name is relative.
+splits :: HasCallStack => Name -> [([NameSegment], Name)]
+class Eq n => Alphabetical n
+compareAlphabetical :: Alphabetical n => n -> n -> Ordering
+
+-- | <tt>compareSuffix x y</tt> compares the suffix of <tt>y</tt> (in
+--   reverse segment order) that is as long as <tt>x</tt> to <tt>x</tt> (in
+--   reverse segment order).
+--   
+--   <pre>
+--   &gt;&gt;&gt; compareSuffix "b.c" "a.b.c"
+--   EQ -- because [c,b] == [c,b]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; compareSuffix "b.c" "a.b.b"
+--   LT -- because [b,b] &lt; [c,b]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; compareSuffix "a.b.c" "b.c"
+--   LT -- because [c,b] &lt; [c,b,a]
+--   </pre>
+--   
+--   <pre>
+--   &gt;&gt;&gt; compareSuffix "b.b" "a.b.c"
+--   GT -- because [c,b] &gt; [b,b]
+--   </pre>
+--   
+--   Used for suffix-based lookup of a name. For instance, given a <tt>r :
+--   Relation Name x</tt>, <tt>Relation.searchDom (compareSuffix "foo.bar")
+--   r</tt> will find all <tt>r</tt> whose name has <tt>foo.bar</tt> as a
+--   suffix.
+--   
+--   This is only exported for testing; use <a>searchBySuffix</a> or
+--   <a>shortestUniqueSuffix</a> instead.
+--   
+--   <i>O(n)</i>, where <i>n</i> is the number of name segments.
+compareSuffix :: Name -> Name -> Ordering
+instance GHC.Show.Show Unison.Name.Position
+instance GHC.Classes.Ord Unison.Name.Position
+instance GHC.Classes.Eq Unison.Name.Position
 instance GHC.Classes.Eq Unison.Name.Name
 instance Unison.Name.Parse Data.Text.Internal.Text Unison.NameSegment.NameSegment
 instance (Unison.Name.Parse a a2, Unison.Name.Parse b b2) => Unison.Name.Parse (a, b) (a2, b2)
-instance Unison.Name.Convert Unison.Name.Name Data.Text.Internal.Text
-instance Unison.Name.Convert Unison.Name.Name [Unison.NameSegment.NameSegment]
-instance Unison.Name.Convert Unison.NameSegment.NameSegment Unison.Name.Name
-instance Unison.Name.Convert [Unison.NameSegment.NameSegment] Unison.Name.Name
-instance GHC.Show.Show Unison.Name.Name
-instance Data.String.IsString Unison.Name.Name
-instance Unison.Hashable.Hashable Unison.Name.Name
-instance GHC.Classes.Ord Unison.Name.Name
 instance Unison.Util.Alphabetical.Alphabetical Unison.Name.Name
+instance Data.String.IsString Unison.Name.Name
+instance GHC.Classes.Ord Unison.Name.Name
+instance GHC.Show.Show Unison.Name.Name
 instance Control.Lens.Cons.Snoc Unison.Name.Name Unison.Name.Name Unison.NameSegment.NameSegment Unison.NameSegment.NameSegment
 
 module Unison.HashQualified
@@ -761,6 +963,7 @@ unsafeFromString :: String -> HashQualified Name
 fromText :: Text -> Maybe (HashQualified Name)
 unsafeFromText :: Text -> HashQualified Name
 toText :: Show n => HashQualified n -> Text
+toTextWith :: (n -> Text) -> HashQualified n -> Text
 fromNamedReferent :: n -> Referent -> HashQualified n
 fromNamedReference :: n -> Reference -> HashQualified n
 fromReferent :: Referent -> HashQualified Name
@@ -806,6 +1009,7 @@ fromText :: Text -> Maybe (HashQualified Name)
 unsafeFromText :: Text -> HashQualified Name
 fromString :: String -> Maybe (HashQualified Name)
 toText :: Show n => HashQualified n -> Text
+toTextWith :: (n -> Text) -> HashQualified n -> Text
 fromNamedReferent :: n -> Referent -> HashQualified n
 fromNamedReference :: n -> Reference -> HashQualified n
 fromName :: n -> HashQualified n
@@ -868,6 +1072,13 @@ _hqTermName :: Names -> Name -> Referent -> HashQualified Name
 _hqTypeName :: Names -> Name -> Reference -> HashQualified Name
 _hqTermAliases :: Names -> Name -> Referent -> Set (HashQualified Name)
 _hqTypeAliases :: Names -> Name -> Reference -> Set (HashQualified Name)
+
+-- | Map over each name in a <a>Names</a>.
+mapNames :: (Name -> Name) -> Names -> Names
+
+-- | <tt>prefix0 n ns</tt> prepends <tt>n</tt> to each name in <tt>ns</tt>.
+--   
+--   Precondition: every name in <tt>ns</tt> is relative.
 prefix0 :: Name -> Names -> Names
 restrictReferences :: Set Reference -> Names -> Names
 refTermsNamed :: Names -> Name -> Set Reference
@@ -1502,76 +1713,6 @@ instance (GHC.Classes.Eq a, Unison.ABT.Var v) => Prelude.Extras.Eq1 (Unison.Term
 instance GHC.Show.Show v => Prelude.Extras.Show1 (Unison.Term.F v a p)
 instance (Unison.ABT.Var vt, GHC.Classes.Eq at, GHC.Classes.Eq a) => GHC.Classes.Eq (Unison.Term.F vt at p a)
 instance (GHC.Show.Show v, GHC.Show.Show a) => GHC.Show.Show (Unison.Term.F v a0 p a)
-
-module Unison.Paths
-type Type v = Type v ()
-type Term v = Term v ()
-data Target v
-Term :: Term v -> Target v
-Type :: Type v -> Target v
-Var :: v -> Target v
-Declaration :: v -> Term v -> Target v
-vmap :: Ord v2 => (v -> v2) -> Target v -> Target v2
-data PathElement
-
--- | Points at function in a function/type application
-Fn :: PathElement
-
--- | Points at the argument of a function/type application
-Arg :: PathElement
-
--- | Points at the body of a lambda, let, binding, forall, or annotation
-Body :: PathElement
-
--- | Points at the symbol bound by a `let`, <tt>lambda</tt> or
---   <tt>forall</tt> binder
-Bound :: PathElement
-
--- | Points at a particular binding in a let
-Binding :: !Int -> PathElement
-
--- | Points at the index of a vector
-Index :: !Int -> PathElement
-
--- | Points into the annotation
-Annotation :: PathElement
-
--- | Points at the left of an <tt>Arrow</tt>
-Input :: PathElement
-
--- | Points at the right of an <tt>Arrow</tt>
-Output :: PathElement
-focus1 :: Var v => PathElement -> Path (Target v) (Target (V v)) (Target v) (Target (V v)) [v]
-type Path = [PathElement]
-focus :: Var v => Path -> Target v -> Maybe (Target v, Target (V v) -> Maybe (Target v), [v])
-at :: Var v => Path -> Target v -> Maybe (Target v)
-atTerm :: Var v => Path -> Term v -> Maybe (Term v)
-atType :: Var v => Path -> Type v -> Maybe (Type v)
-modify :: Var v => (Target v -> Target (V v)) -> Path -> Target v -> Maybe (Target v)
-modifyTerm :: Var v => (Term v -> Term (V v)) -> Path -> Term v -> Maybe (Term v)
-modifyTerm' :: Var v => (Term v -> Term (V v)) -> Path -> Term v -> Term v
-modifyType :: Var v => (Type v -> Type (V v)) -> Path -> Type v -> Maybe (Type v)
-inScopeAt :: Var v => Path -> Target v -> [v]
-inScopeAtTerm :: Var v => Path -> Term v -> [v]
-inScopeAtType :: Var v => Path -> Type v -> [v]
-insertTerm :: Var v => Path -> Term v -> Maybe (Term v)
-
--- | Return the list of all prefixes of the input path
-pathPrefixes :: Path -> [Path]
-
--- | Add an element onto the end of this <a>Path</a>
-pathExtend :: PathElement -> Path -> Path
-parent :: Path -> Maybe Path
-parent' :: Path -> Path
-asTerm :: Target v -> Maybe (Term v)
-asType :: Target v -> Maybe (Type v)
-asVar :: Target v -> Maybe v
-asDeclaration :: Target v -> Maybe (v, Term v)
-instance GHC.Generics.Generic (Unison.Paths.Target v)
-instance GHC.Generics.Generic Unison.Paths.PathElement
-instance GHC.Show.Show Unison.Paths.PathElement
-instance GHC.Classes.Ord Unison.Paths.PathElement
-instance GHC.Classes.Eq Unison.Paths.PathElement
 
 module Unison.DataDeclaration
 data DataDeclaration v a

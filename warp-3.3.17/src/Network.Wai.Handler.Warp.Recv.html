@@ -40,15 +40,15 @@
 </span><span id="line-40"></span><span>
 </span><span id="line-41"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#makeReceiveN"><span class="hs-identifier hs-type">makeReceiveN</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Recv"><span class="hs-identifier hs-type">Recv</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#RecvBuf"><span class="hs-identifier hs-type">RecvBuf</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-42"></span><span id="makeReceiveN"><span class="annot"><span class="annottext">makeReceiveN :: ByteString -&gt; Recv -&gt; RecvBuf -&gt; IO (BufSize -&gt; Recv)
-</span><a href="Network.Wai.Handler.Warp.Recv.html#makeReceiveN"><span class="hs-identifier hs-var hs-var">makeReceiveN</span></a></span></span><span> </span><span id="local-6989586621679102027"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102027"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span id="local-6989586621679102026"><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102026"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102025"><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102025"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-43"></span><span>    </span><span id="local-6989586621679102024"><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102024"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (IORef ByteString)
+</span><a href="Network.Wai.Handler.Warp.Recv.html#makeReceiveN"><span class="hs-identifier hs-var hs-var">makeReceiveN</span></a></span></span><span> </span><span id="local-6989586621679102045"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102045"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span id="local-6989586621679102044"><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102044"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102043"><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102043"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-43"></span><span>    </span><span id="local-6989586621679102042"><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679102042"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (IORef ByteString)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102027"><span class="hs-identifier hs-var">bs0</span></a></span><span>
+</span><a href="#local-6989586621679102045"><span class="hs-identifier hs-var">bs0</span></a></span><span>
 </span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">(BufSize -&gt; Recv) -&gt; IO (BufSize -&gt; Recv)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((BufSize -&gt; Recv) -&gt; IO (BufSize -&gt; Recv))
@@ -56,9 +56,9 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IORef ByteString -&gt; Recv -&gt; RecvBuf -&gt; BufSize -&gt; Recv
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveN"><span class="hs-identifier hs-var">receiveN</span></a></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102024"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102026"><span class="hs-identifier hs-var">recv</span></a></span><span> </span><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102025"><span class="hs-identifier hs-var">recvBuf</span></a></span><span>
+</span><a href="#local-6989586621679102042"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102044"><span class="hs-identifier hs-var">recv</span></a></span><span> </span><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102043"><span class="hs-identifier hs-var">recvBuf</span></a></span><span>
 </span><span id="line-45"></span><span>
 </span><span id="line-46"></span><span class="hs-comment">-- | This function returns a receiving function</span><span>
 </span><span id="line-47"></span><span class="hs-comment">--   based on two receiving functions.</span><span>
@@ -67,16 +67,16 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-50"></span><span class="hs-comment">--   The returned function may allocate a byte string with malloc().</span><span>
 </span><span id="line-51"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#makePlainReceiveN"><span class="hs-identifier hs-type">makePlainReceiveN</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Socket</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-52"></span><span id="makePlainReceiveN"><span class="annot"><span class="annottext">makePlainReceiveN :: Socket -&gt; ByteString -&gt; IO (BufSize -&gt; Recv)
-</span><a href="Network.Wai.Handler.Warp.Recv.html#makePlainReceiveN"><span class="hs-identifier hs-var hs-var">makePlainReceiveN</span></a></span></span><span> </span><span id="local-6989586621679102021"><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679102021"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102020"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102020"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-53"></span><span>    </span><span id="local-6989586621679102019"><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102019"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (IORef ByteString)
+</span><a href="Network.Wai.Handler.Warp.Recv.html#makePlainReceiveN"><span class="hs-identifier hs-var hs-var">makePlainReceiveN</span></a></span></span><span> </span><span id="local-6989586621679102039"><span class="annot"><span class="annottext">Socket
+</span><a href="#local-6989586621679102039"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102038"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102038"><span class="hs-identifier hs-var">bs0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-53"></span><span>    </span><span id="local-6989586621679102037"><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679102037"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (IORef ByteString)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102020"><span class="hs-identifier hs-var">bs0</span></a></span><span>
-</span><span id="line-54"></span><span>    </span><span id="local-6989586621679102018"><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var">pool</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (IORef ByteString)
+</span><a href="#local-6989586621679102038"><span class="hs-identifier hs-var">bs0</span></a></span><span>
+</span><span id="line-54"></span><span>    </span><span id="local-6989586621679102036"><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679102036"><span class="hs-identifier hs-var">pool</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (IORef ByteString)
 </span><a href="Network.Wai.Handler.Warp.Buffer.html#newBufferPool"><span class="hs-identifier hs-var">newBufferPool</span></a></span><span>
 </span><span id="line-55"></span><span>    </span><span class="annot"><span class="annottext">(BufSize -&gt; Recv) -&gt; IO (BufSize -&gt; Recv)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -85,54 +85,54 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IORef ByteString -&gt; Recv -&gt; RecvBuf -&gt; BufSize -&gt; Recv
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveN"><span class="hs-identifier hs-var">receiveN</span></a></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102019"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Socket -&gt; IORef ByteString -&gt; Recv
+</span><a href="#local-6989586621679102037"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Socket -&gt; IORef ByteString -&gt; Recv
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receive"><span class="hs-identifier hs-var">receive</span></a></span><span> </span><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679102021"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var">pool</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Socket -&gt; RecvBuf
+</span><a href="#local-6989586621679102039"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679102036"><span class="hs-identifier hs-var">pool</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Socket -&gt; RecvBuf
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveBuf"><span class="hs-identifier hs-var">receiveBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679102021"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102039"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-56"></span><span>
 </span><span id="line-57"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#receiveN"><span class="hs-identifier hs-type">receiveN</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IORef</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Recv"><span class="hs-identifier hs-type">Recv</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#RecvBuf"><span class="hs-identifier hs-type">RecvBuf</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-58"></span><span id="receiveN"><span class="annot"><span class="annottext">receiveN :: IORef ByteString -&gt; Recv -&gt; RecvBuf -&gt; BufSize -&gt; Recv
-</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveN"><span class="hs-identifier hs-var hs-var">receiveN</span></a></span></span><span> </span><span id="local-6989586621679102016"><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span id="local-6989586621679102015"><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102015"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102014"><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102014"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span> </span><span id="local-6989586621679102013"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102013"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(SomeException -&gt; Recv) -&gt; Recv -&gt; Recv
+</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveN"><span class="hs-identifier hs-var hs-var">receiveN</span></a></span></span><span> </span><span id="local-6989586621679102034"><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679102034"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span id="local-6989586621679102033"><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102033"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102032"><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102032"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span> </span><span id="local-6989586621679102031"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102031"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(SomeException -&gt; Recv) -&gt; Recv -&gt; Recv
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 (SomeException -&gt; m a) -&gt; m a -&gt; m a
 </span><span class="hs-identifier hs-var">UnliftIO.handleAny</span></span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; Recv
-</span><a href="#local-6989586621679102011"><span class="hs-identifier hs-var">handler</span></a></span><span> </span><span class="annot"><span class="annottext">(Recv -&gt; Recv) -&gt; Recv -&gt; Recv
+</span><a href="#local-6989586621679102029"><span class="hs-identifier hs-var">handler</span></a></span><span> </span><span class="annot"><span class="annottext">(Recv -&gt; Recv) -&gt; Recv -&gt; Recv
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-59"></span><span>    </span><span id="local-6989586621679102010"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102010"><span class="hs-identifier hs-var">cached</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef ByteString -&gt; Recv
+</span><span id="line-59"></span><span>    </span><span id="local-6989586621679102028"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102028"><span class="hs-identifier hs-var">cached</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IORef ByteString -&gt; Recv
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var">ref</span></a></span><span>
-</span><span id="line-60"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679102008"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102008"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102007"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102007"><span class="hs-identifier hs-var">leftover</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102034"><span class="hs-identifier hs-var">ref</span></a></span><span>
+</span><span id="line-60"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679102026"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102026"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102025"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102025"><span class="hs-identifier hs-var">leftover</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString
 -&gt; BufSize -&gt; Recv -&gt; RecvBuf -&gt; IO (ByteString, ByteString)
 </span><a href="Network.Wai.Handler.Warp.Recv.html#spell"><span class="hs-identifier hs-var">spell</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102010"><span class="hs-identifier hs-var">cached</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102013"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102015"><span class="hs-identifier hs-var">recv</span></a></span><span> </span><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102014"><span class="hs-identifier hs-var">recvBuf</span></a></span><span>
+</span><a href="#local-6989586621679102028"><span class="hs-identifier hs-var">cached</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102031"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102033"><span class="hs-identifier hs-var">recv</span></a></span><span> </span><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102032"><span class="hs-identifier hs-var">recvBuf</span></a></span><span>
 </span><span id="line-61"></span><span>    </span><span class="annot"><span class="annottext">IORef ByteString -&gt; ByteString -&gt; IO ()
 forall a. IORef a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">writeIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102007"><span class="hs-identifier hs-var">leftover</span></a></span><span>
+</span><a href="#local-6989586621679102034"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102025"><span class="hs-identifier hs-var">leftover</span></a></span><span>
 </span><span id="line-62"></span><span>    </span><span class="annot"><span class="annottext">ByteString -&gt; Recv
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102008"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679102026"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-63"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-64"></span><span>   </span><span class="annot"><a href="#local-6989586621679102011"><span class="hs-identifier hs-type">handler</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.SomeException</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
-</span><span id="line-65"></span><span>   </span><span id="local-6989586621679102011"><span class="annot"><span class="annottext">handler :: SomeException -&gt; Recv
-</span><a href="#local-6989586621679102011"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span class="annot"><span class="annottext">SomeException
+</span><span id="line-64"></span><span>   </span><span class="annot"><a href="#local-6989586621679102029"><span class="hs-identifier hs-type">handler</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.SomeException</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-65"></span><span>   </span><span id="local-6989586621679102029"><span class="annot"><span class="annottext">handler :: SomeException -&gt; Recv
+</span><a href="#local-6989586621679102029"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span class="annot"><span class="annottext">SomeException
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Recv
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">ByteString
@@ -143,76 +143,76 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-69"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#spell"><span class="hs-identifier hs-type">spell</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#BufSize"><span class="hs-identifier hs-type">BufSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#RecvBuf"><span class="hs-identifier hs-type">RecvBuf</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span id="spell"><span class="annot"><span class="annottext">spell :: ByteString
 -&gt; BufSize -&gt; Recv -&gt; RecvBuf -&gt; IO (ByteString, ByteString)
-</span><a href="Network.Wai.Handler.Warp.Recv.html#spell"><span class="hs-identifier hs-var hs-var">spell</span></a></span></span><span> </span><span id="local-6989586621679102005"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">init0</span></a></span></span><span> </span><span id="local-6989586621679102004"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span></span><span> </span><span id="local-6989586621679102003"><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102002"><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102002"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span>
+</span><a href="Network.Wai.Handler.Warp.Recv.html#spell"><span class="hs-identifier hs-var hs-var">spell</span></a></span></span><span> </span><span id="local-6989586621679102023"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102023"><span class="hs-identifier hs-var">init0</span></a></span></span><span> </span><span id="local-6989586621679102022"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span></span><span> </span><span id="local-6989586621679102021"><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102021"><span class="hs-identifier hs-var">recv</span></a></span></span><span> </span><span id="local-6989586621679102020"><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102020"><span class="hs-identifier hs-var">recvBuf</span></a></span></span><span>
 </span><span id="line-71"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var">len0</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
+</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var">len0</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((ByteString, ByteString) -&gt; IO (ByteString, ByteString))
 -&gt; (ByteString, ByteString) -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; ByteString -&gt; (ByteString, ByteString)
 </span><span class="hs-identifier hs-var">BS.splitAt</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">init0</span></a></span><span>
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102023"><span class="hs-identifier hs-var">init0</span></a></span><span>
 </span><span id="line-72"></span><span>  </span><span class="hs-comment">-- fixme: hard coding 4096</span><span>
 </span><span id="line-73"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">4096</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; BufSize -&gt; IO (ByteString, ByteString)
-</span><a href="#local-6989586621679101998"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">init0</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102023"><span class="hs-identifier hs-var">init0</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var">len0</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var">len0</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-74"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-75"></span><span>      </span><span id="local-6989586621679101997"><span class="annot"><span class="annottext">bs :: ByteString
-</span><a href="#local-6989586621679101997"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679101995"><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679101995"><span class="hs-identifier hs-var">fptr</span></a></span></span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><span id="line-75"></span><span>      </span><span id="local-6989586621679102015"><span class="annot"><span class="annottext">bs :: ByteString
+</span><a href="#local-6989586621679102015"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679102013"><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="#local-6989586621679102013"><span class="hs-identifier hs-var">fptr</span></a></span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; Recv
 </span><a href="Network.Wai.Handler.Warp.Buffer.html#mallocBS"><span class="hs-identifier hs-var">mallocBS</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span>
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span>
 </span><span id="line-76"></span><span>      </span><span class="annot"><span class="annottext">ForeignPtr Word8
 -&gt; (Ptr Word8 -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. ForeignPtr a -&gt; (Ptr a -&gt; IO b) -&gt; IO b
 </span><span class="hs-identifier hs-var">withForeignPtr</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679101995"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO (ByteString, ByteString))
+</span><a href="#local-6989586621679102013"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8 -&gt; IO (ByteString, ByteString))
  -&gt; IO (ByteString, ByteString))
 -&gt; (Ptr Word8 -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101993"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101993"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-77"></span><span>          </span><span id="local-6989586621679101992"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101992"><span class="hs-identifier hs-var">ptr'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Ptr Word8)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102011"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679102011"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-77"></span><span>          </span><span id="local-6989586621679102010"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679102010"><span class="hs-identifier hs-var">ptr'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; ByteString -&gt; IO (Ptr Word8)
 </span><a href="Network.Wai.Handler.Warp.Buffer.html#copy"><span class="hs-identifier hs-var">copy</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101993"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">init0</span></a></span><span>
-</span><span id="line-78"></span><span>          </span><span id="local-6989586621679101990"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679101990"><span class="hs-identifier hs-var">full</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RecvBuf
-</span><a href="#local-6989586621679102002"><span class="hs-identifier hs-var">recvBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101992"><span class="hs-identifier hs-var">ptr'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679102011"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102023"><span class="hs-identifier hs-var">init0</span></a></span><span>
+</span><span id="line-78"></span><span>          </span><span id="local-6989586621679102008"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679102008"><span class="hs-identifier hs-var">full</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RecvBuf
+</span><a href="#local-6989586621679102020"><span class="hs-identifier hs-var">recvBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679102010"><span class="hs-identifier hs-var">ptr'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102022"><span class="hs-identifier hs-var">siz0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var">len0</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var">len0</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-79"></span><span>          </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679101990"><span class="hs-identifier hs-var">full</span></a></span><span> </span><span class="hs-keyword">then</span><span>
+</span><a href="#local-6989586621679102008"><span class="hs-identifier hs-var">full</span></a></span><span> </span><span class="hs-keyword">then</span><span>
 </span><span id="line-80"></span><span>              </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101997"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102015"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-81"></span><span>            </span><span class="hs-keyword">else</span><span>
 </span><span id="line-82"></span><span>              </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
@@ -221,23 +221,23 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- fixme</span><span>
 </span><span id="line-83"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-84"></span><span>    </span><span id="local-6989586621679102000"><span class="annot"><span class="annottext">len0 :: BufSize
-</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var hs-var">len0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; BufSize
+</span><span id="line-84"></span><span>    </span><span id="local-6989586621679102018"><span class="annot"><span class="annottext">len0 :: BufSize
+</span><a href="#local-6989586621679102018"><span class="hs-identifier hs-var hs-var">len0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; BufSize
 </span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">init0</span></a></span><span>
-</span><span id="line-85"></span><span>    </span><span id="local-6989586621679101998"><span class="annot"><span class="annottext">loop :: [ByteString] -&gt; BufSize -&gt; IO (ByteString, ByteString)
-</span><a href="#local-6989586621679101998"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679101988"><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101988"><span class="hs-identifier hs-var">bss</span></a></span></span><span> </span><span id="local-6989586621679101987"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-86"></span><span>        </span><span id="local-6989586621679101986"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Recv
-</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var">recv</span></a></span><span>
-</span><span id="line-87"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101985"><span class="annot"><span class="annottext">len :: BufSize
-</span><a href="#local-6989586621679101985"><span class="hs-identifier hs-var hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; BufSize
+</span><a href="#local-6989586621679102023"><span class="hs-identifier hs-var">init0</span></a></span><span>
+</span><span id="line-85"></span><span>    </span><span id="local-6989586621679102016"><span class="annot"><span class="annottext">loop :: [ByteString] -&gt; BufSize -&gt; IO (ByteString, ByteString)
+</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span id="local-6989586621679102006"><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679102006"><span class="hs-identifier hs-var">bss</span></a></span></span><span> </span><span id="local-6989586621679102005"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-86"></span><span>        </span><span id="local-6989586621679102004"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Recv
+</span><a href="#local-6989586621679102021"><span class="hs-identifier hs-var">recv</span></a></span><span>
+</span><span id="line-87"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102003"><span class="annot"><span class="annottext">len :: BufSize
+</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; BufSize
 </span><span class="hs-identifier hs-var">BS.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-88"></span><span>        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101985"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-keyword">then</span><span>
@@ -247,108 +247,108 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>          </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101985"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-91"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679101984"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101984"><span class="hs-identifier hs-var">consume</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101983"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101983"><span class="hs-identifier hs-var">leftover</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; ByteString -&gt; (ByteString, ByteString)
+</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-91"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102002"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102002"><span class="hs-identifier hs-var">consume</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102001"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102001"><span class="hs-identifier hs-var">leftover</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; ByteString -&gt; (ByteString, ByteString)
 </span><span class="hs-identifier hs-var">BS.splitAt</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var">bs</span></a></span><span>
-</span><span id="line-92"></span><span>                </span><span id="local-6989586621679101982"><span class="annot"><span class="annottext">ret :: ByteString
-</span><a href="#local-6989586621679101982"><span class="hs-identifier hs-var hs-var">ret</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; ByteString
+</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><span id="line-92"></span><span>                </span><span id="local-6989586621679102000"><span class="annot"><span class="annottext">ret :: ByteString
+</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var hs-var">ret</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; ByteString
 </span><span class="hs-identifier hs-var">BS.concat</span></span><span> </span><span class="annot"><span class="annottext">([ByteString] -&gt; ByteString) -&gt; [ByteString] -&gt; ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; [ByteString]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101984"><span class="hs-identifier hs-var">consume</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString] -&gt; [ByteString]
+</span><a href="#local-6989586621679102002"><span class="hs-identifier hs-var">consume</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString] -&gt; [ByteString]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101988"><span class="hs-identifier hs-var">bss</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102006"><span class="hs-identifier hs-var">bss</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-93"></span><span>            </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101982"><span class="hs-identifier hs-var">ret</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101983"><span class="hs-identifier hs-var">leftover</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102000"><span class="hs-identifier hs-var">ret</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102001"><span class="hs-identifier hs-var">leftover</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-94"></span><span>          </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-95"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101979"><span class="annot"><span class="annottext">bss' :: [ByteString]
-</span><a href="#local-6989586621679101979"><span class="hs-identifier hs-var hs-var">bss'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString] -&gt; [ByteString]
+</span><span id="line-95"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101997"><span class="annot"><span class="annottext">bss' :: [ByteString]
+</span><a href="#local-6989586621679101997"><span class="hs-identifier hs-var hs-var">bss'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102004"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString] -&gt; [ByteString]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101988"><span class="hs-identifier hs-var">bss</span></a></span><span>
-</span><span id="line-96"></span><span>                </span><span id="local-6989586621679101978"><span class="annot"><span class="annottext">siz' :: BufSize
-</span><a href="#local-6989586621679101978"><span class="hs-identifier hs-var hs-var">siz'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679102006"><span class="hs-identifier hs-var">bss</span></a></span><span>
+</span><span id="line-96"></span><span>                </span><span id="local-6989586621679101996"><span class="annot"><span class="annottext">siz' :: BufSize
+</span><a href="#local-6989586621679101996"><span class="hs-identifier hs-var hs-var">siz'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679102005"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101985"><span class="hs-identifier hs-var">len</span></a></span><span>
+</span><a href="#local-6989586621679102003"><span class="hs-identifier hs-var">len</span></a></span><span>
 </span><span id="line-97"></span><span>            </span><span class="annot"><span class="annottext">[ByteString] -&gt; BufSize -&gt; IO (ByteString, ByteString)
-</span><a href="#local-6989586621679101998"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101979"><span class="hs-identifier hs-var">bss'</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101978"><span class="hs-identifier hs-var">siz'</span></a></span><span>
+</span><a href="#local-6989586621679102016"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679101997"><span class="hs-identifier hs-var">bss'</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101996"><span class="hs-identifier hs-var">siz'</span></a></span><span>
 </span><span id="line-98"></span><span>
 </span><span id="line-99"></span><span class="hs-comment">-- The timeout manager may close the socket.</span><span>
 </span><span id="line-100"></span><span class="hs-comment">-- In that case, an error of &quot;Bad file descriptor&quot; occurs.</span><span>
 </span><span id="line-101"></span><span class="hs-comment">-- We ignores it because we expect TimeoutThread.</span><span>
 </span><span id="line-102"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#receive"><span class="hs-identifier hs-type">receive</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Socket</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#BufferPool"><span class="hs-identifier hs-type">BufferPool</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#Recv"><span class="hs-identifier hs-type">Recv</span></a></span><span>
 </span><span id="line-103"></span><span id="receive"><span class="annot"><span class="annottext">receive :: Socket -&gt; IORef ByteString -&gt; Recv
-</span><a href="Network.Wai.Handler.Warp.Recv.html#receive"><span class="hs-identifier hs-var hs-var">receive</span></a></span></span><span> </span><span id="local-6989586621679101976"><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679101976"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101975"><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679101975"><span class="hs-identifier hs-var">pool</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IOException -&gt; Recv) -&gt; Recv -&gt; Recv
+</span><a href="Network.Wai.Handler.Warp.Recv.html#receive"><span class="hs-identifier hs-var hs-var">receive</span></a></span></span><span> </span><span id="local-6989586621679101994"><span class="annot"><span class="annottext">Socket
+</span><a href="#local-6989586621679101994"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101993"><span class="annot"><span class="annottext">IORef ByteString
+</span><a href="#local-6989586621679101993"><span class="hs-identifier hs-var">pool</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IOException -&gt; Recv) -&gt; Recv -&gt; Recv
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 (IOException -&gt; m a) -&gt; m a -&gt; m a
 </span><span class="hs-identifier hs-var">UnliftIO.handleIO</span></span><span> </span><span class="annot"><span class="annottext">IOException -&gt; Recv
-</span><a href="#local-6989586621679101973"><span class="hs-identifier hs-var">handler</span></a></span><span> </span><span class="annot"><span class="annottext">(Recv -&gt; Recv) -&gt; Recv -&gt; Recv
+</span><a href="#local-6989586621679101991"><span class="hs-identifier hs-var">handler</span></a></span><span> </span><span class="annot"><span class="annottext">(Recv -&gt; Recv) -&gt; Recv -&gt; Recv
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IORef ByteString -&gt; ((Ptr Word8, BufSize) -&gt; IO BufSize) -&gt; Recv
 </span><a href="Network.Wai.Handler.Warp.Buffer.html#withBufferPool"><span class="hs-identifier hs-var">withBufferPool</span></a></span><span> </span><span class="annot"><span class="annottext">IORef ByteString
-</span><a href="#local-6989586621679101975"><span class="hs-identifier hs-var">pool</span></a></span><span> </span><span class="annot"><span class="annottext">(((Ptr Word8, BufSize) -&gt; IO BufSize) -&gt; Recv)
+</span><a href="#local-6989586621679101993"><span class="hs-identifier hs-var">pool</span></a></span><span> </span><span class="annot"><span class="annottext">(((Ptr Word8, BufSize) -&gt; IO BufSize) -&gt; Recv)
 -&gt; ((Ptr Word8, BufSize) -&gt; IO BufSize) -&gt; Recv
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679101971"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">ptr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101970"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">size</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679101989"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101989"><span class="hs-identifier hs-var">ptr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101988"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101988"><span class="hs-identifier hs-var">size</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
 #if MIN_VERSION_network(3,1,0)
 </span><span>  </span><span class="annot"><span class="annottext">Socket -&gt; (CInt -&gt; IO BufSize) -&gt; IO BufSize
 forall r. Socket -&gt; (CInt -&gt; IO r) -&gt; IO r
 </span><span class="hs-identifier hs-var">withFdSocket</span></span><span> </span><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679101976"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">((CInt -&gt; IO BufSize) -&gt; IO BufSize)
+</span><a href="#local-6989586621679101994"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">((CInt -&gt; IO BufSize) -&gt; IO BufSize)
 -&gt; (CInt -&gt; IO BufSize) -&gt; IO BufSize
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101969"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101969"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101987"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
 #elif MIN_VERSION_network(3,0,0)
 </span><span>    </span><span class="hs-identifier">fd</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier">fdSocket</span><span> </span><span class="hs-identifier">sock</span><span class="hs-cpp">
 #else
 </span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-identifier">fd</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">fdSocket</span><span> </span><span class="hs-identifier">sock</span><span class="hs-cpp">
 #endif
-</span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101968"><span class="annot"><span class="annottext">size' :: CSize
-</span><a href="#local-6989586621679101968"><span class="hs-identifier hs-var hs-var">size'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; CSize
+</span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101986"><span class="annot"><span class="annottext">size' :: CSize
+</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var hs-var">size'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; CSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">size</span></a></span><span>
+</span><a href="#local-6989586621679101988"><span class="hs-identifier hs-var">size</span></a></span><span>
 </span><span id="line-112"></span><span>    </span><span class="annot"><span class="annottext">CInt -&gt; BufSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(CInt -&gt; BufSize) -&gt; IO CInt -&gt; IO BufSize
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; Ptr Word8 -&gt; CSize -&gt; IO CInt
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-var">receiveloop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101969"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101968"><span class="hs-identifier hs-var">size'</span></a></span><span>
+</span><a href="#local-6989586621679101987"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101989"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679101986"><span class="hs-identifier hs-var">size'</span></a></span><span>
 </span><span id="line-113"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-114"></span><span>    </span><span class="annot"><a href="#local-6989586621679101973"><span class="hs-identifier hs-type">handler</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
-</span><span id="line-115"></span><span>    </span><span id="local-6989586621679101973"><span class="annot"><span class="annottext">handler :: IOException -&gt; Recv
-</span><a href="#local-6989586621679101973"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span id="local-6989586621679101965"><span class="annot"><span class="annottext">IOException
-</span><a href="#local-6989586621679101965"><span class="hs-identifier hs-var">e</span></a></span></span><span>
+</span><span id="line-114"></span><span>    </span><span class="annot"><a href="#local-6989586621679101991"><span class="hs-identifier hs-type">handler</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-115"></span><span>    </span><span id="local-6989586621679101991"><span class="annot"><span class="annottext">handler :: IOException -&gt; Recv
+</span><a href="#local-6989586621679101991"><span class="hs-identifier hs-var hs-var">handler</span></a></span></span><span> </span><span id="local-6989586621679101983"><span class="annot"><span class="annottext">IOException
+</span><a href="#local-6989586621679101983"><span class="hs-identifier hs-var">e</span></a></span></span><span>
 </span><span id="line-116"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">IOException -&gt; IOErrorType
 </span><span class="hs-identifier hs-var">E.ioeGetErrorType</span></span><span> </span><span class="annot"><span class="annottext">IOException
-</span><a href="#local-6989586621679101965"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">IOErrorType -&gt; IOErrorType -&gt; Bool
+</span><a href="#local-6989586621679101983"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">IOErrorType -&gt; IOErrorType -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">IOErrorType
 </span><span class="hs-identifier hs-var">E.InvalidArgument</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Recv
@@ -359,60 +359,60 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>                                </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IOException -&gt; Recv
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">UnliftIO.throwIO</span></span><span> </span><span class="annot"><span class="annottext">IOException
-</span><a href="#local-6989586621679101965"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679101983"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-118"></span><span>
 </span><span id="line-119"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#receiveBuf"><span class="hs-identifier hs-type">receiveBuf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Socket</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#RecvBuf"><span class="hs-identifier hs-type">RecvBuf</span></a></span><span>
 </span><span id="line-120"></span><span id="receiveBuf"><span class="annot"><span class="annottext">receiveBuf :: Socket -&gt; RecvBuf
-</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveBuf"><span class="hs-identifier hs-var hs-var">receiveBuf</span></a></span></span><span> </span><span id="local-6989586621679101961"><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679101961"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101960"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101960"><span class="hs-identifier hs-var">buf0</span></a></span></span><span> </span><span id="local-6989586621679101959"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101959"><span class="hs-identifier hs-var">siz0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
+</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveBuf"><span class="hs-identifier hs-var hs-var">receiveBuf</span></a></span></span><span> </span><span id="local-6989586621679101979"><span class="annot"><span class="annottext">Socket
+</span><a href="#local-6989586621679101979"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101978"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101978"><span class="hs-identifier hs-var">buf0</span></a></span></span><span> </span><span id="local-6989586621679101977"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101977"><span class="hs-identifier hs-var">siz0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
 #if MIN_VERSION_network(3,1,0)
 </span><span>  </span><span class="annot"><span class="annottext">Socket -&gt; (CInt -&gt; IO Bool) -&gt; IO Bool
 forall r. Socket -&gt; (CInt -&gt; IO r) -&gt; IO r
 </span><span class="hs-identifier hs-var">withFdSocket</span></span><span> </span><span class="annot"><span class="annottext">Socket
-</span><a href="#local-6989586621679101961"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">((CInt -&gt; IO Bool) -&gt; IO Bool) -&gt; (CInt -&gt; IO Bool) -&gt; IO Bool
+</span><a href="#local-6989586621679101979"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">((CInt -&gt; IO Bool) -&gt; IO Bool) -&gt; (CInt -&gt; IO Bool) -&gt; IO Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101958"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101958"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101976"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101976"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
 #elif MIN_VERSION_network(3,0,0)
 </span><span>    </span><span class="hs-identifier">fd</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier">fdSocket</span><span> </span><span class="hs-identifier">sock</span><span class="hs-cpp">
 #else
 </span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-identifier">fd</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">fdSocket</span><span> </span><span class="hs-identifier">sock</span><span class="hs-cpp">
 #endif
 </span><span>    </span><span class="annot"><span class="annottext">CInt -&gt; RecvBuf
-</span><a href="#local-6989586621679101957"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101958"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101960"><span class="hs-identifier hs-var">buf0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101959"><span class="hs-identifier hs-var">siz0</span></a></span><span>
+</span><a href="#local-6989586621679101975"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101976"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101978"><span class="hs-identifier hs-var">buf0</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101977"><span class="hs-identifier hs-var">siz0</span></a></span><span>
 </span><span id="line-129"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-130"></span><span>    </span><span id="local-6989586621679101957"><span class="annot"><span class="annottext">loop :: CInt -&gt; RecvBuf
-</span><a href="#local-6989586621679101957"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="annot"><span class="annottext">CInt
+</span><span id="line-130"></span><span>    </span><span id="local-6989586621679101975"><span class="annot"><span class="annottext">loop :: CInt -&gt; RecvBuf
+</span><a href="#local-6989586621679101975"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="annot"><span class="annottext">Ptr Word8
 </span><span class="hs-identifier">_</span></span><span>   </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">0</span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; IO Bool
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
-</span><span id="line-131"></span><span>    </span><span class="annot"><a href="#local-6989586621679101957"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span id="local-6989586621679101956"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101956"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span id="local-6989586621679101955"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101955"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679101954"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101954"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-132"></span><span>        </span><span id="local-6989586621679101953"><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101953"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; BufSize
+</span><span id="line-131"></span><span>    </span><span class="annot"><a href="#local-6989586621679101975"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span id="local-6989586621679101974"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101974"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span id="local-6989586621679101973"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101973"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span id="local-6989586621679101972"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101972"><span class="hs-identifier hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-132"></span><span>        </span><span id="local-6989586621679101971"><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; BufSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(CInt -&gt; BufSize) -&gt; IO CInt -&gt; IO BufSize
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; Ptr Word8 -&gt; CSize -&gt; IO CInt
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-var">receiveloop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101956"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101955"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; CSize
+</span><a href="#local-6989586621679101974"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101973"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize -&gt; CSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101954"><span class="hs-identifier hs-var">siz</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101972"><span class="hs-identifier hs-var">siz</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-133"></span><span>        </span><span class="hs-comment">-- fixme: what should we do in the case of n == 0</span><span>
 </span><span id="line-134"></span><span>        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101953"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
+</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">BufSize
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-keyword">then</span><span>
@@ -422,58 +422,58 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">False</span></span><span>
 </span><span id="line-136"></span><span>          </span><span class="hs-keyword">else</span><span>
 </span><span id="line-137"></span><span>            </span><span class="annot"><span class="annottext">CInt -&gt; RecvBuf
-</span><a href="#local-6989586621679101957"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101956"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101955"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; BufSize -&gt; Ptr Word8
+</span><a href="#local-6989586621679101975"><span class="hs-identifier hs-var">loop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101974"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101973"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; BufSize -&gt; Ptr Word8
 forall a b. Ptr a -&gt; BufSize -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101953"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101954"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
+</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">BufSize
+</span><a href="#local-6989586621679101972"><span class="hs-identifier hs-var">siz</span></a></span><span> </span><span class="annot"><span class="annottext">BufSize -&gt; BufSize -&gt; BufSize
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">BufSize
-</span><a href="#local-6989586621679101953"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101971"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-138"></span><span>
 </span><span id="line-139"></span><span class="annot"><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-type">receiveloop</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ptr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CSize</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span><span>
 </span><span id="line-140"></span><span id="receiveloop"><span class="annot"><span class="annottext">receiveloop :: CInt -&gt; Ptr Word8 -&gt; CSize -&gt; IO CInt
-</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-var hs-var">receiveloop</span></a></span></span><span> </span><span id="local-6989586621679101952"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101952"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101951"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101951"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span id="local-6989586621679101950"><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101950"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
+</span><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-var hs-var">receiveloop</span></a></span></span><span> </span><span id="local-6989586621679101970"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">sock</span></a></span></span><span> </span><span id="local-6989586621679101969"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101969"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span id="local-6989586621679101968"><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679101968"><span class="hs-identifier hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span class="hs-cpp">
 #ifdef mingw32_HOST_OS
 </span><span>    </span><span class="hs-identifier">bytes</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier">windowsThreadBlockHack</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">fromIntegral</span><span> </span><span class="hs-operator">&lt;$&gt;</span><span> </span><span class="hs-identifier">readRawBufferPtr</span><span> </span><span class="hs-string">&quot;recv&quot;</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">FD</span><span> </span><span class="hs-identifier">sock</span><span> </span><span class="hs-number">1</span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">castPtr</span><span> </span><span class="hs-identifier">ptr</span><span class="hs-special">)</span><span> </span><span class="hs-number">0</span><span> </span><span class="hs-identifier">size</span><span class="hs-cpp">
 #else
-</span><span>    </span><span id="local-6989586621679101949"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101949"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; Ptr CChar -&gt; CSize -&gt; CInt -&gt; IO CInt
+</span><span>    </span><span id="local-6989586621679101967"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101967"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; Ptr CChar -&gt; CSize -&gt; CInt -&gt; IO CInt
 </span><a href="Network.Wai.Handler.Warp.Recv.html#c_recv"><span class="hs-identifier hs-var">c_recv</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101952"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr CChar
+</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr CChar
 forall a b. Ptr a -&gt; Ptr b
 </span><span class="hs-identifier hs-var">castPtr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101951"><span class="hs-identifier hs-var">ptr</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101950"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679101969"><span class="hs-identifier hs-var">ptr</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679101968"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-number">0</span></span><span class="hs-cpp">
 #endif
 </span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101949"><span class="hs-identifier hs-var">bytes</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
+</span><a href="#local-6989586621679101967"><span class="hs-identifier hs-var">bytes</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-147"></span><span>        </span><span id="local-6989586621679101947"><span class="annot"><span class="annottext">Errno
-</span><a href="#local-6989586621679101947"><span class="hs-identifier hs-var">errno</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Errno
+</span><span id="line-147"></span><span>        </span><span id="local-6989586621679101965"><span class="annot"><span class="annottext">Errno
+</span><a href="#local-6989586621679101965"><span class="hs-identifier hs-var">errno</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Errno
 </span><span class="hs-identifier hs-var">getErrno</span></span><span>
 </span><span id="line-148"></span><span>        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Errno
-</span><a href="#local-6989586621679101947"><span class="hs-identifier hs-var">errno</span></a></span><span> </span><span class="annot"><span class="annottext">Errno -&gt; Errno -&gt; Bool
+</span><a href="#local-6989586621679101965"><span class="hs-identifier hs-var">errno</span></a></span><span> </span><span class="annot"><span class="annottext">Errno -&gt; Errno -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Errno
 </span><span class="hs-identifier hs-var">eAGAIN</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-149"></span><span>            </span><span class="annot"><span class="annottext">Fd -&gt; IO ()
 </span><span class="hs-identifier hs-var">threadWaitRead</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CInt -&gt; Fd
 </span><span class="hs-identifier hs-var">Fd</span></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101952"><span class="hs-identifier hs-var">sock</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">sock</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-150"></span><span>            </span><span class="annot"><span class="annottext">CInt -&gt; Ptr Word8 -&gt; CSize -&gt; IO CInt
 </span><a href="Network.Wai.Handler.Warp.Recv.html#receiveloop"><span class="hs-identifier hs-var">receiveloop</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101952"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101951"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101950"><span class="hs-identifier hs-var">size</span></a></span><span>
+</span><a href="#local-6989586621679101970"><span class="hs-identifier hs-var">sock</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101969"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679101968"><span class="hs-identifier hs-var">size</span></a></span><span>
 </span><span id="line-151"></span><span>          </span><span class="hs-keyword">else</span><span>
 </span><span id="line-152"></span><span>            </span><span class="annot"><span class="annottext">String -&gt; IO CInt
 forall a. String -&gt; IO a
@@ -483,7 +483,7 @@ forall a. String -&gt; IO a
 </span><span id="line-154"></span><span>        </span><span class="annot"><span class="annottext">CInt -&gt; IO CInt
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679101949"><span class="hs-identifier hs-var">bytes</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679101967"><span class="hs-identifier hs-var">bytes</span></a></span><span class="hs-cpp">
 
 #ifndef mingw32_HOST_OS
 </span><span class="hs-comment">-- fixme: the type of the return value</span><span>

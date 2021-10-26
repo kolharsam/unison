@@ -44,53 +44,53 @@
 
     Prints the first error to 'stderr' and exits with 'exitFailure'
 -}</span><span>
-</span><span id="line-47"></span><span id="local-6989586621679050934"><span class="annot"><a href="Control.Error.Script.html#runScript"><span class="hs-identifier hs-type">runScript</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Control.Error.Script.html#Script"><span class="hs-identifier hs-type">Script</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679050934"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050934"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-47"></span><span id="local-6989586621679050933"><span class="annot"><a href="Control.Error.Script.html#runScript"><span class="hs-identifier hs-type">runScript</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Control.Error.Script.html#Script"><span class="hs-identifier hs-type">Script</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679050933"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050933"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-48"></span><span id="runScript"><span class="annot"><span class="annottext">runScript :: Script a -&gt; IO a
-</span><a href="Control.Error.Script.html#runScript"><span class="hs-identifier hs-var hs-var">runScript</span></a></span></span><span> </span><span id="local-6989586621679050933"><span class="annot"><span class="annottext">Script a
-</span><a href="#local-6989586621679050933"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-49"></span><span>    </span><span id="local-6989586621679050932"><span class="annot"><span class="annottext">Either Text a
-</span><a href="#local-6989586621679050932"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Script a -&gt; IO (Either Text a)
+</span><a href="Control.Error.Script.html#runScript"><span class="hs-identifier hs-var hs-var">runScript</span></a></span></span><span> </span><span id="local-6989586621679050932"><span class="annot"><span class="annottext">Script a
+</span><a href="#local-6989586621679050932"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-49"></span><span>    </span><span id="local-6989586621679050931"><span class="annot"><span class="annottext">Either Text a
+</span><a href="#local-6989586621679050931"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Script a -&gt; IO (Either Text a)
 forall e (m :: * -&gt; *) a. ExceptT e m a -&gt; m (Either e a)
 </span><span class="hs-identifier hs-var">runExceptT</span></span><span> </span><span class="annot"><span class="annottext">Script a
-</span><a href="#local-6989586621679050933"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679050932"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-50"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either Text a
-</span><a href="#local-6989586621679050932"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-51"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679050931"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679050931"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-52"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679050930"><span class="annot"><span class="annottext">adapt :: String -&gt; Text
-</span><a href="#local-6989586621679050930"><span class="hs-identifier hs-var hs-var">adapt</span></a></span></span><span> </span><span id="local-6989586621679050929"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679050929"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="#local-6989586621679050931"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-51"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679050930"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679050930"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-52"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679050929"><span class="annot"><span class="annottext">adapt :: String -&gt; Text
+</span><a href="#local-6989586621679050929"><span class="hs-identifier hs-var hs-var">adapt</span></a></span></span><span> </span><span id="local-6989586621679050928"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679050928"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Data.Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679050929"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+</span><a href="#local-6989586621679050928"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679050931"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679050930"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-53"></span><span>            </span><span class="annot"><span class="annottext">Text -&gt; IO ()
 </span><a href="Control.Error.Util.html#errLn"><span class="hs-identifier hs-var">errLn</span></a></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; IO ()) -&gt; IO Text -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b
 </span><span class="hs-operator hs-var">=&lt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Text) -&gt; IO String -&gt; IO Text
 forall (m :: * -&gt; *) a1 r. Monad m =&gt; (a1 -&gt; r) -&gt; m a1 -&gt; m r
 </span><span class="hs-identifier hs-var">liftM</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><a href="#local-6989586621679050930"><span class="hs-identifier hs-var">adapt</span></a></span><span> </span><span class="annot"><span class="annottext">IO String
+</span><a href="#local-6989586621679050929"><span class="hs-identifier hs-var">adapt</span></a></span><span> </span><span class="annot"><span class="annottext">IO String
 </span><span class="hs-identifier hs-var">getProgName</span></span><span>
 </span><span id="line-54"></span><span>            </span><span class="annot"><span class="annottext">IO a
 forall a. IO a
 </span><span class="hs-identifier hs-var">exitFailure</span></span><span>
-</span><span id="line-55"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679050926"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679050926"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">a -&gt; IO a
+</span><span id="line-55"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679050925"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679050925"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">a -&gt; IO a
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679050926"><span class="hs-identifier hs-var">a</span></a></span><span>
+</span><a href="#local-6989586621679050925"><span class="hs-identifier hs-var">a</span></a></span><span>
 </span><span id="line-56"></span><span>
 </span><span id="line-57"></span><span class="hs-comment">{-| 'scriptIO' resembles 'lift', except it catches all exceptions and converts
     them to 'Text'
 
     Note that 'scriptIO' is compatible with the 'Script' monad.
 -}</span><span>
-</span><span id="line-62"></span><span id="local-6989586621679050924"><span id="local-6989586621679050925"><span class="annot"><a href="Control.Error.Script.html#scriptIO"><span class="hs-identifier hs-type">scriptIO</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050925"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050924"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><a href="#local-6989586621679050925"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679050924"><span class="hs-identifier hs-type">a</span></a></span></span></span><span>
+</span><span id="line-62"></span><span id="local-6989586621679050923"><span id="local-6989586621679050924"><span class="annot"><a href="Control.Error.Script.html#scriptIO"><span class="hs-identifier hs-type">scriptIO</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050924"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050923"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><a href="#local-6989586621679050924"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679050923"><span class="hs-identifier hs-type">a</span></a></span></span></span><span>
 </span><span id="line-63"></span><span id="scriptIO"><span class="annot"><span class="annottext">scriptIO :: IO a -&gt; ExceptT Text m a
 </span><a href="Control.Error.Script.html#scriptIO"><span class="hs-identifier hs-var hs-var">scriptIO</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">m (Either Text a) -&gt; ExceptT Text m a
 forall e (m :: * -&gt; *) a. m (Either e a) -&gt; ExceptT e m a
@@ -121,7 +121,7 @@ forall a. Show a =&gt; a -&gt; String
 -&gt; IO a
 -&gt; IO (Either Text a)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679050921"><span class="annot"><span class="annottext">forall a. IO a -&gt; IO (Either SomeException a)
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679050920"><span class="annot"><span class="annottext">forall a. IO a -&gt; IO (Either SomeException a)
 forall e a. Exception e =&gt; IO a -&gt; IO (Either e a)
-</span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050921"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span> </span><span class="annot"><a href="#local-6989586621679050921"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679050920"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span> </span><span class="annot"><a href="#local-6989586621679050920"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span><span class="hs-special">)</span><span>
 </span><span id="line-67"></span></pre></body></html>

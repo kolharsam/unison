@@ -33,11 +33,11 @@
 </span><span id="line-33"></span><span class="hs-comment">--</span><span>
 </span><span id="line-34"></span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#isAscii"><span class="hs-identifier hs-type">isAscii</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-35"></span><span id="isAscii"><span class="annot"><span class="annottext">isAscii :: Word8 -&gt; Bool
-</span><a href="Basement.String.Encoding.ASCII7.html#isAscii"><span class="hs-identifier hs-var hs-var">isAscii</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">W8#</span></span><span> </span><span id="local-6989586621679152665"><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152665"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word# -&gt; Word8
+</span><a href="Basement.String.Encoding.ASCII7.html#isAscii"><span class="hs-identifier hs-var hs-var">isAscii</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">W8#</span></span><span> </span><span id="local-6989586621679152673"><span class="annot"><span class="annottext">Word#
+</span><a href="#local-6989586621679152673"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word# -&gt; Word8
 </span><span class="hs-identifier hs-var">W8#</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word# -&gt; Word# -&gt; Word#
 </span><span class="hs-identifier hs-var">and#</span></span><span> </span><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152665"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">Word#
+</span><a href="#local-6989586621679152673"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">Word#
 </span><span class="hs-number">0x80##</span></span><span> </span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
@@ -47,7 +47,7 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span id="line-38"></span><span class="hs-keyword">data</span><span> </span><span id="ASCII7_Invalid"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7_Invalid"><span class="hs-identifier hs-var">ASCII7_Invalid</span></a></span></span><span>
 </span><span id="line-39"></span><span>    </span><span class="hs-glyph">=</span><span> </span><span id="ByteOutOfBound"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ByteOutOfBound"><span class="hs-identifier hs-var">ByteOutOfBound</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
 </span><span id="line-40"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="CharNotAscii"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#CharNotAscii"><span class="hs-identifier hs-var">CharNotAscii</span></a></span></span><span>   </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
-</span><span id="line-41"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679152657"><span id="local-6989586621679152659"><span id="local-6989586621679152661"><span class="annot"><span class="annottext">Int -&gt; ASCII7_Invalid -&gt; ShowS
+</span><span id="line-41"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Typeable</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679152665"><span id="local-6989586621679152667"><span id="local-6989586621679152669"><span class="annot"><span class="annottext">Int -&gt; ASCII7_Invalid -&gt; ShowS
 [ASCII7_Invalid] -&gt; ShowS
 ASCII7_Invalid -&gt; String
 (Int -&gt; ASCII7_Invalid -&gt; ShowS)
@@ -62,7 +62,7 @@ show :: ASCII7_Invalid -&gt; String
 $cshow :: ASCII7_Invalid -&gt; String
 showsPrec :: Int -&gt; ASCII7_Invalid -&gt; ShowS
 $cshowsPrec :: Int -&gt; ASCII7_Invalid -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679152652"><span id="local-6989586621679152654"><span class="annot"><span class="annottext">ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679152660"><span id="local-6989586621679152662"><span class="annot"><span class="annottext">ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
 (ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool)
 -&gt; (ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool) -&gt; Eq ASCII7_Invalid
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -71,14 +71,14 @@ $c/= :: ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
 == :: ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
 $c== :: ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-42"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679152643"><span id="local-6989586621679152645"><span id="local-6989586621679152647"><span class="annot"><span class="hs-identifier hs-type">Exception</span></span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7_Invalid"><span class="hs-identifier hs-type">ASCII7_Invalid</span></a></span></span></span></span><span>
+</span><span id="line-42"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679152651"><span id="local-6989586621679152653"><span id="local-6989586621679152655"><span class="annot"><span class="hs-identifier hs-type">Exception</span></span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7_Invalid"><span class="hs-identifier hs-type">ASCII7_Invalid</span></a></span></span></span></span><span>
 </span><span id="line-43"></span><span>
 </span><span id="line-44"></span><span class="hs-keyword">data</span><span> </span><span id="ASCII7"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7"><span class="hs-identifier hs-var">ASCII7</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="ASCII7"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7"><span class="hs-identifier hs-var">ASCII7</span></a></span></span><span>
 </span><span id="line-45"></span><span>
 </span><span id="line-46"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Basement.String.Encoding.Encoding.html#Encoding"><span class="hs-identifier hs-type">Encoding</span></a></span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7"><span class="hs-identifier hs-type">ASCII7</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-47"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="Unit"><span class="annot"><a href="Basement.String.Encoding.Encoding.html#Unit"><span class="hs-identifier hs-var">Unit</span></a></span></span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7"><span class="hs-identifier hs-type">ASCII7</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
 </span><span id="line-48"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="Error"><span class="annot"><a href="Basement.String.Encoding.Encoding.html#Error"><span class="hs-identifier hs-var">Error</span></a></span></span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7"><span class="hs-identifier hs-type">ASCII7</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#ASCII7_Invalid"><span class="hs-identifier hs-type">ASCII7_Invalid</span></a></span><span>
-</span><span id="line-49"></span><span>    </span><span id="local-6989586621679152637"><span class="annot"><span class="annottext">encodingNext :: ASCII7
+</span><span id="line-49"></span><span>    </span><span id="local-6989586621679152645"><span class="annot"><span class="annottext">encodingNext :: ASCII7
 -&gt; (Offset (Unit ASCII7) -&gt; Unit ASCII7)
 -&gt; Offset (Unit ASCII7)
 -&gt; Either (Error ASCII7) (Char, Offset (Unit ASCII7))
@@ -89,7 +89,7 @@ $c== :: ASCII7_Invalid -&gt; ASCII7_Invalid -&gt; Bool
 -&gt; Offset (Unit ASCII7)
 -&gt; Either (Error ASCII7) (Char, Offset (Unit ASCII7))
 </span><a href="Basement.String.Encoding.ASCII7.html#next"><span class="hs-identifier hs-var">next</span></a></span><span>
-</span><span id="line-50"></span><span>    </span><span id="local-6989586621679152634"><span class="annot"><span class="annottext">encodingWrite :: ASCII7
+</span><span id="line-50"></span><span>    </span><span id="local-6989586621679152642"><span class="annot"><span class="annottext">encodingWrite :: ASCII7
 -&gt; Char
 -&gt; Builder
      (UArray (Unit ASCII7))
@@ -124,17 +124,17 @@ Char -&gt; Builder (UArray Word8) (MUArray Word8) Word8 st err ()
 </span><span id="line-61"></span><span>          </span><span class="hs-comment">-- next index or fail with an error</span><span>
 </span><span id="line-62"></span><span id="next"><span class="annot"><span class="annottext">next :: (Offset Word8 -&gt; Word8)
 -&gt; Offset Word8 -&gt; Either ASCII7_Invalid (Char, Offset Word8)
-</span><a href="Basement.String.Encoding.ASCII7.html#next"><span class="hs-identifier hs-var hs-var">next</span></a></span></span><span> </span><span id="local-6989586621679152631"><span class="annot"><span class="annottext">Offset Word8 -&gt; Word8
-</span><a href="#local-6989586621679152631"><span class="hs-identifier hs-var">getter</span></a></span></span><span> </span><span id="local-6989586621679152630"><span class="annot"><span class="annottext">Offset Word8
-</span><a href="#local-6989586621679152630"><span class="hs-identifier hs-var">off</span></a></span></span><span>
+</span><a href="Basement.String.Encoding.ASCII7.html#next"><span class="hs-identifier hs-var hs-var">next</span></a></span></span><span> </span><span id="local-6989586621679152639"><span class="annot"><span class="annottext">Offset Word8 -&gt; Word8
+</span><a href="#local-6989586621679152639"><span class="hs-identifier hs-var">getter</span></a></span></span><span> </span><span id="local-6989586621679152638"><span class="annot"><span class="annottext">Offset Word8
+</span><a href="#local-6989586621679152638"><span class="hs-identifier hs-var">off</span></a></span></span><span>
 </span><span id="line-63"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Bool
 </span><a href="Basement.String.Encoding.ASCII7.html#isAscii"><span class="hs-identifier hs-var">isAscii</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679152629"><span class="hs-identifier hs-var">w8</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, Offset Word8) -&gt; Either ASCII7_Invalid (Char, Offset Word8)
+</span><a href="#local-6989586621679152637"><span class="hs-identifier hs-var">w8</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Char, Offset Word8) -&gt; Either ASCII7_Invalid (Char, Offset Word8)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word# -&gt; Char
-</span><a href="#local-6989586621679152628"><span class="hs-identifier hs-var">toChar</span></a></span><span> </span><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152627"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Offset Word8
-</span><a href="#local-6989586621679152630"><span class="hs-identifier hs-var">off</span></a></span><span> </span><span class="annot"><span class="annottext">Offset Word8 -&gt; Offset Word8 -&gt; Offset Word8
+</span><a href="#local-6989586621679152636"><span class="hs-identifier hs-var">toChar</span></a></span><span> </span><span class="annot"><span class="annottext">Word#
+</span><a href="#local-6989586621679152635"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Offset Word8
+</span><a href="#local-6989586621679152638"><span class="hs-identifier hs-var">off</span></a></span><span> </span><span class="annot"><span class="annottext">Offset Word8 -&gt; Offset Word8 -&gt; Offset Word8
 forall a. Additive a =&gt; a -&gt; a -&gt; a
 </span><a href="Basement.Numerical.Additive.html#%2B"><span class="hs-operator hs-var">+</span></a></span><span> </span><span class="annot"><span class="annottext">Offset Word8
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
@@ -146,36 +146,36 @@ forall a b. a -&gt; Either a b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; ASCII7_Invalid
 </span><a href="Basement.String.Encoding.ASCII7.html#ByteOutOfBound"><span class="hs-identifier hs-var">ByteOutOfBound</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679152629"><span class="hs-identifier hs-var">w8</span></a></span><span>
+</span><a href="#local-6989586621679152637"><span class="hs-identifier hs-var">w8</span></a></span><span>
 </span><span id="line-65"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-66"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679152629"><span class="annot"><span class="annottext">w8 :: Word8
-</span><a href="#local-6989586621679152629"><span class="hs-identifier hs-var">w8</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">W8#</span></span><span> </span><span id="local-6989586621679152627"><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152627"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Offset Word8 -&gt; Word8
-</span><a href="#local-6989586621679152631"><span class="hs-identifier hs-var">getter</span></a></span><span> </span><span class="annot"><span class="annottext">Offset Word8
-</span><a href="#local-6989586621679152630"><span class="hs-identifier hs-var">off</span></a></span><span>
-</span><span id="line-67"></span><span>    </span><span class="annot"><a href="#local-6989586621679152628"><span class="hs-identifier hs-type">toChar</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word#</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
-</span><span id="line-68"></span><span>    </span><span id="local-6989586621679152628"><span class="annot"><span class="annottext">toChar :: Word# -&gt; Char
-</span><a href="#local-6989586621679152628"><span class="hs-identifier hs-var hs-var">toChar</span></a></span></span><span> </span><span id="local-6989586621679152625"><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152625"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char# -&gt; Char
+</span><span id="line-66"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679152637"><span class="annot"><span class="annottext">w8 :: Word8
+</span><a href="#local-6989586621679152637"><span class="hs-identifier hs-var">w8</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">W8#</span></span><span> </span><span id="local-6989586621679152635"><span class="annot"><span class="annottext">Word#
+</span><a href="#local-6989586621679152635"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Offset Word8 -&gt; Word8
+</span><a href="#local-6989586621679152639"><span class="hs-identifier hs-var">getter</span></a></span><span> </span><span class="annot"><span class="annottext">Offset Word8
+</span><a href="#local-6989586621679152638"><span class="hs-identifier hs-var">off</span></a></span><span>
+</span><span id="line-67"></span><span>    </span><span class="annot"><a href="#local-6989586621679152636"><span class="hs-identifier hs-type">toChar</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word#</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
+</span><span id="line-68"></span><span>    </span><span id="local-6989586621679152636"><span class="annot"><span class="annottext">toChar :: Word# -&gt; Char
+</span><a href="#local-6989586621679152636"><span class="hs-identifier hs-var hs-var">toChar</span></a></span></span><span> </span><span id="local-6989586621679152633"><span class="annot"><span class="annottext">Word#
+</span><a href="#local-6989586621679152633"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char# -&gt; Char
 </span><span class="hs-identifier hs-var">C#</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int# -&gt; Char#
 </span><span class="hs-identifier hs-var">chr#</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word# -&gt; Int#
 </span><span class="hs-identifier hs-var">word2Int#</span></span><span> </span><span class="annot"><span class="annottext">Word#
-</span><a href="#local-6989586621679152625"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679152633"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-69"></span><span>
 </span><span id="line-70"></span><span class="hs-comment">-- Write ascii char</span><span>
 </span><span id="line-71"></span><span class="hs-comment">--</span><span>
 </span><span id="line-72"></span><span class="hs-comment">-- &gt; build 64 $ sequence_ write &quot;this is a simple list of char...&quot;</span><span>
 </span><span id="line-73"></span><span class="hs-comment">--</span><span>
-</span><span id="line-74"></span><span id="local-6989586621679152685"><span id="local-6989586621679152686"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#write"><span class="hs-identifier hs-type">write</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.Monad.html#PrimMonad"><span class="hs-identifier hs-type">PrimMonad</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679152686"><span class="hs-identifier hs-type">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679152686"><span class="hs-identifier hs-type">st</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-74"></span><span id="local-6989586621679152693"><span id="local-6989586621679152694"><span class="annot"><a href="Basement.String.Encoding.ASCII7.html#write"><span class="hs-identifier hs-type">write</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.Monad.html#PrimMonad"><span class="hs-identifier hs-type">PrimMonad</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679152694"><span class="hs-identifier hs-type">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679152694"><span class="hs-identifier hs-type">st</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-75"></span><span>      </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
 </span><span id="line-76"></span><span>           </span><span class="hs-comment">-- ^ expecting it to be a valid Ascii character.</span><span>
 </span><span id="line-77"></span><span>           </span><span class="hs-comment">-- otherwise this function will throw an exception</span><span>
-</span><span id="line-78"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Basement.MutableBuilder.html#Builder"><span class="hs-identifier hs-type">Builder</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.UArray.Base.html#UArray"><span class="hs-identifier hs-type">UArray</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.UArray.Base.html#MUArray"><span class="hs-identifier hs-type">MUArray</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="annot"><a href="#local-6989586621679152686"><span class="hs-identifier hs-type">st</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679152685"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-78"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Basement.MutableBuilder.html#Builder"><span class="hs-identifier hs-type">Builder</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.UArray.Base.html#UArray"><span class="hs-identifier hs-type">UArray</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.UArray.Base.html#MUArray"><span class="hs-identifier hs-type">MUArray</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="annot"><a href="#local-6989586621679152694"><span class="hs-identifier hs-type">st</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679152693"><span class="hs-identifier hs-type">err</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span></span><span>
 </span><span id="line-79"></span><span id="write"><span class="annot"><span class="annottext">write :: Char -&gt; Builder (UArray Word8) (MUArray Word8) Word8 st err ()
-</span><a href="Basement.String.Encoding.ASCII7.html#write"><span class="hs-identifier hs-var hs-var">write</span></a></span></span><span> </span><span id="local-6989586621679152624"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679152624"><span class="hs-identifier hs-var">c</span></a></span></span><span>
+</span><a href="Basement.String.Encoding.ASCII7.html#write"><span class="hs-identifier hs-var hs-var">write</span></a></span></span><span> </span><span id="local-6989586621679152632"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679152632"><span class="hs-identifier hs-var">c</span></a></span></span><span>
 </span><span id="line-80"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679152624"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679152632"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Char
 forall a. Enum a =&gt; Int -&gt; a
@@ -188,8 +188,8 @@ ty -&gt; Builder (UArray ty) (MUArray ty) ty state err ()
 -&gt; Word8 -&gt; Builder (UArray Word8) (MUArray Word8) Word8 st err ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Word8
-</span><a href="#local-6989586621679152620"><span class="hs-identifier hs-var">w8</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679152624"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679152628"><span class="hs-identifier hs-var">w8</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679152632"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-81"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ASCII7_Invalid
 -&gt; Builder (UArray Word8) (MUArray Word8) Word8 st err ()
@@ -201,14 +201,14 @@ forall a e. Exception e =&gt; e -&gt; a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ASCII7_Invalid
 </span><a href="Basement.String.Encoding.ASCII7.html#CharNotAscii"><span class="hs-identifier hs-var">CharNotAscii</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679152624"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679152632"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-82"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-83"></span><span>    </span><span class="annot"><a href="#local-6989586621679152620"><span class="hs-identifier hs-type">w8</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
-</span><span id="line-84"></span><span>    </span><span id="local-6989586621679152620"><span class="annot"><span class="annottext">w8 :: Char -&gt; Word8
-</span><a href="#local-6989586621679152620"><span class="hs-identifier hs-var hs-var">w8</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">C#</span></span><span> </span><span id="local-6989586621679152618"><span class="annot"><span class="annottext">Char#
-</span><a href="#local-6989586621679152618"><span class="hs-identifier hs-var">ch</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word# -&gt; Word8
+</span><span id="line-83"></span><span>    </span><span class="annot"><a href="#local-6989586621679152628"><span class="hs-identifier hs-type">w8</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
+</span><span id="line-84"></span><span>    </span><span id="local-6989586621679152628"><span class="annot"><span class="annottext">w8 :: Char -&gt; Word8
+</span><a href="#local-6989586621679152628"><span class="hs-identifier hs-var hs-var">w8</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">C#</span></span><span> </span><span id="local-6989586621679152626"><span class="annot"><span class="annottext">Char#
+</span><a href="#local-6989586621679152626"><span class="hs-identifier hs-var">ch</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word# -&gt; Word8
 </span><span class="hs-identifier hs-var">W8#</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int# -&gt; Word#
 </span><span class="hs-identifier hs-var">int2Word#</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char# -&gt; Int#
 </span><span class="hs-identifier hs-var">ord#</span></span><span> </span><span class="annot"><span class="annottext">Char#
-</span><a href="#local-6989586621679152618"><span class="hs-identifier hs-var">ch</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679152626"><span class="hs-identifier hs-var">ch</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-85"></span></pre></body></html>

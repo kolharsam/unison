@@ -17,22 +17,22 @@
 </span><span id="line-17"></span><span>
 </span><span id="line-18"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromises"><span class="hs-identifier hs-type">fromPushPromises</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#InternalInfo"><span class="hs-identifier hs-type">InternalInfo</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">H2.PushPromise</span></span><span class="hs-special">]</span><span>
 </span><span id="line-19"></span><span id="fromPushPromises"><span class="annot"><span class="annottext">fromPushPromises :: InternalInfo -&gt; Request -&gt; IO [PushPromise]
-</span><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromises"><span class="hs-identifier hs-var hs-var">fromPushPromises</span></a></span></span><span> </span><span id="local-6989586621679102763"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679102763"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679102762"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102762"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-20"></span><span>    </span><span id="local-6989586621679102761"><span class="annot"><span class="annottext">Maybe HTTP2Data
-</span><a href="#local-6989586621679102761"><span class="hs-identifier hs-var">mh2data</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO (Maybe HTTP2Data)
+</span><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromises"><span class="hs-identifier hs-var hs-var">fromPushPromises</span></a></span></span><span> </span><span id="local-6989586621679102781"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679102781"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679102780"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102780"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-20"></span><span>    </span><span id="local-6989586621679102779"><span class="annot"><span class="annottext">Maybe HTTP2Data
+</span><a href="#local-6989586621679102779"><span class="hs-identifier hs-var">mh2data</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO (Maybe HTTP2Data)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Request.html#getHTTP2Data"><span class="hs-identifier hs-var">getHTTP2Data</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102762"><span class="hs-identifier hs-var">req</span></a></span><span>
-</span><span id="line-21"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102760"><span class="annot"><span class="annottext">pp :: [PushPromise]
-</span><a href="#local-6989586621679102760"><span class="hs-identifier hs-var hs-var">pp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe HTTP2Data
-</span><a href="#local-6989586621679102761"><span class="hs-identifier hs-var">mh2data</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102780"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><span id="line-21"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102778"><span class="annot"><span class="annottext">pp :: [PushPromise]
+</span><a href="#local-6989586621679102778"><span class="hs-identifier hs-var hs-var">pp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe HTTP2Data
+</span><a href="#local-6989586621679102779"><span class="hs-identifier hs-var">mh2data</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-22"></span><span>          </span><span class="annot"><span class="annottext">Maybe HTTP2Data
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
-</span><span id="line-23"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102759"><span class="annot"><span class="annottext">HTTP2Data
-</span><a href="#local-6989586621679102759"><span class="hs-identifier hs-var">h2data</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HTTP2Data -&gt; [PushPromise]
+</span><span id="line-23"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102777"><span class="annot"><span class="annottext">HTTP2Data
+</span><a href="#local-6989586621679102777"><span class="hs-identifier hs-var">h2data</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HTTP2Data -&gt; [PushPromise]
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Types.html#http2dataPushPromise"><span class="hs-identifier hs-var hs-var">http2dataPushPromise</span></a></span><span> </span><span class="annot"><span class="annottext">HTTP2Data
-</span><a href="#local-6989586621679102759"><span class="hs-identifier hs-var">h2data</span></a></span><span>
+</span><a href="#local-6989586621679102777"><span class="hs-identifier hs-var">h2data</span></a></span><span>
 </span><span id="line-24"></span><span>    </span><span class="annot"><span class="annottext">[Maybe PushPromise] -&gt; [PushPromise]
 forall a. [Maybe a] -&gt; [a]
 </span><span class="hs-identifier hs-var">catMaybes</span></span><span> </span><span class="annot"><span class="annottext">([Maybe PushPromise] -&gt; [PushPromise])
@@ -45,19 +45,19 @@ forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (a -&gt; m b) -&gt; t a -&gt; m (t b)
 </span><span class="hs-identifier hs-var">mapM</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InternalInfo -&gt; PushPromise -&gt; IO (Maybe PushPromise)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromise"><span class="hs-identifier hs-var">fromPushPromise</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679102763"><span class="hs-identifier hs-var">ii</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[PushPromise]
-</span><a href="#local-6989586621679102760"><span class="hs-identifier hs-var">pp</span></a></span><span>
+</span><a href="#local-6989586621679102781"><span class="hs-identifier hs-var">ii</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[PushPromise]
+</span><a href="#local-6989586621679102778"><span class="hs-identifier hs-var">pp</span></a></span><span>
 </span><span id="line-25"></span><span>
 </span><span id="line-26"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromise"><span class="hs-identifier hs-type">fromPushPromise</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.Types.html#InternalInfo"><span class="hs-identifier hs-type">InternalInfo</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Types.html#PushPromise"><span class="hs-identifier hs-type">PushPromise</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">H2.PushPromise</span></span><span class="hs-special">)</span><span>
 </span><span id="line-27"></span><span id="fromPushPromise"><span class="annot"><span class="annottext">fromPushPromise :: InternalInfo -&gt; PushPromise -&gt; IO (Maybe PushPromise)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromise"><span class="hs-identifier hs-var hs-var">fromPushPromise</span></a></span></span><span> </span><span id="local-6989586621679102753"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679102753"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Types.html#PushPromise"><span class="hs-identifier hs-type">PushPromise</span></a></span><span> </span><span id="local-6989586621679102751"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102751"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span id="local-6989586621679102750"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679102750"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span id="local-6989586621679102749"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102749"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679102748"><span class="annot"><span class="annottext">Weight
-</span><a href="#local-6989586621679102748"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-28"></span><span>    </span><span id="local-6989586621679102747"><span class="annot"><span class="annottext">Either IOException FileInfo
-</span><a href="#local-6989586621679102747"><span class="hs-identifier hs-var">efinfo</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileInfo -&gt; IO (Either IOException FileInfo)
+</span><a href="Network.Wai.Handler.Warp.HTTP2.PushPromise.html#fromPushPromise"><span class="hs-identifier hs-var hs-var">fromPushPromise</span></a></span></span><span> </span><span id="local-6989586621679102771"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679102771"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Types.html#PushPromise"><span class="hs-identifier hs-type">PushPromise</span></a></span><span> </span><span id="local-6989586621679102769"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102769"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span id="local-6989586621679102768"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679102768"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span id="local-6989586621679102767"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102767"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679102766"><span class="annot"><span class="annottext">Weight
+</span><a href="#local-6989586621679102766"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-28"></span><span>    </span><span id="local-6989586621679102765"><span class="annot"><span class="annottext">Either IOException FileInfo
+</span><a href="#local-6989586621679102765"><span class="hs-identifier hs-var">efinfo</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileInfo -&gt; IO (Either IOException FileInfo)
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 m a -&gt; m (Either IOException a)
@@ -66,44 +66,44 @@ m a -&gt; m (Either IOException a)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">InternalInfo -&gt; FilePath -&gt; IO FileInfo
 </span><a href="Network.Wai.Handler.Warp.Types.html#getFileInfo"><span class="hs-identifier hs-var hs-var">getFileInfo</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679102753"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679102750"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><a href="#local-6989586621679102771"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679102768"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-29"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either IOException FileInfo
-</span><a href="#local-6989586621679102747"><span class="hs-identifier hs-var">efinfo</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-30"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102744"><span class="annot"><span class="annottext">IOException
-</span><a href="#local-6989586621679102744"><span class="hs-identifier hs-var">_ex</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe PushPromise -&gt; IO (Maybe PushPromise)
+</span><a href="#local-6989586621679102765"><span class="hs-identifier hs-var">efinfo</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-30"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102762"><span class="annot"><span class="annottext">IOException
+</span><a href="#local-6989586621679102762"><span class="hs-identifier hs-var">_ex</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe PushPromise -&gt; IO (Maybe PushPromise)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Maybe PushPromise
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-31"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679102743"><span class="annot"><span class="annottext">FileInfo
-</span><a href="#local-6989586621679102743"><span class="hs-identifier hs-var">finfo</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-32"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679102742"><span class="annot"><span class="annottext">siz :: ByteCount
-</span><a href="#local-6989586621679102742"><span class="hs-identifier hs-var hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; ByteCount
+</span><span id="line-31"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679102761"><span class="annot"><span class="annottext">FileInfo
+</span><a href="#local-6989586621679102761"><span class="hs-identifier hs-var">finfo</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-32"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679102760"><span class="annot"><span class="annottext">siz :: ByteCount
+</span><a href="#local-6989586621679102760"><span class="hs-identifier hs-var hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; ByteCount
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; ByteCount) -&gt; Integer -&gt; ByteCount
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileInfo -&gt; Integer
 </span><a href="Network.Wai.Handler.Warp.FileInfoCache.html#fileInfoSize"><span class="hs-identifier hs-var hs-var">fileInfoSize</span></a></span><span> </span><span class="annot"><span class="annottext">FileInfo
-</span><a href="#local-6989586621679102743"><span class="hs-identifier hs-var">finfo</span></a></span><span>
-</span><span id="line-33"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102740"><span class="annot"><span class="annottext">fileSpec :: FileSpec
-</span><a href="#local-6989586621679102740"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; ByteCount -&gt; ByteCount -&gt; FileSpec
+</span><a href="#local-6989586621679102761"><span class="hs-identifier hs-var">finfo</span></a></span><span>
+</span><span id="line-33"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102758"><span class="annot"><span class="annottext">fileSpec :: FileSpec
+</span><a href="#local-6989586621679102758"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; ByteCount -&gt; ByteCount -&gt; FileSpec
 </span><span class="hs-identifier hs-var">H2.FileSpec</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679102750"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">ByteCount
+</span><a href="#local-6989586621679102768"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">ByteCount
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">ByteCount
-</span><a href="#local-6989586621679102742"><span class="hs-identifier hs-var">siz</span></a></span><span>
-</span><span id="line-34"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102738"><span class="annot"><span class="annottext">rsp :: Response
-</span><a href="#local-6989586621679102738"><span class="hs-identifier hs-var hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; FileSpec -&gt; Response
+</span><a href="#local-6989586621679102760"><span class="hs-identifier hs-var">siz</span></a></span><span>
+</span><span id="line-34"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102756"><span class="annot"><span class="annottext">rsp :: Response
+</span><a href="#local-6989586621679102756"><span class="hs-identifier hs-var hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; FileSpec -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
 </span><span class="hs-identifier hs-var">H.ok200</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102749"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
-</span><a href="#local-6989586621679102740"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
-</span><span id="line-35"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102735"><span class="annot"><span class="annottext">pp :: PushPromise
-</span><a href="#local-6989586621679102735"><span class="hs-identifier hs-var hs-var">pp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Response -&gt; Weight -&gt; PushPromise
+</span><a href="#local-6989586621679102767"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
+</span><a href="#local-6989586621679102758"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
+</span><span id="line-35"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679102753"><span class="annot"><span class="annottext">pp :: PushPromise
+</span><a href="#local-6989586621679102753"><span class="hs-identifier hs-var hs-var">pp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Response -&gt; Weight -&gt; PushPromise
 </span><span class="hs-identifier hs-var">H2.pushPromise</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102751"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102738"><span class="hs-identifier hs-var">rsp</span></a></span><span> </span><span class="annot"><span class="annottext">Weight
-</span><a href="#local-6989586621679102748"><span class="hs-identifier hs-var">w</span></a></span><span>
+</span><a href="#local-6989586621679102769"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102756"><span class="hs-identifier hs-var">rsp</span></a></span><span> </span><span class="annot"><span class="annottext">Weight
+</span><a href="#local-6989586621679102766"><span class="hs-identifier hs-var">w</span></a></span><span>
 </span><span id="line-36"></span><span>          </span><span class="annot"><span class="annottext">Maybe PushPromise -&gt; IO (Maybe PushPromise)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe PushPromise -&gt; IO (Maybe PushPromise))
@@ -112,5 +112,5 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">PushPromise -&gt; Maybe PushPromise
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">PushPromise
-</span><a href="#local-6989586621679102735"><span class="hs-identifier hs-var">pp</span></a></span><span>
+</span><a href="#local-6989586621679102753"><span class="hs-identifier hs-var">pp</span></a></span><span>
 </span><span id="line-37"></span></pre></body></html>

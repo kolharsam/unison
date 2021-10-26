@@ -12,18 +12,18 @@
 </span><span id="line-12"></span><span class="hs-comment">-- mismatches with the HTTP spec.</span><span>
 </span><span id="line-13"></span><span class="annot"><a href="Network.Wai.Middleware.MethodOverride.html#methodOverride"><span class="hs-identifier hs-type">methodOverride</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-14"></span><span id="methodOverride"><span class="annot"><span class="annottext">methodOverride :: Middleware
-</span><a href="Network.Wai.Middleware.MethodOverride.html#methodOverride"><span class="hs-identifier hs-var hs-var">methodOverride</span></a></span></span><span> </span><span id="local-6989586621679102867"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102867"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102866"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102866"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.MethodOverride.html#methodOverride"><span class="hs-identifier hs-var hs-var">methodOverride</span></a></span></span><span> </span><span id="local-6989586621679102887"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102887"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102886"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-15"></span><span>    </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102867"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102865"><span class="hs-identifier hs-var">req'</span></a></span><span>
+</span><a href="#local-6989586621679102887"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102885"><span class="hs-identifier hs-var">req'</span></a></span><span>
 </span><span id="line-16"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-17"></span><span>    </span><span id="local-6989586621679102865"><span class="annot"><span class="annottext">req' :: Request
-</span><a href="#local-6989586621679102865"><span class="hs-identifier hs-var hs-var">req'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-17"></span><span>    </span><span id="local-6989586621679102885"><span class="annot"><span class="annottext">req' :: Request
+</span><a href="#local-6989586621679102885"><span class="hs-identifier hs-var hs-var">req'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-18"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Method
 </span><span class="hs-identifier hs-var hs-var">requestMethod</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102866"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Maybe (Maybe Method) -&gt; Maybe Method
+</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Maybe (Maybe Method) -&gt; Maybe Method
 forall (m :: * -&gt; *) a. Monad m =&gt; m (m a) -&gt; m a
 </span><span class="hs-identifier hs-var">join</span></span><span> </span><span class="annot"><span class="annottext">(Maybe (Maybe Method) -&gt; Maybe Method)
 -&gt; Maybe (Maybe Method) -&gt; Maybe Method
@@ -36,14 +36,14 @@ forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request -&gt; [(Method, Maybe Method)]
 </span><span class="hs-identifier hs-var hs-var">queryString</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102866"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-19"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Method
-</span><span class="hs-string">&quot;POST&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102861"><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102861"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102866"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
+</span><span class="hs-string">&quot;POST&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102881"><span class="annot"><span class="annottext">Method
+</span><a href="#local-6989586621679102881"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
 </span><span class="hs-identifier hs-var">requestMethod</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102861"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679102881"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">}</span><span>
 </span><span id="line-20"></span><span>            </span><span class="annot"><span class="annottext">(Method, Maybe Method)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102866"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-21"></span></pre></body></html>

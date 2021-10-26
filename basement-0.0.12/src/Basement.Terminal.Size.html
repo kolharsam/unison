@@ -35,8 +35,8 @@
 </span><span id="line-39"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="hs-identifier">ws_ypixel</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-identifier">Word16</span><span>
 </span><span id="line-40"></span><span>    </span><span class="hs-special">}</span><span>
 </span><span id="line-41"></span><span>
-</span><span id="line-42"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679142661"><span id="local-6989586621679142663"><span id="local-6989586621679142665"><span id="local-6989586621679142667"><span class="annot"><span class="hs-identifier hs-type">Storable</span></span><span> </span><span class="annot"><a href="Basement.Terminal.Size.html#Winsize"><span class="hs-identifier hs-type">Winsize</span></a></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-43"></span><span>    </span><span id="local-6989586621679142657"><span class="annot"><span class="annottext">sizeOf :: Winsize -&gt; Int
+</span><span id="line-42"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679142669"><span id="local-6989586621679142671"><span id="local-6989586621679142673"><span id="local-6989586621679142675"><span class="annot"><span class="hs-identifier hs-type">Storable</span></span><span> </span><span class="annot"><a href="Basement.Terminal.Size.html#Winsize"><span class="hs-identifier hs-type">Winsize</span></a></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-43"></span><span>    </span><span id="local-6989586621679142665"><span class="annot"><span class="annottext">sizeOf :: Winsize -&gt; Int
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">sizeOf</span></span></span><span> </span><span class="annot"><span class="annottext">Winsize
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">8</span></span><span class="hs-special">)</span><span>
@@ -53,48 +53,48 @@
 </span><span id="line-49"></span><span>        </span><span class="hs-identifier">y</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span class="hs-identifier">hsc_ptr</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier">peekByteOff</span><span> </span><span class="hs-identifier">hsc_ptr</span><span> </span><span class="hs-number">6</span><span class="hs-special">)</span><span> </span><span class="hs-identifier">ptr</span><span>
 </span><span id="line-50"></span><span class="hs-pragma">{-# LINE 50 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-50"></span><span>        </span><span class="hs-identifier">return</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">Winsize</span><span> </span><span class="hs-identifier">r</span><span> </span><span class="hs-identifier">c</span><span> </span><span class="hs-identifier">x</span><span> </span><span class="hs-identifier">y</span><span class="hs-special">)</span><span>
-</span><span id="line-51"></span><span>    </span><span id="local-6989586621679142641"><span class="annot"><span class="annottext">poke :: Ptr Winsize -&gt; Winsize -&gt; IO ()
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">poke</span></span></span><span> </span><span id="local-6989586621679142639"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.Terminal.Size.html#Winsize"><span class="hs-identifier hs-type">Winsize</span></a></span><span> </span><span id="local-6989586621679142638"><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142638"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span id="local-6989586621679142637"><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142637"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span id="local-6989586621679142636"><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142636"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679142635"><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142635"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-52"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142634"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142634"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
+</span><span id="line-51"></span><span>    </span><span id="local-6989586621679142649"><span class="annot"><span class="annottext">poke :: Ptr Winsize -&gt; Winsize -&gt; IO ()
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">poke</span></span></span><span> </span><span id="local-6989586621679142647"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142647"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Basement.Terminal.Size.html#Winsize"><span class="hs-identifier hs-type">Winsize</span></a></span><span> </span><span id="local-6989586621679142646"><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142646"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span id="local-6989586621679142645"><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142645"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span id="local-6989586621679142644"><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142644"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679142643"><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142643"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-52"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142642"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142642"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
 forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">pokeByteOff</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142634"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679142642"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142638"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679142647"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142646"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-53"></span><span class="hs-pragma">{-# LINE 53 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
-</span><span id="line-53"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142632"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142632"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
+</span><span id="line-53"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142640"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142640"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
 forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">pokeByteOff</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142632"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679142640"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142637"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679142647"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142645"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-54"></span><span class="hs-pragma">{-# LINE 54 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
-</span><span id="line-54"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142631"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142631"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
+</span><span id="line-54"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142639"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
 forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">pokeByteOff</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142631"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142636"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679142647"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142644"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-55"></span><span class="hs-pragma">{-# LINE 55 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
-</span><span id="line-55"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142630"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142630"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
+</span><span id="line-55"></span><span>        </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679142638"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142638"><span class="hs-identifier hs-var">hsc_ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; Int -&gt; Word16 -&gt; IO ()
 forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">pokeByteOff</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142630"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679142638"><span class="hs-identifier hs-var">hsc_ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">6</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142639"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
-</span><a href="#local-6989586621679142635"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><a href="#local-6989586621679142647"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word16
+</span><a href="#local-6989586621679142643"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-56"></span><span class="hs-pragma">{-# LINE 56 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-56"></span><span>        </span><span>
 </span><span id="line-57"></span><span>
@@ -104,7 +104,7 @@ forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><span id="line-131"></span><span>
 </span><span id="line-132"></span><span class="hs-pragma">{-# LINE 132 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-132"></span><span>
-</span><span id="line-133"></span><span id="local-6989586621679142696"><span class="hs-keyword">foreign</span><span> </span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-keyword">capi</span></span><span> </span><span class="annot"><span class="hs-string">&quot;sys/ioctl.h ioctl&quot;</span></span><span> </span><span id="c_ioctl"><span class="annot"><a href="Basement.Terminal.Size.html#c_ioctl"><span class="hs-identifier hs-var">c_ioctl</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CULong</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ptr</span></span><span> </span><span class="annot"><a href="#local-6989586621679142696"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span></span><span>
+</span><span id="line-133"></span><span id="local-6989586621679142704"><span class="hs-keyword">foreign</span><span> </span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-keyword">capi</span></span><span> </span><span class="annot"><span class="hs-string">&quot;sys/ioctl.h ioctl&quot;</span></span><span> </span><span id="c_ioctl"><span class="annot"><a href="Basement.Terminal.Size.html#c_ioctl"><span class="hs-identifier hs-var">c_ioctl</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CULong</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ptr</span></span><span> </span><span class="annot"><a href="#local-6989586621679142704"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span></span><span>
 </span><span id="line-134"></span><span>
 </span><span id="line-135"></span><span class="hs-comment">-- | Get the terminal windows size</span><span>
 </span><span id="line-136"></span><span class="annot"><a href="Basement.Terminal.Size.html#tiocgwinsz"><span class="hs-identifier hs-type">tiocgwinsz</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CULong</span></span><span>
@@ -112,7 +112,7 @@ forall a b. Storable a =&gt; Ptr b -&gt; Int -&gt; a -&gt; IO ()
 </span><a href="Basement.Terminal.Size.html#tiocgwinsz"><span class="hs-identifier hs-var hs-var">tiocgwinsz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word -&gt; CULong
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">Prelude.fromIntegral</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word
-</span><span class="hs-number">1074295912</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word</span></span><span class="hs-special">)</span><span>
+</span><span class="hs-number">21523</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word</span></span><span class="hs-special">)</span><span>
 </span><span id="line-138"></span><span class="hs-pragma">{-# LINE 138 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-138"></span><span>
 </span><span id="line-139"></span><span>
@@ -122,8 +122,8 @@ forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span id="line-145"></span><span class="hs-pragma">{-# LINE 145 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-145"></span><span class="hs-identifier">ioctlWinsize</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier">CInt</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier">IO</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">Maybe</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">CountOf</span><span> </span><span class="hs-identifier">Char</span><span class="hs-special">,</span><span> </span><span class="hs-identifier">CountOf</span><span> </span><span class="hs-identifier">Char</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-146"></span><span id="ioctlWinsize"><span class="annot"><span class="annottext">ioctlWinsize :: CInt -&gt; IO (Maybe (CountOf Char, CountOf Char))
-</span><a href="Basement.Terminal.Size.html#ioctlWinsize"><span class="hs-identifier hs-var hs-var">ioctlWinsize</span></a></span></span><span> </span><span id="local-6989586621679142626"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679142626"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Ptr Winsize -&gt; IO (Maybe (CountOf Char, CountOf Char)))
+</span><a href="Basement.Terminal.Size.html#ioctlWinsize"><span class="hs-identifier hs-var hs-var">ioctlWinsize</span></a></span></span><span> </span><span id="local-6989586621679142634"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679142634"><span class="hs-identifier hs-var">fd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Ptr Winsize -&gt; IO (Maybe (CountOf Char, CountOf Char)))
 -&gt; IO (Maybe (CountOf Char, CountOf Char))
 forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
 </span><span class="hs-identifier hs-var">alloca</span></span><span> </span><span class="annot"><span class="annottext">((Ptr Winsize -&gt; IO (Maybe (CountOf Char, CountOf Char)))
@@ -131,17 +131,17 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
 -&gt; (Ptr Winsize -&gt; IO (Maybe (CountOf Char, CountOf Char)))
 -&gt; IO (Maybe (CountOf Char, CountOf Char))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679142624"><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142624"><span class="hs-identifier hs-var">winsizePtr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-147"></span><span>    </span><span id="local-6989586621679142623"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679142623"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CULong -&gt; Ptr Winsize -&gt; IO CInt
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679142632"><span class="annot"><span class="annottext">Ptr Winsize
+</span><a href="#local-6989586621679142632"><span class="hs-identifier hs-var">winsizePtr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-147"></span><span>    </span><span id="local-6989586621679142631"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679142631"><span class="hs-identifier hs-var">status</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CULong -&gt; Ptr Winsize -&gt; IO CInt
 forall a. CInt -&gt; CULong -&gt; Ptr a -&gt; IO CInt
 </span><a href="Basement.Terminal.Size.html#c_ioctl"><span class="hs-identifier hs-var">c_ioctl</span></a></span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679142626"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">CULong
+</span><a href="#local-6989586621679142634"><span class="hs-identifier hs-var">fd</span></a></span><span> </span><span class="annot"><span class="annottext">CULong
 </span><a href="Basement.Terminal.Size.html#tiocgwinsz"><span class="hs-identifier hs-var">tiocgwinsz</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142624"><span class="hs-identifier hs-var">winsizePtr</span></a></span><span>
+</span><a href="#local-6989586621679142632"><span class="hs-identifier hs-var">winsizePtr</span></a></span><span>
 </span><span id="line-148"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679142623"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
+</span><a href="#local-6989586621679142631"><span class="hs-identifier hs-var">status</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CInt</span></span><span class="hs-special">)</span><span>
@@ -163,17 +163,17 @@ Category cat =&gt;
 cat b c -&gt; cat a b -&gt; cat a c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Winsize -&gt; (CountOf Char, CountOf Char)
 forall ty ty. Winsize -&gt; (CountOf ty, CountOf ty)
-</span><a href="#local-6989586621679142621"><span class="hs-identifier hs-var">toDimensions</span></a></span><span> </span><span class="annot"><span class="annottext">(Winsize -&gt; Maybe (CountOf Char, CountOf Char))
+</span><a href="#local-6989586621679142629"><span class="hs-identifier hs-var">toDimensions</span></a></span><span> </span><span class="annot"><span class="annottext">(Winsize -&gt; Maybe (CountOf Char, CountOf Char))
 -&gt; IO Winsize -&gt; IO (Maybe (CountOf Char, CountOf Char))
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize -&gt; IO Winsize
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr Winsize
-</span><a href="#local-6989586621679142624"><span class="hs-identifier hs-var">winsizePtr</span></a></span><span>
+</span><a href="#local-6989586621679142632"><span class="hs-identifier hs-var">winsizePtr</span></a></span><span>
 </span><span id="line-151"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-152"></span><span>    </span><span id="local-6989586621679142621"><span class="annot"><span class="annottext">toDimensions :: Winsize -&gt; (CountOf ty, CountOf ty)
-</span><a href="#local-6989586621679142621"><span class="hs-identifier hs-var hs-var">toDimensions</span></a></span></span><span> </span><span id="local-6989586621679142619"><span class="annot"><span class="annottext">Winsize
-</span><a href="#local-6989586621679142619"><span class="hs-identifier hs-var">winsize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-152"></span><span>    </span><span id="local-6989586621679142629"><span class="annot"><span class="annottext">toDimensions :: Winsize -&gt; (CountOf ty, CountOf ty)
+</span><a href="#local-6989586621679142629"><span class="hs-identifier hs-var hs-var">toDimensions</span></a></span></span><span> </span><span id="local-6989586621679142627"><span class="annot"><span class="annottext">Winsize
+</span><a href="#local-6989586621679142627"><span class="hs-identifier hs-var">winsize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-153"></span><span>        </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CountOf ty
 forall ty. Int -&gt; CountOf ty
 </span><a href="Basement.Types.OffsetSize.html#CountOf"><span class="hs-identifier hs-var">CountOf</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; CountOf ty) -&gt; (Winsize -&gt; Int) -&gt; Winsize -&gt; CountOf ty
@@ -190,7 +190,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><a href="Basement.Terminal.Size.html#ws_col"><span class="hs-identifier hs-var hs-var">ws_col</span></a></span><span> </span><span class="annot"><span class="annottext">(Winsize -&gt; CountOf ty) -&gt; Winsize -&gt; CountOf ty
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Winsize
-</span><a href="#local-6989586621679142619"><span class="hs-identifier hs-var">winsize</span></a></span><span>
+</span><a href="#local-6989586621679142627"><span class="hs-identifier hs-var">winsize</span></a></span><span>
 </span><span id="line-154"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CountOf ty
 forall ty. Int -&gt; CountOf ty
 </span><a href="Basement.Types.OffsetSize.html#CountOf"><span class="hs-identifier hs-var">CountOf</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; CountOf ty) -&gt; (Winsize -&gt; Int) -&gt; Winsize -&gt; CountOf ty
@@ -207,7 +207,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><a href="Basement.Terminal.Size.html#ws_row"><span class="hs-identifier hs-var hs-var">ws_row</span></a></span><span> </span><span class="annot"><span class="annottext">(Winsize -&gt; CountOf ty) -&gt; Winsize -&gt; CountOf ty
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Winsize
-</span><a href="#local-6989586621679142619"><span class="hs-identifier hs-var">winsize</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679142627"><span class="hs-identifier hs-var">winsize</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-155"></span><span>       </span><span>
 </span><span id="line-156"></span><span>
 </span><span id="line-157"></span><span class="hs-pragma">{-# LINE 174 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
@@ -228,7 +228,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; (CountOf Char, CountOf Char)
 forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
 </span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="annot"><span class="annottext">(CountOf Char, CountOf Char)
-</span><a href="#local-6989586621679142616"><span class="hs-identifier hs-var">defaultSize</span></a></span><span> </span><span class="annot"><span class="annottext">(CountOf Char, CountOf Char) -&gt; (CountOf Char, CountOf Char)
+</span><a href="#local-6989586621679142624"><span class="hs-identifier hs-var">defaultSize</span></a></span><span> </span><span class="annot"><span class="annottext">(CountOf Char, CountOf Char) -&gt; (CountOf Char, CountOf Char)
 forall k (cat :: k -&gt; k -&gt; *) (a :: k). Category cat =&gt; cat a a
 </span><span class="hs-identifier hs-var">id</span></span><span> </span><span class="annot"><span class="annottext">(Maybe (CountOf Char, CountOf Char)
  -&gt; (CountOf Char, CountOf Char))
@@ -241,8 +241,8 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span id="line-186"></span><span>
 </span><span id="line-187"></span><span class="hs-pragma">{-# LINE 189 &quot;Basement/Terminal/Size.hsc&quot; #-}</span><span>
 </span><span id="line-189"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-190"></span><span>    </span><span id="local-6989586621679142616"><span class="annot"><span class="annottext">defaultSize :: (CountOf Char, CountOf Char)
-</span><a href="#local-6989586621679142616"><span class="hs-identifier hs-var hs-var">defaultSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CountOf Char
+</span><span id="line-190"></span><span>    </span><span id="local-6989586621679142624"><span class="annot"><span class="annottext">defaultSize :: (CountOf Char, CountOf Char)
+</span><a href="#local-6989586621679142624"><span class="hs-identifier hs-var hs-var">defaultSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CountOf Char
 </span><span class="hs-number">80</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">CountOf Char
 </span><span class="hs-number">24</span></span><span class="hs-special">)</span><span>
 </span><span id="line-191"></span></pre></body></html>

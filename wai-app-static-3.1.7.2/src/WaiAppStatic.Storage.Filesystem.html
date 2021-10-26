@@ -37,22 +37,22 @@
 forall (t :: * -&gt; *) b a.
 Foldable t =&gt;
 (b -&gt; a -&gt; b) -&gt; b -&gt; t a -&gt; b
-</span><span class="hs-identifier hs-var">foldl'</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679137228"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137228"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679137227"><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137227"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137228"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><span class="hs-identifier hs-var">foldl'</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679134490"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134490"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679134489"><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134489"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134490"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 </span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; FilePath
 </span><span class="hs-identifier hs-var">T.unpack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Piece -&gt; Text
 </span><a href="WaiAppStatic.Types.html#fromPiece"><span class="hs-identifier hs-var hs-var">fromPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137227"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679134489"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-36"></span><span>
 </span><span id="line-37"></span><span class="hs-comment">-- | Settings optimized for a web application. Files will have aggressive</span><span>
 </span><span id="line-38"></span><span class="hs-comment">-- caching applied and hashes calculated, and indices and listings are disabled.</span><span>
 </span><span id="line-39"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#defaultWebAppSettings"><span class="hs-identifier hs-type">defaultWebAppSettings</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-comment">-- ^ root folder to serve from</span><span>
 </span><span id="line-40"></span><span>                      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#StaticSettings"><span class="hs-identifier hs-type">StaticSettings</span></a></span><span>
 </span><span id="line-41"></span><span id="defaultWebAppSettings"><span class="annot"><span class="annottext">defaultWebAppSettings :: FilePath -&gt; StaticSettings
-</span><a href="WaiAppStatic.Storage.Filesystem.html#defaultWebAppSettings"><span class="hs-identifier hs-var hs-var">defaultWebAppSettings</span></a></span></span><span> </span><span id="local-6989586621679137224"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137224"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StaticSettings :: (Pieces -&gt; IO LookupResult)
+</span><a href="WaiAppStatic.Storage.Filesystem.html#defaultWebAppSettings"><span class="hs-identifier hs-var hs-var">defaultWebAppSettings</span></a></span></span><span> </span><span id="local-6989586621679134486"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134486"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StaticSettings :: (Pieces -&gt; IO LookupResult)
 -&gt; (File -&gt; IO MimeType)
 -&gt; Pieces
 -&gt; Maybe Listing
@@ -68,7 +68,7 @@ Foldable t =&gt;
 </span><a href="WaiAppStatic.Types.html#ssLookupFile"><span class="hs-identifier hs-var">ssLookupFile</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Pieces -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Storage.Filesystem.html#webAppLookup"><span class="hs-identifier hs-var">webAppLookup</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
 </span><a href="WaiAppStatic.Storage.Filesystem.html#hashFileIfExists"><span class="hs-identifier hs-var">hashFileIfExists</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137224"><span class="hs-identifier hs-var">root</span></a></span><span>
+</span><a href="#local-6989586621679134486"><span class="hs-identifier hs-var">root</span></a></span><span>
 </span><span id="line-43"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ssMkRedirect :: Pieces -&gt; MimeType -&gt; MimeType
 </span><a href="WaiAppStatic.Types.html#ssMkRedirect"><span class="hs-identifier hs-var">ssMkRedirect</span></a></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; MimeType -&gt; MimeType
 </span><a href="Util.html#defaultMkRedirect"><span class="hs-identifier hs-var">defaultMkRedirect</span></a></span><span>
@@ -115,8 +115,8 @@ forall a. Maybe a
 </span><span id="line-56"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#defaultFileServerSettings"><span class="hs-identifier hs-type">defaultFileServerSettings</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-comment">-- ^ root folder to serve from</span><span>
 </span><span id="line-57"></span><span>                          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#StaticSettings"><span class="hs-identifier hs-type">StaticSettings</span></a></span><span>
 </span><span id="line-58"></span><span id="defaultFileServerSettings"><span class="annot"><span class="annottext">defaultFileServerSettings :: FilePath -&gt; StaticSettings
-</span><a href="WaiAppStatic.Storage.Filesystem.html#defaultFileServerSettings"><span class="hs-identifier hs-var hs-var">defaultFileServerSettings</span></a></span></span><span> </span><span id="local-6989586621679137205"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137205"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StaticSettings :: (Pieces -&gt; IO LookupResult)
+</span><a href="WaiAppStatic.Storage.Filesystem.html#defaultFileServerSettings"><span class="hs-identifier hs-var hs-var">defaultFileServerSettings</span></a></span></span><span> </span><span id="local-6989586621679134467"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134467"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StaticSettings :: (Pieces -&gt; IO LookupResult)
 -&gt; (File -&gt; IO MimeType)
 -&gt; Pieces
 -&gt; Maybe Listing
@@ -139,7 +139,7 @@ forall a. a -&gt; Maybe a
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO MimeType
 </span><a href="WaiAppStatic.Storage.Filesystem.html#hashFile"><span class="hs-identifier hs-var">hashFile</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137205"><span class="hs-identifier hs-var">root</span></a></span><span>
+</span><a href="#local-6989586621679134467"><span class="hs-identifier hs-var">root</span></a></span><span>
 </span><span id="line-60"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ssMkRedirect :: Pieces -&gt; MimeType -&gt; MimeType
 </span><a href="WaiAppStatic.Types.html#ssMkRedirect"><span class="hs-identifier hs-var">ssMkRedirect</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; MimeType -&gt; MimeType
 </span><a href="Util.html#defaultMkRedirect"><span class="hs-identifier hs-var">defaultMkRedirect</span></a></span><span>
@@ -194,16 +194,16 @@ forall a. Maybe a
 </span><span id="line-75"></span><span>                         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span>
 </span><span id="line-76"></span><span>                         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#StaticSettings"><span class="hs-identifier hs-type">StaticSettings</span></a></span><span>
 </span><span id="line-77"></span><span id="webAppSettingsWithLookup"><span class="annot"><span class="annottext">webAppSettingsWithLookup :: FilePath -&gt; ETagLookup -&gt; StaticSettings
-</span><a href="WaiAppStatic.Storage.Filesystem.html#webAppSettingsWithLookup"><span class="hs-identifier hs-var hs-var">webAppSettingsWithLookup</span></a></span></span><span> </span><span id="local-6989586621679137199"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137199"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679137198"><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137198"><span class="hs-identifier hs-var">etagLookup</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="WaiAppStatic.Storage.Filesystem.html#webAppSettingsWithLookup"><span class="hs-identifier hs-var hs-var">webAppSettingsWithLookup</span></a></span></span><span> </span><span id="local-6989586621679134461"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134461"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679134460"><span class="annot"><span class="annottext">ETagLookup
+</span><a href="#local-6989586621679134460"><span class="hs-identifier hs-var">etagLookup</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-78"></span><span>  </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; StaticSettings
 </span><a href="WaiAppStatic.Storage.Filesystem.html#defaultWebAppSettings"><span class="hs-identifier hs-var">defaultWebAppSettings</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137199"><span class="hs-identifier hs-var">dir</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">ssLookupFile :: Pieces -&gt; IO LookupResult
+</span><a href="#local-6989586621679134461"><span class="hs-identifier hs-var">dir</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">ssLookupFile :: Pieces -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Types.html#ssLookupFile"><span class="hs-identifier hs-var">ssLookupFile</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Pieces -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Storage.Filesystem.html#webAppLookup"><span class="hs-identifier hs-var">webAppLookup</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137198"><span class="hs-identifier hs-var">etagLookup</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137199"><span class="hs-identifier hs-var">dir</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679134460"><span class="hs-identifier hs-var">etagLookup</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134461"><span class="hs-identifier hs-var">dir</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-79"></span><span>
 </span><span id="line-80"></span><span class="hs-comment">-- | Convenience wrapper for @fileHelper@.</span><span>
 </span><span id="line-81"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#fileHelperLR"><span class="hs-identifier hs-type">fileHelperLR</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span>
@@ -211,10 +211,10 @@ forall a. Maybe a
 </span><span id="line-83"></span><span>             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#Piece"><span class="hs-identifier hs-type">Piece</span></a></span><span> </span><span class="hs-comment">-- ^ file name</span><span>
 </span><span id="line-84"></span><span>             </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#LookupResult"><span class="hs-identifier hs-type">LookupResult</span></a></span><span>
 </span><span id="line-85"></span><span id="fileHelperLR"><span class="annot"><span class="annottext">fileHelperLR :: ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO LookupResult
-</span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelperLR"><span class="hs-identifier hs-var hs-var">fileHelperLR</span></a></span></span><span> </span><span id="local-6989586621679137196"><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137196"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679137195"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137195"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679137194"><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137194"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Maybe File -&gt; LookupResult) -&gt; IO (Maybe File) -&gt; IO LookupResult
+</span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelperLR"><span class="hs-identifier hs-var hs-var">fileHelperLR</span></a></span></span><span> </span><span id="local-6989586621679134458"><span class="annot"><span class="annottext">ETagLookup
+</span><a href="#local-6989586621679134458"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679134457"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134457"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679134456"><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134456"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Maybe File -&gt; LookupResult) -&gt; IO (Maybe File) -&gt; IO LookupResult
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">LookupResult
 -&gt; (File -&gt; LookupResult) -&gt; Maybe File -&gt; LookupResult
@@ -226,9 +226,9 @@ forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO (Maybe File)
 </span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelper"><span class="hs-identifier hs-var">fileHelper</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137196"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137195"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137194"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679134458"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134457"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134456"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-86"></span><span>
 </span><span id="line-87"></span><span class="hs-comment">-- | Attempt to load up a @File@ from the given path.</span><span>
 </span><span id="line-88"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#fileHelper"><span class="hs-identifier hs-type">fileHelper</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span>
@@ -236,31 +236,31 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-90"></span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#Piece"><span class="hs-identifier hs-type">Piece</span></a></span><span> </span><span class="hs-comment">-- ^ file name</span><span>
 </span><span id="line-91"></span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-92"></span><span id="fileHelper"><span class="annot"><span class="annottext">fileHelper :: ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO (Maybe File)
-</span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelper"><span class="hs-identifier hs-var hs-var">fileHelper</span></a></span></span><span> </span><span id="local-6989586621679137189"><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137189"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679137188"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137188"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679137187"><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137187"><span class="hs-identifier hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-93"></span><span>    </span><span id="local-6989586621679137186"><span class="annot"><span class="annottext">Either SomeException FileStatus
-</span><a href="#local-6989586621679137186"><span class="hs-identifier hs-var">efs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileStatus -&gt; IO (Either SomeException FileStatus)
+</span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelper"><span class="hs-identifier hs-var hs-var">fileHelper</span></a></span></span><span> </span><span id="local-6989586621679134451"><span class="annot"><span class="annottext">ETagLookup
+</span><a href="#local-6989586621679134451"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679134450"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134450"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679134449"><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134449"><span class="hs-identifier hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-93"></span><span>    </span><span id="local-6989586621679134448"><span class="annot"><span class="annottext">Either SomeException FileStatus
+</span><a href="#local-6989586621679134448"><span class="hs-identifier hs-var">efs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileStatus -&gt; IO (Either SomeException FileStatus)
 forall e a. Exception e =&gt; IO a -&gt; IO (Either e a)
 </span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="annot"><span class="annottext">(IO FileStatus -&gt; IO (Either SomeException FileStatus))
 -&gt; IO FileStatus -&gt; IO (Either SomeException FileStatus)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137188"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><a href="#local-6989586621679134450"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-94"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either SomeException FileStatus
-</span><a href="#local-6989586621679137186"><span class="hs-identifier hs-var">efs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679134448"><span class="hs-identifier hs-var">efs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-95"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SomeException
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe File -&gt; IO (Maybe File)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Maybe File
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-96"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679137185"><span class="annot"><span class="annottext">FileStatus
-</span><a href="#local-6989586621679137185"><span class="hs-identifier hs-var">fs</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; Bool
+</span><span id="line-96"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679134447"><span class="annot"><span class="annottext">FileStatus
+</span><a href="#local-6989586621679134447"><span class="hs-identifier hs-var">fs</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; Bool
 </span><span class="hs-identifier hs-var">isRegularFile</span></span><span> </span><span class="annot"><span class="annottext">FileStatus
-</span><a href="#local-6989586621679137185"><span class="hs-identifier hs-var">fs</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe File -&gt; IO (Maybe File)
+</span><a href="#local-6989586621679134447"><span class="hs-identifier hs-var">fs</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe File -&gt; IO (Maybe File)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe File -&gt; IO (Maybe File)) -&gt; Maybe File -&gt; IO (Maybe File)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -280,24 +280,24 @@ forall a b. (Integral a, Num b) =&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; FileOffset
 </span><span class="hs-identifier hs-var">fileSize</span></span><span> </span><span class="annot"><span class="annottext">FileStatus
-</span><a href="#local-6989586621679137185"><span class="hs-identifier hs-var">fs</span></a></span><span>
+</span><a href="#local-6989586621679134447"><span class="hs-identifier hs-var">fs</span></a></span><span>
 </span><span id="line-98"></span><span>            </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileToResponse :: Status -&gt; ResponseHeaders -&gt; Response
-</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679137181"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137181"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679137180"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137180"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; FilePath -&gt; Maybe FilePart -&gt; Response
+</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679134443"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679134443"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679134442"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134442"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; FilePath -&gt; Maybe FilePart -&gt; Response
 </span><span class="hs-identifier hs-var">W.responseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137181"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137180"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137188"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679134443"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134442"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134450"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-99"></span><span>            </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileName :: Piece
 </span><a href="WaiAppStatic.Types.html#fileName"><span class="hs-identifier hs-var">fileName</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137187"><span class="hs-identifier hs-var">name</span></a></span><span>
+</span><a href="#local-6989586621679134449"><span class="hs-identifier hs-var">name</span></a></span><span>
 </span><span id="line-100"></span><span>            </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetHash :: IO (Maybe MimeType)
 </span><a href="WaiAppStatic.Types.html#fileGetHash"><span class="hs-identifier hs-var">fileGetHash</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137189"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137188"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><a href="#local-6989586621679134451"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134450"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-101"></span><span>            </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetModified :: Maybe EpochTime
 </span><a href="WaiAppStatic.Types.html#fileGetModified"><span class="hs-identifier hs-var">fileGetModified</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; Maybe EpochTime
 forall a. a -&gt; Maybe a
@@ -305,7 +305,7 @@ forall a. a -&gt; Maybe a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; EpochTime
 </span><span class="hs-identifier hs-var">modificationTime</span></span><span> </span><span class="annot"><span class="annottext">FileStatus
-</span><a href="#local-6989586621679137185"><span class="hs-identifier hs-var">fs</span></a></span><span>
+</span><a href="#local-6989586621679134447"><span class="hs-identifier hs-var">fs</span></a></span><span>
 </span><span id="line-102"></span><span>            </span><span class="hs-special">}</span><span>
 </span><span id="line-103"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="annot"><span class="annottext">FileStatus
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe File -&gt; IO (Maybe File)
@@ -322,58 +322,58 @@ forall a. Maybe a
 </span><span id="line-110"></span><span class="hs-comment">-- finding files, not folders.</span><span>
 </span><span id="line-111"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#webAppLookup"><span class="hs-identifier hs-type">webAppLookup</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#Pieces"><span class="hs-identifier hs-type">Pieces</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#LookupResult"><span class="hs-identifier hs-type">LookupResult</span></a></span><span>
 </span><span id="line-112"></span><span id="webAppLookup"><span class="annot"><span class="annottext">webAppLookup :: ETagLookup -&gt; FilePath -&gt; Pieces -&gt; IO LookupResult
-</span><a href="WaiAppStatic.Storage.Filesystem.html#webAppLookup"><span class="hs-identifier hs-var hs-var">webAppLookup</span></a></span></span><span> </span><span id="local-6989586621679137176"><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137176"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679137175"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137175"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621679137174"><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137174"><span class="hs-identifier hs-var">pieces</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="WaiAppStatic.Storage.Filesystem.html#webAppLookup"><span class="hs-identifier hs-var hs-var">webAppLookup</span></a></span></span><span> </span><span id="local-6989586621679134438"><span class="annot"><span class="annottext">ETagLookup
+</span><a href="#local-6989586621679134438"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679134437"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134437"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621679134436"><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134436"><span class="hs-identifier hs-var">pieces</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-113"></span><span>    </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelperLR"><span class="hs-identifier hs-var">fileHelperLR</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137176"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137173"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137172"><span class="hs-identifier hs-var">lastPiece</span></a></span><span>
+</span><a href="#local-6989586621679134438"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134435"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134434"><span class="hs-identifier hs-var">lastPiece</span></a></span><span>
 </span><span id="line-114"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-115"></span><span>    </span><span id="local-6989586621679137173"><span class="annot"><span class="annottext">fp :: FilePath
-</span><a href="#local-6989586621679137173"><span class="hs-identifier hs-var hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Pieces -&gt; FilePath
+</span><span id="line-115"></span><span>    </span><span id="local-6989586621679134435"><span class="annot"><span class="annottext">fp :: FilePath
+</span><a href="#local-6989586621679134435"><span class="hs-identifier hs-var hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Pieces -&gt; FilePath
 </span><a href="WaiAppStatic.Storage.Filesystem.html#pathFromPieces"><span class="hs-identifier hs-var">pathFromPieces</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137175"><span class="hs-identifier hs-var">prefix</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137174"><span class="hs-identifier hs-var">pieces</span></a></span><span>
-</span><span id="line-116"></span><span>    </span><span id="local-6989586621679137172"><span class="annot"><span class="annottext">lastPiece :: Piece
-</span><a href="#local-6989586621679137172"><span class="hs-identifier hs-var hs-var">lastPiece</span></a></span></span><span>
+</span><a href="#local-6989586621679134437"><span class="hs-identifier hs-var">prefix</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134436"><span class="hs-identifier hs-var">pieces</span></a></span><span>
+</span><span id="line-116"></span><span>    </span><span id="local-6989586621679134434"><span class="annot"><span class="annottext">lastPiece :: Piece
+</span><a href="#local-6989586621679134434"><span class="hs-identifier hs-var hs-var">lastPiece</span></a></span></span><span>
 </span><span id="line-117"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137174"><span class="hs-identifier hs-var">pieces</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
+</span><a href="#local-6989586621679134436"><span class="hs-identifier hs-var">pieces</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
 </span><a href="WaiAppStatic.Types.html#unsafeToPiece"><span class="hs-identifier hs-var">unsafeToPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span>
 </span><span id="line-118"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; Piece
 forall a. [a] -&gt; a
 </span><span class="hs-identifier hs-var">last</span></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137174"><span class="hs-identifier hs-var">pieces</span></a></span><span>
+</span><a href="#local-6989586621679134436"><span class="hs-identifier hs-var">pieces</span></a></span><span>
 </span><span id="line-119"></span><span>
 </span><span id="line-120"></span><span class="hs-comment">-- | MD5 hash and base64-encode the file contents. Does not check if the file</span><span>
 </span><span id="line-121"></span><span class="hs-comment">-- exists.</span><span>
 </span><span id="line-122"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#hashFile"><span class="hs-identifier hs-type">hashFile</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-123"></span><span id="hashFile"><span class="annot"><span class="annottext">hashFile :: FilePath -&gt; IO MimeType
-</span><a href="WaiAppStatic.Storage.Filesystem.html#hashFile"><span class="hs-identifier hs-var hs-var">hashFile</span></a></span></span><span> </span><span id="local-6989586621679137169"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137169"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IOMode -&gt; (Handle -&gt; IO MimeType) -&gt; IO MimeType
+</span><a href="WaiAppStatic.Storage.Filesystem.html#hashFile"><span class="hs-identifier hs-var hs-var">hashFile</span></a></span></span><span> </span><span id="local-6989586621679134431"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134431"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IOMode -&gt; (Handle -&gt; IO MimeType) -&gt; IO MimeType
 forall r. FilePath -&gt; IOMode -&gt; (Handle -&gt; IO r) -&gt; IO r
 </span><span class="hs-identifier hs-var">withBinaryFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137169"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
+</span><a href="#local-6989586621679134431"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
 </span><span class="hs-identifier hs-var">ReadMode</span></span><span> </span><span class="annot"><span class="annottext">((Handle -&gt; IO MimeType) -&gt; IO MimeType)
 -&gt; (Handle -&gt; IO MimeType) -&gt; IO MimeType
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679137167"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679137167"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-124"></span><span>    </span><span id="local-6989586621679137166"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137166"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679134429"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679134429"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-124"></span><span>    </span><span id="local-6989586621679134428"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134428"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BL.hGetContents</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679137167"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-125"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679137165"><span class="annot"><span class="annottext">hash :: Digest MD5
-</span><a href="#local-6989586621679137165"><span class="hs-identifier hs-var hs-var">hash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Digest MD5
+</span><a href="#local-6989586621679134429"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-125"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679134427"><span class="annot"><span class="annottext">hash :: Digest MD5
+</span><a href="#local-6989586621679134427"><span class="hs-identifier hs-var hs-var">hash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Digest MD5
 forall a. HashAlgorithm a =&gt; ByteString -&gt; Digest a
 </span><span class="hs-identifier hs-var">hashlazy</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137166"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Digest</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">MD5</span></span><span>
+</span><a href="#local-6989586621679134428"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Digest</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">MD5</span></span><span>
 </span><span id="line-126"></span><span>    </span><span class="annot"><span class="annottext">MimeType -&gt; IO MimeType
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(MimeType -&gt; IO MimeType) -&gt; MimeType -&gt; IO MimeType
@@ -384,37 +384,37 @@ forall bin bout.
 Base -&gt; bin -&gt; bout
 </span><span class="hs-identifier hs-var">convertToBase</span></span><span> </span><span class="annot"><span class="annottext">Base
 </span><span class="hs-identifier hs-var">Base64</span></span><span> </span><span class="annot"><span class="annottext">Digest MD5
-</span><a href="#local-6989586621679137165"><span class="hs-identifier hs-var">hash</span></a></span><span>
+</span><a href="#local-6989586621679134427"><span class="hs-identifier hs-var">hash</span></a></span><span>
 </span><span id="line-127"></span><span>
 </span><span id="line-128"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#hashFileIfExists"><span class="hs-identifier hs-type">hashFileIfExists</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span>
 </span><span id="line-129"></span><span id="hashFileIfExists"><span class="annot"><span class="annottext">hashFileIfExists :: ETagLookup
-</span><a href="WaiAppStatic.Storage.Filesystem.html#hashFileIfExists"><span class="hs-identifier hs-var hs-var">hashFileIfExists</span></a></span></span><span> </span><span id="local-6989586621679137162"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137162"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-130"></span><span>    </span><span id="local-6989586621679137161"><span class="annot"><span class="annottext">Either SomeException MimeType
-</span><a href="#local-6989586621679137161"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO MimeType -&gt; IO (Either SomeException MimeType)
+</span><a href="WaiAppStatic.Storage.Filesystem.html#hashFileIfExists"><span class="hs-identifier hs-var hs-var">hashFileIfExists</span></a></span></span><span> </span><span id="local-6989586621679134424"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134424"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-130"></span><span>    </span><span id="local-6989586621679134423"><span class="annot"><span class="annottext">Either SomeException MimeType
+</span><a href="#local-6989586621679134423"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO MimeType -&gt; IO (Either SomeException MimeType)
 forall e a. Exception e =&gt; IO a -&gt; IO (Either e a)
 </span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="annot"><span class="annottext">(IO MimeType -&gt; IO (Either SomeException MimeType))
 -&gt; IO MimeType -&gt; IO (Either SomeException MimeType)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO MimeType
 </span><a href="WaiAppStatic.Storage.Filesystem.html#hashFile"><span class="hs-identifier hs-var">hashFile</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137162"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><a href="#local-6989586621679134424"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-131"></span><span>    </span><span class="annot"><span class="annottext">Maybe MimeType -&gt; IO (Maybe MimeType)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe MimeType -&gt; IO (Maybe MimeType))
 -&gt; Maybe MimeType -&gt; IO (Maybe MimeType)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either SomeException MimeType
-</span><a href="#local-6989586621679137161"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679134423"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-132"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SomeException
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-133"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679137160"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137160"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Maybe MimeType
+</span><span id="line-133"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679134422"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134422"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Maybe MimeType
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137160"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679134422"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-134"></span><span>
 </span><span id="line-135"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#isVisible"><span class="hs-identifier hs-type">isVisible</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-136"></span><span id="isVisible"><span class="annot"><span class="annottext">isVisible :: FilePath -&gt; Bool
@@ -434,36 +434,36 @@ forall a. a -&gt; Maybe a
 </span><span id="line-142"></span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#fileSystemLookup"><span class="hs-identifier hs-type">fileSystemLookup</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Filesystem.html#ETagLookup"><span class="hs-identifier hs-type">ETagLookup</span></a></span><span>
 </span><span id="line-143"></span><span>                 </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#Pieces"><span class="hs-identifier hs-type">Pieces</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#LookupResult"><span class="hs-identifier hs-type">LookupResult</span></a></span><span>
 </span><span id="line-144"></span><span id="fileSystemLookup"><span class="annot"><span class="annottext">fileSystemLookup :: ETagLookup -&gt; FilePath -&gt; Pieces -&gt; IO LookupResult
-</span><a href="WaiAppStatic.Storage.Filesystem.html#fileSystemLookup"><span class="hs-identifier hs-var hs-var">fileSystemLookup</span></a></span></span><span> </span><span id="local-6989586621679137158"><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137158"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679137157"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137157"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621679137156"><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137156"><span class="hs-identifier hs-var">pieces</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-145"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679137155"><span class="annot"><span class="annottext">fp :: FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Pieces -&gt; FilePath
+</span><a href="WaiAppStatic.Storage.Filesystem.html#fileSystemLookup"><span class="hs-identifier hs-var hs-var">fileSystemLookup</span></a></span></span><span> </span><span id="local-6989586621679134420"><span class="annot"><span class="annottext">ETagLookup
+</span><a href="#local-6989586621679134420"><span class="hs-identifier hs-var">hashFunc</span></a></span></span><span> </span><span id="local-6989586621679134419"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134419"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621679134418"><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134418"><span class="hs-identifier hs-var">pieces</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-145"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679134417"><span class="annot"><span class="annottext">fp :: FilePath
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var hs-var">fp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Pieces -&gt; FilePath
 </span><a href="WaiAppStatic.Storage.Filesystem.html#pathFromPieces"><span class="hs-identifier hs-var">pathFromPieces</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137157"><span class="hs-identifier hs-var">prefix</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137156"><span class="hs-identifier hs-var">pieces</span></a></span><span>
-</span><span id="line-146"></span><span>    </span><span id="local-6989586621679137154"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137154"><span class="hs-identifier hs-var">fe</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><a href="#local-6989586621679134419"><span class="hs-identifier hs-var">prefix</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134418"><span class="hs-identifier hs-var">pieces</span></a></span><span>
+</span><span id="line-146"></span><span>    </span><span id="local-6989586621679134416"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134416"><span class="hs-identifier hs-var">fe</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesFileExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-147"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137154"><span class="hs-identifier hs-var">fe</span></a></span><span>
+</span><a href="#local-6989586621679134416"><span class="hs-identifier hs-var">fe</span></a></span><span>
 </span><span id="line-148"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelperLR"><span class="hs-identifier hs-var">fileHelperLR</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137158"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137153"><span class="hs-identifier hs-var">lastPiece</span></a></span><span>
+</span><a href="#local-6989586621679134420"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134415"><span class="hs-identifier hs-var">lastPiece</span></a></span><span>
 </span><span id="line-149"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-150"></span><span>            </span><span id="local-6989586621679137152"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137152"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><span id="line-150"></span><span>            </span><span id="local-6989586621679134414"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134414"><span class="hs-identifier hs-var">de</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesDirectoryExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var">fp</span></a></span><span>
 </span><span id="line-151"></span><span>            </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137152"><span class="hs-identifier hs-var">de</span></a></span><span>
+</span><a href="#local-6989586621679134414"><span class="hs-identifier hs-var">de</span></a></span><span>
 </span><span id="line-152"></span><span>                </span><span class="hs-keyword">then</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-153"></span><span>                    </span><span id="local-6989586621679137151"><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679137151"><span class="hs-identifier hs-var">entries'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([FilePath] -&gt; [FilePath]) -&gt; IO [FilePath] -&gt; IO [FilePath]
+</span><span id="line-153"></span><span>                    </span><span id="local-6989586621679134413"><span class="annot"><span class="annottext">[FilePath]
+</span><a href="#local-6989586621679134413"><span class="hs-identifier hs-var">entries'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([FilePath] -&gt; [FilePath]) -&gt; IO [FilePath] -&gt; IO [FilePath]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; Bool) -&gt; [FilePath] -&gt; [FilePath]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
@@ -472,40 +472,40 @@ forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO [FilePath]
 </span><span class="hs-identifier hs-var">getDirectoryContents</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var">fp</span></a></span><span>
-</span><span id="line-154"></span><span>                    </span><span id="local-6989586621679137150"><span class="annot"><span class="annottext">[Maybe (Either Piece File)]
-</span><a href="#local-6989586621679137150"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[FilePath]
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><span id="line-154"></span><span>                    </span><span id="local-6989586621679134412"><span class="annot"><span class="annottext">[Maybe (Either Piece File)]
+</span><a href="#local-6989586621679134412"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[FilePath]
 -&gt; (FilePath -&gt; IO (Maybe (Either Piece File)))
 -&gt; IO [Maybe (Either Piece File)]
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Traversable t, Monad m) =&gt;
 t a -&gt; (a -&gt; m b) -&gt; m (t b)
 </span><span class="hs-identifier hs-var">forM</span></span><span> </span><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679137151"><span class="hs-identifier hs-var">entries'</span></a></span><span> </span><span class="annot"><span class="annottext">((FilePath -&gt; IO (Maybe (Either Piece File)))
+</span><a href="#local-6989586621679134413"><span class="hs-identifier hs-var">entries'</span></a></span><span> </span><span class="annot"><span class="annottext">((FilePath -&gt; IO (Maybe (Either Piece File)))
  -&gt; IO [Maybe (Either Piece File)])
 -&gt; (FilePath -&gt; IO (Maybe (Either Piece File)))
 -&gt; IO [Maybe (Either Piece File)]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679137149"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137149"><span class="hs-identifier hs-var">fpRel'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-155"></span><span>                        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679137148"><span class="annot"><span class="annottext">name :: Piece
-</span><a href="#local-6989586621679137148"><span class="hs-identifier hs-var hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679134411"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134411"><span class="hs-identifier hs-var">fpRel'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-155"></span><span>                        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679134410"><span class="annot"><span class="annottext">name :: Piece
+</span><a href="#local-6989586621679134410"><span class="hs-identifier hs-var hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
 </span><a href="WaiAppStatic.Types.html#unsafeToPiece"><span class="hs-identifier hs-var">unsafeToPiece</span></a></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Piece) -&gt; Text -&gt; Piece
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
 </span><span class="hs-identifier hs-var">T.pack</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137149"><span class="hs-identifier hs-var">fpRel'</span></a></span><span>
-</span><span id="line-156"></span><span>                            </span><span id="local-6989586621679137146"><span class="annot"><span class="annottext">fp' :: FilePath
-</span><a href="#local-6989586621679137146"><span class="hs-identifier hs-var hs-var">fp'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137155"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679134411"><span class="hs-identifier hs-var">fpRel'</span></a></span><span>
+</span><span id="line-156"></span><span>                            </span><span id="local-6989586621679134408"><span class="annot"><span class="annottext">fp' :: FilePath
+</span><a href="#local-6989586621679134408"><span class="hs-identifier hs-var hs-var">fp'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134417"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 </span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137149"><span class="hs-identifier hs-var">fpRel'</span></a></span><span>
-</span><span id="line-157"></span><span>                        </span><span id="local-6989586621679137145"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137145"><span class="hs-identifier hs-var">de'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><a href="#local-6989586621679134411"><span class="hs-identifier hs-var">fpRel'</span></a></span><span>
+</span><span id="line-157"></span><span>                        </span><span id="local-6989586621679134407"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134407"><span class="hs-identifier hs-var">de'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesDirectoryExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137146"><span class="hs-identifier hs-var">fp'</span></a></span><span>
+</span><a href="#local-6989586621679134408"><span class="hs-identifier hs-var">fp'</span></a></span><span>
 </span><span id="line-158"></span><span>                        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137145"><span class="hs-identifier hs-var">de'</span></a></span><span>
+</span><a href="#local-6989586621679134407"><span class="hs-identifier hs-var">de'</span></a></span><span>
 </span><span id="line-159"></span><span>                            </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File))
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File)))
@@ -519,24 +519,24 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Piece -&gt; Either Piece File
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137148"><span class="hs-identifier hs-var">name</span></a></span><span>
+</span><a href="#local-6989586621679134410"><span class="hs-identifier hs-var">name</span></a></span><span>
 </span><span id="line-160"></span><span>                            </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-161"></span><span>                                </span><span id="local-6989586621679137144"><span class="annot"><span class="annottext">Maybe File
-</span><a href="#local-6989586621679137144"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO (Maybe File)
+</span><span id="line-161"></span><span>                                </span><span id="local-6989586621679134406"><span class="annot"><span class="annottext">Maybe File
+</span><a href="#local-6989586621679134406"><span class="hs-identifier hs-var">mfile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ETagLookup -&gt; FilePath -&gt; Piece -&gt; IO (Maybe File)
 </span><a href="WaiAppStatic.Storage.Filesystem.html#fileHelper"><span class="hs-identifier hs-var">fileHelper</span></a></span><span> </span><span class="annot"><span class="annottext">ETagLookup
-</span><a href="#local-6989586621679137158"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679137146"><span class="hs-identifier hs-var">fp'</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137148"><span class="hs-identifier hs-var">name</span></a></span><span>
+</span><a href="#local-6989586621679134420"><span class="hs-identifier hs-var">hashFunc</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679134408"><span class="hs-identifier hs-var">fp'</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134410"><span class="hs-identifier hs-var">name</span></a></span><span>
 </span><span id="line-162"></span><span>                                </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe File
-</span><a href="#local-6989586621679137144"><span class="hs-identifier hs-var">mfile</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679134406"><span class="hs-identifier hs-var">mfile</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-163"></span><span>                                    </span><span class="annot"><span class="annottext">Maybe File
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File))
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Maybe (Either Piece File)
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-164"></span><span>                                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679137143"><span class="annot"><span class="annottext">File
-</span><a href="#local-6989586621679137143"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File))
+</span><span id="line-164"></span><span>                                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679134405"><span class="annot"><span class="annottext">File
+</span><a href="#local-6989586621679134405"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File))
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File)))
 -&gt; Maybe (Either Piece File) -&gt; IO (Maybe (Either Piece File))
@@ -549,7 +549,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">File -&gt; Either Piece File
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">File
-</span><a href="#local-6989586621679137143"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><a href="#local-6989586621679134405"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-165"></span><span>                    </span><span class="annot"><span class="annottext">LookupResult -&gt; IO LookupResult
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(LookupResult -&gt; IO LookupResult)
@@ -564,23 +564,23 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Maybe (Either Piece File)] -&gt; [Either Piece File]
 forall a. [Maybe a] -&gt; [a]
 </span><span class="hs-identifier hs-var">catMaybes</span></span><span> </span><span class="annot"><span class="annottext">[Maybe (Either Piece File)]
-</span><a href="#local-6989586621679137150"><span class="hs-identifier hs-var">entries</span></a></span><span>
+</span><a href="#local-6989586621679134412"><span class="hs-identifier hs-var">entries</span></a></span><span>
 </span><span id="line-166"></span><span>                </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">LookupResult -&gt; IO LookupResult
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">LookupResult
 </span><a href="WaiAppStatic.Types.html#LRNotFound"><span class="hs-identifier hs-var">LRNotFound</span></a></span><span>
 </span><span id="line-167"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-168"></span><span>    </span><span id="local-6989586621679137153"><span class="annot"><span class="annottext">lastPiece :: Piece
-</span><a href="#local-6989586621679137153"><span class="hs-identifier hs-var hs-var">lastPiece</span></a></span></span><span>
+</span><span id="line-168"></span><span>    </span><span id="local-6989586621679134415"><span class="annot"><span class="annottext">lastPiece :: Piece
+</span><a href="#local-6989586621679134415"><span class="hs-identifier hs-var hs-var">lastPiece</span></a></span></span><span>
 </span><span id="line-169"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137156"><span class="hs-identifier hs-var">pieces</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
+</span><a href="#local-6989586621679134418"><span class="hs-identifier hs-var">pieces</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
 </span><a href="WaiAppStatic.Types.html#unsafeToPiece"><span class="hs-identifier hs-var">unsafeToPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span>
 </span><span id="line-170"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; Piece
 forall a. [a] -&gt; a
 </span><span class="hs-identifier hs-var">last</span></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137156"><span class="hs-identifier hs-var">pieces</span></a></span><span>
+</span><a href="#local-6989586621679134418"><span class="hs-identifier hs-var">pieces</span></a></span><span>
 </span><span id="line-171"></span></pre></body></html>

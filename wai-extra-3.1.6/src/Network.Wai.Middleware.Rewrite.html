@@ -225,13 +225,13 @@
 </span><span id="line-225"></span><span class="hs-comment">-- For new code, use 'rewriteWithQueries' instead.</span><span>
 </span><span id="line-226"></span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewrite"><span class="hs-identifier hs-type">rewrite</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-227"></span><span id="rewrite"><span class="annot"><span class="annottext">rewrite :: ([Text] -&gt; RequestHeaders -&gt; IO [Text]) -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewrite"><span class="hs-identifier hs-var hs-var">rewrite</span></a></span></span><span> </span><span id="local-6989586621679103103"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; IO [Text]
-</span><a href="#local-6989586621679103103"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103102"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103102"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103101"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103101"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103100"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679103100"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-228"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103099"><span class="annot"><span class="annottext">convertIO :: PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103099"><span class="hs-identifier hs-var hs-var">convertIO</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; RequestHeaders -&gt; IO [Text])
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewrite"><span class="hs-identifier hs-var hs-var">rewrite</span></a></span></span><span> </span><span id="local-6989586621679103123"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; IO [Text]
+</span><a href="#local-6989586621679103123"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103122"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103122"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103121"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103121"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103120"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679103120"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-228"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103119"><span class="annot"><span class="annottext">convertIO :: PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
+</span><a href="#local-6989586621679103119"><span class="hs-identifier hs-var hs-var">convertIO</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; RequestHeaders -&gt; IO [Text])
 -&gt; PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
 forall (m :: * -&gt; *).
 (Applicative m, Monad m) =&gt;
@@ -267,21 +267,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; ([Text], RequestHeaders) -&gt; IO [Text]
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; IO [Text]
-</span><a href="#local-6989586621679103103"><span class="hs-identifier hs-var">convert</span></a></span><span>
-</span><span id="line-229"></span><span>  </span><span id="local-6989586621679103094"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103094"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
+</span><a href="#local-6989586621679103123"><span class="hs-identifier hs-var">convert</span></a></span><span>
+</span><span id="line-229"></span><span>  </span><span id="local-6989586621679103114"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103114"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
 -&gt; Request -&gt; IO Request
 forall (m :: * -&gt; *).
 (Applicative m, Monad m) =&gt;
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var">rewriteRequestRawM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103099"><span class="hs-identifier hs-var">convertIO</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103101"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103119"><span class="hs-identifier hs-var">convertIO</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103121"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-230"></span><span>  </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103102"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103094"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679103100"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679103122"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103114"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679103120"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-231"></span><span class="hs-pragma">{-# WARNING</span><span> </span><span class="hs-pragma">rewrite</span><span> </span><span class="hs-pragma">[</span><span>
 </span><span id="line-232"></span><span>          </span><span class="hs-pragma">&quot;This modifies the 'rawPathInfo' field of a 'Request'.&quot;</span><span>
 </span><span id="line-233"></span><span>        </span><span class="hs-pragma">,</span><span> </span><span class="hs-pragma">&quot; This is not recommended behaviour; it is however how&quot;</span><span>
@@ -294,12 +294,12 @@ forall (m :: * -&gt; *).
 </span><span id="line-240"></span><span class="hs-comment">-- For new code, use 'rewritePureWithQueries' instead.</span><span>
 </span><span id="line-241"></span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewritePure"><span class="hs-identifier hs-type">rewritePure</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-242"></span><span id="rewritePure"><span class="annot"><span class="annottext">rewritePure :: ([Text] -&gt; RequestHeaders -&gt; [Text]) -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewritePure"><span class="hs-identifier hs-var hs-var">rewritePure</span></a></span></span><span> </span><span id="local-6989586621679103092"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; [Text]
-</span><a href="#local-6989586621679103092"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103091"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103091"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103090"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103090"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-243"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103089"><span class="annot"><span class="annottext">convertPure :: PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
-</span><a href="#local-6989586621679103089"><span class="hs-identifier hs-var hs-var">convertPure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; RequestHeaders -&gt; Identity [Text])
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewritePure"><span class="hs-identifier hs-var hs-var">rewritePure</span></a></span></span><span> </span><span id="local-6989586621679103112"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; [Text]
+</span><a href="#local-6989586621679103112"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103111"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103111"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103110"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103110"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-243"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103109"><span class="annot"><span class="annottext">convertPure :: PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
+</span><a href="#local-6989586621679103109"><span class="hs-identifier hs-var hs-var">convertPure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; RequestHeaders -&gt; Identity [Text])
 -&gt; PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
 forall (m :: * -&gt; *).
 (Applicative m, Monad m) =&gt;
@@ -335,9 +335,9 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; ([Text], RequestHeaders) -&gt; [Text]
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; [Text]
-</span><a href="#local-6989586621679103092"><span class="hs-identifier hs-var">convert</span></a></span><span>
-</span><span id="line-244"></span><span>      </span><span id="local-6989586621679103087"><span class="annot"><span class="annottext">newReq :: Request
-</span><a href="#local-6989586621679103087"><span class="hs-identifier hs-var hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Identity Request -&gt; Request
+</span><a href="#local-6989586621679103112"><span class="hs-identifier hs-var">convert</span></a></span><span>
+</span><span id="line-244"></span><span>      </span><span id="local-6989586621679103107"><span class="annot"><span class="annottext">newReq :: Request
+</span><a href="#local-6989586621679103107"><span class="hs-identifier hs-var hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Identity Request -&gt; Request
 forall a. Identity a -&gt; a
 </span><span class="hs-identifier hs-var hs-var">runIdentity</span></span><span> </span><span class="annot"><span class="annottext">(Identity Request -&gt; Request) -&gt; Identity Request -&gt; Request
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -348,11 +348,11 @@ forall (m :: * -&gt; *).
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var">rewriteRequestRawM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
-</span><a href="#local-6989586621679103089"><span class="hs-identifier hs-var">convertPure</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103090"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103109"><span class="hs-identifier hs-var">convertPure</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103110"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-245"></span><span>  </span><span class="hs-keyword">in</span><span>  </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103091"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103087"><span class="hs-identifier hs-var">newReq</span></a></span><span>
+</span><a href="#local-6989586621679103111"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103107"><span class="hs-identifier hs-var">newReq</span></a></span><span>
 </span><span id="line-246"></span><span class="hs-pragma">{-# WARNING</span><span> </span><span class="hs-pragma">rewritePure</span><span> </span><span class="hs-pragma">[</span><span>
 </span><span id="line-247"></span><span>          </span><span class="hs-pragma">&quot;This modifies the 'rawPathInfo' field of a 'Request'.&quot;</span><span>
 </span><span id="line-248"></span><span>        </span><span class="hs-pragma">,</span><span> </span><span class="hs-pragma">&quot; This is not recommended behaviour; it is however how&quot;</span><span>
@@ -366,25 +366,25 @@ forall (m :: * -&gt; *).
 </span><span id="line-256"></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-257"></span><span id="rewriteWithQueries"><span class="annot"><span class="annottext">rewriteWithQueries :: (PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
 -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteWithQueries"><span class="hs-identifier hs-var hs-var">rewriteWithQueries</span></a></span></span><span> </span><span id="local-6989586621679103085"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103085"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103084"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103083"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103083"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103082"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679103082"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-258"></span><span>  </span><span id="local-6989586621679103081"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103081"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteWithQueries"><span class="hs-identifier hs-var hs-var">rewriteWithQueries</span></a></span></span><span> </span><span id="local-6989586621679103105"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
+</span><a href="#local-6989586621679103105"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103104"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103104"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103103"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103103"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103102"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679103102"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-258"></span><span>  </span><span id="local-6989586621679103101"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103101"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
 -&gt; Request -&gt; IO Request
 forall (m :: * -&gt; *).
 (Applicative m, Monad m) =&gt;
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-var">rewriteRequestM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103085"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103083"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103105"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103103"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-259"></span><span>  </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103081"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679103082"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679103104"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103101"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679103102"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-260"></span><span>
 </span><span id="line-261"></span><span class="hs-comment">-- | Rewrite based on pure conversion function for paths and queries. This</span><span>
 </span><span id="line-262"></span><span class="hs-comment">-- function is to be supplied by users of this library.</span><span>
@@ -392,17 +392,17 @@ forall (m :: * -&gt; *).
 </span><span id="line-264"></span><span>                       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-265"></span><span id="rewritePureWithQueries"><span class="annot"><span class="annottext">rewritePureWithQueries :: (PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries)
 -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewritePureWithQueries"><span class="hs-identifier hs-var hs-var">rewritePureWithQueries</span></a></span></span><span> </span><span id="local-6989586621679103079"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
-</span><a href="#local-6989586621679103079"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103078"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103078"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103077"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103077"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679103078"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Middleware
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewritePureWithQueries"><span class="hs-identifier hs-var hs-var">rewritePureWithQueries</span></a></span></span><span> </span><span id="local-6989586621679103099"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
+</span><a href="#local-6989586621679103099"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103098"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103098"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679103097"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103097"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679103098"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Middleware
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries)
 -&gt; Request -&gt; Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestPure"><span class="hs-identifier hs-var">rewriteRequestPure</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
-</span><a href="#local-6989586621679103079"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103077"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103099"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103097"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-266"></span><span>
 </span><span id="line-267"></span><span class="hs-comment">-- | Rewrite root requests (/) to a specified path</span><span>
 </span><span id="line-268"></span><span class="hs-comment">--</span><span>
@@ -415,23 +415,23 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-275"></span><span class="hs-comment">-- @since 3.0.23.0</span><span>
 </span><span id="line-276"></span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewriteRoot"><span class="hs-identifier hs-type">rewriteRoot</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-277"></span><span id="rewriteRoot"><span class="annot"><span class="annottext">rewriteRoot :: Text -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRoot"><span class="hs-identifier hs-var hs-var">rewriteRoot</span></a></span></span><span> </span><span id="local-6989586621679103076"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679103076"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRoot"><span class="hs-identifier hs-var hs-var">rewriteRoot</span></a></span></span><span> </span><span id="local-6989586621679103096"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679103096"><span class="hs-identifier hs-var">root</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries)
 -&gt; Middleware
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewritePureWithQueries"><span class="hs-identifier hs-var">rewritePureWithQueries</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
 forall b p. ([Text], b) -&gt; p -&gt; ([Text], b)
-</span><a href="#local-6989586621679103075"><span class="hs-identifier hs-var">onlyRoot</span></a></span><span>
+</span><a href="#local-6989586621679103095"><span class="hs-identifier hs-var">onlyRoot</span></a></span><span>
 </span><span id="line-278"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-279"></span><span>    </span><span id="local-6989586621679103075"><span class="annot"><span class="annottext">onlyRoot :: ([Text], b) -&gt; p -&gt; ([Text], b)
-</span><a href="#local-6989586621679103075"><span class="hs-identifier hs-var hs-var">onlyRoot</span></a></span></span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103074"><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679103074"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">p
+</span><span id="line-279"></span><span>    </span><span id="local-6989586621679103095"><span class="annot"><span class="annottext">onlyRoot :: ([Text], b) -&gt; p -&gt; ([Text], b)
+</span><a href="#local-6989586621679103095"><span class="hs-identifier hs-var hs-var">onlyRoot</span></a></span></span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103094"><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679103094"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">p
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679103076"><span class="hs-identifier hs-var">root</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679103074"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-280"></span><span>    </span><span class="annot"><a href="#local-6989586621679103075"><span class="hs-identifier hs-var">onlyRoot</span></a></span><span> </span><span id="local-6989586621679103073"><span class="annot"><span class="annottext">([Text], b)
-</span><a href="#local-6989586621679103073"><span class="hs-identifier hs-var">paths</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
+</span><a href="#local-6989586621679103096"><span class="hs-identifier hs-var">root</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679103094"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-280"></span><span>    </span><span class="annot"><a href="#local-6989586621679103095"><span class="hs-identifier hs-var">onlyRoot</span></a></span><span> </span><span id="local-6989586621679103093"><span class="annot"><span class="annottext">([Text], b)
+</span><a href="#local-6989586621679103093"><span class="hs-identifier hs-var">paths</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">([Text], b)
-</span><a href="#local-6989586621679103073"><span class="hs-identifier hs-var">paths</span></a></span><span>
+</span><a href="#local-6989586621679103093"><span class="hs-identifier hs-var">paths</span></a></span><span>
 </span><span id="line-281"></span><span>
 </span><span id="line-282"></span><span class="hs-comment">--------------------------------------------------</span><span>
 </span><span id="line-283"></span><span class="hs-comment">-- * Modifying 'Request's directly</span><span>
@@ -443,11 +443,11 @@ forall b p. ([Text], b) -&gt; p -&gt; ([Text], b)
 </span><span id="line-289"></span><span>               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span>
 </span><span id="line-290"></span><span id="rewriteRequest"><span class="annot"><span class="annottext">rewriteRequest :: (PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
 -&gt; Request -&gt; IO Request
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequest"><span class="hs-identifier hs-var hs-var">rewriteRequest</span></a></span></span><span> </span><span id="local-6989586621679103072"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103072"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103071"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103071"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-291"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103070"><span class="annot"><span class="annottext">convertIO :: PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103070"><span class="hs-identifier hs-var hs-var">convertIO</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((PathsAndQueries, RequestHeaders) -&gt; IO PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequest"><span class="hs-identifier hs-var hs-var">rewriteRequest</span></a></span></span><span> </span><span id="local-6989586621679103092"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
+</span><a href="#local-6989586621679103092"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103091"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103091"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-291"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103090"><span class="annot"><span class="annottext">convertIO :: PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
+</span><a href="#local-6989586621679103090"><span class="hs-identifier hs-var hs-var">convertIO</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((PathsAndQueries, RequestHeaders) -&gt; IO PathsAndQueries)
 -&gt; PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
 forall a b c. ((a, b) -&gt; c) -&gt; a -&gt; b -&gt; c
 </span><span class="hs-identifier hs-var">curry</span></span><span> </span><span class="annot"><span class="annottext">(((PathsAndQueries, RequestHeaders) -&gt; IO PathsAndQueries)
@@ -468,7 +468,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; (PathsAndQueries, RequestHeaders) -&gt; IO PathsAndQueries
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103072"><span class="hs-identifier hs-var">convert</span></a></span><span>
+</span><a href="#local-6989586621679103092"><span class="hs-identifier hs-var">convert</span></a></span><span>
 </span><span id="line-292"></span><span>  </span><span class="hs-keyword">in</span><span>  </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries)
 -&gt; Request -&gt; IO Request
 forall (m :: * -&gt; *).
@@ -476,8 +476,8 @@ forall (m :: * -&gt; *).
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var">rewriteRequestRawM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; IO PathsAndQueries
-</span><a href="#local-6989586621679103070"><span class="hs-identifier hs-var">convertIO</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103071"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103090"><span class="hs-identifier hs-var">convertIO</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103091"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-293"></span><span>
 </span><span id="line-294"></span><span class="hs-comment">-- | Modify a 'Request' using the pure supplied function. This is suitable for</span><span>
 </span><span id="line-295"></span><span class="hs-comment">-- the reverse proxy example.</span><span>
@@ -485,11 +485,11 @@ forall (m :: * -&gt; *).
 </span><span id="line-297"></span><span>                   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span>
 </span><span id="line-298"></span><span id="rewriteRequestPure"><span class="annot"><span class="annottext">rewriteRequestPure :: (PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries)
 -&gt; Request -&gt; Request
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestPure"><span class="hs-identifier hs-var hs-var">rewriteRequestPure</span></a></span></span><span> </span><span id="local-6989586621679103069"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
-</span><a href="#local-6989586621679103069"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103068"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103068"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-299"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103067"><span class="annot"><span class="annottext">convertPure :: PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
-</span><a href="#local-6989586621679103067"><span class="hs-identifier hs-var hs-var">convertPure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((PathsAndQueries, RequestHeaders) -&gt; Identity PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestPure"><span class="hs-identifier hs-var hs-var">rewriteRequestPure</span></a></span></span><span> </span><span id="local-6989586621679103089"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
+</span><a href="#local-6989586621679103089"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103088"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103088"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-299"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103087"><span class="annot"><span class="annottext">convertPure :: PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
+</span><a href="#local-6989586621679103087"><span class="hs-identifier hs-var hs-var">convertPure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((PathsAndQueries, RequestHeaders) -&gt; Identity PathsAndQueries)
 -&gt; PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
 forall a b c. ((a, b) -&gt; c) -&gt; a -&gt; b -&gt; c
 </span><span class="hs-identifier hs-var">curry</span></span><span> </span><span class="annot"><span class="annottext">(((PathsAndQueries, RequestHeaders) -&gt; Identity PathsAndQueries)
@@ -510,7 +510,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; (PathsAndQueries, RequestHeaders) -&gt; PathsAndQueries
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; PathsAndQueries
-</span><a href="#local-6989586621679103069"><span class="hs-identifier hs-var">convert</span></a></span><span>
+</span><a href="#local-6989586621679103089"><span class="hs-identifier hs-var">convert</span></a></span><span>
 </span><span id="line-300"></span><span>  </span><span class="hs-keyword">in</span><span>  </span><span class="annot"><span class="annottext">Identity Request -&gt; Request
 forall a. Identity a -&gt; a
 </span><span class="hs-identifier hs-var hs-var">runIdentity</span></span><span> </span><span class="annot"><span class="annottext">(Identity Request -&gt; Request) -&gt; Identity Request -&gt; Request
@@ -522,68 +522,68 @@ forall (m :: * -&gt; *).
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var">rewriteRequestRawM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; Identity PathsAndQueries
-</span><a href="#local-6989586621679103067"><span class="hs-identifier hs-var">convertPure</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103068"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103087"><span class="hs-identifier hs-var">convertPure</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103088"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-301"></span><span>
 </span><span id="line-302"></span><span class="hs-comment">--------------------------------------------------</span><span>
 </span><span id="line-303"></span><span class="hs-comment">-- * Helper functions</span><span>
 </span><span id="line-304"></span><span class="hs-comment">--------------------------------------------------</span><span>
 </span><span id="line-305"></span><span>
 </span><span id="line-306"></span><span class="hs-comment">-- | This helper function factors out the common behaviour of rewriting requests.</span><span>
-</span><span id="line-307"></span><span id="local-6989586621679103066"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-type">rewriteRequestM</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103066"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103066"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-308"></span><span>                </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103066"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-309"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103066"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span><span>
+</span><span id="line-307"></span><span id="local-6989586621679103086"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-type">rewriteRequestM</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103086"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103086"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-308"></span><span>                </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103086"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-309"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103086"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span><span>
 </span><span id="line-310"></span><span id="rewriteRequestM"><span class="annot"><span class="annottext">rewriteRequestM :: (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-var hs-var">rewriteRequestM</span></a></span></span><span> </span><span id="local-6989586621679103065"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
-</span><a href="#local-6989586621679103065"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103064"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103064"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-311"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621679103063"><span class="annot"><span class="annottext">[Text]
-</span><a href="#local-6989586621679103063"><span class="hs-identifier hs-var">pInfo</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103062"><span class="annot"><span class="annottext">Query
-</span><a href="#local-6989586621679103062"><span class="hs-identifier hs-var">qByteStrings</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-var hs-var">rewriteRequestM</span></a></span></span><span> </span><span id="local-6989586621679103085"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
+</span><a href="#local-6989586621679103085"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103084"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-311"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621679103083"><span class="annot"><span class="annottext">[Text]
+</span><a href="#local-6989586621679103083"><span class="hs-identifier hs-var">pInfo</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103082"><span class="annot"><span class="annottext">Query
+</span><a href="#local-6989586621679103082"><span class="hs-identifier hs-var">qByteStrings</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; [Text] -&gt; Query -&gt; RequestHeaders -&gt; m PathsAndQueries
 forall a b c. ((a, b) -&gt; c) -&gt; a -&gt; b -&gt; c
 </span><span class="hs-identifier hs-var">curry</span></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
-</span><a href="#local-6989586621679103065"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; [Text]
+</span><a href="#local-6989586621679103085"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; [Text]
 </span><span class="hs-identifier hs-var hs-var">pathInfo</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103064"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Query
+</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Query
 </span><span class="hs-identifier hs-var hs-var">queryString</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103064"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestHeaders
+</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestHeaders
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103064"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-312"></span><span>  </span><span class="annot"><span class="annottext">Request -&gt; m Request
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103064"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">pathInfo :: [Text]
+</span><a href="#local-6989586621679103084"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">pathInfo :: [Text]
 </span><span class="hs-identifier hs-var">pathInfo</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Text]
-</span><a href="#local-6989586621679103063"><span class="hs-identifier hs-var">pInfo</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">queryString :: Query
+</span><a href="#local-6989586621679103083"><span class="hs-identifier hs-var">pInfo</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">queryString :: Query
 </span><span class="hs-identifier hs-var">queryString</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Query
-</span><a href="#local-6989586621679103062"><span class="hs-identifier hs-var">qByteStrings</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679103082"><span class="hs-identifier hs-var">qByteStrings</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-313"></span><span>
 </span><span id="line-314"></span><span class="hs-comment">-- | This helper function preserves the semantics of wai-extra &#8804; 3.0, in</span><span>
 </span><span id="line-315"></span><span class="hs-comment">-- which the rewrite functions modify the 'rawPathInfo' parameter. Note</span><span>
 </span><span id="line-316"></span><span class="hs-comment">-- that this has not been extended to modify the 'rawQueryInfo' as</span><span>
 </span><span id="line-317"></span><span class="hs-comment">-- modifying either of these values has been deprecated.</span><span>
-</span><span id="line-318"></span><span id="local-6989586621679103130"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-type">rewriteRequestRawM</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103130"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103130"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-319"></span><span>                    </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103130"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-320"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103130"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span><span>
+</span><span id="line-318"></span><span id="local-6989586621679103150"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-type">rewriteRequestRawM</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103150"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103150"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-319"></span><span>                    </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103150"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-320"></span><span>                    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103150"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span><span>
 </span><span id="line-321"></span><span id="rewriteRequestRawM"><span class="annot"><span class="annottext">rewriteRequestRawM :: (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
-</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var hs-var">rewriteRequestRawM</span></a></span></span><span> </span><span id="local-6989586621679103058"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
-</span><a href="#local-6989586621679103058"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103057"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103057"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-322"></span><span>  </span><span id="local-6989586621679103056"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103056"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
+</span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestRawM"><span class="hs-identifier hs-var hs-var">rewriteRequestRawM</span></a></span></span><span> </span><span id="local-6989586621679103078"><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
+</span><a href="#local-6989586621679103078"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103077"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103077"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-322"></span><span>  </span><span id="local-6989586621679103076"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103076"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 forall (m :: * -&gt; *).
 (Applicative m, Monad m) =&gt;
 (PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries)
 -&gt; Request -&gt; m Request
 </span><a href="Network.Wai.Middleware.Rewrite.html#rewriteRequestM"><span class="hs-identifier hs-var">rewriteRequestM</span></a></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
-</span><a href="#local-6989586621679103058"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103057"><span class="hs-identifier hs-var">req</span></a></span><span>
-</span><span id="line-323"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103055"><span class="annot"><span class="annottext">rawPInfo :: ByteString
-</span><a href="#local-6989586621679103055"><span class="hs-identifier hs-var hs-var">rawPInfo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
+</span><a href="#local-6989586621679103078"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103077"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><span id="line-323"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103075"><span class="annot"><span class="annottext">rawPInfo :: ByteString
+</span><a href="#local-6989586621679103075"><span class="hs-identifier hs-var hs-var">rawPInfo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
 </span><span class="hs-identifier hs-var">TE.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; ByteString) -&gt; (Request -&gt; Text) -&gt; Request -&gt; ByteString
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text] -&gt; Text
@@ -594,13 +594,13 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var hs-var">pathInfo</span></span><span> </span><span class="annot"><span class="annottext">(Request -&gt; ByteString) -&gt; Request -&gt; ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103056"><span class="hs-identifier hs-var">newReq</span></a></span><span>
+</span><a href="#local-6989586621679103076"><span class="hs-identifier hs-var">newReq</span></a></span><span>
 </span><span id="line-324"></span><span>  </span><span class="annot"><span class="annottext">Request -&gt; m Request
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103056"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">rawPathInfo :: ByteString
+</span><a href="#local-6989586621679103076"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">rawPathInfo :: ByteString
 </span><span class="hs-identifier hs-var">rawPathInfo</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679103055"><span class="hs-identifier hs-var">rawPInfo</span></a></span><span> </span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679103075"><span class="hs-identifier hs-var">rawPInfo</span></a></span><span> </span><span class="hs-special">}</span><span>
 </span><span id="line-325"></span><span class="hs-pragma">{-# WARNING</span><span> </span><span class="hs-pragma">rewriteRequestRawM</span><span> </span><span class="hs-pragma">[</span><span>
 </span><span id="line-326"></span><span>          </span><span class="hs-pragma">&quot;This modifies the 'rawPathInfo' field of a 'Request'.&quot;</span><span>
 </span><span id="line-327"></span><span>        </span><span class="hs-pragma">,</span><span> </span><span class="hs-pragma">&quot; This is not recommended behaviour; it is however how&quot;</span><span>
@@ -611,21 +611,21 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span id="line-332"></span><span class="hs-comment">-- only on paths. This is not exported, as it is only needed to handle</span><span>
 </span><span id="line-333"></span><span class="hs-comment">-- code written for versions &#8804; 3.0 of the library; see the</span><span>
 </span><span id="line-334"></span><span class="hs-comment">-- example above using 'Data.Bifunctor.first' to do something similar.</span><span>
-</span><span id="line-335"></span><span id="local-6989586621679103146"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#pathsOnly"><span class="hs-identifier hs-type">pathsOnly</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103146"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103146"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-336"></span><span>          </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103146"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-337"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103146"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span></span><span>
+</span><span id="line-335"></span><span id="local-6989586621679103166"><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#pathsOnly"><span class="hs-identifier hs-type">pathsOnly</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Applicative</span></span><span> </span><span class="annot"><a href="#local-6989586621679103166"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679103166"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-336"></span><span>          </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103166"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-337"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679103166"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#PathsAndQueries"><span class="hs-identifier hs-type">PathsAndQueries</span></a></span></span><span>
 </span><span id="line-338"></span><span id="pathsOnly"><span class="annot"><span class="annottext">pathsOnly :: ([Text] -&gt; RequestHeaders -&gt; m [Text])
 -&gt; PathsAndQueries -&gt; RequestHeaders -&gt; m PathsAndQueries
-</span><a href="Network.Wai.Middleware.Rewrite.html#pathsOnly"><span class="hs-identifier hs-var hs-var">pathsOnly</span></a></span></span><span> </span><span id="local-6989586621679103051"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; m [Text]
-</span><a href="#local-6989586621679103051"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103050"><span class="annot"><span class="annottext">PathsAndQueries
-</span><a href="#local-6989586621679103050"><span class="hs-identifier hs-var">psAndQs</span></a></span></span><span> </span><span id="local-6989586621679103049"><span class="annot"><span class="annottext">RequestHeaders
-</span><a href="#local-6989586621679103049"><span class="hs-identifier hs-var">headers</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-special">,</span></span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; PathsAndQueries) -&gt; m [Text] -&gt; m PathsAndQueries
+</span><a href="Network.Wai.Middleware.Rewrite.html#pathsOnly"><span class="hs-identifier hs-var hs-var">pathsOnly</span></a></span></span><span> </span><span id="local-6989586621679103071"><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; m [Text]
+</span><a href="#local-6989586621679103071"><span class="hs-identifier hs-var">convert</span></a></span></span><span> </span><span id="local-6989586621679103070"><span class="annot"><span class="annottext">PathsAndQueries
+</span><a href="#local-6989586621679103070"><span class="hs-identifier hs-var">psAndQs</span></a></span></span><span> </span><span id="local-6989586621679103069"><span class="annot"><span class="annottext">RequestHeaders
+</span><a href="#local-6989586621679103069"><span class="hs-identifier hs-var">headers</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-special">,</span></span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; PathsAndQueries) -&gt; m [Text] -&gt; m PathsAndQueries
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; RequestHeaders -&gt; m [Text]
-</span><a href="#local-6989586621679103051"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PathsAndQueries -&gt; [Text]
+</span><a href="#local-6989586621679103071"><span class="hs-identifier hs-var">convert</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PathsAndQueries -&gt; [Text]
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">PathsAndQueries
-</span><a href="#local-6989586621679103050"><span class="hs-identifier hs-var">psAndQs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
-</span><a href="#local-6989586621679103049"><span class="hs-identifier hs-var">headers</span></a></span><span>
+</span><a href="#local-6989586621679103070"><span class="hs-identifier hs-var">psAndQs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
+</span><a href="#local-6989586621679103069"><span class="hs-identifier hs-var">headers</span></a></span><span>
 </span><span id="line-339"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Rewrite.html#pathsOnly"><span class="hs-pragma hs-type">pathsOnly</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-340"></span></pre></body></html>

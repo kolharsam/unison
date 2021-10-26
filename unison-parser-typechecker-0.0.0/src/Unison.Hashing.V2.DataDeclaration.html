@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_F8Qc4oXrSVZ14uHeyD3gXZ"></span><span class="hs-pragma">{-# LANGUAGE DeriveAnyClass #-}</span><span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span id="%24con2tag_1Cuy8EbWrIm29H8Q68NVPI"></span><span class="hs-pragma">{-# LANGUAGE DeriveAnyClass #-}</span><span>
 </span><span id="line-2"></span><span class="hs-pragma">{-# LANGUAGE DeriveFoldable #-}</span><span>
 </span><span id="line-3"></span><span class="hs-pragma">{-# LANGUAGE DeriveTraversable #-}</span><span>
 </span><span id="line-4"></span><span class="hs-pragma">{-# LANGUAGE OverloadedStrings #-}</span><span>
@@ -25,68 +25,26 @@
 </span><span id="line-25"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Data.Bifunctor</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">first</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">second</span></span><span class="hs-special">)</span><span>
 </span><span id="line-26"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
 </span><span id="line-27"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Set</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Set</span></span><span>
-</span><span id="line-28"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Prelude.Extras</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Show1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-29"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Var</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Var</span></span><span class="hs-special">)</span><span>
-</span><span id="line-30"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.ABT</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">ABT</span></span><span>
-</span><span id="line-31"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.ConstructorType</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">CT</span></span><span>
-</span><span id="line-32"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hash</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Hash</span></span><span class="hs-special">)</span><span>
-</span><span id="line-33"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Hashable1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-34"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Hashable</span></span><span>
-</span><span id="line-35"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html"><span class="hs-identifier">Unison.Hashing.V2.Reference</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier">Reference</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-36"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html"><span class="hs-identifier">Unison.Hashing.V2.Reference</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference</span></span><span>
-</span><span id="line-37"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.Util.html"><span class="hs-identifier">Unison.Hashing.V2.Reference.Util</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference.Util</span></span><span>
-</span><span id="line-38"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html"><span class="hs-identifier">Unison.Hashing.V2.Type</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier">Type</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-39"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html"><span class="hs-identifier">Unison.Hashing.V2.Type</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Type</span></span><span>
-</span><span id="line-40"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Name</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Name</span></span><span>
-</span><span id="line-41"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Names.ResolutionResult</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Names</span></span><span>
-</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Prelude</span></span><span>
-</span><span id="line-43"></span><span class="hs-comment">-- import qualified Unison.Referent as Referent</span><span>
-</span><span id="line-44"></span><span class="hs-comment">-- import qualified Unison.Referent' as Referent'</span><span>
-</span><span id="line-45"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">cycle</span></span><span class="hs-special">)</span><span>
-</span><span id="line-46"></span><span>
-</span><span id="line-47"></span><span class="hs-keyword">type</span><span> </span><span id="Decl"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-var">Decl</span></a></span></span><span> </span><span id="local-6989586621681971733"><span class="annot"><a href="#local-6989586621681971733"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681971732"><span class="annot"><a href="#local-6989586621681971732"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-type">EffectDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971733"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971732"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971733"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971732"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-48"></span><span>
-</span><span id="line-49"></span><span class="hs-keyword">data</span><span> </span><span id="DeclOrBuiltin"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DeclOrBuiltin"><span class="hs-identifier hs-var">DeclOrBuiltin</span></a></span></span><span> </span><span id="local-6989586621681971731"><span class="annot"><a href="#local-6989586621681971731"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681971730"><span class="annot"><a href="#local-6989586621681971730"><span class="hs-identifier hs-type">a</span></a></span></span><span>
-</span><span id="line-50"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="Builtin"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Builtin"><span class="hs-identifier hs-var">Builtin</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">CT.ConstructorType</span></span><span>
-</span><span id="line-51"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Decl"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-var">Decl</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971731"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971730"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-52"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971724"><span id="local-6989586621681971726"><span class="annot"><span class="annottext">DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-(DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool)
--&gt; (DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool)
--&gt; Eq (DeclOrBuiltin v a)
-forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
-forall v a.
-(Var v, Eq a) =&gt;
-DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-/= :: DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-$c/= :: forall v a.
-(Var v, Eq a) =&gt;
-DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-== :: DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-$c== :: forall v a.
-(Var v, Eq a) =&gt;
-DeclOrBuiltin v a -&gt; DeclOrBuiltin v a -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971717"><span id="local-6989586621681971719"><span id="local-6989586621681971721"><span class="annot"><span class="annottext">Int -&gt; DeclOrBuiltin v a -&gt; ShowS
-[DeclOrBuiltin v a] -&gt; ShowS
-DeclOrBuiltin v a -&gt; String
-(Int -&gt; DeclOrBuiltin v a -&gt; ShowS)
--&gt; (DeclOrBuiltin v a -&gt; String)
--&gt; ([DeclOrBuiltin v a] -&gt; ShowS)
--&gt; Show (DeclOrBuiltin v a)
-forall a.
-(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; String) -&gt; ([a] -&gt; ShowS) -&gt; Show a
-forall v a. (Show a, Show v) =&gt; Int -&gt; DeclOrBuiltin v a -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; [DeclOrBuiltin v a] -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; DeclOrBuiltin v a -&gt; String
-showList :: [DeclOrBuiltin v a] -&gt; ShowS
-$cshowList :: forall v a. (Show a, Show v) =&gt; [DeclOrBuiltin v a] -&gt; ShowS
-show :: DeclOrBuiltin v a -&gt; String
-$cshow :: forall v a. (Show a, Show v) =&gt; DeclOrBuiltin v a -&gt; String
-showsPrec :: Int -&gt; DeclOrBuiltin v a -&gt; ShowS
-$cshowsPrec :: forall v a. (Show a, Show v) =&gt; Int -&gt; DeclOrBuiltin v a -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-53"></span><span>
-</span><span id="line-54"></span><span id="local-6989586621681971714"><span id="local-6989586621681971715"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#asDataDecl"><span class="hs-identifier hs-type">asDataDecl</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971715"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971714"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971715"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971714"><span class="hs-identifier hs-type">a</span></a></span></span></span><span>
-</span><span id="line-55"></span><span id="asDataDecl"><span class="annot"><span class="annottext">asDataDecl :: Decl v a -&gt; DataDeclaration v a
+</span><span id="line-28"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Var</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Var</span></span><span class="hs-special">)</span><span>
+</span><span id="line-29"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.ABT</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">ABT</span></span><span>
+</span><span id="line-30"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.ConstructorType</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">CT</span></span><span>
+</span><span id="line-31"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hash</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Hash</span></span><span class="hs-special">)</span><span>
+</span><span id="line-32"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Hashable1</span></span><span class="hs-special">)</span><span>
+</span><span id="line-33"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Hashable</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Hashable</span></span><span>
+</span><span id="line-34"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html"><span class="hs-identifier">Unison.Hashing.V2.Reference</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier">Reference</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-35"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html"><span class="hs-identifier">Unison.Hashing.V2.Reference</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference</span></span><span>
+</span><span id="line-36"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.Util.html"><span class="hs-identifier">Unison.Hashing.V2.Reference.Util</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Reference.Util</span></span><span>
+</span><span id="line-37"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html"><span class="hs-identifier">Unison.Hashing.V2.Type</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier">Type</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-38"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html"><span class="hs-identifier">Unison.Hashing.V2.Type</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Type</span></span><span>
+</span><span id="line-39"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Name</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Name</span></span><span>
+</span><span id="line-40"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Names.ResolutionResult</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Names</span></span><span>
+</span><span id="line-41"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Unison.Prelude</span></span><span>
+</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span> </span><span class="hs-keyword">hiding</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">cycle</span></span><span class="hs-special">)</span><span>
+</span><span id="line-43"></span><span>
+</span><span id="line-44"></span><span class="hs-keyword">type</span><span> </span><span id="Decl"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-var">Decl</span></a></span></span><span> </span><span id="local-6989586621681726860"><span class="annot"><a href="#local-6989586621681726860"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681726859"><span class="annot"><a href="#local-6989586621681726859"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-type">EffectDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726860"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726859"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726860"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726859"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-45"></span><span>
+</span><span id="line-46"></span><span id="local-6989586621681726857"><span id="local-6989586621681726858"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#asDataDecl"><span class="hs-identifier hs-type">asDataDecl</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726858"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726857"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726858"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726857"><span class="hs-identifier hs-type">a</span></a></span></span></span><span>
+</span><span id="line-47"></span><span id="asDataDecl"><span class="annot"><span class="annottext">asDataDecl :: Decl v a -&gt; DataDeclaration v a
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#asDataDecl"><span class="hs-identifier hs-var hs-var">asDataDecl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(EffectDeclaration v a -&gt; DataDeclaration v a)
 -&gt; (DataDeclaration v a -&gt; DataDeclaration v a)
 -&gt; Decl v a
@@ -97,9 +55,9 @@ forall v a. EffectDeclaration v a -&gt; DataDeclaration v a
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#toDataDecl"><span class="hs-identifier hs-var hs-var">toDataDecl</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; DataDeclaration v a
 forall a. a -&gt; a
 </span><span class="hs-identifier hs-var">id</span></span><span>
-</span><span id="line-56"></span><span>
-</span><span id="line-57"></span><span id="local-6989586621681971709"><span id="local-6989586621681971710"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#declDependencies"><span class="hs-identifier hs-type">declDependencies</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621681971710"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971710"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971709"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span>
-</span><span id="line-58"></span><span id="declDependencies"><span class="annot"><span class="annottext">declDependencies :: Decl v a -&gt; Set Reference
+</span><span id="line-48"></span><span>
+</span><span id="line-49"></span><span id="local-6989586621681726852"><span id="local-6989586621681726853"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#declDependencies"><span class="hs-identifier hs-type">declDependencies</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621681726853"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726853"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726852"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span>
+</span><span id="line-50"></span><span id="declDependencies"><span class="annot"><span class="annottext">declDependencies :: Decl v a -&gt; Set Reference
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#declDependencies"><span class="hs-identifier hs-var hs-var">declDependencies</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(EffectDeclaration v a -&gt; Set Reference)
 -&gt; (DataDeclaration v a -&gt; Set Reference)
 -&gt; Decl v a
@@ -117,17 +75,17 @@ forall v a. EffectDeclaration v a -&gt; DataDeclaration v a
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#toDataDecl"><span class="hs-identifier hs-var hs-var">toDataDecl</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; Set Reference
 forall v a. Ord v =&gt; DataDeclaration v a -&gt; Set Reference
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#dependencies"><span class="hs-identifier hs-var">dependencies</span></a></span><span>
-</span><span id="line-59"></span><span>
-</span><span id="line-60"></span><span id="local-6989586621681971706"><span id="local-6989586621681971707"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructorType"><span class="hs-identifier hs-type">constructorType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971707"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971706"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CT.ConstructorType</span></span></span></span><span>
-</span><span id="line-61"></span><span id="constructorType"><span class="annot"><span class="annottext">constructorType :: Decl v a -&gt; ConstructorType
+</span><span id="line-51"></span><span>
+</span><span id="line-52"></span><span id="local-6989586621681726849"><span id="local-6989586621681726850"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructorType"><span class="hs-identifier hs-type">constructorType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Decl"><span class="hs-identifier hs-type">Decl</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726850"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726849"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CT.ConstructorType</span></span></span></span><span>
+</span><span id="line-53"></span><span id="constructorType"><span class="annot"><span class="annottext">constructorType :: Decl v a -&gt; ConstructorType
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructorType"><span class="hs-identifier hs-var hs-var">constructorType</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-62"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ConstructorType
+</span><span id="line-54"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ConstructorType
 </span><span class="hs-identifier hs-var">CT.Effect</span></span><span>
-</span><span id="line-63"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ConstructorType
+</span><span id="line-55"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ConstructorType
 </span><span class="hs-identifier hs-var">CT.Data</span></span><span>
-</span><span id="line-64"></span><span>
-</span><span id="line-65"></span><span class="hs-keyword">data</span><span> </span><span id="Modifier"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-var">Modifier</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Structural"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Structural"><span class="hs-identifier hs-var">Structural</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Unique"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-comment">--  | Opaque (Set Reference)</span><span>
-</span><span id="line-66"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971698"><span id="local-6989586621681971700"><span class="annot"><span class="annottext">Modifier -&gt; Modifier -&gt; Bool
+</span><span id="line-56"></span><span>
+</span><span id="line-57"></span><span class="hs-keyword">data</span><span> </span><span id="Modifier"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-var">Modifier</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Structural"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Structural"><span class="hs-identifier hs-var">Structural</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Unique"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-comment">--  | Opaque (Set Reference)</span><span>
+</span><span id="line-58"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726841"><span id="local-6989586621681726843"><span class="annot"><span class="annottext">Modifier -&gt; Modifier -&gt; Bool
 (Modifier -&gt; Modifier -&gt; Bool)
 -&gt; (Modifier -&gt; Modifier -&gt; Bool) -&gt; Eq Modifier
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -135,7 +93,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Modifier -&gt; Modifier -&gt; Bool
 == :: Modifier -&gt; Modifier -&gt; Bool
 $c== :: Modifier -&gt; Modifier -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971683"><span id="local-6989586621681971685"><span id="local-6989586621681971687"><span id="local-6989586621681971689"><span id="local-6989586621681971691"><span id="local-6989586621681971693"><span id="local-6989586621681971695"><span class="annot"><span class="annottext">Eq Modifier
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726825"><span id="local-6989586621681726827"><span id="local-6989586621681726829"><span id="local-6989586621681726831"><span id="local-6989586621681726833"><span id="local-6989586621681726835"><span id="local-6989586621681726837"><span class="annot"><span class="annottext">Eq Modifier
 Eq Modifier
 -&gt; (Modifier -&gt; Modifier -&gt; Ordering)
 -&gt; (Modifier -&gt; Modifier -&gt; Bool)
@@ -173,7 +131,7 @@ $c&lt; :: Modifier -&gt; Modifier -&gt; Bool
 compare :: Modifier -&gt; Modifier -&gt; Ordering
 $ccompare :: Modifier -&gt; Modifier -&gt; Ordering
 $cp1Ord :: Eq Modifier
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971676"><span id="local-6989586621681971678"><span id="local-6989586621681971680"><span class="annot"><span class="annottext">Int -&gt; Modifier -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726818"><span id="local-6989586621681726820"><span id="local-6989586621681726822"><span class="annot"><span class="annottext">Int -&gt; Modifier -&gt; ShowS
 [Modifier] -&gt; ShowS
 Modifier -&gt; String
 (Int -&gt; Modifier -&gt; ShowS)
@@ -187,52 +145,18 @@ $cshow :: Modifier -&gt; String
 showsPrec :: Int -&gt; Modifier -&gt; ShowS
 $cshowsPrec :: Int -&gt; Modifier -&gt; ShowS
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-67"></span><span>
-</span><span id="line-68"></span><span class="hs-keyword">data</span><span> </span><span id="DataDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-var">DataDeclaration</span></a></span></span><span> </span><span id="local-6989586621681971909"><span class="annot"><a href="#local-6989586621681971909"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681971908"><span class="annot"><a href="#local-6989586621681971908"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DataDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-var">DataDeclaration</span></a></span></span><span>
-</span><span id="line-69"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="modifier"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; Modifier
+</span><span id="line-59"></span><span>
+</span><span id="line-60"></span><span class="hs-keyword">data</span><span> </span><span id="DataDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-var">DataDeclaration</span></a></span></span><span> </span><span id="local-6989586621681727030"><span class="annot"><a href="#local-6989586621681727030"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681727029"><span class="annot"><a href="#local-6989586621681727029"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DataDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-var">DataDeclaration</span></a></span></span><span>
+</span><span id="line-61"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="modifier"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; Modifier
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#modifier"><span class="hs-identifier hs-var hs-var">modifier</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-type">Modifier</span></a></span><span class="hs-special">,</span><span>
-</span><span id="line-70"></span><span>    </span><span id="annotation"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; a
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#annotation"><span class="hs-identifier hs-var hs-var">annotation</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621681971908"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span>
-</span><span id="line-71"></span><span>    </span><span id="bound"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [v]
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#bound"><span class="hs-identifier hs-var hs-var">bound</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681971909"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span>
-</span><span id="line-72"></span><span>    </span><span id="constructors%27"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [(a, v, Type v a)]
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var hs-var">constructors'</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681971908"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621681971909"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971909"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971908"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
-</span><span id="line-73"></span><span>  </span><span class="hs-special">}</span><span>
-</span><span id="line-74"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971667"><span id="local-6989586621681971669"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-(DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool)
--&gt; (DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool)
--&gt; Eq (DataDeclaration v a)
-forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
-forall v a.
-(Eq a, Var v) =&gt;
-DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-/= :: DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-$c/= :: forall v a.
-(Eq a, Var v) =&gt;
-DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-== :: DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-$c== :: forall v a.
-(Eq a, Var v) =&gt;
-DataDeclaration v a -&gt; DataDeclaration v a -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971661"><span id="local-6989586621681971663"><span id="local-6989586621681971665"><span class="annot"><span class="annottext">Int -&gt; DataDeclaration v a -&gt; ShowS
-[DataDeclaration v a] -&gt; ShowS
-DataDeclaration v a -&gt; String
-(Int -&gt; DataDeclaration v a -&gt; ShowS)
--&gt; (DataDeclaration v a -&gt; String)
--&gt; ([DataDeclaration v a] -&gt; ShowS)
--&gt; Show (DataDeclaration v a)
-forall a.
-(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; String) -&gt; ([a] -&gt; ShowS) -&gt; Show a
-forall v a. (Show a, Show v) =&gt; Int -&gt; DataDeclaration v a -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; [DataDeclaration v a] -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; DataDeclaration v a -&gt; String
-showList :: [DataDeclaration v a] -&gt; ShowS
-$cshowList :: forall v a. (Show a, Show v) =&gt; [DataDeclaration v a] -&gt; ShowS
-show :: DataDeclaration v a -&gt; String
-$cshow :: forall v a. (Show a, Show v) =&gt; DataDeclaration v a -&gt; String
-showsPrec :: Int -&gt; DataDeclaration v a -&gt; ShowS
-$cshowsPrec :: forall v a. (Show a, Show v) =&gt; Int -&gt; DataDeclaration v a -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971657"><span id="local-6989586621681971659"><span class="annot"><span class="annottext">a -&gt; DataDeclaration v b -&gt; DataDeclaration v a
+</span><span id="line-62"></span><span>    </span><span id="annotation"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; a
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#annotation"><span class="hs-identifier hs-var hs-var">annotation</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621681727029"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span>
+</span><span id="line-63"></span><span>    </span><span id="bound"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [v]
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#bound"><span class="hs-identifier hs-var hs-var">bound</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681727030"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span>
+</span><span id="line-64"></span><span>    </span><span id="constructors%27"><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [(a, v, Type v a)]
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var hs-var">constructors'</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681727029"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621681727030"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727030"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727029"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
+</span><span id="line-65"></span><span>  </span><span class="hs-special">}</span><span>
+</span><span id="line-66"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726808"><span id="local-6989586621681726810"><span class="annot"><span class="annottext">a -&gt; DataDeclaration v b -&gt; DataDeclaration v a
 (a -&gt; b) -&gt; DataDeclaration v a -&gt; DataDeclaration v b
 (forall a b.
  (a -&gt; b) -&gt; DataDeclaration v a -&gt; DataDeclaration v b)
@@ -252,50 +176,12 @@ fmap :: (a -&gt; b) -&gt; DataDeclaration v a -&gt; DataDeclaration v b
 $cfmap :: forall v a b.
 (a -&gt; b) -&gt; DataDeclaration v a -&gt; DataDeclaration v b
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-75"></span><span>
-</span><span id="line-76"></span><span class="hs-keyword">newtype</span><span> </span><span id="EffectDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-var">EffectDeclaration</span></a></span></span><span> </span><span id="local-6989586621681971987"><span class="annot"><a href="#local-6989586621681971987"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681971986"><span class="annot"><a href="#local-6989586621681971986"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="EffectDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-var">EffectDeclaration</span></a></span></span><span>
-</span><span id="line-77"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="toDataDecl"><span class="annot"><span class="annottext">EffectDeclaration v a -&gt; DataDeclaration v a
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#toDataDecl"><span class="hs-identifier hs-var hs-var">toDataDecl</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971987"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971986"><span class="hs-identifier hs-type">a</span></a></span><span>
-</span><span id="line-78"></span><span>  </span><span class="hs-special">}</span><span>
-</span><span id="line-79"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971651"><span id="local-6989586621681971653"><span class="annot"><span class="annottext">EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-(EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool)
--&gt; (EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool)
--&gt; Eq (EffectDeclaration v a)
-forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
-forall v a.
-(Var v, Eq a) =&gt;
-EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-/= :: EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-$c/= :: forall v a.
-(Var v, Eq a) =&gt;
-EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-== :: EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-$c== :: forall v a.
-(Var v, Eq a) =&gt;
-EffectDeclaration v a -&gt; EffectDeclaration v a -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971645"><span id="local-6989586621681971647"><span id="local-6989586621681971649"><span class="annot"><span class="annottext">Int -&gt; EffectDeclaration v a -&gt; ShowS
-[EffectDeclaration v a] -&gt; ShowS
-EffectDeclaration v a -&gt; String
-(Int -&gt; EffectDeclaration v a -&gt; ShowS)
--&gt; (EffectDeclaration v a -&gt; String)
--&gt; ([EffectDeclaration v a] -&gt; ShowS)
--&gt; Show (EffectDeclaration v a)
-forall a.
-(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; String) -&gt; ([a] -&gt; ShowS) -&gt; Show a
-forall v a.
-(Show a, Show v) =&gt;
-Int -&gt; EffectDeclaration v a -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; [EffectDeclaration v a] -&gt; ShowS
-forall v a. (Show a, Show v) =&gt; EffectDeclaration v a -&gt; String
-showList :: [EffectDeclaration v a] -&gt; ShowS
-$cshowList :: forall v a. (Show a, Show v) =&gt; [EffectDeclaration v a] -&gt; ShowS
-show :: EffectDeclaration v a -&gt; String
-$cshow :: forall v a. (Show a, Show v) =&gt; EffectDeclaration v a -&gt; String
-showsPrec :: Int -&gt; EffectDeclaration v a -&gt; ShowS
-$cshowsPrec :: forall v a.
-(Show a, Show v) =&gt;
-Int -&gt; EffectDeclaration v a -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971641"><span id="local-6989586621681971643"><span class="annot"><span class="annottext">a -&gt; EffectDeclaration v b -&gt; EffectDeclaration v a
+</span><span id="line-67"></span><span>
+</span><span id="line-68"></span><span class="hs-keyword">newtype</span><span> </span><span id="EffectDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-var">EffectDeclaration</span></a></span></span><span> </span><span id="local-6989586621681727104"><span class="annot"><a href="#local-6989586621681727104"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span id="local-6989586621681727103"><span class="annot"><a href="#local-6989586621681727103"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="EffectDeclaration"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#EffectDeclaration"><span class="hs-identifier hs-var">EffectDeclaration</span></a></span></span><span>
+</span><span id="line-69"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="toDataDecl"><span class="annot"><span class="annottext">EffectDeclaration v a -&gt; DataDeclaration v a
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#toDataDecl"><span class="hs-identifier hs-var hs-var">toDataDecl</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727104"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727103"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-70"></span><span>  </span><span class="hs-special">}</span><span>
+</span><span id="line-71"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726802"><span id="local-6989586621681726804"><span class="annot"><span class="annottext">a -&gt; EffectDeclaration v b -&gt; EffectDeclaration v a
 (a -&gt; b) -&gt; EffectDeclaration v a -&gt; EffectDeclaration v b
 (forall a b.
  (a -&gt; b) -&gt; EffectDeclaration v a -&gt; EffectDeclaration v b)
@@ -317,9 +203,9 @@ fmap :: (a -&gt; b) -&gt; EffectDeclaration v a -&gt; EffectDeclaration v b
 $cfmap :: forall v a b.
 (a -&gt; b) -&gt; EffectDeclaration v a -&gt; EffectDeclaration v b
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-80"></span><span>
-</span><span id="line-81"></span><span id="local-6989586621681971919"><span id="local-6989586621681971920"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructorTypes"><span class="hs-identifier hs-type">constructorTypes</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971920"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971919"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971920"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971919"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span></span></span><span>
-</span><span id="line-82"></span><span id="constructorTypes"><span class="annot"><span class="annottext">constructorTypes :: DataDeclaration v a -&gt; [Type v a]
+</span><span id="line-72"></span><span>
+</span><span id="line-73"></span><span id="local-6989586621681727040"><span id="local-6989586621681727041"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructorTypes"><span class="hs-identifier hs-type">constructorTypes</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727041"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727040"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727041"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727040"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span></span></span><span>
+</span><span id="line-74"></span><span id="constructorTypes"><span class="annot"><span class="annottext">constructorTypes :: DataDeclaration v a -&gt; [Type v a]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructorTypes"><span class="hs-identifier hs-var hs-var">constructorTypes</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(v, Type v a) -&gt; Type v a
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">((v, Type v a) -&gt; Type v a) -&gt; [(v, Type v a)] -&gt; [Type v a]
@@ -332,26 +218,26 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [(v, Type v a)]
 forall v a. DataDeclaration v a -&gt; [(v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors"><span class="hs-identifier hs-var">constructors</span></a></span><span>
-</span><span id="line-83"></span><span>
-</span><span id="line-84"></span><span id="local-6989586621681971929"><span id="local-6989586621681971930"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructors"><span class="hs-identifier hs-type">constructors</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971930"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971929"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681971930"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971930"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971929"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span></span><span>
-</span><span id="line-85"></span><span id="constructors"><span class="annot"><span class="annottext">constructors :: DataDeclaration v a -&gt; [(v, Type v a)]
+</span><span id="line-75"></span><span>
+</span><span id="line-76"></span><span id="local-6989586621681727050"><span id="local-6989586621681727051"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#constructors"><span class="hs-identifier hs-type">constructors</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727051"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727050"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681727051"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Type.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727051"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727050"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span></span><span>
+</span><span id="line-77"></span><span id="constructors"><span class="annot"><span class="annottext">constructors :: DataDeclaration v a -&gt; [(v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors"><span class="hs-identifier hs-var hs-var">constructors</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><span class="annottext">Modifier
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">[v]
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681971638"><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971638"><span class="hs-identifier hs-var">ctors</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971637"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type v a
-</span><a href="#local-6989586621681971636"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971637"><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971637"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971636"><span class="annot"><span class="annottext">Type v a
-</span><a href="#local-6989586621681971636"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971638"><span class="hs-identifier hs-var">ctors</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-86"></span><span>
-</span><span id="line-87"></span><span id="local-6989586621681971979"><span id="local-6989586621681971980"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#dependencies"><span class="hs-identifier hs-type">dependencies</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621681971980"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971980"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971979"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span>
-</span><span id="line-88"></span><span id="dependencies"><span class="annot"><span class="annottext">dependencies :: DataDeclaration v a -&gt; Set Reference
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#dependencies"><span class="hs-identifier hs-var hs-var">dependencies</span></a></span></span><span> </span><span id="local-6989586621681971635"><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971635"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-89"></span><span>  </span><span class="annot"><span class="annottext">[Set Reference] -&gt; Set Reference
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681726799"><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="#local-6989586621681726799"><span class="hs-identifier hs-var">ctors</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726798"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type v a
+</span><a href="#local-6989586621681726797"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726798"><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726798"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726797"><span class="annot"><span class="annottext">Type v a
+</span><a href="#local-6989586621681726797"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="#local-6989586621681726799"><span class="hs-identifier hs-var">ctors</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-78"></span><span>
+</span><span id="line-79"></span><span id="local-6989586621681727096"><span id="local-6989586621681727097"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#dependencies"><span class="hs-identifier hs-type">dependencies</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="#local-6989586621681727097"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727097"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727096"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span>
+</span><span id="line-80"></span><span id="dependencies"><span class="annot"><span class="annottext">dependencies :: DataDeclaration v a -&gt; Set Reference
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#dependencies"><span class="hs-identifier hs-var hs-var">dependencies</span></a></span></span><span> </span><span id="local-6989586621681726796"><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726796"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-81"></span><span>  </span><span class="annot"><span class="annottext">[Set Reference] -&gt; Set Reference
 forall (f :: * -&gt; *) a. (Foldable f, Ord a) =&gt; f (Set a) -&gt; Set a
 </span><span class="hs-identifier hs-var">Set.unions</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type v a -&gt; Set Reference
 forall v a. Ord v =&gt; Type v a -&gt; Set Reference
@@ -360,12 +246,12 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [Type v a]
 forall v a. DataDeclaration v a -&gt; [Type v a]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructorTypes"><span class="hs-identifier hs-var">constructorTypes</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971635"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-90"></span><span>
-</span><span id="line-91"></span><span id="local-6989586621681971892"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#toABT"><span class="hs-identifier hs-type">toABT</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681971892"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971892"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ABT.Term</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-type">F</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971892"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
-</span><span id="line-92"></span><span id="toABT"><span class="annot"><span class="annottext">toABT :: DataDeclaration v () -&gt; Term F v ()
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#toABT"><span class="hs-identifier hs-var hs-var">toABT</span></a></span></span><span> </span><span id="local-6989586621681971631"><span class="annot"><span class="annottext">DataDeclaration v ()
-</span><a href="#local-6989586621681971631"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
+</span><a href="#local-6989586621681726796"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-82"></span><span>
+</span><span id="line-83"></span><span id="local-6989586621681727013"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#toABT"><span class="hs-identifier hs-type">toABT</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681727013"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727013"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ABT.Term</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-type">F</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727013"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-84"></span><span id="toABT"><span class="annot"><span class="annottext">toABT :: DataDeclaration v () -&gt; Term F v ()
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#toABT"><span class="hs-identifier hs-var hs-var">toABT</span></a></span></span><span> </span><span id="local-6989586621681726792"><span class="annot"><span class="annottext">DataDeclaration v ()
+</span><a href="#local-6989586621681726792"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
 forall (f :: * -&gt; *) v.
 (Foldable f, Ord v) =&gt;
 f (Term f v ()) -&gt; Term f v ()
@@ -376,32 +262,32 @@ forall a. Modifier -&gt; a -&gt; F a
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#Modified"><span class="hs-identifier hs-var">Modified</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; Modifier
 forall v a. DataDeclaration v a -&gt; Modifier
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#modifier"><span class="hs-identifier hs-var hs-var">modifier</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v ()
-</span><a href="#local-6989586621681971631"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v ()
-</span><a href="#local-6989586621681971628"><span class="hs-identifier hs-var">dd'</span></a></span><span>
-</span><span id="line-93"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-94"></span><span>  </span><span id="local-6989586621681971628"><span class="annot"><span class="annottext">dd' :: Term F v ()
-</span><a href="#local-6989586621681971628"><span class="hs-identifier hs-var hs-var">dd'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[v] -&gt; Term F v () -&gt; Term F v ()
+</span><a href="#local-6989586621681726792"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v ()
+</span><a href="#local-6989586621681726789"><span class="hs-identifier hs-var">dd'</span></a></span><span>
+</span><span id="line-85"></span><span>  </span><span class="hs-keyword">where</span><span>
+</span><span id="line-86"></span><span>  </span><span id="local-6989586621681726789"><span class="annot"><span class="annottext">dd' :: Term F v ()
+</span><a href="#local-6989586621681726789"><span class="hs-identifier hs-var hs-var">dd'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[v] -&gt; Term F v () -&gt; Term F v ()
 forall v (f :: * -&gt; *). Ord v =&gt; [v] -&gt; Term f v () -&gt; Term f v ()
 </span><span class="hs-identifier hs-var">ABT.absChain</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; [v]
 forall v a. DataDeclaration v a -&gt; [v]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#bound"><span class="hs-identifier hs-var hs-var">bound</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v ()
-</span><a href="#local-6989586621681971631"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Term F v () -&gt; Term F v ()) -&gt; Term F v () -&gt; Term F v ()
+</span><a href="#local-6989586621681726792"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Term F v () -&gt; Term F v ()) -&gt; Term F v () -&gt; Term F v ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Term F v () -&gt; Term F v ()
 forall (f :: * -&gt; *) v. Term f v () -&gt; Term f v ()
 </span><span class="hs-identifier hs-var">ABT.cycle</span></span><span>
-</span><span id="line-95"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[v] -&gt; Term F v () -&gt; Term F v ()
+</span><span id="line-87"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[v] -&gt; Term F v () -&gt; Term F v ()
 forall v (f :: * -&gt; *). Ord v =&gt; [v] -&gt; Term f v () -&gt; Term f v ()
 </span><span class="hs-identifier hs-var">ABT.absChain</span></span><span>
-</span><span id="line-96"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(v, Type v ()) -&gt; v
+</span><span id="line-88"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(v, Type v ()) -&gt; v
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">((v, Type v ()) -&gt; v) -&gt; [(v, Type v ())] -&gt; [v]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; [(v, Type v ())]
 forall v a. DataDeclaration v a -&gt; [(v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors"><span class="hs-identifier hs-var">constructors</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v ()
-</span><a href="#local-6989586621681971631"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-97"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
+</span><a href="#local-6989586621681726792"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-89"></span><span>            </span><span class="hs-special">(</span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
 forall (f :: * -&gt; *) v.
 (Foldable f, Ord v) =&gt;
 f (Term f v ()) -&gt; Term f v ()
@@ -424,24 +310,24 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; [Type v ()]
 forall v a. DataDeclaration v a -&gt; [Type v a]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructorTypes"><span class="hs-identifier hs-var">constructorTypes</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v ()
-</span><a href="#local-6989586621681971631"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-98"></span><span>
-</span><span id="line-99"></span><span class="hs-comment">-- Implementation detail of `hashDecls`, works with unannotated data decls</span><span>
-</span><span id="line-100"></span><span id="local-6989586621681971879"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls0"><span class="hs-identifier hs-type">hashDecls0</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681971879"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Reference.Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
-</span><span id="line-101"></span><span id="hashDecls0"><span class="annot"><span class="annottext">hashDecls0 :: Map v (DataDeclaration v ()) -&gt; [(v, Id)]
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls0"><span class="hs-identifier hs-var hs-var">hashDecls0</span></a></span></span><span> </span><span id="local-6989586621681971621"><span class="annot"><span class="annottext">Map v (DataDeclaration v ())
-</span><a href="#local-6989586621681971621"><span class="hs-identifier hs-var">decls</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-102"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681971620"><span class="annot"><span class="annottext">abts :: Map v (Term F v ())
-</span><a href="#local-6989586621681971620"><span class="hs-identifier hs-var hs-var">abts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; Term F v ()
+</span><a href="#local-6989586621681726792"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-90"></span><span>
+</span><span id="line-91"></span><span class="hs-comment">-- Implementation detail of `hashDecls`, works with unannotated data decls</span><span>
+</span><span id="line-92"></span><span id="local-6989586621681726999"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls0"><span class="hs-identifier hs-type">hashDecls0</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681726999"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Reference.Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
+</span><span id="line-93"></span><span id="hashDecls0"><span class="annot"><span class="annottext">hashDecls0 :: Map v (DataDeclaration v ()) -&gt; [(v, Id)]
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls0"><span class="hs-identifier hs-var hs-var">hashDecls0</span></a></span></span><span> </span><span id="local-6989586621681726782"><span class="annot"><span class="annottext">Map v (DataDeclaration v ())
+</span><a href="#local-6989586621681726782"><span class="hs-identifier hs-var">decls</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-94"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681726781"><span class="annot"><span class="annottext">abts :: Map v (Term F v ())
+</span><a href="#local-6989586621681726781"><span class="hs-identifier hs-var hs-var">abts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v () -&gt; Term F v ()
 forall v. Var v =&gt; DataDeclaration v () -&gt; Term F v ()
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#toABT"><span class="hs-identifier hs-var">toABT</span></a></span><span> </span><span class="annot"><span class="annottext">(DataDeclaration v () -&gt; Term F v ())
 -&gt; Map v (DataDeclaration v ()) -&gt; Map v (Term F v ())
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v ())
-</span><a href="#local-6989586621681971621"><span class="hs-identifier hs-var">decls</span></a></span><span>
-</span><span id="line-103"></span><span>      </span><span id="local-6989586621681971619"><span class="annot"><span class="annottext">ref :: Id -&gt; Term F v ()
-</span><a href="#local-6989586621681971619"><span class="hs-identifier hs-var hs-var">ref</span></a></span></span><span> </span><span id="local-6989586621681971618"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971618"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
+</span><a href="#local-6989586621681726782"><span class="hs-identifier hs-var">decls</span></a></span><span>
+</span><span id="line-95"></span><span>      </span><span id="local-6989586621681726780"><span class="annot"><span class="annottext">ref :: Id -&gt; Term F v ()
+</span><a href="#local-6989586621681726780"><span class="hs-identifier hs-var hs-var">ref</span></a></span></span><span> </span><span id="local-6989586621681726779"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681726779"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">F (Term F v ()) -&gt; Term F v ()
 forall (f :: * -&gt; *) v.
 (Foldable f, Ord v) =&gt;
 f (Term f v ()) -&gt; Term f v ()
@@ -451,49 +337,49 @@ forall a1. F a1 -&gt; F a1
 forall a. Reference -&gt; F a
 </span><a href="Unison.Hashing.V2.Type.html#Ref"><span class="hs-identifier hs-var">Type.Ref</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Id -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">Reference.DerivedId</span></a></span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971618"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-104"></span><span>      </span><span id="local-6989586621681971615"><span class="annot"><span class="annottext">cs :: Map v (Id, Term F v ())
-</span><a href="#local-6989586621681971615"><span class="hs-identifier hs-var hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Id -&gt; Term F v ())
+</span><a href="#local-6989586621681726779"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-96"></span><span>      </span><span id="local-6989586621681726776"><span class="annot"><span class="annottext">cs :: Map v (Id, Term F v ())
+</span><a href="#local-6989586621681726776"><span class="hs-identifier hs-var hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Id -&gt; Term F v ())
 -&gt; Map v (Term F v ()) -&gt; Map v (Id, Term F v ())
 forall (f :: * -&gt; *) v a.
 (Functor f, Hashable1 f, Foldable f, Eq v, Show v, Var v) =&gt;
 (Id -&gt; Term f v ()) -&gt; Map v (Term f v a) -&gt; Map v (Id, Term f v a)
 </span><a href="Unison.Hashing.V2.Reference.Util.html#hashComponents"><span class="hs-identifier hs-var">Reference.Util.hashComponents</span></a></span><span> </span><span class="annot"><span class="annottext">Id -&gt; Term F v ()
 forall v. Ord v =&gt; Id -&gt; Term F v ()
-</span><a href="#local-6989586621681971619"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">Map v (Term F v ())
-</span><a href="#local-6989586621681971620"><span class="hs-identifier hs-var">abts</span></a></span><span>
-</span><span id="line-105"></span><span>   </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971613"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971612"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971613"><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971613"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971612"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971612"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Term F v ()
+</span><a href="#local-6989586621681726780"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">Map v (Term F v ())
+</span><a href="#local-6989586621681726781"><span class="hs-identifier hs-var">abts</span></a></span><span>
+</span><span id="line-97"></span><span>   </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726774"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681726773"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726774"><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726774"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726773"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681726773"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Term F v ()
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map v (Id, Term F v ()) -&gt; [(v, (Id, Term F v ()))]
 forall k a. Map k a -&gt; [(k, a)]
 </span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map v (Id, Term F v ())
-</span><a href="#local-6989586621681971615"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-106"></span><span>
-</span><span id="line-107"></span><span class="hs-comment">-- | compute the hashes of these user defined types and update any free vars</span><span>
-</span><span id="line-108"></span><span class="hs-comment">--   corresponding to these decls with the resulting hashes</span><span>
-</span><span id="line-109"></span><span class="hs-comment">--</span><span>
-</span><span id="line-110"></span><span class="hs-comment">--   data List a = Nil | Cons a (List a)</span><span>
-</span><span id="line-111"></span><span class="hs-comment">--   becomes something like</span><span>
-</span><span id="line-112"></span><span class="hs-comment">--   (List, #xyz, [forall a. #xyz a, forall a. a -&gt; (#xyz a) -&gt; (#xyz a)])</span><span>
-</span><span id="line-113"></span><span class="hs-comment">--</span><span>
-</span><span id="line-114"></span><span class="hs-comment">-- NOTE: technical limitation, this implementation gives diff results if ctors</span><span>
-</span><span id="line-115"></span><span class="hs-comment">-- have the same FQN as one of the types. TODO: assert this and bomb if not</span><span>
-</span><span id="line-116"></span><span class="hs-comment">-- satisfied, or else do local mangling and unmangling to ensure this doesn't</span><span>
-</span><span id="line-117"></span><span class="hs-comment">-- affect the hash.</span><span>
-</span><span id="line-118"></span><span id="local-6989586621681971609"><span id="local-6989586621681971610"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls"><span class="hs-identifier hs-type">hashDecls</span></a></span><span> </span><span class="hs-glyph">::</span><span>
-</span><span id="line-119"></span><span>  </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span>
-</span><span id="line-120"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971609"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-121"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Names.ResolutionResult</span></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971609"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Reference.Id</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971609"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span></span><span>
-</span><span id="line-122"></span><span id="hashDecls"><span class="annot"><span class="annottext">hashDecls :: Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726776"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-98"></span><span>
+</span><span id="line-99"></span><span class="hs-comment">-- | compute the hashes of these user defined types and update any free vars</span><span>
+</span><span id="line-100"></span><span class="hs-comment">--   corresponding to these decls with the resulting hashes</span><span>
+</span><span id="line-101"></span><span class="hs-comment">--</span><span>
+</span><span id="line-102"></span><span class="hs-comment">--   data List a = Nil | Cons a (List a)</span><span>
+</span><span id="line-103"></span><span class="hs-comment">--   becomes something like</span><span>
+</span><span id="line-104"></span><span class="hs-comment">--   (List, #xyz, [forall a. #xyz a, forall a. a -&gt; (#xyz a) -&gt; (#xyz a)])</span><span>
+</span><span id="line-105"></span><span class="hs-comment">--</span><span>
+</span><span id="line-106"></span><span class="hs-comment">-- NOTE: technical limitation, this implementation gives diff results if ctors</span><span>
+</span><span id="line-107"></span><span class="hs-comment">-- have the same FQN as one of the types. TODO: assert this and bomb if not</span><span>
+</span><span id="line-108"></span><span class="hs-comment">-- satisfied, or else do local mangling and unmangling to ensure this doesn't</span><span>
+</span><span id="line-109"></span><span class="hs-comment">-- affect the hash.</span><span>
+</span><span id="line-110"></span><span id="local-6989586621681726770"><span id="local-6989586621681726771"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls"><span class="hs-identifier hs-type">hashDecls</span></a></span><span> </span><span class="hs-glyph">::</span><span>
+</span><span id="line-111"></span><span>  </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span>
+</span><span id="line-112"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726770"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-113"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Names.ResolutionResult</span></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726770"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Reference.Id</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726771"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726770"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span></span><span>
+</span><span id="line-114"></span><span id="hashDecls"><span class="annot"><span class="annottext">hashDecls :: Map v (DataDeclaration v a)
 -&gt; ResolutionResult v a [(v, Id, DataDeclaration v a)]
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls"><span class="hs-identifier hs-var hs-var">hashDecls</span></a></span></span><span> </span><span id="local-6989586621681971608"><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971608"><span class="hs-identifier hs-var">decls</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-123"></span><span>  </span><span class="hs-comment">-- todo: make sure all other external references are resolved before calling this</span><span>
-</span><span id="line-124"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681971607"><span class="annot"><span class="annottext">varToRef :: [(v, Id)]
-</span><a href="#local-6989586621681971607"><span class="hs-identifier hs-var hs-var">varToRef</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v ()) -&gt; [(v, Id)]
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#hashDecls"><span class="hs-identifier hs-var hs-var">hashDecls</span></a></span></span><span> </span><span id="local-6989586621681726769"><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726769"><span class="hs-identifier hs-var">decls</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-115"></span><span>  </span><span class="hs-comment">-- todo: make sure all other external references are resolved before calling this</span><span>
+</span><span id="line-116"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681726768"><span class="annot"><span class="annottext">varToRef :: [(v, Id)]
+</span><a href="#local-6989586621681726768"><span class="hs-identifier hs-var hs-var">varToRef</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v ()) -&gt; [(v, Id)]
 forall v.
 (Eq v, Var v, Show v) =&gt;
 Map v (DataDeclaration v ()) -&gt; [(v, Id)]
@@ -503,9 +389,9 @@ forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
 -&gt; Map v (DataDeclaration v a) -&gt; Map v (DataDeclaration v ())
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971608"><span class="hs-identifier hs-var">decls</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-125"></span><span>      </span><span id="local-6989586621681971605"><span class="annot"><span class="annottext">varToRef' :: [(v, Reference)]
-</span><a href="#local-6989586621681971605"><span class="hs-identifier hs-var hs-var">varToRef'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Id -&gt; Reference) -&gt; (v, Id) -&gt; (v, Reference)
+</span><a href="#local-6989586621681726769"><span class="hs-identifier hs-var">decls</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-117"></span><span>      </span><span id="local-6989586621681726766"><span class="annot"><span class="annottext">varToRef' :: [(v, Reference)]
+</span><a href="#local-6989586621681726766"><span class="hs-identifier hs-var hs-var">varToRef'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Id -&gt; Reference) -&gt; (v, Id) -&gt; (v, Reference)
 forall (p :: * -&gt; * -&gt; *) b c a.
 Bifunctor p =&gt;
 (b -&gt; c) -&gt; p a b -&gt; p a c
@@ -513,19 +399,19 @@ Bifunctor p =&gt;
 </span><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">Reference.DerivedId</span></a></span><span> </span><span class="annot"><span class="annottext">((v, Id) -&gt; (v, Reference)) -&gt; [(v, Id)] -&gt; [(v, Reference)]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[(v, Id)]
-</span><a href="#local-6989586621681971607"><span class="hs-identifier hs-var">varToRef</span></a></span><span>
-</span><span id="line-126"></span><span>      </span><span id="local-6989586621681971604"><span class="annot"><span class="annottext">decls' :: Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971604"><span class="hs-identifier hs-var hs-var">decls'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; DataDeclaration v a
+</span><a href="#local-6989586621681726768"><span class="hs-identifier hs-var">varToRef</span></a></span><span>
+</span><span id="line-118"></span><span>      </span><span id="local-6989586621681726765"><span class="annot"><span class="annottext">decls' :: Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726765"><span class="hs-identifier hs-var hs-var">decls'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; DataDeclaration v a
 forall a. DataDeclaration v a -&gt; DataDeclaration v a
-</span><a href="#local-6989586621681971603"><span class="hs-identifier hs-var">bindTypes</span></a></span><span> </span><span class="annot"><span class="annottext">(DataDeclaration v a -&gt; DataDeclaration v a)
+</span><a href="#local-6989586621681726764"><span class="hs-identifier hs-var">bindTypes</span></a></span><span> </span><span class="annot"><span class="annottext">(DataDeclaration v a -&gt; DataDeclaration v a)
 -&gt; Map v (DataDeclaration v a) -&gt; Map v (DataDeclaration v a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971608"><span class="hs-identifier hs-var">decls</span></a></span><span>
-</span><span id="line-127"></span><span>      </span><span id="local-6989586621681971603"><span class="annot"><span class="annottext">bindTypes :: DataDeclaration v a -&gt; DataDeclaration v a
-</span><a href="#local-6989586621681971603"><span class="hs-identifier hs-var hs-var">bindTypes</span></a></span></span><span> </span><span id="local-6989586621681971602"><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971602"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971602"><span class="hs-identifier hs-var">dd</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">constructors' :: [(a, v, Type v a)]
+</span><a href="#local-6989586621681726769"><span class="hs-identifier hs-var">decls</span></a></span><span>
+</span><span id="line-119"></span><span>      </span><span id="local-6989586621681726764"><span class="annot"><span class="annottext">bindTypes :: DataDeclaration v a -&gt; DataDeclaration v a
+</span><a href="#local-6989586621681726764"><span class="hs-identifier hs-var hs-var">bindTypes</span></a></span></span><span> </span><span id="local-6989586621681726763"><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726763"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726763"><span class="hs-identifier hs-var">dd</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">constructors' :: [(a, v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var">constructors'</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ASetter (a, v, Type v a) (a, v, Type v a) (Type v a) (Type v a)
 -&gt; (Type v a -&gt; Type v a) -&gt; (a, v, Type v a) -&gt; (a, v, Type v a)
 forall s t a b. ASetter s t a b -&gt; (a -&gt; b) -&gt; s -&gt; t
@@ -534,15 +420,15 @@ forall s t a b. Field3 s t a b =&gt; Lens s t a b
 </span><span class="hs-identifier hs-var">_3</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(v, Reference)] -&gt; Type v a -&gt; Type v a
 forall v a. Var v =&gt; [(v, Reference)] -&gt; Type v a -&gt; Type v a
 </span><a href="Unison.Hashing.V2.Type.html#bindExternal"><span class="hs-identifier hs-var">Type.bindExternal</span></a></span><span> </span><span class="annot"><span class="annottext">[(v, Reference)]
-</span><a href="#local-6989586621681971605"><span class="hs-identifier hs-var">varToRef'</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((a, v, Type v a) -&gt; (a, v, Type v a))
+</span><a href="#local-6989586621681726766"><span class="hs-identifier hs-var">varToRef'</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((a, v, Type v a) -&gt; (a, v, Type v a))
 -&gt; [(a, v, Type v a)] -&gt; [(a, v, Type v a)]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [(a, v, Type v a)]
 forall v a. DataDeclaration v a -&gt; [(a, v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var hs-var">constructors'</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971602"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-128"></span><span>      </span><span id="local-6989586621681971600"><span class="annot"><span class="annottext">typeReferences :: Map Name Reference
-</span><a href="#local-6989586621681971600"><span class="hs-identifier hs-var hs-var">typeReferences</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[(Name, Reference)] -&gt; Map Name Reference
+</span><a href="#local-6989586621681726763"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-120"></span><span>      </span><span id="local-6989586621681726761"><span class="annot"><span class="annottext">typeReferences :: Map Name Reference
+</span><a href="#local-6989586621681726761"><span class="hs-identifier hs-var hs-var">typeReferences</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[(Name, Reference)] -&gt; Map Name Reference
 forall k a. Ord k =&gt; [(k, a)] -&gt; Map k a
 </span><span class="hs-identifier hs-var">Map.fromList</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(v -&gt; Name) -&gt; (v, Reference) -&gt; (Name, Reference)
 forall (p :: * -&gt; * -&gt; *) a b c.
@@ -550,16 +436,16 @@ Bifunctor p =&gt;
 (a -&gt; b) -&gt; p a c -&gt; p b c
 </span><span class="hs-identifier hs-var">first</span></span><span> </span><span class="annot"><span class="annottext">v -&gt; Name
 forall v. Var v =&gt; v -&gt; Name
-</span><span class="hs-identifier hs-var">Name.fromVar</span></span><span> </span><span class="annot"><span class="annottext">((v, Reference) -&gt; (Name, Reference))
+</span><span class="hs-identifier hs-var">Name.unsafeFromVar</span></span><span> </span><span class="annot"><span class="annottext">((v, Reference) -&gt; (Name, Reference))
 -&gt; [(v, Reference)] -&gt; [(Name, Reference)]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[(v, Reference)]
-</span><a href="#local-6989586621681971605"><span class="hs-identifier hs-var">varToRef'</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-129"></span><span>      </span><span class="hs-comment">-- normalize the order of the constructors based on a hash of their types</span><span>
-</span><span id="line-130"></span><span>      </span><span id="local-6989586621681971597"><span class="annot"><span class="annottext">sortCtors :: DataDeclaration v a -&gt; DataDeclaration v a
-</span><a href="#local-6989586621681971597"><span class="hs-identifier hs-var hs-var">sortCtors</span></a></span></span><span> </span><span id="local-6989586621681971596"><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971596"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971596"><span class="hs-identifier hs-var">dd</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">constructors' :: [(a, v, Type v a)]
+</span><a href="#local-6989586621681726766"><span class="hs-identifier hs-var">varToRef'</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-121"></span><span>      </span><span class="hs-comment">-- normalize the order of the constructors based on a hash of their types</span><span>
+</span><span id="line-122"></span><span>      </span><span id="local-6989586621681726758"><span class="annot"><span class="annottext">sortCtors :: DataDeclaration v a -&gt; DataDeclaration v a
+</span><a href="#local-6989586621681726758"><span class="hs-identifier hs-var hs-var">sortCtors</span></a></span></span><span> </span><span id="local-6989586621681726757"><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726757"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726757"><span class="hs-identifier hs-var">dd</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">constructors' :: [(a, v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var">constructors'</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((a, v, Type v a) -&gt; Hash)
 -&gt; [(a, v, Type v a)] -&gt; [(a, v, Type v a)]
 forall b a. Ord b =&gt; (a -&gt; b) -&gt; [a] -&gt; [a]
@@ -567,32 +453,32 @@ forall b a. Ord b =&gt; (a -&gt; b) -&gt; [a] -&gt; [a]
 forall (f :: * -&gt; *) v a b a.
 (Hashable1 f, Eq v, Show v) =&gt;
 (a, b, Term f v a) -&gt; Hash
-</span><a href="#local-6989586621681971594"><span class="hs-identifier hs-var">hash3</span></a></span><span> </span><span class="annot"><span class="annottext">([(a, v, Type v a)] -&gt; [(a, v, Type v a)])
+</span><a href="#local-6989586621681726755"><span class="hs-identifier hs-var">hash3</span></a></span><span> </span><span class="annot"><span class="annottext">([(a, v, Type v a)] -&gt; [(a, v, Type v a)])
 -&gt; [(a, v, Type v a)] -&gt; [(a, v, Type v a)]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; [(a, v, Type v a)]
 forall v a. DataDeclaration v a -&gt; [(a, v, Type v a)]
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#constructors%27"><span class="hs-identifier hs-var hs-var">constructors'</span></a></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971596"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-131"></span><span>      </span><span id="local-6989586621681971594"><span class="annot"><span class="annottext">hash3 :: (a, b, Term f v a) -&gt; Hash
-</span><a href="#local-6989586621681971594"><span class="hs-identifier hs-var hs-var">hash3</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726757"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-123"></span><span>      </span><span id="local-6989586621681726755"><span class="annot"><span class="annottext">hash3 :: (a, b, Term f v a) -&gt; Hash
+</span><a href="#local-6989586621681726755"><span class="hs-identifier hs-var hs-var">hash3</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
 </span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">b
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971593"><span class="annot"><span class="annottext">Term f v a
-</span><a href="#local-6989586621681971593"><span class="hs-identifier hs-var">typ</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term f v a -&gt; Hash
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726754"><span class="annot"><span class="annottext">Term f v a
+</span><a href="#local-6989586621681726754"><span class="hs-identifier hs-var">typ</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term f v a -&gt; Hash
 forall (f :: * -&gt; *) v a h.
 (Functor f, Hashable1 f, Eq v, Show v, Ord h, Accumulate h) =&gt;
 Term f v a -&gt; h
 </span><span class="hs-identifier hs-var">ABT.hash</span></span><span> </span><span class="annot"><span class="annottext">Term f v a
-</span><a href="#local-6989586621681971593"><span class="hs-identifier hs-var">typ</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hash</span></span><span>
-</span><span id="line-132"></span><span>  </span><span id="local-6989586621681971591"><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971591"><span class="hs-identifier hs-var">decls'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(DataDeclaration v a -&gt; DataDeclaration v a)
+</span><a href="#local-6989586621681726754"><span class="hs-identifier hs-var">typ</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hash</span></span><span>
+</span><span id="line-124"></span><span>  </span><span id="local-6989586621681726752"><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726752"><span class="hs-identifier hs-var">decls'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(DataDeclaration v a -&gt; DataDeclaration v a)
 -&gt; Map v (DataDeclaration v a) -&gt; Map v (DataDeclaration v a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a -&gt; DataDeclaration v a
 forall v a.
 (Eq v, Show v) =&gt;
 DataDeclaration v a -&gt; DataDeclaration v a
-</span><a href="#local-6989586621681971597"><span class="hs-identifier hs-var">sortCtors</span></a></span><span> </span><span class="annot"><span class="annottext">(Map v (DataDeclaration v a) -&gt; Map v (DataDeclaration v a))
+</span><a href="#local-6989586621681726758"><span class="hs-identifier hs-var">sortCtors</span></a></span><span> </span><span class="annot"><span class="annottext">(Map v (DataDeclaration v a) -&gt; Map v (DataDeclaration v a))
 -&gt; Either
      (Seq (ResolutionFailure v a)) (Map v (DataDeclaration v a))
 -&gt; Either
@@ -619,40 +505,40 @@ Set v
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#bindReferences"><span class="hs-identifier hs-var">bindReferences</span></a></span><span> </span><span class="annot"><span class="annottext">Set v
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span> </span><span class="annot"><span class="annottext">Map Name Reference
-</span><a href="#local-6989586621681971600"><span class="hs-identifier hs-var">typeReferences</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971604"><span class="hs-identifier hs-var">decls'</span></a></span><span>
-</span><span id="line-133"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971589"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971588"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971587"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971589"><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971589"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971588"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681971588"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(v, Id)]
-</span><a href="#local-6989586621681971607"><span class="hs-identifier hs-var">varToRef</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681971587"><span class="annot"><span class="annottext">DataDeclaration v a
-</span><a href="#local-6989586621681971587"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">v -&gt; Map v (DataDeclaration v a) -&gt; Maybe (DataDeclaration v a)
+</span><a href="#local-6989586621681726761"><span class="hs-identifier hs-var">typeReferences</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726765"><span class="hs-identifier hs-var">decls'</span></a></span><span>
+</span><span id="line-125"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726750"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681726749"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726748"><span class="hs-identifier hs-var">dd</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726750"><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726750"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726749"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681726749"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(v, Id)]
+</span><a href="#local-6989586621681726768"><span class="hs-identifier hs-var">varToRef</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681726748"><span class="annot"><span class="annottext">DataDeclaration v a
+</span><a href="#local-6989586621681726748"><span class="hs-identifier hs-var">dd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">v -&gt; Map v (DataDeclaration v a) -&gt; Maybe (DataDeclaration v a)
 forall k a. Ord k =&gt; k -&gt; Map k a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Map.lookup</span></span><span> </span><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971589"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
-</span><a href="#local-6989586621681971591"><span class="hs-identifier hs-var">decls'</span></a></span><span class="hs-special">]</span><span class="hs-special">]</span><span>
-</span><span id="line-134"></span><span>
-</span><span id="line-135"></span><span id="local-6989586621681971828"><span id="local-6989586621681971829"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#bindReferences"><span class="hs-identifier hs-type">bindReferences</span></a></span><span> </span><span class="hs-glyph">::</span><span>
-</span><span id="line-136"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681971829"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span>
-</span><span id="line-137"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="#local-6989586621681971829"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-138"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name.Name</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-139"></span><span>  </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971829"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971828"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-140"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Names.ResolutionResult</span></span><span> </span><span class="annot"><a href="#local-6989586621681971829"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971828"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971829"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971828"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span><span>
-</span><span id="line-141"></span><span id="bindReferences"><span class="annot"><span class="annottext">bindReferences :: Set v
+</span><a href="#local-6989586621681726750"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Map v (DataDeclaration v a)
+</span><a href="#local-6989586621681726752"><span class="hs-identifier hs-var">decls'</span></a></span><span class="hs-special">]</span><span class="hs-special">]</span><span>
+</span><span id="line-126"></span><span>
+</span><span id="line-127"></span><span id="local-6989586621681726948"><span id="local-6989586621681726949"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#bindReferences"><span class="hs-identifier hs-type">bindReferences</span></a></span><span> </span><span class="hs-glyph">::</span><span>
+</span><span id="line-128"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681726949"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span>
+</span><span id="line-129"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Set</span></span><span> </span><span class="annot"><a href="#local-6989586621681726949"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-130"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name.Name</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-131"></span><span>  </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726949"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726948"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-132"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Names.ResolutionResult</span></span><span> </span><span class="annot"><a href="#local-6989586621681726949"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726948"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726949"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681726948"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-133"></span><span id="bindReferences"><span class="annot"><span class="annottext">bindReferences :: Set v
 -&gt; Map Name Reference
 -&gt; DataDeclaration v a
 -&gt; ResolutionResult v a (DataDeclaration v a)
-</span><a href="Unison.Hashing.V2.DataDeclaration.html#bindReferences"><span class="hs-identifier hs-var hs-var">bindReferences</span></a></span></span><span> </span><span id="local-6989586621681971585"><span class="annot"><span class="annottext">Set v
-</span><a href="#local-6989586621681971585"><span class="hs-identifier hs-var">keepFree</span></a></span></span><span> </span><span id="local-6989586621681971584"><span class="annot"><span class="annottext">Map Name Reference
-</span><a href="#local-6989586621681971584"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span id="local-6989586621681971583"><span class="annot"><span class="annottext">Modifier
-</span><a href="#local-6989586621681971583"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621681971582"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971582"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681971581"><span class="annot"><span class="annottext">[v]
-</span><a href="#local-6989586621681971581"><span class="hs-identifier hs-var">bound</span></a></span></span><span> </span><span id="local-6989586621681971580"><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971580"><span class="hs-identifier hs-var">constructors</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-142"></span><span>  </span><span id="local-6989586621681971579"><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971579"><span class="hs-identifier hs-var">constructors</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="Unison.Hashing.V2.DataDeclaration.html#bindReferences"><span class="hs-identifier hs-var hs-var">bindReferences</span></a></span></span><span> </span><span id="local-6989586621681726746"><span class="annot"><span class="annottext">Set v
+</span><a href="#local-6989586621681726746"><span class="hs-identifier hs-var">keepFree</span></a></span></span><span> </span><span id="local-6989586621681726745"><span class="annot"><span class="annottext">Map Name Reference
+</span><a href="#local-6989586621681726745"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-type">DataDeclaration</span></a></span><span> </span><span id="local-6989586621681726744"><span class="annot"><span class="annottext">Modifier
+</span><a href="#local-6989586621681726744"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621681726743"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726743"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681726742"><span class="annot"><span class="annottext">[v]
+</span><a href="#local-6989586621681726742"><span class="hs-identifier hs-var">bound</span></a></span></span><span> </span><span id="local-6989586621681726741"><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="#local-6989586621681726741"><span class="hs-identifier hs-var">constructors</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-134"></span><span>  </span><span id="local-6989586621681726740"><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="#local-6989586621681726740"><span class="hs-identifier hs-var">constructors</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
 -&gt; ((a, v, Type v a)
     -&gt; Either (Seq (ResolutionFailure v a)) (a, v, Type v a))
 -&gt; Either (Seq (ResolutionFailure v a)) [(a, v, Type v a)]
@@ -660,20 +546,20 @@ forall (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (Traversable t, Applicative f) =&gt;
 t a -&gt; (a -&gt; f b) -&gt; f (t b)
 </span><span class="hs-identifier hs-var">for</span></span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971580"><span class="hs-identifier hs-var">constructors</span></a></span><span> </span><span class="annot"><span class="annottext">(((a, v, Type v a)
+</span><a href="#local-6989586621681726741"><span class="hs-identifier hs-var">constructors</span></a></span><span> </span><span class="annot"><span class="annottext">(((a, v, Type v a)
   -&gt; Either (Seq (ResolutionFailure v a)) (a, v, Type v a))
  -&gt; Either (Seq (ResolutionFailure v a)) [(a, v, Type v a)])
 -&gt; ((a, v, Type v a)
     -&gt; Either (Seq (ResolutionFailure v a)) (a, v, Type v a))
 -&gt; Either (Seq (ResolutionFailure v a)) [(a, v, Type v a)]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span class="hs-special">(</span><span id="local-6989586621681971577"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971577"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971576"><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971576"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971575"><span class="annot"><span class="annottext">Type v a
-</span><a href="#local-6989586621681971575"><span class="hs-identifier hs-var">ty</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-143"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971577"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">v
-</span><a href="#local-6989586621681971576"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Type v a -&gt; (a, v, Type v a))
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span class="hs-special">(</span><span id="local-6989586621681726738"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726738"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726737"><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726737"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726736"><span class="annot"><span class="annottext">Type v a
+</span><a href="#local-6989586621681726736"><span class="hs-identifier hs-var">ty</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-135"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726738"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">v
+</span><a href="#local-6989586621681726737"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">,</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Type v a -&gt; (a, v, Type v a))
 -&gt; Either (Seq (ResolutionFailure v a)) (Type v a)
 -&gt; Either (Seq (ResolutionFailure v a)) (a, v, Type v a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -688,24 +574,24 @@ Set v
 -&gt; Type v a
 -&gt; ResolutionResult v a (Type v a)
 </span><a href="Unison.Hashing.V2.Type.html#bindReferences"><span class="hs-identifier hs-var">Type.bindReferences</span></a></span><span> </span><span class="annot"><span class="annottext">Set v
-</span><a href="#local-6989586621681971585"><span class="hs-identifier hs-var">keepFree</span></a></span><span> </span><span class="annot"><span class="annottext">Map Name Reference
-</span><a href="#local-6989586621681971584"><span class="hs-identifier hs-var">names</span></a></span><span> </span><span class="annot"><span class="annottext">Type v a
-</span><a href="#local-6989586621681971575"><span class="hs-identifier hs-var">ty</span></a></span><span>
-</span><span id="line-144"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">Modifier -&gt; a -&gt; [v] -&gt; [(a, v, Type v a)] -&gt; DataDeclaration v a
+</span><a href="#local-6989586621681726746"><span class="hs-identifier hs-var">keepFree</span></a></span><span> </span><span class="annot"><span class="annottext">Map Name Reference
+</span><a href="#local-6989586621681726745"><span class="hs-identifier hs-var">names</span></a></span><span> </span><span class="annot"><span class="annottext">Type v a
+</span><a href="#local-6989586621681726736"><span class="hs-identifier hs-var">ty</span></a></span><span>
+</span><span id="line-136"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">Modifier -&gt; a -&gt; [v] -&gt; [(a, v, Type v a)] -&gt; DataDeclaration v a
 forall v a.
 Modifier -&gt; a -&gt; [v] -&gt; [(a, v, Type v a)] -&gt; DataDeclaration v a
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#DataDeclaration"><span class="hs-identifier hs-var">DataDeclaration</span></a></span><span> </span><span class="annot"><span class="annottext">Modifier
-</span><a href="#local-6989586621681971583"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971582"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">[v]
-</span><a href="#local-6989586621681971581"><span class="hs-identifier hs-var">bound</span></a></span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
-</span><a href="#local-6989586621681971579"><span class="hs-identifier hs-var">constructors</span></a></span><span>
-</span><span id="line-145"></span><span>
-</span><span id="line-146"></span><span class="hs-keyword">data</span><span> </span><span id="F"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-var">F</span></a></span></span><span> </span><span id="local-6989586621681971910"><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span></span><span>
-</span><span id="line-147"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="Type"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Type"><span class="hs-identifier hs-var">Type</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#F"><span class="hs-identifier hs-type">Type.F</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-148"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="LetRec"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#LetRec"><span class="hs-identifier hs-var">LetRec</span></a></span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span><span>
-</span><span id="line-149"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Constructors"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Constructors"><span class="hs-identifier hs-var">Constructors</span></a></span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-150"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Modified"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modified"><span class="hs-identifier hs-var">Modified</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-type">Modifier</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681971910"><span class="hs-identifier hs-type">a</span></a></span><span>
-</span><span id="line-151"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971569"><span id="local-6989586621681971571"><span class="annot"><span class="annottext">a -&gt; F b -&gt; F a
+</span><a href="#local-6989586621681726744"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726743"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">[v]
+</span><a href="#local-6989586621681726742"><span class="hs-identifier hs-var">bound</span></a></span><span> </span><span class="annot"><span class="annottext">[(a, v, Type v a)]
+</span><a href="#local-6989586621681726740"><span class="hs-identifier hs-var">constructors</span></a></span><span>
+</span><span id="line-137"></span><span>
+</span><span id="line-138"></span><span class="hs-keyword">data</span><span> </span><span id="F"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-var">F</span></a></span></span><span> </span><span id="local-6989586621681727031"><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-139"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="Type"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Type"><span class="hs-identifier hs-var">Type</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Type.html#F"><span class="hs-identifier hs-type">Type.F</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-140"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="LetRec"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#LetRec"><span class="hs-identifier hs-var">LetRec</span></a></span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-141"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Constructors"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Constructors"><span class="hs-identifier hs-var">Constructors</span></a></span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-142"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="Modified"><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modified"><span class="hs-identifier hs-var">Modified</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-type">Modifier</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681727031"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-143"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726730"><span id="local-6989586621681726732"><span class="annot"><span class="annottext">a -&gt; F b -&gt; F a
 (a -&gt; b) -&gt; F a -&gt; F b
 (forall a b. (a -&gt; b) -&gt; F a -&gt; F b)
 -&gt; (forall a b. a -&gt; F b -&gt; F a) -&gt; Functor F
@@ -718,7 +604,7 @@ forall (f :: * -&gt; *).
 $c&lt;$ :: forall a b. a -&gt; F b -&gt; F a
 fmap :: (a -&gt; b) -&gt; F a -&gt; F b
 $cfmap :: forall a b. (a -&gt; b) -&gt; F a -&gt; F b
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971535"><span id="local-6989586621681971537"><span id="local-6989586621681971539"><span id="local-6989586621681971541"><span id="local-6989586621681971543"><span id="local-6989586621681971545"><span id="local-6989586621681971547"><span id="local-6989586621681971549"><span id="local-6989586621681971551"><span id="local-6989586621681971553"><span id="local-6989586621681971555"><span id="local-6989586621681971557"><span id="local-6989586621681971559"><span id="local-6989586621681971561"><span id="local-6989586621681971563"><span id="local-6989586621681971565"><span id="local-6989586621681971567"><span class="annot"><span class="annottext">F a -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726696"><span id="local-6989586621681726698"><span id="local-6989586621681726700"><span id="local-6989586621681726702"><span id="local-6989586621681726704"><span id="local-6989586621681726706"><span id="local-6989586621681726708"><span id="local-6989586621681726710"><span id="local-6989586621681726712"><span id="local-6989586621681726714"><span id="local-6989586621681726716"><span id="local-6989586621681726718"><span id="local-6989586621681726720"><span id="local-6989586621681726722"><span id="local-6989586621681726724"><span id="local-6989586621681726726"><span id="local-6989586621681726728"><span class="annot"><span class="annottext">F a -&gt; Bool
 (a -&gt; m) -&gt; F a -&gt; m
 (a -&gt; b -&gt; b) -&gt; b -&gt; F a -&gt; b
 (forall m. Monoid m =&gt; F m -&gt; m)
@@ -803,153 +689,126 @@ foldMap :: (a -&gt; m) -&gt; F a -&gt; m
 $cfoldMap :: forall m a. Monoid m =&gt; (a -&gt; m) -&gt; F a -&gt; m
 fold :: F m -&gt; m
 $cfold :: forall m. Monoid m =&gt; F m -&gt; m
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Foldable</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971528"><span id="local-6989586621681971530"><span id="local-6989586621681971532"><span class="annot"><span class="annottext">Int -&gt; F a -&gt; ShowS
-[F a] -&gt; ShowS
-F a -&gt; String
-(Int -&gt; F a -&gt; ShowS)
--&gt; (F a -&gt; String) -&gt; ([F a] -&gt; ShowS) -&gt; Show (F a)
-forall a. Show a =&gt; Int -&gt; F a -&gt; ShowS
-forall a. Show a =&gt; [F a] -&gt; ShowS
-forall a. Show a =&gt; F a -&gt; String
-forall a.
-(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; String) -&gt; ([a] -&gt; ShowS) -&gt; Show a
-showList :: [F a] -&gt; ShowS
-$cshowList :: forall a. Show a =&gt; [F a] -&gt; ShowS
-show :: F a -&gt; String
-$cshow :: forall a. Show a =&gt; F a -&gt; String
-showsPrec :: Int -&gt; F a -&gt; ShowS
-$cshowsPrec :: forall a. Show a =&gt; Int -&gt; F a -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971524"><span id="local-6989586621681971526"><span class="annot"><span class="annottext">(forall a. Show a =&gt; Int -&gt; F a -&gt; ShowS)
--&gt; (forall a. Show a =&gt; [F a] -&gt; ShowS) -&gt; Show1 F
-forall a. Show a =&gt; Int -&gt; F a -&gt; ShowS
-forall a. Show a =&gt; [F a] -&gt; ShowS
-forall (f :: * -&gt; *).
-(forall a. Show a =&gt; Int -&gt; f a -&gt; ShowS)
--&gt; (forall a. Show a =&gt; [f a] -&gt; ShowS) -&gt; Show1 f
-showList1 :: [F a] -&gt; ShowS
-$cshowList1 :: forall a. Show a =&gt; [F a] -&gt; ShowS
-showsPrec1 :: Int -&gt; F a -&gt; ShowS
-$cshowsPrec1 :: forall a. Show a =&gt; Int -&gt; F a -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Show1</span></span></span></span><span class="hs-special">)</span><span>
-</span><span id="line-152"></span><span>
-</span><span id="line-153"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable1</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-type">F</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-154"></span><span>  </span><span id="local-6989586621681971519"><span class="annot"><span class="annottext">hash1 :: ([a] -&gt; ([h], a -&gt; h)) -&gt; (a -&gt; h) -&gt; F a -&gt; h
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">hash1</span></span></span><span> </span><span id="local-6989586621681971517"><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
-</span><a href="#local-6989586621681971517"><span class="hs-identifier hs-var">hashCycle</span></a></span></span><span> </span><span id="local-6989586621681971516"><span class="annot"><span class="annottext">a -&gt; h
-</span><a href="#local-6989586621681971516"><span class="hs-identifier hs-var">hash</span></a></span></span><span> </span><span id="local-6989586621681971515"><span class="annot"><span class="annottext">F a
-</span><a href="#local-6989586621681971515"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-155"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971514"><span class="annot"><span class="annottext">Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971513"><span class="annot"><span class="annottext">h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Foldable</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
+</span><span id="line-144"></span><span>
+</span><span id="line-145"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable1</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#F"><span class="hs-identifier hs-type">F</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-146"></span><span>  </span><span id="local-6989586621681726691"><span class="annot"><span class="annottext">hash1 :: ([a] -&gt; ([h], a -&gt; h)) -&gt; (a -&gt; h) -&gt; F a -&gt; h
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">hash1</span></span></span><span> </span><span id="local-6989586621681726689"><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
+</span><a href="#local-6989586621681726689"><span class="hs-identifier hs-var">hashCycle</span></a></span></span><span> </span><span id="local-6989586621681726688"><span class="annot"><span class="annottext">a -&gt; h
+</span><a href="#local-6989586621681726688"><span class="hs-identifier hs-var">hash</span></a></span></span><span> </span><span id="local-6989586621681726687"><span class="annot"><span class="annottext">F a
+</span><a href="#local-6989586621681726687"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-147"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726686"><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726685"><span class="annot"><span class="annottext">h -&gt; Token h
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Tag</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Hashed</span></span><span class="hs-special">)</span><span>
-</span><span id="line-156"></span><span>     </span><span class="hs-keyword">in</span><span> </span><span class="hs-comment">-- Note: start each layer with leading `2` byte, to avoid collisions with</span><span>
-</span><span id="line-157"></span><span>        </span><span class="hs-comment">-- terms, which start each layer with leading `1`. See `Hashable1 Term.F`</span><span>
-</span><span id="line-158"></span><span>        </span><span class="annot"><span class="annottext">[Token h] -&gt; h
+</span><span id="line-148"></span><span>     </span><span class="hs-keyword">in</span><span> </span><span class="hs-comment">-- Note: start each layer with leading `2` byte, to avoid collisions with</span><span>
+</span><span id="line-149"></span><span>        </span><span class="hs-comment">-- terms, which start each layer with leading `1`. See `Hashable1 Term.F`</span><span>
+</span><span id="line-150"></span><span>        </span><span class="annot"><span class="annottext">[Token h] -&gt; h
 forall h. Accumulate h =&gt; [Token h] -&gt; h
 </span><span class="hs-identifier hs-var">Hashable.accumulate</span></span><span> </span><span class="annot"><span class="annottext">([Token h] -&gt; h) -&gt; [Token h] -&gt; h
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
-</span><span id="line-159"></span><span>          </span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><span id="line-151"></span><span>          </span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">Token h -&gt; [Token h] -&gt; [Token h]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">F a
-</span><a href="#local-6989586621681971515"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-160"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span id="local-6989586621681971509"><span class="annot"><span class="annottext">F a
-</span><a href="#local-6989586621681971509"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681726687"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-152"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Type"><span class="hs-identifier hs-type">Type</span></a></span><span> </span><span id="local-6989586621681726681"><span class="annot"><span class="annottext">F a
+</span><a href="#local-6989586621681726681"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; ([h], a -&gt; h)) -&gt; (a -&gt; h) -&gt; F a -&gt; h
 forall (f :: * -&gt; *) h a.
 (Hashable1 f, Ord h, Accumulate h) =&gt;
 ([a] -&gt; ([h], a -&gt; h)) -&gt; (a -&gt; h) -&gt; f a -&gt; h
 </span><span class="hs-identifier hs-var">Hashable.hash1</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
-</span><a href="#local-6989586621681971517"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; h
-</span><a href="#local-6989586621681971516"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">F a
-</span><a href="#local-6989586621681971509"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-161"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#LetRec"><span class="hs-identifier hs-type">LetRec</span></a></span><span> </span><span id="local-6989586621681971508"><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621681971508"><span class="hs-identifier hs-var">bindings</span></a></span></span><span> </span><span id="local-6989586621681971507"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971507"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-162"></span><span>              </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971506"><span class="annot"><span class="annottext">[h]
-</span><a href="#local-6989586621681971506"><span class="hs-identifier hs-var">hashes</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681971505"><span class="annot"><span class="annottext">a -&gt; h
-</span><a href="#local-6989586621681971505"><span class="hs-identifier hs-var">hash'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
-</span><a href="#local-6989586621681971517"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621681971508"><span class="hs-identifier hs-var">bindings</span></a></span><span>
-</span><span id="line-163"></span><span>               </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681726689"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; h
+</span><a href="#local-6989586621681726688"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">F a
+</span><a href="#local-6989586621681726681"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-153"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#LetRec"><span class="hs-identifier hs-type">LetRec</span></a></span><span> </span><span id="local-6989586621681726680"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621681726680"><span class="hs-identifier hs-var">bindings</span></a></span></span><span> </span><span id="local-6989586621681726679"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726679"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-154"></span><span>              </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726678"><span class="annot"><span class="annottext">[h]
+</span><a href="#local-6989586621681726678"><span class="hs-identifier hs-var">hashes</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681726677"><span class="annot"><span class="annottext">a -&gt; h
+</span><a href="#local-6989586621681726677"><span class="hs-identifier hs-var">hash'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
+</span><a href="#local-6989586621681726689"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621681726680"><span class="hs-identifier hs-var">bindings</span></a></span><span>
+</span><span id="line-155"></span><span>               </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">1</span></span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; [h] -&gt; [Token h]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">[h]
-</span><a href="#local-6989586621681971506"><span class="hs-identifier hs-var">hashes</span></a></span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">[h]
+</span><a href="#local-6989586621681726678"><span class="hs-identifier hs-var">hashes</span></a></span><span> </span><span class="annot"><span class="annottext">[Token h] -&gt; [Token h] -&gt; [Token h]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; h
-</span><a href="#local-6989586621681971505"><span class="hs-identifier hs-var">hash'</span></a></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971507"><span class="hs-identifier hs-var">body</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-164"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Constructors"><span class="hs-identifier hs-type">Constructors</span></a></span><span> </span><span id="local-6989586621681971504"><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621681971504"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-165"></span><span>              </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681971503"><span class="annot"><span class="annottext">[h]
-</span><a href="#local-6989586621681971503"><span class="hs-identifier hs-var">hashes</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">a -&gt; h
+</span><a href="#local-6989586621681726677"><span class="hs-identifier hs-var">hash'</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726679"><span class="hs-identifier hs-var">body</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-156"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Constructors"><span class="hs-identifier hs-type">Constructors</span></a></span><span> </span><span id="local-6989586621681726676"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621681726676"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-157"></span><span>              </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681726675"><span class="annot"><span class="annottext">[h]
+</span><a href="#local-6989586621681726675"><span class="hs-identifier hs-var">hashes</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">a -&gt; h
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; ([h], a -&gt; h)
-</span><a href="#local-6989586621681971517"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621681971504"><span class="hs-identifier hs-var">cs</span></a></span><span>
-</span><span id="line-166"></span><span>               </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681726689"><span class="hs-identifier hs-var">hashCycle</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621681726676"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><span id="line-158"></span><span>               </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">Token h -&gt; [Token h] -&gt; [Token h]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; [h] -&gt; [Token h]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">[h]
-</span><a href="#local-6989586621681971503"><span class="hs-identifier hs-var">hashes</span></a></span><span>
-</span><span id="line-167"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621681971502"><span class="annot"><span class="annottext">Modifier
-</span><a href="#local-6989586621681971502"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621681971501"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971501"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-168"></span><span>              </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">[h]
+</span><a href="#local-6989586621681726675"><span class="hs-identifier hs-var">hashes</span></a></span><span>
+</span><span id="line-159"></span><span>            </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621681726674"><span class="annot"><span class="annottext">Modifier
+</span><a href="#local-6989586621681726674"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621681726673"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726673"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-160"></span><span>              </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
-</span><a href="#local-6989586621681971514"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621681726686"><span class="hs-identifier hs-var">tag</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">3</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Modifier -&gt; Token h
 forall h t. (Accumulate h, Hashable t) =&gt; t -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.accumulateToken</span></span><span> </span><span class="annot"><span class="annottext">Modifier
-</span><a href="#local-6989586621681971502"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
+</span><a href="#local-6989586621681726674"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">h -&gt; Token h
 forall h. h -&gt; Token h
-</span><a href="#local-6989586621681971513"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
+</span><a href="#local-6989586621681726685"><span class="hs-identifier hs-var">hashed</span></a></span><span> </span><span class="annot"><span class="annottext">(h -&gt; Token h) -&gt; h -&gt; Token h
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; h
-</span><a href="#local-6989586621681971516"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681971501"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-169"></span><span>
-</span><span id="line-170"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable.Hashable</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-type">Modifier</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-171"></span><span>  </span><span id="local-6989586621681971497"><span class="annot"><span class="annottext">tokens :: Modifier -&gt; [Token h]
+</span><a href="#local-6989586621681726688"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681726673"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-161"></span><span>
+</span><span id="line-162"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable.Hashable</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Modifier"><span class="hs-identifier hs-type">Modifier</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-163"></span><span>  </span><span id="local-6989586621681726669"><span class="annot"><span class="annottext">tokens :: Modifier -&gt; [Token h]
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></span></span><span> </span><span class="annot"><span class="annottext">Modifier
 </span><a href="Unison.Hashing.V2.DataDeclaration.html#Structural"><span class="hs-identifier hs-var">Structural</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Tag</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0</span></span><span class="hs-special">]</span><span>
-</span><span id="line-172"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">tokens</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span><span> </span><span id="local-6989586621681971495"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681971495"><span class="hs-identifier hs-var">txt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><span id="line-164"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">tokens</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.DataDeclaration.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span><span> </span><span id="local-6989586621681726667"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681726667"><span class="hs-identifier hs-var">txt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Tag</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">1</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Token h
 forall h. Text -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Text</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681971495"><span class="hs-identifier hs-var">txt</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-173"></span></pre></body></html>
+</span><a href="#local-6989586621681726667"><span class="hs-identifier hs-var">txt</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-165"></span></pre></body></html>

@@ -385,9 +385,6 @@ fileAdvise :: Fd -> FileOffset -> FileOffset -> Advice -> IO ()
 --   
 --   (use <tt>#if HAVE_POSIX_FALLOCATE</tt> CPP guard to detect
 --   availability).
-
--- | <i>Warning: operation will throw <a>IOError</a> "unsupported
---   operation" (CPP guard: <tt>#if HAVE_POSIX_FALLOCATE</tt>)</i>
 fileAllocate :: Fd -> FileOffset -> FileOffset -> IO ()
 instance GHC.Classes.Eq System.Posix.Fcntl.Advice
 
@@ -1879,6 +1876,8 @@ userDefinedSignal1 :: Signal
 sigUSR1 :: CInt
 userDefinedSignal2 :: Signal
 sigUSR2 :: CInt
+pollableEvent :: Signal
+sigPOLL :: CInt
 profilingTimerExpired :: Signal
 sigPROF :: CInt
 badSystemCall :: Signal
@@ -2500,9 +2499,6 @@ fileSynchronise :: Fd -> IO ()
 --   Throws <a>IOError</a> ("unsupported operation") if platform does not
 --   provide <tt>fdatasync(2)</tt> (use <tt>#if HAVE_FDATASYNC</tt> CPP
 --   guard to detect availability).
-
--- | <i>Warning: operation will throw <a>IOError</a> "unsupported
---   operation" (CPP guard: <tt>#if HAVE_FDATASYNC</tt>)</i>
 fileSynchroniseDataOnly :: Fd -> IO ()
 
 

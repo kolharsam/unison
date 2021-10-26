@@ -33,7 +33,7 @@
 </span><span id="line-33"></span><span class="hs-comment">-- | Define either a binary curve or a prime curve.</span><span>
 </span><span id="line-34"></span><span class="hs-keyword">data</span><span> </span><span id="Curve"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Curve"><span class="hs-identifier hs-var">Curve</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="CurveF2m"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveF2m"><span class="hs-identifier hs-var">CurveF2m</span></a></span></span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span class="hs-comment">-- ^ &#120125;(2^m)</span><span>
 </span><span id="line-35"></span><span>           </span><span class="hs-glyph">|</span><span> </span><span id="CurveFP"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveFP"><span class="hs-identifier hs-var">CurveFP</span></a></span></span><span>  </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-type">CurvePrime</span></a></span><span>  </span><span class="hs-comment">-- ^ &#120125;p</span><span>
-</span><span id="line-36"></span><span>           </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202178"><span id="local-6989586621679202180"><span id="local-6989586621679202182"><span class="annot"><span class="annottext">Int -&gt; Curve -&gt; ShowS
+</span><span id="line-36"></span><span>           </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202181"><span id="local-6989586621679202183"><span id="local-6989586621679202185"><span class="annot"><span class="annottext">Int -&gt; Curve -&gt; ShowS
 [Curve] -&gt; ShowS
 Curve -&gt; String
 (Int -&gt; Curve -&gt; ShowS)
@@ -46,7 +46,7 @@ show :: Curve -&gt; String
 $cshow :: Curve -&gt; String
 showsPrec :: Int -&gt; Curve -&gt; ShowS
 $cshowsPrec :: Int -&gt; Curve -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202169"><span id="local-6989586621679202171"><span id="local-6989586621679202173"><span id="local-6989586621679202175"><span class="annot"><span class="annottext">ReadPrec [Curve]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202172"><span id="local-6989586621679202174"><span id="local-6989586621679202176"><span id="local-6989586621679202178"><span class="annot"><span class="annottext">ReadPrec [Curve]
 ReadPrec Curve
 Int -&gt; ReadS Curve
 ReadS [Curve]
@@ -66,14 +66,14 @@ readList :: ReadS [Curve]
 $creadList :: ReadS [Curve]
 readsPrec :: Int -&gt; ReadS Curve
 $creadsPrec :: Int -&gt; ReadS Curve
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202164"><span id="local-6989586621679202166"><span class="annot"><span class="annottext">Curve -&gt; Curve -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202167"><span id="local-6989586621679202169"><span class="annot"><span class="annottext">Curve -&gt; Curve -&gt; Bool
 (Curve -&gt; Curve -&gt; Bool) -&gt; (Curve -&gt; Curve -&gt; Bool) -&gt; Eq Curve
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 /= :: Curve -&gt; Curve -&gt; Bool
 $c/= :: Curve -&gt; Curve -&gt; Bool
 == :: Curve -&gt; Curve -&gt; Bool
 $c== :: Curve -&gt; Curve -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveFP"><span id="%24cCurveF2m"><span id="%24tCurve"><span id="local-6989586621679202134"><span id="local-6989586621679202136"><span id="local-6989586621679202138"><span id="local-6989586621679202140"><span id="local-6989586621679202142"><span id="local-6989586621679202144"><span id="local-6989586621679202146"><span id="local-6989586621679202148"><span id="local-6989586621679202150"><span id="local-6989586621679202152"><span id="local-6989586621679202154"><span id="local-6989586621679202156"><span id="local-6989586621679202158"><span id="local-6989586621679202160"><span class="annot"><span class="annottext">Typeable Curve
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveFP"><span id="%24cCurveF2m"><span id="%24tCurve"><span id="local-6989586621679202137"><span id="local-6989586621679202139"><span id="local-6989586621679202141"><span id="local-6989586621679202143"><span id="local-6989586621679202145"><span id="local-6989586621679202147"><span id="local-6989586621679202149"><span id="local-6989586621679202151"><span id="local-6989586621679202153"><span id="local-6989586621679202155"><span id="local-6989586621679202157"><span id="local-6989586621679202159"><span id="local-6989586621679202161"><span id="local-6989586621679202163"><span class="annot"><span class="annottext">Typeable Curve
 DataType
 Constr
 Typeable Curve
@@ -233,7 +233,7 @@ $cp1Data :: Typeable Curve
 </span><span id="line-44"></span><span class="hs-comment">-- | Define a point on a curve.</span><span>
 </span><span id="line-45"></span><span class="hs-keyword">data</span><span> </span><span id="Point"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Point"><span class="hs-identifier hs-var">Point</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Point"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Point"><span class="hs-identifier hs-var">Point</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span>
 </span><span id="line-46"></span><span>           </span><span class="hs-glyph">|</span><span> </span><span id="PointO"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#PointO"><span class="hs-identifier hs-var">PointO</span></a></span></span><span> </span><span class="hs-comment">-- ^ Point at Infinity</span><span>
-</span><span id="line-47"></span><span>           </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202122"><span id="local-6989586621679202124"><span id="local-6989586621679202126"><span class="annot"><span class="annottext">Int -&gt; Point -&gt; ShowS
+</span><span id="line-47"></span><span>           </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202125"><span id="local-6989586621679202127"><span id="local-6989586621679202129"><span class="annot"><span class="annottext">Int -&gt; Point -&gt; ShowS
 [Point] -&gt; ShowS
 Point -&gt; String
 (Int -&gt; Point -&gt; ShowS)
@@ -246,7 +246,7 @@ show :: Point -&gt; String
 $cshow :: Point -&gt; String
 showsPrec :: Int -&gt; Point -&gt; ShowS
 $cshowsPrec :: Int -&gt; Point -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202114"><span id="local-6989586621679202116"><span id="local-6989586621679202118"><span id="local-6989586621679202120"><span class="annot"><span class="annottext">ReadPrec [Point]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202117"><span id="local-6989586621679202119"><span id="local-6989586621679202121"><span id="local-6989586621679202123"><span class="annot"><span class="annottext">ReadPrec [Point]
 ReadPrec Point
 Int -&gt; ReadS Point
 ReadS [Point]
@@ -266,14 +266,14 @@ readList :: ReadS [Point]
 $creadList :: ReadS [Point]
 readsPrec :: Int -&gt; ReadS Point
 $creadsPrec :: Int -&gt; ReadS Point
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202110"><span id="local-6989586621679202112"><span class="annot"><span class="annottext">Point -&gt; Point -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202113"><span id="local-6989586621679202115"><span class="annot"><span class="annottext">Point -&gt; Point -&gt; Bool
 (Point -&gt; Point -&gt; Bool) -&gt; (Point -&gt; Point -&gt; Bool) -&gt; Eq Point
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 /= :: Point -&gt; Point -&gt; Bool
 $c/= :: Point -&gt; Point -&gt; Bool
 == :: Point -&gt; Point -&gt; Bool
 $c== :: Point -&gt; Point -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cPointO"><span id="%24cPoint"><span id="%24tPoint"><span id="local-6989586621679202081"><span id="local-6989586621679202083"><span id="local-6989586621679202085"><span id="local-6989586621679202087"><span id="local-6989586621679202089"><span id="local-6989586621679202091"><span id="local-6989586621679202093"><span id="local-6989586621679202095"><span id="local-6989586621679202097"><span id="local-6989586621679202099"><span id="local-6989586621679202101"><span id="local-6989586621679202103"><span id="local-6989586621679202105"><span id="local-6989586621679202107"><span class="annot"><span class="annottext">Typeable Point
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cPointO"><span id="%24cPoint"><span id="%24tPoint"><span id="local-6989586621679202084"><span id="local-6989586621679202086"><span id="local-6989586621679202088"><span id="local-6989586621679202090"><span id="local-6989586621679202092"><span id="local-6989586621679202094"><span id="local-6989586621679202096"><span id="local-6989586621679202098"><span id="local-6989586621679202100"><span id="local-6989586621679202102"><span id="local-6989586621679202104"><span id="local-6989586621679202106"><span id="local-6989586621679202108"><span id="local-6989586621679202110"><span class="annot"><span class="annottext">Typeable Point
 DataType
 Constr
 Typeable Point
@@ -425,13 +425,13 @@ $cp1Data :: Typeable Point
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Data</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NFData</span></span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Point"><span class="hs-identifier hs-type">Point</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-50"></span><span>    </span><span id="local-6989586621679202075"><span class="annot"><span class="annottext">rnf :: Point -&gt; ()
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">rnf</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Point"><span class="hs-identifier hs-type">Point</span></a></span><span> </span><span id="local-6989586621679202073"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202073"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679202072"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202072"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202073"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
+</span><span id="line-50"></span><span>    </span><span id="local-6989586621679202078"><span class="annot"><span class="annottext">rnf :: Point -&gt; ()
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">rnf</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Point"><span class="hs-identifier hs-type">Point</span></a></span><span> </span><span id="local-6989586621679202076"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679202076"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679202075"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679202075"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679202076"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
 </span><span class="hs-operator hs-var">`seq`</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202072"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
+</span><a href="#local-6989586621679202075"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
 </span><span class="hs-operator hs-var">`seq`</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-51"></span><span>    </span><span class="annot"><span class="hs-identifier hs-var">rnf</span></span><span> </span><span class="annot"><span class="annottext">Point
 </span><a href="Crypto.PubKey.ECC.Types.html#PointO"><span class="hs-identifier hs-var">PointO</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
@@ -439,7 +439,7 @@ $cp1Data :: Typeable Point
 </span><span id="line-53"></span><span class="hs-comment">-- | Define an elliptic curve in &#120125;(2^m).</span><span>
 </span><span id="line-54"></span><span class="hs-comment">-- The firt parameter is the Integer representatioin of the irreducible polynomial f(x).</span><span>
 </span><span id="line-55"></span><span class="hs-keyword">data</span><span> </span><span id="CurveBinary"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-var">CurveBinary</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="CurveBinary"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-var">CurveBinary</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveCommon"><span class="hs-identifier hs-type">CurveCommon</span></a></span><span>
-</span><span id="line-56"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202065"><span id="local-6989586621679202067"><span id="local-6989586621679202069"><span class="annot"><span class="annottext">Int -&gt; CurveBinary -&gt; ShowS
+</span><span id="line-56"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202068"><span id="local-6989586621679202070"><span id="local-6989586621679202072"><span class="annot"><span class="annottext">Int -&gt; CurveBinary -&gt; ShowS
 [CurveBinary] -&gt; ShowS
 CurveBinary -&gt; String
 (Int -&gt; CurveBinary -&gt; ShowS)
@@ -454,7 +454,7 @@ show :: CurveBinary -&gt; String
 $cshow :: CurveBinary -&gt; String
 showsPrec :: Int -&gt; CurveBinary -&gt; ShowS
 $cshowsPrec :: Int -&gt; CurveBinary -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202057"><span id="local-6989586621679202059"><span id="local-6989586621679202061"><span id="local-6989586621679202063"><span class="annot"><span class="annottext">ReadPrec [CurveBinary]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202060"><span id="local-6989586621679202062"><span id="local-6989586621679202064"><span id="local-6989586621679202066"><span class="annot"><span class="annottext">ReadPrec [CurveBinary]
 ReadPrec CurveBinary
 Int -&gt; ReadS CurveBinary
 ReadS [CurveBinary]
@@ -474,7 +474,7 @@ readList :: ReadS [CurveBinary]
 $creadList :: ReadS [CurveBinary]
 readsPrec :: Int -&gt; ReadS CurveBinary
 $creadsPrec :: Int -&gt; ReadS CurveBinary
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202053"><span id="local-6989586621679202055"><span class="annot"><span class="annottext">CurveBinary -&gt; CurveBinary -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202056"><span id="local-6989586621679202058"><span class="annot"><span class="annottext">CurveBinary -&gt; CurveBinary -&gt; Bool
 (CurveBinary -&gt; CurveBinary -&gt; Bool)
 -&gt; (CurveBinary -&gt; CurveBinary -&gt; Bool) -&gt; Eq CurveBinary
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -482,7 +482,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: CurveBinary -&gt; CurveBinary -&gt; Bool
 == :: CurveBinary -&gt; CurveBinary -&gt; Bool
 $c== :: CurveBinary -&gt; CurveBinary -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveBinary"><span id="%24tCurveBinary"><span id="local-6989586621679202024"><span id="local-6989586621679202026"><span id="local-6989586621679202028"><span id="local-6989586621679202030"><span id="local-6989586621679202032"><span id="local-6989586621679202034"><span id="local-6989586621679202036"><span id="local-6989586621679202038"><span id="local-6989586621679202040"><span id="local-6989586621679202042"><span id="local-6989586621679202044"><span id="local-6989586621679202046"><span id="local-6989586621679202048"><span id="local-6989586621679202050"><span class="annot"><span class="annottext">Typeable CurveBinary
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveBinary"><span id="%24tCurveBinary"><span id="local-6989586621679202027"><span id="local-6989586621679202029"><span id="local-6989586621679202031"><span id="local-6989586621679202033"><span id="local-6989586621679202035"><span id="local-6989586621679202037"><span id="local-6989586621679202039"><span id="local-6989586621679202041"><span id="local-6989586621679202043"><span id="local-6989586621679202045"><span id="local-6989586621679202047"><span id="local-6989586621679202049"><span id="local-6989586621679202051"><span id="local-6989586621679202053"><span class="annot"><span class="annottext">Typeable CurveBinary
 DataType
 Constr
 Typeable CurveBinary
@@ -646,19 +646,19 @@ $cp1Data :: Typeable CurveBinary
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Data</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-57"></span><span>
 </span><span id="line-58"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NFData</span></span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-59"></span><span>    </span><span id="local-6989586621679202020"><span class="annot"><span class="annottext">rnf :: CurveBinary -&gt; ()
-</span><a href="#local-6989586621679202020"><span class="hs-identifier hs-var hs-var hs-var hs-var">rnf</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span id="local-6989586621679202019"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202019"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621679202018"><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679202018"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679202019"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
+</span><span id="line-59"></span><span>    </span><span id="local-6989586621679202023"><span class="annot"><span class="annottext">rnf :: CurveBinary -&gt; ()
+</span><a href="#local-6989586621679202023"><span class="hs-identifier hs-var hs-var hs-var hs-var">rnf</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span id="local-6989586621679202022"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679202022"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621679202021"><span class="annot"><span class="annottext">CurveCommon
+</span><a href="#local-6989586621679202021"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679202022"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; () -&gt; ()
 </span><span class="hs-operator hs-var">`seq`</span></span><span> </span><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679202018"><span class="hs-identifier hs-var">cc</span></a></span><span> </span><span class="annot"><span class="annottext">CurveCommon -&gt; () -&gt; ()
+</span><a href="#local-6989586621679202021"><span class="hs-identifier hs-var">cc</span></a></span><span> </span><span class="annot"><span class="annottext">CurveCommon -&gt; () -&gt; ()
 </span><span class="hs-operator hs-var">`seq`</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-60"></span><span>
 </span><span id="line-61"></span><span class="hs-comment">-- | Define an elliptic curve in &#120125;p.</span><span>
 </span><span id="line-62"></span><span class="hs-comment">-- The first parameter is the Prime Number.</span><span>
 </span><span id="line-63"></span><span class="hs-keyword">data</span><span> </span><span id="CurvePrime"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-var">CurvePrime</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="CurvePrime"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-var">CurvePrime</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveCommon"><span class="hs-identifier hs-type">CurveCommon</span></a></span><span>
-</span><span id="line-64"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202011"><span id="local-6989586621679202013"><span id="local-6989586621679202015"><span class="annot"><span class="annottext">Int -&gt; CurvePrime -&gt; ShowS
+</span><span id="line-64"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679202014"><span id="local-6989586621679202016"><span id="local-6989586621679202018"><span class="annot"><span class="annottext">Int -&gt; CurvePrime -&gt; ShowS
 [CurvePrime] -&gt; ShowS
 CurvePrime -&gt; String
 (Int -&gt; CurvePrime -&gt; ShowS)
@@ -673,7 +673,7 @@ show :: CurvePrime -&gt; String
 $cshow :: CurvePrime -&gt; String
 showsPrec :: Int -&gt; CurvePrime -&gt; ShowS
 $cshowsPrec :: Int -&gt; CurvePrime -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202003"><span id="local-6989586621679202005"><span id="local-6989586621679202007"><span id="local-6989586621679202009"><span class="annot"><span class="annottext">ReadPrec [CurvePrime]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202006"><span id="local-6989586621679202008"><span id="local-6989586621679202010"><span id="local-6989586621679202012"><span class="annot"><span class="annottext">ReadPrec [CurvePrime]
 ReadPrec CurvePrime
 Int -&gt; ReadS CurvePrime
 ReadS [CurvePrime]
@@ -693,7 +693,7 @@ readList :: ReadS [CurvePrime]
 $creadList :: ReadS [CurvePrime]
 readsPrec :: Int -&gt; ReadS CurvePrime
 $creadsPrec :: Int -&gt; ReadS CurvePrime
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201999"><span id="local-6989586621679202001"><span class="annot"><span class="annottext">CurvePrime -&gt; CurvePrime -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679202002"><span id="local-6989586621679202004"><span class="annot"><span class="annottext">CurvePrime -&gt; CurvePrime -&gt; Bool
 (CurvePrime -&gt; CurvePrime -&gt; Bool)
 -&gt; (CurvePrime -&gt; CurvePrime -&gt; Bool) -&gt; Eq CurvePrime
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -701,7 +701,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: CurvePrime -&gt; CurvePrime -&gt; Bool
 == :: CurvePrime -&gt; CurvePrime -&gt; Bool
 $c== :: CurvePrime -&gt; CurvePrime -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurvePrime"><span id="%24tCurvePrime"><span id="local-6989586621679201970"><span id="local-6989586621679201972"><span id="local-6989586621679201974"><span id="local-6989586621679201976"><span id="local-6989586621679201978"><span id="local-6989586621679201980"><span id="local-6989586621679201982"><span id="local-6989586621679201984"><span id="local-6989586621679201986"><span id="local-6989586621679201988"><span id="local-6989586621679201990"><span id="local-6989586621679201992"><span id="local-6989586621679201994"><span id="local-6989586621679201996"><span class="annot"><span class="annottext">Typeable CurvePrime
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurvePrime"><span id="%24tCurvePrime"><span id="local-6989586621679201973"><span id="local-6989586621679201975"><span id="local-6989586621679201977"><span id="local-6989586621679201979"><span id="local-6989586621679201981"><span id="local-6989586621679201983"><span id="local-6989586621679201985"><span id="local-6989586621679201987"><span id="local-6989586621679201989"><span id="local-6989586621679201991"><span id="local-6989586621679201993"><span id="local-6989586621679201995"><span id="local-6989586621679201997"><span id="local-6989586621679201999"><span class="annot"><span class="annottext">Typeable CurvePrime
 DataType
 Constr
 Typeable CurvePrime
@@ -865,29 +865,29 @@ $cp1Data :: Typeable CurvePrime
 </span><span id="line-67"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#common_curve"><span class="hs-identifier hs-type">common_curve</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Curve"><span class="hs-identifier hs-type">Curve</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveCommon"><span class="hs-identifier hs-type">CurveCommon</span></a></span><span>
 </span><span id="line-68"></span><span id="common_curve"><span class="annot"><span class="annottext">common_curve :: Curve -&gt; CurveCommon
 </span><a href="Crypto.PubKey.ECC.Types.html#common_curve"><span class="hs-identifier hs-var hs-var">common_curve</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveF2m"><span class="hs-identifier hs-type">CurveF2m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679201967"><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679201967"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679201967"><span class="hs-identifier hs-var">cc</span></a></span><span>
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679201970"><span class="annot"><span class="annottext">CurveCommon
+</span><a href="#local-6989586621679201970"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CurveCommon
+</span><a href="#local-6989586621679201970"><span class="hs-identifier hs-var">cc</span></a></span><span>
 </span><span id="line-69"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#common_curve"><span class="hs-identifier hs-var">common_curve</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveFP"><span class="hs-identifier hs-type">CurveFP</span></a></span><span>  </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-type">CurvePrime</span></a></span><span>  </span><span class="annot"><span class="annottext">Integer
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679201966"><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679201966"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CurveCommon
-</span><a href="#local-6989586621679201966"><span class="hs-identifier hs-var">cc</span></a></span><span>
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679201969"><span class="annot"><span class="annottext">CurveCommon
+</span><a href="#local-6989586621679201969"><span class="hs-identifier hs-var">cc</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CurveCommon
+</span><a href="#local-6989586621679201969"><span class="hs-identifier hs-var">cc</span></a></span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span class="hs-comment">-- | Irreducible polynomial representing the characteristic of a CurveBinary.</span><span>
 </span><span id="line-72"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#ecc_fx"><span class="hs-identifier hs-type">ecc_fx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span>
 </span><span id="line-73"></span><span id="ecc_fx"><span class="annot"><span class="annottext">ecc_fx :: CurveBinary -&gt; Integer
-</span><a href="Crypto.PubKey.ECC.Types.html#ecc_fx"><span class="hs-identifier hs-var hs-var">ecc_fx</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span id="local-6989586621679201965"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679201965"><span class="hs-identifier hs-var">fx</span></a></span></span><span> </span><span class="annot"><span class="annottext">CurveCommon
+</span><a href="Crypto.PubKey.ECC.Types.html#ecc_fx"><span class="hs-identifier hs-var hs-var">ecc_fx</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveBinary"><span class="hs-identifier hs-type">CurveBinary</span></a></span><span> </span><span id="local-6989586621679201968"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679201968"><span class="hs-identifier hs-var">fx</span></a></span></span><span> </span><span class="annot"><span class="annottext">CurveCommon
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679201965"><span class="hs-identifier hs-var">fx</span></a></span><span>
+</span><a href="#local-6989586621679201968"><span class="hs-identifier hs-var">fx</span></a></span><span>
 </span><span id="line-74"></span><span>
 </span><span id="line-75"></span><span class="hs-comment">-- | Prime number representing the characteristic of a CurvePrime.</span><span>
 </span><span id="line-76"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#ecc_p"><span class="hs-identifier hs-type">ecc_p</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-type">CurvePrime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span>
 </span><span id="line-77"></span><span id="ecc_p"><span class="annot"><span class="annottext">ecc_p :: CurvePrime -&gt; Integer
-</span><a href="Crypto.PubKey.ECC.Types.html#ecc_p"><span class="hs-identifier hs-var hs-var">ecc_p</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-type">CurvePrime</span></a></span><span> </span><span id="local-6989586621679201964"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679201964"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">CurveCommon
+</span><a href="Crypto.PubKey.ECC.Types.html#ecc_p"><span class="hs-identifier hs-var hs-var">ecc_p</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurvePrime"><span class="hs-identifier hs-type">CurvePrime</span></a></span><span> </span><span id="local-6989586621679201967"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679201967"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">CurveCommon
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679201964"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679201967"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-78"></span><span>
 </span><span id="line-79"></span><span class="hs-comment">-- | Define common parameters in a curve definition</span><span>
 </span><span id="line-80"></span><span class="hs-comment">-- of the form: y^2 = x^3 + ax + b.</span><span>
@@ -902,7 +902,7 @@ $cp1Data :: Typeable CurvePrime
 </span><a href="Crypto.PubKey.ECC.Types.html#ecc_n"><span class="hs-identifier hs-var hs-var">ecc_n</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span> </span><span class="hs-comment">-- ^ order of G</span><span>
 </span><span id="line-86"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="ecc_h"><span class="annot"><span class="annottext">CurveCommon -&gt; Integer
 </span><a href="Crypto.PubKey.ECC.Types.html#ecc_h"><span class="hs-identifier hs-var hs-var">ecc_h</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span> </span><span class="hs-comment">-- ^ cofactor</span><span>
-</span><span id="line-87"></span><span>    </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679201952"><span id="local-6989586621679201954"><span id="local-6989586621679201956"><span class="annot"><span class="annottext">Int -&gt; CurveCommon -&gt; ShowS
+</span><span id="line-87"></span><span>    </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679201955"><span id="local-6989586621679201957"><span id="local-6989586621679201959"><span class="annot"><span class="annottext">Int -&gt; CurveCommon -&gt; ShowS
 [CurveCommon] -&gt; ShowS
 CurveCommon -&gt; String
 (Int -&gt; CurveCommon -&gt; ShowS)
@@ -917,7 +917,7 @@ show :: CurveCommon -&gt; String
 $cshow :: CurveCommon -&gt; String
 showsPrec :: Int -&gt; CurveCommon -&gt; ShowS
 $cshowsPrec :: Int -&gt; CurveCommon -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201944"><span id="local-6989586621679201946"><span id="local-6989586621679201948"><span id="local-6989586621679201950"><span class="annot"><span class="annottext">ReadPrec [CurveCommon]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201947"><span id="local-6989586621679201949"><span id="local-6989586621679201951"><span id="local-6989586621679201953"><span class="annot"><span class="annottext">ReadPrec [CurveCommon]
 ReadPrec CurveCommon
 Int -&gt; ReadS CurveCommon
 ReadS [CurveCommon]
@@ -937,7 +937,7 @@ readList :: ReadS [CurveCommon]
 $creadList :: ReadS [CurveCommon]
 readsPrec :: Int -&gt; ReadS CurveCommon
 $creadsPrec :: Int -&gt; ReadS CurveCommon
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201940"><span id="local-6989586621679201942"><span class="annot"><span class="annottext">CurveCommon -&gt; CurveCommon -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201943"><span id="local-6989586621679201945"><span class="annot"><span class="annottext">CurveCommon -&gt; CurveCommon -&gt; Bool
 (CurveCommon -&gt; CurveCommon -&gt; Bool)
 -&gt; (CurveCommon -&gt; CurveCommon -&gt; Bool) -&gt; Eq CurveCommon
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -945,7 +945,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: CurveCommon -&gt; CurveCommon -&gt; Bool
 == :: CurveCommon -&gt; CurveCommon -&gt; Bool
 $c== :: CurveCommon -&gt; CurveCommon -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveCommon"><span id="%24tCurveCommon"><span id="local-6989586621679201911"><span id="local-6989586621679201913"><span id="local-6989586621679201915"><span id="local-6989586621679201917"><span id="local-6989586621679201919"><span id="local-6989586621679201921"><span id="local-6989586621679201923"><span id="local-6989586621679201925"><span id="local-6989586621679201927"><span id="local-6989586621679201929"><span id="local-6989586621679201931"><span id="local-6989586621679201933"><span id="local-6989586621679201935"><span id="local-6989586621679201937"><span class="annot"><span class="annottext">Typeable CurveCommon
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="%24cCurveCommon"><span id="%24tCurveCommon"><span id="local-6989586621679201914"><span id="local-6989586621679201916"><span id="local-6989586621679201918"><span id="local-6989586621679201920"><span id="local-6989586621679201922"><span id="local-6989586621679201924"><span id="local-6989586621679201926"><span id="local-6989586621679201928"><span id="local-6989586621679201930"><span id="local-6989586621679201932"><span id="local-6989586621679201934"><span id="local-6989586621679201936"><span id="local-6989586621679201938"><span id="local-6989586621679201940"><span class="annot"><span class="annottext">Typeable CurveCommon
 DataType
 Constr
 Typeable CurveCommon
@@ -1143,7 +1143,7 @@ $cp1Data :: Typeable CurveCommon
 </span><span id="line-121"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="SEC_t409r1"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#SEC_t409r1"><span class="hs-identifier hs-var">SEC_t409r1</span></a></span></span><span>
 </span><span id="line-122"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="SEC_t571k1"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#SEC_t571k1"><span class="hs-identifier hs-var">SEC_t571k1</span></a></span></span><span>
 </span><span id="line-123"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="SEC_t571r1"><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#SEC_t571r1"><span class="hs-identifier hs-var">SEC_t571r1</span></a></span></span><span>
-</span><span id="line-124"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679201870"><span id="local-6989586621679201872"><span id="local-6989586621679201874"><span class="annot"><span class="annottext">Int -&gt; CurveName -&gt; ShowS
+</span><span id="line-124"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679201873"><span id="local-6989586621679201875"><span id="local-6989586621679201877"><span class="annot"><span class="annottext">Int -&gt; CurveName -&gt; ShowS
 [CurveName] -&gt; ShowS
 CurveName -&gt; String
 (Int -&gt; CurveName -&gt; ShowS)
@@ -1158,7 +1158,7 @@ show :: CurveName -&gt; String
 $cshow :: CurveName -&gt; String
 showsPrec :: Int -&gt; CurveName -&gt; ShowS
 $cshowsPrec :: Int -&gt; CurveName -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201862"><span id="local-6989586621679201864"><span id="local-6989586621679201866"><span id="local-6989586621679201868"><span class="annot"><span class="annottext">ReadPrec [CurveName]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201865"><span id="local-6989586621679201867"><span id="local-6989586621679201869"><span id="local-6989586621679201871"><span class="annot"><span class="annottext">ReadPrec [CurveName]
 ReadPrec CurveName
 Int -&gt; ReadS CurveName
 ReadS [CurveName]
@@ -1178,7 +1178,7 @@ readList :: ReadS [CurveName]
 $creadList :: ReadS [CurveName]
 readsPrec :: Int -&gt; ReadS CurveName
 $creadsPrec :: Int -&gt; ReadS CurveName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201858"><span id="local-6989586621679201860"><span class="annot"><span class="annottext">CurveName -&gt; CurveName -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Read</span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201861"><span id="local-6989586621679201863"><span class="annot"><span class="annottext">CurveName -&gt; CurveName -&gt; Bool
 (CurveName -&gt; CurveName -&gt; Bool)
 -&gt; (CurveName -&gt; CurveName -&gt; Bool) -&gt; Eq CurveName
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -1186,7 +1186,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: CurveName -&gt; CurveName -&gt; Bool
 == :: CurveName -&gt; CurveName -&gt; Bool
 $c== :: CurveName -&gt; CurveName -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201843"><span id="local-6989586621679201845"><span id="local-6989586621679201847"><span id="local-6989586621679201849"><span id="local-6989586621679201851"><span id="local-6989586621679201853"><span id="local-6989586621679201855"><span class="annot"><span class="annottext">Eq CurveName
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201846"><span id="local-6989586621679201848"><span id="local-6989586621679201850"><span id="local-6989586621679201852"><span id="local-6989586621679201854"><span id="local-6989586621679201856"><span id="local-6989586621679201858"><span class="annot"><span class="annottext">Eq CurveName
 Eq CurveName
 -&gt; (CurveName -&gt; CurveName -&gt; Ordering)
 -&gt; (CurveName -&gt; CurveName -&gt; Bool)
@@ -1224,7 +1224,7 @@ $c&lt; :: CurveName -&gt; CurveName -&gt; Bool
 compare :: CurveName -&gt; CurveName -&gt; Ordering
 $ccompare :: CurveName -&gt; CurveName -&gt; Ordering
 $cp1Ord :: Eq CurveName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201826"><span id="local-6989586621679201828"><span id="local-6989586621679201830"><span id="local-6989586621679201832"><span id="local-6989586621679201834"><span id="local-6989586621679201836"><span id="local-6989586621679201838"><span id="local-6989586621679201840"><span class="annot"><span class="annottext">Int -&gt; CurveName
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201829"><span id="local-6989586621679201831"><span id="local-6989586621679201833"><span id="local-6989586621679201835"><span id="local-6989586621679201837"><span id="local-6989586621679201839"><span id="local-6989586621679201841"><span id="local-6989586621679201843"><span class="annot"><span class="annottext">Int -&gt; CurveName
 CurveName -&gt; Int
 CurveName -&gt; [CurveName]
 CurveName -&gt; CurveName
@@ -1265,14 +1265,14 @@ pred :: CurveName -&gt; CurveName
 $cpred :: CurveName -&gt; CurveName
 succ :: CurveName -&gt; CurveName
 $csucc :: CurveName -&gt; CurveName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Enum</span></span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201821"><span id="local-6989586621679201823"><span class="annot"><span class="annottext">CurveName
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Enum</span></span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span id="local-6989586621679201824"><span id="local-6989586621679201826"><span class="annot"><span class="annottext">CurveName
 CurveName -&gt; CurveName -&gt; Bounded CurveName
 forall a. a -&gt; a -&gt; Bounded a
 maxBound :: CurveName
 $cmaxBound :: CurveName
 minBound :: CurveName
 $cminBound :: CurveName
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Bounded</span></span></span></span><span class="hs-special">,</span><span id="%24cSEC_t571r1"><span id="%24cSEC_t571k1"><span id="%24cSEC_t409r1"><span id="%24cSEC_t409k1"><span id="%24cSEC_t283r1"><span id="%24cSEC_t283k1"><span id="%24cSEC_t239k1"><span id="%24cSEC_t233r1"><span id="%24cSEC_t233k1"><span id="%24cSEC_t193r2"><span id="%24cSEC_t193r1"><span id="%24cSEC_t163r2"><span id="%24cSEC_t163r1"><span id="%24cSEC_t163k1"><span id="%24cSEC_t131r2"><span id="%24cSEC_t131r1"><span id="%24cSEC_t113r2"><span id="%24cSEC_t113r1"><span id="%24cSEC_p521r1"><span id="%24cSEC_p384r1"><span id="%24cSEC_p256r1"><span id="%24cSEC_p256k1"><span id="%24cSEC_p224r1"><span id="%24cSEC_p224k1"><span id="%24cSEC_p192r1"><span id="%24cSEC_p192k1"><span id="%24cSEC_p160r2"><span id="%24cSEC_p160r1"><span id="%24cSEC_p160k1"><span id="%24cSEC_p128r2"><span id="%24cSEC_p128r1"><span id="%24cSEC_p112r2"><span id="%24cSEC_p112r1"><span id="%24tCurveName"><span id="local-6989586621679201791"><span id="local-6989586621679201793"><span id="local-6989586621679201795"><span id="local-6989586621679201797"><span id="local-6989586621679201799"><span id="local-6989586621679201801"><span id="local-6989586621679201803"><span id="local-6989586621679201805"><span id="local-6989586621679201807"><span id="local-6989586621679201809"><span id="local-6989586621679201811"><span id="local-6989586621679201813"><span id="local-6989586621679201815"><span id="local-6989586621679201817"><span class="annot"><span class="annottext">Typeable CurveName
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Bounded</span></span></span></span><span class="hs-special">,</span><span id="%24cSEC_t571r1"><span id="%24cSEC_t571k1"><span id="%24cSEC_t409r1"><span id="%24cSEC_t409k1"><span id="%24cSEC_t283r1"><span id="%24cSEC_t283k1"><span id="%24cSEC_t239k1"><span id="%24cSEC_t233r1"><span id="%24cSEC_t233k1"><span id="%24cSEC_t193r2"><span id="%24cSEC_t193r1"><span id="%24cSEC_t163r2"><span id="%24cSEC_t163r1"><span id="%24cSEC_t163k1"><span id="%24cSEC_t131r2"><span id="%24cSEC_t131r1"><span id="%24cSEC_t113r2"><span id="%24cSEC_t113r1"><span id="%24cSEC_p521r1"><span id="%24cSEC_p384r1"><span id="%24cSEC_p256r1"><span id="%24cSEC_p256k1"><span id="%24cSEC_p224r1"><span id="%24cSEC_p224k1"><span id="%24cSEC_p192r1"><span id="%24cSEC_p192k1"><span id="%24cSEC_p160r2"><span id="%24cSEC_p160r1"><span id="%24cSEC_p160k1"><span id="%24cSEC_p128r2"><span id="%24cSEC_p128r1"><span id="%24cSEC_p112r2"><span id="%24cSEC_p112r1"><span id="%24tCurveName"><span id="local-6989586621679201794"><span id="local-6989586621679201796"><span id="local-6989586621679201798"><span id="local-6989586621679201800"><span id="local-6989586621679201802"><span id="local-6989586621679201804"><span id="local-6989586621679201806"><span id="local-6989586621679201808"><span id="local-6989586621679201810"><span id="local-6989586621679201812"><span id="local-6989586621679201814"><span id="local-6989586621679201816"><span id="local-6989586621679201818"><span id="local-6989586621679201820"><span class="annot"><span class="annottext">Typeable CurveName
 DataType
 Constr
 Typeable CurveName
@@ -1505,16 +1505,16 @@ curvesOIDs =
 </span><span id="line-165"></span><span class="hs-comment">-- | get the size of the curve in bits</span><span>
 </span><span id="line-166"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#curveSizeBits"><span class="hs-identifier hs-type">curveSizeBits</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#Curve"><span class="hs-identifier hs-type">Curve</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-167"></span><span id="curveSizeBits"><span class="annot"><span class="annottext">curveSizeBits :: Curve -&gt; Int
-</span><a href="Crypto.PubKey.ECC.Types.html#curveSizeBits"><span class="hs-identifier hs-var hs-var">curveSizeBits</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveFP"><span class="hs-identifier hs-type">CurveFP</span></a></span><span>  </span><span id="local-6989586621679201756"><span class="annot"><span class="annottext">CurvePrime
-</span><a href="#local-6989586621679201756"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
+</span><a href="Crypto.PubKey.ECC.Types.html#curveSizeBits"><span class="hs-identifier hs-var hs-var">curveSizeBits</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveFP"><span class="hs-identifier hs-type">CurveFP</span></a></span><span>  </span><span id="local-6989586621679201759"><span class="annot"><span class="annottext">CurvePrime
+</span><a href="#local-6989586621679201759"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
 </span><a href="Crypto.Number.Basic.html#numBits"><span class="hs-identifier hs-var">numBits</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CurvePrime -&gt; Integer
 </span><a href="Crypto.PubKey.ECC.Types.html#ecc_p"><span class="hs-identifier hs-var">ecc_p</span></a></span><span>  </span><span class="annot"><span class="annottext">CurvePrime
-</span><a href="#local-6989586621679201756"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-168"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#curveSizeBits"><span class="hs-identifier hs-var">curveSizeBits</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveF2m"><span class="hs-identifier hs-type">CurveF2m</span></a></span><span> </span><span id="local-6989586621679201755"><span class="annot"><span class="annottext">CurveBinary
-</span><a href="#local-6989586621679201755"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
+</span><a href="#local-6989586621679201759"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-168"></span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#curveSizeBits"><span class="hs-identifier hs-var">curveSizeBits</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Crypto.PubKey.ECC.Types.html#CurveF2m"><span class="hs-identifier hs-type">CurveF2m</span></a></span><span> </span><span id="local-6989586621679201758"><span class="annot"><span class="annottext">CurveBinary
+</span><a href="#local-6989586621679201758"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int
 </span><a href="Crypto.Number.Basic.html#numBits"><span class="hs-identifier hs-var">numBits</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CurveBinary -&gt; Integer
 </span><a href="Crypto.PubKey.ECC.Types.html#ecc_fx"><span class="hs-identifier hs-var">ecc_fx</span></a></span><span> </span><span class="annot"><span class="annottext">CurveBinary
-</span><a href="#local-6989586621679201755"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679201758"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span>

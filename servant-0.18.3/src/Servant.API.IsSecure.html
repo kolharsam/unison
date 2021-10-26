@@ -19,11 +19,11 @@
 </span><span id="line-19"></span><span class="hs-comment">-- but connect to the WAI handler without SSL. In such a case,</span><span>
 </span><span id="line-20"></span><span class="hs-comment">-- the handlers would get 'NotSecure', but from a user perspective,</span><span>
 </span><span id="line-21"></span><span class="hs-comment">-- there is a secure connection.</span><span>
-</span><span id="line-22"></span><span id="local-6989586621679102858"><span id="local-6989586621679102859"></span></span><span class="hs-keyword">data</span><span> </span><span id="IsSecure"><span class="annot"><a href="Servant.API.IsSecure.html#IsSecure"><span class="hs-identifier hs-var">IsSecure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Secure"><span class="annot"><a href="Servant.API.IsSecure.html#Secure"><span class="hs-identifier hs-var">Secure</span></a></span></span><span>    </span><span class="hs-comment">-- ^ the connection to the server</span><span>
+</span><span id="line-22"></span><span id="local-6989586621679102887"><span id="local-6989586621679102888"></span></span><span class="hs-keyword">data</span><span> </span><span id="IsSecure"><span class="annot"><a href="Servant.API.IsSecure.html#IsSecure"><span class="hs-identifier hs-var">IsSecure</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Secure"><span class="annot"><a href="Servant.API.IsSecure.html#Secure"><span class="hs-identifier hs-var">Secure</span></a></span></span><span>    </span><span class="hs-comment">-- ^ the connection to the server</span><span>
 </span><span id="line-23"></span><span>                          </span><span class="hs-comment">--   is secure (HTTPS)</span><span>
 </span><span id="line-24"></span><span>              </span><span class="hs-glyph">|</span><span> </span><span id="NotSecure"><span class="annot"><a href="Servant.API.IsSecure.html#NotSecure"><span class="hs-identifier hs-var">NotSecure</span></a></span></span><span> </span><span class="hs-comment">-- ^ the connection to the server</span><span>
 </span><span id="line-25"></span><span>                          </span><span class="hs-comment">--   is not secure (HTTP)</span><span>
-</span><span id="line-26"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102852"><span id="local-6989586621679102854"><span class="annot"><span class="annottext">IsSecure -&gt; IsSecure -&gt; Bool
+</span><span id="line-26"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102881"><span id="local-6989586621679102883"><span class="annot"><span class="annottext">IsSecure -&gt; IsSecure -&gt; Bool
 (IsSecure -&gt; IsSecure -&gt; Bool)
 -&gt; (IsSecure -&gt; IsSecure -&gt; Bool) -&gt; Eq IsSecure
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -31,7 +31,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: IsSecure -&gt; IsSecure -&gt; Bool
 == :: IsSecure -&gt; IsSecure -&gt; Bool
 $c== :: IsSecure -&gt; IsSecure -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102845"><span id="local-6989586621679102847"><span id="local-6989586621679102849"><span class="annot"><span class="annottext">Int -&gt; IsSecure -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102874"><span id="local-6989586621679102876"><span id="local-6989586621679102878"><span class="annot"><span class="annottext">Int -&gt; IsSecure -&gt; ShowS
 [IsSecure] -&gt; ShowS
 IsSecure -&gt; String
 (Int -&gt; IsSecure -&gt; ShowS)
@@ -44,7 +44,7 @@ show :: IsSecure -&gt; String
 $cshow :: IsSecure -&gt; String
 showsPrec :: Int -&gt; IsSecure -&gt; ShowS
 $cshowsPrec :: Int -&gt; IsSecure -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102836"><span id="local-6989586621679102838"><span id="local-6989586621679102840"><span id="local-6989586621679102842"><span class="annot"><span class="annottext">ReadPrec [IsSecure]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102865"><span id="local-6989586621679102867"><span id="local-6989586621679102869"><span id="local-6989586621679102871"><span class="annot"><span class="annottext">ReadPrec [IsSecure]
 ReadPrec IsSecure
 Int -&gt; ReadS IsSecure
 ReadS [IsSecure]
@@ -72,7 +72,7 @@ forall a.
 (forall x. a -&gt; Rep a x) -&gt; (forall x. Rep a x -&gt; a) -&gt; Generic a
 $cto :: forall x. Rep IsSecure x -&gt; IsSecure
 $cfrom :: forall x. IsSecure -&gt; Rep IsSecure x
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">Generic</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102817"><span id="local-6989586621679102819"><span id="local-6989586621679102821"><span id="local-6989586621679102823"><span id="local-6989586621679102825"><span id="local-6989586621679102827"><span id="local-6989586621679102829"><span class="annot"><span class="annottext">Eq IsSecure
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">Generic</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102846"><span id="local-6989586621679102848"><span id="local-6989586621679102850"><span id="local-6989586621679102852"><span id="local-6989586621679102854"><span id="local-6989586621679102856"><span id="local-6989586621679102858"><span class="annot"><span class="annottext">Eq IsSecure
 Eq IsSecure
 -&gt; (IsSecure -&gt; IsSecure -&gt; Ordering)
 -&gt; (IsSecure -&gt; IsSecure -&gt; Bool)

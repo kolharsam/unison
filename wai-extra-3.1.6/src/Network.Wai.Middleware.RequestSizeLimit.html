@@ -36,8 +36,8 @@
 -&gt; (Word64 -&gt; Middleware) -&gt; RequestSizeLimitSettings
 </span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#RequestSizeLimitSettings"><span class="hs-identifier hs-type">RequestSizeLimitSettings</span></a></span><span>
 </span><span id="line-35"></span><span>    </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">maxLengthForRequest :: Request -&gt; IO (Maybe Word64)
-</span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#maxLengthForRequest"><span class="hs-identifier hs-var">maxLengthForRequest</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679104626"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104626"><span class="hs-identifier hs-var">_req</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Word64 -&gt; IO (Maybe Word64)
+</span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#maxLengthForRequest"><span class="hs-identifier hs-var">maxLengthForRequest</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679104646"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104646"><span class="hs-identifier hs-var">_req</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Word64 -&gt; IO (Maybe Word64)
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Maybe Word64 -&gt; IO (Maybe Word64))
 -&gt; Maybe Word64 -&gt; IO (Maybe Word64)
@@ -55,16 +55,16 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Word64
 </span><span class="hs-number">1024</span></span><span>
 </span><span id="line-36"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">onLengthExceeded :: Word64 -&gt; Middleware
-</span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#onLengthExceeded"><span class="hs-identifier hs-var">onLengthExceeded</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679104623"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104623"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span id="local-6989586621679104622"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679104622"><span class="hs-identifier hs-var">_app</span></a></span></span><span> </span><span id="local-6989586621679104621"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104621"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104620"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104620"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104620"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; RequestBodyLength -&gt; Response
+</span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#onLengthExceeded"><span class="hs-identifier hs-var">onLengthExceeded</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679104643"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104643"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span id="local-6989586621679104642"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679104642"><span class="hs-identifier hs-var">_app</span></a></span></span><span> </span><span id="local-6989586621679104641"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104641"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104640"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104640"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104640"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; RequestBodyLength -&gt; Response
 </span><a href="Network.Wai.Middleware.RequestSizeLimit.html#tooLargeResponse"><span class="hs-identifier hs-var">tooLargeResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104623"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestBodyLength
+</span><a href="#local-6989586621679104643"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestBodyLength
 </span><span class="hs-identifier hs-var hs-var">requestBodyLength</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104621"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104641"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-37"></span><span>    </span><span class="hs-special">}</span><span>
 </span><span id="line-38"></span><span>
 </span><span id="line-39"></span><span class="hs-comment">-- | Middleware to limit request bodies to a certain size.</span><span>
@@ -74,70 +74,70 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span id="line-43"></span><span class="hs-comment">-- @since 3.1.1</span><span>
 </span><span id="line-44"></span><span class="annot"><a href="Network.Wai.Middleware.RequestSizeLimit.html#requestSizeLimitMiddleware"><span class="hs-identifier hs-type">requestSizeLimitMiddleware</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#RequestSizeLimitSettings"><span class="hs-identifier hs-type">RequestSizeLimitSettings</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-45"></span><span id="requestSizeLimitMiddleware"><span class="annot"><span class="annottext">requestSizeLimitMiddleware :: RequestSizeLimitSettings -&gt; Middleware
-</span><a href="Network.Wai.Middleware.RequestSizeLimit.html#requestSizeLimitMiddleware"><span class="hs-identifier hs-var hs-var">requestSizeLimitMiddleware</span></a></span></span><span> </span><span id="local-6989586621679104617"><span class="annot"><span class="annottext">RequestSizeLimitSettings
-</span><a href="#local-6989586621679104617"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679104616"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679104615"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104615"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104614"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104614"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-46"></span><span>    </span><span id="local-6989586621679104613"><span class="annot"><span class="annottext">Maybe Word64
-</span><a href="#local-6989586621679104613"><span class="hs-identifier hs-var">maybeMaxLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RequestSizeLimitSettings -&gt; Request -&gt; IO (Maybe Word64)
+</span><a href="Network.Wai.Middleware.RequestSizeLimit.html#requestSizeLimitMiddleware"><span class="hs-identifier hs-var hs-var">requestSizeLimitMiddleware</span></a></span></span><span> </span><span id="local-6989586621679104637"><span class="annot"><span class="annottext">RequestSizeLimitSettings
+</span><a href="#local-6989586621679104637"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679104636"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679104636"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679104635"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104635"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679104634"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104634"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-46"></span><span>    </span><span id="local-6989586621679104633"><span class="annot"><span class="annottext">Maybe Word64
+</span><a href="#local-6989586621679104633"><span class="hs-identifier hs-var">maybeMaxLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RequestSizeLimitSettings -&gt; Request -&gt; IO (Maybe Word64)
 </span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#maxLengthForRequest"><span class="hs-identifier hs-var hs-var">maxLengthForRequest</span></a></span><span> </span><span class="annot"><span class="annottext">RequestSizeLimitSettings
-</span><a href="#local-6989586621679104617"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104615"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679104637"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104635"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-47"></span><span>
 </span><span id="line-48"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Word64
-</span><a href="#local-6989586621679104613"><span class="hs-identifier hs-var">maybeMaxLen</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679104633"><span class="hs-identifier hs-var">maybeMaxLen</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-49"></span><span>        </span><span class="annot"><span class="annottext">Maybe Word64
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104615"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104614"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
-</span><span id="line-50"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679104612"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104612"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-51"></span><span>            </span><span id="local-6989586621679104611"><span class="annot"><span class="annottext">Either RequestSizeException Request
-</span><a href="#local-6989586621679104611"><span class="hs-identifier hs-var">eitherSizeExceptionOrNewReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Request -&gt; IO (Either RequestSizeException Request)
+</span><a href="#local-6989586621679104636"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104635"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104634"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><span id="line-50"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679104632"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104632"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-51"></span><span>            </span><span id="local-6989586621679104631"><span class="annot"><span class="annottext">Either RequestSizeException Request
+</span><a href="#local-6989586621679104631"><span class="hs-identifier hs-var">eitherSizeExceptionOrNewReq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Request -&gt; IO (Either RequestSizeException Request)
 forall e a. Exception e =&gt; IO a -&gt; IO (Either e a)
 </span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; Request -&gt; IO Request
 </span><a href="Network.Wai.Request.html#requestSizeCheck"><span class="hs-identifier hs-var">requestSizeCheck</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104612"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104615"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104632"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104635"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-52"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either RequestSizeException Request
-</span><a href="#local-6989586621679104611"><span class="hs-identifier hs-var">eitherSizeExceptionOrNewReq</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679104631"><span class="hs-identifier hs-var">eitherSizeExceptionOrNewReq</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-53"></span><span>                </span><span class="hs-comment">-- In the case of a known-length request, RequestSizeException will be thrown immediately</span><span>
-</span><span id="line-54"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Request.html#RequestSizeException"><span class="hs-identifier hs-type">RequestSizeException</span></a></span><span> </span><span id="local-6989586621679104608"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104608"><span class="hs-identifier hs-var">_maxLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104607"><span class="hs-identifier hs-var">handleLengthExceeded</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104612"><span class="hs-identifier hs-var">maxLen</span></a></span><span>
+</span><span id="line-54"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Request.html#RequestSizeException"><span class="hs-identifier hs-type">RequestSizeException</span></a></span><span> </span><span id="local-6989586621679104628"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104628"><span class="hs-identifier hs-var">_maxLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104627"><span class="hs-identifier hs-var">handleLengthExceeded</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104632"><span class="hs-identifier hs-var">maxLen</span></a></span><span>
 </span><span id="line-55"></span><span>                </span><span class="hs-comment">-- In the case of a chunked request (unknown length), RequestSizeException will be thrown during the processing of a body</span><span>
-</span><span id="line-56"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679104606"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104606"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104606"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104614"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">IO ResponseReceived
+</span><span id="line-56"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679104626"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104626"><span class="hs-identifier hs-var">newReq</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679104636"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104626"><span class="hs-identifier hs-var">newReq</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104634"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">IO ResponseReceived
 -&gt; (RequestSizeException -&gt; IO ResponseReceived)
 -&gt; IO ResponseReceived
 forall e a. Exception e =&gt; IO a -&gt; (e -&gt; IO a) -&gt; IO a
-</span><span class="hs-operator hs-var">`catch`</span></span><span> </span><span class="hs-glyph">\</span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Request.html#RequestSizeException"><span class="hs-identifier hs-type">RequestSizeException</span></a></span><span> </span><span id="local-6989586621679104605"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104605"><span class="hs-identifier hs-var">_maxLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104607"><span class="hs-identifier hs-var">handleLengthExceeded</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104612"><span class="hs-identifier hs-var">maxLen</span></a></span><span>
+</span><span class="hs-operator hs-var">`catch`</span></span><span> </span><span class="hs-glyph">\</span><span class="hs-special">(</span><span class="annot"><a href="Network.Wai.Request.html#RequestSizeException"><span class="hs-identifier hs-type">RequestSizeException</span></a></span><span> </span><span id="local-6989586621679104625"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104625"><span class="hs-identifier hs-var">_maxLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word64 -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104627"><span class="hs-identifier hs-var">handleLengthExceeded</span></a></span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104632"><span class="hs-identifier hs-var">maxLen</span></a></span><span>
 </span><span id="line-57"></span><span>
 </span><span id="line-58"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-59"></span><span>        </span><span id="local-6989586621679104607"><span class="annot"><span class="annottext">handleLengthExceeded :: Word64 -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104607"><span class="hs-identifier hs-var hs-var">handleLengthExceeded</span></a></span></span><span> </span><span id="local-6989586621679104604"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104604"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RequestSizeLimitSettings -&gt; Word64 -&gt; Middleware
+</span><span id="line-59"></span><span>        </span><span id="local-6989586621679104627"><span class="annot"><span class="annottext">handleLengthExceeded :: Word64 -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104627"><span class="hs-identifier hs-var hs-var">handleLengthExceeded</span></a></span></span><span> </span><span id="local-6989586621679104624"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104624"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RequestSizeLimitSettings -&gt; Word64 -&gt; Middleware
 </span><a href="Network.Wai.Middleware.RequestSizeLimit.Internal.html#onLengthExceeded"><span class="hs-identifier hs-var hs-var">onLengthExceeded</span></a></span><span> </span><span class="annot"><span class="annottext">RequestSizeLimitSettings
-</span><a href="#local-6989586621679104617"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104604"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679104615"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679104614"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679104637"><span class="hs-identifier hs-var">settings</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104624"><span class="hs-identifier hs-var">maxLen</span></a></span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679104636"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679104635"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679104634"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-60"></span><span>
 </span><span id="line-61"></span><span class="annot"><a href="Network.Wai.Middleware.RequestSizeLimit.html#tooLargeResponse"><span class="hs-identifier hs-type">tooLargeResponse</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word64</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RequestBodyLength</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span>
 </span><span id="line-62"></span><span id="tooLargeResponse"><span class="annot"><span class="annottext">tooLargeResponse :: Word64 -&gt; RequestBodyLength -&gt; Response
-</span><a href="Network.Wai.Middleware.RequestSizeLimit.html#tooLargeResponse"><span class="hs-identifier hs-var hs-var">tooLargeResponse</span></a></span></span><span> </span><span id="local-6989586621679104603"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104603"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span id="local-6989586621679104602"><span class="annot"><span class="annottext">RequestBodyLength
-</span><a href="#local-6989586621679104602"><span class="hs-identifier hs-var">bodyLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; ByteString -&gt; Response
+</span><a href="Network.Wai.Middleware.RequestSizeLimit.html#tooLargeResponse"><span class="hs-identifier hs-var hs-var">tooLargeResponse</span></a></span></span><span> </span><span id="local-6989586621679104623"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104623"><span class="hs-identifier hs-var">maxLen</span></a></span></span><span> </span><span id="local-6989586621679104622"><span class="annot"><span class="annottext">RequestBodyLength
+</span><a href="#local-6989586621679104622"><span class="hs-identifier hs-var">bodyLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; ByteString -&gt; Response
 </span><span class="hs-identifier hs-var">responseLBS</span></span><span>
 </span><span id="line-63"></span><span>    </span><span class="annot"><span class="annottext">Status
 </span><span class="hs-identifier hs-var">requestEntityTooLarge413</span></span><span>
@@ -152,17 +152,17 @@ forall e a. Exception e =&gt; IO a -&gt; (e -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">LS8.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; [Char]
 forall a. Show a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104603"><span class="hs-identifier hs-var">maxLen</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679104623"><span class="hs-identifier hs-var">maxLen</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-68"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot; bytes; your request body was &quot;</span></span><span>
 </span><span id="line-69"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">RequestBodyLength
-</span><a href="#local-6989586621679104602"><span class="hs-identifier hs-var">bodyLen</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-70"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">KnownLength</span></span><span> </span><span id="local-6989586621679104596"><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104596"><span class="hs-identifier hs-var">knownLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Char] -&gt; ByteString
+</span><a href="#local-6989586621679104622"><span class="hs-identifier hs-var">bodyLen</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-70"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">KnownLength</span></span><span> </span><span id="local-6989586621679104616"><span class="annot"><span class="annottext">Word64
+</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">knownLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Char] -&gt; ByteString
 </span><span class="hs-identifier hs-var">LS8.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word64 -&gt; [Char]
 forall a. Show a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Word64
-</span><a href="#local-6989586621679104596"><span class="hs-identifier hs-var">knownLen</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
+</span><a href="#local-6989586621679104616"><span class="hs-identifier hs-var">knownLen</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; ByteString
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot; bytes.&quot;</span></span><span>

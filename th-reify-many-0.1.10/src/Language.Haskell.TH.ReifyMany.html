@@ -62,45 +62,45 @@
 </span><span id="line-62"></span><span class="hs-comment">-- initial types, regardless of whether they are instances or not.</span><span>
 </span><span id="line-63"></span><span class="annot"><a href="Language.Haskell.TH.ReifyMany.html#reifyManyWithoutInstances"><span class="hs-identifier hs-type">reifyManyWithoutInstances</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">]</span><span>
 </span><span id="line-64"></span><span id="reifyManyWithoutInstances"><span class="annot"><span class="annottext">reifyManyWithoutInstances :: Name -&gt; [Name] -&gt; (Name -&gt; Bool) -&gt; Q [Name]
-</span><a href="Language.Haskell.TH.ReifyMany.html#reifyManyWithoutInstances"><span class="hs-identifier hs-var hs-var">reifyManyWithoutInstances</span></a></span></span><span> </span><span id="local-6989586621679044636"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044636"><span class="hs-identifier hs-var">clz</span></a></span></span><span> </span><span id="local-6989586621679044635"><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044635"><span class="hs-identifier hs-var">initial</span></a></span></span><span> </span><span id="local-6989586621679044634"><span class="annot"><span class="annottext">Name -&gt; Bool
-</span><a href="#local-6989586621679044634"><span class="hs-identifier hs-var">recursePred</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-65"></span><span>    </span><span id="local-6989586621679044633"><span class="annot"><span class="annottext">[TypeclassInstance]
-</span><a href="#local-6989586621679044633"><span class="hs-identifier hs-var">insts</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Q [TypeclassInstance]
+</span><a href="Language.Haskell.TH.ReifyMany.html#reifyManyWithoutInstances"><span class="hs-identifier hs-var hs-var">reifyManyWithoutInstances</span></a></span></span><span> </span><span id="local-6989586621679044640"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044640"><span class="hs-identifier hs-var">clz</span></a></span></span><span> </span><span id="local-6989586621679044639"><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044639"><span class="hs-identifier hs-var">initial</span></a></span></span><span> </span><span id="local-6989586621679044638"><span class="annot"><span class="annottext">Name -&gt; Bool
+</span><a href="#local-6989586621679044638"><span class="hs-identifier hs-var">recursePred</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-65"></span><span>    </span><span id="local-6989586621679044637"><span class="annot"><span class="annottext">[TypeclassInstance]
+</span><a href="#local-6989586621679044637"><span class="hs-identifier hs-var">insts</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Q [TypeclassInstance]
 </span><a href="Language.Haskell.TH.ReifyMany.Internal.html#getInstances"><span class="hs-identifier hs-var">getInstances</span></a></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044636"><span class="hs-identifier hs-var">clz</span></a></span><span>
-</span><span id="line-66"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679044631"><span class="annot"><span class="annottext">recurse :: (Name, Dec) -&gt; m (Bool, [Name])
-</span><a href="#local-6989586621679044631"><span class="hs-identifier hs-var hs-var">recurse</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679044630"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044630"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044629"><span class="annot"><span class="annottext">Dec
-</span><a href="#local-6989586621679044629"><span class="hs-identifier hs-var">dec</span></a></span></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044640"><span class="hs-identifier hs-var">clz</span></a></span><span>
+</span><span id="line-66"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679044635"><span class="annot"><span class="annottext">recurse :: (Name, Dec) -&gt; m (Bool, [Name])
+</span><a href="#local-6989586621679044635"><span class="hs-identifier hs-var hs-var">recurse</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679044634"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044634"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044633"><span class="annot"><span class="annottext">Dec
+</span><a href="#local-6989586621679044633"><span class="hs-identifier hs-var">dec</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-67"></span><span>            </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Bool
-</span><a href="#local-6989586621679044634"><span class="hs-identifier hs-var">recursePred</span></a></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044630"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679044638"><span class="hs-identifier hs-var">recursePred</span></a></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044634"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Maybe TypeclassInstance -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isNothing</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[TypeclassInstance] -&gt; Name -&gt; Maybe TypeclassInstance
 </span><a href="Language.Haskell.TH.ReifyMany.Internal.html#lookupInstance"><span class="hs-identifier hs-var">lookupInstance</span></a></span><span> </span><span class="annot"><span class="annottext">[TypeclassInstance]
-</span><a href="#local-6989586621679044633"><span class="hs-identifier hs-var">insts</span></a></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044630"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="#local-6989586621679044637"><span class="hs-identifier hs-var">insts</span></a></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044634"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-68"></span><span>                </span><span class="annot"><span class="annottext">(Bool, [Name]) -&gt; m (Bool, [Name])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Dec -&gt; Bool
 </span><a href="Language.Haskell.TH.ReifyMany.Internal.html#isDataDec"><span class="hs-identifier hs-var">isDataDec</span></a></span><span> </span><span class="annot"><span class="annottext">Dec
-</span><a href="#local-6989586621679044629"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Dec -&gt; [Name]
+</span><a href="#local-6989586621679044633"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Dec -&gt; [Name]
 </span><a href="Language.Haskell.TH.ReifyMany.Internal.html#decConcreteNames"><span class="hs-identifier hs-var">decConcreteNames</span></a></span><span> </span><span class="annot"><span class="annottext">Dec
-</span><a href="#local-6989586621679044629"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-69"></span><span>        </span><span class="annot"><a href="#local-6989586621679044631"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="annot"><span class="annottext">(Name, Dec)
+</span><a href="#local-6989586621679044633"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-69"></span><span>        </span><span class="annot"><a href="#local-6989586621679044635"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="annot"><span class="annottext">(Name, Dec)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Bool, [Name]) -&gt; m (Bool, [Name])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-70"></span><span>    </span><span id="local-6989586621679044624"><span class="annot"><span class="annottext">[(Name, Info)]
-</span><a href="#local-6989586621679044624"><span class="hs-identifier hs-var">infos</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">((Name, Dec) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
+</span><span id="line-70"></span><span>    </span><span id="local-6989586621679044628"><span class="annot"><span class="annottext">[(Name, Info)]
+</span><a href="#local-6989586621679044628"><span class="hs-identifier hs-var">infos</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">((Name, Dec) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
 </span><a href="Language.Haskell.TH.ReifyMany.html#reifyManyTyCons"><span class="hs-identifier hs-var">reifyManyTyCons</span></a></span><span> </span><span class="annot"><span class="annottext">(Name, Dec) -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *). Monad m =&gt; (Name, Dec) -&gt; m (Bool, [Name])
-</span><a href="#local-6989586621679044631"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044635"><span class="hs-identifier hs-var">initial</span></a></span><span>
+</span><a href="#local-6989586621679044635"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044639"><span class="hs-identifier hs-var">initial</span></a></span><span>
 </span><span id="line-71"></span><span>    </span><span class="annot"><span class="annottext">[Name] -&gt; Q [Name]
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">((Name, Info) -&gt; Name) -&gt; [(Name, Info)] -&gt; [Name]
@@ -108,7 +108,7 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">(Name, Info) -&gt; Name
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">[(Name, Info)]
-</span><a href="#local-6989586621679044624"><span class="hs-identifier hs-var">infos</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044628"><span class="hs-identifier hs-var">infos</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span>
 </span><span id="line-73"></span><span class="hs-comment">-- | Like 'reifyMany', but specialized for recursively enumerating</span><span>
 </span><span id="line-74"></span><span class="hs-comment">-- type constructor declarations, omitting 'PrimTyConI'.</span><span>
@@ -134,25 +134,25 @@ forall a b. (a, b) -&gt; a
 </span><span id="line-94"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">]</span><span>
 </span><span id="line-95"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Info</span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
 </span><span id="line-96"></span><span id="reifyManyTyCons"><span class="annot"><span class="annottext">reifyManyTyCons :: ((Name, Dec) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
-</span><a href="Language.Haskell.TH.ReifyMany.html#reifyManyTyCons"><span class="hs-identifier hs-var hs-var">reifyManyTyCons</span></a></span></span><span> </span><span id="local-6989586621679044622"><span class="annot"><span class="annottext">(Name, Dec) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044622"><span class="hs-identifier hs-var">recurse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((Name, Info) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
+</span><a href="Language.Haskell.TH.ReifyMany.html#reifyManyTyCons"><span class="hs-identifier hs-var hs-var">reifyManyTyCons</span></a></span></span><span> </span><span id="local-6989586621679044626"><span class="annot"><span class="annottext">(Name, Dec) -&gt; Q (Bool, [Name])
+</span><a href="#local-6989586621679044626"><span class="hs-identifier hs-var">recurse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((Name, Info) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
 </span><a href="Language.Haskell.TH.ReifyMany.html#reifyMany"><span class="hs-identifier hs-var">reifyMany</span></a></span><span> </span><span class="annot"><span class="annottext">(Name, Info) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var">recurse'</span></a></span><span>
+</span><a href="#local-6989586621679044624"><span class="hs-identifier hs-var">recurse'</span></a></span><span>
 </span><span id="line-97"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-98"></span><span>    </span><span id="local-6989586621679044620"><span class="annot"><span class="annottext">recurse' :: (Name, Info) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var hs-var">recurse'</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679044619"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044619"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044618"><span class="annot"><span class="annottext">Info
-</span><a href="#local-6989586621679044618"><span class="hs-identifier hs-var">info</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-99"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679044617"><span class="annot"><span class="annottext">skip :: p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var hs-var">skip</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
+</span><span id="line-98"></span><span>    </span><span id="local-6989586621679044624"><span class="annot"><span class="annottext">recurse' :: (Name, Info) -&gt; Q (Bool, [Name])
+</span><a href="#local-6989586621679044624"><span class="hs-identifier hs-var hs-var">recurse'</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679044623"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044623"><span class="hs-identifier hs-var">name</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044622"><span class="annot"><span class="annottext">Info
+</span><a href="#local-6989586621679044622"><span class="hs-identifier hs-var">info</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-99"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679044621"><span class="annot"><span class="annottext">skip :: p -&gt; m (Bool, [a])
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var hs-var">skip</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-100"></span><span>                </span><span class="annot"><span class="annottext">(Bool, [a]) -&gt; m (Bool, [a])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-101"></span><span>            </span><span id="local-6989586621679044616"><span class="annot"><span class="annottext">unexpected :: [Char] -&gt; m a
-</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var hs-var">unexpected</span></a></span></span><span> </span><span id="local-6989586621679044615"><span class="annot"><span class="annottext">[Char]
-</span><a href="#local-6989586621679044615"><span class="hs-identifier hs-var">thing</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-101"></span><span>            </span><span id="local-6989586621679044620"><span class="annot"><span class="annottext">unexpected :: [Char] -&gt; m a
+</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var hs-var">unexpected</span></a></span></span><span> </span><span id="local-6989586621679044619"><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044619"><span class="hs-identifier hs-var">thing</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-102"></span><span>                </span><span class="annot"><span class="annottext">[Char] -&gt; m a
 forall (m :: * -&gt; *) a. MonadFail m =&gt; [Char] -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">([Char] -&gt; m a) -&gt; [Char] -&gt; m a
@@ -161,7 +161,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;reifyManyTyCons encountered unexpected &quot;</span></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Char]
-</span><a href="#local-6989586621679044615"><span class="hs-identifier hs-var">thing</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
+</span><a href="#local-6989586621679044619"><span class="hs-identifier hs-var">thing</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot; named &quot;</span></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
@@ -169,48 +169,48 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Name -&gt; [Char]
 forall a. Ppr a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">pprint</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044619"><span class="hs-identifier hs-var">name</span></a></span><span>
+</span><a href="#local-6989586621679044623"><span class="hs-identifier hs-var">name</span></a></span><span>
 </span><span id="line-103"></span><span>        </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Info
-</span><a href="#local-6989586621679044618"><span class="hs-identifier hs-var">info</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-104"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">TyConI</span></span><span> </span><span id="local-6989586621679044612"><span class="annot"><span class="annottext">Dec
-</span><a href="#local-6989586621679044612"><span class="hs-identifier hs-var">dec</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Name, Dec) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044622"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044619"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Dec
-</span><a href="#local-6989586621679044612"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044622"><span class="hs-identifier hs-var">info</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-104"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">TyConI</span></span><span> </span><span id="local-6989586621679044616"><span class="annot"><span class="annottext">Dec
+</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var">dec</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Name, Dec) -&gt; Q (Bool, [Name])
+</span><a href="#local-6989586621679044626"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044623"><span class="hs-identifier hs-var">name</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Dec
+</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var">dec</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-105"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">PrimTyConI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;prim type constructor&quot;</span></span><span>
 </span><span id="line-106"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">DataConI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;data constructor&quot;</span></span><span>
 </span><span id="line-107"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">ClassI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;class&quot;</span></span><span>
 </span><span id="line-108"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">ClassOpI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) a. MonadFail m =&gt; [Char] -&gt; m a
-</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;class method&quot;</span></span><span>
 </span><span id="line-109"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">VarI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) a. MonadFail m =&gt; [Char] -&gt; m a
-</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;value variable&quot;</span></span><span>
 </span><span id="line-110"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">TyVarI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) a. MonadFail m =&gt; [Char] -&gt; m a
-</span><a href="#local-6989586621679044616"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044620"><span class="hs-identifier hs-var">unexpected</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;type variable&quot;</span></span><span class="hs-cpp">
 #if MIN_VERSION_template_haskell(2,7,0)
 </span><span>            </span><span class="annot"><span class="hs-identifier hs-type">FamilyI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;type or data family&quot;</span></span><span class="hs-cpp">
 #endif
 </span><span class="hs-cpp">#if MIN_VERSION_template_haskell(2,12,0)
 </span><span>            </span><span class="annot"><span class="hs-identifier hs-type">PatSynI</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Q (Bool, [Name])
 forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
-</span><a href="#local-6989586621679044617"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
+</span><a href="#local-6989586621679044621"><span class="hs-identifier hs-var">skip</span></a></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;pattern synonym&quot;</span></span><span class="hs-cpp">
 #endif
 </span><span>
@@ -224,9 +224,9 @@ forall (m :: * -&gt; *) p a. Monad m =&gt; p -&gt; m (Bool, [a])
 </span><span id="line-125"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">]</span><span>
 </span><span id="line-126"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Info</span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
 </span><span id="line-127"></span><span id="reifyMany"><span class="annot"><span class="annottext">reifyMany :: ((Name, Info) -&gt; Q (Bool, [Name])) -&gt; [Name] -&gt; Q [(Name, Info)]
-</span><a href="Language.Haskell.TH.ReifyMany.html#reifyMany"><span class="hs-identifier hs-var hs-var">reifyMany</span></a></span></span><span> </span><span id="local-6989586621679044603"><span class="annot"><span class="annottext">(Name, Info) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044603"><span class="hs-identifier hs-var">recurse</span></a></span></span><span> </span><span id="local-6989586621679044602"><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044602"><span class="hs-identifier hs-var">initial</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Language.Haskell.TH.ReifyMany.html#reifyMany"><span class="hs-identifier hs-var hs-var">reifyMany</span></a></span></span><span> </span><span id="local-6989586621679044607"><span class="annot"><span class="annottext">(Name, Info) -&gt; Q (Bool, [Name])
+</span><a href="#local-6989586621679044607"><span class="hs-identifier hs-var">recurse</span></a></span></span><span> </span><span id="local-6989586621679044606"><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044606"><span class="hs-identifier hs-var">initial</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-128"></span><span>    </span><span class="annot"><span class="annottext">StateT (Set Name) Q [(Name, Info)] -&gt; Set Name -&gt; Q [(Name, Info)]
 forall (m :: * -&gt; *) s a. Monad m =&gt; StateT s m a -&gt; s -&gt; m a
 </span><span class="hs-identifier hs-var">State.evalStateT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">([[(Name, Info)]] -&gt; [(Name, Info)])
@@ -246,24 +246,24 @@ forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Traversable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m (t b)
 </span><span class="hs-identifier hs-var">mapM</span></span><span> </span><span class="annot"><span class="annottext">Name -&gt; StateT (Set Name) Q [(Name, Info)]
-</span><a href="#local-6989586621679044598"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044602"><span class="hs-identifier hs-var">initial</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Set Name
+</span><a href="#local-6989586621679044602"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044606"><span class="hs-identifier hs-var">initial</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Set Name
 forall a. Set a
 </span><span class="hs-identifier hs-var">S.empty</span></span><span>
 </span><span id="line-129"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-130"></span><span>    </span><span class="annot"><a href="#local-6989586621679044598"><span class="hs-identifier hs-type">go</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">State.StateT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">S.Set</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Info</span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
-</span><span id="line-131"></span><span>    </span><span id="local-6989586621679044598"><span class="annot"><span class="annottext">go :: Name -&gt; StateT (Set Name) Q [(Name, Info)]
-</span><a href="#local-6989586621679044598"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span id="local-6989586621679044596"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-132"></span><span>        </span><span id="local-6989586621679044595"><span class="annot"><span class="annottext">Set Name
-</span><a href="#local-6989586621679044595"><span class="hs-identifier hs-var">seen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">StateT (Set Name) Q (Set Name)
+</span><span id="line-130"></span><span>    </span><span class="annot"><a href="#local-6989586621679044602"><span class="hs-identifier hs-type">go</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">State.StateT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">S.Set</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Q</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Info</span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
+</span><span id="line-131"></span><span>    </span><span id="local-6989586621679044602"><span class="annot"><span class="annottext">go :: Name -&gt; StateT (Set Name) Q [(Name, Info)]
+</span><a href="#local-6989586621679044602"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span id="local-6989586621679044600"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-132"></span><span>        </span><span id="local-6989586621679044599"><span class="annot"><span class="annottext">Set Name
+</span><a href="#local-6989586621679044599"><span class="hs-identifier hs-var">seen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">StateT (Set Name) Q (Set Name)
 forall s (m :: * -&gt; *). MonadState s m =&gt; m s
 </span><span class="hs-identifier hs-var">State.get</span></span><span>
 </span><span id="line-133"></span><span>        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Set Name -&gt; Bool
 forall a. Ord a =&gt; a -&gt; Set a -&gt; Bool
 </span><span class="hs-identifier hs-var">S.member</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Set Name
-</span><a href="#local-6989586621679044595"><span class="hs-identifier hs-var">seen</span></a></span><span>
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Set Name
+</span><a href="#local-6989586621679044599"><span class="hs-identifier hs-var">seen</span></a></span><span>
 </span><span id="line-134"></span><span>            </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">[(Name, Info)] -&gt; StateT (Set Name) Q [(Name, Info)]
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
@@ -273,19 +273,19 @@ forall s (m :: * -&gt; *). MonadState s m =&gt; s -&gt; m ()
 </span><span class="hs-identifier hs-var">State.put</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; Set Name -&gt; Set Name
 forall a. Ord a =&gt; a -&gt; Set a -&gt; Set a
 </span><span class="hs-identifier hs-var">S.insert</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Set Name
-</span><a href="#local-6989586621679044595"><span class="hs-identifier hs-var">seen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-137"></span><span>                </span><span id="local-6989586621679044590"><span class="annot"><span class="annottext">Info
-</span><a href="#local-6989586621679044590"><span class="hs-identifier hs-var">info</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Q Info -&gt; StateT (Set Name) Q Info
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Set Name
+</span><a href="#local-6989586621679044599"><span class="hs-identifier hs-var">seen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-137"></span><span>                </span><span id="local-6989586621679044594"><span class="annot"><span class="annottext">Info
+</span><a href="#local-6989586621679044594"><span class="hs-identifier hs-var">info</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Q Info -&gt; StateT (Set Name) Q Info
 forall (t :: (* -&gt; *) -&gt; * -&gt; *) (m :: * -&gt; *) a.
 (MonadTrans t, Monad m) =&gt;
 m a -&gt; t m a
 </span><span class="hs-identifier hs-var">State.lift</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; Q Info
 </span><span class="hs-identifier hs-var">reify</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-138"></span><span>                </span><span class="hs-special">(</span><span id="local-6989586621679044587"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679044587"><span class="hs-identifier hs-var">shouldEmit</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044586"><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044586"><span class="hs-identifier hs-var">ns</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Q (Bool, [Name]) -&gt; StateT (Set Name) Q (Bool, [Name])
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-138"></span><span>                </span><span class="hs-special">(</span><span id="local-6989586621679044591"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679044591"><span class="hs-identifier hs-var">shouldEmit</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679044590"><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044590"><span class="hs-identifier hs-var">ns</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Q (Bool, [Name]) -&gt; StateT (Set Name) Q (Bool, [Name])
 forall (t :: (* -&gt; *) -&gt; * -&gt; *) (m :: * -&gt; *) a.
 (MonadTrans t, Monad m) =&gt;
 m a -&gt; t m a
@@ -293,11 +293,11 @@ m a -&gt; t m a
 -&gt; Q (Bool, [Name]) -&gt; StateT (Set Name) Q (Bool, [Name])
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(Name, Info) -&gt; Q (Bool, [Name])
-</span><a href="#local-6989586621679044603"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Info
-</span><a href="#local-6989586621679044590"><span class="hs-identifier hs-var">info</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-139"></span><span>                </span><span id="local-6989586621679044585"><span class="annot"><span class="annottext">[(Name, Info)]
-</span><a href="#local-6989586621679044585"><span class="hs-identifier hs-var">results</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([[(Name, Info)]] -&gt; [(Name, Info)])
+</span><a href="#local-6989586621679044607"><span class="hs-identifier hs-var">recurse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Info
+</span><a href="#local-6989586621679044594"><span class="hs-identifier hs-var">info</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-139"></span><span>                </span><span id="local-6989586621679044589"><span class="annot"><span class="annottext">[(Name, Info)]
+</span><a href="#local-6989586621679044589"><span class="hs-identifier hs-var">results</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([[(Name, Info)]] -&gt; [(Name, Info)])
 -&gt; StateT (Set Name) Q [[(Name, Info)]]
 -&gt; StateT (Set Name) Q [(Name, Info)]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -314,22 +314,22 @@ forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Traversable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m (t b)
 </span><span class="hs-identifier hs-var">mapM</span></span><span> </span><span class="annot"><span class="annottext">Name -&gt; StateT (Set Name) Q [(Name, Info)]
-</span><a href="#local-6989586621679044598"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
-</span><a href="#local-6989586621679044586"><span class="hs-identifier hs-var">ns</span></a></span><span>
+</span><a href="#local-6989586621679044602"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679044590"><span class="hs-identifier hs-var">ns</span></a></span><span>
 </span><span id="line-140"></span><span>                </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679044587"><span class="hs-identifier hs-var">shouldEmit</span></a></span><span>
+</span><a href="#local-6989586621679044591"><span class="hs-identifier hs-var">shouldEmit</span></a></span><span>
 </span><span id="line-141"></span><span>                    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">[(Name, Info)] -&gt; StateT (Set Name) Q [(Name, Info)]
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679044596"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Info
-</span><a href="#local-6989586621679044590"><span class="hs-identifier hs-var">info</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Name, Info) -&gt; [(Name, Info)] -&gt; [(Name, Info)]
+</span><a href="#local-6989586621679044600"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Info
+</span><a href="#local-6989586621679044594"><span class="hs-identifier hs-var">info</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Name, Info) -&gt; [(Name, Info)] -&gt; [(Name, Info)]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">[(Name, Info)]
-</span><a href="#local-6989586621679044585"><span class="hs-identifier hs-var">results</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679044589"><span class="hs-identifier hs-var">results</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-142"></span><span>                    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">[(Name, Info)] -&gt; StateT (Set Name) Q [(Name, Info)]
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">[(Name, Info)]
-</span><a href="#local-6989586621679044585"><span class="hs-identifier hs-var">results</span></a></span><span>
+</span><a href="#local-6989586621679044589"><span class="hs-identifier hs-var">results</span></a></span><span>
 </span><span id="line-143"></span><span>
 </span><span id="line-144"></span><span class="hs-comment">-- | Like 'getDatatypesWithoutInstanceOf', but more precise as it uses</span><span>
 </span><span id="line-145"></span><span class="hs-comment">-- the 'isInstance' function</span><span>

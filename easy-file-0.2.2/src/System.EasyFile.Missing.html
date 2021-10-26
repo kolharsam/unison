@@ -29,13 +29,13 @@
 </span><span class="hs-identifier">isSymlink</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">return</span><span> </span><span class="hs-identifier">False</span><span class="hs-cpp">
 #else
 </span><span id="isSymlink"><span class="annot"><span class="annottext">isSymlink :: FilePath -&gt; IO Bool
-</span><a href="System.EasyFile.Missing.html#isSymlink"><span class="hs-identifier hs-var hs-var">isSymlink</span></a></span></span><span> </span><span id="local-6989586621679037760"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037760"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; Bool
+</span><a href="System.EasyFile.Missing.html#isSymlink"><span class="hs-identifier hs-var hs-var">isSymlink</span></a></span></span><span> </span><span id="local-6989586621679037820"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037820"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileStatus -&gt; Bool
 </span><span class="hs-identifier hs-var">isSymbolicLink</span></span><span> </span><span class="annot"><span class="annottext">(FileStatus -&gt; Bool) -&gt; IO FileStatus -&gt; IO Bool
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getSymbolicLinkStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037760"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037820"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-34"></span><span class="hs-comment">{-|
@@ -46,8 +46,8 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier">getLinkCount</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">return</span><span> </span><span class="hs-identifier">Nothing</span><span class="hs-cpp">
 #else
 </span><span id="getLinkCount"><span class="annot"><span class="annottext">getLinkCount :: FilePath -&gt; IO (Maybe Int)
-</span><a href="System.EasyFile.Missing.html#getLinkCount"><span class="hs-identifier hs-var hs-var">getLinkCount</span></a></span></span><span> </span><span id="local-6989586621679037755"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037755"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Maybe Int
+</span><a href="System.EasyFile.Missing.html#getLinkCount"><span class="hs-identifier hs-var hs-var">getLinkCount</span></a></span></span><span> </span><span id="local-6989586621679037815"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037815"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Maybe Int
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Maybe Int)
 -&gt; (FileStatus -&gt; Int) -&gt; FileStatus -&gt; Maybe Int
@@ -62,7 +62,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037755"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037815"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-44"></span><span class="hs-comment">{-|
@@ -70,17 +70,26 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 -}</span><span>
 </span><span id="line-47"></span><span class="annot"><a href="System.EasyFile.Missing.html#hasSubDirectories"><span class="hs-identifier hs-type">hasSubDirectories</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span class="hs-cpp">
 #ifdef darwin_HOST_OS
-</span><span id="hasSubDirectories"><span class="annot"><span class="annottext">hasSubDirectories :: FilePath -&gt; IO (Maybe Bool)
-</span><a href="System.EasyFile.Missing.html#hasSubDirectories"><span class="hs-identifier hs-var hs-var">hasSubDirectories</span></a></span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Bool -&gt; IO (Maybe Bool)
-forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
-</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Maybe Bool
-forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-cpp">
+</span><span class="hs-identifier">hasSubDirectories</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">return</span><span> </span><span class="hs-identifier">Nothing</span><span class="hs-cpp">
 #else
-</span><span class="hs-identifier">hasSubDirectories</span><span> </span><span class="hs-identifier">file</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-52"></span><span>  </span><span class="hs-identifier">Just</span><span> </span><span class="hs-identifier">n</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-identifier">getLinkCount</span><span> </span><span class="hs-identifier">file</span><span>
-</span><span id="line-53"></span><span>  </span><span class="hs-identifier">return</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">Just</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">n</span><span> </span><span class="hs-operator">&gt;</span><span> </span><span class="hs-number">2</span><span class="hs-special">)</span><span class="hs-cpp">
+</span><span id="hasSubDirectories"><span class="annot"><span class="annottext">hasSubDirectories :: FilePath -&gt; IO (Maybe Bool)
+</span><a href="System.EasyFile.Missing.html#hasSubDirectories"><span class="hs-identifier hs-var hs-var">hasSubDirectories</span></a></span></span><span> </span><span id="local-6989586621679037810"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037810"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-52"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679037809"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679037809"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO (Maybe Int)
+</span><a href="System.EasyFile.Missing.html#getLinkCount"><span class="hs-identifier hs-var">getLinkCount</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037810"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><span id="line-53"></span><span>  </span><span class="annot"><span class="annottext">Maybe Bool -&gt; IO (Maybe Bool)
+forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
+</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Maybe Bool -&gt; IO (Maybe Bool)) -&gt; Maybe Bool -&gt; IO (Maybe Bool)
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Maybe Bool
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679037809"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">2</span></span><span class="hs-special">)</span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-56"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
@@ -115,8 +124,8 @@ MacOS's rename() does.
 </span><span class="hs-identifier">getChangeTime</span><span> </span><span class="hs-identifier">_</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">return</span><span> </span><span class="hs-identifier">Nothing</span><span class="hs-cpp">
 #else
 </span><span id="getChangeTime"><span class="annot"><span class="annottext">getChangeTime :: FilePath -&gt; IO (Maybe UTCTime)
-</span><a href="System.EasyFile.Missing.html#getChangeTime"><span class="hs-identifier hs-var hs-var">getChangeTime</span></a></span></span><span> </span><span id="local-6989586621679037748"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037748"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTCTime -&gt; Maybe UTCTime
+</span><a href="System.EasyFile.Missing.html#getChangeTime"><span class="hs-identifier hs-var hs-var">getChangeTime</span></a></span></span><span> </span><span id="local-6989586621679037805"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037805"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UTCTime -&gt; Maybe UTCTime
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(UTCTime -&gt; Maybe UTCTime)
 -&gt; (FileStatus -&gt; UTCTime) -&gt; FileStatus -&gt; Maybe UTCTime
@@ -131,7 +140,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037748"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037805"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-84"></span><span class="hs-comment">{-|
@@ -151,8 +160,8 @@ The operation may fail with:
 </span><span class="hs-identifier">getModificationTime</span><span> </span><span class="hs-identifier">file</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">writeTime</span><span> </span><span class="hs-operator">&lt;$&gt;</span><span> </span><span class="hs-identifier">fileTime</span><span> </span><span class="hs-identifier">file</span><span class="hs-cpp">
 #else
 </span><span id="getModificationTime"><span class="annot"><span class="annottext">getModificationTime :: FilePath -&gt; IO UTCTime
-</span><a href="System.EasyFile.Missing.html#getModificationTime"><span class="hs-identifier hs-var hs-var">getModificationTime</span></a></span></span><span> </span><span id="local-6989586621679037744"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037744"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; UTCTime
+</span><a href="System.EasyFile.Missing.html#getModificationTime"><span class="hs-identifier hs-var hs-var">getModificationTime</span></a></span></span><span> </span><span id="local-6989586621679037801"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037801"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; UTCTime
 </span><a href="System.EasyFile.Missing.html#epochTimeToUTCTime"><span class="hs-identifier hs-var">epochTimeToUTCTime</span></a></span><span> </span><span class="annot"><span class="annottext">(EpochTime -&gt; UTCTime)
 -&gt; (FileStatus -&gt; EpochTime) -&gt; FileStatus -&gt; UTCTime
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
@@ -161,7 +170,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037744"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037801"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-103"></span><span class="hs-comment">{-
@@ -178,8 +187,8 @@ UTC time at which the file or directory was last accessed.
 </span><span class="hs-identifier">getAccessTime</span><span> </span><span class="hs-identifier">file</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier">accessTime</span><span> </span><span class="hs-operator">&lt;$&gt;</span><span> </span><span class="hs-identifier">fileTime</span><span> </span><span class="hs-identifier">file</span><span class="hs-cpp">
 #else
 </span><span id="getAccessTime"><span class="annot"><span class="annottext">getAccessTime :: FilePath -&gt; IO UTCTime
-</span><a href="System.EasyFile.Missing.html#getAccessTime"><span class="hs-identifier hs-var hs-var">getAccessTime</span></a></span></span><span> </span><span id="local-6989586621679037741"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037741"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; UTCTime
+</span><a href="System.EasyFile.Missing.html#getAccessTime"><span class="hs-identifier hs-var hs-var">getAccessTime</span></a></span></span><span> </span><span id="local-6989586621679037798"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037798"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; UTCTime
 </span><a href="System.EasyFile.Missing.html#epochTimeToUTCTime"><span class="hs-identifier hs-var">epochTimeToUTCTime</span></a></span><span> </span><span class="annot"><span class="annottext">(EpochTime -&gt; UTCTime)
 -&gt; (FileStatus -&gt; EpochTime) -&gt; FileStatus -&gt; UTCTime
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
@@ -188,7 +197,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037741"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037798"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span><span>
 </span><span id="line-119"></span><span class="hs-comment">----------------------------------------------------------------</span><span class="hs-cpp">
@@ -250,8 +259,8 @@ forall a b. (Real a, Fractional b) =&gt; a -&gt; b
 </span><span id="line-168"></span><span>  </span><span class="hs-identifier">fromIntegral</span><span> </span><span class="hs-operator">.</span><span> </span><span class="hs-identifier">bhfiSize</span><span> </span><span class="hs-operator">&lt;$&gt;</span><span> </span><span class="hs-identifier">getFileInformationByHandle</span><span> </span><span class="hs-identifier">fh</span><span class="hs-cpp">
 #else
 </span><span id="getFileSize"><span class="annot"><span class="annottext">getFileSize :: FilePath -&gt; IO Word64
-</span><a href="System.EasyFile.Missing.html#getFileSize"><span class="hs-identifier hs-var hs-var">getFileSize</span></a></span></span><span> </span><span id="local-6989586621679037737"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037737"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileOffset -&gt; Word64
+</span><a href="System.EasyFile.Missing.html#getFileSize"><span class="hs-identifier hs-var hs-var">getFileSize</span></a></span></span><span> </span><span id="local-6989586621679037794"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679037794"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileOffset -&gt; Word64
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(FileOffset -&gt; Word64)
 -&gt; (FileStatus -&gt; FileOffset) -&gt; FileStatus -&gt; Word64
@@ -261,6 +270,6 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO FileStatus
 </span><span class="hs-identifier hs-var">getFileStatus</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679037737"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679037794"><span class="hs-identifier hs-var">file</span></a></span><span class="hs-cpp">
 #endif
 </span></pre></body></html>

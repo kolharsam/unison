@@ -58,21 +58,21 @@ if I &lt; 2^N - 1, encode I on N bits
 </span><span id="line-45"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-comment">-- ^ Target</span><span>
 </span><span id="line-46"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-47"></span><span id="encodeInteger"><span class="annot"><span class="annottext">encodeInteger :: Int -&gt; Int -&gt; IO ByteString
-</span><a href="Network.HPACK.HeaderBlock.Integer.html#encodeInteger"><span class="hs-identifier hs-var hs-var">encodeInteger</span></a></span></span><span> </span><span id="local-6989586621679084820"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084820"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084819"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084819"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; (WriteBuffer -&gt; IO ()) -&gt; IO ByteString
+</span><a href="Network.HPACK.HeaderBlock.Integer.html#encodeInteger"><span class="hs-identifier hs-var hs-var">encodeInteger</span></a></span></span><span> </span><span id="local-6989586621679084819"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084819"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084818"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084818"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; (WriteBuffer -&gt; IO ()) -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">withWriteBuffer</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4096</span></span><span> </span><span class="annot"><span class="annottext">((WriteBuffer -&gt; IO ()) -&gt; IO ByteString)
 -&gt; (WriteBuffer -&gt; IO ()) -&gt; IO ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679084817"><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084817"><span class="hs-identifier hs-var">wbuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">WriteBuffer -&gt; (Word8 -&gt; Word8) -&gt; Int -&gt; Int -&gt; IO ()
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679084816"><span class="annot"><span class="annottext">WriteBuffer
+</span><a href="#local-6989586621679084816"><span class="hs-identifier hs-var">wbuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">WriteBuffer -&gt; (Word8 -&gt; Word8) -&gt; Int -&gt; Int -&gt; IO ()
 </span><a href="Network.HPACK.HeaderBlock.Integer.html#encodeI"><span class="hs-identifier hs-var">encodeI</span></a></span><span> </span><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084817"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8
+</span><a href="#local-6989586621679084816"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8
 forall a. a -&gt; a
 </span><span class="hs-identifier hs-var">id</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084820"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084819"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679084819"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084818"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-comment">-- Using write8 is faster than using internals directly.</span><span>
 </span><span id="line-50"></span><span class="hs-comment">--</span><span>
@@ -84,101 +84,101 @@ forall a. a -&gt; a
 </span><span id="line-56"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-comment">-- ^ Target</span><span>
 </span><span id="line-57"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-58"></span><span id="encodeI"><span class="annot"><span class="annottext">encodeI :: WriteBuffer -&gt; (Word8 -&gt; Word8) -&gt; Int -&gt; Int -&gt; IO ()
-</span><a href="Network.HPACK.HeaderBlock.Integer.html#encodeI"><span class="hs-identifier hs-var hs-var">encodeI</span></a></span></span><span> </span><span id="local-6989586621679084815"><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084815"><span class="hs-identifier hs-var">wbuf</span></a></span></span><span> </span><span id="local-6989586621679084814"><span class="annot"><span class="annottext">Word8 -&gt; Word8
-</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679084813"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084813"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084812"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">i</span></a></span></span><span>
+</span><a href="Network.HPACK.HeaderBlock.Integer.html#encodeI"><span class="hs-identifier hs-var hs-var">encodeI</span></a></span></span><span> </span><span id="local-6989586621679084814"><span class="annot"><span class="annottext">WriteBuffer
+</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">wbuf</span></a></span></span><span> </span><span id="local-6989586621679084813"><span class="annot"><span class="annottext">Word8 -&gt; Word8
+</span><a href="#local-6989586621679084813"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679084812"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084811"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084811"><span class="hs-identifier hs-var">i</span></a></span></span><span>
 </span><span id="line-59"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679084811"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084810"><span class="hs-identifier hs-var">p</span></a></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">WriteBuffer -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679084809"><span class="hs-identifier hs-var">p</span></a></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">WriteBuffer -&gt; Word8 -&gt; IO ()
 </span><span class="hs-identifier hs-var">write8</span></span><span> </span><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084815"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8
-</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Word8) -&gt; Word8 -&gt; Word8
+</span><a href="#local-6989586621679084813"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Word8) -&gt; Word8 -&gt; Word8
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679084811"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-60"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-61"></span><span>        </span><span class="annot"><span class="annottext">WriteBuffer -&gt; Word8 -&gt; IO ()
 </span><span class="hs-identifier hs-var">write8</span></span><span> </span><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084815"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8
-</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Word8) -&gt; Word8 -&gt; Word8
+</span><a href="#local-6989586621679084813"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Word8) -&gt; Word8 -&gt; Word8
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084810"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679084809"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-62"></span><span>        </span><span class="annot"><span class="annottext">Int -&gt; IO ()
-</span><a href="#local-6989586621679084808"><span class="hs-identifier hs-var">encode'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">encode'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084811"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084810"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679084809"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-63"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-64"></span><span>    </span><span id="local-6989586621679084810"><span class="annot"><span class="annottext">p :: Int
-</span><a href="#local-6989586621679084810"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array Int Int
+</span><span id="line-64"></span><span>    </span><span id="local-6989586621679084809"><span class="annot"><span class="annottext">p :: Int
+</span><a href="#local-6989586621679084809"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array Int Int
 </span><a href="Network.HPACK.HeaderBlock.Integer.html#powerArray"><span class="hs-identifier hs-var">powerArray</span></a></span><span> </span><span class="annot"><span class="annottext">Array Int Int -&gt; Int -&gt; Int
 forall (a :: * -&gt; * -&gt; *) e i.
 (IArray a e, Ix i) =&gt;
 a i e -&gt; Int -&gt; e
 </span><span class="hs-operator hs-var">`unsafeAt`</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084813"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084812"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-65"></span><span>    </span><span class="annot"><a href="#local-6989586621679084808"><span class="hs-identifier hs-type">encode'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-66"></span><span>    </span><span id="local-6989586621679084808"><span class="annot"><span class="annottext">encode' :: Int -&gt; IO ()
-</span><a href="#local-6989586621679084808"><span class="hs-identifier hs-var hs-var">encode'</span></a></span></span><span> </span><span id="local-6989586621679084807"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">j</span></a></span></span><span>
+</span><span id="line-65"></span><span>    </span><span class="annot"><a href="#local-6989586621679084807"><span class="hs-identifier hs-type">encode'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-66"></span><span>    </span><span id="local-6989586621679084807"><span class="annot"><span class="annottext">encode' :: Int -&gt; IO ()
+</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var hs-var">encode'</span></a></span></span><span> </span><span id="local-6989586621679084806"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">j</span></a></span></span><span>
 </span><span id="line-67"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">128</span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">WriteBuffer -&gt; Word8 -&gt; IO ()
 </span><span class="hs-identifier hs-var">write8</span></span><span> </span><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084815"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">j</span></a></span><span>
+</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">j</span></a></span><span>
 </span><span id="line-68"></span><span>      </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-69"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679084806"><span class="annot"><span class="annottext">q :: Int
-</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-69"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679084805"><span class="annot"><span class="annottext">q :: Int
+</span><a href="#local-6989586621679084805"><span class="hs-identifier hs-var hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Bits a =&gt; a -&gt; Int -&gt; a
 </span><span class="hs-operator hs-var">`shiftR`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span>
-</span><span id="line-70"></span><span>              </span><span id="local-6989586621679084804"><span class="annot"><span class="annottext">r :: Int
-</span><a href="#local-6989586621679084804"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-70"></span><span>              </span><span id="local-6989586621679084803"><span class="annot"><span class="annottext">r :: Int
+</span><a href="#local-6989586621679084803"><span class="hs-identifier hs-var hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Bits a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">.&amp;.</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0x7f</span></span><span>
 </span><span id="line-71"></span><span>          </span><span class="annot"><span class="annottext">WriteBuffer -&gt; Word8 -&gt; IO ()
 </span><span class="hs-identifier hs-var">write8</span></span><span> </span><span class="annot"><span class="annottext">WriteBuffer
-</span><a href="#local-6989586621679084815"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679084814"><span class="hs-identifier hs-var">wbuf</span></a></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; IO ()) -&gt; Word8 -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084804"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084803"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">128</span></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span>          </span><span class="annot"><span class="annottext">Int -&gt; IO ()
-</span><a href="#local-6989586621679084808"><span class="hs-identifier hs-var">encode'</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084806"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><a href="#local-6989586621679084807"><span class="hs-identifier hs-var">encode'</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084805"><span class="hs-identifier hs-var">q</span></a></span><span>
 </span><span id="line-73"></span><span>
 </span><span id="line-74"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-75"></span><span>
@@ -208,21 +208,21 @@ decode I from the next N bits
 </span><span id="line-99"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-comment">-- ^ The tail of encoded integer</span><span>
 </span><span id="line-100"></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-101"></span><span id="decodeInteger"><span class="annot"><span class="annottext">decodeInteger :: Int -&gt; Word8 -&gt; ByteString -&gt; IO Int
-</span><a href="Network.HPACK.HeaderBlock.Integer.html#decodeInteger"><span class="hs-identifier hs-var hs-var">decodeInteger</span></a></span></span><span> </span><span id="local-6989586621679084801"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084801"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084800"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679084800"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679084799"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679084799"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; (ReadBuffer -&gt; IO Int) -&gt; IO Int
+</span><a href="Network.HPACK.HeaderBlock.Integer.html#decodeInteger"><span class="hs-identifier hs-var hs-var">decodeInteger</span></a></span></span><span> </span><span id="local-6989586621679084800"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084800"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084799"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679084799"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679084798"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679084798"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; (ReadBuffer -&gt; IO Int) -&gt; IO Int
 forall a. ByteString -&gt; (ReadBuffer -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">withReadBuffer</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679084799"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((ReadBuffer -&gt; IO Int) -&gt; IO Int)
+</span><a href="#local-6989586621679084798"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((ReadBuffer -&gt; IO Int) -&gt; IO Int)
 -&gt; (ReadBuffer -&gt; IO Int) -&gt; IO Int
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679084797"><span class="annot"><span class="annottext">ReadBuffer
-</span><a href="#local-6989586621679084797"><span class="hs-identifier hs-var">rbuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8 -&gt; ReadBuffer -&gt; IO Int
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679084796"><span class="annot"><span class="annottext">ReadBuffer
+</span><a href="#local-6989586621679084796"><span class="hs-identifier hs-var">rbuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Word8 -&gt; ReadBuffer -&gt; IO Int
 </span><a href="Network.HPACK.HeaderBlock.Integer.html#decodeI"><span class="hs-identifier hs-var">decodeI</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084801"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679084800"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">ReadBuffer
-</span><a href="#local-6989586621679084797"><span class="hs-identifier hs-var">rbuf</span></a></span><span>
+</span><a href="#local-6989586621679084800"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679084799"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">ReadBuffer
+</span><a href="#local-6989586621679084796"><span class="hs-identifier hs-var">rbuf</span></a></span><span>
 </span><span id="line-102"></span><span>
 </span><span id="line-103"></span><span class="hs-pragma">{-# INLINABLE</span><span> </span><span class="annot"><a href="Network.HPACK.HeaderBlock.Integer.html#decodeI"><span class="hs-pragma hs-type">decodeI</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-104"></span><span class="hs-comment">-- | Integer decoding with a read buffer. The first argument is N of prefix.</span><span>
@@ -231,60 +231,60 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-107"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ReadBuffer</span></span><span>
 </span><span id="line-108"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-109"></span><span id="decodeI"><span class="annot"><span class="annottext">decodeI :: Int -&gt; Word8 -&gt; ReadBuffer -&gt; IO Int
-</span><a href="Network.HPACK.HeaderBlock.Integer.html#decodeI"><span class="hs-identifier hs-var hs-var">decodeI</span></a></span></span><span> </span><span id="local-6989586621679084796"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084796"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084795"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679084795"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679084794"><span class="annot"><span class="annottext">ReadBuffer
-</span><a href="#local-6989586621679084794"><span class="hs-identifier hs-var">rbuf</span></a></span></span><span>
+</span><a href="Network.HPACK.HeaderBlock.Integer.html#decodeI"><span class="hs-identifier hs-var hs-var">decodeI</span></a></span></span><span> </span><span id="local-6989586621679084795"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084795"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679084794"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679084794"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679084793"><span class="annot"><span class="annottext">ReadBuffer
+</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var">rbuf</span></a></span></span><span>
 </span><span id="line-110"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var">p</span></a></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Int
+</span><a href="#local-6989586621679084791"><span class="hs-identifier hs-var">p</span></a></span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Int
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-111"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; IO Int
-</span><a href="#local-6989586621679084791"><span class="hs-identifier hs-var">decode</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var">decode</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var">i</span></a></span><span>
+</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var">i</span></a></span><span>
 </span><span id="line-112"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-113"></span><span>    </span><span id="local-6989586621679084792"><span class="annot"><span class="annottext">p :: Int
-</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array Int Int
+</span><span id="line-113"></span><span>    </span><span id="local-6989586621679084791"><span class="annot"><span class="annottext">p :: Int
+</span><a href="#local-6989586621679084791"><span class="hs-identifier hs-var hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Array Int Int
 </span><a href="Network.HPACK.HeaderBlock.Integer.html#powerArray"><span class="hs-identifier hs-var">powerArray</span></a></span><span> </span><span class="annot"><span class="annottext">Array Int Int -&gt; Int -&gt; Int
 forall (a :: * -&gt; * -&gt; *) e i.
 (IArray a e, Ix i) =&gt;
 a i e -&gt; Int -&gt; e
 </span><span class="hs-operator hs-var">`unsafeAt`</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084796"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084795"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-114"></span><span>    </span><span id="local-6989586621679084793"><span class="annot"><span class="annottext">i :: Int
-</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Int
+</span><span id="line-114"></span><span>    </span><span id="local-6989586621679084792"><span class="annot"><span class="annottext">i :: Int
+</span><a href="#local-6989586621679084792"><span class="hs-identifier hs-var hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679084795"><span class="hs-identifier hs-var">w</span></a></span><span>
-</span><span id="line-115"></span><span>    </span><span class="annot"><a href="#local-6989586621679084791"><span class="hs-identifier hs-type">decode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
-</span><span id="line-116"></span><span>    </span><span id="local-6989586621679084791"><span class="annot"><span class="annottext">decode :: Int -&gt; Int -&gt; IO Int
-</span><a href="#local-6989586621679084791"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679084790"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679084789"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084789"><span class="hs-identifier hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-117"></span><span>        </span><span id="local-6989586621679084788"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084788"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Int
+</span><a href="#local-6989586621679084794"><span class="hs-identifier hs-var">w</span></a></span><span>
+</span><span id="line-115"></span><span>    </span><span class="annot"><a href="#local-6989586621679084790"><span class="hs-identifier hs-type">decode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
+</span><span id="line-116"></span><span>    </span><span id="local-6989586621679084790"><span class="annot"><span class="annottext">decode :: Int -&gt; Int -&gt; IO Int
+</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679084789"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084789"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679084788"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084788"><span class="hs-identifier hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-117"></span><span>        </span><span id="local-6989586621679084787"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084787"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Int) -&gt; IO Word8 -&gt; IO Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">ReadBuffer -&gt; IO Word8
 forall a. Readable a =&gt; a -&gt; IO Word8
 </span><span class="hs-identifier hs-var">read8</span></span><span> </span><span class="annot"><span class="annottext">ReadBuffer
-</span><a href="#local-6989586621679084794"><span class="hs-identifier hs-var">rbuf</span></a></span><span>
-</span><span id="line-118"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679084785"><span class="annot"><span class="annottext">j' :: Int
-</span><a href="#local-6989586621679084785"><span class="hs-identifier hs-var hs-var">j'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084789"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084793"><span class="hs-identifier hs-var">rbuf</span></a></span><span>
+</span><span id="line-118"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679084784"><span class="annot"><span class="annottext">j' :: Int
+</span><a href="#local-6989586621679084784"><span class="hs-identifier hs-var hs-var">j'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084788"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084788"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084787"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Bits a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">.&amp;.</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0x7f</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
@@ -293,25 +293,25 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a b. (Num a, Integral b) =&gt; a -&gt; b -&gt; a
 </span><span class="hs-operator hs-var">^</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var">m</span></a></span><span>
-</span><span id="line-119"></span><span>            </span><span id="local-6989586621679084782"><span class="annot"><span class="annottext">m' :: Int
-</span><a href="#local-6989586621679084782"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679084789"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><span id="line-119"></span><span>            </span><span id="local-6989586621679084781"><span class="annot"><span class="annottext">m' :: Int
+</span><a href="#local-6989586621679084781"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084789"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span>
-</span><span id="line-120"></span><span>            </span><span id="local-6989586621679084781"><span class="annot"><span class="annottext">cont :: Bool
-</span><a href="#local-6989586621679084781"><span class="hs-identifier hs-var hs-var">cont</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084788"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><span id="line-120"></span><span>            </span><span id="local-6989586621679084780"><span class="annot"><span class="annottext">cont :: Bool
+</span><a href="#local-6989586621679084780"><span class="hs-identifier hs-var hs-var">cont</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084787"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Bits a =&gt; a -&gt; Int -&gt; Bool
 </span><span class="hs-operator hs-var">`testBit`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span>
 </span><span id="line-121"></span><span>        </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679084781"><span class="hs-identifier hs-var">cont</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; IO Int
-</span><a href="#local-6989586621679084791"><span class="hs-identifier hs-var">decode</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084782"><span class="hs-identifier hs-var">m'</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084785"><span class="hs-identifier hs-var">j'</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Int
+</span><a href="#local-6989586621679084780"><span class="hs-identifier hs-var">cont</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; IO Int
+</span><a href="#local-6989586621679084790"><span class="hs-identifier hs-var">decode</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084781"><span class="hs-identifier hs-var">m'</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679084784"><span class="hs-identifier hs-var">j'</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Int
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679084785"><span class="hs-identifier hs-var">j'</span></a></span><span>
+</span><a href="#local-6989586621679084784"><span class="hs-identifier hs-var">j'</span></a></span><span>
 </span><span id="line-122"></span></pre></body></html>

@@ -66,12 +66,12 @@
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#newStream"><span class="hs-identifier hs-type">newStream</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#StreamId"><span class="hs-identifier hs-type">StreamId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#WindowSize"><span class="hs-identifier hs-type">WindowSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span>
 </span><span id="line-41"></span><span id="newStream"><span class="annot"><span class="annottext">newStream :: StreamId -&gt; StreamId -&gt; IO Stream
-</span><a href="Network.HTTP2.Arch.Stream.html#newStream"><span class="hs-identifier hs-var hs-var">newStream</span></a></span></span><span> </span><span id="local-6989586621679088934"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088934"><span class="hs-identifier hs-var">sid</span></a></span></span><span> </span><span id="local-6989586621679088933"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088933"><span class="hs-identifier hs-var">win</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId
+</span><a href="Network.HTTP2.Arch.Stream.html#newStream"><span class="hs-identifier hs-var hs-var">newStream</span></a></span></span><span> </span><span id="local-6989586621679088933"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088933"><span class="hs-identifier hs-var">sid</span></a></span></span><span> </span><span id="local-6989586621679088932"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088932"><span class="hs-identifier hs-var">win</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId
 -&gt; IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream
 </span><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-var">Stream</span></a></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088934"><span class="hs-identifier hs-var">sid</span></a></span><span> </span><span class="annot"><span class="annottext">(IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream)
+</span><a href="#local-6989586621679088933"><span class="hs-identifier hs-var">sid</span></a></span><span> </span><span class="annot"><span class="annottext">(IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream)
 -&gt; IO (IORef StreamState)
 -&gt; IO (TVar StreamId -&gt; MVar InpObj -&gt; Stream)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -85,7 +85,7 @@ forall (f :: * -&gt; *) a b. Applicative f =&gt; f (a -&gt; b) -&gt; f a -&gt; f
 </span><span class="hs-operator hs-var">&lt;*&gt;</span></span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IO (TVar StreamId)
 forall a. a -&gt; IO (TVar a)
 </span><span class="hs-identifier hs-var">newTVarIO</span></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088933"><span class="hs-identifier hs-var">win</span></a></span><span>
+</span><a href="#local-6989586621679088932"><span class="hs-identifier hs-var">win</span></a></span><span>
 </span><span id="line-43"></span><span>                               </span><span class="annot"><span class="annottext">IO (MVar InpObj -&gt; Stream) -&gt; IO (MVar InpObj) -&gt; IO Stream
 forall (f :: * -&gt; *) a b. Applicative f =&gt; f (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;*&gt;</span></span><span> </span><span class="annot"><span class="annottext">IO (MVar InpObj)
@@ -94,12 +94,12 @@ forall a. IO (MVar a)
 </span><span id="line-44"></span><span>
 </span><span id="line-45"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#newPushStream"><span class="hs-identifier hs-type">newPushStream</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#StreamId"><span class="hs-identifier hs-type">StreamId</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#WindowSize"><span class="hs-identifier hs-type">WindowSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span>
 </span><span id="line-46"></span><span id="newPushStream"><span class="annot"><span class="annottext">newPushStream :: StreamId -&gt; StreamId -&gt; IO Stream
-</span><a href="Network.HTTP2.Arch.Stream.html#newPushStream"><span class="hs-identifier hs-var hs-var">newPushStream</span></a></span></span><span> </span><span id="local-6989586621679088926"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088926"><span class="hs-identifier hs-var">sid</span></a></span></span><span> </span><span id="local-6989586621679088925"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088925"><span class="hs-identifier hs-var">win</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId
+</span><a href="Network.HTTP2.Arch.Stream.html#newPushStream"><span class="hs-identifier hs-var hs-var">newPushStream</span></a></span></span><span> </span><span id="local-6989586621679088925"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088925"><span class="hs-identifier hs-var">sid</span></a></span></span><span> </span><span id="local-6989586621679088924"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088924"><span class="hs-identifier hs-var">win</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId
 -&gt; IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream
 </span><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-var">Stream</span></a></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088926"><span class="hs-identifier hs-var">sid</span></a></span><span> </span><span class="annot"><span class="annottext">(IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream)
+</span><a href="#local-6989586621679088925"><span class="hs-identifier hs-var">sid</span></a></span><span> </span><span class="annot"><span class="annottext">(IORef StreamState -&gt; TVar StreamId -&gt; MVar InpObj -&gt; Stream)
 -&gt; IO (IORef StreamState)
 -&gt; IO (TVar StreamId -&gt; MVar InpObj -&gt; Stream)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -113,7 +113,7 @@ forall (f :: * -&gt; *) a b. Applicative f =&gt; f (a -&gt; b) -&gt; f a -&gt; f
 </span><span class="hs-operator hs-var">&lt;*&gt;</span></span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IO (TVar StreamId)
 forall a. a -&gt; IO (TVar a)
 </span><span class="hs-identifier hs-var">newTVarIO</span></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088925"><span class="hs-identifier hs-var">win</span></a></span><span>
+</span><a href="#local-6989586621679088924"><span class="hs-identifier hs-var">win</span></a></span><span>
 </span><span id="line-48"></span><span>                                   </span><span class="annot"><span class="annottext">IO (MVar InpObj -&gt; Stream) -&gt; IO (MVar InpObj) -&gt; IO Stream
 forall (f :: * -&gt; *) a b. Applicative f =&gt; f (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;*&gt;</span></span><span> </span><span class="annot"><span class="annottext">IO (MVar InpObj)
@@ -125,13 +125,13 @@ forall a. IO (MVar a)
 </span><span id="line-52"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#readStreamState"><span class="hs-pragma hs-type">readStreamState</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-53"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#readStreamState"><span class="hs-identifier hs-type">readStreamState</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamState"><span class="hs-identifier hs-type">StreamState</span></a></span><span>
 </span><span id="line-54"></span><span id="readStreamState"><span class="annot"><span class="annottext">readStreamState :: Stream -&gt; IO StreamState
-</span><a href="Network.HTTP2.Arch.Stream.html#readStreamState"><span class="hs-identifier hs-var hs-var">readStreamState</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span class="hs-special">{</span><span id="local-6989586621679088922"><span class="annot"><span class="annottext">IORef StreamState
+</span><a href="Network.HTTP2.Arch.Stream.html#readStreamState"><span class="hs-identifier hs-var hs-var">readStreamState</span></a></span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span class="hs-special">{</span><span id="local-6989586621679088921"><span class="annot"><span class="annottext">IORef StreamState
 streamState :: Stream -&gt; IORef StreamState
 streamState :: IORef StreamState
 </span><a href="Network.HTTP2.Arch.Types.html#streamState"><span class="hs-identifier hs-var hs-var">streamState</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef StreamState -&gt; IO StreamState
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef StreamState
-</span><a href="#local-6989586621679088922"><span class="hs-identifier hs-var">streamState</span></a></span><span>
+</span><a href="#local-6989586621679088921"><span class="hs-identifier hs-var">streamState</span></a></span><span>
 </span><span id="line-55"></span><span>
 </span><span id="line-56"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-57"></span><span>
@@ -149,88 +149,88 @@ forall a. IntMap a
 </span><span id="line-60"></span><span>
 </span><span id="line-61"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#insert"><span class="hs-identifier hs-type">insert</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">M.Key</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-62"></span><span id="insert"><span class="annot"><span class="annottext">insert :: StreamTable -&gt; StreamId -&gt; Stream -&gt; IO ()
-</span><a href="Network.HTTP2.Arch.Stream.html#insert"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088914"><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088914"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088913"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088913"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span id="local-6989586621679088912"><span class="annot"><span class="annottext">Stream
-</span><a href="#local-6989586621679088912"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="Network.HTTP2.Arch.Stream.html#insert"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088913"><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="#local-6989586621679088913"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088912"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088912"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span id="local-6989586621679088911"><span class="annot"><span class="annottext">Stream
+</span><a href="#local-6989586621679088911"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
 -&gt; (IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ()
 forall a b. IORef a -&gt; (a -&gt; (a, b)) -&gt; IO b
 </span><span class="hs-identifier hs-var">atomicModifyIORef'</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088914"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ())
+</span><a href="#local-6989586621679088913"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ())
 -&gt; (IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088910"><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088910"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-63"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679088909"><span class="annot"><span class="annottext">m' :: IntMap Stream
-</span><a href="#local-6989586621679088909"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; Stream -&gt; IntMap Stream -&gt; IntMap Stream
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088909"><span class="annot"><span class="annottext">IntMap Stream
+</span><a href="#local-6989586621679088909"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-63"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679088908"><span class="annot"><span class="annottext">m' :: IntMap Stream
+</span><a href="#local-6989586621679088908"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; Stream -&gt; IntMap Stream -&gt; IntMap Stream
 forall a. StreamId -&gt; a -&gt; IntMap a -&gt; IntMap a
 </span><span class="hs-identifier hs-var">M.insert</span></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088913"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">Stream
-</span><a href="#local-6989586621679088912"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088910"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679088912"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">Stream
+</span><a href="#local-6989586621679088911"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">IntMap Stream
+</span><a href="#local-6989586621679088909"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-64"></span><span>    </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088909"><span class="hs-identifier hs-var">m'</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679088908"><span class="hs-identifier hs-var">m'</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-65"></span><span>
 </span><span id="line-66"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#remove"><span class="hs-identifier hs-type">remove</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">M.Key</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-67"></span><span id="remove"><span class="annot"><span class="annottext">remove :: StreamTable -&gt; StreamId -&gt; IO ()
-</span><a href="Network.HTTP2.Arch.Stream.html#remove"><span class="hs-identifier hs-var hs-var">remove</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088906"><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088906"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088905"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088905"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="Network.HTTP2.Arch.Stream.html#remove"><span class="hs-identifier hs-var hs-var">remove</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088905"><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="#local-6989586621679088905"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088904"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088904"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
 -&gt; (IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ()
 forall a b. IORef a -&gt; (a -&gt; (a, b)) -&gt; IO b
 </span><span class="hs-identifier hs-var">atomicModifyIORef'</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088906"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ())
+</span><a href="#local-6989586621679088905"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ())
 -&gt; (IntMap Stream -&gt; (IntMap Stream, ())) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088904"><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088904"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-68"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679088903"><span class="annot"><span class="annottext">m' :: IntMap Stream
-</span><a href="#local-6989586621679088903"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IntMap Stream -&gt; IntMap Stream
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088903"><span class="annot"><span class="annottext">IntMap Stream
+</span><a href="#local-6989586621679088903"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-68"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679088902"><span class="annot"><span class="annottext">m' :: IntMap Stream
+</span><a href="#local-6989586621679088902"><span class="hs-identifier hs-var hs-var">m'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IntMap Stream -&gt; IntMap Stream
 forall a. StreamId -&gt; IntMap a -&gt; IntMap a
 </span><span class="hs-identifier hs-var">M.delete</span></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088905"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088904"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679088904"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">IntMap Stream
+</span><a href="#local-6989586621679088903"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-69"></span><span>    </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IntMap Stream
-</span><a href="#local-6989586621679088903"><span class="hs-identifier hs-var">m'</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679088902"><span class="hs-identifier hs-var">m'</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#search"><span class="hs-identifier hs-type">search</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">M.Key</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#Stream"><span class="hs-identifier hs-type">Stream</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span id="search"><span class="annot"><span class="annottext">search :: StreamTable -&gt; StreamId -&gt; IO (Maybe Stream)
-</span><a href="Network.HTTP2.Arch.Stream.html#search"><span class="hs-identifier hs-var hs-var">search</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088900"><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088900"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088899"><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088899"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IntMap Stream -&gt; Maybe Stream
+</span><a href="Network.HTTP2.Arch.Stream.html#search"><span class="hs-identifier hs-var hs-var">search</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088899"><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="#local-6989586621679088899"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679088898"><span class="annot"><span class="annottext">StreamId
+</span><a href="#local-6989586621679088898"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; IntMap Stream -&gt; Maybe Stream
 forall a. StreamId -&gt; IntMap a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">M.lookup</span></span><span> </span><span class="annot"><span class="annottext">StreamId
-</span><a href="#local-6989586621679088899"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">(IntMap Stream -&gt; Maybe Stream)
+</span><a href="#local-6989586621679088898"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">(IntMap Stream -&gt; Maybe Stream)
 -&gt; IO (IntMap Stream) -&gt; IO (Maybe Stream)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream) -&gt; IO (IntMap Stream)
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088900"><span class="hs-identifier hs-var">ref</span></a></span><span>
+</span><a href="#local-6989586621679088899"><span class="hs-identifier hs-var">ref</span></a></span><span>
 </span><span id="line-73"></span><span>
 </span><span id="line-74"></span><span class="annot"><a href="Network.HTTP2.Arch.Stream.html#updateAllStreamWindow"><span class="hs-identifier hs-type">updateAllStreamWindow</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#WindowSize"><span class="hs-identifier hs-type">WindowSize</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Frame.Types.html#WindowSize"><span class="hs-identifier hs-type">WindowSize</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-75"></span><span id="updateAllStreamWindow"><span class="annot"><span class="annottext">updateAllStreamWindow :: (StreamId -&gt; StreamId) -&gt; StreamTable -&gt; IO ()
-</span><a href="Network.HTTP2.Arch.Stream.html#updateAllStreamWindow"><span class="hs-identifier hs-var hs-var">updateAllStreamWindow</span></a></span></span><span> </span><span id="local-6989586621679088896"><span class="annot"><span class="annottext">StreamId -&gt; StreamId
-</span><a href="#local-6989586621679088896"><span class="hs-identifier hs-var">adst</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088895"><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088895"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-76"></span><span>    </span><span id="local-6989586621679088894"><span class="annot"><span class="annottext">[Stream]
-</span><a href="#local-6989586621679088894"><span class="hs-identifier hs-var">strms</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IntMap Stream -&gt; [Stream]
+</span><a href="Network.HTTP2.Arch.Stream.html#updateAllStreamWindow"><span class="hs-identifier hs-var hs-var">updateAllStreamWindow</span></a></span></span><span> </span><span id="local-6989586621679088895"><span class="annot"><span class="annottext">StreamId -&gt; StreamId
+</span><a href="#local-6989586621679088895"><span class="hs-identifier hs-var">adst</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Network.HTTP2.Arch.Types.html#StreamTable"><span class="hs-identifier hs-type">StreamTable</span></a></span><span> </span><span id="local-6989586621679088894"><span class="annot"><span class="annottext">IORef (IntMap Stream)
+</span><a href="#local-6989586621679088894"><span class="hs-identifier hs-var">ref</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-76"></span><span>    </span><span id="local-6989586621679088893"><span class="annot"><span class="annottext">[Stream]
+</span><a href="#local-6989586621679088893"><span class="hs-identifier hs-var">strms</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IntMap Stream -&gt; [Stream]
 forall a. IntMap a -&gt; [a]
 </span><span class="hs-identifier hs-var">M.elems</span></span><span> </span><span class="annot"><span class="annottext">(IntMap Stream -&gt; [Stream]) -&gt; IO (IntMap Stream) -&gt; IO [Stream]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream) -&gt; IO (IntMap Stream)
 forall a. IORef a -&gt; IO a
 </span><span class="hs-identifier hs-var">readIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef (IntMap Stream)
-</span><a href="#local-6989586621679088895"><span class="hs-identifier hs-var">ref</span></a></span><span>
+</span><a href="#local-6989586621679088894"><span class="hs-identifier hs-var">ref</span></a></span><span>
 </span><span id="line-77"></span><span>    </span><span class="annot"><span class="annottext">[Stream] -&gt; (Stream -&gt; IO ()) -&gt; IO ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
 t a -&gt; (a -&gt; m b) -&gt; m ()
 </span><span class="hs-identifier hs-var">forM_</span></span><span> </span><span class="annot"><span class="annottext">[Stream]
-</span><a href="#local-6989586621679088894"><span class="hs-identifier hs-var">strms</span></a></span><span> </span><span class="annot"><span class="annottext">((Stream -&gt; IO ()) -&gt; IO ()) -&gt; (Stream -&gt; IO ()) -&gt; IO ()
+</span><a href="#local-6989586621679088893"><span class="hs-identifier hs-var">strms</span></a></span><span> </span><span class="annot"><span class="annottext">((Stream -&gt; IO ()) -&gt; IO ()) -&gt; (Stream -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088891"><span class="annot"><span class="annottext">Stream
-</span><a href="#local-6989586621679088891"><span class="hs-identifier hs-var">strm</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">STM () -&gt; IO ()
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679088890"><span class="annot"><span class="annottext">Stream
+</span><a href="#local-6989586621679088890"><span class="hs-identifier hs-var">strm</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">STM () -&gt; IO ()
 forall a. STM a -&gt; IO a
 </span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM () -&gt; IO ()) -&gt; STM () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -238,6 +238,6 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. TVar a -&gt; (a -&gt; a) -&gt; STM ()
 </span><span class="hs-identifier hs-var">modifyTVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Stream -&gt; TVar StreamId
 </span><a href="Network.HTTP2.Arch.Types.html#streamWindow"><span class="hs-identifier hs-var hs-var">streamWindow</span></a></span><span> </span><span class="annot"><span class="annottext">Stream
-</span><a href="#local-6989586621679088891"><span class="hs-identifier hs-var">strm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; StreamId
-</span><a href="#local-6989586621679088896"><span class="hs-identifier hs-var">adst</span></a></span><span>
+</span><a href="#local-6989586621679088890"><span class="hs-identifier hs-var">strm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">StreamId -&gt; StreamId
+</span><a href="#local-6989586621679088895"><span class="hs-identifier hs-var">adst</span></a></span><span>
 </span><span id="line-78"></span></pre></body></html>

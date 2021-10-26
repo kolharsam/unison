@@ -22,10 +22,10 @@
 </span><span id="line-22"></span><span class="hs-comment">-- |]T</span><span>
 </span><span id="line-23"></span><span class="annot"><a href="U.Util.Text.html#stripMargin"><span class="hs-identifier hs-type">stripMargin</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
 </span><span id="line-24"></span><span id="stripMargin"><span class="annot"><span class="annottext">stripMargin :: Text -&gt; Text
-</span><a href="U.Util.Text.html#stripMargin"><span class="hs-identifier hs-var hs-var">stripMargin</span></a></span></span><span> </span><span id="local-6989586621679080574"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679080574"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-25"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679080573"><span class="annot"><span class="annottext">stripLen :: Int
-</span><a href="#local-6989586621679080573"><span class="hs-identifier hs-var hs-var">stripLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="U.Util.Text.html#stripMargin"><span class="hs-identifier hs-var hs-var">stripMargin</span></a></span></span><span> </span><span id="local-6989586621679080538"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679080538"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-25"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679080537"><span class="annot"><span class="annottext">stripLen :: Int
+</span><a href="#local-6989586621679080537"><span class="hs-identifier hs-var hs-var">stripLen</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-26"></span><span>        </span><span class="annot"><span class="annottext">Int -&gt; Maybe Int -&gt; Int
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">Data.Maybe.fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">Int
@@ -64,29 +64,29 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">Text.lines</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679080574"><span class="hs-identifier hs-var">str</span></a></span><span>
-</span><span id="line-30"></span><span>      </span><span id="local-6989586621679080565"><span class="annot"><span class="annottext">dropFirstIf :: (t -&gt; Bool) -&gt; [t] -&gt; [t]
-</span><a href="#local-6989586621679080565"><span class="hs-identifier hs-var hs-var">dropFirstIf</span></a></span></span><span> </span><span id="local-6989586621679080564"><span class="annot"><span class="annottext">t -&gt; Bool
-</span><a href="#local-6989586621679080564"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-31"></span><span>        </span><span id="local-6989586621679080563"><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679080563"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679080562"><span class="annot"><span class="annottext">[t]
-</span><a href="#local-6989586621679080562"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">t -&gt; Bool
-</span><a href="#local-6989586621679080564"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621679080563"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[t]
-</span><a href="#local-6989586621679080562"><span class="hs-identifier hs-var">t</span></a></span><span>
-</span><span id="line-32"></span><span>        </span><span id="local-6989586621679080561"><span class="annot"><span class="annottext">[t]
-</span><a href="#local-6989586621679080561"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[t]
-</span><a href="#local-6989586621679080561"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-33"></span><span>      </span><span id="local-6989586621679080560"><span class="annot"><span class="annottext">dropLastIf :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
-</span><a href="#local-6989586621679080560"><span class="hs-identifier hs-var hs-var">dropLastIf</span></a></span></span><span> </span><span id="local-6989586621679080559"><span class="annot"><span class="annottext">a -&gt; Bool
-</span><a href="#local-6989586621679080559"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
+</span><a href="#local-6989586621679080538"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><span id="line-30"></span><span>      </span><span id="local-6989586621679080529"><span class="annot"><span class="annottext">dropFirstIf :: (t -&gt; Bool) -&gt; [t] -&gt; [t]
+</span><a href="#local-6989586621679080529"><span class="hs-identifier hs-var hs-var">dropFirstIf</span></a></span></span><span> </span><span id="local-6989586621679080528"><span class="annot"><span class="annottext">t -&gt; Bool
+</span><a href="#local-6989586621679080528"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
+</span><span id="line-31"></span><span>        </span><span id="local-6989586621679080527"><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621679080527"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679080526"><span class="annot"><span class="annottext">[t]
+</span><a href="#local-6989586621679080526"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">t -&gt; Bool
+</span><a href="#local-6989586621679080528"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621679080527"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[t]
+</span><a href="#local-6989586621679080526"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><span id="line-32"></span><span>        </span><span id="local-6989586621679080525"><span class="annot"><span class="annottext">[t]
+</span><a href="#local-6989586621679080525"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[t]
+</span><a href="#local-6989586621679080525"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-33"></span><span>      </span><span id="local-6989586621679080524"><span class="annot"><span class="annottext">dropLastIf :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+</span><a href="#local-6989586621679080524"><span class="hs-identifier hs-var hs-var">dropLastIf</span></a></span></span><span> </span><span id="local-6989586621679080523"><span class="annot"><span class="annottext">a -&gt; Bool
+</span><a href="#local-6989586621679080523"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; ([a] -&gt; [a]) -&gt; [a] -&gt; [a]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(a -&gt; Bool) -&gt; [a] -&gt; [a]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
-</span><a href="#local-6989586621679080565"><span class="hs-identifier hs-var">dropFirstIf</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; Bool
-</span><a href="#local-6989586621679080559"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; ([a] -&gt; [a]) -&gt; [a] -&gt; [a]
+</span><a href="#local-6989586621679080529"><span class="hs-identifier hs-var">dropFirstIf</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; Bool
+</span><a href="#local-6989586621679080523"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; ([a] -&gt; [a]) -&gt; [a] -&gt; [a]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">[a] -&gt; [a]
 forall a. [a] -&gt; [a]
@@ -97,13 +97,13 @@ forall a. [a] -&gt; [a]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Bool) -&gt; [Text] -&gt; [Text]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
-</span><a href="#local-6989586621679080560"><span class="hs-identifier hs-var">dropLastIf</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool
+</span><a href="#local-6989586621679080524"><span class="hs-identifier hs-var">dropLastIf</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool
 </span><span class="hs-identifier hs-var">Text.null</span></span><span>
 </span><span id="line-36"></span><span>        </span><span class="annot"><span class="annottext">([Text] -&gt; [Text]) -&gt; ([Text] -&gt; [Text]) -&gt; [Text] -&gt; [Text]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Bool) -&gt; [Text] -&gt; [Text]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
-</span><a href="#local-6989586621679080565"><span class="hs-identifier hs-var">dropFirstIf</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool
+</span><a href="#local-6989586621679080529"><span class="hs-identifier hs-var">dropFirstIf</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool
 </span><span class="hs-identifier hs-var">Text.null</span></span><span>
 </span><span id="line-37"></span><span>        </span><span class="annot"><span class="annottext">([Text] -&gt; [Text]) -&gt; ([Text] -&gt; [Text]) -&gt; [Text] -&gt; [Text]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
@@ -111,10 +111,10 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; Text -&gt; Text
 </span><span class="hs-identifier hs-var">Text.drop</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679080573"><span class="hs-identifier hs-var">stripLen</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679080537"><span class="hs-identifier hs-var">stripLen</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-38"></span><span>        </span><span class="annot"><span class="annottext">([Text] -&gt; Text) -&gt; [Text] -&gt; Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">Text.lines</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679080574"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><a href="#local-6989586621679080538"><span class="hs-identifier hs-var">str</span></a></span><span>
 </span><span id="line-39"></span></pre></body></html>

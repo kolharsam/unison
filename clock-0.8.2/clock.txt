@@ -86,7 +86,7 @@ data Clock
 --   value of the monotonic clock is meaningless (because its origin is
 --   arbitrary), and thus there is no need to set it. Furthermore, realtime
 --   applications can rely on the fact that the value of this clock is
---   never set. (Identical to <tt>Boottime</tt> since Linux 4.17, see
+--   never set. (Identical to <a>Boottime</a> since Linux 4.17, see
 --   <a>https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d6ed449afdb38f89a7b38ec50e367559e1b8f71f)</a>
 --   <tt>CLOCK_MONOTONIC</tt> (macOS - <tt>SYSTEM_CLOCK</tt>)
 Monotonic :: Clock
@@ -114,6 +114,25 @@ ThreadCPUTime :: Clock
 --   adjtime(3). <tt>CLOCK_MONOTONIC_RAW</tt> (Windows -
 --   <tt>QueryPerformanceCounter</tt>, <tt>QueryPerformanceFrequency</tt>)
 MonotonicRaw :: Clock
+
+-- | (since Linux 2.6.39; Linux-specific) Identical to <a>Monotonic</a>,
+--   except it also includes any time that the system is suspended. This
+--   allows applications to get a suspend-aware monotonic clock without
+--   having to deal with the complications of <a>Realtime</a>, which may
+--   have discontinuities if the time is changed using settimeofday(2).
+--   (since Linux 4.17; identical to <a>Monotonic</a>)
+--   <tt>CLOCK_BOOTTIME</tt>
+Boottime :: Clock
+
+-- | (since Linux 2.6.32; Linux-specific) A faster but less precise version
+--   of <a>Monotonic</a>. Use when you need very fast, but not fine-grained
+--   timestamps. <tt>CLOCK_MONOTONIC_COARSE</tt>
+MonotonicCoarse :: Clock
+
+-- | (since Linux 2.6.32; Linux-specific) A faster but less precise version
+--   of <a>Realtime</a>. Use when you need very fast, but not fine-grained
+--   timestamps. <tt>CLOCK_REALTIME_COARSE</tt>
+RealtimeCoarse :: Clock
 
 -- | TimeSpec structure
 data TimeSpec

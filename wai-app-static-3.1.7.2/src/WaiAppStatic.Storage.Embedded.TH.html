@@ -87,11 +87,11 @@
 </span><span id="line-76"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringE"><span class="hs-identifier hs-type">bytestringE</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">B.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExpQ</span></span><span class="hs-cpp">
 #if MIN_VERSION_template_haskell(2, 8, 0)
 </span><span id="bytestringE"><span class="annot"><span class="annottext">bytestringE :: MimeType -&gt; ExpQ
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringE"><span class="hs-identifier hs-var hs-var">bytestringE</span></a></span></span><span> </span><span id="local-6989586621679137407"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137407"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">unsafeDupablePerformIO</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">unsafePackAddressLen</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">I#</span><span> </span><span class="">$lenE</span><span class="hs-special">)</span><span> </span><span class="">$ctE</span><span class="hs-special">)</span><span> </span><span class="hs-special">|]</span><span>
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringE"><span class="hs-identifier hs-var hs-var">bytestringE</span></a></span></span><span> </span><span id="local-6989586621679134669"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134669"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">unsafeDupablePerformIO</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">unsafePackAddressLen</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">I#</span><span> </span><span class="">$lenE</span><span class="hs-special">)</span><span> </span><span class="">$ctE</span><span class="hs-special">)</span><span> </span><span class="hs-special">|]</span><span>
 </span><span id="line-79"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-80"></span><span>        </span><span id="local-6989586621679137406"><span class="annot"><span class="annottext">lenE :: ExpQ
-</span><a href="#local-6989586621679137406"><span class="hs-identifier hs-var hs-var">lenE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><span id="line-80"></span><span>        </span><span id="local-6989586621679134668"><span class="annot"><span class="annottext">lenE :: ExpQ
+</span><a href="#local-6989586621679134668"><span class="hs-identifier hs-var hs-var">lenE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lit
@@ -103,9 +103,9 @@ forall a. Integral a =&gt; a -&gt; Integer
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Int
 </span><span class="hs-identifier hs-var">B.length</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137407"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-81"></span><span>        </span><span id="local-6989586621679137404"><span class="annot"><span class="annottext">ctE :: ExpQ
-</span><a href="#local-6989586621679137404"><span class="hs-identifier hs-var hs-var">ctE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><a href="#local-6989586621679134669"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-81"></span><span>        </span><span id="local-6989586621679134666"><span class="annot"><span class="annottext">ctE :: ExpQ
+</span><a href="#local-6989586621679134666"><span class="hs-identifier hs-var hs-var">ctE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Word8] -&gt; Lit
@@ -113,7 +113,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; [Word8]
 </span><span class="hs-identifier hs-var">B.unpack</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137407"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679134669"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-cpp">
 #else
 </span><span class="hs-identifier">bytestringE</span><span> </span><span class="hs-identifier">b</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-84"></span><span>    </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">B8.pack</span><span> </span><span class="">$s</span><span> </span><span class="hs-special">|]</span><span>
@@ -124,11 +124,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-89"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringLazyE"><span class="hs-identifier hs-type">bytestringLazyE</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BL.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExpQ</span></span><span class="hs-cpp">
 #if MIN_VERSION_template_haskell(2, 8, 0)
 </span><span id="bytestringLazyE"><span class="annot"><span class="annottext">bytestringLazyE :: ByteString -&gt; ExpQ
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringLazyE"><span class="hs-identifier hs-var hs-var">bytestringLazyE</span></a></span></span><span> </span><span id="local-6989586621679137401"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137401"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">unsafeDupablePerformIO</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">unsafePackAddressLen</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">I#</span><span> </span><span class="">$lenE</span><span class="hs-special">)</span><span> </span><span class="">$ctE</span><span class="hs-special">)</span><span> </span><span class="hs-special">|]</span><span>
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#bytestringLazyE"><span class="hs-identifier hs-var hs-var">bytestringLazyE</span></a></span></span><span> </span><span id="local-6989586621679134663"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134663"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">unsafeDupablePerformIO</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">unsafePackAddressLen</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">I#</span><span> </span><span class="">$lenE</span><span class="hs-special">)</span><span> </span><span class="">$ctE</span><span class="hs-special">)</span><span> </span><span class="hs-special">|]</span><span>
 </span><span id="line-92"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-93"></span><span>        </span><span id="local-6989586621679137400"><span class="annot"><span class="annottext">lenE :: ExpQ
-</span><a href="#local-6989586621679137400"><span class="hs-identifier hs-var hs-var">lenE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><span id="line-93"></span><span>        </span><span id="local-6989586621679134662"><span class="annot"><span class="annottext">lenE :: ExpQ
+</span><a href="#local-6989586621679134662"><span class="hs-identifier hs-var hs-var">lenE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lit
@@ -140,9 +140,9 @@ forall a. Integral a =&gt; a -&gt; Integer
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int64
 </span><span class="hs-identifier hs-var">BL.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137401"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-94"></span><span>        </span><span id="local-6989586621679137398"><span class="annot"><span class="annottext">ctE :: ExpQ
-</span><a href="#local-6989586621679137398"><span class="hs-identifier hs-var hs-var">ctE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><a href="#local-6989586621679134663"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-94"></span><span>        </span><span id="local-6989586621679134660"><span class="annot"><span class="annottext">ctE :: ExpQ
+</span><a href="#local-6989586621679134660"><span class="hs-identifier hs-var hs-var">ctE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[Word8] -&gt; Lit
@@ -150,7 +150,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [Word8]
 </span><span class="hs-identifier hs-var">BL.unpack</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137401"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679134663"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-cpp">
 #else
 </span><span class="hs-identifier">bytestringLazyE</span><span> </span><span class="hs-identifier">b</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-97"></span><span>    </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">B8.pack</span><span> </span><span class="">$s</span><span> </span><span class="hs-special">|]</span><span>
@@ -161,11 +161,11 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-102"></span><span class="hs-comment">-- | A template haskell expression which creates either an EmbeddedEntry or ReloadEntry.</span><span>
 </span><span id="line-103"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#mkEntry"><span class="hs-identifier hs-type">mkEntry</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExpQ</span></span><span>
 </span><span id="line-104"></span><span id="mkEntry"><span class="annot"><span class="annottext">mkEntry :: EmbeddableEntry -&gt; ExpQ
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#mkEntry"><span class="hs-identifier hs-var hs-var">mkEntry</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span> </span><span id="local-6989586621679137395"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137395"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679137394"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137394"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679137393"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137393"><span class="hs-identifier hs-var">etag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679137392"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137392"><span class="hs-identifier hs-var">ct</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#mkEntry"><span class="hs-identifier hs-var hs-var">mkEntry</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span> </span><span id="local-6989586621679134657"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679134657"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679134656"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134656"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679134655"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679134655"><span class="hs-identifier hs-var">etag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679134654"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134654"><span class="hs-identifier hs-var">ct</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-105"></span><span>        </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">Left</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">EmbeddedEntry</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">T.pack</span><span> </span><span class="">$locE</span><span class="hs-special">)</span><span>
 </span><span id="line-106"></span><span>                                </span><span class="hs-special">$(</span><span class="hs-identifier">bytestringE</span><span> </span><span class="hs-identifier">mime</span><span class="hs-special">)</span><span>
 </span><span id="line-107"></span><span>                                </span><span class="hs-special">$(</span><span class="hs-identifier">bytestringE</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">T.encodeUtf8</span><span> </span><span class="hs-identifier">etag</span><span class="hs-special">)</span><span>
@@ -173,8 +173,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-109"></span><span>                                </span><span class="hs-special">$(</span><span class="hs-identifier">bytestringLazyE</span><span> </span><span class="hs-identifier">ct'</span><span class="hs-special">)</span><span>
 </span><span id="line-110"></span><span>        </span><span class="hs-special">|]</span><span>
 </span><span id="line-111"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-112"></span><span>        </span><span id="local-6989586621679137391"><span class="annot"><span class="annottext">locE :: ExpQ
-</span><a href="#local-6989586621679137391"><span class="hs-identifier hs-var hs-var">locE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><span id="line-112"></span><span>        </span><span id="local-6989586621679134653"><span class="annot"><span class="annottext">locE :: ExpQ
+</span><a href="#local-6989586621679134653"><span class="hs-identifier hs-var hs-var">locE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Lit
@@ -182,36 +182,36 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">T.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137395"><span class="hs-identifier hs-var">loc</span></a></span><span>
-</span><span id="line-113"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679137389"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137389"><span class="hs-identifier hs-var">compressed</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679137388"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137388"><span class="hs-identifier hs-var">ct'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; ByteString -&gt; (Bool, ByteString)
+</span><a href="#local-6989586621679134657"><span class="hs-identifier hs-var">loc</span></a></span><span>
+</span><span id="line-113"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679134651"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134651"><span class="hs-identifier hs-var">compressed</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679134650"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134650"><span class="hs-identifier hs-var">ct'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; ByteString -&gt; (Bool, ByteString)
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#tryCompress"><span class="hs-identifier hs-var">tryCompress</span></a></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137394"><span class="hs-identifier hs-var">mime</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137392"><span class="hs-identifier hs-var">ct</span></a></span><span>
-</span><span id="line-114"></span><span>        </span><span id="local-6989586621679137386"><span class="annot"><span class="annottext">compressedE :: ExpQ
-</span><a href="#local-6989586621679137386"><span class="hs-identifier hs-var hs-var">compressedE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><a href="#local-6989586621679134656"><span class="hs-identifier hs-var">mime</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134654"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><span id="line-114"></span><span>        </span><span id="local-6989586621679134648"><span class="annot"><span class="annottext">compressedE :: ExpQ
+</span><a href="#local-6989586621679134648"><span class="hs-identifier hs-var hs-var">compressedE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Lit
 </span><span class="hs-identifier hs-var">intPrimL</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; Lit) -&gt; Integer -&gt; Lit
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137389"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679134651"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-115"></span><span>
-</span><span id="line-116"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#mkEntry"><span class="hs-identifier hs-var">mkEntry</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span> </span><span id="local-6989586621679137385"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137385"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679137384"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137384"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679137383"><span class="annot"><span class="annottext">ExpQ
-</span><a href="#local-6989586621679137383"><span class="hs-identifier hs-var">expr</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-116"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#mkEntry"><span class="hs-identifier hs-var">mkEntry</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span> </span><span id="local-6989586621679134647"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679134647"><span class="hs-identifier hs-var">loc</span></a></span></span><span> </span><span id="local-6989586621679134646"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134646"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679134645"><span class="annot"><span class="annottext">ExpQ
+</span><a href="#local-6989586621679134645"><span class="hs-identifier hs-var">expr</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-117"></span><span>        </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">Right</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">ReloadEntry</span><span> </span><span class="hs-special">(</span><span class="hs-identifier">T.pack</span><span> </span><span class="">$locE</span><span class="hs-special">)</span><span>
 </span><span id="line-118"></span><span>                               </span><span class="hs-special">$(</span><span class="hs-identifier">bytestringE</span><span> </span><span class="hs-identifier">mime</span><span class="hs-special">)</span><span>
 </span><span id="line-119"></span><span>                               </span><span class="">$expr</span><span>
 </span><span id="line-120"></span><span>        </span><span class="hs-special">|]</span><span>
 </span><span id="line-121"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-122"></span><span>        </span><span id="local-6989586621679137382"><span class="annot"><span class="annottext">locE :: ExpQ
-</span><a href="#local-6989586621679137382"><span class="hs-identifier hs-var hs-var">locE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
+</span><span id="line-122"></span><span>        </span><span id="local-6989586621679134644"><span class="annot"><span class="annottext">locE :: ExpQ
+</span><a href="#local-6989586621679134644"><span class="hs-identifier hs-var hs-var">locE</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Lit -&gt; ExpQ
 </span><span class="hs-identifier hs-var">litE</span></span><span> </span><span class="annot"><span class="annottext">(Lit -&gt; ExpQ) -&gt; Lit -&gt; ExpQ
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Lit
@@ -219,13 +219,13 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">T.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137385"><span class="hs-identifier hs-var">loc</span></a></span><span>
+</span><a href="#local-6989586621679134647"><span class="hs-identifier hs-var">loc</span></a></span><span>
 </span><span id="line-123"></span><span>
 </span><span id="line-124"></span><span class="hs-comment">-- | Converts an embedded entry to a file</span><span>
 </span><span id="line-125"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#embeddedToFile"><span class="hs-identifier hs-type">embeddedToFile</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddedEntry"><span class="hs-identifier hs-type">EmbeddedEntry</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span>
 </span><span id="line-126"></span><span id="embeddedToFile"><span class="annot"><span class="annottext">embeddedToFile :: EmbeddedEntry -&gt; File
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#embeddedToFile"><span class="hs-identifier hs-var hs-var">embeddedToFile</span></a></span></span><span> </span><span id="local-6989586621679137380"><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">File :: Integer
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#embeddedToFile"><span class="hs-identifier hs-var hs-var">embeddedToFile</span></a></span></span><span> </span><span id="local-6989586621679134642"><span class="annot"><span class="annottext">EmbeddedEntry
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">File :: Integer
 -&gt; (Status -&gt; ResponseHeaders -&gt; Response)
 -&gt; Piece
 -&gt; IO (Maybe MimeType)
@@ -242,34 +242,34 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embContent"><span class="hs-identifier hs-var hs-var">embContent</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-128"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileToResponse :: Status -&gt; ResponseHeaders -&gt; Response
-</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679137376"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137376"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679137375"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137375"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-129"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679137374"><span class="annot"><span class="annottext">h' :: ResponseHeaders
-</span><a href="#local-6989586621679137374"><span class="hs-identifier hs-var hs-var">h'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; Bool
+</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679134638"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679134638"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679134637"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134637"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-129"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679134636"><span class="annot"><span class="annottext">h' :: ResponseHeaders
+</span><a href="#local-6989586621679134636"><span class="hs-identifier hs-var hs-var">h'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; Bool
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embCompressed"><span class="hs-identifier hs-var hs-var">embCompressed</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-130"></span><span>                    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137375"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679134637"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-string">&quot;Content-Encoding&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">MimeType
 </span><span class="hs-string">&quot;gzip&quot;</span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
 </span><span id="line-131"></span><span>                    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137375"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><a href="#local-6989586621679134637"><span class="hs-identifier hs-var">h</span></a></span><span>
 </span><span id="line-132"></span><span>         </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Builder -&gt; Response
 </span><span class="hs-identifier hs-var">W.responseBuilder</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137376"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137374"><span class="hs-identifier hs-var">h'</span></a></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; Response) -&gt; Builder -&gt; Response
+</span><a href="#local-6989586621679134638"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134636"><span class="hs-identifier hs-var">h'</span></a></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; Response) -&gt; Builder -&gt; Response
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Builder
 </span><span class="hs-identifier hs-var">byteStringInsert</span></span><span> </span><span class="annot"><span class="annottext">(MimeType -&gt; Builder) -&gt; MimeType -&gt; Builder
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embContent"><span class="hs-identifier hs-var hs-var">embContent</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-133"></span><span>
 </span><span id="line-134"></span><span>    </span><span class="hs-comment">-- Usually the fileName should just be the filename not the entire path,</span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-comment">-- but we need the whole path to make the lookup within lookupMime</span><span>
@@ -283,7 +283,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; Text
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embLocation"><span class="hs-identifier hs-var hs-var">embLocation</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-141"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetHash :: IO (Maybe MimeType)
 </span><a href="WaiAppStatic.Types.html#fileGetHash"><span class="hs-identifier hs-var">fileGetHash</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType -&gt; IO (Maybe MimeType)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -293,7 +293,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Bool
 </span><span class="hs-identifier hs-var">B.null</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embEtag"><span class="hs-identifier hs-var hs-var">embEtag</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-142"></span><span>                                 </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
@@ -303,7 +303,7 @@ forall a. a -&gt; Maybe a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embEtag"><span class="hs-identifier hs-var hs-var">embEtag</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137380"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134642"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-144"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetModified :: Maybe EpochTime
 </span><a href="WaiAppStatic.Types.html#fileGetModified"><span class="hs-identifier hs-var">fileGetModified</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe EpochTime
 forall a. Maybe a
@@ -313,17 +313,17 @@ forall a. Maybe a
 </span><span id="line-147"></span><span class="hs-comment">-- | Converts a reload entry to a file</span><span>
 </span><span id="line-148"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadToFile"><span class="hs-identifier hs-type">reloadToFile</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#ReloadEntry"><span class="hs-identifier hs-type">ReloadEntry</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span>
 </span><span id="line-149"></span><span id="reloadToFile"><span class="annot"><span class="annottext">reloadToFile :: ReloadEntry -&gt; IO File
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadToFile"><span class="hs-identifier hs-var hs-var">reloadToFile</span></a></span></span><span> </span><span id="local-6989586621679137366"><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137366"><span class="hs-identifier hs-var">entry</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-150"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679137365"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137365"><span class="hs-identifier hs-var">etag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679137364"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137364"><span class="hs-identifier hs-var">ct</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReloadEntry -&gt; IO (Text, ByteString)
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadToFile"><span class="hs-identifier hs-var hs-var">reloadToFile</span></a></span></span><span> </span><span id="local-6989586621679134628"><span class="annot"><span class="annottext">ReloadEntry
+</span><a href="#local-6989586621679134628"><span class="hs-identifier hs-var">entry</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-150"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679134627"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679134627"><span class="hs-identifier hs-var">etag</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679134626"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134626"><span class="hs-identifier hs-var">ct</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ReloadEntry -&gt; IO (Text, ByteString)
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadContent"><span class="hs-identifier hs-var hs-var">reloadContent</span></a></span><span> </span><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137366"><span class="hs-identifier hs-var">entry</span></a></span><span>
-</span><span id="line-151"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679137363"><span class="annot"><span class="annottext">etag' :: MimeType
-</span><a href="#local-6989586621679137363"><span class="hs-identifier hs-var hs-var">etag'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; MimeType
+</span><a href="#local-6989586621679134628"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><span id="line-151"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679134625"><span class="annot"><span class="annottext">etag' :: MimeType
+</span><a href="#local-6989586621679134625"><span class="hs-identifier hs-var hs-var">etag'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; MimeType
 </span><span class="hs-identifier hs-var">T.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137365"><span class="hs-identifier hs-var">etag</span></a></span><span>
+</span><a href="#local-6989586621679134627"><span class="hs-identifier hs-var">etag</span></a></span><span>
 </span><span id="line-152"></span><span>    </span><span class="annot"><span class="annottext">File -&gt; IO File
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(File -&gt; IO File) -&gt; File -&gt; IO File
@@ -342,15 +342,15 @@ forall a b. (Integral a, Num b) =&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int64
 </span><span class="hs-identifier hs-var">BL.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137364"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><a href="#local-6989586621679134626"><span class="hs-identifier hs-var">ct</span></a></span><span>
 </span><span id="line-154"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileToResponse :: Status -&gt; ResponseHeaders -&gt; Response
-</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679137361"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137361"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679137360"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137360"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; ByteString -&gt; Response
+</span><a href="WaiAppStatic.Types.html#fileToResponse"><span class="hs-identifier hs-var">fileToResponse</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679134623"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679134623"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679134622"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134622"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; ByteString -&gt; Response
 </span><span class="hs-identifier hs-var">W.responseLBS</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679137361"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679137360"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137364"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><a href="#local-6989586621679134623"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679134622"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134626"><span class="hs-identifier hs-var">ct</span></a></span><span>
 </span><span id="line-155"></span><span>        </span><span class="hs-comment">-- Similar to above the entire path needs to be in the fileName.</span><span>
 </span><span id="line-156"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileName :: Piece
 </span><a href="WaiAppStatic.Types.html#fileName"><span class="hs-identifier hs-var">fileName</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Piece
@@ -358,7 +358,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ReloadEntry -&gt; Text
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadLocation"><span class="hs-identifier hs-var hs-var">reloadLocation</span></a></span><span> </span><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137366"><span class="hs-identifier hs-var">entry</span></a></span><span>
+</span><a href="#local-6989586621679134628"><span class="hs-identifier hs-var">entry</span></a></span><span>
 </span><span id="line-157"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetHash :: IO (Maybe MimeType)
 </span><a href="WaiAppStatic.Types.html#fileGetHash"><span class="hs-identifier hs-var">fileGetHash</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType -&gt; IO (Maybe MimeType)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -367,12 +367,12 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool
 </span><span class="hs-identifier hs-var">T.null</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679137365"><span class="hs-identifier hs-var">etag</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType
+</span><a href="#local-6989586621679134627"><span class="hs-identifier hs-var">etag</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Maybe MimeType
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Maybe MimeType
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137363"><span class="hs-identifier hs-var">etag'</span></a></span><span>
+</span><a href="#local-6989586621679134625"><span class="hs-identifier hs-var">etag'</span></a></span><span>
 </span><span id="line-158"></span><span>        </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">fileGetModified :: Maybe EpochTime
 </span><a href="WaiAppStatic.Types.html#fileGetModified"><span class="hs-identifier hs-var">fileGetModified</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe EpochTime
 forall a. Maybe a
@@ -383,22 +383,22 @@ forall a. Maybe a
 </span><span id="line-162"></span><span class="hs-comment">-- | Build a static settings based on a filemap.</span><span>
 </span><span id="line-163"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#filemapToSettings"><span class="hs-identifier hs-type">filemapToSettings</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">M.HashMap</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">T.Text</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MimeType</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#StaticSettings"><span class="hs-identifier hs-type">StaticSettings</span></a></span><span>
 </span><span id="line-164"></span><span id="filemapToSettings"><span class="annot"><span class="annottext">filemapToSettings :: HashMap Text (MimeType, IO File) -&gt; StaticSettings
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#filemapToSettings"><span class="hs-identifier hs-var hs-var">filemapToSettings</span></a></span></span><span> </span><span id="local-6989586621679137356"><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137356"><span class="hs-identifier hs-var">mfiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; StaticSettings
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#filemapToSettings"><span class="hs-identifier hs-var hs-var">filemapToSettings</span></a></span></span><span> </span><span id="local-6989586621679134618"><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134618"><span class="hs-identifier hs-var">mfiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; StaticSettings
 </span><a href="WaiAppStatic.Storage.Filesystem.html#defaultWebAppSettings"><span class="hs-identifier hs-var">defaultWebAppSettings</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-165"></span><span>                              </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">ssLookupFile :: Pieces -&gt; IO LookupResult
 </span><a href="WaiAppStatic.Types.html#ssLookupFile"><span class="hs-identifier hs-var">ssLookupFile</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Pieces -&gt; IO LookupResult
-</span><a href="#local-6989586621679137354"><span class="hs-identifier hs-var">lookupFile</span></a></span><span>
+</span><a href="#local-6989586621679134616"><span class="hs-identifier hs-var">lookupFile</span></a></span><span>
 </span><span id="line-166"></span><span>                              </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ssGetMimeType :: File -&gt; IO MimeType
 </span><a href="WaiAppStatic.Types.html#ssGetMimeType"><span class="hs-identifier hs-var">ssGetMimeType</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">File -&gt; IO MimeType
 forall (m :: * -&gt; *). Monad m =&gt; File -&gt; m MimeType
-</span><a href="#local-6989586621679137352"><span class="hs-identifier hs-var">lookupMime</span></a></span><span>
+</span><a href="#local-6989586621679134614"><span class="hs-identifier hs-var">lookupMime</span></a></span><span>
 </span><span id="line-167"></span><span>                              </span><span class="hs-special">}</span><span>
 </span><span id="line-168"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-169"></span><span>        </span><span id="local-6989586621679137351"><span class="annot"><span class="annottext">piecesToFile :: Pieces -&gt; Text
-</span><a href="#local-6989586621679137351"><span class="hs-identifier hs-var hs-var">piecesToFile</span></a></span></span><span> </span><span id="local-6989586621679137350"><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137350"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text] -&gt; Text
+</span><span id="line-169"></span><span>        </span><span id="local-6989586621679134613"><span class="annot"><span class="annottext">piecesToFile :: Pieces -&gt; Text
+</span><a href="#local-6989586621679134613"><span class="hs-identifier hs-var hs-var">piecesToFile</span></a></span></span><span> </span><span id="local-6989586621679134612"><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134612"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text] -&gt; Text
 </span><span class="hs-identifier hs-var">T.intercalate</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;/&quot;</span></span><span> </span><span class="annot"><span class="annottext">([Text] -&gt; Text) -&gt; [Text] -&gt; Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -406,52 +406,52 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">Piece -&gt; Text
 </span><a href="WaiAppStatic.Types.html#fromPiece"><span class="hs-identifier hs-var hs-var">fromPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137350"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679134612"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-170"></span><span>
-</span><span id="line-171"></span><span>        </span><span id="local-6989586621679137354"><span class="annot"><span class="annottext">lookupFile :: Pieces -&gt; IO LookupResult
-</span><a href="#local-6989586621679137354"><span class="hs-identifier hs-var hs-var">lookupFile</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LookupResult -&gt; IO LookupResult
+</span><span id="line-171"></span><span>        </span><span id="local-6989586621679134616"><span class="annot"><span class="annottext">lookupFile :: Pieces -&gt; IO LookupResult
+</span><a href="#local-6989586621679134616"><span class="hs-identifier hs-var hs-var">lookupFile</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LookupResult -&gt; IO LookupResult
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">LookupResult
 </span><a href="WaiAppStatic.Types.html#LRNotFound"><span class="hs-identifier hs-var">LRNotFound</span></a></span><span>
-</span><span id="line-172"></span><span>        </span><span class="annot"><a href="#local-6989586621679137354"><span class="hs-identifier hs-var">lookupFile</span></a></span><span> </span><span id="local-6989586621679137346"><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137346"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-172"></span><span>        </span><span class="annot"><a href="#local-6989586621679134616"><span class="hs-identifier hs-var">lookupFile</span></a></span><span> </span><span id="local-6989586621679134608"><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134608"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-173"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
 -&gt; HashMap Text (MimeType, IO File) -&gt; Maybe (MimeType, IO File)
 forall k v. (Eq k, Hashable k) =&gt; k -&gt; HashMap k v -&gt; Maybe v
 </span><span class="hs-identifier hs-var">M.lookup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Pieces -&gt; Text
-</span><a href="#local-6989586621679137351"><span class="hs-identifier hs-var">piecesToFile</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
-</span><a href="#local-6989586621679137346"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137356"><span class="hs-identifier hs-var">mfiles</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679134613"><span class="hs-identifier hs-var">piecesToFile</span></a></span><span> </span><span class="annot"><span class="annottext">Pieces
+</span><a href="#local-6989586621679134608"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134618"><span class="hs-identifier hs-var">mfiles</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-174"></span><span>                </span><span class="annot"><span class="annottext">Maybe (MimeType, IO File)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">LookupResult -&gt; IO LookupResult
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">LookupResult
 </span><a href="WaiAppStatic.Types.html#LRNotFound"><span class="hs-identifier hs-var">LRNotFound</span></a></span><span>
 </span><span id="line-175"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">MimeType
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679137344"><span class="annot"><span class="annottext">IO File
-</span><a href="#local-6989586621679137344"><span class="hs-identifier hs-var">act</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">File -&gt; LookupResult
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679134606"><span class="annot"><span class="annottext">IO File
+</span><a href="#local-6989586621679134606"><span class="hs-identifier hs-var">act</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">File -&gt; LookupResult
 </span><a href="WaiAppStatic.Types.html#LRFile"><span class="hs-identifier hs-var">LRFile</span></a></span><span> </span><span class="annot"><span class="annottext">(File -&gt; LookupResult) -&gt; IO File -&gt; IO LookupResult
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">IO File
-</span><a href="#local-6989586621679137344"><span class="hs-identifier hs-var">act</span></a></span><span>
+</span><a href="#local-6989586621679134606"><span class="hs-identifier hs-var">act</span></a></span><span>
 </span><span id="line-176"></span><span>
-</span><span id="line-177"></span><span>        </span><span id="local-6989586621679137352"><span class="annot"><span class="annottext">lookupMime :: File -&gt; m MimeType
-</span><a href="#local-6989586621679137352"><span class="hs-identifier hs-var hs-var">lookupMime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">fileName :: File -&gt; Piece
-</span><a href="WaiAppStatic.Types.html#fileName"><span class="hs-identifier hs-var">fileName</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="local-6989586621679137341"><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137341"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-special">}</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-177"></span><span>        </span><span id="local-6989586621679134614"><span class="annot"><span class="annottext">lookupMime :: File -&gt; m MimeType
+</span><a href="#local-6989586621679134614"><span class="hs-identifier hs-var hs-var">lookupMime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="WaiAppStatic.Types.html#File"><span class="hs-identifier hs-type">File</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">fileName :: File -&gt; Piece
+</span><a href="WaiAppStatic.Types.html#fileName"><span class="hs-identifier hs-var">fileName</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="local-6989586621679134603"><span class="annot"><span class="annottext">Piece
+</span><a href="#local-6989586621679134603"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-special">}</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-178"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
 -&gt; HashMap Text (MimeType, IO File) -&gt; Maybe (MimeType, IO File)
 forall k v. (Eq k, Hashable k) =&gt; k -&gt; HashMap k v -&gt; Maybe v
 </span><span class="hs-identifier hs-var">M.lookup</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Piece -&gt; Text
 </span><a href="WaiAppStatic.Types.html#fromPiece"><span class="hs-identifier hs-var hs-var">fromPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137341"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137356"><span class="hs-identifier hs-var">mfiles</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-179"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679137340"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137340"><span class="hs-identifier hs-var">mime</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">IO File
+</span><a href="#local-6989586621679134603"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134618"><span class="hs-identifier hs-var">mfiles</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-179"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679134602"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134602"><span class="hs-identifier hs-var">mime</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">IO File
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; m MimeType
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137340"><span class="hs-identifier hs-var">mime</span></a></span><span>
+</span><a href="#local-6989586621679134602"><span class="hs-identifier hs-var">mime</span></a></span><span>
 </span><span id="line-180"></span><span>                </span><span class="annot"><span class="annottext">Maybe (MimeType, IO File)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; m MimeType
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -462,60 +462,60 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Piece -&gt; Text
 </span><a href="WaiAppStatic.Types.html#fromPiece"><span class="hs-identifier hs-var hs-var">fromPiece</span></a></span><span> </span><span class="annot"><span class="annottext">Piece
-</span><a href="#local-6989586621679137341"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679134603"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-181"></span><span>
 </span><span id="line-182"></span><span class="hs-comment">-- | Create a 'StaticSettings' from a list of entries.  Executed at run time.</span><span>
 </span><span id="line-183"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#entriesToSt"><span class="hs-identifier hs-type">entriesToSt</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddedEntry"><span class="hs-identifier hs-type">EmbeddedEntry</span></a></span><span> </span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#ReloadEntry"><span class="hs-identifier hs-type">ReloadEntry</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="WaiAppStatic.Types.html#StaticSettings"><span class="hs-identifier hs-type">StaticSettings</span></a></span><span>
 </span><span id="line-184"></span><span id="entriesToSt"><span class="annot"><span class="annottext">entriesToSt :: [Either EmbeddedEntry ReloadEntry] -&gt; StaticSettings
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#entriesToSt"><span class="hs-identifier hs-var hs-var">entriesToSt</span></a></span></span><span> </span><span id="local-6989586621679137338"><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry]
-</span><a href="#local-6989586621679137338"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137337"><span class="hs-identifier hs-var">hmap</span></a></span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#entriesToSt"><span class="hs-identifier hs-var hs-var">entriesToSt</span></a></span></span><span> </span><span id="local-6989586621679134600"><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry]
+</span><a href="#local-6989586621679134600"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134599"><span class="hs-identifier hs-var">hmap</span></a></span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
 -&gt; StaticSettings -&gt; StaticSettings
 </span><span class="hs-operator hs-var">`seq`</span></span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File) -&gt; StaticSettings
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#filemapToSettings"><span class="hs-identifier hs-var">filemapToSettings</span></a></span><span> </span><span class="annot"><span class="annottext">HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137337"><span class="hs-identifier hs-var">hmap</span></a></span><span>
+</span><a href="#local-6989586621679134599"><span class="hs-identifier hs-var">hmap</span></a></span><span>
 </span><span id="line-185"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-186"></span><span>        </span><span id="local-6989586621679137336"><span class="annot"><span class="annottext">embFiles :: [(Text, (MimeType, IO File))]
-</span><a href="#local-6989586621679137336"><span class="hs-identifier hs-var hs-var">embFiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; Text
+</span><span id="line-186"></span><span>        </span><span id="local-6989586621679134598"><span class="annot"><span class="annottext">embFiles :: [(Text, (MimeType, IO File))]
+</span><a href="#local-6989586621679134598"><span class="hs-identifier hs-var hs-var">embFiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; Text
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embLocation"><span class="hs-identifier hs-var hs-var">embLocation</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137335"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
+</span><a href="#local-6989586621679134597"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embMime"><span class="hs-identifier hs-var hs-var">embMime</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137335"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">File -&gt; IO File
+</span><a href="#local-6989586621679134597"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">File -&gt; IO File
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(File -&gt; IO File) -&gt; File -&gt; IO File
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry -&gt; File
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#embeddedToFile"><span class="hs-identifier hs-var">embeddedToFile</span></a></span><span> </span><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137335"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679137335"><span class="annot"><span class="annottext">EmbeddedEntry
-</span><a href="#local-6989586621679137335"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry] -&gt; [EmbeddedEntry]
+</span><a href="#local-6989586621679134597"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679134597"><span class="annot"><span class="annottext">EmbeddedEntry
+</span><a href="#local-6989586621679134597"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry] -&gt; [EmbeddedEntry]
 forall a b. [Either a b] -&gt; [a]
 </span><span class="hs-identifier hs-var">lefts</span></span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry]
-</span><a href="#local-6989586621679137338"><span class="hs-identifier hs-var">entries</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-187"></span><span>        </span><span id="local-6989586621679137334"><span class="annot"><span class="annottext">reloadFiles :: [(Text, (MimeType, IO File))]
-</span><a href="#local-6989586621679137334"><span class="hs-identifier hs-var hs-var">reloadFiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ReloadEntry -&gt; Text
+</span><a href="#local-6989586621679134600"><span class="hs-identifier hs-var">entries</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-187"></span><span>        </span><span id="local-6989586621679134596"><span class="annot"><span class="annottext">reloadFiles :: [(Text, (MimeType, IO File))]
+</span><a href="#local-6989586621679134596"><span class="hs-identifier hs-var hs-var">reloadFiles</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ReloadEntry -&gt; Text
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadLocation"><span class="hs-identifier hs-var hs-var">reloadLocation</span></a></span><span> </span><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137333"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ReloadEntry -&gt; MimeType
+</span><a href="#local-6989586621679134595"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ReloadEntry -&gt; MimeType
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadMime"><span class="hs-identifier hs-var hs-var">reloadMime</span></a></span><span> </span><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137333"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ReloadEntry -&gt; IO File
+</span><a href="#local-6989586621679134595"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ReloadEntry -&gt; IO File
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#reloadToFile"><span class="hs-identifier hs-var">reloadToFile</span></a></span><span> </span><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137333"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679137333"><span class="annot"><span class="annottext">ReloadEntry
-</span><a href="#local-6989586621679137333"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry] -&gt; [ReloadEntry]
+</span><a href="#local-6989586621679134595"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679134595"><span class="annot"><span class="annottext">ReloadEntry
+</span><a href="#local-6989586621679134595"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry] -&gt; [ReloadEntry]
 forall a b. [Either a b] -&gt; [b]
 </span><span class="hs-identifier hs-var">rights</span></span><span> </span><span class="annot"><span class="annottext">[Either EmbeddedEntry ReloadEntry]
-</span><a href="#local-6989586621679137338"><span class="hs-identifier hs-var">entries</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-188"></span><span>        </span><span id="local-6989586621679137337"><span class="annot"><span class="annottext">hmap :: HashMap Text (MimeType, IO File)
-</span><a href="#local-6989586621679137337"><span class="hs-identifier hs-var hs-var">hmap</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))] -&gt; HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134600"><span class="hs-identifier hs-var">entries</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-188"></span><span>        </span><span id="local-6989586621679134599"><span class="annot"><span class="annottext">hmap :: HashMap Text (MimeType, IO File)
+</span><a href="#local-6989586621679134599"><span class="hs-identifier hs-var hs-var">hmap</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))] -&gt; HashMap Text (MimeType, IO File)
 forall k v. (Eq k, Hashable k) =&gt; [(k, v)] -&gt; HashMap k v
 </span><span class="hs-identifier hs-var">M.fromList</span></span><span> </span><span class="annot"><span class="annottext">([(Text, (MimeType, IO File))] -&gt; HashMap Text (MimeType, IO File))
 -&gt; [(Text, (MimeType, IO File))]
 -&gt; HashMap Text (MimeType, IO File)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))]
-</span><a href="#local-6989586621679137336"><span class="hs-identifier hs-var">embFiles</span></a></span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))]
+</span><a href="#local-6989586621679134598"><span class="hs-identifier hs-var">embFiles</span></a></span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))]
 -&gt; [(Text, (MimeType, IO File))] -&gt; [(Text, (MimeType, IO File))]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[(Text, (MimeType, IO File))]
-</span><a href="#local-6989586621679137334"><span class="hs-identifier hs-var">reloadFiles</span></a></span><span>
+</span><a href="#local-6989586621679134596"><span class="hs-identifier hs-var">reloadFiles</span></a></span><span>
 </span><span id="line-189"></span><span>
 </span><span id="line-190"></span><span class="hs-comment">-- | Create a 'StaticSettings' at compile time that embeds resources directly into the compiled</span><span>
 </span><span id="line-191"></span><span class="hs-comment">--   executable.  The embedded resources are precompressed (depending on mime type)</span><span>
@@ -585,30 +585,30 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span id="line-255"></span><span class="hs-comment">-- &gt; main = run 3000 myApp</span><span>
 </span><span id="line-256"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#mkSettings"><span class="hs-identifier hs-type">mkSettings</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#EmbeddableEntry"><span class="hs-identifier hs-type">EmbeddableEntry</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExpQ</span></span><span>
 </span><span id="line-257"></span><span id="mkSettings"><span class="annot"><span class="annottext">mkSettings :: IO [EmbeddableEntry] -&gt; ExpQ
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#mkSettings"><span class="hs-identifier hs-var hs-var">mkSettings</span></a></span></span><span> </span><span id="local-6989586621679137331"><span class="annot"><span class="annottext">IO [EmbeddableEntry]
-</span><a href="#local-6989586621679137331"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-258"></span><span>    </span><span id="local-6989586621679137330"><span class="annot"><span class="annottext">[EmbeddableEntry]
-</span><a href="#local-6989586621679137330"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO [EmbeddableEntry] -&gt; Q [EmbeddableEntry]
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#mkSettings"><span class="hs-identifier hs-var hs-var">mkSettings</span></a></span></span><span> </span><span id="local-6989586621679134593"><span class="annot"><span class="annottext">IO [EmbeddableEntry]
+</span><a href="#local-6989586621679134593"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-258"></span><span>    </span><span id="local-6989586621679134592"><span class="annot"><span class="annottext">[EmbeddableEntry]
+</span><a href="#local-6989586621679134592"><span class="hs-identifier hs-var">entries</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO [EmbeddableEntry] -&gt; Q [EmbeddableEntry]
 forall a. IO a -&gt; Q a
 </span><span class="hs-identifier hs-var">runIO</span></span><span> </span><span class="annot"><span class="annottext">IO [EmbeddableEntry]
-</span><a href="#local-6989586621679137331"><span class="hs-identifier hs-var">action</span></a></span><span>
+</span><a href="#local-6989586621679134593"><span class="hs-identifier hs-var">action</span></a></span><span>
 </span><span id="line-259"></span><span>    </span><span class="hs-special">[|</span><span> </span><span class="hs-identifier">entriesToSt</span><span> </span><span class="hs-special">$(</span><span class="hs-identifier">listE</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-identifier">map</span><span> </span><span class="hs-identifier">mkEntry</span><span> </span><span class="hs-identifier">entries</span><span class="hs-special">)</span><span> </span><span class="hs-special">|]</span><span>
 </span><span id="line-260"></span><span>
 </span><span id="line-261"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#shouldCompress"><span class="hs-identifier hs-type">shouldCompress</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MimeType</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-262"></span><span id="shouldCompress"><span class="annot"><span class="annottext">shouldCompress :: MimeType -&gt; Bool
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#shouldCompress"><span class="hs-identifier hs-var hs-var">shouldCompress</span></a></span></span><span> </span><span id="local-6989586621679137327"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137327"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MimeType
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#shouldCompress"><span class="hs-identifier hs-var hs-var">shouldCompress</span></a></span></span><span> </span><span id="local-6989586621679134589"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134589"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MimeType
 </span><span class="hs-string">&quot;text/&quot;</span></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; MimeType -&gt; Bool
 </span><span class="hs-operator hs-var">`B.isPrefixOf`</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137327"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679134589"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137327"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; [MimeType] -&gt; Bool
+</span><a href="#local-6989586621679134589"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; [MimeType] -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="annot"><span class="annottext">[MimeType]
-</span><a href="#local-6989586621679137323"><span class="hs-identifier hs-var">extra</span></a></span><span>
+</span><a href="#local-6989586621679134585"><span class="hs-identifier hs-var">extra</span></a></span><span>
 </span><span id="line-263"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-264"></span><span>        </span><span id="local-6989586621679137323"><span class="annot"><span class="annottext">extra :: [MimeType]
-</span><a href="#local-6989586621679137323"><span class="hs-identifier hs-var hs-var">extra</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">MimeType
+</span><span id="line-264"></span><span>        </span><span id="local-6989586621679134585"><span class="annot"><span class="annottext">extra :: [MimeType]
+</span><a href="#local-6989586621679134585"><span class="hs-identifier hs-var hs-var">extra</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">MimeType
 </span><span class="hs-string">&quot;application/json&quot;</span></span><span>
 </span><span id="line-265"></span><span>                </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">MimeType
 </span><span class="hs-string">&quot;application/javascript&quot;</span></span><span>
@@ -619,34 +619,34 @@ forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span id="line-269"></span><span class="hs-comment">-- | Only compress if the mime type is correct and the compressed text is actually shorter.</span><span>
 </span><span id="line-270"></span><span class="annot"><a href="WaiAppStatic.Storage.Embedded.TH.html#tryCompress"><span class="hs-identifier hs-type">tryCompress</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MimeType</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BL.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BL.ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-271"></span><span id="tryCompress"><span class="annot"><span class="annottext">tryCompress :: MimeType -&gt; ByteString -&gt; (Bool, ByteString)
-</span><a href="WaiAppStatic.Storage.Embedded.TH.html#tryCompress"><span class="hs-identifier hs-var hs-var">tryCompress</span></a></span></span><span> </span><span id="local-6989586621679137322"><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137322"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span id="local-6989586621679137321"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137321"><span class="hs-identifier hs-var">ct</span></a></span></span><span>
+</span><a href="WaiAppStatic.Storage.Embedded.TH.html#tryCompress"><span class="hs-identifier hs-var hs-var">tryCompress</span></a></span></span><span> </span><span id="local-6989586621679134584"><span class="annot"><span class="annottext">MimeType
+</span><a href="#local-6989586621679134584"><span class="hs-identifier hs-var">mime</span></a></span></span><span> </span><span id="local-6989586621679134583"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134583"><span class="hs-identifier hs-var">ct</span></a></span></span><span>
 </span><span id="line-272"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">MimeType -&gt; Bool
 </span><a href="WaiAppStatic.Storage.Embedded.TH.html#shouldCompress"><span class="hs-identifier hs-var">shouldCompress</span></a></span><span> </span><span class="annot"><span class="annottext">MimeType
-</span><a href="#local-6989586621679137322"><span class="hs-identifier hs-var">mime</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137320"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137319"><span class="hs-identifier hs-var">ct'</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679134584"><span class="hs-identifier hs-var">mime</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134582"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134581"><span class="hs-identifier hs-var">ct'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-273"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137321"><span class="hs-identifier hs-var">ct</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679134583"><span class="hs-identifier hs-var">ct</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-274"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-275"></span><span>        </span><span id="local-6989586621679137318"><span class="annot"><span class="annottext">compressed :: ByteString
-</span><a href="#local-6989586621679137318"><span class="hs-identifier hs-var hs-var">compressed</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
+</span><span id="line-275"></span><span>        </span><span id="local-6989586621679134580"><span class="annot"><span class="annottext">compressed :: ByteString
+</span><a href="#local-6989586621679134580"><span class="hs-identifier hs-var hs-var">compressed</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">compress</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137321"><span class="hs-identifier hs-var">ct</span></a></span><span>
-</span><span id="line-276"></span><span>        </span><span id="local-6989586621679137320"><span class="annot"><span class="annottext">c :: Bool
-</span><a href="#local-6989586621679137320"><span class="hs-identifier hs-var hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int64
+</span><a href="#local-6989586621679134583"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><span id="line-276"></span><span>        </span><span id="local-6989586621679134582"><span class="annot"><span class="annottext">c :: Bool
+</span><a href="#local-6989586621679134582"><span class="hs-identifier hs-var hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int64
 </span><span class="hs-identifier hs-var">BL.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137318"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; Int64 -&gt; Bool
+</span><a href="#local-6989586621679134580"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="annot"><span class="annottext">Int64 -&gt; Int64 -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Int64
 </span><span class="hs-identifier hs-var">BL.length</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137321"><span class="hs-identifier hs-var">ct</span></a></span><span>
-</span><span id="line-277"></span><span>        </span><span id="local-6989586621679137319"><span class="annot"><span class="annottext">ct' :: ByteString
-</span><a href="#local-6989586621679137319"><span class="hs-identifier hs-var hs-var">ct'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679137320"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137318"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679137321"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><a href="#local-6989586621679134583"><span class="hs-identifier hs-var">ct</span></a></span><span>
+</span><span id="line-277"></span><span>        </span><span id="local-6989586621679134581"><span class="annot"><span class="annottext">ct' :: ByteString
+</span><a href="#local-6989586621679134581"><span class="hs-identifier hs-var hs-var">ct'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679134582"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134580"><span class="hs-identifier hs-var">compressed</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679134583"><span class="hs-identifier hs-var">ct</span></a></span><span>
 </span><span id="line-278"></span></pre></body></html>

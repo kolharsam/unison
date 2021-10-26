@@ -27,40 +27,40 @@
 </span><span id="line-27"></span><span class="hs-comment">-- | Position read based on 'Handle'.</span><span>
 </span><span id="line-28"></span><span class="annot"><a href="Network.HTTP2.Arch.File.html#defaultPositionReadMaker"><span class="hs-identifier hs-type">defaultPositionReadMaker</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.File.html#PositionReadMaker"><span class="hs-identifier hs-type">PositionReadMaker</span></a></span><span>
 </span><span id="line-29"></span><span id="defaultPositionReadMaker"><span class="annot"><span class="annottext">defaultPositionReadMaker :: PositionReadMaker
-</span><a href="Network.HTTP2.Arch.File.html#defaultPositionReadMaker"><span class="hs-identifier hs-var hs-var">defaultPositionReadMaker</span></a></span></span><span> </span><span id="local-6989586621679087226"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679087226"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-30"></span><span>    </span><span id="local-6989586621679087225"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087225"><span class="hs-identifier hs-var">hdl</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IOMode -&gt; IO Handle
+</span><a href="Network.HTTP2.Arch.File.html#defaultPositionReadMaker"><span class="hs-identifier hs-var hs-var">defaultPositionReadMaker</span></a></span></span><span> </span><span id="local-6989586621679087225"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679087225"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-30"></span><span>    </span><span id="local-6989586621679087224"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679087224"><span class="hs-identifier hs-var">hdl</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IOMode -&gt; IO Handle
 </span><span class="hs-identifier hs-var">openBinaryFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679087226"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
+</span><a href="#local-6989586621679087225"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
 </span><span class="hs-identifier hs-var">ReadMode</span></span><span>
 </span><span id="line-31"></span><span>    </span><span class="annot"><span class="annottext">(PositionRead, Sentinel) -&gt; IO (PositionRead, Sentinel)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Handle -&gt; PositionRead
-</span><a href="#local-6989586621679087222"><span class="hs-identifier hs-var">pread</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087225"><span class="hs-identifier hs-var">hdl</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; Sentinel
+</span><a href="#local-6989586621679087221"><span class="hs-identifier hs-var">pread</span></a></span><span> </span><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679087224"><span class="hs-identifier hs-var">hdl</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; Sentinel
 </span><a href="Network.HTTP2.Arch.File.html#Closer"><span class="hs-identifier hs-var">Closer</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; Sentinel) -&gt; IO () -&gt; Sentinel
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">hClose</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087225"><span class="hs-identifier hs-var">hdl</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679087224"><span class="hs-identifier hs-var">hdl</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-32"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-33"></span><span>    </span><span class="annot"><a href="#local-6989586621679087222"><span class="hs-identifier hs-type">pread</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Handle</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.File.html#PositionRead"><span class="hs-identifier hs-type">PositionRead</span></a></span><span>
-</span><span id="line-34"></span><span>    </span><span id="local-6989586621679087222"><span class="annot"><span class="annottext">pread :: Handle -&gt; PositionRead
-</span><a href="#local-6989586621679087222"><span class="hs-identifier hs-var hs-var">pread</span></a></span></span><span> </span><span id="local-6989586621679087220"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087220"><span class="hs-identifier hs-var">hdl</span></a></span></span><span> </span><span id="local-6989586621679087219"><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679087219"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679087218"><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679087218"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span id="local-6989586621679087217"><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679087217"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-33"></span><span>    </span><span class="annot"><a href="#local-6989586621679087221"><span class="hs-identifier hs-type">pread</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Handle</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Network.HTTP2.Arch.File.html#PositionRead"><span class="hs-identifier hs-type">PositionRead</span></a></span><span>
+</span><span id="line-34"></span><span>    </span><span id="local-6989586621679087221"><span class="annot"><span class="annottext">pread :: Handle -&gt; PositionRead
+</span><a href="#local-6989586621679087221"><span class="hs-identifier hs-var hs-var">pread</span></a></span></span><span> </span><span id="local-6989586621679087219"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679087219"><span class="hs-identifier hs-var">hdl</span></a></span></span><span> </span><span id="local-6989586621679087218"><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679087218"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679087217"><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679087217"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span id="local-6989586621679087216"><span class="annot"><span class="annottext">Buffer
+</span><a href="#local-6989586621679087216"><span class="hs-identifier hs-var">buf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-35"></span><span>        </span><span class="annot"><span class="annottext">Handle -&gt; SeekMode -&gt; Integer -&gt; IO ()
 </span><span class="hs-identifier hs-var">hSeek</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087220"><span class="hs-identifier hs-var">hdl</span></a></span><span> </span><span class="annot"><span class="annottext">SeekMode
+</span><a href="#local-6989586621679087219"><span class="hs-identifier hs-var">hdl</span></a></span><span> </span><span class="annot"><span class="annottext">SeekMode
 </span><span class="hs-identifier hs-var">AbsoluteSeek</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; IO ()) -&gt; Integer -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileOffset -&gt; Integer
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679087219"><span class="hs-identifier hs-var">off</span></a></span><span>
+</span><a href="#local-6989586621679087218"><span class="hs-identifier hs-var">off</span></a></span><span>
 </span><span id="line-36"></span><span>        </span><span class="annot"><span class="annottext">Int -&gt; FileOffset
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; FileOffset) -&gt; IO Int -&gt; IO FileOffset
@@ -68,9 +68,9 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Buffer -&gt; Int -&gt; IO Int
 forall a. Handle -&gt; Ptr a -&gt; Int -&gt; IO Int
 </span><span class="hs-identifier hs-var">hGetBufSome</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679087220"><span class="hs-identifier hs-var">hdl</span></a></span><span> </span><span class="annot"><span class="annottext">Buffer
-</span><a href="#local-6989586621679087217"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileOffset -&gt; Int
+</span><a href="#local-6989586621679087219"><span class="hs-identifier hs-var">hdl</span></a></span><span> </span><span class="annot"><span class="annottext">Buffer
+</span><a href="#local-6989586621679087216"><span class="hs-identifier hs-var">buf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileOffset -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679087218"><span class="hs-identifier hs-var">bytes</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679087217"><span class="hs-identifier hs-var">bytes</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-37"></span></pre></body></html>

@@ -45,9 +45,9 @@
 </span><span id="line-45"></span><span>
 </span><span id="line-46"></span><span class="annot"><a href="Data.UnixTime.Conv.html#parseUnixTime"><span class="hs-identifier hs-type">parseUnixTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#Format"><span class="hs-identifier hs-type">Format</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span>
 </span><span id="line-47"></span><span id="parseUnixTime"><span class="annot"><span class="annottext">parseUnixTime :: Format -&gt; Format -&gt; UnixTime
-</span><a href="Data.UnixTime.Conv.html#parseUnixTime"><span class="hs-identifier hs-var hs-var">parseUnixTime</span></a></span></span><span> </span><span id="local-6989586621679040806"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040806"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040805"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040805"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO UnixTime -&gt; UnixTime
+</span><a href="Data.UnixTime.Conv.html#parseUnixTime"><span class="hs-identifier hs-var hs-var">parseUnixTime</span></a></span></span><span> </span><span id="local-6989586621679040814"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040814"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040813"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040813"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO UnixTime -&gt; UnixTime
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">unsafePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO UnixTime -&gt; UnixTime) -&gt; IO UnixTime -&gt; UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -55,31 +55,31 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-48"></span><span>    </span><span class="annot"><span class="annottext">Format -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a. Format -&gt; (CString -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">useAsCString</span></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040806"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
+</span><a href="#local-6989586621679040814"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
 -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040803"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040803"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040811"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040811"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-49"></span><span>        </span><span class="annot"><span class="annottext">Format -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a. Format -&gt; (CString -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">useAsCString</span></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040805"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
+</span><a href="#local-6989586621679040813"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
 -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040802"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040802"><span class="hs-identifier hs-var">cstr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-50"></span><span>            </span><span id="local-6989586621679040801"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040801"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; CString -&gt; IO CTime
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040810"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040810"><span class="hs-identifier hs-var">cstr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-50"></span><span>            </span><span id="local-6989586621679040809"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040809"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; CString -&gt; IO CTime
 </span><a href="Data.UnixTime.Conv.html#c_parse_unix_time"><span class="hs-identifier hs-var">c_parse_unix_time</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040803"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040802"><span class="hs-identifier hs-var">cstr</span></a></span><span>
+</span><a href="#local-6989586621679040811"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040810"><span class="hs-identifier hs-var">cstr</span></a></span><span>
 </span><span id="line-51"></span><span>            </span><span class="annot"><span class="annottext">UnixTime -&gt; IO UnixTime
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(UnixTime -&gt; IO UnixTime) -&gt; UnixTime -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
 </span><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-var">UnixTime</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040801"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="#local-6989586621679040809"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-52"></span><span class="hs-comment">-- |</span><span>
 </span><span id="line-53"></span><span class="hs-comment">-- Parsing 'ByteString' to 'UnixTime' interpreting as GMT.</span><span>
@@ -91,9 +91,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-59"></span><span>
 </span><span id="line-60"></span><span class="annot"><a href="Data.UnixTime.Conv.html#parseUnixTimeGMT"><span class="hs-identifier hs-type">parseUnixTimeGMT</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#Format"><span class="hs-identifier hs-type">Format</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span>
 </span><span id="line-61"></span><span id="parseUnixTimeGMT"><span class="annot"><span class="annottext">parseUnixTimeGMT :: Format -&gt; Format -&gt; UnixTime
-</span><a href="Data.UnixTime.Conv.html#parseUnixTimeGMT"><span class="hs-identifier hs-var hs-var">parseUnixTimeGMT</span></a></span></span><span> </span><span id="local-6989586621679040799"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040799"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040798"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040798"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO UnixTime -&gt; UnixTime
+</span><a href="Data.UnixTime.Conv.html#parseUnixTimeGMT"><span class="hs-identifier hs-var hs-var">parseUnixTimeGMT</span></a></span></span><span> </span><span id="local-6989586621679040807"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040807"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040806"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040806"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO UnixTime -&gt; UnixTime
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">unsafePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO UnixTime -&gt; UnixTime) -&gt; IO UnixTime -&gt; UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -101,31 +101,31 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-62"></span><span>    </span><span class="annot"><span class="annottext">Format -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a. Format -&gt; (CString -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">useAsCString</span></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040799"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
+</span><a href="#local-6989586621679040807"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
 -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040797"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040797"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040805"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040805"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-63"></span><span>        </span><span class="annot"><span class="annottext">Format -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a. Format -&gt; (CString -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">useAsCString</span></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040798"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
+</span><a href="#local-6989586621679040806"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO UnixTime) -&gt; IO UnixTime)
 -&gt; (CString -&gt; IO UnixTime) -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040796"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040796"><span class="hs-identifier hs-var">cstr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-64"></span><span>            </span><span id="local-6989586621679040795"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040795"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; CString -&gt; IO CTime
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040804"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040804"><span class="hs-identifier hs-var">cstr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-64"></span><span>            </span><span id="local-6989586621679040803"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040803"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; CString -&gt; IO CTime
 </span><a href="Data.UnixTime.Conv.html#c_parse_unix_time_gmt"><span class="hs-identifier hs-var">c_parse_unix_time_gmt</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040797"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040796"><span class="hs-identifier hs-var">cstr</span></a></span><span>
+</span><a href="#local-6989586621679040805"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040804"><span class="hs-identifier hs-var">cstr</span></a></span><span>
 </span><span id="line-65"></span><span>            </span><span class="annot"><span class="annottext">UnixTime -&gt; IO UnixTime
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(UnixTime -&gt; IO UnixTime) -&gt; UnixTime -&gt; IO UnixTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
 </span><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-var">UnixTime</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040795"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="#local-6989586621679040803"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-66"></span><span>
 </span><span id="line-67"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
@@ -139,15 +139,15 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-75"></span><span>
 </span><span id="line-76"></span><span class="annot"><a href="Data.UnixTime.Conv.html#formatUnixTime"><span class="hs-identifier hs-type">formatUnixTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#Format"><span class="hs-identifier hs-type">Format</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-77"></span><span id="formatUnixTime"><span class="annot"><span class="annottext">formatUnixTime :: Format -&gt; UnixTime -&gt; IO Format
-</span><a href="Data.UnixTime.Conv.html#formatUnixTime"><span class="hs-identifier hs-var hs-var">formatUnixTime</span></a></span></span><span> </span><span id="local-6989586621679040794"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040794"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040793"><span class="annot"><span class="annottext">UnixTime
-</span><a href="#local-6989586621679040793"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Data.UnixTime.Conv.html#formatUnixTime"><span class="hs-identifier hs-var hs-var">formatUnixTime</span></a></span></span><span> </span><span id="local-6989586621679040802"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040802"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040801"><span class="annot"><span class="annottext">UnixTime
+</span><a href="#local-6989586621679040801"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-78"></span><span>    </span><span class="annot"><span class="annottext">(CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize)
 -&gt; Format -&gt; UnixTime -&gt; IO Format
 </span><a href="Data.UnixTime.Conv.html#formatUnixTimeHelper"><span class="hs-identifier hs-var">formatUnixTimeHelper</span></a></span><span> </span><span class="annot"><span class="annottext">CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize
 </span><a href="Data.UnixTime.Conv.html#c_format_unix_time"><span class="hs-identifier hs-var">c_format_unix_time</span></a></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040794"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">UnixTime
-</span><a href="#local-6989586621679040793"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621679040802"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">UnixTime
+</span><a href="#local-6989586621679040801"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-79"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.UnixTime.Conv.html#formatUnixTime"><span class="hs-pragma hs-type">formatUnixTime</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-80"></span><span>
 </span><span id="line-81"></span><span class="hs-comment">-- |</span><span>
@@ -167,9 +167,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-95"></span><span>
 </span><span id="line-96"></span><span class="annot"><a href="Data.UnixTime.Conv.html#formatUnixTimeGMT"><span class="hs-identifier hs-type">formatUnixTimeGMT</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#Format"><span class="hs-identifier hs-type">Format</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-97"></span><span id="formatUnixTimeGMT"><span class="annot"><span class="annottext">formatUnixTimeGMT :: Format -&gt; UnixTime -&gt; Format
-</span><a href="Data.UnixTime.Conv.html#formatUnixTimeGMT"><span class="hs-identifier hs-var hs-var">formatUnixTimeGMT</span></a></span></span><span> </span><span id="local-6989586621679040791"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040791"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040790"><span class="annot"><span class="annottext">UnixTime
-</span><a href="#local-6989586621679040790"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Data.UnixTime.Conv.html#formatUnixTimeGMT"><span class="hs-identifier hs-var hs-var">formatUnixTimeGMT</span></a></span></span><span> </span><span id="local-6989586621679040799"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040799"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span id="local-6989586621679040798"><span class="annot"><span class="annottext">UnixTime
+</span><a href="#local-6989586621679040798"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-98"></span><span>    </span><span class="annot"><span class="annottext">IO Format -&gt; Format
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">unsafePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO Format -&gt; Format) -&gt; IO Format -&gt; Format
@@ -178,8 +178,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; Format -&gt; UnixTime -&gt; IO Format
 </span><a href="Data.UnixTime.Conv.html#formatUnixTimeHelper"><span class="hs-identifier hs-var">formatUnixTimeHelper</span></a></span><span> </span><span class="annot"><span class="annottext">CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize
 </span><a href="Data.UnixTime.Conv.html#c_format_unix_time_gmt"><span class="hs-identifier hs-var">c_format_unix_time_gmt</span></a></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040791"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">UnixTime
-</span><a href="#local-6989586621679040790"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621679040799"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">UnixTime
+</span><a href="#local-6989586621679040798"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-99"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.UnixTime.Conv.html#formatUnixTimeGMT"><span class="hs-pragma hs-type">formatUnixTimeGMT</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-100"></span><span>
 </span><span id="line-101"></span><span class="hs-comment">-- |</span><span>
@@ -192,52 +192,52 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-108"></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-109"></span><span id="formatUnixTimeHelper"><span class="annot"><span class="annottext">formatUnixTimeHelper :: (CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize)
 -&gt; Format -&gt; UnixTime -&gt; IO Format
-</span><a href="Data.UnixTime.Conv.html#formatUnixTimeHelper"><span class="hs-identifier hs-var hs-var">formatUnixTimeHelper</span></a></span></span><span> </span><span id="local-6989586621679040789"><span class="annot"><span class="annottext">CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize
-</span><a href="#local-6989586621679040789"><span class="hs-identifier hs-var">formatFun</span></a></span></span><span> </span><span id="local-6989586621679040788"><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040788"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040787"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040787"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="Data.UnixTime.Conv.html#formatUnixTimeHelper"><span class="hs-identifier hs-var hs-var">formatUnixTimeHelper</span></a></span></span><span> </span><span id="local-6989586621679040797"><span class="annot"><span class="annottext">CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize
+</span><a href="#local-6989586621679040797"><span class="hs-identifier hs-var">formatFun</span></a></span></span><span> </span><span id="local-6989586621679040796"><span class="annot"><span class="annottext">Format
+</span><a href="#local-6989586621679040796"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040795"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040795"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-110"></span><span>    </span><span class="annot"><span class="annottext">Format -&gt; (CString -&gt; IO Format) -&gt; IO Format
 forall a. Format -&gt; (CString -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">useAsCString</span></span><span> </span><span class="annot"><span class="annottext">Format
-</span><a href="#local-6989586621679040788"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO Format) -&gt; IO Format)
+</span><a href="#local-6989586621679040796"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">((CString -&gt; IO Format) -&gt; IO Format)
 -&gt; (CString -&gt; IO Format) -&gt; IO Format
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040786"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040786"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-111"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679040785"><span class="annot"><span class="annottext">siz :: Int
-</span><a href="#local-6989586621679040785"><span class="hs-identifier hs-var hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679040794"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040794"><span class="hs-identifier hs-var">cfmt</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-111"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679040793"><span class="annot"><span class="annottext">siz :: Int
+</span><a href="#local-6989586621679040793"><span class="hs-identifier hs-var hs-var">siz</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">80</span></span><span>
-</span><span id="line-112"></span><span>        </span><span id="local-6989586621679040784"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040784"><span class="hs-identifier hs-var">ptr</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO CString
+</span><span id="line-112"></span><span>        </span><span id="local-6989586621679040792"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040792"><span class="hs-identifier hs-var">ptr</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO CString
 forall a. Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">mallocBytes</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040785"><span class="hs-identifier hs-var">siz</span></a></span><span>
-</span><span id="line-113"></span><span>        </span><span id="local-6989586621679040782"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040782"><span class="hs-identifier hs-var">len</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679040793"><span class="hs-identifier hs-var">siz</span></a></span><span>
+</span><span id="line-113"></span><span>        </span><span id="local-6989586621679040790"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040790"><span class="hs-identifier hs-var">len</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(CSize -&gt; Int) -&gt; IO CSize -&gt; IO Int
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">CString -&gt; CTime -&gt; CString -&gt; CInt -&gt; IO CSize
-</span><a href="#local-6989586621679040789"><span class="hs-identifier hs-var">formatFun</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040786"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040787"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040784"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CInt
+</span><a href="#local-6989586621679040797"><span class="hs-identifier hs-var">formatFun</span></a></span><span> </span><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040794"><span class="hs-identifier hs-var">cfmt</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040795"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040792"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CInt
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040785"><span class="hs-identifier hs-var">siz</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-114"></span><span>        </span><span id="local-6989586621679040780"><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040780"><span class="hs-identifier hs-var">ptr'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; Int -&gt; IO CString
+</span><a href="#local-6989586621679040793"><span class="hs-identifier hs-var">siz</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-114"></span><span>        </span><span id="local-6989586621679040788"><span class="annot"><span class="annottext">CString
+</span><a href="#local-6989586621679040788"><span class="hs-identifier hs-var">ptr'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CString -&gt; Int -&gt; IO CString
 forall a. Ptr a -&gt; Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">reallocBytes</span></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040784"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040782"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679040792"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040790"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
 </span><span id="line-115"></span><span>        </span><span class="annot"><span class="annottext">CString -&gt; IO Format
 </span><span class="hs-identifier hs-var">unsafePackMallocCString</span></span><span> </span><span class="annot"><span class="annottext">CString
-</span><a href="#local-6989586621679040780"><span class="hs-identifier hs-var">ptr'</span></a></span><span> </span><span class="hs-comment">-- FIXME: Use unsafePackMallocCStringLen from bytestring-0.10.2.0</span><span>
+</span><a href="#local-6989586621679040788"><span class="hs-identifier hs-var">ptr'</span></a></span><span> </span><span class="hs-comment">-- FIXME: Use unsafePackMallocCStringLen from bytestring-0.10.2.0</span><span>
 </span><span id="line-116"></span><span>
 </span><span id="line-117"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-118"></span><span>
@@ -268,10 +268,10 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span id="line-139"></span><span>
 </span><span id="line-140"></span><span class="annot"><a href="Data.UnixTime.Conv.html#fromEpochTime"><span class="hs-identifier hs-type">fromEpochTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">EpochTime</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span>
 </span><span id="line-141"></span><span id="fromEpochTime"><span class="annot"><span class="annottext">fromEpochTime :: CTime -&gt; UnixTime
-</span><a href="Data.UnixTime.Conv.html#fromEpochTime"><span class="hs-identifier hs-var hs-var">fromEpochTime</span></a></span></span><span> </span><span id="local-6989586621679040776"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040776"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
+</span><a href="Data.UnixTime.Conv.html#fromEpochTime"><span class="hs-identifier hs-var hs-var">fromEpochTime</span></a></span></span><span> </span><span id="local-6989586621679040784"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040784"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
 </span><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-var">UnixTime</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040776"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="#local-6989586621679040784"><span class="hs-identifier hs-var">sec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-142"></span><span>
 </span><span id="line-143"></span><span class="hs-comment">-- |</span><span>
@@ -279,35 +279,35 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span id="line-145"></span><span>
 </span><span id="line-146"></span><span class="annot"><a href="Data.UnixTime.Conv.html#toEpochTime"><span class="hs-identifier hs-type">toEpochTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">EpochTime</span></span><span>
 </span><span id="line-147"></span><span id="toEpochTime"><span class="annot"><span class="annottext">toEpochTime :: UnixTime -&gt; CTime
-</span><a href="Data.UnixTime.Conv.html#toEpochTime"><span class="hs-identifier hs-var hs-var">toEpochTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040775"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040775"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="Data.UnixTime.Conv.html#toEpochTime"><span class="hs-identifier hs-var hs-var">toEpochTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040783"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040783"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040775"><span class="hs-identifier hs-var">sec</span></a></span><span>
+</span><a href="#local-6989586621679040783"><span class="hs-identifier hs-var">sec</span></a></span><span>
 </span><span id="line-148"></span><span>
 </span><span id="line-149"></span><span class="hs-comment">-- |</span><span>
 </span><span id="line-150"></span><span class="hs-comment">-- From 'ClockTime' to 'UnixTime'.</span><span>
 </span><span id="line-151"></span><span>
 </span><span id="line-152"></span><span class="annot"><a href="Data.UnixTime.Conv.html#fromClockTime"><span class="hs-identifier hs-type">fromClockTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ClockTime</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span>
 </span><span id="line-153"></span><span id="fromClockTime"><span class="annot"><span class="annottext">fromClockTime :: ClockTime -&gt; UnixTime
-</span><a href="Data.UnixTime.Conv.html#fromClockTime"><span class="hs-identifier hs-var hs-var">fromClockTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">TOD</span></span><span> </span><span id="local-6989586621679040773"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040773"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span id="local-6989586621679040772"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040772"><span class="hs-identifier hs-var">psec</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
+</span><a href="Data.UnixTime.Conv.html#fromClockTime"><span class="hs-identifier hs-var hs-var">fromClockTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">TOD</span></span><span> </span><span id="local-6989586621679040781"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679040781"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span id="local-6989586621679040780"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679040780"><span class="hs-identifier hs-var">psec</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">CTime -&gt; Int32 -&gt; UnixTime
 </span><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-var">UnixTime</span></a></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040771"><span class="hs-identifier hs-var">sec'</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
-</span><a href="#local-6989586621679040770"><span class="hs-identifier hs-var">usec'</span></a></span><span>
+</span><a href="#local-6989586621679040779"><span class="hs-identifier hs-var">sec'</span></a></span><span> </span><span class="annot"><span class="annottext">Int32
+</span><a href="#local-6989586621679040778"><span class="hs-identifier hs-var">usec'</span></a></span><span>
 </span><span id="line-154"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-155"></span><span>    </span><span id="local-6989586621679040771"><span class="annot"><span class="annottext">sec' :: CTime
-</span><a href="#local-6989586621679040771"><span class="hs-identifier hs-var hs-var">sec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; CTime
+</span><span id="line-155"></span><span>    </span><span id="local-6989586621679040779"><span class="annot"><span class="annottext">sec' :: CTime
+</span><a href="#local-6989586621679040779"><span class="hs-identifier hs-var hs-var">sec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; CTime
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040773"><span class="hs-identifier hs-var">sec</span></a></span><span>
-</span><span id="line-156"></span><span>    </span><span id="local-6989586621679040770"><span class="annot"><span class="annottext">usec' :: Int32
-</span><a href="#local-6989586621679040770"><span class="hs-identifier hs-var hs-var">usec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int32
+</span><a href="#local-6989586621679040781"><span class="hs-identifier hs-var">sec</span></a></span><span>
+</span><span id="line-156"></span><span>    </span><span id="local-6989586621679040778"><span class="annot"><span class="annottext">usec' :: Int32
+</span><a href="#local-6989586621679040778"><span class="hs-identifier hs-var hs-var">usec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Int32
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; Int32) -&gt; Integer -&gt; Int32
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040772"><span class="hs-identifier hs-var">psec</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Integer
+</span><a href="#local-6989586621679040780"><span class="hs-identifier hs-var">psec</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Integer
 forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">`div`</span></span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">1000000</span></span><span>
@@ -317,27 +317,27 @@ forall a. Integral a =&gt; a -&gt; a -&gt; a
 </span><span id="line-160"></span><span>
 </span><span id="line-161"></span><span class="annot"><a href="Data.UnixTime.Conv.html#toClockTime"><span class="hs-identifier hs-type">toClockTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ClockTime</span></span><span>
 </span><span id="line-162"></span><span id="toClockTime"><span class="annot"><span class="annottext">toClockTime :: UnixTime -&gt; ClockTime
-</span><a href="Data.UnixTime.Conv.html#toClockTime"><span class="hs-identifier hs-var hs-var">toClockTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040768"><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040768"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span id="local-6989586621679040767"><span class="annot"><span class="annottext">Int32
-</span><a href="#local-6989586621679040767"><span class="hs-identifier hs-var">usec</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; ClockTime
+</span><a href="Data.UnixTime.Conv.html#toClockTime"><span class="hs-identifier hs-var hs-var">toClockTime</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.UnixTime.Types.html#UnixTime"><span class="hs-identifier hs-type">UnixTime</span></a></span><span> </span><span id="local-6989586621679040776"><span class="annot"><span class="annottext">CTime
+</span><a href="#local-6989586621679040776"><span class="hs-identifier hs-var">sec</span></a></span></span><span> </span><span id="local-6989586621679040775"><span class="annot"><span class="annottext">Int32
+</span><a href="#local-6989586621679040775"><span class="hs-identifier hs-var">usec</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; ClockTime
 </span><span class="hs-identifier hs-var">TOD</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040766"><span class="hs-identifier hs-var">sec'</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679040765"><span class="hs-identifier hs-var">psec'</span></a></span><span>
+</span><a href="#local-6989586621679040774"><span class="hs-identifier hs-var">sec'</span></a></span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679040773"><span class="hs-identifier hs-var">psec'</span></a></span><span>
 </span><span id="line-163"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-164"></span><span>    </span><span id="local-6989586621679040766"><span class="annot"><span class="annottext">sec' :: Integer
-</span><a href="#local-6989586621679040766"><span class="hs-identifier hs-var hs-var">sec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Rational -&gt; Integer
+</span><span id="line-164"></span><span>    </span><span id="local-6989586621679040774"><span class="annot"><span class="annottext">sec' :: Integer
+</span><a href="#local-6989586621679040774"><span class="hs-identifier hs-var hs-var">sec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Rational -&gt; Integer
 forall a b. (RealFrac a, Integral b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">truncate</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CTime -&gt; Rational
 forall a. Real a =&gt; a -&gt; Rational
 </span><span class="hs-identifier hs-var">toRational</span></span><span> </span><span class="annot"><span class="annottext">CTime
-</span><a href="#local-6989586621679040768"><span class="hs-identifier hs-var">sec</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-165"></span><span>    </span><span id="local-6989586621679040765"><span class="annot"><span class="annottext">psec' :: Integer
-</span><a href="#local-6989586621679040765"><span class="hs-identifier hs-var hs-var">psec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int32 -&gt; Integer
+</span><a href="#local-6989586621679040776"><span class="hs-identifier hs-var">sec</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-165"></span><span>    </span><span id="local-6989586621679040773"><span class="annot"><span class="annottext">psec' :: Integer
+</span><a href="#local-6989586621679040773"><span class="hs-identifier hs-var hs-var">psec'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int32 -&gt; Integer
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Int32 -&gt; Integer) -&gt; Int32 -&gt; Integer
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int32
-</span><a href="#local-6989586621679040767"><span class="hs-identifier hs-var">usec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32 -&gt; Int32 -&gt; Int32
+</span><a href="#local-6989586621679040775"><span class="hs-identifier hs-var">usec</span></a></span><span> </span><span class="annot"><span class="annottext">Int32 -&gt; Int32 -&gt; Int32
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int32
 </span><span class="hs-number">1000000</span></span><span>

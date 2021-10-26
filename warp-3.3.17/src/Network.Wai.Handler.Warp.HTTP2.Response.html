@@ -30,32 +30,32 @@
 -&gt; Request
 -&gt; Response
 -&gt; IO (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#fromResponse"><span class="hs-identifier hs-var hs-var">fromResponse</span></a></span></span><span> </span><span id="local-6989586621679103290"><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103290"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103289"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103288"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103287"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103287"><span class="hs-identifier hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-29"></span><span>    </span><span id="local-6989586621679103286"><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">InternalInfo -&gt; IO GMTDate
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#fromResponse"><span class="hs-identifier hs-var hs-var">fromResponse</span></a></span></span><span> </span><span id="local-6989586621679103308"><span class="annot"><span class="annottext">Settings
+</span><a href="#local-6989586621679103308"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679103307"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103307"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103306"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679103306"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679103305"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103305"><span class="hs-identifier hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-29"></span><span>    </span><span id="local-6989586621679103304"><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103304"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">InternalInfo -&gt; IO GMTDate
 </span><a href="Network.Wai.Handler.Warp.Types.html#getDate"><span class="hs-identifier hs-var hs-var">getDate</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">ii</span></a></span><span>
-</span><span id="line-30"></span><span>    </span><span id="local-6989586621679103284"><span class="annot"><span class="annottext">rspst :: (Response, Status, Bool)
-</span><a href="#local-6989586621679103284"><span class="hs-identifier hs-var">rspst</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679103283"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103283"><span class="hs-identifier hs-var">h2rsp</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103282"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103282"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103281"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103281"><span class="hs-identifier hs-var">hasBody</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103287"><span class="hs-identifier hs-var">rsp</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-31"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span>    </span><span id="local-6989586621679103279"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103279"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103278"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103278"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103277"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103277"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span id="local-6989586621679103276"><span class="annot"><span class="annottext">Maybe FilePart
-</span><a href="#local-6989586621679103276"><span class="hs-identifier hs-var">mpart</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-32"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103275"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
-</span><a href="#local-6989586621679103275"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
-</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103278"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103307"><span class="hs-identifier hs-var">ii</span></a></span><span>
+</span><span id="line-30"></span><span>    </span><span id="local-6989586621679103302"><span class="annot"><span class="annottext">rspst :: (Response, Status, Bool)
+</span><a href="#local-6989586621679103302"><span class="hs-identifier hs-var">rspst</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679103301"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103301"><span class="hs-identifier hs-var">h2rsp</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103300"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103300"><span class="hs-identifier hs-var">st</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679103299"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103299"><span class="hs-identifier hs-var">hasBody</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103305"><span class="hs-identifier hs-var">rsp</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-31"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span>    </span><span id="local-6989586621679103297"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103297"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103296"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103296"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103295"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679103295"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span id="local-6989586621679103294"><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679103294"><span class="hs-identifier hs-var">mpart</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-32"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103293"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
+</span><a href="#local-6989586621679103293"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103292"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103304"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103291"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103296"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-33"></span><span>          </span><span class="annot"><span class="annottext">Status
 -&gt; ResponseHeaders
 -&gt; Bool
@@ -65,23 +65,23 @@
 -&gt; ResponseHeaders
 -&gt; IO (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var">responseFile</span></a></span><span>    </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103279"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103275"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103271"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103277"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
-</span><a href="#local-6989586621679103276"><span class="hs-identifier hs-var">mpart</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103270"><span class="hs-identifier hs-var">reqhdr</span></a></span><span>
-</span><span id="line-34"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseBuilder</span></span><span> </span><span id="local-6989586621679103268"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103268"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103267"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103267"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103266"><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679103266"><span class="hs-identifier hs-var">builder</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-35"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103265"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
-</span><a href="#local-6989586621679103265"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
-</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103267"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103297"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103293"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679103295"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679103294"><span class="hs-identifier hs-var">mpart</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103307"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var">reqhdr</span></a></span><span>
+</span><span id="line-34"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseBuilder</span></span><span> </span><span id="local-6989586621679103286"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103285"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103285"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103284"><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679103284"><span class="hs-identifier hs-var">builder</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-35"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103283"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
+</span><a href="#local-6989586621679103283"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103292"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103304"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103291"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103285"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-36"></span><span>          </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
@@ -90,20 +90,20 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status
 -&gt; ResponseHeaders -&gt; Bool -&gt; Builder -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseBuilder"><span class="hs-identifier hs-var">responseBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103268"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103265"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103271"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679103266"><span class="hs-identifier hs-var">builder</span></a></span><span>
-</span><span id="line-37"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseStream</span></span><span>  </span><span id="local-6989586621679103262"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103262"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103261"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103261"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103260"><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679103260"><span class="hs-identifier hs-var">strmbdy</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-38"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103259"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
-</span><a href="#local-6989586621679103259"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
-</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103261"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103286"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103283"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679103284"><span class="hs-identifier hs-var">builder</span></a></span><span>
+</span><span id="line-37"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">ResponseStream</span></span><span>  </span><span id="local-6989586621679103280"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103280"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103279"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103279"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103278"><span class="annot"><span class="annottext">StreamingBody
+</span><a href="#local-6989586621679103278"><span class="hs-identifier hs-var">strmbdy</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-38"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103277"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
+</span><a href="#local-6989586621679103277"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103292"><span class="hs-identifier hs-var">add</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103304"><span class="hs-identifier hs-var">date</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103291"><span class="hs-identifier hs-var">svr</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103279"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-39"></span><span>          </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
@@ -115,79 +115,79 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; StreamingBody
 -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseStream"><span class="hs-identifier hs-var">responseStream</span></a></span><span>  </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103262"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103259"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103271"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679103260"><span class="hs-identifier hs-var">strmbdy</span></a></span><span>
+</span><a href="#local-6989586621679103280"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103277"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">StreamingBody
+</span><a href="#local-6989586621679103278"><span class="hs-identifier hs-var">strmbdy</span></a></span><span>
 </span><span id="line-40"></span><span>      </span><span class="annot"><span class="annottext">Response
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO (Response, Status, Bool)
 forall a. HasCallStack =&gt; FilePath -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-string">&quot;ResponseRaw is not supported in HTTP/2&quot;</span></span><span>
-</span><span id="line-41"></span><span>    </span><span id="local-6989586621679103256"><span class="annot"><span class="annottext">Maybe HTTP2Data
-</span><a href="#local-6989586621679103256"><span class="hs-identifier hs-var">mh2data</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO (Maybe HTTP2Data)
+</span><span id="line-41"></span><span>    </span><span id="local-6989586621679103274"><span class="annot"><span class="annottext">Maybe HTTP2Data
+</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var">mh2data</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO (Maybe HTTP2Data)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Request.html#getHTTP2Data"><span class="hs-identifier hs-var">getHTTP2Data</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679103306"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-42"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe HTTP2Data
-</span><a href="#local-6989586621679103256"><span class="hs-identifier hs-var">mh2data</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var">mh2data</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-43"></span><span>      </span><span class="annot"><span class="annottext">Maybe HTTP2Data
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool)
-</span><a href="#local-6989586621679103284"><span class="hs-identifier hs-var">rspst</span></a></span><span>
-</span><span id="line-44"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103255"><span class="annot"><span class="annottext">HTTP2Data
-</span><a href="#local-6989586621679103255"><span class="hs-identifier hs-var">h2data</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-45"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679103254"><span class="annot"><span class="annottext">trailers :: TrailersMaker
-</span><a href="#local-6989586621679103254"><span class="hs-identifier hs-var hs-var">trailers</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HTTP2Data -&gt; TrailersMaker
+</span><a href="#local-6989586621679103302"><span class="hs-identifier hs-var">rspst</span></a></span><span>
+</span><span id="line-44"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103273"><span class="annot"><span class="annottext">HTTP2Data
+</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var">h2data</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-45"></span><span>          </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679103272"><span class="annot"><span class="annottext">trailers :: TrailersMaker
+</span><a href="#local-6989586621679103272"><span class="hs-identifier hs-var hs-var">trailers</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HTTP2Data -&gt; TrailersMaker
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Types.html#http2dataTrailers"><span class="hs-identifier hs-var hs-var">http2dataTrailers</span></a></span><span> </span><span class="annot"><span class="annottext">HTTP2Data
-</span><a href="#local-6989586621679103255"><span class="hs-identifier hs-var">h2data</span></a></span><span>
-</span><span id="line-46"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679103252"><span class="annot"><span class="annottext">h2rsp' :: Response
-</span><a href="#local-6989586621679103252"><span class="hs-identifier hs-var hs-var">h2rsp'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; TrailersMaker -&gt; Response
+</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var">h2data</span></a></span><span>
+</span><span id="line-46"></span><span>              </span><span class="hs-glyph">!</span><span id="local-6989586621679103270"><span class="annot"><span class="annottext">h2rsp' :: Response
+</span><a href="#local-6989586621679103270"><span class="hs-identifier hs-var hs-var">h2rsp'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; TrailersMaker -&gt; Response
 </span><span class="hs-identifier hs-var">H2.setResponseTrailersMaker</span></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103283"><span class="hs-identifier hs-var">h2rsp</span></a></span><span> </span><span class="annot"><span class="annottext">TrailersMaker
-</span><a href="#local-6989586621679103254"><span class="hs-identifier hs-var">trailers</span></a></span><span>
+</span><a href="#local-6989586621679103301"><span class="hs-identifier hs-var">h2rsp</span></a></span><span> </span><span class="annot"><span class="annottext">TrailersMaker
+</span><a href="#local-6989586621679103272"><span class="hs-identifier hs-var">trailers</span></a></span><span>
 </span><span id="line-47"></span><span>          </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103252"><span class="hs-identifier hs-var">h2rsp'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103282"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103281"><span class="hs-identifier hs-var">hasBody</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679103270"><span class="hs-identifier hs-var">h2rsp'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103300"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103299"><span class="hs-identifier hs-var">hasBody</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-48"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-49"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103271"><span class="annot"><span class="annottext">isHead :: Bool
-</span><a href="#local-6989586621679103271"><span class="hs-identifier hs-var hs-var">isHead</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; GMTDate
+</span><span id="line-49"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103289"><span class="annot"><span class="annottext">isHead :: Bool
+</span><a href="#local-6989586621679103289"><span class="hs-identifier hs-var hs-var">isHead</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; GMTDate
 </span><span class="hs-identifier hs-var hs-var">requestMethod</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; Bool
+</span><a href="#local-6989586621679103306"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; GMTDate -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">GMTDate
 </span><span class="hs-identifier hs-var">H.methodHead</span></span><span>
-</span><span id="line-50"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103270"><span class="annot"><span class="annottext">reqhdr :: ResponseHeaders
-</span><a href="#local-6989586621679103270"><span class="hs-identifier hs-var hs-var">reqhdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; ResponseHeaders
+</span><span id="line-50"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103288"><span class="annot"><span class="annottext">reqhdr :: ResponseHeaders
+</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var hs-var">reqhdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; ResponseHeaders
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679103288"><span class="hs-identifier hs-var">req</span></a></span><span>
-</span><span id="line-51"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103273"><span class="annot"><span class="annottext">svr :: GMTDate
-</span><a href="#local-6989586621679103273"><span class="hs-identifier hs-var hs-var">svr</span></a></span></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; GMTDate
+</span><a href="#local-6989586621679103306"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><span id="line-51"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103291"><span class="annot"><span class="annottext">svr :: GMTDate
+</span><a href="#local-6989586621679103291"><span class="hs-identifier hs-var hs-var">svr</span></a></span></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; GMTDate
 </span><a href="Network.Wai.Handler.Warp.Settings.html#settingsServerName"><span class="hs-identifier hs-var hs-var">S.settingsServerName</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103290"><span class="hs-identifier hs-var">settings</span></a></span><span>
-</span><span id="line-52"></span><span>    </span><span id="local-6989586621679103274"><span class="annot"><span class="annottext">add :: GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
-</span><a href="#local-6989586621679103274"><span class="hs-identifier hs-var hs-var">add</span></a></span></span><span> </span><span id="local-6989586621679103246"><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103246"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679103245"><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103245"><span class="hs-identifier hs-var">server</span></a></span></span><span> </span><span id="local-6989586621679103244"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103244"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103308"><span class="hs-identifier hs-var">settings</span></a></span><span>
+</span><span id="line-52"></span><span>    </span><span id="local-6989586621679103292"><span class="annot"><span class="annottext">add :: GMTDate -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103292"><span class="hs-identifier hs-var hs-var">add</span></a></span></span><span> </span><span id="local-6989586621679103264"><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103264"><span class="hs-identifier hs-var">date</span></a></span></span><span> </span><span id="local-6989586621679103263"><span class="annot"><span class="annottext">GMTDate
+</span><a href="#local-6989586621679103263"><span class="hs-identifier hs-var">server</span></a></span></span><span> </span><span id="local-6989586621679103262"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103262"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings -&gt; ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.Wai.Handler.Warp.Response.html#addAltSvc"><span class="hs-identifier hs-var">R.addAltSvc</span></a></span><span> </span><span class="annot"><span class="annottext">Settings
-</span><a href="#local-6989586621679103290"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">(ResponseHeaders -&gt; ResponseHeaders)
+</span><a href="#local-6989586621679103308"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">(ResponseHeaders -&gt; ResponseHeaders)
 -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-53"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">H.hDate</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103246"><span class="hs-identifier hs-var">date</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(HeaderName, GMTDate) -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103264"><span class="hs-identifier hs-var">date</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(HeaderName, GMTDate) -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">H.hServer</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GMTDate
-</span><a href="#local-6989586621679103245"><span class="hs-identifier hs-var">server</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(HeaderName, GMTDate) -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679103263"><span class="hs-identifier hs-var">server</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(HeaderName, GMTDate) -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103244"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103262"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-54"></span><span>    </span><span class="hs-comment">-- fixme: not adding svr if already exists</span><span>
 </span><span id="line-55"></span><span>
 </span><span id="line-56"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
@@ -203,9 +203,9 @@ forall a. a -&gt; [a] -&gt; [a]
 -&gt; InternalInfo
 -&gt; ResponseHeaders
 -&gt; IO (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var hs-var">responseFile</span></a></span></span><span> </span><span id="local-6989586621679103239"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103238"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103238"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var hs-var">responseFile</span></a></span></span><span> </span><span id="local-6989586621679103257"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103257"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103256"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103256"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">InternalInfo
@@ -213,22 +213,22 @@ forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier">_</span></span><span>
 </span><span id="line-62"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Status -&gt; Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#noBody"><span class="hs-identifier hs-var">noBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
+</span><a href="#local-6989586621679103257"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
 -&gt; (Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103238"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103257"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103256"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-63"></span><span>
-</span><span id="line-64"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var">responseFile</span></a></span><span> </span><span id="local-6989586621679103235"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103235"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103234"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103234"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103233"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103233"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103232"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103232"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103231"><span class="annot"><span class="annottext">FilePart
-</span><a href="#local-6989586621679103231"><span class="hs-identifier hs-var">fp</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">InternalInfo
+</span><span id="line-64"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var">responseFile</span></a></span><span> </span><span id="local-6989586621679103253"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103253"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103252"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103252"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103251"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103251"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103250"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679103250"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679103249"><span class="annot"><span class="annottext">FilePart
+</span><a href="#local-6989586621679103249"><span class="hs-identifier hs-var">fp</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">InternalInfo
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-65"></span><span>    </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
@@ -239,44 +239,44 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status
 -&gt; ResponseHeaders -&gt; Bool -&gt; FileSpec -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile2XX"><span class="hs-identifier hs-var">responseFile2XX</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103235"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103234"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103233"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
-</span><a href="#local-6989586621679103229"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
+</span><a href="#local-6989586621679103253"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103252"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103251"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
+</span><a href="#local-6989586621679103247"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
 </span><span id="line-66"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-67"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103228"><span class="annot"><span class="annottext">off' :: FileOffset
-</span><a href="#local-6989586621679103228"><span class="hs-identifier hs-var hs-var">off'</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
+</span><span id="line-67"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103246"><span class="annot"><span class="annottext">off' :: FileOffset
+</span><a href="#local-6989586621679103246"><span class="hs-identifier hs-var hs-var">off'</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; FileOffset) -&gt; Integer -&gt; FileOffset
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePart -&gt; Integer
 </span><span class="hs-identifier hs-var hs-var">filePartOffset</span></span><span> </span><span class="annot"><span class="annottext">FilePart
-</span><a href="#local-6989586621679103231"><span class="hs-identifier hs-var">fp</span></a></span><span>
-</span><span id="line-68"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103226"><span class="annot"><span class="annottext">bytes' :: FileOffset
-</span><a href="#local-6989586621679103226"><span class="hs-identifier hs-var hs-var">bytes'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
+</span><a href="#local-6989586621679103249"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><span id="line-68"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103244"><span class="annot"><span class="annottext">bytes' :: FileOffset
+</span><a href="#local-6989586621679103244"><span class="hs-identifier hs-var hs-var">bytes'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Integer -&gt; FileOffset) -&gt; Integer -&gt; FileOffset
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePart -&gt; Integer
 </span><span class="hs-identifier hs-var hs-var">filePartByteCount</span></span><span> </span><span class="annot"><span class="annottext">FilePart
-</span><a href="#local-6989586621679103231"><span class="hs-identifier hs-var">fp</span></a></span><span>
-</span><span id="line-69"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103229"><span class="annot"><span class="annottext">fileSpec :: FileSpec
-</span><a href="#local-6989586621679103229"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FileOffset -&gt; FileOffset -&gt; FileSpec
+</span><a href="#local-6989586621679103249"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><span id="line-69"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103247"><span class="annot"><span class="annottext">fileSpec :: FileSpec
+</span><a href="#local-6989586621679103247"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FileOffset -&gt; FileOffset -&gt; FileSpec
 </span><span class="hs-identifier hs-var">H2.FileSpec</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103232"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679103228"><span class="hs-identifier hs-var">off'</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679103226"><span class="hs-identifier hs-var">bytes'</span></a></span><span>
+</span><a href="#local-6989586621679103250"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679103246"><span class="hs-identifier hs-var">off'</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679103244"><span class="hs-identifier hs-var">bytes'</span></a></span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile"><span class="hs-identifier hs-var">responseFile</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679103223"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103223"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103222"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103222"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103221"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103221"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span id="local-6989586621679103220"><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103220"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103219"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103219"><span class="hs-identifier hs-var">reqhdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-72"></span><span>    </span><span id="local-6989586621679103218"><span class="annot"><span class="annottext">Either IOException FileInfo
-</span><a href="#local-6989586621679103218"><span class="hs-identifier hs-var">efinfo</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileInfo -&gt; IO (Either IOException FileInfo)
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679103241"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103241"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103240"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103240"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103239"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span id="local-6989586621679103238"><span class="annot"><span class="annottext">InternalInfo
+</span><a href="#local-6989586621679103238"><span class="hs-identifier hs-var">ii</span></a></span></span><span> </span><span id="local-6989586621679103237"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103237"><span class="hs-identifier hs-var">reqhdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-72"></span><span>    </span><span id="local-6989586621679103236"><span class="annot"><span class="annottext">Either IOException FileInfo
+</span><a href="#local-6989586621679103236"><span class="hs-identifier hs-var">efinfo</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO FileInfo -&gt; IO (Either IOException FileInfo)
 forall (m :: * -&gt; *) a.
 MonadUnliftIO m =&gt;
 m a -&gt; m (Either IOException a)
@@ -285,67 +285,67 @@ m a -&gt; m (Either IOException a)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">InternalInfo -&gt; FilePath -&gt; IO FileInfo
 </span><a href="Network.Wai.Handler.Warp.Types.html#getFileInfo"><span class="hs-identifier hs-var hs-var">getFileInfo</span></a></span><span> </span><span class="annot"><span class="annottext">InternalInfo
-</span><a href="#local-6989586621679103220"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103221"><span class="hs-identifier hs-var">path</span></a></span><span>
+</span><a href="#local-6989586621679103238"><span class="hs-identifier hs-var">ii</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">path</span></a></span><span>
 </span><span id="line-73"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Either IOException FileInfo
-</span><a href="#local-6989586621679103218"><span class="hs-identifier hs-var">efinfo</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-74"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103215"><span class="annot"><span class="annottext">IOException
-</span><a href="#local-6989586621679103215"><span class="hs-identifier hs-var">_ex</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
+</span><a href="#local-6989586621679103236"><span class="hs-identifier hs-var">efinfo</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-74"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679103233"><span class="annot"><span class="annottext">IOException
+</span><a href="#local-6989586621679103233"><span class="hs-identifier hs-var">_ex</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">UnliftIO.IOException</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
 -&gt; (Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#response404"><span class="hs-identifier hs-var">response404</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103223"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
-</span><span id="line-75"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679103213"><span class="annot"><span class="annottext">FileInfo
-</span><a href="#local-6989586621679103213"><span class="hs-identifier hs-var">finfo</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-76"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103212"><span class="annot"><span class="annottext">reqidx :: IndexedHeader
-</span><a href="#local-6989586621679103212"><span class="hs-identifier hs-var hs-var">reqidx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; IndexedHeader
+</span><a href="#local-6989586621679103241"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><span id="line-75"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679103231"><span class="annot"><span class="annottext">FileInfo
+</span><a href="#local-6989586621679103231"><span class="hs-identifier hs-var">finfo</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-76"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679103230"><span class="annot"><span class="annottext">reqidx :: IndexedHeader
+</span><a href="#local-6989586621679103230"><span class="hs-identifier hs-var hs-var">reqidx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; IndexedHeader
 </span><a href="Network.Wai.Handler.Warp.Header.html#indexRequestHeader"><span class="hs-identifier hs-var">indexRequestHeader</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103219"><span class="hs-identifier hs-var">reqhdr</span></a></span><span>
-</span><span id="line-77"></span><span>                </span><span id="local-6989586621679103210"><span class="annot"><span class="annottext">rspidx :: IndexedHeader
-</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var hs-var">rspidx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; IndexedHeader
+</span><a href="#local-6989586621679103237"><span class="hs-identifier hs-var">reqhdr</span></a></span><span>
+</span><span id="line-77"></span><span>                </span><span id="local-6989586621679103228"><span class="annot"><span class="annottext">rspidx :: IndexedHeader
+</span><a href="#local-6989586621679103228"><span class="hs-identifier hs-var hs-var">rspidx</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; IndexedHeader
 </span><a href="Network.Wai.Handler.Warp.Header.html#indexResponseHeader"><span class="hs-identifier hs-var">indexResponseHeader</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103223"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103241"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-78"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">FileInfo
 -&gt; ResponseHeaders -&gt; IndexedHeader -&gt; IndexedHeader -&gt; RspFileInfo
 </span><a href="Network.Wai.Handler.Warp.File.html#conditionalRequest"><span class="hs-identifier hs-var">conditionalRequest</span></a></span><span> </span><span class="annot"><span class="annottext">FileInfo
-</span><a href="#local-6989586621679103213"><span class="hs-identifier hs-var">finfo</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103223"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">rspidx</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
-</span><a href="#local-6989586621679103212"><span class="hs-identifier hs-var">reqidx</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-79"></span><span>                </span><span class="annot"><a href="Network.Wai.Handler.Warp.File.html#WithoutBody"><span class="hs-identifier hs-type">WithoutBody</span></a></span><span> </span><span id="local-6989586621679103206"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103206"><span class="hs-identifier hs-var">s</span></a></span></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
+</span><a href="#local-6989586621679103231"><span class="hs-identifier hs-var">finfo</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103241"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103228"><span class="hs-identifier hs-var">rspidx</span></a></span><span> </span><span class="annot"><span class="annottext">IndexedHeader
+</span><a href="#local-6989586621679103230"><span class="hs-identifier hs-var">reqidx</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-79"></span><span>                </span><span class="annot"><a href="Network.Wai.Handler.Warp.File.html#WithoutBody"><span class="hs-identifier hs-type">WithoutBody</span></a></span><span> </span><span id="local-6989586621679103224"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103224"><span class="hs-identifier hs-var">s</span></a></span></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
 -&gt; (Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103206"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103223"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
-</span><span id="line-80"></span><span>                </span><span class="annot"><a href="Network.Wai.Handler.Warp.File.html#WithBody"><span class="hs-identifier hs-type">WithBody</span></a></span><span> </span><span id="local-6989586621679103204"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679103203"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103203"><span class="hs-identifier hs-var">rsphdr'</span></a></span></span><span> </span><span id="local-6989586621679103202"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679103202"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679103201"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679103201"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-81"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679103200"><span class="annot"><span class="annottext">off' :: FileOffset
-</span><a href="#local-6989586621679103200"><span class="hs-identifier hs-var hs-var">off'</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
+</span><a href="#local-6989586621679103224"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103241"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><span id="line-80"></span><span>                </span><span class="annot"><a href="Network.Wai.Handler.Warp.File.html#WithBody"><span class="hs-identifier hs-type">WithBody</span></a></span><span> </span><span id="local-6989586621679103222"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103222"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679103221"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103221"><span class="hs-identifier hs-var">rsphdr'</span></a></span></span><span> </span><span id="local-6989586621679103220"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679103220"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679103219"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679103219"><span class="hs-identifier hs-var">bytes</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-81"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679103218"><span class="annot"><span class="annottext">off' :: FileOffset
+</span><a href="#local-6989586621679103218"><span class="hs-identifier hs-var hs-var">off'</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679103202"><span class="hs-identifier hs-var">off</span></a></span><span>
-</span><span id="line-82"></span><span>                        </span><span class="hs-glyph">!</span><span id="local-6989586621679103199"><span class="annot"><span class="annottext">bytes' :: FileOffset
-</span><a href="#local-6989586621679103199"><span class="hs-identifier hs-var hs-var">bytes'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
+</span><a href="#local-6989586621679103220"><span class="hs-identifier hs-var">off</span></a></span><span>
+</span><span id="line-82"></span><span>                        </span><span class="hs-glyph">!</span><span id="local-6989586621679103217"><span class="annot"><span class="annottext">bytes' :: FileOffset
+</span><a href="#local-6989586621679103217"><span class="hs-identifier hs-var hs-var">bytes'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer -&gt; FileOffset
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679103201"><span class="hs-identifier hs-var">bytes</span></a></span><span>
-</span><span id="line-83"></span><span>                        </span><span class="hs-glyph">!</span><span id="local-6989586621679103198"><span class="annot"><span class="annottext">fileSpec :: FileSpec
-</span><a href="#local-6989586621679103198"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FileOffset -&gt; FileOffset -&gt; FileSpec
+</span><a href="#local-6989586621679103219"><span class="hs-identifier hs-var">bytes</span></a></span><span>
+</span><span id="line-83"></span><span>                        </span><span class="hs-glyph">!</span><span id="local-6989586621679103216"><span class="annot"><span class="annottext">fileSpec :: FileSpec
+</span><a href="#local-6989586621679103216"><span class="hs-identifier hs-var hs-var">fileSpec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FileOffset -&gt; FileOffset -&gt; FileSpec
 </span><span class="hs-identifier hs-var">H2.FileSpec</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679103221"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679103200"><span class="hs-identifier hs-var">off'</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
-</span><a href="#local-6989586621679103199"><span class="hs-identifier hs-var">bytes'</span></a></span><span>
+</span><a href="#local-6989586621679103239"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679103218"><span class="hs-identifier hs-var">off'</span></a></span><span> </span><span class="annot"><span class="annottext">FileOffset
+</span><a href="#local-6989586621679103217"><span class="hs-identifier hs-var">bytes'</span></a></span><span>
 </span><span id="line-84"></span><span>                    </span><span class="annot"><span class="annottext">(Response, Status, Bool) -&gt; IO (Response, Status, Bool)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">((Response, Status, Bool) -&gt; IO (Response, Status, Bool))
@@ -354,33 +354,33 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status
 -&gt; ResponseHeaders -&gt; Bool -&gt; FileSpec -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile2XX"><span class="hs-identifier hs-var">responseFile2XX</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103203"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103222"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
-</span><a href="#local-6989586621679103198"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
+</span><a href="#local-6989586621679103222"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103221"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103240"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
+</span><a href="#local-6989586621679103216"><span class="hs-identifier hs-var">fileSpec</span></a></span><span>
 </span><span id="line-85"></span><span>
 </span><span id="line-86"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-87"></span><span>
 </span><span id="line-88"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile2XX"><span class="hs-identifier hs-type">responseFile2XX</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H2.FileSpec</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H2.Response</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-89"></span><span id="responseFile2XX"><span class="annot"><span class="annottext">responseFile2XX :: Status
 -&gt; ResponseHeaders -&gt; Bool -&gt; FileSpec -&gt; (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile2XX"><span class="hs-identifier hs-var hs-var">responseFile2XX</span></a></span></span><span> </span><span id="local-6989586621679103197"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103196"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103196"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103195"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103195"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103194"><span class="annot"><span class="annottext">FileSpec
-</span><a href="#local-6989586621679103194"><span class="hs-identifier hs-var">fileSpec</span></a></span></span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseFile2XX"><span class="hs-identifier hs-var hs-var">responseFile2XX</span></a></span></span><span> </span><span id="local-6989586621679103215"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103215"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103214"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103214"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103213"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103213"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103212"><span class="annot"><span class="annottext">FileSpec
+</span><a href="#local-6989586621679103212"><span class="hs-identifier hs-var">fileSpec</span></a></span></span><span>
 </span><span id="line-90"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103195"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
+</span><a href="#local-6989586621679103213"><span class="hs-identifier hs-var">isHead</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103196"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103215"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103214"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-91"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; FileSpec -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103196"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
-</span><a href="#local-6989586621679103194"><span class="hs-identifier hs-var">fileSpec</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103215"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103214"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">FileSpec
+</span><a href="#local-6989586621679103212"><span class="hs-identifier hs-var">fileSpec</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103215"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span class="hs-special">)</span><span>
 </span><span id="line-92"></span><span>
 </span><span id="line-93"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
@@ -390,29 +390,29 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-97"></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H2.Response</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-98"></span><span id="responseBuilder"><span class="annot"><span class="annottext">responseBuilder :: Status
 -&gt; ResponseHeaders -&gt; Bool -&gt; Builder -&gt; (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseBuilder"><span class="hs-identifier hs-var hs-var">responseBuilder</span></a></span></span><span> </span><span id="local-6989586621679103192"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103191"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103191"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103190"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103190"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103189"><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679103189"><span class="hs-identifier hs-var">builder</span></a></span></span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseBuilder"><span class="hs-identifier hs-var hs-var">responseBuilder</span></a></span></span><span> </span><span id="local-6989586621679103210"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103209"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103209"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103208"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103208"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103207"><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679103207"><span class="hs-identifier hs-var">builder</span></a></span></span><span>
 </span><span id="line-99"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Status -&gt; Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#noBody"><span class="hs-identifier hs-var">noBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103191"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103209"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-100"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103190"><span class="hs-identifier hs-var">isHead</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
+</span><a href="#local-6989586621679103208"><span class="hs-identifier hs-var">isHead</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103191"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103209"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-101"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Builder -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseBuilder</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103191"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679103189"><span class="hs-identifier hs-var">builder</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103192"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103209"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679103207"><span class="hs-identifier hs-var">builder</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103210"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span class="hs-special">)</span><span>
 </span><span id="line-102"></span><span>
 </span><span id="line-103"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
@@ -425,71 +425,71 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; Bool
 -&gt; StreamingBody
 -&gt; (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseStream"><span class="hs-identifier hs-var hs-var">responseStream</span></a></span></span><span> </span><span id="local-6989586621679103187"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103186"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103186"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103185"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103185"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103184"><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679103184"><span class="hs-identifier hs-var">strmbdy</span></a></span></span><span>
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseStream"><span class="hs-identifier hs-var hs-var">responseStream</span></a></span></span><span> </span><span id="local-6989586621679103205"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103204"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span id="local-6989586621679103203"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103203"><span class="hs-identifier hs-var">isHead</span></a></span></span><span> </span><span id="local-6989586621679103202"><span class="annot"><span class="annottext">StreamingBody
+</span><a href="#local-6989586621679103202"><span class="hs-identifier hs-var">strmbdy</span></a></span></span><span>
 </span><span id="line-109"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Status -&gt; Bool
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#noBody"><span class="hs-identifier hs-var">noBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103186"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-110"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679103185"><span class="hs-identifier hs-var">isHead</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
+</span><a href="#local-6989586621679103203"><span class="hs-identifier hs-var">isHead</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
 </span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var">responseNoBody</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103186"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
 </span><span id="line-111"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; StreamingBody -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseStreaming</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103186"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679103184"><span class="hs-identifier hs-var">strmbdy</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103187"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103204"><span class="hs-identifier hs-var">rsphdr</span></a></span><span> </span><span class="annot"><span class="annottext">StreamingBody
+</span><a href="#local-6989586621679103202"><span class="hs-identifier hs-var">strmbdy</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103205"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span class="hs-special">)</span><span>
 </span><span id="line-112"></span><span>
 </span><span id="line-113"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-114"></span><span>
 </span><span id="line-115"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-type">responseNoBody</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H2.Response</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-116"></span><span id="responseNoBody"><span class="annot"><span class="annottext">responseNoBody :: Status -&gt; ResponseHeaders -&gt; (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var hs-var">responseNoBody</span></a></span></span><span> </span><span id="local-6989586621679103182"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103182"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103181"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103181"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Response
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#responseNoBody"><span class="hs-identifier hs-var hs-var">responseNoBody</span></a></span></span><span> </span><span id="local-6989586621679103200"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103200"><span class="hs-identifier hs-var">st</span></a></span></span><span> </span><span id="local-6989586621679103199"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103199"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseNoBody</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103182"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103181"><span class="hs-identifier hs-var">rsphdr</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103182"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679103200"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103199"><span class="hs-identifier hs-var">rsphdr</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103200"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span class="hs-special">)</span><span>
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-119"></span><span>
 </span><span id="line-120"></span><span class="annot"><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#response404"><span class="hs-identifier hs-type">response404</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.ResponseHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H2.Response</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Status</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-121"></span><span id="response404"><span class="annot"><span class="annottext">response404 :: ResponseHeaders -&gt; (Response, Status, Bool)
-</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#response404"><span class="hs-identifier hs-var hs-var">response404</span></a></span></span><span> </span><span id="local-6989586621679103179"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103179"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679103178"><span class="hs-identifier hs-var">h2rsp</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103177"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="Network.Wai.Handler.Warp.HTTP2.Response.html#response404"><span class="hs-identifier hs-var hs-var">response404</span></a></span></span><span> </span><span id="local-6989586621679103197"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">rsphdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679103196"><span class="hs-identifier hs-var">h2rsp</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103195"><span class="hs-identifier hs-var">st</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span class="hs-special">)</span><span>
 </span><span id="line-122"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-123"></span><span>    </span><span id="local-6989586621679103178"><span class="annot"><span class="annottext">h2rsp :: Response
-</span><a href="#local-6989586621679103178"><span class="hs-identifier hs-var hs-var">h2rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Builder -&gt; Response
+</span><span id="line-123"></span><span>    </span><span id="local-6989586621679103196"><span class="annot"><span class="annottext">h2rsp :: Response
+</span><a href="#local-6989586621679103196"><span class="hs-identifier hs-var hs-var">h2rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Builder -&gt; Response
 </span><span class="hs-identifier hs-var">H2.responseBuilder</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679103177"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103176"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679103175"><span class="hs-identifier hs-var">body</span></a></span><span>
-</span><span id="line-124"></span><span>    </span><span id="local-6989586621679103177"><span class="annot"><span class="annottext">st :: Status
-</span><a href="#local-6989586621679103177"><span class="hs-identifier hs-var hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679103195"><span class="hs-identifier hs-var">st</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679103194"><span class="hs-identifier hs-var">rsphdr'</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679103193"><span class="hs-identifier hs-var">body</span></a></span><span>
+</span><span id="line-124"></span><span>    </span><span id="local-6989586621679103195"><span class="annot"><span class="annottext">st :: Status
+</span><a href="#local-6989586621679103195"><span class="hs-identifier hs-var hs-var">st</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Status
 </span><span class="hs-identifier hs-var">H.notFound404</span></span><span>
-</span><span id="line-125"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103176"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
-</span><a href="#local-6989586621679103176"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><span id="line-125"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103194"><span class="annot"><span class="annottext">rsphdr' :: ResponseHeaders
+</span><a href="#local-6989586621679103194"><span class="hs-identifier hs-var hs-var">rsphdr'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; GMTDate -&gt; ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.Wai.Handler.Warp.Response.html#replaceHeader"><span class="hs-identifier hs-var">R.replaceHeader</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">H.hContentType</span></span><span> </span><span class="annot"><span class="annottext">GMTDate
 </span><span class="hs-string">&quot;text/plain; charset=utf-8&quot;</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679103179"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
-</span><span id="line-126"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103175"><span class="annot"><span class="annottext">body :: Builder
-</span><a href="#local-6989586621679103175"><span class="hs-identifier hs-var hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; Builder
+</span><a href="#local-6989586621679103197"><span class="hs-identifier hs-var">rsphdr</span></a></span><span>
+</span><span id="line-126"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679103193"><span class="annot"><span class="annottext">body :: Builder
+</span><a href="#local-6989586621679103193"><span class="hs-identifier hs-var hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GMTDate -&gt; Builder
 </span><span class="hs-identifier hs-var">BB.byteString</span></span><span> </span><span class="annot"><span class="annottext">GMTDate
 </span><span class="hs-string">&quot;File not found&quot;</span></span><span>
 </span><span id="line-127"></span><span>

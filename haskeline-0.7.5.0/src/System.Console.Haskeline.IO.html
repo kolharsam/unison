@@ -48,7 +48,7 @@ main = bracketOnError (initializeInput defaultSettings)
 </span><span id="line-48"></span><span class="hs-comment">-- A process is forked off which runs the monadic InputT API</span><span>
 </span><span id="line-49"></span><span class="hs-comment">-- and actions to be run are passed to it through the following MVars.</span><span>
 </span><span id="line-50"></span><span>
-</span><span id="line-51"></span><span class="hs-keyword">data</span><span> </span><span id="Request"><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-var">Request</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679081641"><span class="annot"><a href="#local-6989586621679081641"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-operator">.</span><span> </span><span id="Request"><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-var">Request</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.InputT.html#InputT"><span class="hs-identifier hs-type">InputT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081641"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MVar</span></span><span> </span><span class="annot"><a href="#local-6989586621679081641"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-51"></span><span class="hs-keyword">data</span><span> </span><span id="Request"><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-var">Request</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679081666"><span class="annot"><a href="#local-6989586621679081666"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-operator">.</span><span> </span><span id="Request"><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-var">Request</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.InputT.html#InputT"><span class="hs-identifier hs-type">InputT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081666"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MVar</span></span><span> </span><span class="annot"><a href="#local-6989586621679081666"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-52"></span><span>
 </span><span id="line-53"></span><span class="hs-keyword">data</span><span> </span><span id="InputState"><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-var">InputState</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="HD"><span class="annot"><a href="System.Console.Haskeline.IO.html#HD"><span class="hs-identifier hs-var">HD</span></a></span></span><span> </span><span class="hs-special">{</span><span id="forkedThread"><span class="annot"><span class="annottext">InputState -&gt; ThreadId
 </span><a href="System.Console.Haskeline.IO.html#forkedThread"><span class="hs-identifier hs-var hs-var">forkedThread</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ThreadId</span></span><span class="hs-special">,</span><span>
@@ -61,58 +61,58 @@ main = bracketOnError (initializeInput defaultSettings)
 </span><span id="line-58"></span><span class="hs-comment">-- | Initialize a session of line-oriented user interaction.</span><span>
 </span><span id="line-59"></span><span class="annot"><a href="System.Console.Haskeline.IO.html#initializeInput"><span class="hs-identifier hs-type">initializeInput</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.InputT.html#Settings"><span class="hs-identifier hs-type">Settings</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-type">InputState</span></a></span><span>
 </span><span id="line-60"></span><span id="initializeInput"><span class="annot"><span class="annottext">initializeInput :: Settings IO -&gt; IO InputState
-</span><a href="System.Console.Haskeline.IO.html#initializeInput"><span class="hs-identifier hs-var hs-var">initializeInput</span></a></span></span><span> </span><span id="local-6989586621679081630"><span class="annot"><span class="annottext">Settings IO
-</span><a href="#local-6989586621679081630"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-61"></span><span>    </span><span id="local-6989586621679081629"><span class="annot"><span class="annottext">MVar (Maybe Request)
-</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">reqV</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar (Maybe Request))
+</span><a href="System.Console.Haskeline.IO.html#initializeInput"><span class="hs-identifier hs-var hs-var">initializeInput</span></a></span></span><span> </span><span id="local-6989586621679081655"><span class="annot"><span class="annottext">Settings IO
+</span><a href="#local-6989586621679081655"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-61"></span><span>    </span><span id="local-6989586621679081654"><span class="annot"><span class="annottext">MVar (Maybe Request)
+</span><a href="#local-6989586621679081654"><span class="hs-identifier hs-var">reqV</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar (Maybe Request))
 forall a. IO (MVar a)
 </span><span class="hs-identifier hs-var">newEmptyMVar</span></span><span>
-</span><span id="line-62"></span><span>    </span><span id="local-6989586621679081627"><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679081627"><span class="hs-identifier hs-var">finished</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar ())
+</span><span id="line-62"></span><span>    </span><span id="local-6989586621679081652"><span class="annot"><span class="annottext">MVar ()
+</span><a href="#local-6989586621679081652"><span class="hs-identifier hs-var">finished</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar ())
 forall a. IO (MVar a)
 </span><span class="hs-identifier hs-var">newEmptyMVar</span></span><span>
-</span><span id="line-63"></span><span>    </span><span id="local-6989586621679081626"><span class="annot"><span class="annottext">ThreadId
-</span><a href="#local-6989586621679081626"><span class="hs-identifier hs-var">tid</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO ThreadId
+</span><span id="line-63"></span><span>    </span><span id="local-6989586621679081651"><span class="annot"><span class="annottext">ThreadId
+</span><a href="#local-6989586621679081651"><span class="hs-identifier hs-var">tid</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO ThreadId
 </span><span class="hs-identifier hs-var">forkIO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Settings IO -&gt; MVar (Maybe Request) -&gt; MVar () -&gt; IO ()
 </span><a href="System.Console.Haskeline.IO.html#runHaskeline"><span class="hs-identifier hs-var">runHaskeline</span></a></span><span> </span><span class="annot"><span class="annottext">Settings IO
-</span><a href="#local-6989586621679081630"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request)
-</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">reqV</span></a></span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679081627"><span class="hs-identifier hs-var">finished</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679081655"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request)
+</span><a href="#local-6989586621679081654"><span class="hs-identifier hs-var">reqV</span></a></span><span> </span><span class="annot"><span class="annottext">MVar ()
+</span><a href="#local-6989586621679081652"><span class="hs-identifier hs-var">finished</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-64"></span><span>    </span><span class="annot"><span class="annottext">InputState -&gt; IO InputState
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">HD :: ThreadId -&gt; MVar (Maybe Request) -&gt; MVar () -&gt; InputState
 </span><a href="System.Console.Haskeline.IO.html#HD"><span class="hs-identifier hs-type">HD</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">requestVar :: MVar (Maybe Request)
 </span><a href="System.Console.Haskeline.IO.html#requestVar"><span class="hs-identifier hs-var">requestVar</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request)
-</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">reqV</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">forkedThread :: ThreadId
+</span><a href="#local-6989586621679081654"><span class="hs-identifier hs-var">reqV</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">forkedThread :: ThreadId
 </span><a href="System.Console.Haskeline.IO.html#forkedThread"><span class="hs-identifier hs-var">forkedThread</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ThreadId
-</span><a href="#local-6989586621679081626"><span class="hs-identifier hs-var">tid</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679081651"><span class="hs-identifier hs-var">tid</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-65"></span><span>                </span><span class="annot"><span class="annottext">subthreadFinished :: MVar ()
 </span><a href="System.Console.Haskeline.IO.html#subthreadFinished"><span class="hs-identifier hs-var">subthreadFinished</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679081627"><span class="hs-identifier hs-var">finished</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679081652"><span class="hs-identifier hs-var">finished</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-66"></span><span>
 </span><span id="line-67"></span><span class="annot"><a href="System.Console.Haskeline.IO.html#runHaskeline"><span class="hs-identifier hs-type">runHaskeline</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.InputT.html#Settings"><span class="hs-identifier hs-type">Settings</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-type">Request</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MVar</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-68"></span><span id="runHaskeline"><span class="annot"><span class="annottext">runHaskeline :: Settings IO -&gt; MVar (Maybe Request) -&gt; MVar () -&gt; IO ()
-</span><a href="System.Console.Haskeline.IO.html#runHaskeline"><span class="hs-identifier hs-var hs-var">runHaskeline</span></a></span></span><span> </span><span id="local-6989586621679081623"><span class="annot"><span class="annottext">Settings IO
-</span><a href="#local-6989586621679081623"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679081622"><span class="annot"><span class="annottext">MVar (Maybe Request)
-</span><a href="#local-6989586621679081622"><span class="hs-identifier hs-var">reqV</span></a></span></span><span> </span><span id="local-6989586621679081621"><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679081621"><span class="hs-identifier hs-var">finished</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings IO -&gt; InputT IO () -&gt; IO ()
+</span><a href="System.Console.Haskeline.IO.html#runHaskeline"><span class="hs-identifier hs-var hs-var">runHaskeline</span></a></span></span><span> </span><span id="local-6989586621679081648"><span class="annot"><span class="annottext">Settings IO
+</span><a href="#local-6989586621679081648"><span class="hs-identifier hs-var">settings</span></a></span></span><span> </span><span id="local-6989586621679081647"><span class="annot"><span class="annottext">MVar (Maybe Request)
+</span><a href="#local-6989586621679081647"><span class="hs-identifier hs-var">reqV</span></a></span></span><span> </span><span id="local-6989586621679081646"><span class="annot"><span class="annottext">MVar ()
+</span><a href="#local-6989586621679081646"><span class="hs-identifier hs-var">finished</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Settings IO -&gt; InputT IO () -&gt; IO ()
 forall (m :: * -&gt; *) a.
 MonadException m =&gt;
 Settings m -&gt; InputT m a -&gt; m a
 </span><a href="System.Console.Haskeline.InputT.html#runInputT"><span class="hs-identifier hs-var">runInputT</span></a></span><span> </span><span class="annot"><span class="annottext">Settings IO
-</span><a href="#local-6989586621679081623"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO ()
-</span><a href="#local-6989586621679081619"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="#local-6989586621679081648"><span class="hs-identifier hs-var">settings</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO ()
+</span><a href="#local-6989586621679081644"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-69"></span><span>                    </span><span class="annot"><span class="annottext">IO () -&gt; IO () -&gt; IO ()
 forall (m :: * -&gt; *) a b. MonadException m =&gt; m a -&gt; m b -&gt; m a
 </span><a href="System.Console.Haskeline.MonadException.html#finally"><span class="hs-operator hs-var">`finally`</span></a></span><span> </span><span class="annot"><span class="annottext">MVar () -&gt; () -&gt; IO ()
 forall a. MVar a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">putMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar ()
-</span><a href="#local-6989586621679081621"><span class="hs-identifier hs-var">finished</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679081646"><span class="hs-identifier hs-var">finished</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span>    </span><span class="hs-keyword">where</span><span>
-</span><span id="line-71"></span><span>        </span><span id="local-6989586621679081619"><span class="annot"><span class="annottext">loop :: InputT IO ()
-</span><a href="#local-6989586621679081619"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-72"></span><span>            </span><span id="local-6989586621679081616"><span class="annot"><span class="annottext">Maybe Request
-</span><a href="#local-6989586621679081616"><span class="hs-identifier hs-var">mf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (Maybe Request) -&gt; InputT IO (Maybe Request)
+</span><span id="line-71"></span><span>        </span><span id="local-6989586621679081644"><span class="annot"><span class="annottext">loop :: InputT IO ()
+</span><a href="#local-6989586621679081644"><span class="hs-identifier hs-var hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-72"></span><span>            </span><span id="local-6989586621679081641"><span class="annot"><span class="annottext">Maybe Request
+</span><a href="#local-6989586621679081641"><span class="hs-identifier hs-var">mf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (Maybe Request) -&gt; InputT IO (Maybe Request)
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO (Maybe Request) -&gt; InputT IO (Maybe Request))
 -&gt; IO (Maybe Request) -&gt; InputT IO (Maybe Request)
@@ -120,17 +120,17 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request) -&gt; IO (Maybe Request)
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request)
-</span><a href="#local-6989586621679081622"><span class="hs-identifier hs-var">reqV</span></a></span><span>
+</span><a href="#local-6989586621679081647"><span class="hs-identifier hs-var">reqV</span></a></span><span>
 </span><span id="line-73"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Request
-</span><a href="#local-6989586621679081616"><span class="hs-identifier hs-var">mf</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679081641"><span class="hs-identifier hs-var">mf</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-74"></span><span>                </span><span class="annot"><span class="annottext">Maybe Request
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; InputT IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-75"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-type">Request</span></a></span><span> </span><span id="local-6989586621679081613"><span class="annot"><span class="annottext">InputT IO a
-</span><a href="#local-6989586621679081613"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679081612"><span class="annot"><span class="annottext">MVar a
-</span><a href="#local-6989586621679081612"><span class="hs-identifier hs-var">var</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">InputT IO a
-</span><a href="#local-6989586621679081613"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO a -&gt; (a -&gt; InputT IO ()) -&gt; InputT IO ()
+</span><span id="line-75"></span><span>                </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-type">Request</span></a></span><span> </span><span id="local-6989586621679081638"><span class="annot"><span class="annottext">InputT IO a
+</span><a href="#local-6989586621679081638"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679081637"><span class="annot"><span class="annottext">MVar a
+</span><a href="#local-6989586621679081637"><span class="hs-identifier hs-var">var</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">InputT IO a
+</span><a href="#local-6989586621679081638"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO a -&gt; (a -&gt; InputT IO ()) -&gt; InputT IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">IO () -&gt; InputT IO ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
@@ -139,21 +139,21 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">MVar a -&gt; a -&gt; IO ()
 forall a. MVar a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">putMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar a
-</span><a href="#local-6989586621679081612"><span class="hs-identifier hs-var">var</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO () -&gt; InputT IO () -&gt; InputT IO ()
+</span><a href="#local-6989586621679081637"><span class="hs-identifier hs-var">var</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO () -&gt; InputT IO () -&gt; InputT IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">InputT IO ()
-</span><a href="#local-6989586621679081619"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="#local-6989586621679081644"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-76"></span><span>
 </span><span id="line-77"></span><span class="hs-comment">-- | Finish and clean up the line-oriented user interaction session.  Blocks on an</span><span>
 </span><span id="line-78"></span><span class="hs-comment">-- existing call to 'queryInput'.</span><span>
 </span><span id="line-79"></span><span class="annot"><a href="System.Console.Haskeline.IO.html#closeInput"><span class="hs-identifier hs-type">closeInput</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-type">InputState</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-80"></span><span id="closeInput"><span class="annot"><span class="annottext">closeInput :: InputState -&gt; IO ()
-</span><a href="System.Console.Haskeline.IO.html#closeInput"><span class="hs-identifier hs-var hs-var">closeInput</span></a></span></span><span> </span><span id="local-6989586621679081610"><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081610"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request) -&gt; Maybe Request -&gt; IO ()
+</span><a href="System.Console.Haskeline.IO.html#closeInput"><span class="hs-identifier hs-var hs-var">closeInput</span></a></span></span><span> </span><span id="local-6989586621679081635"><span class="annot"><span class="annottext">InputState
+</span><a href="#local-6989586621679081635"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">MVar (Maybe Request) -&gt; Maybe Request -&gt; IO ()
 forall a. MVar a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">putMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputState -&gt; MVar (Maybe Request)
 </span><a href="System.Console.Haskeline.IO.html#requestVar"><span class="hs-identifier hs-var hs-var">requestVar</span></a></span><span> </span><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081610"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Request
+</span><a href="#local-6989586621679081635"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Request
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO () -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
@@ -161,23 +161,23 @@ forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputState -&gt; MVar ()
 </span><a href="System.Console.Haskeline.IO.html#subthreadFinished"><span class="hs-identifier hs-var hs-var">subthreadFinished</span></a></span><span> </span><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081610"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679081635"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-81"></span><span>
 </span><span id="line-82"></span><span class="hs-comment">-- | Cancel and clean up the user interaction session.  Does not block on an existing</span><span>
 </span><span id="line-83"></span><span class="hs-comment">-- call to 'queryInput'.</span><span>
 </span><span id="line-84"></span><span class="annot"><a href="System.Console.Haskeline.IO.html#cancelInput"><span class="hs-identifier hs-type">cancelInput</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-type">InputState</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-85"></span><span id="cancelInput"><span class="annot"><span class="annottext">cancelInput :: InputState -&gt; IO ()
-</span><a href="System.Console.Haskeline.IO.html#cancelInput"><span class="hs-identifier hs-var hs-var">cancelInput</span></a></span></span><span> </span><span id="local-6989586621679081609"><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081609"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ThreadId -&gt; IO ()
+</span><a href="System.Console.Haskeline.IO.html#cancelInput"><span class="hs-identifier hs-var hs-var">cancelInput</span></a></span></span><span> </span><span id="local-6989586621679081634"><span class="annot"><span class="annottext">InputState
+</span><a href="#local-6989586621679081634"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ThreadId -&gt; IO ()
 </span><span class="hs-identifier hs-var">killThread</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputState -&gt; ThreadId
 </span><a href="System.Console.Haskeline.IO.html#forkedThread"><span class="hs-identifier hs-var hs-var">forkedThread</span></a></span><span> </span><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081609"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679081634"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO () -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; m b -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">MVar () -&gt; IO ()
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputState -&gt; MVar ()
 </span><a href="System.Console.Haskeline.IO.html#subthreadFinished"><span class="hs-identifier hs-var hs-var">subthreadFinished</span></a></span><span> </span><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081609"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679081634"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-86"></span><span>
 </span><span id="line-87"></span><span class="hs-comment">-- | Run one action (for example, 'getInputLine') as part of a session of user interaction.</span><span>
 </span><span id="line-88"></span><span class="hs-comment">--</span><span>
@@ -186,30 +186,30 @@ forall a. MVar a -&gt; IO a
 </span><span id="line-91"></span><span class="hs-comment">-- histories unless they share the same history file.</span><span>
 </span><span id="line-92"></span><span class="hs-comment">--</span><span>
 </span><span id="line-93"></span><span class="hs-comment">-- This function should not be called on a closed or cancelled 'InputState'.</span><span>
-</span><span id="line-94"></span><span id="local-6989586621679081607"><span class="annot"><a href="System.Console.Haskeline.IO.html#queryInput"><span class="hs-identifier hs-type">queryInput</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-type">InputState</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.InputT.html#InputT"><span class="hs-identifier hs-type">InputT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081607"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081607"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-94"></span><span id="local-6989586621679081632"><span class="annot"><a href="System.Console.Haskeline.IO.html#queryInput"><span class="hs-identifier hs-type">queryInput</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.IO.html#InputState"><span class="hs-identifier hs-type">InputState</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.InputT.html#InputT"><span class="hs-identifier hs-type">InputT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081632"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679081632"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-95"></span><span id="queryInput"><span class="annot"><span class="annottext">queryInput :: InputState -&gt; InputT IO a -&gt; IO a
-</span><a href="System.Console.Haskeline.IO.html#queryInput"><span class="hs-identifier hs-var hs-var">queryInput</span></a></span></span><span> </span><span id="local-6989586621679081606"><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081606"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span id="local-6989586621679081605"><span class="annot"><span class="annottext">InputT IO a
-</span><a href="#local-6989586621679081605"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-96"></span><span>    </span><span id="local-6989586621679081604"><span class="annot"><span class="annottext">MVar a
-</span><a href="#local-6989586621679081604"><span class="hs-identifier hs-var">var</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar a)
+</span><a href="System.Console.Haskeline.IO.html#queryInput"><span class="hs-identifier hs-var hs-var">queryInput</span></a></span></span><span> </span><span id="local-6989586621679081631"><span class="annot"><span class="annottext">InputState
+</span><a href="#local-6989586621679081631"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span id="local-6989586621679081630"><span class="annot"><span class="annottext">InputT IO a
+</span><a href="#local-6989586621679081630"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-96"></span><span>    </span><span id="local-6989586621679081629"><span class="annot"><span class="annottext">MVar a
+</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">var</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO (MVar a)
 forall a. IO (MVar a)
 </span><span class="hs-identifier hs-var">newEmptyMVar</span></span><span>
 </span><span id="line-97"></span><span>    </span><span class="annot"><span class="annottext">MVar (Maybe Request) -&gt; Maybe Request -&gt; IO ()
 forall a. MVar a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">putMVar</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputState -&gt; MVar (Maybe Request)
 </span><a href="System.Console.Haskeline.IO.html#requestVar"><span class="hs-identifier hs-var hs-var">requestVar</span></a></span><span> </span><span class="annot"><span class="annottext">InputState
-</span><a href="#local-6989586621679081606"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
+</span><a href="#local-6989586621679081631"><span class="hs-identifier hs-var">hd</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Maybe Request
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">InputT IO a -&gt; MVar a -&gt; Request
 forall a. InputT IO a -&gt; MVar a -&gt; Request
 </span><a href="System.Console.Haskeline.IO.html#Request"><span class="hs-identifier hs-var">Request</span></a></span><span> </span><span class="annot"><span class="annottext">InputT IO a
-</span><a href="#local-6989586621679081605"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">MVar a
-</span><a href="#local-6989586621679081604"><span class="hs-identifier hs-var">var</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679081630"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">MVar a
+</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">var</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-98"></span><span>    </span><span class="annot"><span class="annottext">MVar a -&gt; IO a
 forall a. MVar a -&gt; IO a
 </span><span class="hs-identifier hs-var">takeMVar</span></span><span> </span><span class="annot"><span class="annottext">MVar a
-</span><a href="#local-6989586621679081604"><span class="hs-identifier hs-var">var</span></a></span><span>
+</span><a href="#local-6989586621679081629"><span class="hs-identifier hs-var">var</span></a></span><span>
 </span><span id="line-99"></span><span>
 </span><span id="line-100"></span><span>
 </span><span id="line-101"></span></pre></body></html>

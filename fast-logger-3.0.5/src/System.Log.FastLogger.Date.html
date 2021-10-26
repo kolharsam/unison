@@ -27,10 +27,10 @@
 </span><span id="line-25"></span><span class="hs-comment">-- | Format unix EpochTime date.</span><span>
 </span><span id="line-26"></span><span class="annot"><a href="System.Log.FastLogger.Date.html#formatDate"><span class="hs-identifier hs-type">formatDate</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.Types.html#TimeFormat"><span class="hs-identifier hs-type">TimeFormat</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">EpochTime</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.Types.html#FormattedTime"><span class="hs-identifier hs-type">FormattedTime</span></a></span><span>
 </span><span id="line-27"></span><span id="formatDate"><span class="annot"><span class="annottext">formatDate :: TimeFormat -&gt; EpochTime -&gt; IO TimeFormat
-</span><a href="System.Log.FastLogger.Date.html#formatDate"><span class="hs-identifier hs-var hs-var">formatDate</span></a></span></span><span> </span><span id="local-6989586621679046551"><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046551"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TimeFormat -&gt; UnixTime -&gt; IO TimeFormat
+</span><a href="System.Log.FastLogger.Date.html#formatDate"><span class="hs-identifier hs-var hs-var">formatDate</span></a></span></span><span> </span><span id="local-6989586621679046579"><span class="annot"><span class="annottext">TimeFormat
+</span><a href="#local-6989586621679046579"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TimeFormat -&gt; UnixTime -&gt; IO TimeFormat
 </span><span class="hs-identifier hs-var">formatUnixTime</span></span><span> </span><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046551"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">(UnixTime -&gt; IO TimeFormat)
+</span><a href="#local-6989586621679046579"><span class="hs-identifier hs-var">fmt</span></a></span><span> </span><span class="annot"><span class="annottext">(UnixTime -&gt; IO TimeFormat)
 -&gt; (EpochTime -&gt; UnixTime) -&gt; EpochTime -&gt; IO TimeFormat
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">EpochTime -&gt; UnixTime
@@ -44,8 +44,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-34"></span><span class="hs-comment">-- more detail in &quot;Control.AutoUpdate&quot;</span><span>
 </span><span id="line-35"></span><span class="annot"><a href="System.Log.FastLogger.Date.html#newTimeCache"><span class="hs-identifier hs-type">newTimeCache</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.Types.html#TimeFormat"><span class="hs-identifier hs-type">TimeFormat</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Log.FastLogger.Types.html#FormattedTime"><span class="hs-identifier hs-type">FormattedTime</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-36"></span><span id="newTimeCache"><span class="annot"><span class="annottext">newTimeCache :: TimeFormat -&gt; IO (IO TimeFormat)
-</span><a href="System.Log.FastLogger.Date.html#newTimeCache"><span class="hs-identifier hs-var hs-var">newTimeCache</span></a></span></span><span> </span><span id="local-6989586621679046549"><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046549"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UpdateSettings TimeFormat -&gt; IO (IO TimeFormat)
+</span><a href="System.Log.FastLogger.Date.html#newTimeCache"><span class="hs-identifier hs-var hs-var">newTimeCache</span></a></span></span><span> </span><span id="local-6989586621679046577"><span class="annot"><span class="annottext">TimeFormat
+</span><a href="#local-6989586621679046577"><span class="hs-identifier hs-var">fmt</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">UpdateSettings TimeFormat -&gt; IO (IO TimeFormat)
 forall a. UpdateSettings a -&gt; IO (IO a)
 </span><span class="hs-identifier hs-var">mkAutoUpdate</span></span><span> </span><span class="annot"><span class="annottext">UpdateSettings ()
 </span><span class="hs-identifier hs-var">defaultUpdateSettings</span></span><span class="hs-special">{</span><span>
@@ -55,7 +55,7 @@ forall a. UpdateSettings a -&gt; IO (IO a)
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">TimeFormat -&gt; EpochTime -&gt; IO TimeFormat
 </span><a href="System.Log.FastLogger.Date.html#formatDate"><span class="hs-identifier hs-var">formatDate</span></a></span><span> </span><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046549"><span class="hs-identifier hs-var">fmt</span></a></span><span>
+</span><a href="#local-6989586621679046577"><span class="hs-identifier hs-var">fmt</span></a></span><span>
 </span><span id="line-38"></span><span>    </span><span class="hs-special">}</span><span>
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span class="hs-comment">-- | A simple time cache using format @&quot;%d/%b/%Y:%T %z&quot;@</span><span>

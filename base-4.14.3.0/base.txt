@@ -6737,7 +6737,7 @@ CULLong :: Word64 -> CULLong
 
 -- | Haskell type representing the C <tt>bool</tt> type. <i>(The concrete
 --   types of <a>Foreign.C.Types#platform</a> are platform-specific.)</i>
-newtype {-# CTYPE "THE_CTYPE" #-} CBool
+newtype {-# CTYPE "bool" #-} CBool
 CBool :: Word8 -> CBool
 newtype CIntPtr
 CIntPtr :: Int64 -> CIntPtr
@@ -6752,7 +6752,7 @@ CUIntMax :: Word64 -> CUIntMax
 --   concrete types of <a>Foreign.C.Types#platform</a> are
 --   platform-specific.)</i>
 newtype CClock
-CClock :: Word64 -> CClock
+CClock :: Int64 -> CClock
 
 -- | Haskell type representing the C <tt>time_t</tt> type. <i>(The concrete
 --   types of <a>Foreign.C.Types#platform</a> are platform-specific.)</i>
@@ -6769,7 +6769,7 @@ CUSeconds :: Word32 -> CUSeconds
 --   concrete types of <a>Foreign.C.Types#platform</a> are
 --   platform-specific.)</i>
 newtype CSUSeconds
-CSUSeconds :: Int32 -> CSUSeconds
+CSUSeconds :: Int64 -> CSUSeconds
 
 -- | Haskell type representing the C <tt>float</tt> type. <i>(The concrete
 --   types of <a>Foreign.C.Types#platform</a> are platform-specific.)</i>
@@ -14753,11 +14753,11 @@ module Foreign
 --   <tt>&lt;sys/types.h&gt;</tt> C header on a POSIX system.
 module System.Posix.Types
 newtype CDev
-CDev :: Int32 -> CDev
+CDev :: Word64 -> CDev
 newtype CIno
 CIno :: Word64 -> CIno
-newtype {-# CTYPE "THE_CTYPE" #-} CMode
-CMode :: Word16 -> CMode
+newtype {-# CTYPE "mode_t" #-} CMode
+CMode :: Word32 -> CMode
 newtype COff
 COff :: Int64 -> COff
 newtype CPid
@@ -14767,44 +14767,47 @@ CSsize :: Int64 -> CSsize
 newtype CGid
 CGid :: Word32 -> CGid
 newtype CNlink
-CNlink :: Word16 -> CNlink
+CNlink :: Word64 -> CNlink
 newtype CUid
 CUid :: Word32 -> CUid
 newtype CCc
 CCc :: Word8 -> CCc
 newtype CSpeed
-CSpeed :: Word64 -> CSpeed
+CSpeed :: Word32 -> CSpeed
 newtype CTcflag
-CTcflag :: Word64 -> CTcflag
+CTcflag :: Word32 -> CTcflag
 newtype CRLim
 CRLim :: Word64 -> CRLim
 
-newtype {-# CTYPE "THE_CTYPE" #-} CBlkSize
-CBlkSize :: Int32 -> CBlkSize
+newtype {-# CTYPE "blksize_t" #-} CBlkSize
+CBlkSize :: Int64 -> CBlkSize
 
-newtype {-# CTYPE "THE_CTYPE" #-} CBlkCnt
+newtype {-# CTYPE "blkcnt_t" #-} CBlkCnt
 CBlkCnt :: Int64 -> CBlkCnt
 
-newtype {-# CTYPE "THE_CTYPE" #-} CClockId
-CClockId :: Word32 -> CClockId
+newtype {-# CTYPE "clockid_t" #-} CClockId
+CClockId :: Int32 -> CClockId
 
-newtype {-# CTYPE "THE_CTYPE" #-} CFsBlkCnt
-CFsBlkCnt :: Word32 -> CFsBlkCnt
+newtype {-# CTYPE "fsblkcnt_t" #-} CFsBlkCnt
+CFsBlkCnt :: Word64 -> CFsBlkCnt
 
-newtype {-# CTYPE "THE_CTYPE" #-} CFsFilCnt
-CFsFilCnt :: Word32 -> CFsFilCnt
+newtype {-# CTYPE "fsfilcnt_t" #-} CFsFilCnt
+CFsFilCnt :: Word64 -> CFsFilCnt
 
-newtype {-# CTYPE "THE_CTYPE" #-} CId
+newtype {-# CTYPE "id_t" #-} CId
 CId :: Word32 -> CId
 
-newtype {-# CTYPE "THE_CTYPE" #-} CKey
+newtype {-# CTYPE "key_t" #-} CKey
 CKey :: Int32 -> CKey
+
+newtype {-# CTYPE "timer_t" #-} CTimer
+CTimer :: Ptr () -> CTimer
 
 newtype CSocklen
 CSocklen :: Word32 -> CSocklen
 
 newtype CNfds
-CNfds :: Word32 -> CNfds
+CNfds :: Word64 -> CNfds
 newtype Fd
 Fd :: CInt -> Fd
 type LinkCount = CNlink
@@ -15052,6 +15055,10 @@ instance GHC.Enum.Enum System.Posix.Types.CKey
 instance GHC.Num.Num System.Posix.Types.CKey
 instance GHC.Classes.Ord System.Posix.Types.CKey
 instance GHC.Classes.Eq System.Posix.Types.CKey
+instance GHC.Show.Show System.Posix.Types.CTimer
+instance Foreign.Storable.Storable System.Posix.Types.CTimer
+instance GHC.Classes.Ord System.Posix.Types.CTimer
+instance GHC.Classes.Eq System.Posix.Types.CTimer
 instance GHC.Show.Show System.Posix.Types.CSocklen
 instance GHC.Read.Read System.Posix.Types.CSocklen
 instance Data.Bits.FiniteBits System.Posix.Types.CSocklen
@@ -26382,6 +26389,20 @@ instance GHC.Base.Functor System.Console.GetOpt.ArgDescr
 instance GHC.Base.Functor System.Console.GetOpt.ArgOrder
 
 
+-- | The standard CPUTime library.
+module System.CPUTime
+
+-- | Computation <a>getCPUTime</a> returns the number of picoseconds CPU
+--   time used by the current program. The precision of this result is
+--   implementation-dependent.
+getCPUTime :: IO Integer
+
+-- | The <a>cpuTimePrecision</a> constant is the smallest measurable
+--   difference in CPU time that the implementation can record, and is
+--   given as an integral number of picoseconds.
+cpuTimePrecision :: Integer
+
+
 -- | Symbolic references to values.
 --   
 --   References to values are usually implemented with memory addresses,
@@ -26863,20 +26884,6 @@ denominator :: Ratio a -> a
 --   Any real interval contains a unique simplest rational; in particular,
 --   note that <tt>0/1</tt> is the simplest rational of all.
 approxRational :: RealFrac a => a -> a -> Rational
-
-
--- | The standard CPUTime library.
-module System.CPUTime
-
--- | Computation <a>getCPUTime</a> returns the number of picoseconds CPU
---   time used by the current program. The precision of this result is
---   implementation-dependent.
-getCPUTime :: IO Integer
-
--- | The <a>cpuTimePrecision</a> constant is the smallest measurable
---   difference in CPU time that the implementation can record, and is
---   given as an integral number of picoseconds.
-cpuTimePrecision :: Integer
 
 
 -- | Basic kinds

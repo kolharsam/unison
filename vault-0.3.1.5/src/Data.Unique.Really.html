@@ -18,7 +18,7 @@
 </span><span id="line-18"></span><span class="hs-comment">--</span><span>
 </span><span id="line-19"></span><span class="hs-comment">-- Note: Unlike the symbols from &quot;Data.Unique&quot;, the symbols from this</span><span>
 </span><span id="line-20"></span><span class="hs-comment">-- module do not become equal after reloads in the GHC interpreter!</span><span>
-</span><span id="line-21"></span><span class="hs-keyword">newtype</span><span> </span><span id="Unique"><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Unique"><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">StableName</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Data.Unique.Unique</span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040599"><span id="local-6989586621679040601"><span class="annot"><span class="annottext">Unique -&gt; Unique -&gt; Bool
+</span><span id="line-21"></span><span class="hs-keyword">newtype</span><span> </span><span id="Unique"><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Unique"><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">StableName</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Data.Unique.Unique</span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040603"><span id="local-6989586621679040605"><span class="annot"><span class="annottext">Unique -&gt; Unique -&gt; Bool
 (Unique -&gt; Unique -&gt; Bool)
 -&gt; (Unique -&gt; Unique -&gt; Bool) -&gt; Eq Unique
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -30,14 +30,14 @@ $c== :: Unique -&gt; Unique -&gt; Bool
 </span><span id="line-22"></span><span>
 </span><span id="line-23"></span><span id="newUnique"><span class="annot"><span class="annottext">newUnique :: IO Unique
 </span><a href="Data.Unique.Really.html#newUnique"><span class="hs-identifier hs-var hs-var">newUnique</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-24"></span><span>    </span><span id="local-6989586621679040597"><span class="annot"><span class="annottext">Unique
-</span><a href="#local-6989586621679040597"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Unique
+</span><span id="line-24"></span><span>    </span><span id="local-6989586621679040601"><span class="annot"><span class="annottext">Unique
+</span><a href="#local-6989586621679040601"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Unique
 </span><span class="hs-identifier hs-var">Data.Unique.newUnique</span></span><span>
 </span><span id="line-25"></span><span>    </span><span class="annot"><span class="annottext">Unique
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Unique -&gt; IO Unique
 forall a. a -&gt; IO a
 </span><span class="hs-identifier hs-var">evaluate</span></span><span> </span><span class="annot"><span class="annottext">Unique
-</span><a href="#local-6989586621679040597"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679040601"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-26"></span><span>    </span><span class="annot"><span class="annottext">StableName Unique -&gt; Unique
 </span><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-var">Unique</span></a></span><span> </span><span class="annot"><span class="annottext">(StableName Unique -&gt; Unique)
 -&gt; IO (StableName Unique) -&gt; IO Unique
@@ -45,14 +45,14 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Unique -&gt; IO (StableName Unique)
 forall a. a -&gt; IO (StableName a)
 </span><span class="hs-identifier hs-var">makeStableName</span></span><span> </span><span class="annot"><span class="annottext">Unique
-</span><a href="#local-6989586621679040597"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679040601"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-27"></span><span>
 </span><span id="line-28"></span><span id="hashUnique"><span class="annot"><span class="annottext">hashUnique :: Unique -&gt; Int
-</span><a href="Data.Unique.Really.html#hashUnique"><span class="hs-identifier hs-var hs-var">hashUnique</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span><span> </span><span id="local-6989586621679040594"><span class="annot"><span class="annottext">StableName Unique
-</span><a href="#local-6989586621679040594"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StableName Unique -&gt; Int
+</span><a href="Data.Unique.Really.html#hashUnique"><span class="hs-identifier hs-var hs-var">hashUnique</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span><span> </span><span id="local-6989586621679040598"><span class="annot"><span class="annottext">StableName Unique
+</span><a href="#local-6989586621679040598"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StableName Unique -&gt; Int
 forall a. StableName a -&gt; Int
 </span><span class="hs-identifier hs-var">hashStableName</span></span><span> </span><span class="annot"><span class="annottext">StableName Unique
-</span><a href="#local-6989586621679040594"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-cpp">
+</span><a href="#local-6989586621679040598"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-cpp">
 
 #else
 </span><span>
@@ -90,12 +90,12 @@ forall a. StableName a -&gt; Int
 </span><span id="line-63"></span><span class="hs-comment">-- The 'Int' returned makes a good hash key.</span><span>
 </span><span id="line-64"></span><span class="annot"><a href="Data.Unique.Really.html#hashUnique"><span class="hs-identifier hs-type">hashUnique</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
 </span><span id="line-65"></span><span>
-</span><span id="line-66"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679040590"><span class="annot"><span class="hs-identifier hs-type">Hashable</span></span><span> </span><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679040588"><span class="annot"><span class="annottext">hashWithSalt :: Int -&gt; Unique -&gt; Int
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">hashWithSalt</span></span></span><span> </span><span id="local-6989586621679040586"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040586"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span id="line-66"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679040594"><span class="annot"><span class="hs-identifier hs-type">Hashable</span></span><span> </span><span class="annot"><a href="Data.Unique.Really.html#Unique"><span class="hs-identifier hs-type">Unique</span></a></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679040592"><span class="annot"><span class="annottext">hashWithSalt :: Int -&gt; Unique -&gt; Int
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">hashWithSalt</span></span></span><span> </span><span id="local-6989586621679040590"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040590"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Hashable a =&gt; Int -&gt; a -&gt; Int
 </span><span class="hs-identifier hs-var">hashWithSalt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040586"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Int) -&gt; (Unique -&gt; Int) -&gt; Unique -&gt; Int
+</span><a href="#local-6989586621679040590"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; Int) -&gt; (Unique -&gt; Int) -&gt; Unique -&gt; Int
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Unique -&gt; Int
 </span><a href="Data.Unique.Really.html#hashUnique"><span class="hs-identifier hs-var">hashUnique</span></a></span><span>

@@ -10,48 +10,48 @@
 </span><span>
 </span><span id="line-11"></span><span class="annot"><a href="Network.Wai.Middleware.Autohead.html#autohead"><span class="hs-identifier hs-type">autohead</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-12"></span><span id="autohead"><span class="annot"><span class="annottext">autohead :: Middleware
-</span><a href="Network.Wai.Middleware.Autohead.html#autohead"><span class="hs-identifier hs-var hs-var">autohead</span></a></span></span><span> </span><span id="local-6989586621679102339"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102339"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102338"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102338"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102337"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102337"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span>
+</span><a href="Network.Wai.Middleware.Autohead.html#autohead"><span class="hs-identifier hs-var hs-var">autohead</span></a></span></span><span> </span><span id="local-6989586621679102359"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102359"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102358"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102358"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102357"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102357"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span>
 </span><span id="line-13"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Request -&gt; Method
 </span><span class="hs-identifier hs-var hs-var">requestMethod</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102338"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Method -&gt; Method -&gt; Bool
+</span><a href="#local-6989586621679102358"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Method -&gt; Method -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Method
 </span><span class="hs-string">&quot;HEAD&quot;</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102339"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102338"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
+</span><a href="#local-6989586621679102359"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102358"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
 </span><span class="hs-identifier hs-var">requestMethod</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Method
 </span><span class="hs-string">&quot;GET&quot;</span></span><span> </span><span class="hs-special">}</span><span> </span><span class="annot"><span class="annottext">((Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived)
 -&gt; (Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102335"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102335"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-14"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102334"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102334"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102333"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102333"><span class="hs-identifier hs-var">hs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(StreamingBody -&gt; IO Any) -&gt; IO Any
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102355"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102355"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-14"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102354"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102354"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102353"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102353"><span class="hs-identifier hs-var">hs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(StreamingBody -&gt; IO Any) -&gt; IO Any
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response
 -&gt; (Status, ResponseHeaders, (StreamingBody -&gt; IO Any) -&gt; IO Any)
 forall a.
 Response
 -&gt; (Status, ResponseHeaders, (StreamingBody -&gt; IO a) -&gt; IO a)
 </span><span class="hs-identifier hs-var">responseToStream</span></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102335"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102355"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-15"></span><span>        </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102337"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
+</span><a href="#local-6989586621679102357"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
 -&gt; Response -&gt; IO ResponseReceived
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; Builder -&gt; Response
 </span><span class="hs-identifier hs-var">responseBuilder</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102334"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102333"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679102354"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102353"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span>
 </span><span id="line-16"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102339"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102338"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102337"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679102359"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102358"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102357"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-17"></span><span>
 </span><span id="line-18"></span></pre></body></html>

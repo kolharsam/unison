@@ -36,7 +36,7 @@
 </span><span id="line-36"></span><span class="hs-comment">--</span><span>
 </span><span id="line-37"></span><span class="hs-comment">-- &gt;&gt;&gt; review viewL $ 1 Seq.:&lt; fromList [2,3]</span><span>
 </span><span id="line-38"></span><span class="hs-comment">-- fromList [1,2,3]</span><span>
-</span><span id="line-39"></span><span id="local-6989586621679115703"><span id="local-6989586621679115704"><span class="annot"><a href="Data.Sequence.Optics.html#viewL"><span class="hs-identifier hs-type">viewL</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Iso.html#Iso"><span class="hs-identifier hs-type">Iso</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115704"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115703"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewL</span></span><span> </span><span class="annot"><a href="#local-6989586621679115704"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewL</span></span><span> </span><span class="annot"><a href="#local-6989586621679115703"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-39"></span><span id="local-6989586621679115708"><span id="local-6989586621679115709"><span class="annot"><a href="Data.Sequence.Optics.html#viewL"><span class="hs-identifier hs-type">viewL</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Iso.html#Iso"><span class="hs-identifier hs-type">Iso</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115709"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115708"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewL</span></span><span> </span><span class="annot"><a href="#local-6989586621679115709"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewL</span></span><span> </span><span class="annot"><a href="#local-6989586621679115708"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span></span></span><span>
 </span><span id="line-40"></span><span id="viewL"><span class="annot"><span class="annottext">viewL :: Iso (Seq a) (Seq b) (ViewL a) (ViewL b)
 </span><a href="Data.Sequence.Optics.html#viewL"><span class="hs-identifier hs-var hs-var">viewL</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; ViewL a)
 -&gt; (ViewL b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewL a) (ViewL b)
@@ -46,20 +46,20 @@ forall a. Seq a -&gt; ViewL a
 </span><span class="hs-identifier hs-var">viewl</span></span><span> </span><span class="annot"><span class="annottext">((ViewL b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewL a) (ViewL b))
 -&gt; (ViewL b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewL a) (ViewL b)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115700"><span class="annot"><span class="annottext">ViewL b
-</span><a href="#local-6989586621679115700"><span class="hs-identifier hs-var">xs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ViewL b
-</span><a href="#local-6989586621679115700"><span class="hs-identifier hs-var">xs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115705"><span class="annot"><span class="annottext">ViewL b
+</span><a href="#local-6989586621679115705"><span class="hs-identifier hs-var">xs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ViewL b
+</span><a href="#local-6989586621679115705"><span class="hs-identifier hs-var">xs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-41"></span><span>  </span><span class="annot"><span class="annottext">ViewL b
 </span><span class="hs-identifier hs-var">EmptyL</span></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq b
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span>
-</span><span id="line-42"></span><span>  </span><span id="local-6989586621679115698"><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679115698"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="annot"><span class="hs-operator hs-type">Seq.:&lt;</span></span><span> </span><span id="local-6989586621679115696"><span class="annot"><span class="annottext">Seq b
-</span><a href="#local-6989586621679115696"><span class="hs-keyword hs-var">as</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679115698"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">b -&gt; Seq b -&gt; Seq b
+</span><span id="line-42"></span><span>  </span><span id="local-6989586621679115703"><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679115703"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="annot"><span class="hs-operator hs-type">Seq.:&lt;</span></span><span> </span><span id="local-6989586621679115701"><span class="annot"><span class="annottext">Seq b
+</span><a href="#local-6989586621679115701"><span class="hs-keyword hs-var">as</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679115703"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">b -&gt; Seq b -&gt; Seq b
 forall a. a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">Seq.&lt;|</span></span><span> </span><span class="annot"><span class="annottext">Seq b
-</span><a href="#local-6989586621679115696"><span class="hs-keyword hs-var">as</span></a></span><span>
+</span><a href="#local-6989586621679115701"><span class="hs-keyword hs-var">as</span></a></span><span>
 </span><span id="line-43"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#viewL"><span class="hs-pragma hs-type">viewL</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-44"></span><span>
 </span><span id="line-45"></span><span class="hs-comment">-- | A 'Seq' is isomorphic to a 'ViewR'</span><span>
@@ -77,7 +77,7 @@ forall a. a -&gt; Seq a -&gt; Seq a
 </span><span id="line-57"></span><span class="hs-comment">--</span><span>
 </span><span id="line-58"></span><span class="hs-comment">-- &gt;&gt;&gt; review viewR $ fromList [1,2] Seq.:&gt; 3</span><span>
 </span><span id="line-59"></span><span class="hs-comment">-- fromList [1,2,3]</span><span>
-</span><span id="line-60"></span><span id="local-6989586621679115693"><span id="local-6989586621679115694"><span class="annot"><a href="Data.Sequence.Optics.html#viewR"><span class="hs-identifier hs-type">viewR</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Iso.html#Iso"><span class="hs-identifier hs-type">Iso</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115694"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115693"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewR</span></span><span> </span><span class="annot"><a href="#local-6989586621679115694"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewR</span></span><span> </span><span class="annot"><a href="#local-6989586621679115693"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-60"></span><span id="local-6989586621679115698"><span id="local-6989586621679115699"><span class="annot"><a href="Data.Sequence.Optics.html#viewR"><span class="hs-identifier hs-type">viewR</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Iso.html#Iso"><span class="hs-identifier hs-type">Iso</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115699"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115698"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewR</span></span><span> </span><span class="annot"><a href="#local-6989586621679115699"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ViewR</span></span><span> </span><span class="annot"><a href="#local-6989586621679115698"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span></span></span><span>
 </span><span id="line-61"></span><span id="viewR"><span class="annot"><span class="annottext">viewR :: Iso (Seq a) (Seq b) (ViewR a) (ViewR b)
 </span><a href="Data.Sequence.Optics.html#viewR"><span class="hs-identifier hs-var hs-var">viewR</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; ViewR a)
 -&gt; (ViewR b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewR a) (ViewR b)
@@ -87,20 +87,20 @@ forall a. Seq a -&gt; ViewR a
 </span><span class="hs-identifier hs-var">viewr</span></span><span> </span><span class="annot"><span class="annottext">((ViewR b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewR a) (ViewR b))
 -&gt; (ViewR b -&gt; Seq b) -&gt; Iso (Seq a) (Seq b) (ViewR a) (ViewR b)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115691"><span class="annot"><span class="annottext">ViewR b
-</span><a href="#local-6989586621679115691"><span class="hs-identifier hs-var">xs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ViewR b
-</span><a href="#local-6989586621679115691"><span class="hs-identifier hs-var">xs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115696"><span class="annot"><span class="annottext">ViewR b
+</span><a href="#local-6989586621679115696"><span class="hs-identifier hs-var">xs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ViewR b
+</span><a href="#local-6989586621679115696"><span class="hs-identifier hs-var">xs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-62"></span><span>  </span><span class="annot"><span class="annottext">ViewR b
 </span><span class="hs-identifier hs-var">EmptyR</span></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq b
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span>
-</span><span id="line-63"></span><span>  </span><span id="local-6989586621679115689"><span class="annot"><span class="annottext">Seq b
-</span><a href="#local-6989586621679115689"><span class="hs-keyword hs-var">as</span></a></span></span><span> </span><span class="annot"><span class="hs-operator hs-type">Seq.:&gt;</span></span><span> </span><span id="local-6989586621679115687"><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679115687"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq b
-</span><a href="#local-6989586621679115689"><span class="hs-keyword hs-var">as</span></a></span><span> </span><span class="annot"><span class="annottext">Seq b -&gt; b -&gt; Seq b
+</span><span id="line-63"></span><span>  </span><span id="local-6989586621679115694"><span class="annot"><span class="annottext">Seq b
+</span><a href="#local-6989586621679115694"><span class="hs-keyword hs-var">as</span></a></span></span><span> </span><span class="annot"><span class="hs-operator hs-type">Seq.:&gt;</span></span><span> </span><span id="local-6989586621679115692"><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679115692"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq b
+</span><a href="#local-6989586621679115694"><span class="hs-keyword hs-var">as</span></a></span><span> </span><span class="annot"><span class="annottext">Seq b -&gt; b -&gt; Seq b
 forall a. Seq a -&gt; a -&gt; Seq a
 </span><span class="hs-operator hs-var">Seq.|&gt;</span></span><span> </span><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679115687"><span class="hs-identifier hs-var">a</span></a></span><span>
+</span><a href="#local-6989586621679115692"><span class="hs-identifier hs-var">a</span></a></span><span>
 </span><span id="line-64"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#viewR"><span class="hs-pragma hs-type">viewR</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-65"></span><span>
 </span><span id="line-66"></span><span class="hs-comment">-- | Traverse the first @n@ elements of a 'Seq'</span><span>
@@ -113,20 +113,20 @@ forall a. Seq a -&gt; a -&gt; Seq a
 </span><span id="line-73"></span><span class="hs-comment">--</span><span>
 </span><span id="line-74"></span><span class="hs-comment">-- &gt;&gt;&gt; fromList [1,2,4,5,6] &amp; slicedTo 10 .~ 0</span><span>
 </span><span id="line-75"></span><span class="hs-comment">-- fromList [0,0,0,0,0]</span><span>
-</span><span id="line-76"></span><span id="local-6989586621679115685"><span class="annot"><a href="Data.Sequence.Optics.html#slicedTo"><span class="hs-identifier hs-type">slicedTo</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115685"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115685"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-76"></span><span id="local-6989586621679115690"><span class="annot"><a href="Data.Sequence.Optics.html#slicedTo"><span class="hs-identifier hs-type">slicedTo</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115690"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115690"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-77"></span><span id="slicedTo"><span class="annot"><span class="annottext">slicedTo :: Int -&gt; IxTraversal' Int (Seq a) a
-</span><a href="Data.Sequence.Optics.html#slicedTo"><span class="hs-identifier hs-var hs-var">slicedTo</span></a></span></span><span> </span><span id="local-6989586621679115684"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115684"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="Data.Sequence.Optics.html#slicedTo"><span class="hs-identifier hs-var hs-var">slicedTo</span></a></span></span><span> </span><span id="local-6989586621679115689"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679115689"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a -&gt; IxTraversal' Int (Seq a) a
 forall (is :: IxList) i k s t a b.
 HasSingleIndex is i =&gt;
 Optic k NoIx s t a b -&gt; Optic k is s t a b -&gt; Optic k is s t a b
 </span><a href="Optics.Internal.Indexed.html#conjoined"><span class="hs-identifier hs-var">conjoined</span></a></span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115682"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115681"><span class="hs-identifier hs-var">ix</span></a></span><span>
+</span><a href="#local-6989586621679115687"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115686"><span class="hs-identifier hs-var">ix</span></a></span><span>
 </span><span id="line-78"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-79"></span><span>    </span><span id="local-6989586621679115682"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115682"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
+</span><span id="line-79"></span><span>    </span><span id="local-6989586621679115687"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="#local-6989586621679115687"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 </span><a href="Optics.Traversal.html#traversalVL"><span class="hs-identifier hs-var">traversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(TraversalVL (Seq a) (Seq a) a a
@@ -134,57 +134,57 @@ forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 -&gt; TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115679"><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115679"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115678"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115678"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115684"><span class="annot"><span class="annottext">a -&gt; f a
+</span><a href="#local-6989586621679115684"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115683"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115683"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115684"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115678"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-80"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115676"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115676"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115675"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115675"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115689"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115683"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-80"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115681"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115681"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115680"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115680"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115675"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
+</span><a href="#local-6989586621679115680"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">(a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
 forall (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (Traversable t, Applicative f) =&gt;
 (a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><span class="hs-identifier hs-var">traverse</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115679"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115676"><span class="hs-identifier hs-var">l</span></a></span><span>
+</span><a href="#local-6989586621679115684"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115681"><span class="hs-identifier hs-var">l</span></a></span><span>
 </span><span id="line-81"></span><span>
-</span><span id="line-82"></span><span>    </span><span id="local-6989586621679115681"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115681"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
+</span><span id="line-82"></span><span>    </span><span id="local-6989586621679115686"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115686"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
 forall i s t a b. IxTraversalVL i s t a b -&gt; IxTraversal i s t a b
 </span><a href="Optics.IxTraversal.html#itraversalVL"><span class="hs-identifier hs-var">itraversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(IxTraversalVL Int (Seq a) (Seq a) a a
  -&gt; IxTraversal' Int (Seq a) a)
 -&gt; IxTraversalVL Int (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115670"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115670"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115669"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115675"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
+</span><a href="#local-6989586621679115675"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115674"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115674"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115684"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-83"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115668"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115668"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115667"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115667"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115689"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115674"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-83"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115673"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115673"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115672"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115672"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115667"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
+</span><a href="#local-6989586621679115672"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
 forall i (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (TraversableWithIndex i t, Applicative f) =&gt;
 (i -&gt; a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><a href="Optics.Internal.Indexed.Classes.html#itraverse"><span class="hs-identifier hs-var">itraverse</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115670"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115668"><span class="hs-identifier hs-var">l</span></a></span><span>
+</span><a href="#local-6989586621679115675"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115673"><span class="hs-identifier hs-var">l</span></a></span><span>
 </span><span id="line-84"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#slicedTo"><span class="hs-pragma hs-type">slicedTo</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-85"></span><span>
 </span><span id="line-86"></span><span class="hs-comment">-- | Traverse all but the first @n@ elements of a 'Seq'</span><span>
@@ -197,20 +197,20 @@ forall i (t :: * -&gt; *) (f :: * -&gt; *) a b.
 </span><span id="line-93"></span><span class="hs-comment">--</span><span>
 </span><span id="line-94"></span><span class="hs-comment">-- &gt;&gt;&gt; fromList [1,2,3,4,5] &amp; slicedFrom 10 .~ 0</span><span>
 </span><span id="line-95"></span><span class="hs-comment">-- fromList [1,2,3,4,5]</span><span>
-</span><span id="line-96"></span><span id="local-6989586621679115665"><span class="annot"><a href="Data.Sequence.Optics.html#slicedFrom"><span class="hs-identifier hs-type">slicedFrom</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115665"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115665"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-96"></span><span id="local-6989586621679115670"><span class="annot"><a href="Data.Sequence.Optics.html#slicedFrom"><span class="hs-identifier hs-type">slicedFrom</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115670"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115670"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-97"></span><span id="slicedFrom"><span class="annot"><span class="annottext">slicedFrom :: Int -&gt; IxTraversal' Int (Seq a) a
-</span><a href="Data.Sequence.Optics.html#slicedFrom"><span class="hs-identifier hs-var hs-var">slicedFrom</span></a></span></span><span> </span><span id="local-6989586621679115664"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="Data.Sequence.Optics.html#slicedFrom"><span class="hs-identifier hs-var hs-var">slicedFrom</span></a></span></span><span> </span><span id="local-6989586621679115669"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a -&gt; IxTraversal' Int (Seq a) a
 forall (is :: IxList) i k s t a b.
 HasSingleIndex is i =&gt;
 Optic k NoIx s t a b -&gt; Optic k is s t a b -&gt; Optic k is s t a b
 </span><a href="Optics.Internal.Indexed.html#conjoined"><span class="hs-identifier hs-var">conjoined</span></a></span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115663"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115662"><span class="hs-identifier hs-var">ix</span></a></span><span>
+</span><a href="#local-6989586621679115668"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115667"><span class="hs-identifier hs-var">ix</span></a></span><span>
 </span><span id="line-98"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-99"></span><span>    </span><span id="local-6989586621679115663"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115663"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
+</span><span id="line-99"></span><span>    </span><span id="local-6989586621679115668"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="#local-6989586621679115668"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 </span><a href="Optics.Traversal.html#traversalVL"><span class="hs-identifier hs-var">traversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(TraversalVL (Seq a) (Seq a) a a
@@ -218,17 +218,17 @@ forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 -&gt; TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115661"><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115661"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115660"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115660"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115666"><span class="annot"><span class="annottext">a -&gt; f a
+</span><a href="#local-6989586621679115666"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115665"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115665"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115660"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-100"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115659"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115659"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115658"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115658"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115659"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115665"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-100"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115664"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115663"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115663"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -237,28 +237,28 @@ forall (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (Traversable t, Applicative f) =&gt;
 (a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><span class="hs-identifier hs-var">traverse</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115661"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115658"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679115666"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115663"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-101"></span><span>
-</span><span id="line-102"></span><span>    </span><span id="local-6989586621679115662"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115662"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
+</span><span id="line-102"></span><span>    </span><span id="local-6989586621679115667"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115667"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
 forall i s t a b. IxTraversalVL i s t a b -&gt; IxTraversal i s t a b
 </span><a href="Optics.IxTraversal.html#itraversalVL"><span class="hs-identifier hs-var">itraversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(IxTraversalVL Int (Seq a) (Seq a) a a
  -&gt; IxTraversal' Int (Seq a) a)
 -&gt; IxTraversalVL Int (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115657"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115657"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115656"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115656"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115662"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
+</span><a href="#local-6989586621679115662"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115661"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115661"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115656"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-103"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115655"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115654"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115654"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115661"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-103"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115660"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115660"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115659"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115659"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115660"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Seq a -&gt; Seq a) -&gt; f (Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -267,13 +267,13 @@ forall i (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (TraversableWithIndex i t, Applicative f) =&gt;
 (i -&gt; a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><a href="Optics.Internal.Indexed.Classes.html#itraverse"><span class="hs-identifier hs-var">itraverse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115657"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; (Int -&gt; Int) -&gt; Int -&gt; a -&gt; f a
+</span><a href="#local-6989586621679115662"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; (Int -&gt; Int) -&gt; Int -&gt; a -&gt; f a
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115664"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115654"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679115669"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115659"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-104"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#slicedFrom"><span class="hs-pragma hs-type">slicedFrom</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-105"></span><span>
 </span><span id="line-106"></span><span class="hs-comment">-- | Traverse all the elements numbered from @i@ to @j@ of a 'Seq'</span><span>
@@ -286,21 +286,21 @@ forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span id="line-113"></span><span class="hs-comment">--</span><span>
 </span><span id="line-114"></span><span class="hs-comment">-- &gt;&gt;&gt; fromList [1,2,3,4,5] &amp; sliced 1 3 .~ 0</span><span>
 </span><span id="line-115"></span><span class="hs-comment">-- fromList [1,0,0,4,5]</span><span>
-</span><span id="line-116"></span><span id="local-6989586621679115651"><span class="annot"><a href="Data.Sequence.Optics.html#sliced"><span class="hs-identifier hs-type">sliced</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115651"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115651"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-116"></span><span id="local-6989586621679115656"><span class="annot"><a href="Data.Sequence.Optics.html#sliced"><span class="hs-identifier hs-type">sliced</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Optics.IxTraversal.html#IxTraversal%27"><span class="hs-identifier hs-type">IxTraversal'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115656"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679115656"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-117"></span><span id="sliced"><span class="annot"><span class="annottext">sliced :: Int -&gt; Int -&gt; IxTraversal' Int (Seq a) a
-</span><a href="Data.Sequence.Optics.html#sliced"><span class="hs-identifier hs-var hs-var">sliced</span></a></span></span><span> </span><span id="local-6989586621679115650"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621679115649"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115649"><span class="hs-identifier hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="Data.Sequence.Optics.html#sliced"><span class="hs-identifier hs-var hs-var">sliced</span></a></span></span><span> </span><span id="local-6989586621679115655"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621679115654"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679115654"><span class="hs-identifier hs-var">j</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a -&gt; IxTraversal' Int (Seq a) a
 forall (is :: IxList) i k s t a b.
 HasSingleIndex is i =&gt;
 Optic k NoIx s t a b -&gt; Optic k is s t a b -&gt; Optic k is s t a b
 </span><a href="Optics.Internal.Indexed.html#conjoined"><span class="hs-identifier hs-var">conjoined</span></a></span><span> </span><span class="annot"><span class="annottext">Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115648"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115647"><span class="hs-identifier hs-var">ix</span></a></span><span>
+</span><a href="#local-6989586621679115653"><span class="hs-identifier hs-var">noix</span></a></span><span> </span><span class="annot"><span class="annottext">IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115652"><span class="hs-identifier hs-var">ix</span></a></span><span>
 </span><span id="line-118"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-119"></span><span>    </span><span id="local-6989586621679115648"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
-</span><a href="#local-6989586621679115648"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
+</span><span id="line-119"></span><span>    </span><span id="local-6989586621679115653"><span class="annot"><span class="annottext">noix :: Optic A_Traversal NoIx (Seq a) (Seq a) a a
+</span><a href="#local-6989586621679115653"><span class="hs-identifier hs-var hs-var">noix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 </span><a href="Optics.Traversal.html#traversalVL"><span class="hs-identifier hs-var">traversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(TraversalVL (Seq a) (Seq a) a a
@@ -308,92 +308,92 @@ forall s t a b. TraversalVL s t a b -&gt; Traversal s t a b
 -&gt; TraversalVL (Seq a) (Seq a) a a
 -&gt; Optic A_Traversal NoIx (Seq a) (Seq a) a a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115646"><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115646"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115645"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115645"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115651"><span class="annot"><span class="annottext">a -&gt; f a
+</span><a href="#local-6989586621679115651"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115650"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115645"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-120"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115644"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115644"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115643"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115643"><span class="hs-identifier hs-var">mr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-120"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115649"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115649"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115648"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115648"><span class="hs-identifier hs-var">mr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115649"><span class="hs-identifier hs-var">j</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679115654"><span class="hs-identifier hs-var">j</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115643"><span class="hs-identifier hs-var">mr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-121"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679115642"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115642"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115641"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115641"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115648"><span class="hs-identifier hs-var">mr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-121"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679115647"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115647"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115646"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115646"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
 forall (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (Traversable t, Applicative f) =&gt;
 (a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><span class="hs-identifier hs-var">traverse</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; f a
-</span><a href="#local-6989586621679115646"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115642"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">f (Seq a) -&gt; (Seq a -&gt; Seq a) -&gt; f (Seq a)
+</span><a href="#local-6989586621679115651"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115647"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">f (Seq a) -&gt; (Seq a -&gt; Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; f a -&gt; (a -&gt; b) -&gt; f b
-</span><span class="hs-operator hs-var">&lt;&amp;&gt;</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115639"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115639"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115644"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><span class="hs-operator hs-var">&lt;&amp;&gt;</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115644"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115644"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115649"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115639"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115644"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115641"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679115646"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-122"></span><span>
-</span><span id="line-123"></span><span>    </span><span id="local-6989586621679115647"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
-</span><a href="#local-6989586621679115647"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
+</span><span id="line-123"></span><span>    </span><span id="local-6989586621679115652"><span class="annot"><span class="annottext">ix :: IxTraversal' Int (Seq a) a
+</span><a href="#local-6989586621679115652"><span class="hs-identifier hs-var hs-var">ix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IxTraversalVL Int (Seq a) (Seq a) a a -&gt; IxTraversal' Int (Seq a) a
 forall i s t a b. IxTraversalVL i s t a b -&gt; IxTraversal i s t a b
 </span><a href="Optics.IxTraversal.html#itraversalVL"><span class="hs-identifier hs-var">itraversalVL</span></a></span><span> </span><span class="annot"><span class="annottext">(IxTraversalVL Int (Seq a) (Seq a) a a
  -&gt; IxTraversal' Int (Seq a) a)
 -&gt; IxTraversalVL Int (Seq a) (Seq a) a a
 -&gt; IxTraversal' Int (Seq a) a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115638"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115638"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115637"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115637"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115643"><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
+</span><a href="#local-6989586621679115643"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679115642"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115642"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115637"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-124"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115636"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115636"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115635"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115635"><span class="hs-identifier hs-var">mr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115642"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-124"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679115641"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115641"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115640"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115640"><span class="hs-identifier hs-var">mr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Seq a -&gt; (Seq a, Seq a)
 forall a. Int -&gt; Seq a -&gt; (Seq a, Seq a)
 </span><span class="hs-identifier hs-var">Seq.splitAt</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115649"><span class="hs-identifier hs-var">j</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679115654"><span class="hs-identifier hs-var">j</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115635"><span class="hs-identifier hs-var">mr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-125"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679115634"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115634"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115633"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115633"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115640"><span class="hs-identifier hs-var">mr</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-125"></span><span>        </span><span class="hs-special">(</span><span id="local-6989586621679115639"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115639"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679115638"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115638"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; Seq a -&gt; f (Seq a)
 forall i (t :: * -&gt; *) (f :: * -&gt; *) a b.
 (TraversableWithIndex i t, Applicative f) =&gt;
 (i -&gt; a -&gt; f b) -&gt; t a -&gt; f (t b)
 </span><a href="Optics.Internal.Indexed.Classes.html#itraverse"><span class="hs-identifier hs-var">itraverse</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; a -&gt; f a
-</span><a href="#local-6989586621679115638"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; (Int -&gt; Int) -&gt; Int -&gt; a -&gt; f a
+</span><a href="#local-6989586621679115643"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(Int -&gt; a -&gt; f a) -&gt; (Int -&gt; Int) -&gt; Int -&gt; a -&gt; f a
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679115650"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115634"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">f (Seq a) -&gt; (Seq a -&gt; Seq a) -&gt; f (Seq a)
+</span><a href="#local-6989586621679115655"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115639"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">f (Seq a) -&gt; (Seq a -&gt; Seq a) -&gt; f (Seq a)
 forall (f :: * -&gt; *) a b. Functor f =&gt; f a -&gt; (a -&gt; b) -&gt; f b
-</span><span class="hs-operator hs-var">&lt;&amp;&gt;</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115632"><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115632"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115636"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><span class="hs-operator hs-var">&lt;&amp;&gt;</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679115637"><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115637"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Seq a
+</span><a href="#local-6989586621679115641"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115632"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
+</span><a href="#local-6989586621679115637"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Seq a -&gt; Seq a -&gt; Seq a
 forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span class="hs-operator hs-var">&gt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">Seq a
-</span><a href="#local-6989586621679115633"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679115638"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-126"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#sliced"><span class="hs-pragma hs-type">sliced</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-127"></span><span>
 </span><span id="line-128"></span><span class="hs-comment">-- | Construct a 'Seq' from a fold.</span><span>
@@ -403,15 +403,15 @@ forall a. Seq a -&gt; Seq a -&gt; Seq a
 </span><span id="line-132"></span><span class="hs-comment">--</span><span>
 </span><span id="line-133"></span><span class="hs-comment">-- &gt;&gt;&gt; seqOf (folded % _2) [(&quot;hello&quot;,1),(&quot;world&quot;,2),(&quot;!!!&quot;,3)]</span><span>
 </span><span id="line-134"></span><span class="hs-comment">-- fromList [1,2,3]</span><span>
-</span><span id="line-135"></span><span id="local-6989586621679115628"><span id="local-6989586621679115629"><span id="local-6989586621679115630"><span id="local-6989586621679115631"><span class="annot"><a href="Data.Sequence.Optics.html#seqOf"><span class="hs-identifier hs-type">seqOf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Internal.Optic.Subtyping.html#Is"><span class="hs-identifier hs-type">Is</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115631"><span class="hs-identifier hs-type">k</span></a></span><span> </span><span class="annot"><a href="Optics.Internal.Optic.Types.html#A_Fold"><span class="hs-identifier hs-type">A_Fold</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Optics.Internal.Optic.html#Optic%27"><span class="hs-identifier hs-type">Optic'</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115631"><span class="hs-identifier hs-type">k</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115630"><span class="hs-identifier hs-type">is</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115629"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115628"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679115629"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115628"><span class="hs-identifier hs-type">a</span></a></span></span></span></span></span><span>
+</span><span id="line-135"></span><span id="local-6989586621679115633"><span id="local-6989586621679115634"><span id="local-6989586621679115635"><span id="local-6989586621679115636"><span class="annot"><a href="Data.Sequence.Optics.html#seqOf"><span class="hs-identifier hs-type">seqOf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Internal.Optic.Subtyping.html#Is"><span class="hs-identifier hs-type">Is</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115636"><span class="hs-identifier hs-type">k</span></a></span><span> </span><span class="annot"><a href="Optics.Internal.Optic.Types.html#A_Fold"><span class="hs-identifier hs-type">A_Fold</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Optics.Internal.Optic.html#Optic%27"><span class="hs-identifier hs-type">Optic'</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115636"><span class="hs-identifier hs-type">k</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115635"><span class="hs-identifier hs-type">is</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115634"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679115633"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679115634"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Seq</span></span><span> </span><span class="annot"><a href="#local-6989586621679115633"><span class="hs-identifier hs-type">a</span></a></span></span></span></span></span><span>
 </span><span id="line-136"></span><span id="seqOf"><span class="annot"><span class="annottext">seqOf :: Optic' k is s a -&gt; s -&gt; Seq a
-</span><a href="Data.Sequence.Optics.html#seqOf"><span class="hs-identifier hs-var hs-var">seqOf</span></a></span></span><span> </span><span id="local-6989586621679115627"><span class="annot"><span class="annottext">Optic' k is s a
-</span><a href="#local-6989586621679115627"><span class="hs-identifier hs-var">l</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic' k is s a -&gt; (a -&gt; Seq a) -&gt; s -&gt; Seq a
+</span><a href="Data.Sequence.Optics.html#seqOf"><span class="hs-identifier hs-var hs-var">seqOf</span></a></span></span><span> </span><span id="local-6989586621679115632"><span class="annot"><span class="annottext">Optic' k is s a
+</span><a href="#local-6989586621679115632"><span class="hs-identifier hs-var">l</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Optic' k is s a -&gt; (a -&gt; Seq a) -&gt; s -&gt; Seq a
 forall k m (is :: IxList) s a.
 (Is k A_Fold, Monoid m) =&gt;
 Optic' k is s a -&gt; (a -&gt; m) -&gt; s -&gt; m
 </span><a href="Optics.Fold.html#foldMapOf"><span class="hs-identifier hs-var">foldMapOf</span></a></span><span> </span><span class="annot"><span class="annottext">Optic' k is s a
-</span><a href="#local-6989586621679115627"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; Seq a
+</span><a href="#local-6989586621679115632"><span class="hs-identifier hs-var">l</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; Seq a
 forall a. a -&gt; Seq a
 </span><span class="hs-identifier hs-var">Seq.singleton</span></span><span>
 </span><span id="line-137"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Sequence.Optics.html#seqOf"><span class="hs-pragma hs-type">seqOf</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>

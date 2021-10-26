@@ -50,26 +50,26 @@ forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[String] -&gt; InvalidRequest
 </span><a href="Network.Wai.Handler.Warp.Types.html#NotEnoughLines"><span class="hs-identifier hs-var">NotEnoughLines</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
-</span><span id="line-34"></span><span class="annot"><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeaderLines"><span class="hs-identifier hs-var">parseHeaderLines</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679101036"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101036"><span class="hs-identifier hs-var">firstLine</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679101035"><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var">otherLines</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-35"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679101034"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var">method</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101033"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">path'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101032"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101032"><span class="hs-identifier hs-var">query</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101031"><span class="annot"><span class="annottext">HttpVersion
-</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">httpversion</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
+</span><span id="line-34"></span><span class="annot"><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeaderLines"><span class="hs-identifier hs-var">parseHeaderLines</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679101054"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101054"><span class="hs-identifier hs-var">firstLine</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679101053"><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679101053"><span class="hs-identifier hs-var">otherLines</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-35"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679101052"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101052"><span class="hs-identifier hs-var">method</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101051"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101051"><span class="hs-identifier hs-var">path'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101050"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101050"><span class="hs-identifier hs-var">query</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679101049"><span class="annot"><span class="annottext">HttpVersion
+</span><a href="#local-6989586621679101049"><span class="hs-identifier hs-var">httpversion</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
 </span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseRequestLine"><span class="hs-identifier hs-var">parseRequestLine</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101036"><span class="hs-identifier hs-var">firstLine</span></a></span><span>
-</span><span id="line-36"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101029"><span class="annot"><span class="annottext">path :: ByteString
-</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
+</span><a href="#local-6989586621679101054"><span class="hs-identifier hs-var">firstLine</span></a></span><span>
+</span><span id="line-36"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101047"><span class="annot"><span class="annottext">path :: ByteString
+</span><a href="#local-6989586621679101047"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">H.extractPath</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">path'</span></a></span><span>
-</span><span id="line-37"></span><span>        </span><span id="local-6989586621679101027"><span class="annot"><span class="annottext">hdr :: RequestHeaders
-</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Header) -&gt; [ByteString] -&gt; RequestHeaders
+</span><a href="#local-6989586621679101051"><span class="hs-identifier hs-var">path'</span></a></span><span>
+</span><span id="line-37"></span><span>        </span><span id="local-6989586621679101045"><span class="annot"><span class="annottext">hdr :: RequestHeaders
+</span><a href="#local-6989586621679101045"><span class="hs-identifier hs-var hs-var">hdr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Header) -&gt; [ByteString] -&gt; RequestHeaders
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Header
 </span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeader"><span class="hs-identifier hs-var">parseHeader</span></a></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var">otherLines</span></a></span><span>
+</span><a href="#local-6989586621679101053"><span class="hs-identifier hs-var">otherLines</span></a></span><span>
 </span><span id="line-38"></span><span>    </span><span class="annot"><span class="annottext">(ByteString, ByteString, ByteString, ByteString, HttpVersion,
  RequestHeaders)
 -&gt; IO
@@ -77,12 +77,12 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
       RequestHeaders)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var">method</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">path'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101032"><span class="hs-identifier hs-var">query</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HttpVersion
-</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">httpversion</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
-</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">hdr</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101052"><span class="hs-identifier hs-var">method</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101051"><span class="hs-identifier hs-var">path'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101047"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101050"><span class="hs-identifier hs-var">query</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HttpVersion
+</span><a href="#local-6989586621679101049"><span class="hs-identifier hs-var">httpversion</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
+</span><a href="#local-6989586621679101045"><span class="hs-identifier hs-var">hdr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-41"></span><span>
@@ -104,29 +104,29 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-57"></span><span>                       </span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-comment">-- Query</span><span>
 </span><span id="line-58"></span><span>                       </span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">H.HttpVersion</span></span><span class="hs-special">)</span><span>
 </span><span id="line-59"></span><span id="parseRequestLine"><span class="annot"><span class="annottext">parseRequestLine :: ByteString -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
-</span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseRequestLine"><span class="hs-identifier hs-var hs-var">parseRequestLine</span></a></span></span><span> </span><span id="local-6989586621679101025"><span class="annot"><span class="annottext">requestLine :: ByteString
-</span><a href="#local-6989586621679101025"><span class="hs-identifier hs-var">requestLine</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679101023"><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679101023"><span class="hs-identifier hs-var">fptr</span></a></span></span><span> </span><span id="local-6989586621679101022"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101022"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679101021"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">len</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseRequestLine"><span class="hs-identifier hs-var hs-var">parseRequestLine</span></a></span></span><span> </span><span id="local-6989586621679101043"><span class="annot"><span class="annottext">requestLine :: ByteString
+</span><a href="#local-6989586621679101043"><span class="hs-identifier hs-var">requestLine</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">PS</span></span><span> </span><span id="local-6989586621679101041"><span class="annot"><span class="annottext">ForeignPtr Word8
+</span><a href="#local-6989586621679101041"><span class="hs-identifier hs-var">fptr</span></a></span></span><span> </span><span id="local-6989586621679101040"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101040"><span class="hs-identifier hs-var">off</span></a></span></span><span> </span><span id="local-6989586621679101039"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101039"><span class="hs-identifier hs-var">len</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 -&gt; (Ptr Word8
     -&gt; IO (ByteString, ByteString, ByteString, HttpVersion))
 -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
 forall a b. ForeignPtr a -&gt; (Ptr a -&gt; IO b) -&gt; IO b
 </span><span class="hs-identifier hs-var">withForeignPtr</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679101023"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8
+</span><a href="#local-6989586621679101041"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">((Ptr Word8
   -&gt; IO (ByteString, ByteString, ByteString, HttpVersion))
  -&gt; IO (ByteString, ByteString, ByteString, HttpVersion))
 -&gt; (Ptr Word8
     -&gt; IO (ByteString, ByteString, ByteString, HttpVersion))
 -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101020"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679101038"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-60"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679101039"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">14</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
@@ -134,47 +134,47 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest
-</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var">baderr</span></a></span><span>
-</span><span id="line-61"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101016"><span class="annot"><span class="annottext">methodptr :: Ptr b
-</span><a href="#local-6989586621679101016"><span class="hs-identifier hs-var hs-var">methodptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
+</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var">baderr</span></a></span><span>
+</span><span id="line-61"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101034"><span class="annot"><span class="annottext">methodptr :: Ptr b
+</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var hs-var">methodptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101022"><span class="hs-identifier hs-var">off</span></a></span><span>
-</span><span id="line-62"></span><span>        </span><span id="local-6989586621679101015"><span class="annot"><span class="annottext">limptr :: Ptr b
-</span><a href="#local-6989586621679101015"><span class="hs-identifier hs-var hs-var">limptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Any
+</span><a href="#local-6989586621679101040"><span class="hs-identifier hs-var">off</span></a></span><span>
+</span><span id="line-62"></span><span>        </span><span id="local-6989586621679101033"><span class="annot"><span class="annottext">limptr :: Ptr b
+</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var hs-var">limptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101016"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Int -&gt; Ptr b
+</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Int -&gt; Ptr b
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">len</span></a></span><span>
-</span><span id="line-63"></span><span>        </span><span id="local-6989586621679101014"><span class="annot"><span class="annottext">lim0 :: CSize
-</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var hs-var">lim0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><a href="#local-6989586621679101039"><span class="hs-identifier hs-var">len</span></a></span><span>
+</span><span id="line-63"></span><span>        </span><span id="local-6989586621679101032"><span class="annot"><span class="annottext">lim0 :: CSize
+</span><a href="#local-6989586621679101032"><span class="hs-identifier hs-var hs-var">lim0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">len</span></a></span><span>
+</span><a href="#local-6989586621679101039"><span class="hs-identifier hs-var">len</span></a></span><span>
 </span><span id="line-64"></span><span>
-</span><span id="line-65"></span><span>    </span><span id="local-6989586621679101013"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
+</span><span id="line-65"></span><span>    </span><span id="local-6989586621679101031"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
 </span><span class="hs-identifier hs-var">memchr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
-</span><a href="#local-6989586621679101016"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">32</span></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">lim0</span></a></span><span> </span><span class="hs-comment">-- ' '</span><span>
+</span><a href="#local-6989586621679101032"><span class="hs-identifier hs-var">lim0</span></a></span><span> </span><span class="hs-comment">-- ' '</span><span>
 </span><span id="line-66"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
 </span><span class="hs-identifier hs-var">nullPtr</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101015"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
+</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">11</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
@@ -183,44 +183,44 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-67"></span><span>        </span><span class="annot"><span class="annottext">InvalidRequest -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest
-</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var">baderr</span></a></span><span>
-</span><span id="line-68"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101011"><span class="annot"><span class="annottext">pathptr :: Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var hs-var">pathptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
+</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var">baderr</span></a></span><span>
+</span><span id="line-68"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101029"><span class="annot"><span class="annottext">pathptr :: Ptr b
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var hs-var">pathptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span>
-</span><span id="line-69"></span><span>        </span><span id="local-6989586621679101010"><span class="annot"><span class="annottext">lim1 :: CSize
-</span><a href="#local-6989586621679101010"><span class="hs-identifier hs-var hs-var">lim1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><span id="line-69"></span><span>        </span><span id="local-6989586621679101028"><span class="annot"><span class="annottext">lim1 :: CSize
+</span><a href="#local-6989586621679101028"><span class="hs-identifier hs-var hs-var">lim1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101015"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
+</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span>
-</span><span id="line-71"></span><span>    </span><span id="local-6989586621679101009"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
+</span><span id="line-71"></span><span>    </span><span id="local-6989586621679101027"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
 </span><span class="hs-identifier hs-var">memchr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">32</span></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101010"><span class="hs-identifier hs-var">lim1</span></a></span><span> </span><span class="hs-comment">-- ' '</span><span>
+</span><a href="#local-6989586621679101028"><span class="hs-identifier hs-var">lim1</span></a></span><span> </span><span class="hs-comment">-- ' '</span><span>
 </span><span id="line-72"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
 </span><span class="hs-identifier hs-var">nullPtr</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101015"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
+</span><a href="#local-6989586621679101033"><span class="hs-identifier hs-var">limptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; Ptr Word8 -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">9</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
@@ -229,75 +229,75 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-73"></span><span>        </span><span class="annot"><span class="annottext">InvalidRequest -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest
-</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var">baderr</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101008"><span class="annot"><span class="annottext">httpptr :: Ptr b
-</span><a href="#local-6989586621679101008"><span class="hs-identifier hs-var hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
+</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var">baderr</span></a></span><span>
+</span><span id="line-74"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101026"><span class="annot"><span class="annottext">httpptr :: Ptr b
+</span><a href="#local-6989586621679101026"><span class="hs-identifier hs-var hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr b
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span>
-</span><span id="line-75"></span><span>        </span><span id="local-6989586621679101007"><span class="annot"><span class="annottext">lim2 :: CSize
-</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var hs-var">lim2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><span id="line-75"></span><span>        </span><span id="local-6989586621679101025"><span class="annot"><span class="annottext">lim2 :: CSize
+</span><a href="#local-6989586621679101025"><span class="hs-identifier hs-var hs-var">lim2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Int
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">pathptr</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">pathptr</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-76"></span><span>
 </span><span id="line-77"></span><span>    </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO ()
-</span><a href="#local-6989586621679101006"><span class="hs-identifier hs-var">checkHTTP</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101024"><span class="hs-identifier hs-var">checkHTTP</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
-</span><a href="#local-6989586621679101008"><span class="hs-identifier hs-var">httpptr</span></a></span><span>
-</span><span id="line-78"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679101005"><span class="annot"><span class="annottext">HttpVersion
-</span><a href="#local-6989586621679101005"><span class="hs-identifier hs-var">hv</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; IO HttpVersion
+</span><a href="#local-6989586621679101026"><span class="hs-identifier hs-var">httpptr</span></a></span><span>
+</span><span id="line-78"></span><span>    </span><span class="hs-glyph">!</span><span id="local-6989586621679101023"><span class="annot"><span class="annottext">HttpVersion
+</span><a href="#local-6989586621679101023"><span class="hs-identifier hs-var">hv</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Any -&gt; IO HttpVersion
 forall a. Ptr a -&gt; IO HttpVersion
-</span><a href="#local-6989586621679101004"><span class="hs-identifier hs-var">httpVersion</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
+</span><a href="#local-6989586621679101022"><span class="hs-identifier hs-var">httpVersion</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101008"><span class="hs-identifier hs-var">httpptr</span></a></span><span>
-</span><span id="line-79"></span><span>    </span><span id="local-6989586621679101003"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">queryptr</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679101026"><span class="hs-identifier hs-var">httpptr</span></a></span><span>
+</span><span id="line-79"></span><span>    </span><span id="local-6989586621679101021"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">queryptr</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Word8 -&gt; CSize -&gt; IO (Ptr Word8)
 </span><span class="hs-identifier hs-var">memchr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">63</span></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">lim2</span></a></span><span> </span><span class="hs-comment">-- '?'</span><span>
+</span><a href="#local-6989586621679101025"><span class="hs-identifier hs-var">lim2</span></a></span><span> </span><span class="hs-comment">-- '?'</span><span>
 </span><span id="line-80"></span><span>
-</span><span id="line-81"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679101002"><span class="annot"><span class="annottext">method :: ByteString
-</span><a href="#local-6989586621679101002"><span class="hs-identifier hs-var hs-var">method</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Ptr Word8 -&gt; ByteString
+</span><span id="line-81"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-glyph">!</span><span id="local-6989586621679101020"><span class="annot"><span class="annottext">method :: ByteString
+</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var hs-var">method</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Ptr Word8 -&gt; ByteString
 forall b a a. Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
-</span><a href="#local-6989586621679101001"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
+</span><a href="#local-6989586621679101019"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101016"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">pathptr0</span></a></span><span>
-</span><span id="line-82"></span><span>        </span><span class="hs-glyph">!</span><span id="local-6989586621679101000"><span class="annot"><span class="annottext">path :: ByteString
-</span><a href="#local-6989586621679101000"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span>
+</span><a href="#local-6989586621679101034"><span class="hs-identifier hs-var">methodptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101031"><span class="hs-identifier hs-var">pathptr0</span></a></span><span>
+</span><span id="line-82"></span><span>        </span><span class="hs-glyph">!</span><span id="local-6989586621679101018"><span class="annot"><span class="annottext">path :: ByteString
+</span><a href="#local-6989586621679101018"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span>
 </span><span id="line-83"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
+</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
 </span><span class="hs-identifier hs-var">nullPtr</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Ptr Word8 -&gt; ByteString
 forall b a a. Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
-</span><a href="#local-6989586621679101001"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
+</span><a href="#local-6989586621679101019"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span>
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span>
 </span><span id="line-84"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Any -&gt; Ptr Word8 -&gt; ByteString
 forall b a a. Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
-</span><a href="#local-6989586621679101001"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
+</span><a href="#local-6989586621679101019"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Any
 forall b. Ptr b
-</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">queryptr</span></a></span><span>
-</span><span id="line-85"></span><span>        </span><span class="hs-glyph">!</span><span id="local-6989586621679100999"><span class="annot"><span class="annottext">query :: ByteString
-</span><a href="#local-6989586621679100999"><span class="hs-identifier hs-var hs-var">query</span></a></span></span><span>
+</span><a href="#local-6989586621679101029"><span class="hs-identifier hs-var">pathptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">queryptr</span></a></span><span>
+</span><span id="line-85"></span><span>        </span><span class="hs-glyph">!</span><span id="local-6989586621679101017"><span class="annot"><span class="annottext">query :: ByteString
+</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var hs-var">query</span></a></span></span><span>
 </span><span id="line-86"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
+</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 forall b. Ptr b
@@ -306,127 +306,127 @@ forall b. Ptr b
 </span><span id="line-87"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr Word8 -&gt; Ptr Word8 -&gt; ByteString
 forall b a a. Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
-</span><a href="#local-6989586621679101001"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679101009"><span class="hs-identifier hs-var">httpptr0</span></a></span><span>
+</span><a href="#local-6989586621679101019"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101038"><span class="hs-identifier hs-var">ptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101021"><span class="hs-identifier hs-var">queryptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101027"><span class="hs-identifier hs-var">httpptr0</span></a></span><span>
 </span><span id="line-88"></span><span>
 </span><span id="line-89"></span><span>    </span><span class="annot"><span class="annottext">(ByteString, ByteString, ByteString, HttpVersion)
 -&gt; IO (ByteString, ByteString, ByteString, HttpVersion)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101002"><span class="hs-identifier hs-var">method</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101000"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100999"><span class="hs-identifier hs-var">query</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">HttpVersion
-</span><a href="#local-6989586621679101005"><span class="hs-identifier hs-var">hv</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679101020"><span class="hs-identifier hs-var">method</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101018"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var">query</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">HttpVersion
+</span><a href="#local-6989586621679101023"><span class="hs-identifier hs-var">hv</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-91"></span><span>    </span><span id="local-6989586621679101017"><span class="annot"><span class="annottext">baderr :: InvalidRequest
-</span><a href="#local-6989586621679101017"><span class="hs-identifier hs-var hs-var">baderr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; InvalidRequest
+</span><span id="line-91"></span><span>    </span><span id="local-6989586621679101035"><span class="annot"><span class="annottext">baderr :: InvalidRequest
+</span><a href="#local-6989586621679101035"><span class="hs-identifier hs-var hs-var">baderr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; InvalidRequest
 </span><a href="Network.Wai.Handler.Warp.Types.html#BadFirstLine"><span class="hs-identifier hs-var">BadFirstLine</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; InvalidRequest) -&gt; String -&gt; InvalidRequest
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; String
 </span><span class="hs-identifier hs-var">C8.unpack</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679101025"><span class="hs-identifier hs-var">requestLine</span></a></span><span>
-</span><span id="line-92"></span><span>    </span><span class="annot"><a href="#local-6989586621679100996"><span class="hs-identifier hs-type">check</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ptr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-93"></span><span>    </span><span id="local-6989586621679100996"><span class="annot"><span class="annottext">check :: Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var hs-var">check</span></a></span></span><span> </span><span id="local-6989586621679100995"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100995"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679100994"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100994"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679100993"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100993"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-94"></span><span>        </span><span id="local-6989586621679100992"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100992"><span class="hs-identifier hs-var">w0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
+</span><a href="#local-6989586621679101043"><span class="hs-identifier hs-var">requestLine</span></a></span><span>
+</span><span id="line-92"></span><span>    </span><span class="annot"><a href="#local-6989586621679101014"><span class="hs-identifier hs-type">check</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Ptr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-93"></span><span>    </span><span id="local-6989586621679101014"><span class="annot"><span class="annottext">check :: Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var hs-var">check</span></a></span></span><span> </span><span id="local-6989586621679101013"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679101012"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101012"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span id="local-6989586621679101011"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-94"></span><span>        </span><span id="local-6989586621679101010"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101010"><span class="hs-identifier hs-var">w0</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">(Ptr Word8 -&gt; IO Word8) -&gt; Ptr Word8 -&gt; IO Word8
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100995"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
+</span><a href="#local-6989586621679101013"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100994"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621679101012"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-95"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100992"><span class="hs-identifier hs-var">w0</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679101010"><span class="hs-identifier hs-var">w0</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100993"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679101011"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest -&gt; IO ()
 forall (m :: * -&gt; *) e a. (MonadIO m, Exception e) =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">InvalidRequest
 </span><a href="Network.Wai.Handler.Warp.Types.html#NonHttp"><span class="hs-identifier hs-var">NonHttp</span></a></span><span>
-</span><span id="line-96"></span><span>    </span><span id="local-6989586621679101006"><span class="annot"><span class="annottext">checkHTTP :: Ptr Word8 -&gt; IO ()
-</span><a href="#local-6989586621679101006"><span class="hs-identifier hs-var hs-var">checkHTTP</span></a></span></span><span> </span><span id="local-6989586621679100989"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-96"></span><span>    </span><span id="local-6989586621679101024"><span class="annot"><span class="annottext">checkHTTP :: Ptr Word8 -&gt; IO ()
+</span><a href="#local-6989586621679101024"><span class="hs-identifier hs-var hs-var">checkHTTP</span></a></span></span><span> </span><span id="local-6989586621679101007"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-97"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">72</span></span><span> </span><span class="hs-comment">-- 'H'</span><span>
 </span><span id="line-98"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">84</span></span><span> </span><span class="hs-comment">-- 'T'</span><span>
 </span><span id="line-99"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">84</span></span><span> </span><span class="hs-comment">-- 'T'</span><span>
 </span><span id="line-100"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">3</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">80</span></span><span> </span><span class="hs-comment">-- 'P'</span><span>
 </span><span id="line-101"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">4</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">47</span></span><span> </span><span class="hs-comment">-- '/'</span><span>
 </span><span id="line-102"></span><span>        </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; Word8 -&gt; IO ()
-</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679101014"><span class="hs-identifier hs-var">check</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679101007"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">6</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">46</span></span><span> </span><span class="hs-comment">-- '.'</span><span>
-</span><span id="line-103"></span><span>    </span><span id="local-6989586621679101004"><span class="annot"><span class="annottext">httpVersion :: Ptr a -&gt; IO HttpVersion
-</span><a href="#local-6989586621679101004"><span class="hs-identifier hs-var hs-var">httpVersion</span></a></span></span><span> </span><span id="local-6989586621679100988"><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100988"><span class="hs-identifier hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-104"></span><span>        </span><span id="local-6989586621679100987"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">major</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
+</span><span id="line-103"></span><span>    </span><span id="local-6989586621679101022"><span class="annot"><span class="annottext">httpVersion :: Ptr a -&gt; IO HttpVersion
+</span><a href="#local-6989586621679101022"><span class="hs-identifier hs-var hs-var">httpVersion</span></a></span></span><span> </span><span id="local-6989586621679101006"><span class="annot"><span class="annottext">Ptr a
+</span><a href="#local-6989586621679101006"><span class="hs-identifier hs-var">httpptr</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-104"></span><span>        </span><span id="local-6989586621679101005"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101005"><span class="hs-identifier hs-var">major</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100988"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Int -&gt; Ptr Word8
+</span><a href="#local-6989586621679101006"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Int -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">5</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
-</span><span id="line-105"></span><span>        </span><span id="local-6989586621679100986"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100986"><span class="hs-identifier hs-var">minor</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
+</span><span id="line-105"></span><span>        </span><span id="local-6989586621679101004"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679101004"><span class="hs-identifier hs-var">minor</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO Word8
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100988"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Int -&gt; Ptr Word8
+</span><a href="#local-6989586621679101006"><span class="hs-identifier hs-var">httpptr</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Int -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Int -&gt; Ptr b
 </span><span class="hs-operator hs-var">`plusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span>
-</span><span id="line-106"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679100985"><span class="annot"><span class="annottext">version :: HttpVersion
-</span><a href="#local-6989586621679100985"><span class="hs-identifier hs-var hs-var">version</span></a></span></span><span>
+</span><span id="line-106"></span><span>        </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679101003"><span class="annot"><span class="annottext">version :: HttpVersion
+</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var hs-var">version</span></a></span></span><span>
 </span><span id="line-107"></span><span>              </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">major</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679101005"><span class="hs-identifier hs-var">major</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">49</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100986"><span class="hs-identifier hs-var">minor</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679101004"><span class="hs-identifier hs-var">minor</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">49</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">HttpVersion
 </span><span class="hs-identifier hs-var">H.http11</span></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">HttpVersion
 </span><span class="hs-identifier hs-var">H.http10</span></span><span>
 </span><span id="line-108"></span><span>              </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">major</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679101005"><span class="hs-identifier hs-var">major</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">50</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100986"><span class="hs-identifier hs-var">minor</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679101004"><span class="hs-identifier hs-var">minor</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">48</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; HttpVersion
@@ -439,29 +439,29 @@ forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span id="line-110"></span><span>        </span><span class="annot"><span class="annottext">HttpVersion -&gt; IO HttpVersion
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">HttpVersion
-</span><a href="#local-6989586621679100985"><span class="hs-identifier hs-var">version</span></a></span><span>
-</span><span id="line-111"></span><span>    </span><span id="local-6989586621679101001"><span class="annot"><span class="annottext">bs :: Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
-</span><a href="#local-6989586621679101001"><span class="hs-identifier hs-var hs-var">bs</span></a></span></span><span> </span><span id="local-6989586621679100980"><span class="annot"><span class="annottext">Ptr b
-</span><a href="#local-6989586621679100980"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span id="local-6989586621679100979"><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100979"><span class="hs-identifier hs-var">p0</span></a></span></span><span> </span><span id="local-6989586621679100978"><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100978"><span class="hs-identifier hs-var">p1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; Int -&gt; Int -&gt; ByteString
+</span><a href="#local-6989586621679101003"><span class="hs-identifier hs-var">version</span></a></span><span>
+</span><span id="line-111"></span><span>    </span><span id="local-6989586621679101019"><span class="annot"><span class="annottext">bs :: Ptr b -&gt; Ptr a -&gt; Ptr a -&gt; ByteString
+</span><a href="#local-6989586621679101019"><span class="hs-identifier hs-var hs-var">bs</span></a></span></span><span> </span><span id="local-6989586621679100998"><span class="annot"><span class="annottext">Ptr b
+</span><a href="#local-6989586621679100998"><span class="hs-identifier hs-var">ptr</span></a></span></span><span> </span><span id="local-6989586621679100997"><span class="annot"><span class="annottext">Ptr a
+</span><a href="#local-6989586621679100997"><span class="hs-identifier hs-var">p0</span></a></span></span><span> </span><span id="local-6989586621679100996"><span class="annot"><span class="annottext">Ptr a
+</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">p1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; Int -&gt; Int -&gt; ByteString
 </span><span class="hs-identifier hs-var">PS</span></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
-</span><a href="#local-6989586621679101023"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100977"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679100976"><span class="hs-identifier hs-var">l</span></a></span><span>
+</span><a href="#local-6989586621679101041"><span class="hs-identifier hs-var">fptr</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100995"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679100994"><span class="hs-identifier hs-var">l</span></a></span><span>
 </span><span id="line-112"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-113"></span><span>        </span><span id="local-6989586621679100977"><span class="annot"><span class="annottext">o :: Int
-</span><a href="#local-6989586621679100977"><span class="hs-identifier hs-var hs-var">o</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100979"><span class="hs-identifier hs-var">p0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Ptr b -&gt; Int
+</span><span id="line-113"></span><span>        </span><span id="local-6989586621679100995"><span class="annot"><span class="annottext">o :: Int
+</span><a href="#local-6989586621679100995"><span class="hs-identifier hs-var hs-var">o</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr a
+</span><a href="#local-6989586621679100997"><span class="hs-identifier hs-var">p0</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Ptr b -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr b
-</span><a href="#local-6989586621679100980"><span class="hs-identifier hs-var">ptr</span></a></span><span>
-</span><span id="line-114"></span><span>        </span><span id="local-6989586621679100976"><span class="annot"><span class="annottext">l :: Int
-</span><a href="#local-6989586621679100976"><span class="hs-identifier hs-var hs-var">l</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100978"><span class="hs-identifier hs-var">p1</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Ptr a -&gt; Int
+</span><a href="#local-6989586621679100998"><span class="hs-identifier hs-var">ptr</span></a></span><span>
+</span><span id="line-114"></span><span>        </span><span id="local-6989586621679100994"><span class="annot"><span class="annottext">l :: Int
+</span><a href="#local-6989586621679100994"><span class="hs-identifier hs-var hs-var">l</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ptr a
+</span><a href="#local-6989586621679100996"><span class="hs-identifier hs-var">p1</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr a -&gt; Ptr a -&gt; Int
 forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span class="hs-operator hs-var">`minusPtr`</span></span><span> </span><span class="annot"><span class="annottext">Ptr a
-</span><a href="#local-6989586621679100979"><span class="hs-identifier hs-var">p0</span></a></span><span>
+</span><a href="#local-6989586621679100997"><span class="hs-identifier hs-var">p0</span></a></span><span>
 </span><span id="line-115"></span><span>
 </span><span id="line-116"></span><span class="hs-comment">----------------------------------------------------------------</span><span>
 </span><span id="line-117"></span><span>
@@ -478,26 +478,26 @@ forall a b. Ptr a -&gt; Ptr b -&gt; Int
 </span><span id="line-128"></span><span>
 </span><span id="line-129"></span><span class="annot"><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeader"><span class="hs-identifier hs-type">parseHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Header</span></span><span>
 </span><span id="line-130"></span><span id="parseHeader"><span class="annot"><span class="annottext">parseHeader :: ByteString -&gt; Header
-</span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeader"><span class="hs-identifier hs-var hs-var">parseHeader</span></a></span></span><span> </span><span id="local-6989586621679100975"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100975"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-131"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679100974"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100974"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679100973"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100973"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; (ByteString, ByteString)
+</span><a href="Network.Wai.Handler.Warp.RequestHeader.html#parseHeader"><span class="hs-identifier hs-var hs-var">parseHeader</span></a></span></span><span> </span><span id="local-6989586621679100993"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679100993"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-131"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679100992"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679100992"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679100991"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679100991"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; (ByteString, ByteString)
 </span><span class="hs-identifier hs-var">S.break</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">58</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100975"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-comment">-- ':'</span><span>
-</span><span id="line-132"></span><span>        </span><span id="local-6989586621679100971"><span class="annot"><span class="annottext">rest' :: ByteString
-</span><a href="#local-6989586621679100971"><span class="hs-identifier hs-var hs-var">rest'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; ByteString
-</span><span class="hs-identifier hs-var">S.dropWhile</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679100969"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100969"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100969"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679100993"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-comment">-- ':'</span><span>
+</span><span id="line-132"></span><span>        </span><span id="local-6989586621679100989"><span class="annot"><span class="annottext">rest' :: ByteString
+</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var hs-var">rest'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; ByteString
+</span><span class="hs-identifier hs-var">S.dropWhile</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679100987"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">32</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679100969"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
+</span><a href="#local-6989586621679100987"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; Word8 -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">9</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; ByteString) -&gt; ByteString -&gt; ByteString
@@ -505,10 +505,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">S.drop</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100973"><span class="hs-identifier hs-var">rest</span></a></span><span>
+</span><a href="#local-6989586621679100991"><span class="hs-identifier hs-var">rest</span></a></span><span>
 </span><span id="line-133"></span><span>     </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; CI ByteString
 forall s. FoldCase s =&gt; s -&gt; CI s
 </span><span class="hs-identifier hs-var">CI.mk</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100974"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679100971"><span class="hs-identifier hs-var">rest'</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679100992"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679100989"><span class="hs-identifier hs-var">rest'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-134"></span></pre></body></html>

@@ -57,102 +57,102 @@
 </span><span id="line-50"></span><span class="hs-comment">-- | Checking if a log file can be written.</span><span>
 </span><span id="line-51"></span><span class="annot"><a href="System.Log.FastLogger.File.html#check"><span class="hs-identifier hs-type">check</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-52"></span><span id="check"><span class="annot"><span class="annottext">check :: FilePath -&gt; IO ()
-</span><a href="System.Log.FastLogger.File.html#check"><span class="hs-identifier hs-var hs-var">check</span></a></span></span><span> </span><span id="local-6989586621679046498"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046498"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-53"></span><span>    </span><span id="local-6989586621679046497"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046497"><span class="hs-identifier hs-var">dirExist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><a href="System.Log.FastLogger.File.html#check"><span class="hs-identifier hs-var hs-var">check</span></a></span></span><span> </span><span id="local-6989586621679046526"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046526"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-53"></span><span>    </span><span id="local-6989586621679046525"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679046525"><span class="hs-identifier hs-var">dirExist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesDirectoryExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046496"><span class="hs-identifier hs-var">dir</span></a></span><span>
+</span><a href="#local-6989586621679046524"><span class="hs-identifier hs-var">dir</span></a></span><span>
 </span><span id="line-54"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046497"><span class="hs-identifier hs-var">dirExist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046525"><span class="hs-identifier hs-var">dirExist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ()
 forall (m :: * -&gt; *) a. MonadFail m =&gt; FilePath -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; FilePath -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046496"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046524"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-string">&quot; does not exist or is not a directory.&quot;</span></span><span>
-</span><span id="line-55"></span><span>    </span><span id="local-6989586621679046494"><span class="annot"><span class="annottext">Permissions
-</span><a href="#local-6989586621679046494"><span class="hs-identifier hs-var">dirPerm</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Permissions
+</span><span id="line-55"></span><span>    </span><span id="local-6989586621679046522"><span class="annot"><span class="annottext">Permissions
+</span><a href="#local-6989586621679046522"><span class="hs-identifier hs-var">dirPerm</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Permissions
 </span><span class="hs-identifier hs-var">getPermissions</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046496"><span class="hs-identifier hs-var">dir</span></a></span><span>
+</span><a href="#local-6989586621679046524"><span class="hs-identifier hs-var">dir</span></a></span><span>
 </span><span id="line-56"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Permissions -&gt; Bool
 </span><span class="hs-identifier hs-var hs-var">writable</span></span><span> </span><span class="annot"><span class="annottext">Permissions
-</span><a href="#local-6989586621679046494"><span class="hs-identifier hs-var">dirPerm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046522"><span class="hs-identifier hs-var">dirPerm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ()
 forall (m :: * -&gt; *) a. MonadFail m =&gt; FilePath -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; FilePath -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046496"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046524"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-string">&quot; is not writable.&quot;</span></span><span>
-</span><span id="line-57"></span><span>    </span><span id="local-6989586621679046493"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046493"><span class="hs-identifier hs-var">exist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><span id="line-57"></span><span>    </span><span id="local-6989586621679046521"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679046521"><span class="hs-identifier hs-var">exist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesFileExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046498"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><a href="#local-6989586621679046526"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-58"></span><span>    </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046493"><span class="hs-identifier hs-var">exist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046521"><span class="hs-identifier hs-var">exist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-59"></span><span>        </span><span id="local-6989586621679046491"><span class="annot"><span class="annottext">Permissions
-</span><a href="#local-6989586621679046491"><span class="hs-identifier hs-var">perm</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Permissions
+</span><span id="line-59"></span><span>        </span><span id="local-6989586621679046519"><span class="annot"><span class="annottext">Permissions
+</span><a href="#local-6989586621679046519"><span class="hs-identifier hs-var">perm</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Permissions
 </span><span class="hs-identifier hs-var">getPermissions</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046498"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><a href="#local-6989586621679046526"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-60"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Permissions -&gt; Bool
 </span><span class="hs-identifier hs-var hs-var">writable</span></span><span> </span><span class="annot"><span class="annottext">Permissions
-</span><a href="#local-6989586621679046491"><span class="hs-identifier hs-var">perm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046519"><span class="hs-identifier hs-var">perm</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ()
 forall (m :: * -&gt; *) a. MonadFail m =&gt; FilePath -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; FilePath -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046498"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046526"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-string">&quot; is not writable.&quot;</span></span><span>
 </span><span id="line-61"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-62"></span><span>    </span><span id="local-6989586621679046496"><span class="annot"><span class="annottext">dir :: FilePath
-</span><a href="#local-6989586621679046496"><span class="hs-identifier hs-var hs-var">dir</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath
+</span><span id="line-62"></span><span>    </span><span id="local-6989586621679046524"><span class="annot"><span class="annottext">dir :: FilePath
+</span><a href="#local-6989586621679046524"><span class="hs-identifier hs-var hs-var">dir</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath
 </span><span class="hs-identifier hs-var">takeDirectory</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046498"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><a href="#local-6989586621679046526"><span class="hs-identifier hs-var">file</span></a></span><span>
 </span><span id="line-63"></span><span>
 </span><span id="line-64"></span><span class="hs-comment">-- | Rotating log files.</span><span>
 </span><span id="line-65"></span><span class="annot"><a href="System.Log.FastLogger.File.html#rotate"><span class="hs-identifier hs-type">rotate</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.File.html#FileLogSpec"><span class="hs-identifier hs-type">FileLogSpec</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-66"></span><span id="rotate"><span class="annot"><span class="annottext">rotate :: FileLogSpec -&gt; IO ()
-</span><a href="System.Log.FastLogger.File.html#rotate"><span class="hs-identifier hs-var hs-var">rotate</span></a></span></span><span> </span><span id="local-6989586621679046490"><span class="annot"><span class="annottext">FileLogSpec
-</span><a href="#local-6989586621679046490"><span class="hs-identifier hs-var">spec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((FilePath, FilePath) -&gt; IO ()) -&gt; [(FilePath, FilePath)] -&gt; IO ()
+</span><a href="System.Log.FastLogger.File.html#rotate"><span class="hs-identifier hs-var hs-var">rotate</span></a></span></span><span> </span><span id="local-6989586621679046518"><span class="annot"><span class="annottext">FileLogSpec
+</span><a href="#local-6989586621679046518"><span class="hs-identifier hs-var">spec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((FilePath, FilePath) -&gt; IO ()) -&gt; [(FilePath, FilePath)] -&gt; IO ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
 (a -&gt; m b) -&gt; t a -&gt; m ()
 </span><span class="hs-identifier hs-var">mapM_</span></span><span> </span><span class="annot"><span class="annottext">(FilePath, FilePath) -&gt; IO ()
-</span><a href="#local-6989586621679046488"><span class="hs-identifier hs-var">move</span></a></span><span> </span><span class="annot"><span class="annottext">[(FilePath, FilePath)]
-</span><a href="#local-6989586621679046487"><span class="hs-identifier hs-var">srcdsts</span></a></span><span>
+</span><a href="#local-6989586621679046516"><span class="hs-identifier hs-var">move</span></a></span><span> </span><span class="annot"><span class="annottext">[(FilePath, FilePath)]
+</span><a href="#local-6989586621679046515"><span class="hs-identifier hs-var">srcdsts</span></a></span><span>
 </span><span id="line-67"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-68"></span><span>    </span><span id="local-6989586621679046486"><span class="annot"><span class="annottext">path :: FilePath
-</span><a href="#local-6989586621679046486"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileLogSpec -&gt; FilePath
+</span><span id="line-68"></span><span>    </span><span id="local-6989586621679046514"><span class="annot"><span class="annottext">path :: FilePath
+</span><a href="#local-6989586621679046514"><span class="hs-identifier hs-var hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileLogSpec -&gt; FilePath
 </span><a href="System.Log.FastLogger.File.html#log_file"><span class="hs-identifier hs-var hs-var">log_file</span></a></span><span> </span><span class="annot"><span class="annottext">FileLogSpec
-</span><a href="#local-6989586621679046490"><span class="hs-identifier hs-var">spec</span></a></span><span>
-</span><span id="line-69"></span><span>    </span><span id="local-6989586621679046485"><span class="annot"><span class="annottext">n :: Int
-</span><a href="#local-6989586621679046485"><span class="hs-identifier hs-var hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileLogSpec -&gt; Int
+</span><a href="#local-6989586621679046518"><span class="hs-identifier hs-var">spec</span></a></span><span>
+</span><span id="line-69"></span><span>    </span><span id="local-6989586621679046513"><span class="annot"><span class="annottext">n :: Int
+</span><a href="#local-6989586621679046513"><span class="hs-identifier hs-var hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FileLogSpec -&gt; Int
 </span><a href="System.Log.FastLogger.File.html#log_backup_number"><span class="hs-identifier hs-var hs-var">log_backup_number</span></a></span><span> </span><span class="annot"><span class="annottext">FileLogSpec
-</span><a href="#local-6989586621679046490"><span class="hs-identifier hs-var">spec</span></a></span><span>
-</span><span id="line-70"></span><span>    </span><span id="local-6989586621679046484"><span class="annot"><span class="annottext">dsts' :: [FilePath]
-</span><a href="#local-6989586621679046484"><span class="hs-identifier hs-var hs-var">dsts'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath]
+</span><a href="#local-6989586621679046518"><span class="hs-identifier hs-var">spec</span></a></span><span>
+</span><span id="line-70"></span><span>    </span><span id="local-6989586621679046512"><span class="annot"><span class="annottext">dsts' :: [FilePath]
+</span><a href="#local-6989586621679046512"><span class="hs-identifier hs-var hs-var">dsts'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">([FilePath] -&gt; [FilePath])
 -&gt; ([Int] -&gt; [FilePath]) -&gt; [Int] -&gt; [FilePath]
@@ -176,63 +176,63 @@ forall a. Show a =&gt; a -&gt; FilePath
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span class="hs-glyph">..</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679046485"><span class="hs-identifier hs-var">n</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679046513"><span class="hs-identifier hs-var">n</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">]</span><span>
-</span><span id="line-71"></span><span>    </span><span id="local-6989586621679046480"><span class="annot"><span class="annottext">dsts :: [FilePath]
-</span><a href="#local-6989586621679046480"><span class="hs-identifier hs-var hs-var">dsts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; FilePath) -&gt; [FilePath] -&gt; [FilePath]
+</span><span id="line-71"></span><span>    </span><span id="local-6989586621679046508"><span class="annot"><span class="annottext">dsts :: [FilePath]
+</span><a href="#local-6989586621679046508"><span class="hs-identifier hs-var hs-var">dsts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; FilePath) -&gt; [FilePath] -&gt; [FilePath]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046486"><span class="hs-identifier hs-var">path</span></a></span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046514"><span class="hs-identifier hs-var">path</span></a></span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679046484"><span class="hs-identifier hs-var">dsts'</span></a></span><span>
-</span><span id="line-72"></span><span>    </span><span id="local-6989586621679046479"><span class="annot"><span class="annottext">srcs :: [FilePath]
-</span><a href="#local-6989586621679046479"><span class="hs-identifier hs-var hs-var">srcs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath]
+</span><a href="#local-6989586621679046512"><span class="hs-identifier hs-var">dsts'</span></a></span><span>
+</span><span id="line-72"></span><span>    </span><span id="local-6989586621679046507"><span class="annot"><span class="annottext">srcs :: [FilePath]
+</span><a href="#local-6989586621679046507"><span class="hs-identifier hs-var hs-var">srcs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">tail</span></span><span> </span><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679046480"><span class="hs-identifier hs-var">dsts</span></a></span><span>
-</span><span id="line-73"></span><span>    </span><span id="local-6989586621679046487"><span class="annot"><span class="annottext">srcdsts :: [(FilePath, FilePath)]
-</span><a href="#local-6989586621679046487"><span class="hs-identifier hs-var hs-var">srcdsts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath] -&gt; [(FilePath, FilePath)]
+</span><a href="#local-6989586621679046508"><span class="hs-identifier hs-var">dsts</span></a></span><span>
+</span><span id="line-73"></span><span>    </span><span id="local-6989586621679046515"><span class="annot"><span class="annottext">srcdsts :: [(FilePath, FilePath)]
+</span><a href="#local-6989586621679046515"><span class="hs-identifier hs-var hs-var">srcdsts</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[FilePath] -&gt; [FilePath] -&gt; [(FilePath, FilePath)]
 forall a b. [a] -&gt; [b] -&gt; [(a, b)]
 </span><span class="hs-identifier hs-var">zip</span></span><span> </span><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679046479"><span class="hs-identifier hs-var">srcs</span></a></span><span> </span><span class="annot"><span class="annottext">[FilePath]
-</span><a href="#local-6989586621679046480"><span class="hs-identifier hs-var">dsts</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span id="local-6989586621679046488"><span class="annot"><span class="annottext">move :: (FilePath, FilePath) -&gt; IO ()
-</span><a href="#local-6989586621679046488"><span class="hs-identifier hs-var hs-var">move</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046477"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046477"><span class="hs-identifier hs-var">src</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046476"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046476"><span class="hs-identifier hs-var">dst</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-75"></span><span>        </span><span id="local-6989586621679046475"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046475"><span class="hs-identifier hs-var">exist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
+</span><a href="#local-6989586621679046507"><span class="hs-identifier hs-var">srcs</span></a></span><span> </span><span class="annot"><span class="annottext">[FilePath]
+</span><a href="#local-6989586621679046508"><span class="hs-identifier hs-var">dsts</span></a></span><span>
+</span><span id="line-74"></span><span>    </span><span id="local-6989586621679046516"><span class="annot"><span class="annottext">move :: (FilePath, FilePath) -&gt; IO ()
+</span><a href="#local-6989586621679046516"><span class="hs-identifier hs-var hs-var">move</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679046505"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046505"><span class="hs-identifier hs-var">src</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679046504"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046504"><span class="hs-identifier hs-var">dst</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-75"></span><span>        </span><span id="local-6989586621679046503"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679046503"><span class="hs-identifier hs-var">exist</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesFileExist</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046477"><span class="hs-identifier hs-var">src</span></a></span><span>
+</span><a href="#local-6989586621679046505"><span class="hs-identifier hs-var">src</span></a></span><span>
 </span><span id="line-76"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679046475"><span class="hs-identifier hs-var">exist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679046503"><span class="hs-identifier hs-var">exist</span></a></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; IO ()
 </span><span class="hs-identifier hs-var">renameFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046477"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046476"><span class="hs-identifier hs-var">dst</span></a></span><span>
+</span><a href="#local-6989586621679046505"><span class="hs-identifier hs-var">src</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046504"><span class="hs-identifier hs-var">dst</span></a></span><span>
 </span><span id="line-77"></span><span>
 </span><span id="line-78"></span><span class="hs-comment">-- | Prefix file name with formatted time</span><span>
 </span><span id="line-79"></span><span class="annot"><a href="System.Log.FastLogger.File.html#prefixTime"><span class="hs-identifier hs-type">prefixTime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Log.FastLogger.Types.html#FormattedTime"><span class="hs-identifier hs-type">FormattedTime</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
 </span><span id="line-80"></span><span id="prefixTime"><span class="annot"><span class="annottext">prefixTime :: TimeFormat -&gt; FilePath -&gt; FilePath
-</span><a href="System.Log.FastLogger.File.html#prefixTime"><span class="hs-identifier hs-var hs-var">prefixTime</span></a></span></span><span> </span><span id="local-6989586621679046474"><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046474"><span class="hs-identifier hs-var">time</span></a></span></span><span> </span><span id="local-6989586621679046473"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046473"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath
+</span><a href="System.Log.FastLogger.File.html#prefixTime"><span class="hs-identifier hs-var hs-var">prefixTime</span></a></span></span><span> </span><span id="local-6989586621679046502"><span class="annot"><span class="annottext">TimeFormat
+</span><a href="#local-6989586621679046502"><span class="hs-identifier hs-var">time</span></a></span></span><span> </span><span id="local-6989586621679046501"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679046501"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath
 </span><span class="hs-identifier hs-var">dropFileName</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046473"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046501"><span class="hs-identifier hs-var">path</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 </span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">TimeFormat -&gt; FilePath
 </span><span class="hs-identifier hs-var">unpack</span></span><span> </span><span class="annot"><span class="annottext">TimeFormat
-</span><a href="#local-6989586621679046474"><span class="hs-identifier hs-var">time</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
+</span><a href="#local-6989586621679046502"><span class="hs-identifier hs-var">time</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-string">&quot;-&quot;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath -&gt; FilePath
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; FilePath
 </span><span class="hs-identifier hs-var">takeFileName</span></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046473"><span class="hs-identifier hs-var">path</span></a></span><span>
+</span><a href="#local-6989586621679046501"><span class="hs-identifier hs-var">path</span></a></span><span>
 </span><span id="line-81"></span></pre></body></html>

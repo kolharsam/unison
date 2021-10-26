@@ -29,7 +29,7 @@
 </span><span id="line-29"></span><span class="hs-comment">-- The second 'String' argument is the contents of the line to the right of the cursor.</span><span>
 </span><span id="line-30"></span><span class="hs-comment">--</span><span>
 </span><span id="line-31"></span><span class="hs-comment">-- The output 'String' is the unused portion of the left half of the line, reversed.</span><span>
-</span><span id="line-32"></span><span class="hs-keyword">type</span><span> </span><span id="CompletionFunc"><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-var">CompletionFunc</span></a></span></span><span> </span><span id="local-6989586621679077491"><span class="annot"><a href="#local-6989586621679077491"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077491"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-32"></span><span class="hs-keyword">type</span><span> </span><span id="CompletionFunc"><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-var">CompletionFunc</span></a></span></span><span> </span><span id="local-6989586621679077516"><span class="annot"><a href="#local-6989586621679077516"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077516"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><span id="line-33"></span><span>
 </span><span id="line-34"></span><span>
 </span><span id="line-35"></span><span class="hs-keyword">data</span><span> </span><span id="Completion"><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-var">Completion</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Completion"><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-var">Completion</span></a></span></span><span> </span><span class="hs-special">{</span><span id="replacement"><span class="annot"><span class="annottext">Completion -&gt; String
@@ -43,7 +43,7 @@
 </span><span id="line-40"></span><span>                            </span><span class="hs-comment">-- ^ Whether this word should be followed by a</span><span>
 </span><span id="line-41"></span><span>                            </span><span class="hs-comment">-- space, end quote, etc.</span><span>
 </span><span id="line-42"></span><span>                            </span><span class="hs-special">}</span><span>
-</span><span id="line-43"></span><span>                    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077483"><span id="local-6989586621679077485"><span class="annot"><span class="annottext">Completion -&gt; Completion -&gt; Bool
+</span><span id="line-43"></span><span>                    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077508"><span id="local-6989586621679077510"><span class="annot"><span class="annottext">Completion -&gt; Completion -&gt; Bool
 (Completion -&gt; Completion -&gt; Bool)
 -&gt; (Completion -&gt; Completion -&gt; Bool) -&gt; Eq Completion
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -51,7 +51,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Completion -&gt; Completion -&gt; Bool
 == :: Completion -&gt; Completion -&gt; Bool
 $c== :: Completion -&gt; Completion -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077467"><span id="local-6989586621679077469"><span id="local-6989586621679077471"><span id="local-6989586621679077473"><span id="local-6989586621679077475"><span id="local-6989586621679077477"><span id="local-6989586621679077479"><span class="annot"><span class="annottext">Eq Completion
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077492"><span id="local-6989586621679077494"><span id="local-6989586621679077496"><span id="local-6989586621679077498"><span id="local-6989586621679077500"><span id="local-6989586621679077502"><span id="local-6989586621679077504"><span class="annot"><span class="annottext">Eq Completion
 Eq Completion
 -&gt; (Completion -&gt; Completion -&gt; Ordering)
 -&gt; (Completion -&gt; Completion -&gt; Bool)
@@ -89,7 +89,7 @@ $c&lt; :: Completion -&gt; Completion -&gt; Bool
 compare :: Completion -&gt; Completion -&gt; Ordering
 $ccompare :: Completion -&gt; Completion -&gt; Ordering
 $cp1Ord :: Eq Completion
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077460"><span id="local-6989586621679077462"><span id="local-6989586621679077464"><span class="annot"><span class="annottext">Int -&gt; Completion -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077485"><span id="local-6989586621679077487"><span id="local-6989586621679077489"><span class="annot"><span class="annottext">Int -&gt; Completion -&gt; ShowS
 [Completion] -&gt; ShowS
 Completion -&gt; String
 (Int -&gt; Completion -&gt; ShowS)
@@ -107,14 +107,14 @@ $cshowsPrec :: Int -&gt; Completion -&gt; ShowS
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-44"></span><span>
 </span><span id="line-45"></span><span class="hs-comment">-- | Disable completion altogether.</span><span>
-</span><span id="line-46"></span><span id="local-6989586621679077458"><span class="annot"><a href="System.Console.Haskeline.Completion.html#noCompletion"><span class="hs-identifier hs-type">noCompletion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077458"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077458"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-46"></span><span id="local-6989586621679077483"><span class="annot"><a href="System.Console.Haskeline.Completion.html#noCompletion"><span class="hs-identifier hs-type">noCompletion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077483"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077483"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-47"></span><span id="noCompletion"><span class="annot"><span class="annottext">noCompletion :: CompletionFunc m
-</span><a href="System.Console.Haskeline.Completion.html#noCompletion"><span class="hs-identifier hs-var hs-var">noCompletion</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077457"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077457"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="System.Console.Haskeline.Completion.html#noCompletion"><span class="hs-identifier hs-var hs-var">noCompletion</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077482"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077482"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String, [Completion]) -&gt; m (String, [Completion])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077457"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077482"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-comment">--------------</span><span>
 </span><span id="line-50"></span><span class="hs-comment">-- Word break functions</span><span>
@@ -122,16 +122,16 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-52"></span><span class="hs-comment">-- | A custom 'CompletionFunc' which completes the word immediately to the left of the cursor.</span><span>
 </span><span id="line-53"></span><span class="hs-comment">--</span><span>
 </span><span id="line-54"></span><span class="hs-comment">-- A word begins either at the start of the line or after an unescaped whitespace character.</span><span>
-</span><span id="line-55"></span><span id="local-6989586621679077521"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeWord"><span class="hs-identifier hs-type">completeWord</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077521"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
+</span><span id="line-55"></span><span id="local-6989586621679077546"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeWord"><span class="hs-identifier hs-type">completeWord</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077546"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
 </span><span id="line-56"></span><span>        </span><span class="hs-comment">-- ^ An optional escape character</span><span>
 </span><span id="line-57"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span class="hs-special">]</span><span class="hs-comment">-- ^ Characters which count as whitespace</span><span>
-</span><span id="line-58"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077521"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- ^ Function to produce a list of possible completions</span><span>
-</span><span id="line-59"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077521"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-58"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077546"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- ^ Function to produce a list of possible completions</span><span>
+</span><span id="line-59"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077546"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-60"></span><span id="completeWord"><span class="annot"><span class="annottext">completeWord :: Maybe Char
 -&gt; String -&gt; (String -&gt; m [Completion]) -&gt; CompletionFunc m
-</span><a href="System.Console.Haskeline.Completion.html#completeWord"><span class="hs-identifier hs-var hs-var">completeWord</span></a></span></span><span> </span><span id="local-6989586621679077456"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077456"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077455"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Char
+</span><a href="System.Console.Haskeline.Completion.html#completeWord"><span class="hs-identifier hs-var hs-var">completeWord</span></a></span></span><span> </span><span id="local-6989586621679077481"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077481"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077480"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Char
 -&gt; String
 -&gt; (String -&gt; String -&gt; m [Completion])
 -&gt; CompletionFunc m
@@ -142,8 +142,8 @@ Maybe Char
 -&gt; (String -&gt; String -&gt; m [Completion])
 -&gt; CompletionFunc m
 </span><a href="System.Console.Haskeline.Completion.html#completeWordWithPrev"><span class="hs-identifier hs-var">completeWordWithPrev</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077456"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">ws</span></a></span><span> </span><span class="annot"><span class="annottext">((String -&gt; String -&gt; m [Completion]) -&gt; CompletionFunc m)
+</span><a href="#local-6989586621679077481"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">ws</span></a></span><span> </span><span class="annot"><span class="annottext">((String -&gt; String -&gt; m [Completion]) -&gt; CompletionFunc m)
 -&gt; ((String -&gt; m [Completion])
     -&gt; String -&gt; String -&gt; m [Completion])
 -&gt; (String -&gt; m [Completion])
@@ -157,112 +157,112 @@ forall a b. a -&gt; b -&gt; a
 </span><span id="line-63"></span><span class="hs-comment">-- and takes into account the line contents to the left of the word.</span><span>
 </span><span id="line-64"></span><span class="hs-comment">--</span><span>
 </span><span id="line-65"></span><span class="hs-comment">-- A word begins either at the start of the line or after an unescaped whitespace character.</span><span>
-</span><span id="line-66"></span><span id="local-6989586621679077543"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeWordWithPrev"><span class="hs-identifier hs-type">completeWordWithPrev</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077543"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
+</span><span id="line-66"></span><span id="local-6989586621679077568"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeWordWithPrev"><span class="hs-identifier hs-type">completeWordWithPrev</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077568"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span>
 </span><span id="line-67"></span><span>        </span><span class="hs-comment">-- ^ An optional escape character</span><span>
 </span><span id="line-68"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span class="hs-special">]</span><span class="hs-comment">-- ^ Characters which count as whitespace</span><span>
-</span><span id="line-69"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077543"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-69"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077568"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><span id="line-70"></span><span>            </span><span class="hs-comment">-- ^ Function to produce a list of possible completions.  The first argument is the</span><span>
 </span><span id="line-71"></span><span>            </span><span class="hs-comment">-- line contents to the left of the word, reversed.  The second argument is the word</span><span>
 </span><span id="line-72"></span><span>            </span><span class="hs-comment">-- to be completed.</span><span>
-</span><span id="line-73"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077543"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-73"></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077568"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-74"></span><span id="completeWordWithPrev"><span class="annot"><span class="annottext">completeWordWithPrev :: Maybe Char
 -&gt; String
 -&gt; (String -&gt; String -&gt; m [Completion])
 -&gt; CompletionFunc m
-</span><a href="System.Console.Haskeline.Completion.html#completeWordWithPrev"><span class="hs-identifier hs-var hs-var">completeWordWithPrev</span></a></span></span><span> </span><span id="local-6989586621679077452"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077451"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span id="local-6989586621679077450"><span class="annot"><span class="annottext">String -&gt; String -&gt; m [Completion]
-</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077449"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">line</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="System.Console.Haskeline.Completion.html#completeWordWithPrev"><span class="hs-identifier hs-var hs-var">completeWordWithPrev</span></a></span></span><span> </span><span id="local-6989586621679077477"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077476"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span id="local-6989586621679077475"><span class="annot"><span class="annottext">String -&gt; String -&gt; m [Completion]
+</span><a href="#local-6989586621679077475"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077474"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077474"><span class="hs-identifier hs-var">line</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-75"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077448"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">word</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077447"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-75"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077473"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077473"><span class="hs-identifier hs-var">word</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077472"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077472"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-76"></span><span>                        </span><span class="annot"><span class="annottext">Maybe Char
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; String -&gt; (String, String)
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; ([a], [a])
 </span><span class="hs-identifier hs-var">break</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">line</span></a></span><span>
-</span><span id="line-77"></span><span>                        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679077444"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">line</span></a></span><span>
-</span><span id="line-78"></span><span>    </span><span id="local-6989586621679077442"><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">completions</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; m [Completion]
-</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">rest</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077474"><span class="hs-identifier hs-var">line</span></a></span><span>
+</span><span id="line-77"></span><span>                        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679077469"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077469"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
+</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077469"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077474"><span class="hs-identifier hs-var">line</span></a></span><span>
+</span><span id="line-78"></span><span>    </span><span id="local-6989586621679077467"><span class="annot"><span class="annottext">[Completion]
+</span><a href="#local-6989586621679077467"><span class="hs-identifier hs-var">completions</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; m [Completion]
+</span><a href="#local-6989586621679077475"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077472"><span class="hs-identifier hs-var">rest</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">word</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077473"><span class="hs-identifier hs-var">word</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-79"></span><span>    </span><span class="annot"><span class="annottext">(String, [Completion]) -&gt; m (String, [Completion])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; [Completion] -&gt; [Completion]
+</span><a href="#local-6989586621679077472"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; [Completion] -&gt; [Completion]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; Completion -&gt; Completion
 </span><a href="System.Console.Haskeline.Completion.html#escapeReplacement"><span class="hs-identifier hs-var">escapeReplacement</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">completions</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Completion]
+</span><a href="#local-6989586621679077467"><span class="hs-identifier hs-var">completions</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-80"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-81"></span><span>    </span><span id="local-6989586621679077443"><span class="annot"><span class="annottext">escapedBreak :: Char -&gt; String -&gt; (String, String)
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var hs-var">escapedBreak</span></a></span></span><span> </span><span id="local-6989586621679077439"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077438"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077437"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">d</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077436"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><span id="line-81"></span><span>    </span><span id="local-6989586621679077468"><span class="annot"><span class="annottext">escapedBreak :: Char -&gt; String -&gt; (String, String)
+</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var hs-var">escapedBreak</span></a></span></span><span> </span><span id="local-6989586621679077464"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077464"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077463"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077463"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077462"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077462"><span class="hs-identifier hs-var">d</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077461"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077461"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077462"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679077464"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077463"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077464"><span class="hs-identifier hs-var">e</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-82"></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077434"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077433"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">cs</span></a></span><span> </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-82"></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077459"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077459"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077458"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077458"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
+</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077464"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077461"><span class="hs-identifier hs-var">cs</span></a></span><span> </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077463"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">ys</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-83"></span><span>    </span><span class="annot"><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span id="local-6989586621679077432"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077432"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077431"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077431"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077430"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077430"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077459"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077458"><span class="hs-identifier hs-var">ys</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-83"></span><span>    </span><span class="annot"><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span id="local-6989586621679077457"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077457"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077456"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077456"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077455"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">notElem</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077431"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">ws</span></a></span><span>
-</span><span id="line-84"></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077428"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077427"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077427"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077432"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077430"><span class="hs-identifier hs-var">cs</span></a></span><span> </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077431"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077456"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">ws</span></a></span><span>
+</span><span id="line-84"></span><span>            </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077453"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077452"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; (String, String)
+</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077457"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">cs</span></a></span><span> </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077456"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077427"><span class="hs-identifier hs-var">ys</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-85"></span><span>    </span><span class="annot"><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077426"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">ys</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-85"></span><span>    </span><span class="annot"><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">escapedBreak</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077451"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-86"></span><span>
 </span><span id="line-87"></span><span class="hs-comment">-- | Create a finished completion out of the given word.</span><span>
 </span><span id="line-88"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#simpleCompletion"><span class="hs-identifier hs-type">simpleCompletion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span>
@@ -278,7 +278,7 @@ forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-string">&quot; \t\n`@$&gt;&lt;=;|&amp;{(&quot;</span></span><span>
 </span><span id="line-95"></span><span>
 </span><span id="line-96"></span><span class="hs-comment">-- A completion command for file and folder names.</span><span>
-</span><span id="line-97"></span><span id="local-6989586621679077424"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeFilename"><span class="hs-identifier hs-type">completeFilename</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679077424"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077424"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-97"></span><span id="local-6989586621679077449"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeFilename"><span class="hs-identifier hs-type">completeFilename</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679077449"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077449"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-98"></span><span id="completeFilename"><span class="annot"><span class="annottext">completeFilename :: CompletionFunc m
 </span><a href="System.Console.Haskeline.Completion.html#completeFilename"><span class="hs-identifier hs-var hs-var">completeFilename</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Char
 -&gt; String
@@ -322,75 +322,75 @@ forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; m [Completion]
 </span><span id="line-101"></span><span>
 </span><span id="line-102"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#completion"><span class="hs-identifier hs-type">completion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span>
 </span><span id="line-103"></span><span id="completion"><span class="annot"><span class="annottext">completion :: String -&gt; Completion
-</span><a href="System.Console.Haskeline.Completion.html#completion"><span class="hs-identifier hs-var hs-var">completion</span></a></span></span><span> </span><span id="local-6989586621679077423"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool -&gt; Completion
+</span><a href="System.Console.Haskeline.Completion.html#completion"><span class="hs-identifier hs-var hs-var">completion</span></a></span></span><span> </span><span id="local-6989586621679077448"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool -&gt; Completion
 </span><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-var">Completion</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-104"></span><span>
 </span><span id="line-105"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#setReplacement"><span class="hs-identifier hs-type">setReplacement</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span>
 </span><span id="line-106"></span><span id="setReplacement"><span class="annot"><span class="annottext">setReplacement :: ShowS -&gt; Completion -&gt; Completion
-</span><a href="System.Console.Haskeline.Completion.html#setReplacement"><span class="hs-identifier hs-var hs-var">setReplacement</span></a></span></span><span> </span><span id="local-6989586621679077421"><span class="annot"><span class="annottext">ShowS
-</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679077420"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
+</span><a href="System.Console.Haskeline.Completion.html#setReplacement"><span class="hs-identifier hs-var hs-var">setReplacement</span></a></span></span><span> </span><span id="local-6989586621679077446"><span class="annot"><span class="annottext">ShowS
+</span><a href="#local-6989586621679077446"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621679077445"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077445"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077445"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var">replacement</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShowS
-</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ShowS -&gt; ShowS
+</span><a href="#local-6989586621679077446"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">ShowS -&gt; ShowS
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679077445"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#escapeReplacement"><span class="hs-identifier hs-type">escapeReplacement</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span>
 </span><span id="line-109"></span><span id="escapeReplacement"><span class="annot"><span class="annottext">escapeReplacement :: Maybe Char -&gt; String -&gt; Completion -&gt; Completion
-</span><a href="System.Console.Haskeline.Completion.html#escapeReplacement"><span class="hs-identifier hs-var hs-var">escapeReplacement</span></a></span></span><span> </span><span id="local-6989586621679077419"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077419"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077418"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077418"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span id="local-6989586621679077417"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077419"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="System.Console.Haskeline.Completion.html#escapeReplacement"><span class="hs-identifier hs-var hs-var">escapeReplacement</span></a></span></span><span> </span><span id="local-6989586621679077444"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077443"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">ws</span></a></span></span><span> </span><span id="local-6989586621679077442"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-110"></span><span>    </span><span class="annot"><span class="annottext">Maybe Char
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-111"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679077416"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077416"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
+</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-111"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679077441"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077441"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var">replacement</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
-</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077416"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Completion -&gt; String
+</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077441"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">f</span></a></span><span class="hs-special">)</span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">f</span></a></span><span class="hs-special">)</span><span class="hs-special">}</span><span>
 </span><span id="line-112"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-113"></span><span>    </span><span id="local-6989586621679077415"><span class="annot"><span class="annottext">escape :: Char -&gt; ShowS
-</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var hs-var">escape</span></a></span></span><span> </span><span id="local-6989586621679077414"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077413"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077412"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077412"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
+</span><span id="line-113"></span><span>    </span><span id="local-6989586621679077440"><span class="annot"><span class="annottext">escape :: Char -&gt; ShowS
+</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var hs-var">escape</span></a></span></span><span> </span><span id="local-6989586621679077439"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077438"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077437"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">e</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077418"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">ws</span></a></span><span class="hs-special">)</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
-</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077412"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">cs</span></a></span><span>
 </span><span id="line-114"></span><span>                    </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
-</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077412"><span class="hs-identifier hs-var">cs</span></a></span><span>
-</span><span id="line-115"></span><span>    </span><span class="annot"><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><span id="line-115"></span><span>    </span><span class="annot"><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">escape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span>
@@ -398,47 +398,47 @@ forall a. a -&gt; [a] -&gt; [a]
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="hs-comment">---------</span><span>
 </span><span id="line-119"></span><span class="hs-comment">-- Quoted completion</span><span>
-</span><span id="line-120"></span><span id="local-6989586621679077527"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeQuotedWord"><span class="hs-identifier hs-type">completeQuotedWord</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077527"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-comment">-- ^ An optional escape character</span><span>
+</span><span id="line-120"></span><span id="local-6989586621679077552"><span class="annot"><a href="System.Console.Haskeline.Completion.html#completeQuotedWord"><span class="hs-identifier hs-type">completeQuotedWord</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077552"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-comment">-- ^ An optional escape character</span><span>
 </span><span id="line-121"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span class="hs-special">]</span><span> </span><span class="hs-comment">-- ^ Characters which set off quotes</span><span>
-</span><span id="line-122"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077527"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- ^ Function to produce a list of possible completions</span><span>
-</span><span id="line-123"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077527"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-comment">-- ^ Alternate completion to perform if the</span><span>
+</span><span id="line-122"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077552"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- ^ Function to produce a list of possible completions</span><span>
+</span><span id="line-123"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077552"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-comment">-- ^ Alternate completion to perform if the</span><span>
 </span><span id="line-124"></span><span>                                            </span><span class="hs-comment">-- cursor is not at a quoted word</span><span>
-</span><span id="line-125"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077527"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-125"></span><span>                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077552"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-126"></span><span id="completeQuotedWord"><span class="annot"><span class="annottext">completeQuotedWord :: Maybe Char
 -&gt; String
 -&gt; (String -&gt; m [Completion])
 -&gt; CompletionFunc m
 -&gt; CompletionFunc m
-</span><a href="System.Console.Haskeline.Completion.html#completeQuotedWord"><span class="hs-identifier hs-var hs-var">completeQuotedWord</span></a></span></span><span> </span><span id="local-6989586621679077411"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077410"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077409"><span class="annot"><span class="annottext">String -&gt; m [Completion]
-</span><a href="#local-6989586621679077409"><span class="hs-identifier hs-var">completer</span></a></span></span><span> </span><span id="local-6989586621679077408"><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077408"><span class="hs-identifier hs-var">alterative</span></a></span></span><span> </span><span id="local-6989586621679077407"><span class="annot"><span class="annottext">line :: (String, String)
-</span><a href="#local-6989586621679077407"><span class="hs-identifier hs-var">line</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679077406"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077406"><span class="hs-identifier hs-var">left</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="System.Console.Haskeline.Completion.html#completeQuotedWord"><span class="hs-identifier hs-var hs-var">completeQuotedWord</span></a></span></span><span> </span><span id="local-6989586621679077436"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077435"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077434"><span class="annot"><span class="annottext">String -&gt; m [Completion]
+</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">completer</span></a></span></span><span> </span><span id="local-6989586621679077433"><span class="annot"><span class="annottext">CompletionFunc m
+</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">alterative</span></a></span></span><span> </span><span id="local-6989586621679077432"><span class="annot"><span class="annottext">line :: (String, String)
+</span><a href="#local-6989586621679077432"><span class="hs-identifier hs-var">line</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679077431"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077431"><span class="hs-identifier hs-var">left</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>
 </span><span id="line-127"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
 </span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var">splitAtQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077406"><span class="hs-identifier hs-var">left</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-128"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077404"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077404"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077403"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077431"><span class="hs-identifier hs-var">left</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-128"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077429"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077429"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077428"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Bool
 </span><a href="System.Console.Haskeline.Completion.html#isUnquoted"><span class="hs-identifier hs-var">isUnquoted</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">rest</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-129"></span><span>        </span><span id="local-6989586621679077401"><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; m [Completion]
-</span><a href="#local-6989586621679077409"><span class="hs-identifier hs-var">completer</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
+</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">rest</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-129"></span><span>        </span><span id="local-6989586621679077426"><span class="annot"><span class="annottext">[Completion]
+</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; m [Completion]
+</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">completer</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077404"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077429"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-130"></span><span>        </span><span class="annot"><span class="annottext">(String, [Completion]) -&gt; m (String, [Completion])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; [Completion] -&gt; [Completion]
+</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; [Completion] -&gt; [Completion]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Completion -&gt; Completion
 </span><a href="System.Console.Haskeline.Completion.html#addQuotes"><span class="hs-identifier hs-var">addQuotes</span></a></span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; Completion)
@@ -446,173 +446,173 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; Completion -&gt; Completion
 </span><a href="System.Console.Haskeline.Completion.html#escapeReplacement"><span class="hs-identifier hs-var">escapeReplacement</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Completion]
+</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-131"></span><span>    </span><span class="annot"><span class="annottext">Maybe (String, String)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077408"><span class="hs-identifier hs-var">alterative</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
-</span><a href="#local-6989586621679077407"><span class="hs-identifier hs-var">line</span></a></span><span>
+</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">alterative</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
+</span><a href="#local-6989586621679077432"><span class="hs-identifier hs-var">line</span></a></span><span>
 </span><span id="line-132"></span><span>
 </span><span id="line-133"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#addQuotes"><span class="hs-identifier hs-type">addQuotes</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span>
 </span><span id="line-134"></span><span id="addQuotes"><span class="annot"><span class="annottext">addQuotes :: Completion -&gt; Completion
-</span><a href="System.Console.Haskeline.Completion.html#addQuotes"><span class="hs-identifier hs-var hs-var">addQuotes</span></a></span></span><span> </span><span id="local-6989586621679077399"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Completion -&gt; Bool
+</span><a href="System.Console.Haskeline.Completion.html#addQuotes"><span class="hs-identifier hs-var hs-var">addQuotes</span></a></span></span><span> </span><span id="local-6989586621679077424"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Completion -&gt; Bool
 </span><a href="System.Console.Haskeline.Completion.html#isFinished"><span class="hs-identifier hs-var hs-var">isFinished</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var">replacement</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;\&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;\&quot;&quot;</span></span><span class="hs-special">}</span><span>
 </span><span id="line-136"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var">replacement</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;\&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679077424"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-137"></span><span>
 </span><span id="line-138"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-type">splitAtQuote</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span>
 </span><span id="line-139"></span><span id="splitAtQuote"><span class="annot"><span class="annottext">splitAtQuote :: Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
-</span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var hs-var">splitAtQuote</span></a></span></span><span> </span><span id="local-6989586621679077398"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077397"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077396"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077396"><span class="hs-identifier hs-var">line</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077396"><span class="hs-identifier hs-var">line</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-140"></span><span>    </span><span id="local-6989586621679077395"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077394"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077394"><span class="hs-identifier hs-var">e</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077393"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077393"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679077392"><span class="hs-identifier hs-var">isEscape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077394"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var hs-var">splitAtQuote</span></a></span></span><span> </span><span id="local-6989586621679077423"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077422"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077422"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077421"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">line</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">line</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-140"></span><span>    </span><span id="local-6989586621679077420"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077419"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077419"><span class="hs-identifier hs-var">e</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077418"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077418"><span class="hs-identifier hs-var">cs</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">isEscape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077419"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679077391"><span class="hs-identifier hs-var">isEscapable</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679077416"><span class="hs-identifier hs-var">isEscapable</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-141"></span><span>                        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-142"></span><span>                            </span><span class="hs-special">(</span><span id="local-6989586621679077390"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077390"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077389"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077389"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
+</span><span id="line-142"></span><span>                            </span><span class="hs-special">(</span><span id="local-6989586621679077415"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077414"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
 </span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var">splitAtQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077393"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077422"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077418"><span class="hs-identifier hs-var">cs</span></a></span><span>
 </span><span id="line-143"></span><span>                            </span><span class="annot"><span class="annottext">(String, String) -&gt; Maybe (String, String)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077420"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077390"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077389"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-144"></span><span>    </span><span id="local-6989586621679077388"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077388"><span class="hs-identifier hs-var">q</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077387"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077387"><span class="hs-identifier hs-var">cs</span></a></span></span><span>   </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679077386"><span class="hs-identifier hs-var">isQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077388"><span class="hs-identifier hs-var">q</span></a></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(String, String) -&gt; Maybe (String, String)
+</span><a href="#local-6989586621679077415"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077414"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-144"></span><span>    </span><span id="local-6989586621679077413"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">q</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077412"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077412"><span class="hs-identifier hs-var">cs</span></a></span></span><span>   </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">isQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077413"><span class="hs-identifier hs-var">q</span></a></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(String, String) -&gt; Maybe (String, String)
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077387"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-145"></span><span>    </span><span id="local-6989586621679077385"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077385"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077384"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077384"><span class="hs-identifier hs-var">cs</span></a></span></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-146"></span><span>                            </span><span class="hs-special">(</span><span id="local-6989586621679077383"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077383"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077382"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077382"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
+</span><a href="#local-6989586621679077412"><span class="hs-identifier hs-var">cs</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-145"></span><span>    </span><span id="local-6989586621679077410"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077409"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077409"><span class="hs-identifier hs-var">cs</span></a></span></span><span>                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-146"></span><span>                            </span><span class="hs-special">(</span><span id="local-6989586621679077408"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077408"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679077407"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077407"><span class="hs-identifier hs-var">rest</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
 </span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var">splitAtQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077384"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077422"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077409"><span class="hs-identifier hs-var">cs</span></a></span><span>
 </span><span id="line-147"></span><span>                            </span><span class="annot"><span class="annottext">(String, String) -&gt; Maybe (String, String)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077385"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
+</span><a href="#local-6989586621679077410"><span class="hs-identifier hs-var">c</span></a></span><span class="annot"><span class="annottext">Char -&gt; ShowS
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077383"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077382"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077408"><span class="hs-identifier hs-var">w</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077407"><span class="hs-identifier hs-var">rest</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-148"></span><span>    </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe (String, String)
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-149"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-150"></span><span>    </span><span id="local-6989586621679077386"><span class="annot"><span class="annottext">isQuote :: Char -&gt; Bool
-</span><a href="#local-6989586621679077386"><span class="hs-identifier hs-var hs-var">isQuote</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
+</span><span id="line-150"></span><span>    </span><span id="local-6989586621679077411"><span class="annot"><span class="annottext">isQuote :: Char -&gt; Bool
+</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var hs-var">isQuote</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; String -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-151"></span><span>    </span><span id="local-6989586621679077392"><span class="annot"><span class="annottext">isEscape :: Char -&gt; Bool
-</span><a href="#local-6989586621679077392"><span class="hs-identifier hs-var hs-var">isEscape</span></a></span></span><span> </span><span id="local-6989586621679077381"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077381"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Maybe Char
+</span><a href="#local-6989586621679077422"><span class="hs-identifier hs-var">qs</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-151"></span><span>    </span><span id="local-6989586621679077417"><span class="annot"><span class="annottext">isEscape :: Char -&gt; Bool
+</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var hs-var">isEscape</span></a></span></span><span> </span><span id="local-6989586621679077406"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077406"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Maybe Char
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077381"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; Maybe Char -&gt; Bool
+</span><a href="#local-6989586621679077406"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; Maybe Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">esc</span></a></span><span>
-</span><span id="line-152"></span><span>    </span><span id="local-6989586621679077391"><span class="annot"><span class="annottext">isEscapable :: Char -&gt; Bool
-</span><a href="#local-6989586621679077391"><span class="hs-identifier hs-var hs-var">isEscapable</span></a></span></span><span> </span><span id="local-6989586621679077380"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679077392"><span class="hs-identifier hs-var">isEscape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">esc</span></a></span><span>
+</span><span id="line-152"></span><span>    </span><span id="local-6989586621679077416"><span class="annot"><span class="annottext">isEscapable :: Char -&gt; Bool
+</span><a href="#local-6989586621679077416"><span class="hs-identifier hs-var hs-var">isEscapable</span></a></span></span><span> </span><span id="local-6989586621679077405"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077405"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><a href="#local-6989586621679077417"><span class="hs-identifier hs-var">isEscape</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077405"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679077386"><span class="hs-identifier hs-var">isQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679077411"><span class="hs-identifier hs-var">isQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077405"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-153"></span><span>
 </span><span id="line-154"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#isUnquoted"><span class="hs-identifier hs-type">isUnquoted</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Char</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-155"></span><span id="isUnquoted"><span class="annot"><span class="annottext">isUnquoted :: Maybe Char -&gt; String -&gt; String -&gt; Bool
-</span><a href="System.Console.Haskeline.Completion.html#isUnquoted"><span class="hs-identifier hs-var hs-var">isUnquoted</span></a></span></span><span> </span><span id="local-6989586621679077378"><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077377"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077377"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077376"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077376"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
+</span><a href="System.Console.Haskeline.Completion.html#isUnquoted"><span class="hs-identifier hs-var hs-var">isUnquoted</span></a></span></span><span> </span><span id="local-6989586621679077403"><span class="annot"><span class="annottext">Maybe Char
+</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">esc</span></a></span></span><span> </span><span id="local-6989586621679077402"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077402"><span class="hs-identifier hs-var">qs</span></a></span></span><span> </span><span id="local-6989586621679077401"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Maybe (String, String)
 </span><a href="System.Console.Haskeline.Completion.html#splitAtQuote"><span class="hs-identifier hs-var">splitAtQuote</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077377"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077376"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077402"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-156"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679077375"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077375"><span class="hs-identifier hs-var">s'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679077400"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077400"><span class="hs-identifier hs-var">s'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe Char -&gt; String -&gt; String -&gt; Bool
 </span><a href="System.Console.Haskeline.Completion.html#isUnquoted"><span class="hs-identifier hs-var">isUnquoted</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Char
-</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077377"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077375"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">esc</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077402"><span class="hs-identifier hs-var">qs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077400"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-157"></span><span>    </span><span class="annot"><span class="annottext">Maybe (String, String)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
 </span><span id="line-158"></span><span>
 </span><span id="line-159"></span><span>
 </span><span id="line-160"></span><span class="hs-comment">-- | List all of the files or folders beginning with this path.</span><span>
-</span><span id="line-161"></span><span id="local-6989586621679077526"><span class="annot"><a href="System.Console.Haskeline.Completion.html#listFiles"><span class="hs-identifier hs-type">listFiles</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679077526"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077526"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span></span><span>
+</span><span id="line-161"></span><span id="local-6989586621679077551"><span class="annot"><a href="System.Console.Haskeline.Completion.html#listFiles"><span class="hs-identifier hs-type">listFiles</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679077551"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679077551"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.Completion.html#Completion"><span class="hs-identifier hs-type">Completion</span></a></span><span class="hs-special">]</span></span><span>
 </span><span id="line-162"></span><span id="listFiles"><span class="annot"><span class="annottext">listFiles :: String -&gt; m [Completion]
-</span><a href="System.Console.Haskeline.Completion.html#listFiles"><span class="hs-identifier hs-var hs-var">listFiles</span></a></span></span><span> </span><span id="local-6989586621679077372"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077372"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO [Completion] -&gt; m [Completion]
+</span><a href="System.Console.Haskeline.Completion.html#listFiles"><span class="hs-identifier hs-var hs-var">listFiles</span></a></span></span><span> </span><span id="local-6989586621679077397"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO [Completion] -&gt; m [Completion]
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO [Completion] -&gt; m [Completion])
 -&gt; IO [Completion] -&gt; m [Completion]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-163"></span><span>    </span><span id="local-6989586621679077370"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">fixedDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO String
+</span><span id="line-163"></span><span>    </span><span id="local-6989586621679077395"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">fixedDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO String
 </span><a href="System.Console.Haskeline.Completion.html#fixPath"><span class="hs-identifier hs-var">fixPath</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077368"><span class="hs-identifier hs-var">dir</span></a></span><span>
-</span><span id="line-164"></span><span>    </span><span id="local-6989586621679077367"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679077367"><span class="hs-identifier hs-var">dirExists</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
+</span><a href="#local-6989586621679077393"><span class="hs-identifier hs-var">dir</span></a></span><span>
+</span><span id="line-164"></span><span>    </span><span id="local-6989586621679077392"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679077392"><span class="hs-identifier hs-var">dirExists</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesDirectoryExist</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">fixedDir</span></a></span><span>
+</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">fixedDir</span></a></span><span>
 </span><span id="line-165"></span><span>    </span><span class="hs-comment">-- get all of the files in that directory, as basenames</span><span>
-</span><span id="line-166"></span><span>    </span><span id="local-6989586621679077365"><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077365"><span class="hs-identifier hs-var">allFiles</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
+</span><span id="line-166"></span><span>    </span><span id="local-6989586621679077390"><span class="annot"><span class="annottext">[Completion]
+</span><a href="#local-6989586621679077390"><span class="hs-identifier hs-var">allFiles</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679077367"><span class="hs-identifier hs-var">dirExists</span></a></span><span>
+</span><a href="#local-6989586621679077392"><span class="hs-identifier hs-var">dirExists</span></a></span><span>
 </span><span id="line-167"></span><span>                    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">[Completion] -&gt; IO [Completion]
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
@@ -625,12 +625,12 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 -&gt; ([String] -&gt; [String]) -&gt; [String] -&gt; [Completion]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">[String] -&gt; [String]
-</span><a href="#local-6989586621679077364"><span class="hs-identifier hs-var">filterPrefix</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077389"><span class="hs-identifier hs-var">filterPrefix</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-169"></span><span>                            </span><span class="annot"><span class="annottext">(IO [String] -&gt; IO [Completion]) -&gt; IO [String] -&gt; IO [Completion]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; IO [String]
 </span><span class="hs-identifier hs-var">getDirectoryContents</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">fixedDir</span></a></span><span>
+</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">fixedDir</span></a></span><span>
 </span><span id="line-170"></span><span>    </span><span class="hs-comment">-- The replacement text should include the directory part, and also</span><span>
 </span><span id="line-171"></span><span>    </span><span class="hs-comment">-- have a trailing slash if it's itself a directory.</span><span>
 </span><span id="line-172"></span><span>    </span><span class="annot"><span class="annottext">[Completion] -&gt; (Completion -&gt; IO Completion) -&gt; IO [Completion]
@@ -638,72 +638,72 @@ forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Traversable t, Monad m) =&gt;
 t a -&gt; (a -&gt; m b) -&gt; m (t b)
 </span><span class="hs-identifier hs-var">forM</span></span><span> </span><span class="annot"><span class="annottext">[Completion]
-</span><a href="#local-6989586621679077365"><span class="hs-identifier hs-var">allFiles</span></a></span><span> </span><span class="annot"><span class="annottext">((Completion -&gt; IO Completion) -&gt; IO [Completion])
+</span><a href="#local-6989586621679077390"><span class="hs-identifier hs-var">allFiles</span></a></span><span> </span><span class="annot"><span class="annottext">((Completion -&gt; IO Completion) -&gt; IO [Completion])
 -&gt; (Completion -&gt; IO Completion) -&gt; IO [Completion]
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679077362"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077362"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-173"></span><span>            </span><span id="local-6989586621679077361"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679077361"><span class="hs-identifier hs-var">isDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679077387"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077387"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-173"></span><span>            </span><span id="local-6989586621679077386"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679077386"><span class="hs-identifier hs-var">isDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesDirectoryExist</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">fixedDir</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var">fixedDir</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 </span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077362"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077387"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-174"></span><span>            </span><span class="annot"><span class="annottext">Completion -&gt; IO Completion
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; IO Completion) -&gt; Completion -&gt; IO Completion
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShowS -&gt; Completion -&gt; Completion
 </span><a href="System.Console.Haskeline.Completion.html#setReplacement"><span class="hs-identifier hs-var">setReplacement</span></a></span><span> </span><span class="annot"><span class="annottext">ShowS
-</span><a href="#local-6989586621679077359"><span class="hs-identifier hs-var">fullName</span></a></span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; Completion -&gt; Completion
+</span><a href="#local-6989586621679077384"><span class="hs-identifier hs-var">fullName</span></a></span><span> </span><span class="annot"><span class="annottext">(Completion -&gt; Completion) -&gt; Completion -&gt; Completion
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Completion -&gt; Completion
-</span><a href="#local-6989586621679077358"><span class="hs-identifier hs-var">alterIfDir</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679077361"><span class="hs-identifier hs-var">isDir</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077362"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679077383"><span class="hs-identifier hs-var">alterIfDir</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679077386"><span class="hs-identifier hs-var">isDir</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077387"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-175"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-176"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679077368"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077368"><span class="hs-identifier hs-var">dir</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077357"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077357"><span class="hs-identifier hs-var">file</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; (String, String)
+</span><span id="line-176"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679077393"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077393"><span class="hs-identifier hs-var">dir</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077382"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077382"><span class="hs-identifier hs-var">file</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; (String, String)
 </span><span class="hs-identifier hs-var">splitFileName</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077372"><span class="hs-identifier hs-var">path</span></a></span><span>
-</span><span id="line-177"></span><span>    </span><span id="local-6989586621679077364"><span class="annot"><span class="annottext">filterPrefix :: [String] -&gt; [String]
-</span><a href="#local-6989586621679077364"><span class="hs-identifier hs-var hs-var">filterPrefix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Bool) -&gt; [String] -&gt; [String]
+</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">path</span></a></span><span>
+</span><span id="line-177"></span><span>    </span><span id="local-6989586621679077389"><span class="annot"><span class="annottext">filterPrefix :: [String] -&gt; [String]
+</span><a href="#local-6989586621679077389"><span class="hs-identifier hs-var hs-var">filterPrefix</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Bool) -&gt; [String] -&gt; [String]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
-</span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679077355"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077355"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; [String] -&gt; Bool
+</span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679077380"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; [String] -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">notElem</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077355"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;.&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;..&quot;</span></span><span class="hs-special">]</span><span>
 </span><span id="line-178"></span><span>                                        </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077357"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077382"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; [a] -&gt; [a] -&gt; Bool
 </span><span class="hs-operator hs-var">`isPrefixOf`</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077355"><span class="hs-identifier hs-var">f</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-179"></span><span>    </span><span id="local-6989586621679077358"><span class="annot"><span class="annottext">alterIfDir :: Bool -&gt; Completion -&gt; Completion
-</span><a href="#local-6989586621679077358"><span class="hs-identifier hs-var hs-var">alterIfDir</span></a></span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">False</span></span><span> </span><span id="local-6989586621679077354"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077354"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077354"><span class="hs-identifier hs-var">c</span></a></span><span>
-</span><span id="line-180"></span><span>    </span><span class="annot"><a href="#local-6989586621679077358"><span class="hs-identifier hs-var">alterIfDir</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><span class="hs-identifier hs-var">True</span></span><span> </span><span id="local-6989586621679077353"><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077353"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077353"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
+</span><a href="#local-6989586621679077380"><span class="hs-identifier hs-var">f</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-179"></span><span>    </span><span id="local-6989586621679077383"><span class="annot"><span class="annottext">alterIfDir :: Bool -&gt; Completion -&gt; Completion
+</span><a href="#local-6989586621679077383"><span class="hs-identifier hs-var hs-var">alterIfDir</span></a></span></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">False</span></span><span> </span><span id="local-6989586621679077379"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077379"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077379"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><span id="line-180"></span><span>    </span><span class="annot"><a href="#local-6989586621679077383"><span class="hs-identifier hs-var">alterIfDir</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">True</span></span><span> </span><span id="local-6989586621679077378"><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Completion
+</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">replacement :: String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var">replacement</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShowS
 </span><span class="hs-identifier hs-var">addTrailingPathSeparator</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Completion -&gt; String
 </span><a href="System.Console.Haskeline.Completion.html#replacement"><span class="hs-identifier hs-var hs-var">replacement</span></a></span><span> </span><span class="annot"><span class="annottext">Completion
-</span><a href="#local-6989586621679077353"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679077378"><span class="hs-identifier hs-var">c</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
 </span><span id="line-181"></span><span>                            </span><span class="annot"><span class="annottext">isFinished :: Bool
 </span><a href="System.Console.Haskeline.Completion.html#isFinished"><span class="hs-identifier hs-var">isFinished</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">False</span></span><span class="hs-special">}</span><span>
-</span><span id="line-182"></span><span>    </span><span id="local-6989586621679077359"><span class="annot"><span class="annottext">fullName :: ShowS
-</span><a href="#local-6989586621679077359"><span class="hs-identifier hs-var hs-var">fullName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><span id="line-182"></span><span>    </span><span id="local-6989586621679077384"><span class="annot"><span class="annottext">fullName :: ShowS
+</span><a href="#local-6989586621679077384"><span class="hs-identifier hs-var hs-var">fullName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 </span><span class="hs-identifier hs-var">replaceFileName</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077372"><span class="hs-identifier hs-var">path</span></a></span><span>
+</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">path</span></a></span><span>
 </span><span id="line-183"></span><span>
 </span><span id="line-184"></span><span class="hs-comment">-- turn a user-visible path into an internal version useable by System.FilePath.</span><span>
 </span><span id="line-185"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#fixPath"><span class="hs-identifier hs-type">fixPath</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
@@ -715,49 +715,49 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;.&quot;</span></span><span>
 </span><span id="line-188"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#fixPath"><span class="hs-identifier hs-var">fixPath</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><span class="hs-char">'~'</span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077350"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077350"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077349"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077349"><span class="hs-identifier hs-var">path</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><span class="hs-char">'~'</span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077375"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679077375"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679077374"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077374"><span class="hs-identifier hs-var">path</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isPathSeparator</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679077350"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-189"></span><span>    </span><span id="local-6989586621679077347"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077347"><span class="hs-identifier hs-var">home</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO String
+</span><a href="#local-6989586621679077375"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-189"></span><span>    </span><span id="local-6989586621679077372"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077372"><span class="hs-identifier hs-var">home</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO String
 </span><span class="hs-identifier hs-var">getHomeDirectory</span></span><span>
 </span><span id="line-190"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; IO String
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077347"><span class="hs-identifier hs-var">home</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><a href="#local-6989586621679077372"><span class="hs-identifier hs-var">home</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 </span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077349"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-191"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#fixPath"><span class="hs-identifier hs-var">fixPath</span></a></span><span> </span><span id="local-6989586621679077345"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077345"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO String
+</span><a href="#local-6989586621679077374"><span class="hs-identifier hs-var">path</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-191"></span><span class="annot"><a href="System.Console.Haskeline.Completion.html#fixPath"><span class="hs-identifier hs-var">fixPath</span></a></span><span> </span><span id="local-6989586621679077370"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">path</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO String
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077345"><span class="hs-identifier hs-var">path</span></a></span><span>
+</span><a href="#local-6989586621679077370"><span class="hs-identifier hs-var">path</span></a></span><span>
 </span><span id="line-192"></span><span>
 </span><span id="line-193"></span><span class="hs-comment">-- | If the first completer produces no suggestions, fallback to the second</span><span>
 </span><span id="line-194"></span><span class="hs-comment">-- completer's output.</span><span>
-</span><span id="line-195"></span><span id="local-6989586621679077344"><span class="annot"><a href="System.Console.Haskeline.Completion.html#fallbackCompletion"><span class="hs-identifier hs-type">fallbackCompletion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077344"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077344"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077344"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077344"><span class="hs-identifier hs-type">m</span></a></span></span><span>
+</span><span id="line-195"></span><span id="local-6989586621679077369"><span class="annot"><a href="System.Console.Haskeline.Completion.html#fallbackCompletion"><span class="hs-identifier hs-type">fallbackCompletion</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679077369"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077369"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077369"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Completion.html#CompletionFunc"><span class="hs-identifier hs-type">CompletionFunc</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679077369"><span class="hs-identifier hs-type">m</span></a></span></span><span>
 </span><span id="line-196"></span><span id="fallbackCompletion"><span class="annot"><span class="annottext">fallbackCompletion :: CompletionFunc m -&gt; CompletionFunc m -&gt; CompletionFunc m
-</span><a href="System.Console.Haskeline.Completion.html#fallbackCompletion"><span class="hs-identifier hs-var hs-var">fallbackCompletion</span></a></span></span><span> </span><span id="local-6989586621679077343"><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077343"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679077342"><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077342"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679077341"><span class="annot"><span class="annottext">(String, String)
-</span><a href="#local-6989586621679077341"><span class="hs-identifier hs-var">input</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-197"></span><span>    </span><span id="local-6989586621679077340"><span class="annot"><span class="annottext">(String, [Completion])
-</span><a href="#local-6989586621679077340"><span class="hs-identifier hs-var">aCompletions</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077343"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
-</span><a href="#local-6989586621679077341"><span class="hs-identifier hs-var">input</span></a></span><span>
+</span><a href="System.Console.Haskeline.Completion.html#fallbackCompletion"><span class="hs-identifier hs-var hs-var">fallbackCompletion</span></a></span></span><span> </span><span id="local-6989586621679077368"><span class="annot"><span class="annottext">CompletionFunc m
+</span><a href="#local-6989586621679077368"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621679077367"><span class="annot"><span class="annottext">CompletionFunc m
+</span><a href="#local-6989586621679077367"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span id="local-6989586621679077366"><span class="annot"><span class="annottext">(String, String)
+</span><a href="#local-6989586621679077366"><span class="hs-identifier hs-var">input</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-197"></span><span>    </span><span id="local-6989586621679077365"><span class="annot"><span class="annottext">(String, [Completion])
+</span><a href="#local-6989586621679077365"><span class="hs-identifier hs-var">aCompletions</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CompletionFunc m
+</span><a href="#local-6989586621679077368"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
+</span><a href="#local-6989586621679077366"><span class="hs-identifier hs-var">input</span></a></span><span>
 </span><span id="line-198"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">[Completion] -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(String, [Completion]) -&gt; [Completion]
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">(String, [Completion])
-</span><a href="#local-6989586621679077340"><span class="hs-identifier hs-var">aCompletions</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077365"><span class="hs-identifier hs-var">aCompletions</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-199"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">CompletionFunc m
-</span><a href="#local-6989586621679077342"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
-</span><a href="#local-6989586621679077341"><span class="hs-identifier hs-var">input</span></a></span><span>
+</span><a href="#local-6989586621679077367"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">(String, String)
+</span><a href="#local-6989586621679077366"><span class="hs-identifier hs-var">input</span></a></span><span>
 </span><span id="line-200"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">(String, [Completion]) -&gt; m (String, [Completion])
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(String, [Completion])
-</span><a href="#local-6989586621679077340"><span class="hs-identifier hs-var">aCompletions</span></a></span><span>
+</span><a href="#local-6989586621679077365"><span class="hs-identifier hs-var">aCompletions</span></a></span><span>
 </span><span id="line-201"></span></pre></body></html>

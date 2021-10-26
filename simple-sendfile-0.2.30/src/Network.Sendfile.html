@@ -7,11 +7,11 @@
 -}</span><span>
 </span><span id="line-8"></span><span>
 </span><span id="line-9"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Network.Sendfile</span><span> </span><span class="hs-special">(</span><span>
-</span><span id="line-10"></span><span>    </span><span class="annot"><a href="Network.Sendfile.BSD.html#sendfile"><span class="hs-identifier">sendfile</span></a></span><span>
-</span><span id="line-11"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.BSD.html#sendfileWithHeader"><span class="hs-identifier">sendfileWithHeader</span></a></span><span class="hs-cpp">
+</span><span id="line-10"></span><span>    </span><span class="annot"><a href="Network.Sendfile.Linux.html#sendfile"><span class="hs-identifier">sendfile</span></a></span><span>
+</span><span id="line-11"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.Linux.html#sendfileWithHeader"><span class="hs-identifier">sendfileWithHeader</span></a></span><span class="hs-cpp">
 #if OS_BSD || OS_MacOS || OS_Linux
-</span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.BSD.html#sendfileFd"><span class="hs-identifier">sendfileFd</span></a></span><span>
-</span><span id="line-14"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.BSD.html#sendfileFdWithHeader"><span class="hs-identifier">sendfileFdWithHeader</span></a></span><span class="hs-cpp">
+</span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.Linux.html#sendfileFd"><span class="hs-identifier">sendfileFd</span></a></span><span>
+</span><span id="line-14"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.Linux.html#sendfileFdWithHeader"><span class="hs-identifier">sendfileFdWithHeader</span></a></span><span class="hs-cpp">
 #endif
 </span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Sendfile.Types.html#FileRange"><span class="hs-identifier">FileRange</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-17"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
@@ -21,9 +21,9 @@
 #ifdef OS_BSD
 </span><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Network.Sendfile.BSD</span><span class="hs-cpp">
 #elif  OS_MacOS
-</span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Network.Sendfile.BSD.html"><span class="hs-identifier">Network.Sendfile.BSD</span></a></span><span class="hs-cpp">
+</span><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Network.Sendfile.BSD</span><span class="hs-cpp">
 #elif  OS_Linux
-</span><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Network.Sendfile.Linux</span><span class="hs-cpp">
+</span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Network.Sendfile.Linux.html"><span class="hs-identifier">Network.Sendfile.Linux</span></a></span><span class="hs-cpp">
 #else
 </span><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Network.Sendfile.Fallback</span><span class="hs-cpp">
 #endif

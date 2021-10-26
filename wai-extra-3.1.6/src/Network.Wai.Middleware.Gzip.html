@@ -65,7 +65,7 @@
 </span><span id="line-63"></span><span>                                  </span><span class="hs-comment">-- appended to it, if the file is missing then try next action</span><span>
 </span><span id="line-64"></span><span>                                  </span><span class="hs-comment">--</span><span>
 </span><span id="line-65"></span><span>                                  </span><span class="hs-comment">-- @since 3.0.17</span><span>
-</span><span id="line-66"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102537"><span id="local-6989586621679102539"><span id="local-6989586621679102541"><span class="annot"><span class="annottext">Int -&gt; GzipFiles -&gt; ShowS
+</span><span id="line-66"></span><span>    </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102557"><span id="local-6989586621679102559"><span id="local-6989586621679102561"><span class="annot"><span class="annottext">Int -&gt; GzipFiles -&gt; ShowS
 [GzipFiles] -&gt; ShowS
 GzipFiles -&gt; String
 (Int -&gt; GzipFiles -&gt; ShowS)
@@ -80,7 +80,7 @@ show :: GzipFiles -&gt; String
 $cshow :: GzipFiles -&gt; String
 showsPrec :: Int -&gt; GzipFiles -&gt; ShowS
 $cshowsPrec :: Int -&gt; GzipFiles -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102532"><span id="local-6989586621679102534"><span class="annot"><span class="annottext">GzipFiles -&gt; GzipFiles -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102552"><span id="local-6989586621679102554"><span class="annot"><span class="annottext">GzipFiles -&gt; GzipFiles -&gt; Bool
 (GzipFiles -&gt; GzipFiles -&gt; Bool)
 -&gt; (GzipFiles -&gt; GzipFiles -&gt; Bool) -&gt; Eq GzipFiles
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -88,7 +88,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: GzipFiles -&gt; GzipFiles -&gt; Bool
 == :: GzipFiles -&gt; GzipFiles -&gt; Bool
 $c== :: GzipFiles -&gt; GzipFiles -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102523"><span id="local-6989586621679102525"><span id="local-6989586621679102527"><span id="local-6989586621679102529"><span class="annot"><span class="annottext">ReadPrec [GzipFiles]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102543"><span id="local-6989586621679102545"><span id="local-6989586621679102547"><span id="local-6989586621679102549"><span class="annot"><span class="annottext">ReadPrec [GzipFiles]
 ReadPrec GzipFiles
 Int -&gt; ReadS GzipFiles
 ReadS [GzipFiles]
@@ -112,8 +112,8 @@ $creadsPrec :: Int -&gt; ReadS GzipFiles
 </span><span id="line-67"></span><span>
 </span><span id="line-68"></span><span class="hs-comment">-- | Use default MIME settings; /do not/ compress files.</span><span>
 </span><span id="line-69"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Default</span></span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipSettings"><span class="hs-identifier hs-type">GzipSettings</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-70"></span><span>    </span><span id="local-6989586621679102519"><span class="annot"><span class="annottext">def :: GzipSettings
-</span><a href="#local-6989586621679102519"><span class="hs-identifier hs-var hs-var hs-var hs-var">def</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GzipFiles -&gt; (ByteString -&gt; Bool) -&gt; GzipSettings
+</span><span id="line-70"></span><span>    </span><span id="local-6989586621679102539"><span class="annot"><span class="annottext">def :: GzipSettings
+</span><a href="#local-6989586621679102539"><span class="hs-identifier hs-var hs-var hs-var hs-var">def</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">GzipFiles -&gt; (ByteString -&gt; Bool) -&gt; GzipSettings
 </span><a href="Network.Wai.Middleware.Gzip.html#GzipSettings"><span class="hs-identifier hs-var">GzipSettings</span></a></span><span> </span><span class="annot"><span class="annottext">GzipFiles
 </span><a href="Network.Wai.Middleware.Gzip.html#GzipIgnore"><span class="hs-identifier hs-var">GzipIgnore</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><a href="Network.Wai.Middleware.Gzip.html#defaultCheckMime"><span class="hs-identifier hs-var">defaultCheckMime</span></a></span><span>
@@ -123,20 +123,20 @@ $creadsPrec :: Int -&gt; ReadS GzipFiles
 </span><span id="line-74"></span><span class="hs-comment">-- @application/ecmascript@, @image/x-icon@.</span><span>
 </span><span id="line-75"></span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#defaultCheckMime"><span class="hs-identifier hs-type">defaultCheckMime</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">S.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-76"></span><span id="defaultCheckMime"><span class="annot"><span class="annottext">defaultCheckMime :: ByteString -&gt; Bool
-</span><a href="Network.Wai.Middleware.Gzip.html#defaultCheckMime"><span class="hs-identifier hs-var hs-var">defaultCheckMime</span></a></span></span><span> </span><span id="local-6989586621679102518"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102518"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.Gzip.html#defaultCheckMime"><span class="hs-identifier hs-var hs-var">defaultCheckMime</span></a></span></span><span> </span><span id="local-6989586621679102538"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102538"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-77"></span><span>    </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">S8.isPrefixOf</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;text/&quot;</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102518"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102538"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102515"><span class="hs-identifier hs-var">bs'</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Set ByteString -&gt; Bool
+</span><a href="#local-6989586621679102535"><span class="hs-identifier hs-var">bs'</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Set ByteString -&gt; Bool
 forall a. Ord a =&gt; a -&gt; Set a -&gt; Bool
 </span><span class="hs-operator hs-var">`Set.member`</span></span><span> </span><span class="annot"><span class="annottext">Set ByteString
-</span><a href="#local-6989586621679102513"><span class="hs-identifier hs-var">toCompress</span></a></span><span>
+</span><a href="#local-6989586621679102533"><span class="hs-identifier hs-var">toCompress</span></a></span><span>
 </span><span id="line-78"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-79"></span><span>    </span><span id="local-6989586621679102515"><span class="annot"><span class="annottext">bs' :: ByteString
-</span><a href="#local-6989586621679102515"><span class="hs-identifier hs-var hs-var">bs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; ByteString
+</span><span id="line-79"></span><span>    </span><span id="local-6989586621679102535"><span class="annot"><span class="annottext">bs' :: ByteString
+</span><a href="#local-6989586621679102535"><span class="hs-identifier hs-var hs-var">bs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; ByteString
 forall a b. (a, b) -&gt; a
 </span><span class="hs-identifier hs-var">fst</span></span><span> </span><span class="annot"><span class="annottext">((ByteString, ByteString) -&gt; ByteString)
 -&gt; (ByteString, ByteString) -&gt; ByteString
@@ -146,9 +146,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-identifier hs-var">_semicolon</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102518"><span class="hs-identifier hs-var">bs</span></a></span><span>
-</span><span id="line-80"></span><span>    </span><span id="local-6989586621679102513"><span class="annot"><span class="annottext">toCompress :: Set ByteString
-</span><a href="#local-6989586621679102513"><span class="hs-identifier hs-var hs-var">toCompress</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Set ByteString
+</span><a href="#local-6989586621679102538"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><span id="line-80"></span><span>    </span><span id="local-6989586621679102533"><span class="annot"><span class="annottext">toCompress :: Set ByteString
+</span><a href="#local-6989586621679102533"><span class="hs-identifier hs-var hs-var">toCompress</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Set ByteString
 forall a. Ord a =&gt; [a] -&gt; Set a
 </span><span class="hs-identifier hs-var">Set.fromList</span></span><span>
 </span><span id="line-81"></span><span>        </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">ByteString
@@ -172,111 +172,111 @@ forall a. Ord a =&gt; [a] -&gt; Set a
 </span><span id="line-95"></span><span class="hs-comment">-- behavior, see 'defaultCheckMime'.</span><span>
 </span><span id="line-96"></span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#gzip"><span class="hs-identifier hs-type">gzip</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipSettings"><span class="hs-identifier hs-type">GzipSettings</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-97"></span><span id="gzip"><span class="annot"><span class="annottext">gzip :: GzipSettings -&gt; Middleware
-</span><a href="Network.Wai.Middleware.Gzip.html#gzip"><span class="hs-identifier hs-var hs-var">gzip</span></a></span></span><span> </span><span id="local-6989586621679102510"><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679102509"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102509"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102508"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">env</span></a></span></span><span> </span><span id="local-6989586621679102507"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102507"><span class="hs-identifier hs-var">sendResponse'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102509"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">env</span></a></span><span> </span><span class="annot"><span class="annottext">((Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived)
+</span><a href="Network.Wai.Middleware.Gzip.html#gzip"><span class="hs-identifier hs-var hs-var">gzip</span></a></span></span><span> </span><span id="local-6989586621679102530"><span class="annot"><span class="annottext">GzipSettings
+</span><a href="#local-6989586621679102530"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679102529"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102529"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102528"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102528"><span class="hs-identifier hs-var">env</span></a></span></span><span> </span><span id="local-6989586621679102527"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102527"><span class="hs-identifier hs-var">sendResponse'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102529"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102528"><span class="hs-identifier hs-var">env</span></a></span><span> </span><span class="annot"><span class="annottext">((Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived)
 -&gt; (Response -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102506"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102526"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-98"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-99"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">ResponseRaw</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-100"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; GzipFiles
 </span><a href="Network.Wai.Middleware.Gzip.html#gzipFiles"><span class="hs-identifier hs-var hs-var">gzipFiles</span></a></span><span> </span><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">GzipFiles -&gt; GzipFiles -&gt; Bool
+</span><a href="#local-6989586621679102530"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">GzipFiles -&gt; GzipFiles -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">GzipFiles
 </span><a href="Network.Wai.Middleware.Gzip.html#GzipIgnore"><span class="hs-identifier hs-var">GzipIgnore</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-101"></span><span>        </span><span class="annot"><span class="annottext">Response
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;gzip&quot;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString] -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`elem`</span></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679102501"><span class="hs-identifier hs-var">enc</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102521"><span class="hs-identifier hs-var">enc</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679102498"><span class="hs-identifier hs-var">isMSIE6</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102518"><span class="hs-identifier hs-var">isMSIE6</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response -&gt; Bool
-</span><a href="#local-6989586621679102497"><span class="hs-identifier hs-var">isEncoded</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102517"><span class="hs-identifier hs-var">isEncoded</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response -&gt; Bool
-</span><a href="#local-6989586621679102496"><span class="hs-identifier hs-var">bigEnough</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102516"><span class="hs-identifier hs-var">bigEnough</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-102"></span><span>                </span><span class="hs-keyword">then</span><span>
-</span><span id="line-103"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102495"><span class="annot"><span class="annottext">runAction :: (Response, GzipFiles) -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102495"><span class="hs-identifier hs-var hs-var">runAction</span></a></span></span><span> </span><span id="local-6989586621679102494"><span class="annot"><span class="annottext">(Response, GzipFiles)
-</span><a href="#local-6989586621679102494"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Response, GzipFiles)
-</span><a href="#local-6989586621679102494"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-104"></span><span>                            </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span> </span><span id="local-6989586621679102493"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102493"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102492"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102492"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102491"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102491"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipPreCompressed"><span class="hs-identifier hs-type">GzipPreCompressed</span></a></span><span> </span><span id="local-6989586621679102490"><span class="annot"><span class="annottext">GzipFiles
-</span><a href="#local-6989586621679102490"><span class="hs-identifier hs-var">nextAction</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-103"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102515"><span class="annot"><span class="annottext">runAction :: (Response, GzipFiles) -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102515"><span class="hs-identifier hs-var hs-var">runAction</span></a></span></span><span> </span><span id="local-6989586621679102514"><span class="annot"><span class="annottext">(Response, GzipFiles)
+</span><a href="#local-6989586621679102514"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Response, GzipFiles)
+</span><a href="#local-6989586621679102514"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-104"></span><span>                            </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span> </span><span id="local-6989586621679102513"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102513"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102512"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102512"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102511"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102511"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipPreCompressed"><span class="hs-identifier hs-type">GzipPreCompressed</span></a></span><span> </span><span id="local-6989586621679102510"><span class="annot"><span class="annottext">GzipFiles
+</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">nextAction</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-105"></span><span>                                 </span><span class="hs-keyword">let</span><span>
-</span><span id="line-106"></span><span>                                    </span><span id="local-6989586621679102489"><span class="annot"><span class="annottext">compressedVersion :: String
-</span><a href="#local-6989586621679102489"><span class="hs-identifier hs-var hs-var">compressedVersion</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102491"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><span id="line-106"></span><span>                                    </span><span id="local-6989586621679102509"><span class="annot"><span class="annottext">compressedVersion :: String
+</span><a href="#local-6989586621679102509"><span class="hs-identifier hs-var hs-var">compressedVersion</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102511"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;.gz&quot;</span></span><span>
 </span><span id="line-107"></span><span>                                 </span><span class="hs-keyword">in</span><span>
 </span><span id="line-108"></span><span>                                    </span><span class="annot"><span class="annottext">String -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesFileExist</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102489"><span class="hs-identifier hs-var">compressedVersion</span></a></span><span> </span><span class="annot"><span class="annottext">IO Bool -&gt; (Bool -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102509"><span class="hs-identifier hs-var">compressedVersion</span></a></span><span> </span><span class="annot"><span class="annottext">IO Bool -&gt; (Bool -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
-</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102488"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679102488"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102508"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-109"></span><span>                                       </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679102488"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-110"></span><span>                                         </span><span class="hs-keyword">then</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
 -&gt; Response -&gt; IO ResponseReceived
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; String -&gt; Maybe FilePart -&gt; Response
 </span><span class="hs-identifier hs-var">ResponseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102493"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679102513"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.Wai.Middleware.Gzip.html#fixHeaders"><span class="hs-identifier hs-var">fixHeaders</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102492"><span class="hs-identifier hs-var">hs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102489"><span class="hs-identifier hs-var">compressedVersion</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679102512"><span class="hs-identifier hs-var">hs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102509"><span class="hs-identifier hs-var">compressedVersion</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span>
 </span><span id="line-111"></span><span>                                         </span><span class="hs-keyword">else</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Response, GzipFiles) -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102495"><span class="hs-identifier hs-var">runAction</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; String -&gt; Maybe FilePart -&gt; Response
+</span><a href="#local-6989586621679102515"><span class="hs-identifier hs-var">runAction</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; String -&gt; Maybe FilePart -&gt; Response
 </span><span class="hs-identifier hs-var">ResponseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102493"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102492"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102491"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679102513"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102512"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102511"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GzipFiles
-</span><a href="#local-6989586621679102490"><span class="hs-identifier hs-var">nextAction</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-112"></span><span>                            </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span> </span><span id="local-6989586621679102486"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102486"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102485"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102484"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102484"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipCacheFolder"><span class="hs-identifier hs-type">GzipCacheFolder</span></a></span><span> </span><span id="local-6989586621679102483"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">cache</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">nextAction</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-112"></span><span>                            </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span> </span><span id="local-6989586621679102506"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102505"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102505"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102504"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipCacheFolder"><span class="hs-identifier hs-type">GzipCacheFolder</span></a></span><span> </span><span id="local-6989586621679102503"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102503"><span class="hs-identifier hs-var">cache</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-113"></span><span>                                </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; ResponseHeaders -&gt; Maybe ByteString
 forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 </span><span class="hs-identifier hs-var">lookup</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">hContentType</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-114"></span><span>                                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102481"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102481"><span class="hs-identifier hs-var">m</span></a></span></span><span>
+</span><a href="#local-6989586621679102505"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-114"></span><span>                                    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102501"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102501"><span class="hs-identifier hs-var">m</span></a></span></span><span>
 </span><span id="line-115"></span><span>                                        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; ByteString -&gt; Bool
 </span><a href="Network.Wai.Middleware.Gzip.html#gzipCheckMime"><span class="hs-identifier hs-var hs-var">gzipCheckMime</span></a></span><span> </span><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102481"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102530"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102501"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Status
 -&gt; ResponseHeaders
 -&gt; String
 -&gt; String
@@ -290,19 +290,19 @@ Status
 -&gt; (Response -&gt; IO a)
 -&gt; IO a
 </span><a href="Network.Wai.Middleware.Gzip.html#compressFile"><span class="hs-identifier hs-var">compressFile</span></a></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102486"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102484"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">cache</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102505"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102503"><span class="hs-identifier hs-var">cache</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-116"></span><span>                                    </span><span class="annot"><span class="annottext">Maybe ByteString
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-117"></span><span>                            </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResponseFile</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GzipFiles
 </span><a href="Network.Wai.Middleware.Gzip.html#GzipIgnore"><span class="hs-identifier hs-var">GzipIgnore</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-118"></span><span>                            </span><span class="annot"><span class="annottext">(Response, GzipFiles)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">GzipSettings
 -&gt; Response
@@ -310,34 +310,34 @@ Status
 -&gt; IO ResponseReceived
 forall a. GzipSettings -&gt; Response -&gt; (Response -&gt; IO a) -&gt; IO a
 </span><a href="Network.Wai.Middleware.Gzip.html#compressE"><span class="hs-identifier hs-var">compressE</span></a></span><span> </span><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
+</span><a href="#local-6989586621679102530"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span>
 </span><span id="line-119"></span><span>                    </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">(Response, GzipFiles) -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102495"><span class="hs-identifier hs-var">runAction</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; GzipFiles
+</span><a href="#local-6989586621679102515"><span class="hs-identifier hs-var">runAction</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; GzipFiles
 </span><a href="Network.Wai.Middleware.Gzip.html#gzipFiles"><span class="hs-identifier hs-var hs-var">gzipFiles</span></a></span><span> </span><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102510"><span class="hs-identifier hs-var">set</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102530"><span class="hs-identifier hs-var">set</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-120"></span><span>                </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102506"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102526"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-121"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-122"></span><span>    </span><span id="local-6989586621679102504"><span class="annot"><span class="annottext">sendResponse :: Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102504"><span class="hs-identifier hs-var hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102507"><span class="hs-identifier hs-var">sendResponse'</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
+</span><span id="line-122"></span><span>    </span><span id="local-6989586621679102524"><span class="annot"><span class="annottext">sendResponse :: Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102524"><span class="hs-identifier hs-var hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102527"><span class="hs-identifier hs-var">sendResponse'</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO ResponseReceived)
 -&gt; (Response -&gt; Response) -&gt; Response -&gt; IO ResponseReceived
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(ResponseHeaders -&gt; ResponseHeaders) -&gt; Response -&gt; Response
 </span><span class="hs-identifier hs-var">mapResponseHeaders</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(HeaderName, ByteString)
-</span><a href="#local-6989586621679102476"><span class="hs-identifier hs-var">vary</span></a></span><span class="annot"><span class="annottext">(HeaderName, ByteString) -&gt; ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679102496"><span class="hs-identifier hs-var">vary</span></a></span><span class="annot"><span class="annottext">(HeaderName, ByteString) -&gt; ResponseHeaders -&gt; ResponseHeaders
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="hs-special">)</span><span>
-</span><span id="line-123"></span><span>    </span><span id="local-6989586621679102476"><span class="annot"><span class="annottext">vary :: (HeaderName, ByteString)
-</span><a href="#local-6989586621679102476"><span class="hs-identifier hs-var hs-var">vary</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
+</span><span id="line-123"></span><span>    </span><span id="local-6989586621679102496"><span class="annot"><span class="annottext">vary :: (HeaderName, ByteString)
+</span><a href="#local-6989586621679102496"><span class="hs-identifier hs-var hs-var">vary</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">hVary</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;Accept-Encoding&quot;</span></span><span class="hs-special">)</span><span>
-</span><span id="line-124"></span><span>    </span><span id="local-6989586621679102501"><span class="annot"><span class="annottext">enc :: [ByteString]
-</span><a href="#local-6989586621679102501"><span class="hs-identifier hs-var hs-var">enc</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Maybe [ByteString] -&gt; [ByteString]
+</span><span id="line-124"></span><span>    </span><span id="local-6989586621679102521"><span class="annot"><span class="annottext">enc :: [ByteString]
+</span><a href="#local-6989586621679102521"><span class="hs-identifier hs-var hs-var">enc</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Maybe [ByteString] -&gt; [ByteString]
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">(Maybe [ByteString] -&gt; [ByteString])
 -&gt; Maybe [ByteString] -&gt; [ByteString]
@@ -352,9 +352,9 @@ forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 </span><span class="hs-identifier hs-var">lookup</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-string">&quot;Accept-Encoding&quot;</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; ResponseHeaders
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">env</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-126"></span><span>    </span><span id="local-6989586621679102473"><span class="annot"><span class="annottext">ua :: ByteString
-</span><a href="#local-6989586621679102473"><span class="hs-identifier hs-var hs-var">ua</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe ByteString -&gt; ByteString
+</span><a href="#local-6989586621679102528"><span class="hs-identifier hs-var">env</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-126"></span><span>    </span><span id="local-6989586621679102493"><span class="annot"><span class="annottext">ua :: ByteString
+</span><a href="#local-6989586621679102493"><span class="hs-identifier hs-var hs-var">ua</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe ByteString -&gt; ByteString
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">(Maybe ByteString -&gt; ByteString) -&gt; Maybe ByteString -&gt; ByteString
@@ -367,15 +367,15 @@ forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request -&gt; ResponseHeaders
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102508"><span class="hs-identifier hs-var">env</span></a></span><span>
-</span><span id="line-127"></span><span>    </span><span id="local-6989586621679102498"><span class="annot"><span class="annottext">isMSIE6 :: Bool
-</span><a href="#local-6989586621679102498"><span class="hs-identifier hs-var hs-var">isMSIE6</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102528"><span class="hs-identifier hs-var">env</span></a></span><span>
+</span><span id="line-127"></span><span>    </span><span id="local-6989586621679102518"><span class="annot"><span class="annottext">isMSIE6 :: Bool
+</span><a href="#local-6989586621679102518"><span class="hs-identifier hs-var hs-var">isMSIE6</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;MSIE 6&quot;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString -&gt; Bool
 </span><span class="hs-operator hs-var">`S.isInfixOf`</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102473"><span class="hs-identifier hs-var">ua</span></a></span><span>
-</span><span id="line-128"></span><span>    </span><span id="local-6989586621679102497"><span class="annot"><span class="annottext">isEncoded :: Response -&gt; Bool
-</span><a href="#local-6989586621679102497"><span class="hs-identifier hs-var hs-var">isEncoded</span></a></span></span><span> </span><span id="local-6989586621679102471"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102471"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
+</span><a href="#local-6989586621679102493"><span class="hs-identifier hs-var">ua</span></a></span><span>
+</span><span id="line-128"></span><span>    </span><span id="local-6989586621679102517"><span class="annot"><span class="annottext">isEncoded :: Response -&gt; Bool
+</span><a href="#local-6989586621679102517"><span class="hs-identifier hs-var hs-var">isEncoded</span></a></span></span><span> </span><span id="local-6989586621679102491"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102491"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe ByteString -&gt; Bool
 forall a. Maybe a -&gt; Bool
 </span><span class="hs-identifier hs-var">isJust</span></span><span> </span><span class="annot"><span class="annottext">(Maybe ByteString -&gt; Bool) -&gt; Maybe ByteString -&gt; Bool
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -387,60 +387,60 @@ forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Response -&gt; ResponseHeaders
 </span><span class="hs-identifier hs-var">responseHeaders</span></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102471"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102491"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-129"></span><span>
-</span><span id="line-130"></span><span>    </span><span id="local-6989586621679102496"><span class="annot"><span class="annottext">bigEnough :: Response -&gt; Bool
-</span><a href="#local-6989586621679102496"><span class="hs-identifier hs-var hs-var">bigEnough</span></a></span></span><span> </span><span id="local-6989586621679102469"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102469"><span class="hs-identifier hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; Maybe Integer
+</span><span id="line-130"></span><span>    </span><span id="local-6989586621679102516"><span class="annot"><span class="annottext">bigEnough :: Response -&gt; Bool
+</span><a href="#local-6989586621679102516"><span class="hs-identifier hs-var hs-var">bigEnough</span></a></span></span><span> </span><span id="local-6989586621679102489"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102489"><span class="hs-identifier hs-var">rsp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; Maybe Integer
 </span><a href="Network.Wai.Header.html#contentLength"><span class="hs-identifier hs-var">contentLength</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Response -&gt; ResponseHeaders
 </span><span class="hs-identifier hs-var">responseHeaders</span></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102469"><span class="hs-identifier hs-var">rsp</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102489"><span class="hs-identifier hs-var">rsp</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-131"></span><span>      </span><span class="annot"><span class="annottext">Maybe Integer
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="hs-comment">-- This could be a streaming case</span><span>
-</span><span id="line-132"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102467"><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679102467"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679102467"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Bool
+</span><span id="line-132"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102487"><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679102487"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Integer
+</span><a href="#local-6989586621679102487"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Integer -&gt; Integer -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Integer
-</span><a href="#local-6989586621679102466"><span class="hs-identifier hs-var">minimumLength</span></a></span><span>
+</span><a href="#local-6989586621679102486"><span class="hs-identifier hs-var">minimumLength</span></a></span><span>
 </span><span id="line-133"></span><span>
 </span><span id="line-134"></span><span>    </span><span class="hs-comment">-- For a small enough response, gzipping will actually increase the size</span><span>
 </span><span id="line-135"></span><span>    </span><span class="hs-comment">-- Potentially for anything less than 860 bytes gzipping could be a net loss</span><span>
 </span><span id="line-136"></span><span>    </span><span class="hs-comment">-- The actual number is application specific though and may need to be adjusted</span><span>
 </span><span id="line-137"></span><span>    </span><span class="hs-comment">-- http://webmasters.stackexchange.com/questions/31750/what-is-recommended-minimum-object-size-for-gzip-performance-benefits</span><span>
-</span><span id="line-138"></span><span>    </span><span id="local-6989586621679102466"><span class="annot"><span class="annottext">minimumLength :: Integer
-</span><a href="#local-6989586621679102466"><span class="hs-identifier hs-var hs-var">minimumLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
+</span><span id="line-138"></span><span>    </span><span id="local-6989586621679102486"><span class="annot"><span class="annottext">minimumLength :: Integer
+</span><a href="#local-6989586621679102486"><span class="hs-identifier hs-var hs-var">minimumLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Integer
 </span><span class="hs-number">860</span></span><span>
 </span><span id="line-139"></span><span>
-</span><span id="line-140"></span><span id="local-6989586621679102619"><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#compressFile"><span class="hs-identifier hs-type">compressFile</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Status</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102619"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102619"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-140"></span><span id="local-6989586621679102639"><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#compressFile"><span class="hs-identifier hs-type">compressFile</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Status</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="hs-identifier hs-type">Header</span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102639"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102639"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-141"></span><span id="compressFile"><span class="annot"><span class="annottext">compressFile :: Status
 -&gt; ResponseHeaders
 -&gt; String
 -&gt; String
 -&gt; (Response -&gt; IO a)
 -&gt; IO a
-</span><a href="Network.Wai.Middleware.Gzip.html#compressFile"><span class="hs-identifier hs-var hs-var">compressFile</span></a></span></span><span> </span><span id="local-6989586621679102465"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102465"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102464"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102464"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102463"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102463"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span id="local-6989586621679102462"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102462"><span class="hs-identifier hs-var">cache</span></a></span></span><span> </span><span id="local-6989586621679102461"><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102461"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-142"></span><span>    </span><span id="local-6989586621679102460"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679102460"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
+</span><a href="Network.Wai.Middleware.Gzip.html#compressFile"><span class="hs-identifier hs-var hs-var">compressFile</span></a></span></span><span> </span><span id="local-6989586621679102485"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span id="local-6989586621679102484"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102484"><span class="hs-identifier hs-var">hs</span></a></span></span><span> </span><span id="local-6989586621679102483"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">file</span></a></span></span><span> </span><span id="local-6989586621679102482"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102482"><span class="hs-identifier hs-var">cache</span></a></span></span><span> </span><span id="local-6989586621679102481"><span class="annot"><span class="annottext">Response -&gt; IO a
+</span><a href="#local-6989586621679102481"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-142"></span><span>    </span><span id="local-6989586621679102480"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679102480"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO Bool
 </span><span class="hs-identifier hs-var">doesFileExist</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var">tmpfile</span></a></span><span>
+</span><a href="#local-6989586621679102479"><span class="hs-identifier hs-var">tmpfile</span></a></span><span>
 </span><span id="line-143"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679102460"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679102480"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-144"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">IO a
-</span><a href="#local-6989586621679102458"><span class="hs-identifier hs-var">onSucc</span></a></span><span>
+</span><a href="#local-6989586621679102478"><span class="hs-identifier hs-var">onSucc</span></a></span><span>
 </span><span id="line-145"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-146"></span><span>            </span><span class="annot"><span class="annottext">Bool -&gt; String -&gt; IO ()
 </span><span class="hs-identifier hs-var">createDirectoryIfMissing</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102462"><span class="hs-identifier hs-var">cache</span></a></span><span>
-</span><span id="line-147"></span><span>            </span><span id="local-6989586621679102457"><span class="annot"><span class="annottext">Either SomeException ()
-</span><a href="#local-6989586621679102457"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO (Either SomeException ())
+</span><a href="#local-6989586621679102482"><span class="hs-identifier hs-var">cache</span></a></span><span>
+</span><span id="line-147"></span><span>            </span><span id="local-6989586621679102477"><span class="annot"><span class="annottext">Either SomeException ()
+</span><a href="#local-6989586621679102477"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO () -&gt; IO (Either SomeException ())
 forall e a. Exception e =&gt; IO a -&gt; IO (Either e a)
 </span><span class="hs-identifier hs-var">try</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO (Either SomeException ()))
 -&gt; IO () -&gt; IO (Either SomeException ())
@@ -449,21 +449,21 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-148"></span><span>                 </span><span class="annot"><span class="annottext">String -&gt; IOMode -&gt; (Handle -&gt; IO ()) -&gt; IO ()
 forall r. String -&gt; IOMode -&gt; (Handle -&gt; IO r) -&gt; IO r
 </span><span class="hs-identifier hs-var">IO.withBinaryFile</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102463"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
+</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
 </span><span class="hs-identifier hs-var">IO.ReadMode</span></span><span> </span><span class="annot"><span class="annottext">((Handle -&gt; IO ()) -&gt; IO ()) -&gt; (Handle -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102454"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679102454"><span class="hs-identifier hs-var">inH</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102474"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679102474"><span class="hs-identifier hs-var">inH</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-149"></span><span>                 </span><span class="annot"><span class="annottext">String -&gt; IOMode -&gt; (Handle -&gt; IO ()) -&gt; IO ()
 forall r. String -&gt; IOMode -&gt; (Handle -&gt; IO r) -&gt; IO r
 </span><span class="hs-identifier hs-var">IO.withBinaryFile</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var">tmpfile</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
+</span><a href="#local-6989586621679102479"><span class="hs-identifier hs-var">tmpfile</span></a></span><span> </span><span class="annot"><span class="annottext">IOMode
 </span><span class="hs-identifier hs-var">IO.WriteMode</span></span><span> </span><span class="annot"><span class="annottext">((Handle -&gt; IO ()) -&gt; IO ()) -&gt; (Handle -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102452"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679102452"><span class="hs-identifier hs-var">outH</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-150"></span><span>                    </span><span id="local-6989586621679102451"><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102451"><span class="hs-identifier hs-var">deflate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; WindowBits -&gt; IO Deflate
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102472"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679102472"><span class="hs-identifier hs-var">outH</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-150"></span><span>                    </span><span id="local-6989586621679102471"><span class="annot"><span class="annottext">Deflate
+</span><a href="#local-6989586621679102471"><span class="hs-identifier hs-var">deflate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; WindowBits -&gt; IO Deflate
 </span><span class="hs-identifier hs-var">Z.initDeflate</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">7</span></span><span> </span><span class="annot"><span class="annottext">(WindowBits -&gt; IO Deflate) -&gt; WindowBits -&gt; IO Deflate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -472,109 +472,109 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-number">31</span></span><span>
 </span><span id="line-151"></span><span>                    </span><span class="hs-comment">-- FIXME this code should write to a temporary file, then</span><span>
 </span><span id="line-152"></span><span>                    </span><span class="hs-comment">-- rename to the final file</span><span>
-</span><span id="line-153"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102448"><span class="annot"><span class="annottext">goPopper :: IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102448"><span class="hs-identifier hs-var hs-var">goPopper</span></a></span></span><span> </span><span id="local-6989586621679102447"><span class="annot"><span class="annottext">IO PopperRes
-</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
+</span><span id="line-153"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102468"><span class="annot"><span class="annottext">goPopper :: IO PopperRes -&gt; IO ()
+</span><a href="#local-6989586621679102468"><span class="hs-identifier hs-var hs-var">goPopper</span></a></span></span><span> </span><span id="local-6989586621679102467"><span class="annot"><span class="annottext">IO PopperRes
+</span><a href="#local-6989586621679102467"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
 forall a. (a -&gt; a) -&gt; a
 </span><span class="hs-identifier hs-var">fix</span></span><span> </span><span class="annot"><span class="annottext">((IO () -&gt; IO ()) -&gt; IO ()) -&gt; (IO () -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102446"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102446"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-154"></span><span>                            </span><span id="local-6989586621679102445"><span class="annot"><span class="annottext">PopperRes
-</span><a href="#local-6989586621679102445"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO PopperRes
-</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">popper</span></a></span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102466"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102466"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-154"></span><span>                            </span><span id="local-6989586621679102465"><span class="annot"><span class="annottext">PopperRes
+</span><a href="#local-6989586621679102465"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO PopperRes
+</span><a href="#local-6989586621679102467"><span class="hs-identifier hs-var">popper</span></a></span><span>
 </span><span id="line-155"></span><span>                            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">PopperRes
-</span><a href="#local-6989586621679102445"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102465"><span class="hs-identifier hs-var">res</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-156"></span><span>                                </span><span class="annot"><span class="annottext">PopperRes
 </span><span class="hs-identifier hs-var">Z.PRDone</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-157"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRNext</span></span><span> </span><span id="local-6989586621679102442"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102442"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-157"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRNext</span></span><span> </span><span id="local-6989586621679102462"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102462"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-158"></span><span>                                    </span><span class="annot"><span class="annottext">Handle -&gt; ByteString -&gt; IO ()
 </span><span class="hs-identifier hs-var">S.hPut</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679102452"><span class="hs-identifier hs-var">outH</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102442"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679102472"><span class="hs-identifier hs-var">outH</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102462"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-159"></span><span>                                    </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102446"><span class="hs-identifier hs-var">loop</span></a></span><span>
-</span><span id="line-160"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRError</span></span><span> </span><span id="local-6989586621679102439"><span class="annot"><span class="annottext">ZlibException
-</span><a href="#local-6989586621679102439"><span class="hs-identifier hs-var">ex</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ZlibException -&gt; IO ()
+</span><a href="#local-6989586621679102466"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><span id="line-160"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRError</span></span><span> </span><span id="local-6989586621679102459"><span class="annot"><span class="annottext">ZlibException
+</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var">ex</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ZlibException -&gt; IO ()
 forall e a. Exception e =&gt; e -&gt; IO a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">ZlibException
-</span><a href="#local-6989586621679102439"><span class="hs-identifier hs-var">ex</span></a></span><span>
+</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var">ex</span></a></span><span>
 </span><span id="line-161"></span><span>                    </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
 forall a. (a -&gt; a) -&gt; a
 </span><span class="hs-identifier hs-var">fix</span></span><span> </span><span class="annot"><span class="annottext">((IO () -&gt; IO ()) -&gt; IO ()) -&gt; (IO () -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102438"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102438"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-162"></span><span>                        </span><span id="local-6989586621679102437"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102437"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102458"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102458"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-162"></span><span>                        </span><span id="local-6989586621679102457"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102457"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Handle -&gt; Int -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">S.hGetSome</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679102454"><span class="hs-identifier hs-var">inH</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679102474"><span class="hs-identifier hs-var">inH</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier hs-var">defaultChunkSize</span></span><span>
 </span><span id="line-163"></span><span>                        </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">S.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102437"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679102457"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-164"></span><span>                            </span><span class="annot"><span class="annottext">Deflate -&gt; ByteString -&gt; IO (IO PopperRes)
 </span><span class="hs-identifier hs-var">Z.feedDeflate</span></span><span> </span><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102451"><span class="hs-identifier hs-var">deflate</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102437"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">IO (IO PopperRes) -&gt; (IO PopperRes -&gt; IO ()) -&gt; IO ()
+</span><a href="#local-6989586621679102471"><span class="hs-identifier hs-var">deflate</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102457"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">IO (IO PopperRes) -&gt; (IO PopperRes -&gt; IO ()) -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102448"><span class="hs-identifier hs-var">goPopper</span></a></span><span>
+</span><a href="#local-6989586621679102468"><span class="hs-identifier hs-var">goPopper</span></a></span><span>
 </span><span id="line-165"></span><span>                            </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102438"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><a href="#local-6989586621679102458"><span class="hs-identifier hs-var">loop</span></a></span><span>
 </span><span id="line-166"></span><span>                    </span><span class="annot"><span class="annottext">IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102448"><span class="hs-identifier hs-var">goPopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
+</span><a href="#local-6989586621679102468"><span class="hs-identifier hs-var">goPopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Deflate -&gt; IO PopperRes
 </span><span class="hs-identifier hs-var">Z.finishDeflate</span></span><span> </span><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102451"><span class="hs-identifier hs-var">deflate</span></a></span><span>
+</span><a href="#local-6989586621679102471"><span class="hs-identifier hs-var">deflate</span></a></span><span>
 </span><span id="line-167"></span><span>            </span><span class="annot"><span class="annottext">(SomeException -&gt; IO a)
 -&gt; (() -&gt; IO a) -&gt; Either SomeException () -&gt; IO a
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
 </span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="annot"><span class="annottext">SomeException -&gt; IO a
 forall p. p -&gt; IO a
-</span><a href="#local-6989586621679102431"><span class="hs-identifier hs-var">onErr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IO a -&gt; () -&gt; IO a
+</span><a href="#local-6989586621679102451"><span class="hs-identifier hs-var">onErr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IO a -&gt; () -&gt; IO a
 forall a b. a -&gt; b -&gt; a
 </span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">IO a
-</span><a href="#local-6989586621679102458"><span class="hs-identifier hs-var">onSucc</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Either SomeException ()
-</span><a href="#local-6989586621679102457"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- FIXME bad! don't catch all exceptions like that!</span><span>
+</span><a href="#local-6989586621679102478"><span class="hs-identifier hs-var">onSucc</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Either SomeException ()
+</span><a href="#local-6989586621679102477"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SomeException</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- FIXME bad! don't catch all exceptions like that!</span><span>
 </span><span id="line-168"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-169"></span><span>    </span><span id="local-6989586621679102458"><span class="annot"><span class="annottext">onSucc :: IO a
-</span><a href="#local-6989586621679102458"><span class="hs-identifier hs-var hs-var">onSucc</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102461"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
+</span><span id="line-169"></span><span>    </span><span id="local-6989586621679102478"><span class="annot"><span class="annottext">onSucc :: IO a
+</span><a href="#local-6989586621679102478"><span class="hs-identifier hs-var hs-var">onSucc</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
+</span><a href="#local-6989586621679102481"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; String -&gt; Maybe FilePart -&gt; Response
 </span><span class="hs-identifier hs-var">responseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102465"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.Wai.Middleware.Gzip.html#fixHeaders"><span class="hs-identifier hs-var">fixHeaders</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102464"><span class="hs-identifier hs-var">hs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var">tmpfile</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679102484"><span class="hs-identifier hs-var">hs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102479"><span class="hs-identifier hs-var">tmpfile</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-170"></span><span>
-</span><span id="line-171"></span><span>    </span><span id="local-6989586621679102431"><span class="annot"><span class="annottext">onErr :: p -&gt; IO a
-</span><a href="#local-6989586621679102431"><span class="hs-identifier hs-var hs-var">onErr</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
+</span><span id="line-171"></span><span>    </span><span id="local-6989586621679102451"><span class="annot"><span class="annottext">onErr :: p -&gt; IO a
+</span><a href="#local-6989586621679102451"><span class="hs-identifier hs-var hs-var">onErr</span></a></span></span><span> </span><span class="annot"><span class="annottext">p
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102461"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
+</span><a href="#local-6989586621679102481"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; String -&gt; Maybe FilePart -&gt; Response
 </span><span class="hs-identifier hs-var">responseFile</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102465"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102464"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102463"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
+</span><a href="#local-6989586621679102485"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102484"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">file</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe FilePart
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-comment">-- FIXME log the error message</span><span>
 </span><span id="line-172"></span><span>
-</span><span id="line-173"></span><span>    </span><span id="local-6989586621679102459"><span class="annot"><span class="annottext">tmpfile :: String
-</span><a href="#local-6989586621679102459"><span class="hs-identifier hs-var hs-var">tmpfile</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102462"><span class="hs-identifier hs-var">cache</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><span id="line-173"></span><span>    </span><span id="local-6989586621679102479"><span class="annot"><span class="annottext">tmpfile :: String
+</span><a href="#local-6989586621679102479"><span class="hs-identifier hs-var hs-var">tmpfile</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102482"><span class="hs-identifier hs-var">cache</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'/'</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; ShowS
@@ -582,216 +582,216 @@ forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Char) -&gt; ShowS
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char
-</span><a href="#local-6989586621679102428"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679102463"><span class="hs-identifier hs-var">file</span></a></span><span>
-</span><span id="line-174"></span><span>    </span><span id="local-6989586621679102428"><span class="annot"><span class="annottext">safe :: Char -&gt; Char
-</span><a href="#local-6989586621679102428"><span class="hs-keyword hs-var hs-var">safe</span></a></span></span><span> </span><span id="local-6989586621679102427"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span></span><span>
+</span><a href="#local-6989586621679102448"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679102483"><span class="hs-identifier hs-var">file</span></a></span><span>
+</span><span id="line-174"></span><span>    </span><span id="local-6989586621679102448"><span class="annot"><span class="annottext">safe :: Char -&gt; Char
+</span><a href="#local-6989586621679102448"><span class="hs-keyword hs-var hs-var">safe</span></a></span></span><span> </span><span id="local-6989586621679102447"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span></span><span>
 </span><span id="line-175"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'A'</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'Z'</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-176"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'a'</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'z'</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-177"></span><span>        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'0'</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'9'</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">c</span></a></span><span>
-</span><span id="line-178"></span><span>    </span><span class="annot"><a href="#local-6989586621679102428"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679102447"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><span id="line-178"></span><span>    </span><span class="annot"><a href="#local-6989586621679102448"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'-'</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'-'</span></span><span>
-</span><span id="line-179"></span><span>    </span><span class="annot"><a href="#local-6989586621679102428"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><span id="line-179"></span><span>    </span><span class="annot"><a href="#local-6989586621679102448"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'_'</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'_'</span></span><span>
-</span><span id="line-180"></span><span>    </span><span class="annot"><a href="#local-6989586621679102428"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><span id="line-180"></span><span>    </span><span class="annot"><a href="#local-6989586621679102448"><span class="hs-keyword hs-var">safe</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'_'</span></span><span>
 </span><span id="line-181"></span><span>
-</span><span id="line-182"></span><span id="local-6989586621679102618"><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#compressE"><span class="hs-identifier hs-type">compressE</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipSettings"><span class="hs-identifier hs-type">GzipSettings</span></a></span><span>
+</span><span id="line-182"></span><span id="local-6989586621679102638"><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#compressE"><span class="hs-identifier hs-type">compressE</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Network.Wai.Middleware.Gzip.html#GzipSettings"><span class="hs-identifier hs-type">GzipSettings</span></a></span><span>
 </span><span id="line-183"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span>
-</span><span id="line-184"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102618"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-185"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102618"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-184"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Response</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102638"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-185"></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679102638"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-186"></span><span id="compressE"><span class="annot"><span class="annottext">compressE :: GzipSettings -&gt; Response -&gt; (Response -&gt; IO a) -&gt; IO a
-</span><a href="Network.Wai.Middleware.Gzip.html#compressE"><span class="hs-identifier hs-var hs-var">compressE</span></a></span></span><span> </span><span id="local-6989586621679102425"><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102425"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679102424"><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102424"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span id="local-6989586621679102423"><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102423"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.Gzip.html#compressE"><span class="hs-identifier hs-var hs-var">compressE</span></a></span></span><span> </span><span id="local-6989586621679102445"><span class="annot"><span class="annottext">GzipSettings
+</span><a href="#local-6989586621679102445"><span class="hs-identifier hs-var">set</span></a></span></span><span> </span><span id="local-6989586621679102444"><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102444"><span class="hs-identifier hs-var">res</span></a></span></span><span> </span><span id="local-6989586621679102443"><span class="annot"><span class="annottext">Response -&gt; IO a
+</span><a href="#local-6989586621679102443"><span class="hs-identifier hs-var">sendResponse</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-187"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; ResponseHeaders -&gt; Maybe ByteString
 forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 </span><span class="hs-identifier hs-var">lookup</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">hContentType</span></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-188"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102421"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102421"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; ByteString -&gt; Bool
+</span><a href="#local-6989586621679102442"><span class="hs-identifier hs-var">hs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-188"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102441"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102441"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">GzipSettings -&gt; ByteString -&gt; Bool
 </span><a href="Network.Wai.Middleware.Gzip.html#gzipCheckMime"><span class="hs-identifier hs-var hs-var">gzipCheckMime</span></a></span><span> </span><span class="annot"><span class="annottext">GzipSettings
-</span><a href="#local-6989586621679102425"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102421"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-189"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102420"><span class="annot"><span class="annottext">hs' :: ResponseHeaders
-</span><a href="#local-6989586621679102420"><span class="hs-identifier hs-var hs-var">hs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
+</span><a href="#local-6989586621679102445"><span class="hs-identifier hs-var">set</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102441"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-189"></span><span>            </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102440"><span class="annot"><span class="annottext">hs' :: ResponseHeaders
+</span><a href="#local-6989586621679102440"><span class="hs-identifier hs-var hs-var">hs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ResponseHeaders -&gt; ResponseHeaders
 </span><a href="Network.Wai.Middleware.Gzip.html#fixHeaders"><span class="hs-identifier hs-var">fixHeaders</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">hs</span></a></span><span>
+</span><a href="#local-6989586621679102442"><span class="hs-identifier hs-var">hs</span></a></span><span>
 </span><span id="line-190"></span><span>             </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">(StreamingBody -&gt; IO a) -&gt; IO a
 forall a. (StreamingBody -&gt; IO a) -&gt; IO a
-</span><a href="#local-6989586621679102419"><span class="hs-identifier hs-var">wb</span></a></span><span> </span><span class="annot"><span class="annottext">((StreamingBody -&gt; IO a) -&gt; IO a)
+</span><a href="#local-6989586621679102439"><span class="hs-identifier hs-var">wb</span></a></span><span> </span><span class="annot"><span class="annottext">((StreamingBody -&gt; IO a) -&gt; IO a)
 -&gt; (StreamingBody -&gt; IO a) -&gt; IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102418"><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679102418"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102423"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102438"><span class="annot"><span class="annottext">StreamingBody
+</span><a href="#local-6989586621679102438"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
+</span><a href="#local-6989586621679102443"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">(Response -&gt; IO a) -&gt; Response -&gt; IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Status -&gt; ResponseHeaders -&gt; StreamingBody -&gt; Response
 </span><span class="hs-identifier hs-var">responseStream</span></span><span> </span><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102416"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102420"><span class="hs-identifier hs-var">hs'</span></a></span><span> </span><span class="annot"><span class="annottext">(StreamingBody -&gt; Response) -&gt; StreamingBody -&gt; Response
+</span><a href="#local-6989586621679102436"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102440"><span class="hs-identifier hs-var">hs'</span></a></span><span> </span><span class="annot"><span class="annottext">(StreamingBody -&gt; Response) -&gt; StreamingBody -&gt; Response
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102415"><span class="annot"><span class="annottext">Builder -&gt; IO ()
-</span><a href="#local-6989586621679102415"><span class="hs-identifier hs-var">sendChunk</span></a></span></span><span> </span><span id="local-6989586621679102414"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102414"><span class="hs-identifier hs-var">flush</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-191"></span><span>                    </span><span class="hs-special">(</span><span id="local-6989586621679102413"><span class="annot"><span class="annottext">BuilderRecv
-</span><a href="#local-6989586621679102413"><span class="hs-identifier hs-var">blazeRecv</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">BuilderFinish
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102435"><span class="annot"><span class="annottext">Builder -&gt; IO ()
+</span><a href="#local-6989586621679102435"><span class="hs-identifier hs-var">sendChunk</span></a></span></span><span> </span><span id="local-6989586621679102434"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102434"><span class="hs-identifier hs-var">flush</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-191"></span><span>                    </span><span class="hs-special">(</span><span id="local-6989586621679102433"><span class="annot"><span class="annottext">BuilderRecv
+</span><a href="#local-6989586621679102433"><span class="hs-identifier hs-var">blazeRecv</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">BuilderFinish
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BufferAllocStrategy -&gt; IO (BuilderRecv, BuilderFinish)
 </span><span class="hs-identifier hs-var">B.newBuilderRecv</span></span><span> </span><span class="annot"><span class="annottext">BufferAllocStrategy
 </span><span class="hs-identifier hs-var">B.defaultStrategy</span></span><span>
-</span><span id="line-192"></span><span>                    </span><span id="local-6989586621679102410"><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102410"><span class="hs-identifier hs-var">deflate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; WindowBits -&gt; IO Deflate
+</span><span id="line-192"></span><span>                    </span><span id="local-6989586621679102430"><span class="annot"><span class="annottext">Deflate
+</span><a href="#local-6989586621679102430"><span class="hs-identifier hs-var">deflate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; WindowBits -&gt; IO Deflate
 </span><span class="hs-identifier hs-var">Z.initDeflate</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; WindowBits
 </span><span class="hs-identifier hs-var">Z.WindowBits</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">31</span></span><span class="hs-special">)</span><span>
-</span><span id="line-193"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102409"><span class="annot"><span class="annottext">sendBuilder :: Builder -&gt; IO ()
-</span><a href="#local-6989586621679102409"><span class="hs-identifier hs-var hs-var">sendBuilder</span></a></span></span><span> </span><span id="local-6989586621679102408"><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679102408"><span class="hs-identifier hs-var">builder</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-194"></span><span>                            </span><span id="local-6989586621679102407"><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679102407"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BuilderRecv
-</span><a href="#local-6989586621679102413"><span class="hs-identifier hs-var">blazeRecv</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
-</span><a href="#local-6989586621679102408"><span class="hs-identifier hs-var">builder</span></a></span><span>
+</span><span id="line-193"></span><span>                    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102429"><span class="annot"><span class="annottext">sendBuilder :: Builder -&gt; IO ()
+</span><a href="#local-6989586621679102429"><span class="hs-identifier hs-var hs-var">sendBuilder</span></a></span></span><span> </span><span id="local-6989586621679102428"><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679102428"><span class="hs-identifier hs-var">builder</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-194"></span><span>                            </span><span id="local-6989586621679102427"><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">BuilderRecv
+</span><a href="#local-6989586621679102433"><span class="hs-identifier hs-var">blazeRecv</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679102428"><span class="hs-identifier hs-var">builder</span></a></span><span>
 </span><span id="line-195"></span><span>                            </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
 forall a. (a -&gt; a) -&gt; a
 </span><span class="hs-identifier hs-var">fix</span></span><span> </span><span class="annot"><span class="annottext">((IO () -&gt; IO ()) -&gt; IO ()) -&gt; (IO () -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102406"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102406"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-196"></span><span>                                </span><span id="local-6989586621679102405"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102405"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
-</span><a href="#local-6989586621679102407"><span class="hs-identifier hs-var">popper</span></a></span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102426"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102426"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-196"></span><span>                                </span><span id="local-6989586621679102425"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102425"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO ByteString
+</span><a href="#local-6989586621679102427"><span class="hs-identifier hs-var">popper</span></a></span><span>
 </span><span id="line-197"></span><span>                                </span><span class="annot"><span class="annottext">Bool -&gt; IO () -&gt; IO ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
 </span><span class="hs-identifier hs-var">unless</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">S.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102405"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
+</span><a href="#local-6989586621679102425"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO () -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-198"></span><span>                                    </span><span class="annot"><span class="annottext">ByteString -&gt; IO ()
-</span><a href="#local-6989586621679102404"><span class="hs-identifier hs-var">sendBS</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102405"><span class="hs-identifier hs-var">bs</span></a></span><span>
+</span><a href="#local-6989586621679102424"><span class="hs-identifier hs-var">sendBS</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102425"><span class="hs-identifier hs-var">bs</span></a></span><span>
 </span><span id="line-199"></span><span>                                    </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102406"><span class="hs-identifier hs-var">loop</span></a></span><span>
-</span><span id="line-200"></span><span>                        </span><span id="local-6989586621679102404"><span class="annot"><span class="annottext">sendBS :: ByteString -&gt; IO ()
-</span><a href="#local-6989586621679102404"><span class="hs-identifier hs-var hs-var">sendBS</span></a></span></span><span> </span><span id="local-6989586621679102403"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102403"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Deflate -&gt; ByteString -&gt; IO (IO PopperRes)
+</span><a href="#local-6989586621679102426"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><span id="line-200"></span><span>                        </span><span id="local-6989586621679102424"><span class="annot"><span class="annottext">sendBS :: ByteString -&gt; IO ()
+</span><a href="#local-6989586621679102424"><span class="hs-identifier hs-var hs-var">sendBS</span></a></span></span><span> </span><span id="local-6989586621679102423"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102423"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Deflate -&gt; ByteString -&gt; IO (IO PopperRes)
 </span><span class="hs-identifier hs-var">Z.feedDeflate</span></span><span> </span><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102410"><span class="hs-identifier hs-var">deflate</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102403"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">IO (IO PopperRes) -&gt; (IO PopperRes -&gt; IO ()) -&gt; IO ()
+</span><a href="#local-6989586621679102430"><span class="hs-identifier hs-var">deflate</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102423"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">IO (IO PopperRes) -&gt; (IO PopperRes -&gt; IO ()) -&gt; IO ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102402"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span>
-</span><span id="line-201"></span><span>                        </span><span id="local-6989586621679102401"><span class="annot"><span class="annottext">flushBuilder :: IO ()
-</span><a href="#local-6989586621679102401"><span class="hs-identifier hs-var hs-var">flushBuilder</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span>
+</span><span id="line-201"></span><span>                        </span><span id="local-6989586621679102421"><span class="annot"><span class="annottext">flushBuilder :: IO ()
+</span><a href="#local-6989586621679102421"><span class="hs-identifier hs-var hs-var">flushBuilder</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-202"></span><span>                            </span><span class="annot"><span class="annottext">Builder -&gt; IO ()
-</span><a href="#local-6989586621679102409"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679102429"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
 </span><span class="hs-identifier hs-var">Blaze.flush</span></span><span>
 </span><span id="line-203"></span><span>                            </span><span class="annot"><span class="annottext">IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102402"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
+</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Deflate -&gt; IO PopperRes
 </span><span class="hs-identifier hs-var">Z.flushDeflate</span></span><span> </span><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102410"><span class="hs-identifier hs-var">deflate</span></a></span><span>
+</span><a href="#local-6989586621679102430"><span class="hs-identifier hs-var">deflate</span></a></span><span>
 </span><span id="line-204"></span><span>                            </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102414"><span class="hs-identifier hs-var">flush</span></a></span><span>
-</span><span id="line-205"></span><span>                        </span><span id="local-6989586621679102402"><span class="annot"><span class="annottext">deflatePopper :: IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102402"><span class="hs-identifier hs-var hs-var">deflatePopper</span></a></span></span><span> </span><span id="local-6989586621679102399"><span class="annot"><span class="annottext">IO PopperRes
-</span><a href="#local-6989586621679102399"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
+</span><a href="#local-6989586621679102434"><span class="hs-identifier hs-var">flush</span></a></span><span>
+</span><span id="line-205"></span><span>                        </span><span id="local-6989586621679102422"><span class="annot"><span class="annottext">deflatePopper :: IO PopperRes -&gt; IO ()
+</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var hs-var">deflatePopper</span></a></span></span><span> </span><span id="local-6989586621679102419"><span class="annot"><span class="annottext">IO PopperRes
+</span><a href="#local-6989586621679102419"><span class="hs-identifier hs-var">popper</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; IO ()) -&gt; IO ()
 forall a. (a -&gt; a) -&gt; a
 </span><span class="hs-identifier hs-var">fix</span></span><span> </span><span class="annot"><span class="annottext">((IO () -&gt; IO ()) -&gt; IO ()) -&gt; (IO () -&gt; IO ()) -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102398"><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102398"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-206"></span><span>                            </span><span id="local-6989586621679102397"><span class="annot"><span class="annottext">PopperRes
-</span><a href="#local-6989586621679102397"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO PopperRes
-</span><a href="#local-6989586621679102399"><span class="hs-identifier hs-var">popper</span></a></span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102418"><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102418"><span class="hs-identifier hs-var">loop</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-206"></span><span>                            </span><span id="local-6989586621679102417"><span class="annot"><span class="annottext">PopperRes
+</span><a href="#local-6989586621679102417"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO PopperRes
+</span><a href="#local-6989586621679102419"><span class="hs-identifier hs-var">popper</span></a></span><span>
 </span><span id="line-207"></span><span>                            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">PopperRes
-</span><a href="#local-6989586621679102397"><span class="hs-identifier hs-var">result</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102417"><span class="hs-identifier hs-var">result</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-208"></span><span>                                </span><span class="annot"><span class="annottext">PopperRes
 </span><span class="hs-identifier hs-var">Z.PRDone</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; IO ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-209"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRNext</span></span><span> </span><span id="local-6989586621679102396"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102396"><span class="hs-identifier hs-var">bs'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-209"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRNext</span></span><span> </span><span id="local-6989586621679102416"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102416"><span class="hs-identifier hs-var">bs'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-210"></span><span>                                    </span><span class="annot"><span class="annottext">Builder -&gt; IO ()
-</span><a href="#local-6989586621679102415"><span class="hs-identifier hs-var">sendChunk</span></a></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; IO ()) -&gt; Builder -&gt; IO ()
+</span><a href="#local-6989586621679102435"><span class="hs-identifier hs-var">sendChunk</span></a></span><span> </span><span class="annot"><span class="annottext">(Builder -&gt; IO ()) -&gt; Builder -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Builder
 </span><span class="hs-identifier hs-var">byteString</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102396"><span class="hs-identifier hs-var">bs'</span></a></span><span>
+</span><a href="#local-6989586621679102416"><span class="hs-identifier hs-var">bs'</span></a></span><span>
 </span><span id="line-211"></span><span>                                    </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102398"><span class="hs-identifier hs-var">loop</span></a></span><span>
-</span><span id="line-212"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRError</span></span><span> </span><span id="local-6989586621679102395"><span class="annot"><span class="annottext">ZlibException
-</span><a href="#local-6989586621679102395"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ZlibException -&gt; IO ()
+</span><a href="#local-6989586621679102418"><span class="hs-identifier hs-var">loop</span></a></span><span>
+</span><span id="line-212"></span><span>                                </span><span class="annot"><span class="hs-identifier hs-type">Z.PRError</span></span><span> </span><span id="local-6989586621679102415"><span class="annot"><span class="annottext">ZlibException
+</span><a href="#local-6989586621679102415"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ZlibException -&gt; IO ()
 forall e a. Exception e =&gt; e -&gt; IO a
 </span><span class="hs-identifier hs-var">throwIO</span></span><span> </span><span class="annot"><span class="annottext">ZlibException
-</span><a href="#local-6989586621679102395"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621679102415"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-213"></span><span>
 </span><span id="line-214"></span><span>                    </span><span class="annot"><span class="annottext">StreamingBody
-</span><a href="#local-6989586621679102418"><span class="hs-identifier hs-var">body</span></a></span><span> </span><span class="annot"><span class="annottext">Builder -&gt; IO ()
-</span><a href="#local-6989586621679102409"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
-</span><a href="#local-6989586621679102401"><span class="hs-identifier hs-var">flushBuilder</span></a></span><span>
+</span><a href="#local-6989586621679102438"><span class="hs-identifier hs-var">body</span></a></span><span> </span><span class="annot"><span class="annottext">Builder -&gt; IO ()
+</span><a href="#local-6989586621679102429"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">IO ()
+</span><a href="#local-6989586621679102421"><span class="hs-identifier hs-var">flushBuilder</span></a></span><span>
 </span><span id="line-215"></span><span>                    </span><span class="annot"><span class="annottext">Builder -&gt; IO ()
-</span><a href="#local-6989586621679102409"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
+</span><a href="#local-6989586621679102429"><span class="hs-identifier hs-var">sendBuilder</span></a></span><span> </span><span class="annot"><span class="annottext">Builder
 </span><span class="hs-identifier hs-var">Blaze.flush</span></span><span>
 </span><span id="line-216"></span><span>                    </span><span class="annot"><span class="annottext">IO PopperRes -&gt; IO ()
-</span><a href="#local-6989586621679102402"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
+</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">deflatePopper</span></a></span><span> </span><span class="annot"><span class="annottext">(IO PopperRes -&gt; IO ()) -&gt; IO PopperRes -&gt; IO ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Deflate -&gt; IO PopperRes
 </span><span class="hs-identifier hs-var">Z.finishDeflate</span></span><span> </span><span class="annot"><span class="annottext">Deflate
-</span><a href="#local-6989586621679102410"><span class="hs-identifier hs-var">deflate</span></a></span><span>
+</span><a href="#local-6989586621679102430"><span class="hs-identifier hs-var">deflate</span></a></span><span>
 </span><span id="line-217"></span><span>        </span><span class="annot"><span class="annottext">Maybe ByteString
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO a
-</span><a href="#local-6989586621679102423"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102424"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102443"><span class="hs-identifier hs-var">sendResponse</span></a></span><span> </span><span class="annot"><span class="annottext">Response
+</span><a href="#local-6989586621679102444"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-218"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-219"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679102416"><span class="annot"><span class="annottext">Status
-</span><a href="#local-6989586621679102416"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102422"><span class="annot"><span class="annottext">ResponseHeaders
-</span><a href="#local-6989586621679102422"><span class="hs-identifier hs-var">hs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102419"><span class="annot"><span class="annottext">(StreamingBody -&gt; IO a) -&gt; IO a
-</span><a href="#local-6989586621679102419"><span class="hs-identifier hs-var">wb</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response
+</span><span id="line-219"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621679102436"><span class="annot"><span class="annottext">Status
+</span><a href="#local-6989586621679102436"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102442"><span class="annot"><span class="annottext">ResponseHeaders
+</span><a href="#local-6989586621679102442"><span class="hs-identifier hs-var">hs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102439"><span class="annot"><span class="annottext">(StreamingBody -&gt; IO a) -&gt; IO a
+</span><a href="#local-6989586621679102439"><span class="hs-identifier hs-var">wb</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Response
 -&gt; (Status, ResponseHeaders, (StreamingBody -&gt; IO a) -&gt; IO a)
 forall a.
 Response
 -&gt; (Status, ResponseHeaders, (StreamingBody -&gt; IO a) -&gt; IO a)
 </span><span class="hs-identifier hs-var">responseToStream</span></span><span> </span><span class="annot"><span class="annottext">Response
-</span><a href="#local-6989586621679102424"><span class="hs-identifier hs-var">res</span></a></span><span>
+</span><a href="#local-6989586621679102444"><span class="hs-identifier hs-var">res</span></a></span><span>
 </span><span id="line-220"></span><span>
 </span><span id="line-221"></span><span class="hs-comment">-- Remove Content-Length header, since we will certainly have a</span><span>
 </span><span id="line-222"></span><span class="hs-comment">-- different length after gzip compression.</span><span>
@@ -812,13 +812,13 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="annot"><span class="annottext">(HeaderName, ByteString) -&gt; Bool
 forall b. (HeaderName, b) -&gt; Bool
-</span><a href="#local-6989586621679102393"><span class="hs-identifier hs-var">notLength</span></a></span><span>
+</span><a href="#local-6989586621679102413"><span class="hs-identifier hs-var">notLength</span></a></span><span>
 </span><span id="line-226"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-227"></span><span>    </span><span id="local-6989586621679102393"><span class="annot"><span class="annottext">notLength :: (HeaderName, b) -&gt; Bool
-</span><a href="#local-6989586621679102393"><span class="hs-identifier hs-var hs-var">notLength</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102392"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102392"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">b
+</span><span id="line-227"></span><span>    </span><span id="local-6989586621679102413"><span class="annot"><span class="annottext">notLength :: (HeaderName, b) -&gt; Bool
+</span><a href="#local-6989586621679102413"><span class="hs-identifier hs-var hs-var">notLength</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102412"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102412"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">b
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102392"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; HeaderName -&gt; Bool
+</span><a href="#local-6989586621679102412"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; HeaderName -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">hContentLength</span></span><span>

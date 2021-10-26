@@ -27,10 +27,10 @@
 </span><span id="line-27"></span><span class="hs-comment">-- 'RouteResult', meaning they can either succeed, fail</span><span>
 </span><span id="line-28"></span><span class="hs-comment">-- (with the possibility to recover), or fail fatally.</span><span>
 </span><span id="line-29"></span><span class="hs-comment">--</span><span>
-</span><span id="line-30"></span><span class="hs-keyword">newtype</span><span> </span><span id="DelayedIO"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span></span><span> </span><span id="local-6989586621679122260"><span class="annot"><a href="#local-6989586621679122260"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DelayedIO"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span></span><span> </span><span class="hs-special">{</span><span> </span><span id="runDelayedIO%27"><span class="annot"><span class="annottext">DelayedIO a -&gt; ReaderT Request (ResourceT (RouteResultT IO)) a
-</span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO%27"><span class="hs-identifier hs-var hs-var">runDelayedIO'</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ReaderT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResourceT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResultT"><span class="hs-identifier hs-type">RouteResultT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679122260"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">}</span><span>
+</span><span id="line-30"></span><span class="hs-keyword">newtype</span><span> </span><span id="DelayedIO"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span></span><span> </span><span id="local-6989586621679122279"><span class="annot"><a href="#local-6989586621679122279"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DelayedIO"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span></span><span> </span><span class="hs-special">{</span><span> </span><span id="runDelayedIO%27"><span class="annot"><span class="annottext">DelayedIO a -&gt; ReaderT Request (ResourceT (RouteResultT IO)) a
+</span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO%27"><span class="hs-identifier hs-var hs-var">runDelayedIO'</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ReaderT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">ResourceT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResultT"><span class="hs-identifier hs-type">RouteResultT</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679122279"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-special">}</span><span>
 </span><span id="line-31"></span><span>  </span><span class="hs-keyword">deriving</span><span>
-</span><span id="line-32"></span><span>    </span><span class="hs-special">(</span><span> </span><span id="local-6989586621679122204"><span id="local-6989586621679122206"><span class="annot"><span class="annottext">a -&gt; DelayedIO b -&gt; DelayedIO a
+</span><span id="line-32"></span><span>    </span><span class="hs-special">(</span><span> </span><span id="local-6989586621679122223"><span id="local-6989586621679122225"><span class="annot"><span class="annottext">a -&gt; DelayedIO b -&gt; DelayedIO a
 (a -&gt; b) -&gt; DelayedIO a -&gt; DelayedIO b
 (forall a b. (a -&gt; b) -&gt; DelayedIO a -&gt; DelayedIO b)
 -&gt; (forall a b. a -&gt; DelayedIO b -&gt; DelayedIO a)
@@ -44,7 +44,7 @@ forall (f :: * -&gt; *).
 $c&lt;$ :: forall a b. a -&gt; DelayedIO b -&gt; DelayedIO a
 fmap :: (a -&gt; b) -&gt; DelayedIO a -&gt; DelayedIO b
 $cfmap :: forall a b. (a -&gt; b) -&gt; DelayedIO a -&gt; DelayedIO b
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122192"><span id="local-6989586621679122194"><span id="local-6989586621679122196"><span id="local-6989586621679122198"><span id="local-6989586621679122200"><span class="annot"><span class="annottext">Functor DelayedIO
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122211"><span id="local-6989586621679122213"><span id="local-6989586621679122215"><span id="local-6989586621679122217"><span id="local-6989586621679122219"><span class="annot"><span class="annottext">Functor DelayedIO
 a -&gt; DelayedIO a
 Functor DelayedIO
 -&gt; (forall a. a -&gt; DelayedIO a)
@@ -84,7 +84,7 @@ $c&lt;*&gt; :: forall a b. DelayedIO (a -&gt; b) -&gt; DelayedIO a -&gt; Delayed
 pure :: a -&gt; DelayedIO a
 $cpure :: forall a. a -&gt; DelayedIO a
 $cp1Applicative :: Functor DelayedIO
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Applicative</span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122184"><span id="local-6989586621679122186"><span id="local-6989586621679122188"><span class="annot"><span class="annottext">Applicative DelayedIO
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Applicative</span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122203"><span id="local-6989586621679122205"><span id="local-6989586621679122207"><span class="annot"><span class="annottext">Applicative DelayedIO
 a -&gt; DelayedIO a
 Applicative DelayedIO
 -&gt; (forall a b. DelayedIO a -&gt; (a -&gt; DelayedIO b) -&gt; DelayedIO b)
@@ -110,7 +110,7 @@ $c&gt;&gt; :: forall a b. DelayedIO a -&gt; DelayedIO b -&gt; DelayedIO b
 $c&gt;&gt;= :: forall a b. DelayedIO a -&gt; (a -&gt; DelayedIO b) -&gt; DelayedIO b
 $cp1Monad :: Applicative DelayedIO
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Monad</span></span></span></span></span><span>
-</span><span id="line-33"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122180"><span class="annot"><span class="annottext">Monad DelayedIO
+</span><span id="line-33"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122199"><span class="annot"><span class="annottext">Monad DelayedIO
 Monad DelayedIO
 -&gt; (forall a. IO a -&gt; DelayedIO a) -&gt; MonadIO DelayedIO
 IO a -&gt; DelayedIO a
@@ -120,8 +120,8 @@ Monad m -&gt; (forall a. IO a -&gt; m a) -&gt; MonadIO m
 liftIO :: IO a -&gt; DelayedIO a
 $cliftIO :: forall a. IO a -&gt; DelayedIO a
 $cp1MonadIO :: Monad DelayedIO
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadIO</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122172"><span id="local-6989586621679122174"><span id="local-6989586621679122176"><span class="annot"><span class="hs-identifier hs-type">MonadReader</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span></span></span><span>
-</span><span id="line-34"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122168"><span class="annot"><span class="annottext">Monad DelayedIO
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadIO</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122191"><span id="local-6989586621679122193"><span id="local-6989586621679122195"><span class="annot"><span class="hs-identifier hs-type">MonadReader</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span></span></span></span><span>
+</span><span id="line-34"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122187"><span class="annot"><span class="annottext">Monad DelayedIO
 e -&gt; DelayedIO a
 Monad DelayedIO
 -&gt; (forall e a. Exception e =&gt; e -&gt; DelayedIO a)
@@ -133,7 +133,7 @@ throwM :: e -&gt; DelayedIO a
 $cthrowM :: forall e a. Exception e =&gt; e -&gt; DelayedIO a
 $cp1MonadThrow :: Monad DelayedIO
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadThrow</span></span></span><span>
-</span><span id="line-35"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122164"><span class="annot"><span class="annottext">MonadIO DelayedIO
+</span><span id="line-35"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679122183"><span class="annot"><span class="annottext">MonadIO DelayedIO
 MonadIO DelayedIO
 -&gt; (forall a. ResourceT IO a -&gt; DelayedIO a)
 -&gt; MonadResource DelayedIO
@@ -148,15 +148,15 @@ $cp1MonadResource :: MonadIO DelayedIO
 </span><span id="line-36"></span><span>    </span><span class="hs-special">)</span><span>
 </span><span id="line-37"></span><span>
 </span><span id="line-38"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadBase</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-39"></span><span>    </span><span id="local-6989586621679122156"><span class="annot"><span class="annottext">liftBase :: IO &#945; -&gt; DelayedIO &#945;
+</span><span id="line-39"></span><span>    </span><span id="local-6989586621679122175"><span class="annot"><span class="annottext">liftBase :: IO &#945; -&gt; DelayedIO &#945;
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">liftBase</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO &#945; -&gt; DelayedIO &#945;
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><span class="hs-identifier hs-var">liftIO</span></span><span>
 </span><span id="line-40"></span><span>
-</span><span id="line-41"></span><span id="local-6989586621679122217"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-type">liftRouteResult</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122217"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122217"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-41"></span><span id="local-6989586621679122236"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-type">liftRouteResult</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122236"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122236"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-42"></span><span id="liftRouteResult"><span class="annot"><span class="annottext">liftRouteResult :: RouteResult a -&gt; DelayedIO a
-</span><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-var hs-var">liftRouteResult</span></a></span></span><span> </span><span id="local-6989586621679122152"><span class="annot"><span class="annottext">RouteResult a
-</span><a href="#local-6989586621679122152"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
+</span><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-var hs-var">liftRouteResult</span></a></span></span><span> </span><span id="local-6989586621679122171"><span class="annot"><span class="annottext">RouteResult a
+</span><a href="#local-6989586621679122171"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
 forall a.
 ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
 </span><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span><span> </span><span class="annot"><span class="annottext">(ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a)
@@ -195,17 +195,17 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 -&gt; RouteResult a -&gt; RouteResultT IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">RouteResult a
-</span><a href="#local-6989586621679122152"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679122171"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-43"></span><span>
 </span><span id="line-44"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadBaseControl</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-45"></span><span>    </span><span class="hs-comment">-- type StM DelayedIO a = StM (ReaderT Request (ResourceT (RouteResultT IO))) a</span><span>
 </span><span id="line-46"></span><span>    </span><span class="hs-comment">-- liftBaseWith f = DelayedIO $ liftBaseWith $ \g -&gt; f (g . runDelayedIO')</span><span>
 </span><span id="line-47"></span><span>    </span><span class="hs-comment">-- restoreM       = DelayedIO . restoreM</span><span>
 </span><span id="line-48"></span><span>
-</span><span id="line-49"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="StM"><span class="annot"><span class="hs-identifier hs-var">StM</span></span></span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span id="local-6989586621679122144"><span class="annot"><a href="#local-6989586621679122144"><span class="hs-identifier hs-type hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122144"><span class="hs-identifier hs-type">a</span></a></span><span>
-</span><span id="line-50"></span><span>    </span><span id="local-6989586621679122143"><span class="annot"><span class="annottext">liftBaseWith :: (RunInBase DelayedIO IO -&gt; IO a) -&gt; DelayedIO a
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">liftBaseWith</span></span></span><span> </span><span id="local-6989586621679122141"><span class="annot"><span class="annottext">RunInBase DelayedIO IO -&gt; IO a
-</span><a href="#local-6989586621679122141"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
+</span><span id="line-49"></span><span>    </span><span class="hs-keyword">type</span><span> </span><span id="StM"><span class="annot"><span class="hs-identifier hs-var">StM</span></span></span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span id="local-6989586621679122163"><span class="annot"><a href="#local-6989586621679122163"><span class="hs-identifier hs-type hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122163"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-50"></span><span>    </span><span id="local-6989586621679122162"><span class="annot"><span class="annottext">liftBaseWith :: (RunInBase DelayedIO IO -&gt; IO a) -&gt; DelayedIO a
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">liftBaseWith</span></span></span><span> </span><span id="local-6989586621679122160"><span class="annot"><span class="annottext">RunInBase DelayedIO IO -&gt; IO a
+</span><a href="#local-6989586621679122160"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
 forall a.
 ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
 </span><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-var">DelayedIO</span></a></span><span> </span><span class="annot"><span class="annottext">(ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a)
@@ -219,8 +219,8 @@ forall r (m :: * -&gt; *) a. (r -&gt; m a) -&gt; ReaderT r m a
 -&gt; (Request -&gt; ResourceT (RouteResultT IO) a)
 -&gt; ReaderT Request (ResourceT (RouteResultT IO)) a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122139"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122139"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(InternalState -&gt; RouteResultT IO a)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122158"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122158"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(InternalState -&gt; RouteResultT IO a)
 -&gt; ResourceT (RouteResultT IO) a
 forall (m :: * -&gt; *) a. (InternalState -&gt; m a) -&gt; ResourceT m a
 </span><span class="hs-identifier hs-var">withInternalState</span></span><span> </span><span class="annot"><span class="annottext">((InternalState -&gt; RouteResultT IO a)
@@ -228,8 +228,8 @@ forall (m :: * -&gt; *) a. (InternalState -&gt; m a) -&gt; ResourceT m a
 -&gt; (InternalState -&gt; RouteResultT IO a)
 -&gt; ResourceT (RouteResultT IO) a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122138"><span class="annot"><span class="annottext">InternalState
-</span><a href="#local-6989586621679122138"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122157"><span class="annot"><span class="annottext">InternalState
+</span><a href="#local-6989586621679122157"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-51"></span><span>        </span><span class="annot"><span class="annottext">(RunInBase (RouteResultT IO) IO -&gt; IO a) -&gt; RouteResultT IO a
 forall (b :: * -&gt; *) (m :: * -&gt; *) a.
 MonadBaseControl b m =&gt;
@@ -237,15 +237,15 @@ MonadBaseControl b m =&gt;
 </span><span class="hs-identifier hs-var">liftBaseWith</span></span><span> </span><span class="annot"><span class="annottext">((RunInBase (RouteResultT IO) IO -&gt; IO a) -&gt; RouteResultT IO a)
 -&gt; (RunInBase (RouteResultT IO) IO -&gt; IO a) -&gt; RouteResultT IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122137"><span class="annot"><span class="annottext">RunInBase (RouteResultT IO) IO
-</span><a href="#local-6989586621679122137"><span class="hs-identifier hs-var">runInBase</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">RunInBase DelayedIO IO -&gt; IO a
-</span><a href="#local-6989586621679122141"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(RunInBase DelayedIO IO -&gt; IO a) -&gt; RunInBase DelayedIO IO -&gt; IO a
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122156"><span class="annot"><span class="annottext">RunInBase (RouteResultT IO) IO
+</span><a href="#local-6989586621679122156"><span class="hs-identifier hs-var">runInBase</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">RunInBase DelayedIO IO -&gt; IO a
+</span><a href="#local-6989586621679122160"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">(RunInBase DelayedIO IO -&gt; IO a) -&gt; RunInBase DelayedIO IO -&gt; IO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122136"><span class="annot"><span class="annottext">DelayedIO a
-</span><a href="#local-6989586621679122136"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679122155"><span class="annot"><span class="annottext">DelayedIO a
+</span><a href="#local-6989586621679122155"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-52"></span><span>            </span><span class="annot"><span class="annottext">RouteResultT IO a -&gt; IO (StM (RouteResultT IO) a)
 RunInBase (RouteResultT IO) IO
-</span><a href="#local-6989586621679122137"><span class="hs-identifier hs-var">runInBase</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResourceT (RouteResultT IO) a -&gt; InternalState -&gt; RouteResultT IO a
+</span><a href="#local-6989586621679122156"><span class="hs-identifier hs-var">runInBase</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ResourceT (RouteResultT IO) a -&gt; InternalState -&gt; RouteResultT IO a
 forall (m :: * -&gt; *) a. ResourceT m a -&gt; InternalState -&gt; m a
 </span><span class="hs-identifier hs-var">runInternalState</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a
 -&gt; Request -&gt; ResourceT (RouteResultT IO) a
@@ -254,10 +254,10 @@ forall r (m :: * -&gt; *) a. ReaderT r m a -&gt; r -&gt; m a
 forall a.
 DelayedIO a -&gt; ReaderT Request (ResourceT (RouteResultT IO)) a
 </span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO%27"><span class="hs-identifier hs-var hs-var">runDelayedIO'</span></a></span><span> </span><span class="annot"><span class="annottext">DelayedIO a
-</span><a href="#local-6989586621679122136"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122139"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">InternalState
-</span><a href="#local-6989586621679122138"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-53"></span><span>    </span><span id="local-6989586621679122135"><span class="annot"><span class="annottext">restoreM :: StM DelayedIO a -&gt; DelayedIO a
+</span><a href="#local-6989586621679122155"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122158"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">InternalState
+</span><a href="#local-6989586621679122157"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-53"></span><span>    </span><span id="local-6989586621679122154"><span class="annot"><span class="annottext">restoreM :: StM DelayedIO a -&gt; DelayedIO a
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">restoreM</span></span></span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
 forall a.
 ReaderT Request (ResourceT (RouteResultT IO)) a -&gt; DelayedIO a
@@ -302,11 +302,11 @@ StM m a -&gt; m a
 </span><span class="hs-identifier hs-var">restoreM</span></span><span>
 </span><span id="line-54"></span><span>
 </span><span id="line-55"></span><span>
-</span><span id="line-56"></span><span id="local-6989586621679122132"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO"><span class="hs-identifier hs-type">runDelayedIO</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122132"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122132"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span><span>
+</span><span id="line-56"></span><span id="local-6989586621679122151"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO"><span class="hs-identifier hs-type">runDelayedIO</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122151"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Servant.Server.Internal.RouteResult.html#RouteResult"><span class="hs-identifier hs-type">RouteResult</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122151"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span></span><span>
 </span><span id="line-57"></span><span id="runDelayedIO"><span class="annot"><span class="annottext">runDelayedIO :: DelayedIO a -&gt; Request -&gt; ResourceT IO (RouteResult a)
-</span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO"><span class="hs-identifier hs-var hs-var">runDelayedIO</span></a></span></span><span> </span><span id="local-6989586621679122130"><span class="annot"><span class="annottext">DelayedIO a
-</span><a href="#local-6989586621679122130"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679122129"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122129"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(RouteResultT IO a -&gt; IO (RouteResult a))
+</span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO"><span class="hs-identifier hs-var hs-var">runDelayedIO</span></a></span></span><span> </span><span id="local-6989586621679122149"><span class="annot"><span class="annottext">DelayedIO a
+</span><a href="#local-6989586621679122149"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679122148"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122148"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(RouteResultT IO a -&gt; IO (RouteResult a))
 -&gt; ResourceT (RouteResultT IO) a -&gt; ResourceT IO (RouteResult a)
 forall (m :: * -&gt; *) a (n :: * -&gt; *) b.
 (m a -&gt; n b) -&gt; ResourceT m a -&gt; ResourceT n b
@@ -322,45 +322,45 @@ forall r (m :: * -&gt; *) a. ReaderT r m a -&gt; r -&gt; m a
 forall a.
 DelayedIO a -&gt; ReaderT Request (ResourceT (RouteResultT IO)) a
 </span><a href="Servant.Server.Internal.DelayedIO.html#runDelayedIO%27"><span class="hs-identifier hs-var hs-var">runDelayedIO'</span></a></span><span> </span><span class="annot"><span class="annottext">DelayedIO a
-</span><a href="#local-6989586621679122130"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122129"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679122149"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122148"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-58"></span><span>
 </span><span id="line-59"></span><span class="hs-comment">-- | Fail with the option to recover.</span><span>
-</span><span id="line-60"></span><span id="local-6989586621679122127"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#delayedFail"><span class="hs-identifier hs-type">delayedFail</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.ServerError.html#ServerError"><span class="hs-identifier hs-type">ServerError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122127"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-60"></span><span id="local-6989586621679122146"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#delayedFail"><span class="hs-identifier hs-type">delayedFail</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.ServerError.html#ServerError"><span class="hs-identifier hs-type">ServerError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122146"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-61"></span><span id="delayedFail"><span class="annot"><span class="annottext">delayedFail :: ServerError -&gt; DelayedIO a
-</span><a href="Servant.Server.Internal.DelayedIO.html#delayedFail"><span class="hs-identifier hs-var hs-var">delayedFail</span></a></span></span><span> </span><span id="local-6989586621679122125"><span class="annot"><span class="annottext">ServerError
-</span><a href="#local-6989586621679122125"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RouteResult a -&gt; DelayedIO a
+</span><a href="Servant.Server.Internal.DelayedIO.html#delayedFail"><span class="hs-identifier hs-var hs-var">delayedFail</span></a></span></span><span> </span><span id="local-6989586621679122144"><span class="annot"><span class="annottext">ServerError
+</span><a href="#local-6989586621679122144"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RouteResult a -&gt; DelayedIO a
 forall a. RouteResult a -&gt; DelayedIO a
 </span><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-var">liftRouteResult</span></a></span><span> </span><span class="annot"><span class="annottext">(RouteResult a -&gt; DelayedIO a) -&gt; RouteResult a -&gt; DelayedIO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ServerError -&gt; RouteResult a
 forall a. ServerError -&gt; RouteResult a
 </span><a href="Servant.Server.Internal.RouteResult.html#Fail"><span class="hs-identifier hs-var">Fail</span></a></span><span> </span><span class="annot"><span class="annottext">ServerError
-</span><a href="#local-6989586621679122125"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><a href="#local-6989586621679122144"><span class="hs-identifier hs-var">err</span></a></span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span class="hs-comment">-- | Fail fatally, i.e., without any option to recover.</span><span>
-</span><span id="line-64"></span><span id="local-6989586621679122123"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#delayedFailFatal"><span class="hs-identifier hs-type">delayedFailFatal</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.ServerError.html#ServerError"><span class="hs-identifier hs-type">ServerError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122123"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-64"></span><span id="local-6989586621679122142"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#delayedFailFatal"><span class="hs-identifier hs-type">delayedFailFatal</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Servant.Server.Internal.ServerError.html#ServerError"><span class="hs-identifier hs-type">ServerError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122142"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-65"></span><span id="delayedFailFatal"><span class="annot"><span class="annottext">delayedFailFatal :: ServerError -&gt; DelayedIO a
-</span><a href="Servant.Server.Internal.DelayedIO.html#delayedFailFatal"><span class="hs-identifier hs-var hs-var">delayedFailFatal</span></a></span></span><span> </span><span id="local-6989586621679122121"><span class="annot"><span class="annottext">ServerError
-</span><a href="#local-6989586621679122121"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RouteResult a -&gt; DelayedIO a
+</span><a href="Servant.Server.Internal.DelayedIO.html#delayedFailFatal"><span class="hs-identifier hs-var hs-var">delayedFailFatal</span></a></span></span><span> </span><span id="local-6989586621679122140"><span class="annot"><span class="annottext">ServerError
+</span><a href="#local-6989586621679122140"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RouteResult a -&gt; DelayedIO a
 forall a. RouteResult a -&gt; DelayedIO a
 </span><a href="Servant.Server.Internal.DelayedIO.html#liftRouteResult"><span class="hs-identifier hs-var">liftRouteResult</span></a></span><span> </span><span class="annot"><span class="annottext">(RouteResult a -&gt; DelayedIO a) -&gt; RouteResult a -&gt; DelayedIO a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ServerError -&gt; RouteResult a
 forall a. ServerError -&gt; RouteResult a
 </span><a href="Servant.Server.Internal.RouteResult.html#FailFatal"><span class="hs-identifier hs-var">FailFatal</span></a></span><span> </span><span class="annot"><span class="annottext">ServerError
-</span><a href="#local-6989586621679122121"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><a href="#local-6989586621679122140"><span class="hs-identifier hs-var">err</span></a></span><span>
 </span><span id="line-66"></span><span>
 </span><span id="line-67"></span><span class="hs-comment">-- | Gain access to the incoming request.</span><span>
-</span><span id="line-68"></span><span id="local-6989586621679122119"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#withRequest"><span class="hs-identifier hs-type">withRequest</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122119"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122119"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-68"></span><span id="local-6989586621679122138"><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#withRequest"><span class="hs-identifier hs-type">withRequest</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122138"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Servant.Server.Internal.DelayedIO.html#DelayedIO"><span class="hs-identifier hs-type">DelayedIO</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679122138"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-69"></span><span id="withRequest"><span class="annot"><span class="annottext">withRequest :: (Request -&gt; DelayedIO a) -&gt; DelayedIO a
-</span><a href="Servant.Server.Internal.DelayedIO.html#withRequest"><span class="hs-identifier hs-var hs-var">withRequest</span></a></span></span><span> </span><span id="local-6989586621679122117"><span class="annot"><span class="annottext">Request -&gt; DelayedIO a
-</span><a href="#local-6989586621679122117"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-70"></span><span>    </span><span id="local-6989586621679122116"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122116"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DelayedIO Request
+</span><a href="Servant.Server.Internal.DelayedIO.html#withRequest"><span class="hs-identifier hs-var hs-var">withRequest</span></a></span></span><span> </span><span id="local-6989586621679122136"><span class="annot"><span class="annottext">Request -&gt; DelayedIO a
+</span><a href="#local-6989586621679122136"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-70"></span><span>    </span><span id="local-6989586621679122135"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122135"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DelayedIO Request
 forall r (m :: * -&gt; *). MonadReader r m =&gt; m r
 </span><span class="hs-identifier hs-var">ask</span></span><span>
 </span><span id="line-71"></span><span>    </span><span class="annot"><span class="annottext">Request -&gt; DelayedIO a
-</span><a href="#local-6989586621679122117"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679122116"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><a href="#local-6989586621679122136"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679122135"><span class="hs-identifier hs-var">req</span></a></span><span>
 </span><span id="line-72"></span></pre></body></html>

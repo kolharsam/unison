@@ -24,9 +24,9 @@
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#pos"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-glyph">=</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span class="hs-special">}</span><span>
 </span><span id="line-21"></span><span>
-</span><span id="line-22"></span><span class="hs-keyword">newtype</span><span> </span><span id="DumbTerm"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-var">DumbTerm</span></a></span></span><span> </span><span id="local-6989586621679080135"><span class="annot"><a href="#local-6989586621679080135"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679080134"><span class="annot"><a href="#local-6989586621679080134"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DumbTerm"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-var">DumbTerm</span></a></span></span><span> </span><span class="hs-special">{</span><span id="unDumbTerm"><span class="annot"><span class="annottext">DumbTerm m a -&gt; StateT Window (PosixT m) a
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#unDumbTerm"><span class="hs-identifier hs-var hs-var">unDumbTerm</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#StateT"><span class="hs-identifier hs-type">StateT</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#PosixT"><span class="hs-identifier hs-type">PosixT</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080135"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679080134"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-23"></span><span>                </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679080063"><span id="local-6989586621679080065"><span class="annot"><span class="annottext">a -&gt; DumbTerm m b -&gt; DumbTerm m a
+</span><span id="line-22"></span><span class="hs-keyword">newtype</span><span> </span><span id="DumbTerm"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-var">DumbTerm</span></a></span></span><span> </span><span id="local-6989586621679080160"><span class="annot"><a href="#local-6989586621679080160"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679080159"><span class="annot"><a href="#local-6989586621679080159"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="DumbTerm"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-var">DumbTerm</span></a></span></span><span> </span><span class="hs-special">{</span><span id="unDumbTerm"><span class="annot"><span class="annottext">DumbTerm m a -&gt; StateT Window (PosixT m) a
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#unDumbTerm"><span class="hs-identifier hs-var hs-var">unDumbTerm</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#StateT"><span class="hs-identifier hs-type">StateT</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#PosixT"><span class="hs-identifier hs-type">PosixT</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080160"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679080159"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-23"></span><span>                </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679080088"><span id="local-6989586621679080090"><span class="annot"><span class="annottext">a -&gt; DumbTerm m b -&gt; DumbTerm m a
 (a -&gt; b) -&gt; DumbTerm m a -&gt; DumbTerm m b
 (forall a b. (a -&gt; b) -&gt; DumbTerm m a -&gt; DumbTerm m b)
 -&gt; (forall a b. a -&gt; DumbTerm m b -&gt; DumbTerm m a)
@@ -50,7 +50,7 @@ fmap :: (a -&gt; b) -&gt; DumbTerm m a -&gt; DumbTerm m b
 $cfmap :: forall (m :: * -&gt; *) a b.
 Monad m =&gt;
 (a -&gt; b) -&gt; DumbTerm m a -&gt; DumbTerm m b
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080051"><span id="local-6989586621679080053"><span id="local-6989586621679080055"><span id="local-6989586621679080057"><span id="local-6989586621679080059"><span class="annot"><span class="annottext">Functor (DumbTerm m)
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Functor</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080076"><span id="local-6989586621679080078"><span id="local-6989586621679080080"><span id="local-6989586621679080082"><span id="local-6989586621679080084"><span class="annot"><span class="annottext">Functor (DumbTerm m)
 a -&gt; DumbTerm m a
 Functor (DumbTerm m)
 -&gt; (forall a. a -&gt; DumbTerm m a)
@@ -112,7 +112,7 @@ DumbTerm m (a -&gt; b) -&gt; DumbTerm m a -&gt; DumbTerm m b
 pure :: a -&gt; DumbTerm m a
 $cpure :: forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; DumbTerm m a
 $cp1Applicative :: forall (m :: * -&gt; *). Monad m =&gt; Functor (DumbTerm m)
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Applicative</span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080043"><span id="local-6989586621679080045"><span id="local-6989586621679080047"><span class="annot"><span class="annottext">Applicative (DumbTerm m)
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Applicative</span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080068"><span id="local-6989586621679080070"><span id="local-6989586621679080072"><span class="annot"><span class="annottext">Applicative (DumbTerm m)
 a -&gt; DumbTerm m a
 Applicative (DumbTerm m)
 -&gt; (forall a b.
@@ -150,7 +150,7 @@ $c&gt;&gt;= :: forall (m :: * -&gt; *) a b.
 Monad m =&gt;
 DumbTerm m a -&gt; (a -&gt; DumbTerm m b) -&gt; DumbTerm m b
 $cp1Monad :: forall (m :: * -&gt; *). Monad m =&gt; Applicative (DumbTerm m)
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Monad</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080039"><span class="annot"><span class="annottext">Monad (DumbTerm m)
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Monad</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080064"><span class="annot"><span class="annottext">Monad (DumbTerm m)
 Monad (DumbTerm m)
 -&gt; (forall a. IO a -&gt; DumbTerm m a) -&gt; MonadIO (DumbTerm m)
 IO a -&gt; DumbTerm m a
@@ -162,7 +162,7 @@ forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; DumbTerm m a
 liftIO :: IO a -&gt; DumbTerm m a
 $cliftIO :: forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; DumbTerm m a
 $cp1MonadIO :: forall (m :: * -&gt; *). MonadIO m =&gt; Monad (DumbTerm m)
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadIO</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080035"><span class="annot"><span class="annottext">MonadIO (DumbTerm m)
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadIO</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080060"><span class="annot"><span class="annottext">MonadIO (DumbTerm m)
 MonadIO (DumbTerm m)
 -&gt; (forall a.
     (RunIO (DumbTerm m) -&gt; IO (DumbTerm m a)) -&gt; DumbTerm m a)
@@ -182,12 +182,12 @@ MonadException m =&gt;
 (RunIO (DumbTerm m) -&gt; IO (DumbTerm m a)) -&gt; DumbTerm m a
 $cp1MonadException :: forall (m :: * -&gt; *). MonadException m =&gt; MonadIO (DumbTerm m)
 </span><a href="System.Console.Haskeline.MonadException.html#C%3AMonadException"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var">MonadException</span></a></span></span><span class="hs-special">,</span><span>
-</span><span id="line-24"></span><span>                          </span><span id="local-6989586621679080029"><span id="local-6989586621679080031"><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadState"><span class="hs-identifier hs-type">MonadState</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080025"><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#Handles"><span class="hs-identifier hs-type">Handles</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-24"></span><span>                          </span><span id="local-6989586621679080054"><span id="local-6989586621679080056"><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadState"><span class="hs-identifier hs-type">MonadState</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679080050"><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#Handles"><span class="hs-identifier hs-type">Handles</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-25"></span><span>
-</span><span id="line-26"></span><span class="hs-keyword">type</span><span> </span><span id="DumbTermM"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTermM"><span class="hs-identifier hs-var">DumbTermM</span></a></span></span><span> </span><span id="local-6989586621679080023"><span class="annot"><a href="#local-6989586621679080023"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679080022"><span class="annot"><a href="#local-6989586621679080022"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span class="hs-operator">.</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679080022"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080022"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080022"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080023"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-26"></span><span class="hs-keyword">type</span><span> </span><span id="DumbTermM"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTermM"><span class="hs-identifier hs-var">DumbTermM</span></a></span></span><span> </span><span id="local-6989586621679080048"><span class="annot"><a href="#local-6989586621679080048"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679080047"><span class="annot"><a href="#local-6989586621679080047"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span class="hs-operator">.</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679080047"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080047"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080047"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080048"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-27"></span><span>
 </span><span id="line-28"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadTrans</span></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-29"></span><span>    </span><span id="local-6989586621679080019"><span class="annot"><span class="annottext">lift :: m a -&gt; DumbTerm m a
+</span><span id="line-29"></span><span>    </span><span id="local-6989586621679080044"><span class="annot"><span class="annottext">lift :: m a -&gt; DumbTerm m a
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">lift</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StateT Window (PosixT m) a -&gt; DumbTerm m a
 forall (m :: * -&gt; *) a. StateT Window (PosixT m) a -&gt; DumbTerm m a
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-var">DumbTerm</span></a></span><span> </span><span class="annot"><span class="annottext">(StateT Window (PosixT m) a -&gt; DumbTerm m a)
@@ -208,7 +208,7 @@ forall (t :: (* -&gt; *) -&gt; * -&gt; *) (m :: * -&gt; *) a.
 m a -&gt; t m a
 </span><span class="hs-identifier hs-var">lift</span></span><span>
 </span><span id="line-30"></span><span>
-</span><span id="line-31"></span><span id="local-6989586621679080103"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#evalDumb"><span class="hs-identifier hs-type">evalDumb</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080103"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#CommandMonad"><span class="hs-identifier hs-type">CommandMonad</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080103"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#EvalTerm"><span class="hs-identifier hs-type">EvalTerm</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#PosixT"><span class="hs-identifier hs-type">PosixT</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080103"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span></span><span>
+</span><span id="line-31"></span><span id="local-6989586621679080128"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#evalDumb"><span class="hs-identifier hs-type">evalDumb</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080128"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#CommandMonad"><span class="hs-identifier hs-type">CommandMonad</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080128"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#EvalTerm"><span class="hs-identifier hs-type">EvalTerm</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#PosixT"><span class="hs-identifier hs-type">PosixT</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080128"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span></span><span>
 </span><span id="line-32"></span><span id="evalDumb"><span class="annot"><span class="annottext">evalDumb :: EvalTerm (PosixT m)
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#evalDumb"><span class="hs-identifier hs-var hs-var">evalDumb</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(forall a. DumbTerm m a -&gt; PosixT m a)
 -&gt; (forall a. PosixT m a -&gt; DumbTerm m a) -&gt; EvalTerm (PosixT m)
@@ -240,8 +240,8 @@ m a -&gt; t m a
 </span><span id="line-33"></span><span>
 </span><span id="line-34"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#runDumbTerm"><span class="hs-identifier hs-type">runDumbTerm</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.Posix.html#Handles"><span class="hs-identifier hs-type">Handles</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MaybeT</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#RunTerm"><span class="hs-identifier hs-type">RunTerm</span></a></span><span>
 </span><span id="line-35"></span><span id="runDumbTerm"><span class="annot"><span class="annottext">runDumbTerm :: Handles -&gt; MaybeT IO RunTerm
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#runDumbTerm"><span class="hs-identifier hs-var hs-var">runDumbTerm</span></a></span></span><span> </span><span id="local-6989586621679080012"><span class="annot"><span class="annottext">Handles
-</span><a href="#local-6989586621679080012"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO RunTerm -&gt; MaybeT IO RunTerm
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#runDumbTerm"><span class="hs-identifier hs-var hs-var">runDumbTerm</span></a></span></span><span> </span><span id="local-6989586621679080037"><span class="annot"><span class="annottext">Handles
+</span><a href="#local-6989586621679080037"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO RunTerm -&gt; MaybeT IO RunTerm
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO RunTerm -&gt; MaybeT IO RunTerm)
 -&gt; IO RunTerm -&gt; MaybeT IO RunTerm
@@ -255,9 +255,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
     EvalTerm (PosixT m))
 -&gt; IO RunTerm
 </span><a href="System.Console.Haskeline.Backend.Posix.html#posixRunTerm"><span class="hs-identifier hs-var">posixRunTerm</span></a></span><span> </span><span class="annot"><span class="annottext">Handles
-</span><a href="#local-6989586621679080012"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Handles -&gt; [IO (Maybe Layout)]
+</span><a href="#local-6989586621679080037"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Handles -&gt; [IO (Maybe Layout)]
 </span><a href="System.Console.Haskeline.Backend.Posix.html#posixLayouts"><span class="hs-identifier hs-var">posixLayouts</span></a></span><span> </span><span class="annot"><span class="annottext">Handles
-</span><a href="#local-6989586621679080012"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">forall a. a -&gt; a
+</span><a href="#local-6989586621679080037"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">forall a. a -&gt; a
 forall (m :: * -&gt; *) b. MonadException m =&gt; m b -&gt; m b
 </span><span class="hs-identifier hs-var">id</span></span><span> </span><span class="annot"><span class="annottext">forall (m :: * -&gt; *).
 (MonadException m, CommandMonad m) =&gt;
@@ -267,19 +267,19 @@ forall (m :: * -&gt; *).
 EvalTerm (PosixT m)
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#evalDumb"><span class="hs-identifier hs-var">evalDumb</span></a></span><span>
 </span><span id="line-36"></span><span>
-</span><span id="line-37"></span><span id="local-6989586621679080007"><span class="hs-keyword">instance</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.MonadException.html#MonadException"><span class="hs-identifier hs-type">MonadException</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080007"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080007"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080007"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-38"></span><span>    </span><span id="local-6989586621679079997"><span class="annot"><span class="annottext">reposition :: Layout -&gt; LineChars -&gt; DumbTerm m ()
+</span><span id="line-37"></span><span id="local-6989586621679080032"><span class="hs-keyword">instance</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.MonadException.html#MonadException"><span class="hs-identifier hs-type">MonadException</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080032"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Monads.html#MonadReader"><span class="hs-identifier hs-type">MonadReader</span></a></span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Layout"><span class="hs-identifier hs-type">Layout</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080032"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Term.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080032"><span class="hs-identifier hs-type">m</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-38"></span><span>    </span><span id="local-6989586621679080022"><span class="annot"><span class="annottext">reposition :: Layout -&gt; LineChars -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#reposition"><span class="hs-identifier hs-var hs-var hs-var hs-var">reposition</span></a></span></span><span> </span><span class="annot"><span class="annottext">Layout
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679079995"><span class="annot"><span class="annottext">LineChars
-</span><a href="#local-6989586621679079995"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LineChars -&gt; DumbTermM ()
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679080020"><span class="annot"><span class="annottext">LineChars
+</span><a href="#local-6989586621679080020"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LineChars -&gt; DumbTermM ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#refitLine"><span class="hs-identifier hs-var">refitLine</span></a></span><span> </span><span class="annot"><span class="annottext">LineChars
-</span><a href="#local-6989586621679079995"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-39"></span><span>    </span><span id="local-6989586621679079993"><span class="annot"><span class="annottext">drawLineDiff :: LineChars -&gt; LineChars -&gt; DumbTerm m ()
+</span><a href="#local-6989586621679080020"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-39"></span><span>    </span><span id="local-6989586621679080018"><span class="annot"><span class="annottext">drawLineDiff :: LineChars -&gt; LineChars -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#drawLineDiff"><span class="hs-identifier hs-var hs-var hs-var hs-var">drawLineDiff</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">LineChars -&gt; LineChars -&gt; DumbTerm m ()
 LineChars -&gt; LineChars -&gt; DumbTermM ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#drawLineDiff%27"><span class="hs-identifier hs-var">drawLineDiff'</span></a></span><span>
 </span><span id="line-40"></span><span>
-</span><span id="line-41"></span><span>    </span><span id="local-6989586621679079990"><span class="annot"><span class="annottext">printLines :: [String] -&gt; DumbTerm m ()
+</span><span id="line-41"></span><span>    </span><span id="local-6989586621679080015"><span class="annot"><span class="annottext">printLines :: [String] -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#printLines"><span class="hs-identifier hs-var hs-var hs-var hs-var">printLines</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; DumbTerm m ()) -&gt; [String] -&gt; DumbTerm m ()
 forall (t :: * -&gt; *) (m :: * -&gt; *) a b.
 (Foldable t, Monad m) =&gt;
@@ -293,17 +293,17 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#crlf"><span class="hs-identifier hs-var">crlf</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-42"></span><span>    </span><span id="local-6989586621679079985"><span class="annot"><span class="annottext">moveToNextLine :: LineChars -&gt; DumbTerm m ()
+</span><span id="line-42"></span><span>    </span><span id="local-6989586621679080010"><span class="annot"><span class="annottext">moveToNextLine :: LineChars -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#moveToNextLine"><span class="hs-identifier hs-var hs-var hs-var hs-var">moveToNextLine</span></a></span></span><span> </span><span class="annot"><span class="annottext">LineChars
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var">printText</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#crlf"><span class="hs-identifier hs-var">crlf</span></a></span><span>
-</span><span id="line-43"></span><span>    </span><span id="local-6989586621679079983"><span class="annot"><span class="annottext">clearLayout :: DumbTerm m ()
+</span><span id="line-43"></span><span>    </span><span id="local-6989586621679080008"><span class="annot"><span class="annottext">clearLayout :: DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#clearLayout"><span class="hs-identifier hs-var hs-var hs-var hs-var">clearLayout</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DumbTerm m ()
 DumbTermM ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearLayoutD"><span class="hs-identifier hs-var">clearLayoutD</span></a></span><span>
-</span><span id="line-44"></span><span>    </span><span id="local-6989586621679079980"><span class="annot"><span class="annottext">ringBell :: Bool -&gt; DumbTerm m ()
+</span><span id="line-44"></span><span>    </span><span id="local-6989586621679080005"><span class="annot"><span class="annottext">ringBell :: Bool -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Term.html#ringBell"><span class="hs-identifier hs-var hs-var hs-var hs-var">ringBell</span></a></span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
@@ -314,12 +314,12 @@ forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-46"></span><span>
-</span><span id="line-47"></span><span id="local-6989586621679080094"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-type">printText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679080094"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080094"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-47"></span><span id="local-6989586621679080119"><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-type">printText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">MonadIO</span></span><span> </span><span class="annot"><a href="#local-6989586621679080119"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTerm"><span class="hs-identifier hs-type">DumbTerm</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679080119"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-48"></span><span id="printText"><span class="annot"><span class="annottext">printText :: String -&gt; DumbTerm m ()
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var hs-var">printText</span></a></span></span><span> </span><span id="local-6989586621679079978"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-49"></span><span>    </span><span id="local-6989586621679079977"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679079977"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(Handles -&gt; Handle) -&gt; DumbTerm m Handles -&gt; DumbTerm m Handle
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var hs-var">printText</span></a></span></span><span> </span><span id="local-6989586621679080003"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679080003"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-49"></span><span>    </span><span id="local-6989586621679080002"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621679080002"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(Handles -&gt; Handle) -&gt; DumbTerm m Handles -&gt; DumbTerm m Handle
 forall (m :: * -&gt; *) a1 r. Monad m =&gt; (a1 -&gt; r) -&gt; m a1 -&gt; m r
 </span><span class="hs-identifier hs-var">liftM</span></span><span> </span><span class="annot"><span class="annottext">Handles -&gt; Handle
 </span><a href="System.Console.Haskeline.Backend.Posix.html#ehOut"><span class="hs-identifier hs-var">ehOut</span></a></span><span> </span><span class="annot"><span class="annottext">DumbTerm m Handles
@@ -331,15 +331,15 @@ forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; String -&gt; IO ()
 </span><span class="hs-identifier hs-var">hPutStr</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679079977"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><a href="#local-6989586621679080002"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679080003"><span class="hs-identifier hs-var">str</span></a></span><span>
 </span><span id="line-51"></span><span>    </span><span class="annot"><span class="annottext">IO () -&gt; DumbTerm m ()
 forall (m :: * -&gt; *) a. MonadIO m =&gt; IO a -&gt; m a
 </span><span class="hs-identifier hs-var">liftIO</span></span><span> </span><span class="annot"><span class="annottext">(IO () -&gt; DumbTerm m ()) -&gt; IO () -&gt; DumbTerm m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">hFlush</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621679079977"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><a href="#local-6989586621679080002"><span class="hs-identifier hs-var">h</span></a></span><span>
 </span><span id="line-52"></span><span>
 </span><span id="line-53"></span><span class="hs-comment">-- Things we can assume a dumb terminal knows how to do</span><span>
 </span><span id="line-54"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#cr"><span class="hs-identifier hs-type">cr</span></a></span><span class="hs-special">,</span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#crlf"><span class="hs-identifier hs-type">crlf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
@@ -352,26 +352,26 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-57"></span><span>
 </span><span id="line-58"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-type">backs</span></a></span><span class="hs-special">,</span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-type">spaces</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-59"></span><span id="backs"><span class="annot"><span class="annottext">backs :: Int -&gt; String
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var hs-var">backs</span></a></span></span><span> </span><span id="local-6989586621679079969"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079969"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Char -&gt; String
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var hs-var">backs</span></a></span></span><span> </span><span id="local-6989586621679079994"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079994"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Char -&gt; String
 forall a. Int -&gt; a -&gt; [a]
 </span><span class="hs-identifier hs-var">replicate</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079969"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679079994"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'\b'</span></span><span>
 </span><span id="line-60"></span><span id="spaces"><span class="annot"><span class="annottext">spaces :: Int -&gt; String
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-var hs-var">spaces</span></a></span></span><span> </span><span id="local-6989586621679079967"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079967"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Char -&gt; String
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-var hs-var">spaces</span></a></span></span><span> </span><span id="local-6989586621679079992"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079992"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Char -&gt; String
 forall a. Int -&gt; a -&gt; [a]
 </span><span class="hs-identifier hs-var">replicate</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079967"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679079992"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">' '</span></span><span>
 </span><span id="line-61"></span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearLayoutD"><span class="hs-identifier hs-type">clearLayoutD</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTermM"><span class="hs-identifier hs-type">DumbTermM</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-64"></span><span id="clearLayoutD"><span class="annot"><span class="annottext">clearLayoutD :: DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearLayoutD"><span class="hs-identifier hs-var hs-var">clearLayoutD</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-65"></span><span>    </span><span id="local-6989586621679079966"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079966"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
+</span><span id="line-65"></span><span>    </span><span id="local-6989586621679079991"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079991"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
 DumbTermM Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#maxWidth"><span class="hs-identifier hs-var">maxWidth</span></a></span><span>
 </span><span id="line-66"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
@@ -381,7 +381,7 @@ forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-var">spaces</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079966"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679079991"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#cr"><span class="hs-identifier hs-var">cr</span></a></span><span class="hs-special">)</span><span>
@@ -391,199 +391,199 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span id="line-70"></span><span id="maxWidth"><span class="annot"><span class="annottext">maxWidth :: DumbTerm m Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#maxWidth"><span class="hs-identifier hs-var hs-var">maxWidth</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Layout -&gt; Int) -&gt; DumbTerm m Int
 forall r (m :: * -&gt; *) a. MonadReader r m =&gt; (r -&gt; a) -&gt; m a
-</span><a href="System.Console.Haskeline.Monads.html#asks"><span class="hs-identifier hs-var">asks</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679079963"><span class="annot"><span class="annottext">Layout
-</span><a href="#local-6989586621679079963"><span class="hs-identifier hs-var">lay</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Layout -&gt; Int
+</span><a href="System.Console.Haskeline.Monads.html#asks"><span class="hs-identifier hs-var">asks</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621679079988"><span class="annot"><span class="annottext">Layout
+</span><a href="#local-6989586621679079988"><span class="hs-identifier hs-var">lay</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Layout -&gt; Int
 </span><a href="System.Console.Haskeline.Term.html#width"><span class="hs-identifier hs-var hs-var">width</span></a></span><span> </span><span class="annot"><span class="annottext">Layout
-</span><a href="#local-6989586621679079963"><span class="hs-identifier hs-var">lay</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079988"><span class="hs-identifier hs-var">lay</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
 </span><span id="line-71"></span><span>
 </span><span id="line-72"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#drawLineDiff%27"><span class="hs-identifier hs-type">drawLineDiff'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="System.Console.Haskeline.LineState.html#LineChars"><span class="hs-identifier hs-type">LineChars</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.LineState.html#LineChars"><span class="hs-identifier hs-type">LineChars</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTermM"><span class="hs-identifier hs-type">DumbTermM</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-73"></span><span id="drawLineDiff%27"><span class="annot"><span class="annottext">drawLineDiff' :: LineChars -&gt; LineChars -&gt; DumbTermM ()
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#drawLineDiff%27"><span class="hs-identifier hs-var hs-var">drawLineDiff'</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079961"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079961"><span class="hs-identifier hs-var">xs1</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079960"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">ys1</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079959"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079959"><span class="hs-identifier hs-var">xs2</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079958"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#drawLineDiff%27"><span class="hs-identifier hs-var hs-var">drawLineDiff'</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079986"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079986"><span class="hs-identifier hs-var">xs1</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079985"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079985"><span class="hs-identifier hs-var">ys1</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079984"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079984"><span class="hs-identifier hs-var">xs2</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079983"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-74"></span><span>    </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">pos :: Window -&gt; Int
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#pos"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-glyph">=</span><span id="local-6989586621679079957"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Window
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#pos"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-glyph">=</span><span id="local-6989586621679079982"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079982"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Window
 forall s (m :: * -&gt; *). MonadState s m =&gt; m s
 </span><a href="System.Console.Haskeline.Monads.html#get"><span class="hs-identifier hs-var">get</span></a></span><span>
-</span><span id="line-75"></span><span>    </span><span id="local-6989586621679079955"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
+</span><span id="line-75"></span><span>    </span><span id="local-6989586621679079980"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079980"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
 DumbTermM Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#maxWidth"><span class="hs-identifier hs-var">maxWidth</span></a></span><span>
-</span><span id="line-76"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079954"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">xs1'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079953"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; LineChars
+</span><span id="line-76"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079979"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079979"><span class="hs-identifier hs-var">xs1'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079978"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; LineChars
 forall a. Eq a =&gt; [a] -&gt; [a] -&gt; ([a], [a])
 </span><a href="System.Console.Haskeline.Term.html#matchInit"><span class="hs-identifier hs-var">matchInit</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079961"><span class="hs-identifier hs-var">xs1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079959"><span class="hs-identifier hs-var">xs2</span></a></span><span>
-</span><span id="line-77"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079951"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679079950"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079950"><span class="hs-identifier hs-var">xw2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme] -&gt; Int
+</span><a href="#local-6989586621679079986"><span class="hs-identifier hs-var">xs1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079984"><span class="hs-identifier hs-var">xs2</span></a></span><span>
+</span><span id="line-77"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079976"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679079975"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079975"><span class="hs-identifier hs-var">xw2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme] -&gt; Int
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#gsWidth"><span class="hs-identifier hs-var">gsWidth</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">xs1'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; Int
+</span><a href="#local-6989586621679079979"><span class="hs-identifier hs-var">xs1'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; Int
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#gsWidth"><span class="hs-identifier hs-var">gsWidth</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-78"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679079948"><span class="annot"><span class="annottext">newP :: Int
-</span><a href="#local-6989586621679079948"><span class="hs-identifier hs-var hs-var">newP</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-78"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679079973"><span class="annot"><span class="annottext">newP :: Int
+</span><a href="#local-6989586621679079973"><span class="hs-identifier hs-var hs-var">newP</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079982"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079950"><span class="hs-identifier hs-var">xw2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079975"><span class="hs-identifier hs-var">xw2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span><span>
-</span><span id="line-79"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079946"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079946"><span class="hs-identifier hs-var">ys2'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679079945"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079945"><span class="hs-identifier hs-var">yw2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span><span>
+</span><span id="line-79"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079971"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079971"><span class="hs-identifier hs-var">ys2'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679079970"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079970"><span class="hs-identifier hs-var">yw2</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#takeWidth"><span class="hs-identifier hs-var">takeWidth</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079980"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079948"><span class="hs-identifier hs-var">newP</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span><span>
+</span><a href="#local-6989586621679079973"><span class="hs-identifier hs-var">newP</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span><span>
 </span><span id="line-80"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">p</span></a></span><span>  </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679079982"><span class="hs-identifier hs-var">p</span></a></span><span>  </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079948"><span class="hs-identifier hs-var">newP</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621679079973"><span class="hs-identifier hs-var">newP</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">w</span></a></span><span>
+</span><a href="#local-6989586621679079980"><span class="hs-identifier hs-var">w</span></a></span><span>
 </span><span id="line-81"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">LineChars -&gt; DumbTermM ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#refitLine"><span class="hs-identifier hs-var">refitLine</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079959"><span class="hs-identifier hs-var">xs2</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079984"><span class="hs-identifier hs-var">xs2</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-82"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="hs-keyword">do</span><span> </span><span class="hs-comment">-- we haven't moved outside the margins</span><span>
 </span><span id="line-83"></span><span>            </span><span class="annot"><span class="annottext">Window -&gt; DumbTerm m ()
 forall s (m :: * -&gt; *). MonadState s m =&gt; s -&gt; m ()
 </span><a href="System.Console.Haskeline.Monads.html#put"><span class="hs-identifier hs-var">put</span></a></span><span> </span><span class="annot"><span class="annottext">Window :: Int -&gt; Window
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">pos :: Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#pos"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-glyph">=</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079948"><span class="hs-identifier hs-var">newP</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679079973"><span class="hs-identifier hs-var">newP</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-84"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">xs1'</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679079979"><span class="hs-identifier hs-var">xs1'</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-85"></span><span>                </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
+</span><a href="#local-6989586621679079985"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; DumbTerm m ()
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; DumbTerm m ()
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-comment">-- no change</span><span>
 </span><span id="line-86"></span><span>                </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
 </span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">xs1'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
+</span><a href="#local-6989586621679079979"><span class="hs-identifier hs-var">xs1'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
+</span><a href="#local-6989586621679079985"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-comment">-- moved left</span><span>
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-comment">-- moved left</span><span>
 </span><span id="line-87"></span><span>                    </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var">printText</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DumbTerm m ()) -&gt; String -&gt; DumbTerm m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var">backs</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span><span>
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span><span>
 </span><span id="line-88"></span><span>                </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span class="annot"><span class="annottext">[Grapheme]
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
+</span><a href="#local-6989586621679079985"><span class="hs-identifier hs-var">ys1</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">ys2</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-comment">-- moved right</span><span>
+</span><a href="#local-6989586621679079983"><span class="hs-identifier hs-var">ys2</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-comment">-- moved right</span><span>
 </span><span id="line-89"></span><span>                    </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var">printText</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme] -&gt; String
 </span><a href="System.Console.Haskeline.LineState.html#graphemesToString"><span class="hs-identifier hs-var">graphemesToString</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>                </span><span class="annot"><span class="annottext">LineChars
-</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679079939"><span class="annot"><span class="annottext">extraLength :: Int
-</span><a href="#local-6989586621679079939"><span class="hs-identifier hs-var hs-var">extraLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679079964"><span class="annot"><span class="annottext">extraLength :: Int
+</span><a href="#local-6989586621679079964"><span class="hs-identifier hs-var hs-var">extraLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">([Grapheme], Int) -&gt; Int
 forall a b. (a, b) -&gt; b
 </span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#takeWidth"><span class="hs-identifier hs-var">takeWidth</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079980"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">ys1</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079982"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079985"><span class="hs-identifier hs-var">ys1</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-91"></span><span>                                        </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079950"><span class="hs-identifier hs-var">xw2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079975"><span class="hs-identifier hs-var">xw2</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079945"><span class="hs-identifier hs-var">yw2</span></a></span><span>
+</span><a href="#local-6989586621679079970"><span class="hs-identifier hs-var">yw2</span></a></span><span>
 </span><span id="line-92"></span><span>                     </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var">printText</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DumbTerm m ()) -&gt; String -&gt; DumbTerm m ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var">backs</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">xw1</span></a></span><span>
+</span><a href="#local-6989586621679079976"><span class="hs-identifier hs-var">xw1</span></a></span><span>
 </span><span id="line-93"></span><span>                        </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; String
 </span><a href="System.Console.Haskeline.LineState.html#graphemesToString"><span class="hs-identifier hs-var">graphemesToString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">xs2'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
+</span><a href="#local-6989586621679079978"><span class="hs-identifier hs-var">xs2'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079946"><span class="hs-identifier hs-var">ys2'</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679079971"><span class="hs-identifier hs-var">ys2'</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearDeadText"><span class="hs-identifier hs-var">clearDeadText</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079939"><span class="hs-identifier hs-var">extraLength</span></a></span><span>
+</span><a href="#local-6989586621679079964"><span class="hs-identifier hs-var">extraLength</span></a></span><span>
 </span><span id="line-94"></span><span>                        </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var">backs</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079945"><span class="hs-identifier hs-var">yw2</span></a></span><span>
+</span><a href="#local-6989586621679079970"><span class="hs-identifier hs-var">yw2</span></a></span><span>
 </span><span id="line-95"></span><span>
 </span><span id="line-96"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#refitLine"><span class="hs-identifier hs-type">refitLine</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.LineState.html#Grapheme"><span class="hs-identifier hs-type">Grapheme</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span class="hs-special">[</span><span class="annot"><a href="System.Console.Haskeline.LineState.html#Grapheme"><span class="hs-identifier hs-type">Grapheme</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#DumbTermM"><span class="hs-identifier hs-type">DumbTermM</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span id="refitLine"><span class="annot"><span class="annottext">refitLine :: LineChars -&gt; DumbTermM ()
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#refitLine"><span class="hs-identifier hs-var hs-var">refitLine</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079937"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079937"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079936"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079936"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-98"></span><span>    </span><span id="local-6989586621679079935"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079935"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#refitLine"><span class="hs-identifier hs-var hs-var">refitLine</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079962"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079962"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079961"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079961"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-98"></span><span>    </span><span id="local-6989586621679079960"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">DumbTerm m Int
 DumbTermM Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#maxWidth"><span class="hs-identifier hs-var">maxWidth</span></a></span><span>
-</span><span id="line-99"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079934"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079934"><span class="hs-identifier hs-var">xs'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079933"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079933"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
-</span><a href="#local-6989586621679079932"><span class="hs-identifier hs-var">dropFrames</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079935"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079937"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-99"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079959"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079959"><span class="hs-identifier hs-var">xs'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079958"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
+</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">dropFrames</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079962"><span class="hs-identifier hs-var">xs</span></a></span><span>
 </span><span id="line-100"></span><span>    </span><span class="annot"><span class="annottext">Window -&gt; DumbTerm m ()
 forall s (m :: * -&gt; *). MonadState s m =&gt; s -&gt; m ()
 </span><a href="System.Console.Haskeline.Monads.html#put"><span class="hs-identifier hs-var">put</span></a></span><span> </span><span class="annot"><span class="annottext">Window :: Int -&gt; Window
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#Window"><span class="hs-identifier hs-type">Window</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">pos :: Int
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#pos"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-glyph">=</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079933"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">}</span><span>
-</span><span id="line-101"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079931"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079931"><span class="hs-identifier hs-var">ys'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079930"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079930"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
+</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-101"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679079956"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079956"><span class="hs-identifier hs-var">ys'</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621679079955"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#takeWidth"><span class="hs-identifier hs-var">takeWidth</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079935"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079933"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079936"><span class="hs-identifier hs-var">ys</span></a></span><span>
+</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079961"><span class="hs-identifier hs-var">ys</span></a></span><span>
 </span><span id="line-102"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; DumbTerm m ()
 forall (m :: * -&gt; *). MonadIO m =&gt; String -&gt; DumbTerm m ()
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#printText"><span class="hs-identifier hs-var">printText</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DumbTerm m ()) -&gt; String -&gt; DumbTerm m ()
@@ -593,66 +593,66 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; String
 </span><a href="System.Console.Haskeline.LineState.html#graphemesToString"><span class="hs-identifier hs-var">graphemesToString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079934"><span class="hs-identifier hs-var">xs'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
+</span><a href="#local-6989586621679079959"><span class="hs-identifier hs-var">xs'</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme] -&gt; [Grapheme] -&gt; [Grapheme]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079931"><span class="hs-identifier hs-var">ys'</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079956"><span class="hs-identifier hs-var">ys'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-103"></span><span>        </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-var">spaces</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079935"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079930"><span class="hs-identifier hs-var">k</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079955"><span class="hs-identifier hs-var">k</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079933"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-104"></span><span>        </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var">backs</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079935"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679079960"><span class="hs-identifier hs-var">w</span></a></span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079933"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679079958"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-105"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-106"></span><span>    </span><span class="hs-comment">-- returns the width of the returned characters.</span><span>
-</span><span id="line-107"></span><span>    </span><span id="local-6989586621679079932"><span class="annot"><span class="annottext">dropFrames :: Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
-</span><a href="#local-6989586621679079932"><span class="hs-identifier hs-var hs-var">dropFrames</span></a></span></span><span> </span><span id="local-6989586621679079929"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079929"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679079928"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079928"><span class="hs-identifier hs-var">zs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], [Grapheme], Int)
+</span><span id="line-107"></span><span>    </span><span id="local-6989586621679079957"><span class="annot"><span class="annottext">dropFrames :: Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
+</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var hs-var">dropFrames</span></a></span></span><span> </span><span id="local-6989586621679079954"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">w</span></a></span></span><span> </span><span id="local-6989586621679079953"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">zs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], [Grapheme], Int)
 </span><a href="System.Console.Haskeline.Backend.WCWidth.html#splitAtWidth"><span class="hs-identifier hs-var">splitAtWidth</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079929"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079928"><span class="hs-identifier hs-var">zs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">zs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-108"></span><span>                        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span id="local-6989586621679079926"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079926"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079928"><span class="hs-identifier hs-var">zs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079926"><span class="hs-identifier hs-var">l</span></a></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span id="local-6989586621679079951"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">l</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079953"><span class="hs-identifier hs-var">zs</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079951"><span class="hs-identifier hs-var">l</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-109"></span><span>                        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Grapheme]
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679079925"><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079925"><span class="hs-identifier hs-var">zs'</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span id="local-6989586621679079950"><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079950"><span class="hs-identifier hs-var">zs'</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Grapheme] -&gt; ([Grapheme], Int)
-</span><a href="#local-6989586621679079932"><span class="hs-identifier hs-var">dropFrames</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079929"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
-</span><a href="#local-6989586621679079925"><span class="hs-identifier hs-var">zs'</span></a></span><span>
+</span><a href="#local-6989586621679079957"><span class="hs-identifier hs-var">dropFrames</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079954"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">[Grapheme]
+</span><a href="#local-6989586621679079950"><span class="hs-identifier hs-var">zs'</span></a></span><span>
 </span><span id="line-110"></span><span>
 </span><span id="line-111"></span><span>
 </span><span id="line-112"></span><span class="annot"><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearDeadText"><span class="hs-identifier hs-type">clearDeadText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-113"></span><span id="clearDeadText"><span class="annot"><span class="annottext">clearDeadText :: Int -&gt; String
-</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearDeadText"><span class="hs-identifier hs-var hs-var">clearDeadText</span></a></span></span><span> </span><span id="local-6989586621679079924"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079924"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079924"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="System.Console.Haskeline.Backend.DumbTerm.html#clearDeadText"><span class="hs-identifier hs-var hs-var">clearDeadText</span></a></span></span><span> </span><span id="local-6989586621679079949"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079949"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679079949"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Ord a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">&gt;</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#spaces"><span class="hs-identifier hs-var">spaces</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079924"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679079949"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; String
 </span><a href="System.Console.Haskeline.Backend.DumbTerm.html#backs"><span class="hs-identifier hs-var">backs</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679079924"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621679079949"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-114"></span><span>                </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span>

@@ -57,8 +57,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-40"></span><span class="hs-comment">-- &lt;http://tools.ietf.org/rfc/rfc4648 RFC 4648&gt;.</span><span>
 </span><span id="line-41"></span><span class="annot"><a href="Data.ByteString.Base64.Lazy.html#decode"><span class="hs-identifier hs-type">decode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">L.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">L.ByteString</span></span><span>
 </span><span id="line-42"></span><span id="decode"><span class="annot"><span class="annottext">decode :: ByteString -&gt; Either String ByteString
-</span><a href="Data.ByteString.Base64.Lazy.html#decode"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679035154"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035154"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-comment">-- Returning an Either type means that the entire result will</span><span>
+</span><a href="Data.ByteString.Base64.Lazy.html#decode"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679035158"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679035158"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-comment">-- Returning an Either type means that the entire result will</span><span>
 </span><span id="line-43"></span><span>           </span><span class="hs-comment">-- need to be in memory at once anyway, so we may as well</span><span>
 </span><span id="line-44"></span><span>           </span><span class="hs-comment">-- keep it simple and just convert to and from a strict byte</span><span>
 </span><span id="line-45"></span><span>           </span><span class="hs-comment">-- string</span><span>
@@ -73,21 +73,21 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString]
 </span><span class="hs-identifier hs-var">L.toChunks</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035154"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-49"></span><span>           </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679035151"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679035151"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ByteString
+</span><a href="#local-6989586621679035158"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-49"></span><span>           </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679035155"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679035155"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ByteString
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679035151"><span class="hs-identifier hs-var">err</span></a></span><span>
-</span><span id="line-50"></span><span>           </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679035150"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">b'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String ByteString
+</span><a href="#local-6989586621679035155"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-50"></span><span>           </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679035154"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679035154"><span class="hs-identifier hs-var">b'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String ByteString
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Either String ByteString)
 -&gt; ByteString -&gt; Either String ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; ByteString
 </span><span class="hs-identifier hs-var">L.fromChunks</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">b'</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679035154"><span class="hs-identifier hs-var">b'</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-51"></span><span>
 </span><span id="line-52"></span><span class="hs-comment">-- | Decode a base64-encoded string.  This function is lenient in</span><span>
 </span><span id="line-53"></span><span class="hs-comment">-- following the specification from</span><span>
@@ -117,28 +117,28 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; ByteString -&gt; ByteString
 </span><span class="hs-identifier hs-var">LC.filter</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
-</span><a href="#local-6989586621679035147"><span class="hs-identifier hs-var">goodChar</span></a></span><span>
+</span><a href="#local-6989586621679035151"><span class="hs-identifier hs-var">goodChar</span></a></span><span>
 </span><span id="line-59"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span class="hs-comment">-- We filter out and '=' padding here, but B64.decodeLenient</span><span>
 </span><span id="line-60"></span><span>          </span><span class="hs-comment">-- handles that</span><span>
-</span><span id="line-61"></span><span>          </span><span id="local-6989586621679035147"><span class="annot"><span class="annottext">goodChar :: Char -&gt; Bool
-</span><a href="#local-6989586621679035147"><span class="hs-identifier hs-var hs-var">goodChar</span></a></span></span><span> </span><span id="local-6989586621679035146"><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
+</span><span id="line-61"></span><span>          </span><span id="local-6989586621679035151"><span class="annot"><span class="annottext">goodChar :: Char -&gt; Bool
+</span><a href="#local-6989586621679035151"><span class="hs-identifier hs-var hs-var">goodChar</span></a></span></span><span> </span><span id="local-6989586621679035150"><span class="annot"><span class="annottext">Char
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isDigit</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isAsciiUpper</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isAsciiLower</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-62"></span><span>                                 </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'+'</span></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Char
-</span><a href="#local-6989586621679035146"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
+</span><a href="#local-6989586621679035150"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'/'</span></span><span>

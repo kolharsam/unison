@@ -338,15 +338,15 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-214"></span><span class="hs-comment">--</span><span>
 </span><span id="line-215"></span><span class="annot"><a href="Data.ByteString.Lazy.Base32.Hex.html#isBase32Hex"><span class="hs-identifier hs-type">isBase32Hex</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-216"></span><span id="isBase32Hex"><span class="annot"><span class="annottext">isBase32Hex :: ByteString -&gt; Bool
-</span><a href="Data.ByteString.Lazy.Base32.Hex.html#isBase32Hex"><span class="hs-identifier hs-var hs-var">isBase32Hex</span></a></span></span><span> </span><span id="local-6989586621679059787"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059787"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
+</span><a href="Data.ByteString.Lazy.Base32.Hex.html#isBase32Hex"><span class="hs-identifier hs-var hs-var">isBase32Hex</span></a></span></span><span> </span><span id="local-6989586621679059791"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059791"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><a href="Data.ByteString.Lazy.Base32.Hex.html#isValidBase32Hex"><span class="hs-identifier hs-var">isValidBase32Hex</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059787"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679059791"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Either Text ByteString -&gt; Bool
 forall a b. Either a b -&gt; Bool
 </span><span class="hs-identifier hs-var">isRight</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either Text ByteString
 </span><a href="Data.ByteString.Lazy.Base32.Hex.html#decodeBase32"><span class="hs-identifier hs-var">decodeBase32</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059787"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679059791"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-217"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.ByteString.Lazy.Base32.Hex.html#isBase32Hex"><span class="hs-pragma hs-type">isBase32Hex</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-218"></span><span>
 </span><span id="line-219"></span><span class="hs-comment">-- | Tell whether a 'ByteString' is a valid Base32hex format.</span><span>
@@ -370,32 +370,32 @@ forall a b. Either a b -&gt; Bool
 </span><span id="line-237"></span><span class="annot"><a href="Data.ByteString.Lazy.Base32.Hex.html#isValidBase32Hex"><span class="hs-identifier hs-type">isValidBase32Hex</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-238"></span><span id="isValidBase32Hex"><span class="annot"><span class="annottext">isValidBase32Hex :: ByteString -&gt; Bool
 </span><a href="Data.ByteString.Lazy.Base32.Hex.html#isValidBase32Hex"><span class="hs-identifier hs-var hs-var">isValidBase32Hex</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Bool
-</span><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">([ByteString] -&gt; Bool)
+</span><a href="#local-6989586621679059789"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">([ByteString] -&gt; Bool)
 -&gt; (ByteString -&gt; [ByteString]) -&gt; ByteString -&gt; Bool
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; [ByteString]
 </span><span class="hs-identifier hs-var">toChunks</span></span><span>
 </span><span id="line-239"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-240"></span><span>    </span><span id="local-6989586621679059785"><span class="annot"><span class="annottext">go :: [ByteString] -&gt; Bool
-</span><a href="#local-6989586621679059785"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span id="line-240"></span><span>    </span><span id="local-6989586621679059789"><span class="annot"><span class="annottext">go :: [ByteString] -&gt; Bool
+</span><a href="#local-6989586621679059789"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span>
-</span><span id="line-241"></span><span>    </span><span class="annot"><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679059784"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059784"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
+</span><span id="line-241"></span><span>    </span><span class="annot"><a href="#local-6989586621679059789"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="hs-special">[</span><span id="local-6989586621679059788"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059788"><span class="hs-identifier hs-var">c</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><a href="Data.ByteString.Base32.Hex.html#isValidBase32Hex"><span class="hs-identifier hs-var">B32H.isValidBase32Hex</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059784"><span class="hs-identifier hs-var">c</span></a></span><span>
-</span><span id="line-242"></span><span>    </span><span class="annot"><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679059782"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059782"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679059781"><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679059781"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-comment">-- note the lack of padding char</span><span>
+</span><a href="#local-6989586621679059788"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><span id="line-242"></span><span>    </span><span class="annot"><a href="#local-6989586621679059789"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679059786"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679059786"><span class="hs-identifier hs-var">c</span></a></span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621679059785"><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">cs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-comment">-- note the lack of padding char</span><span>
 </span><span id="line-243"></span><span>      </span><span class="annot"><span class="annottext">(Word8 -&gt; Bool) -&gt; ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.all</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Word8 -&gt; ByteString -&gt; Bool) -&gt; ByteString -&gt; Word8 -&gt; Bool
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">Word8 -&gt; ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">elem</span></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><span class="hs-string">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUV&quot;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679059782"><span class="hs-identifier hs-var">c</span></a></span><span>
+</span><a href="#local-6989586621679059786"><span class="hs-identifier hs-var">c</span></a></span><span>
 </span><span id="line-244"></span><span>      </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">[ByteString] -&gt; Bool
-</span><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679059781"><span class="hs-identifier hs-var">cs</span></a></span><span>
+</span><a href="#local-6989586621679059789"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">[ByteString]
+</span><a href="#local-6989586621679059785"><span class="hs-identifier hs-var">cs</span></a></span><span>
 </span><span id="line-245"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.ByteString.Lazy.Base32.Hex.html#isValidBase32Hex"><span class="hs-pragma hs-type">isValidBase32Hex</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-246"></span></pre></body></html>

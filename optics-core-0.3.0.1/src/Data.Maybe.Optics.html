@@ -12,7 +12,7 @@
 </span><span id="line-12"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Optics.Prism.html"><span class="hs-identifier">Optics.Prism</span></a></span><span>
 </span><span id="line-13"></span><span>
 </span><span id="line-14"></span><span class="hs-comment">-- | A 'Prism' that matches on the 'Nothing' constructor of 'Maybe'.</span><span>
-</span><span id="line-15"></span><span id="local-6989586621679108120"><span class="annot"><a href="Data.Maybe.Optics.html#_Nothing"><span class="hs-identifier hs-type">_Nothing</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Prism.html#Prism%27"><span class="hs-identifier hs-type">Prism'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108120"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-15"></span><span id="local-6989586621679108125"><span class="annot"><a href="Data.Maybe.Optics.html#_Nothing"><span class="hs-identifier hs-type">_Nothing</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Prism.html#Prism%27"><span class="hs-identifier hs-type">Prism'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108125"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-16"></span><span id="_Nothing"><span class="annot"><span class="annottext">_Nothing :: Prism' (Maybe a) ()
 </span><a href="Data.Maybe.Optics.html#_Nothing"><span class="hs-identifier hs-var hs-var">_Nothing</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-17"></span><span>  </span><span class="annot"><span class="annottext">(() -&gt; Maybe a)
@@ -22,26 +22,26 @@ forall b t s a. (b -&gt; t) -&gt; (s -&gt; Either t a) -&gt; Prism s t a b
 </span><span id="line-18"></span><span>    </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe a
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span>
-</span><span id="line-19"></span><span>    </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679108118"><span class="annot"><span class="annottext">Maybe a
-</span><a href="#local-6989586621679108118"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-19"></span><span>    </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679108123"><span class="annot"><span class="annottext">Maybe a
+</span><a href="#local-6989586621679108123"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-20"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe a
-</span><a href="#local-6989586621679108118"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679108123"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-21"></span><span>        </span><span class="annot"><span class="annottext">Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">() -&gt; Either (Maybe a) ()
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-22"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679108117"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679108117"><span class="hs-identifier hs-var">y</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe a -&gt; Either (Maybe a) ()
+</span><span id="line-22"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679108122"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679108122"><span class="hs-identifier hs-var">y</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe a -&gt; Either (Maybe a) ()
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a -&gt; Maybe a
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679108117"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679108122"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-23"></span><span>    </span><span class="hs-special">)</span><span>
 </span><span id="line-24"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Maybe.Optics.html#_Nothing"><span class="hs-pragma hs-type">_Nothing</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-25"></span><span>
 </span><span id="line-26"></span><span class="hs-comment">-- | A 'Prism' that matches on the 'Just' constructor of 'Maybe'.</span><span>
-</span><span id="line-27"></span><span id="local-6989586621679108115"><span id="local-6989586621679108116"><span class="annot"><a href="Data.Maybe.Optics.html#_Just"><span class="hs-identifier hs-type">_Just</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Prism.html#Prism"><span class="hs-identifier hs-type">Prism</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108116"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108115"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679108116"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679108115"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
+</span><span id="line-27"></span><span id="local-6989586621679108120"><span id="local-6989586621679108121"><span class="annot"><a href="Data.Maybe.Optics.html#_Just"><span class="hs-identifier hs-type">_Just</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Optics.Prism.html#Prism"><span class="hs-identifier hs-type">Prism</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108121"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="#local-6989586621679108120"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><a href="#local-6989586621679108121"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679108120"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
 </span><span id="line-28"></span><span id="_Just"><span class="annot"><span class="annottext">_Just :: Prism (Maybe a) (Maybe b) a b
 </span><a href="Data.Maybe.Optics.html#_Just"><span class="hs-identifier hs-var hs-var">_Just</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-29"></span><span>  </span><span class="annot"><span class="annottext">(b -&gt; Maybe b)
@@ -51,21 +51,21 @@ forall b t s a. (b -&gt; t) -&gt; (s -&gt; Either t a) -&gt; Prism s t a b
 </span><span id="line-30"></span><span>    </span><span class="annot"><span class="annottext">b -&gt; Maybe b
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span>
-</span><span id="line-31"></span><span>    </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679108114"><span class="annot"><span class="annottext">Maybe a
-</span><a href="#local-6989586621679108114"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-31"></span><span>    </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679108119"><span class="annot"><span class="annottext">Maybe a
+</span><a href="#local-6989586621679108119"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-32"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe a
-</span><a href="#local-6989586621679108114"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679108119"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-33"></span><span>        </span><span class="annot"><span class="annottext">Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe b -&gt; Either (Maybe b) a
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Maybe b
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-34"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679108113"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679108113"><span class="hs-identifier hs-var">y</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">a -&gt; Either (Maybe b) a
+</span><span id="line-34"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679108118"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679108118"><span class="hs-identifier hs-var">y</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">a -&gt; Either (Maybe b) a
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679108113"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><a href="#local-6989586621679108118"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-35"></span><span>    </span><span class="hs-special">)</span><span>
 </span><span id="line-36"></span><span class="hs-pragma">{-# INLINE</span><span> </span><span class="annot"><a href="Data.Maybe.Optics.html#_Just"><span class="hs-pragma hs-type">_Just</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-37"></span></pre></body></html>

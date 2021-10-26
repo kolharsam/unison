@@ -31,13 +31,13 @@
 </span><span id="line-31"></span><span class="hs-comment">-- multiple of 4 bytes in length.</span><span>
 </span><span id="line-32"></span><span class="annot"><a href="Data.ByteString.Base64.html#encode"><span class="hs-identifier hs-type">encode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-33"></span><span id="encode"><span class="annot"><span class="annottext">encode :: ByteString -&gt; ByteString
-</span><a href="Data.ByteString.Base64.html#encode"><span class="hs-identifier hs-var hs-var">encode</span></a></span></span><span> </span><span id="local-6989586621679035126"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035126"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Padding -&gt; EncodeTable -&gt; ByteString -&gt; ByteString
+</span><a href="Data.ByteString.Base64.html#encode"><span class="hs-identifier hs-var hs-var">encode</span></a></span></span><span> </span><span id="local-6989586621679035130"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679035130"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Padding -&gt; EncodeTable -&gt; ByteString -&gt; ByteString
 </span><a href="Data.ByteString.Base64.Internal.html#encodeWith"><span class="hs-identifier hs-var">encodeWith</span></a></span><span> </span><span class="annot"><span class="annottext">Padding
 </span><a href="Data.ByteString.Base64.Internal.html#Padded"><span class="hs-identifier hs-var">Padded</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; EncodeTable
 </span><a href="Data.ByteString.Base64.Internal.html#mkEncodeTable"><span class="hs-identifier hs-var">mkEncodeTable</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="Data.ByteString.Base64.html#alphabet"><span class="hs-identifier hs-var">alphabet</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035126"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679035130"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-34"></span><span>
 </span><span id="line-35"></span><span class="hs-comment">-- | Decode a base64-encoded string. This function strictly follows</span><span>
 </span><span id="line-36"></span><span class="hs-comment">-- the specification in</span><span>
@@ -49,13 +49,13 @@
 </span><span id="line-42"></span><span class="hs-comment">-- consider using 'decodeLenient'.)</span><span>
 </span><span id="line-43"></span><span class="annot"><a href="Data.ByteString.Base64.html#decode"><span class="hs-identifier hs-type">decode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-44"></span><span id="decode"><span class="annot"><span class="annottext">decode :: ByteString -&gt; Either String ByteString
-</span><a href="Data.ByteString.Base64.html#decode"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679035121"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035121"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Padding
+</span><a href="Data.ByteString.Base64.html#decode"><span class="hs-identifier hs-var hs-var">decode</span></a></span></span><span> </span><span id="local-6989586621679035125"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679035125"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Padding
 -&gt; ForeignPtr Word8 -&gt; ByteString -&gt; Either String ByteString
 </span><a href="Data.ByteString.Base64.Internal.html#decodeWithTable"><span class="hs-identifier hs-var">decodeWithTable</span></a></span><span> </span><span class="annot"><span class="annottext">Padding
 </span><a href="Data.ByteString.Base64.Internal.html#Padded"><span class="hs-identifier hs-var">Padded</span></a></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 </span><a href="Data.ByteString.Base64.html#decodeFP"><span class="hs-identifier hs-var">decodeFP</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035121"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679035125"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-45"></span><span>
 </span><span id="line-46"></span><span class="hs-comment">-- | Decode a base64-encoded string.  This function is lenient in</span><span>
 </span><span id="line-47"></span><span class="hs-comment">-- following the specification from</span><span>
@@ -63,11 +63,11 @@
 </span><span id="line-49"></span><span class="hs-comment">-- generate parse errors no matter how poor its input.</span><span>
 </span><span id="line-50"></span><span class="annot"><a href="Data.ByteString.Base64.html#decodeLenient"><span class="hs-identifier hs-type">decodeLenient</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-51"></span><span id="decodeLenient"><span class="annot"><span class="annottext">decodeLenient :: ByteString -&gt; ByteString
-</span><a href="Data.ByteString.Base64.html#decodeLenient"><span class="hs-identifier hs-var hs-var">decodeLenient</span></a></span></span><span> </span><span id="local-6989586621679035118"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035118"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; ByteString -&gt; ByteString
+</span><a href="Data.ByteString.Base64.html#decodeLenient"><span class="hs-identifier hs-var hs-var">decodeLenient</span></a></span></span><span> </span><span id="local-6989586621679035122"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679035122"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8 -&gt; ByteString -&gt; ByteString
 </span><a href="Data.ByteString.Base64.Internal.html#decodeLenientWithTable"><span class="hs-identifier hs-var">decodeLenientWithTable</span></a></span><span> </span><span class="annot"><span class="annottext">ForeignPtr Word8
 </span><a href="Data.ByteString.Base64.html#decodeFP"><span class="hs-identifier hs-var">decodeFP</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679035118"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679035122"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-52"></span><span>
 </span><span id="line-53"></span><span class="annot"><a href="Data.ByteString.Base64.html#alphabet"><span class="hs-identifier hs-type">alphabet</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
 </span><span id="line-54"></span><span id="alphabet"><span class="annot"><span class="annottext">alphabet :: ByteString
@@ -167,7 +167,7 @@ forall a. Integral a =&gt; a
 </span><a href="Data.ByteString.Base64.html#x"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-61"></span><span class="hs-pragma">{-# NOINLINE</span><span> </span><span class="annot"><a href="Data.ByteString.Base64.html#decodeFP"><span class="hs-pragma hs-type">decodeFP</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-62"></span><span>
-</span><span id="line-63"></span><span id="local-6989586621679035131"><span class="annot"><a href="Data.ByteString.Base64.html#x"><span class="hs-identifier hs-type">x</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integral</span></span><span> </span><span class="annot"><a href="#local-6989586621679035131"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679035131"><span class="hs-identifier hs-type">a</span></a></span></span><span>
+</span><span id="line-63"></span><span id="local-6989586621679035135"><span class="annot"><a href="Data.ByteString.Base64.html#x"><span class="hs-identifier hs-type">x</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integral</span></span><span> </span><span class="annot"><a href="#local-6989586621679035135"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679035135"><span class="hs-identifier hs-type">a</span></a></span></span><span>
 </span><span id="line-64"></span><span id="x"><span class="annot"><span class="annottext">x :: a
 </span><a href="Data.ByteString.Base64.html#x"><span class="hs-identifier hs-var hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-number">255</span></span><span>

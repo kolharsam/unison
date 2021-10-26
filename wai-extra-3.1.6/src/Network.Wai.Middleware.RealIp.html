@@ -32,18 +32,18 @@
 </span><span id="line-29"></span><span class="hs-comment">-- @since 3.1.5</span><span>
 </span><span id="line-30"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#realIpHeader"><span class="hs-identifier hs-type">realIpHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HeaderName</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-31"></span><span id="realIpHeader"><span class="annot"><span class="annottext">realIpHeader :: HeaderName -&gt; Middleware
-</span><a href="Network.Wai.Middleware.RealIp.html#realIpHeader"><span class="hs-identifier hs-var hs-var">realIpHeader</span></a></span></span><span> </span><span id="local-6989586621679102977"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102977"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RealIp.html#realIpHeader"><span class="hs-identifier hs-var hs-var">realIpHeader</span></a></span></span><span> </span><span id="local-6989586621679102997"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102997"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-32"></span><span>    </span><span class="annot"><span class="annottext">HeaderName -&gt; (IP -&gt; Bool) -&gt; Middleware
 </span><a href="Network.Wai.Middleware.RealIp.html#realIpTrusted"><span class="hs-identifier hs-var">realIpTrusted</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102977"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="annot"><span class="annottext">((IP -&gt; Bool) -&gt; Middleware) -&gt; (IP -&gt; Bool) -&gt; Middleware
+</span><a href="#local-6989586621679102997"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="annot"><span class="annottext">((IP -&gt; Bool) -&gt; Middleware) -&gt; (IP -&gt; Bool) -&gt; Middleware
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102976"><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102976"><span class="hs-identifier hs-var">ip</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(IPRange -&gt; Bool) -&gt; [IPRange] -&gt; Bool
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102996"><span class="annot"><span class="annottext">IP
+</span><a href="#local-6989586621679102996"><span class="hs-identifier hs-var">ip</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(IPRange -&gt; Bool) -&gt; [IPRange] -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; Bool) -&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">any</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IP -&gt; IPRange -&gt; Bool
 </span><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102976"><span class="hs-identifier hs-var">ip</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[IPRange]
+</span><a href="#local-6989586621679102996"><span class="hs-identifier hs-var">ip</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[IPRange]
 </span><a href="Network.Wai.Middleware.RealIp.html#defaultTrusted"><span class="hs-identifier hs-var">defaultTrusted</span></a></span><span>
 </span><span id="line-33"></span><span>
 </span><span id="line-34"></span><span class="hs-comment">-- | Infer the remote IP address using the given header, but only if the</span><span>
@@ -64,39 +64,39 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; (a -&gt; Bool) -&gt; t a -&gt; Bool
 </span><span id="line-49"></span><span class="hs-comment">-- @since 3.1.5</span><span>
 </span><span id="line-50"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#realIpTrusted"><span class="hs-identifier hs-type">realIpTrusted</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HeaderName</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IP</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-51"></span><span id="realIpTrusted"><span class="annot"><span class="annottext">realIpTrusted :: HeaderName -&gt; (IP -&gt; Bool) -&gt; Middleware
-</span><a href="Network.Wai.Middleware.RealIp.html#realIpTrusted"><span class="hs-identifier hs-var hs-var">realIpTrusted</span></a></span></span><span> </span><span id="local-6989586621679102974"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102974"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span id="local-6989586621679102973"><span class="annot"><span class="annottext">IP -&gt; Bool
-</span><a href="#local-6989586621679102973"><span class="hs-identifier hs-var">isTrusted</span></a></span></span><span> </span><span id="local-6989586621679102972"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102972"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102971"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102970"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102970"><span class="hs-identifier hs-var">respond</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102972"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102969"><span class="hs-identifier hs-var">req'</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102970"><span class="hs-identifier hs-var">respond</span></a></span><span>
+</span><a href="Network.Wai.Middleware.RealIp.html#realIpTrusted"><span class="hs-identifier hs-var hs-var">realIpTrusted</span></a></span></span><span> </span><span id="local-6989586621679102994"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102994"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span id="local-6989586621679102993"><span class="annot"><span class="annottext">IP -&gt; Bool
+</span><a href="#local-6989586621679102993"><span class="hs-identifier hs-var">isTrusted</span></a></span></span><span> </span><span id="local-6989586621679102992"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102992"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102991"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102991"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102990"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102990"><span class="hs-identifier hs-var">respond</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102992"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102989"><span class="hs-identifier hs-var">req'</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102990"><span class="hs-identifier hs-var">respond</span></a></span><span>
 </span><span id="line-52"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-53"></span><span>    </span><span id="local-6989586621679102969"><span class="annot"><span class="annottext">req' :: Request
-</span><a href="#local-6989586621679102969"><span class="hs-identifier hs-var hs-var">req'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; Maybe Request -&gt; Request
+</span><span id="line-53"></span><span>    </span><span id="local-6989586621679102989"><span class="annot"><span class="annottext">req' :: Request
+</span><a href="#local-6989586621679102989"><span class="hs-identifier hs-var hs-var">req'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Request -&gt; Maybe Request -&gt; Request
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">(Maybe Request -&gt; Request) -&gt; Maybe Request -&gt; Request
+</span><a href="#local-6989586621679102991"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">(Maybe Request -&gt; Request) -&gt; Maybe Request -&gt; Request
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-54"></span><span>             </span><span class="hs-special">(</span><span id="local-6989586621679102968"><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102968"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102967"><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679102967"><span class="hs-identifier hs-var">port</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe (IP, PortNumber)
+</span><span id="line-54"></span><span>             </span><span class="hs-special">(</span><span id="local-6989586621679102988"><span class="annot"><span class="annottext">IP
+</span><a href="#local-6989586621679102988"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102987"><span class="annot"><span class="annottext">PortNumber
+</span><a href="#local-6989586621679102987"><span class="hs-identifier hs-var">port</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">SockAddr -&gt; Maybe (IP, PortNumber)
 </span><span class="hs-identifier hs-var">IP.fromSockAddr</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; SockAddr
 </span><span class="hs-identifier hs-var hs-var">remoteHost</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-55"></span><span>             </span><span id="local-6989586621679102964"><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102964"><span class="hs-identifier hs-var">ip'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">IP -&gt; Bool
-</span><a href="#local-6989586621679102973"><span class="hs-identifier hs-var">isTrusted</span></a></span><span> </span><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102968"><span class="hs-identifier hs-var">ip</span></a></span><span>
+</span><a href="#local-6989586621679102991"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-55"></span><span>             </span><span id="local-6989586621679102984"><span class="annot"><span class="annottext">IP
+</span><a href="#local-6989586621679102984"><span class="hs-identifier hs-var">ip'</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">IP -&gt; Bool
+</span><a href="#local-6989586621679102993"><span class="hs-identifier hs-var">isTrusted</span></a></span><span> </span><span class="annot"><span class="annottext">IP
+</span><a href="#local-6989586621679102988"><span class="hs-identifier hs-var">ip</span></a></span><span>
 </span><span id="line-56"></span><span>                      </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RequestHeaders -&gt; HeaderName -&gt; (IP -&gt; Bool) -&gt; Maybe IP
 </span><a href="Network.Wai.Middleware.RealIp.html#findRealIp"><span class="hs-identifier hs-var">findRealIp</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; RequestHeaders
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102974"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="annot"><span class="annottext">IP -&gt; Bool
-</span><a href="#local-6989586621679102973"><span class="hs-identifier hs-var">isTrusted</span></a></span><span>
+</span><a href="#local-6989586621679102991"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102994"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="annot"><span class="annottext">IP -&gt; Bool
+</span><a href="#local-6989586621679102993"><span class="hs-identifier hs-var">isTrusted</span></a></span><span>
 </span><span id="line-57"></span><span>                      </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Maybe IP
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
@@ -105,11 +105,11 @@ forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(Request -&gt; Maybe Request) -&gt; Request -&gt; Maybe Request
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">remoteHost :: SockAddr
+</span><a href="#local-6989586621679102991"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">remoteHost :: SockAddr
 </span><span class="hs-identifier hs-var">remoteHost</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IP, PortNumber) -&gt; SockAddr
 </span><span class="hs-identifier hs-var">IP.toSockAddr</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">IP
-</span><a href="#local-6989586621679102964"><span class="hs-identifier hs-var">ip'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679102967"><span class="hs-identifier hs-var">port</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679102984"><span class="hs-identifier hs-var">ip'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">PortNumber
+</span><a href="#local-6989586621679102987"><span class="hs-identifier hs-var">port</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">}</span><span>
 </span><span id="line-59"></span><span>
 </span><span id="line-60"></span><span class="hs-comment">-- | Standard private IP ranges.</span><span>
 </span><span id="line-61"></span><span class="hs-comment">--</span><span>
@@ -138,28 +138,28 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-77"></span><span class="hs-comment">-- @since 3.1.5</span><span>
 </span><span id="line-78"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-type">ipInRange</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IP.IP</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IP.IPRange</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-79"></span><span id="ipInRange"><span class="annot"><span class="annottext">ipInRange :: IP -&gt; IPRange -&gt; Bool
-</span><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var hs-var">ipInRange</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4</span></span><span> </span><span id="local-6989586621679102959"><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679102959"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4Range</span></span><span> </span><span id="local-6989586621679102957"><span class="annot"><span class="annottext">AddrRange IPv4
-</span><a href="#local-6989586621679102957"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679102959"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv4 -&gt; AddrRange IPv4 -&gt; Bool
+</span><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var hs-var">ipInRange</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4</span></span><span> </span><span id="local-6989586621679102979"><span class="annot"><span class="annottext">IPv4
+</span><a href="#local-6989586621679102979"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4Range</span></span><span> </span><span id="local-6989586621679102977"><span class="annot"><span class="annottext">AddrRange IPv4
+</span><a href="#local-6989586621679102977"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv4
+</span><a href="#local-6989586621679102979"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv4 -&gt; AddrRange IPv4 -&gt; Bool
 forall a. Addr a =&gt; a -&gt; AddrRange a -&gt; Bool
 </span><span class="hs-operator hs-var">`IP.isMatchedTo`</span></span><span> </span><span class="annot"><span class="annottext">AddrRange IPv4
-</span><a href="#local-6989586621679102957"><span class="hs-identifier hs-var">r</span></a></span><span>
-</span><span id="line-80"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6</span></span><span> </span><span id="local-6989586621679102954"><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679102954"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6Range</span></span><span> </span><span id="local-6989586621679102952"><span class="annot"><span class="annottext">AddrRange IPv6
-</span><a href="#local-6989586621679102952"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv6
-</span><a href="#local-6989586621679102954"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv6 -&gt; AddrRange IPv6 -&gt; Bool
+</span><a href="#local-6989586621679102977"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-80"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6</span></span><span> </span><span id="local-6989586621679102974"><span class="annot"><span class="annottext">IPv6
+</span><a href="#local-6989586621679102974"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6Range</span></span><span> </span><span id="local-6989586621679102972"><span class="annot"><span class="annottext">AddrRange IPv6
+</span><a href="#local-6989586621679102972"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv6
+</span><a href="#local-6989586621679102974"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv6 -&gt; AddrRange IPv6 -&gt; Bool
 forall a. Addr a =&gt; a -&gt; AddrRange a -&gt; Bool
 </span><span class="hs-operator hs-var">`IP.isMatchedTo`</span></span><span> </span><span class="annot"><span class="annottext">AddrRange IPv6
-</span><a href="#local-6989586621679102952"><span class="hs-identifier hs-var">r</span></a></span><span>
-</span><span id="line-81"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4</span></span><span> </span><span id="local-6989586621679102951"><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679102951"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6Range</span></span><span> </span><span id="local-6989586621679102950"><span class="annot"><span class="annottext">AddrRange IPv6
-</span><a href="#local-6989586621679102950"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv4 -&gt; IPv6
+</span><a href="#local-6989586621679102972"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-81"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv4</span></span><span> </span><span id="local-6989586621679102971"><span class="annot"><span class="annottext">IPv4
+</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">ip</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IPv6Range</span></span><span> </span><span id="local-6989586621679102970"><span class="annot"><span class="annottext">AddrRange IPv6
+</span><a href="#local-6989586621679102970"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IPv4 -&gt; IPv6
 </span><span class="hs-identifier hs-var">IP.ipv4ToIPv6</span></span><span> </span><span class="annot"><span class="annottext">IPv4
-</span><a href="#local-6989586621679102951"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv6 -&gt; AddrRange IPv6 -&gt; Bool
+</span><a href="#local-6989586621679102971"><span class="hs-identifier hs-var">ip</span></a></span><span> </span><span class="annot"><span class="annottext">IPv6 -&gt; AddrRange IPv6 -&gt; Bool
 forall a. Addr a =&gt; a -&gt; AddrRange a -&gt; Bool
 </span><span class="hs-operator hs-var">`IP.isMatchedTo`</span></span><span> </span><span class="annot"><span class="annottext">AddrRange IPv6
-</span><a href="#local-6989586621679102950"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679102970"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-82"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#ipInRange"><span class="hs-identifier hs-var">ipInRange</span></a></span><span> </span><span class="annot"><span class="annottext">IP
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">IPRange
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
@@ -168,20 +168,20 @@ forall a. Addr a =&gt; a -&gt; AddrRange a -&gt; Bool
 </span><span id="line-84"></span><span>
 </span><span id="line-85"></span><span class="annot"><a href="Network.Wai.Middleware.RealIp.html#findRealIp"><span class="hs-identifier hs-type">findRealIp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RequestHeaders</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HeaderName</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">IP.IP</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IP.IP</span></span><span>
 </span><span id="line-86"></span><span id="findRealIp"><span class="annot"><span class="annottext">findRealIp :: RequestHeaders -&gt; HeaderName -&gt; (IP -&gt; Bool) -&gt; Maybe IP
-</span><a href="Network.Wai.Middleware.RealIp.html#findRealIp"><span class="hs-identifier hs-var hs-var">findRealIp</span></a></span></span><span> </span><span id="local-6989586621679102948"><span class="annot"><span class="annottext">RequestHeaders
-</span><a href="#local-6989586621679102948"><span class="hs-identifier hs-var">reqHeaders</span></a></span></span><span> </span><span id="local-6989586621679102947"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102947"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span id="local-6989586621679102946"><span class="annot"><span class="annottext">IP -&gt; Bool
-</span><a href="#local-6989586621679102946"><span class="hs-identifier hs-var">isTrusted</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.RealIp.html#findRealIp"><span class="hs-identifier hs-var hs-var">findRealIp</span></a></span></span><span> </span><span id="local-6989586621679102968"><span class="annot"><span class="annottext">RequestHeaders
+</span><a href="#local-6989586621679102968"><span class="hs-identifier hs-var">reqHeaders</span></a></span></span><span> </span><span id="local-6989586621679102967"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102967"><span class="hs-identifier hs-var">header</span></a></span></span><span> </span><span id="local-6989586621679102966"><span class="annot"><span class="annottext">IP -&gt; Bool
+</span><a href="#local-6989586621679102966"><span class="hs-identifier hs-var">isTrusted</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-87"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102945"><span class="hs-identifier hs-var">nonTrusted</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102944"><span class="hs-identifier hs-var">ips</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-88"></span><span>      </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102943"><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102943"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[IP] -&gt; Maybe IP
+</span><a href="#local-6989586621679102965"><span class="hs-identifier hs-var">nonTrusted</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[IP]
+</span><a href="#local-6989586621679102964"><span class="hs-identifier hs-var">ips</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-88"></span><span>      </span><span class="hs-special">(</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102963"><span class="annot"><span class="annottext">[IP]
+</span><a href="#local-6989586621679102963"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[IP] -&gt; Maybe IP
 forall a. [a] -&gt; Maybe a
 </span><span class="hs-identifier hs-var">listToMaybe</span></span><span> </span><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102943"><span class="hs-identifier hs-var">xs</span></a></span><span>
-</span><span id="line-89"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679102942"><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102942"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[IP]
+</span><a href="#local-6989586621679102963"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-89"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621679102962"><span class="annot"><span class="annottext">[IP]
+</span><a href="#local-6989586621679102962"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[IP]
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[IP] -&gt; Maybe IP
 forall a. [a] -&gt; Maybe a
 </span><span class="hs-identifier hs-var">listToMaybe</span></span><span> </span><span class="annot"><span class="annottext">([IP] -&gt; Maybe IP) -&gt; [IP] -&gt; Maybe IP
@@ -189,21 +189,21 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[IP] -&gt; [IP]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102942"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><a href="#local-6989586621679102962"><span class="hs-identifier hs-var">xs</span></a></span><span>
 </span><span id="line-90"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-91"></span><span>    </span><span class="hs-comment">-- account for repeated headers</span><span>
-</span><span id="line-92"></span><span>    </span><span id="local-6989586621679102940"><span class="annot"><span class="annottext">headerVals :: [ByteString]
-</span><a href="#local-6989586621679102940"><span class="hs-identifier hs-var hs-var">headerVals</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102939"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102938"><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102938"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102939"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679102939"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
-</span><a href="#local-6989586621679102948"><span class="hs-identifier hs-var">reqHeaders</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102938"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; HeaderName -&gt; Bool
+</span><span id="line-92"></span><span>    </span><span id="local-6989586621679102960"><span class="annot"><span class="annottext">headerVals :: [ByteString]
+</span><a href="#local-6989586621679102960"><span class="hs-identifier hs-var hs-var">headerVals</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102959"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679102958"><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102958"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679102959"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679102959"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RequestHeaders
+</span><a href="#local-6989586621679102968"><span class="hs-identifier hs-var">reqHeaders</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HeaderName
+</span><a href="#local-6989586621679102958"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; HeaderName -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
-</span><a href="#local-6989586621679102947"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-93"></span><span>    </span><span id="local-6989586621679102944"><span class="annot"><span class="annottext">ips :: [IP]
-</span><a href="#local-6989586621679102944"><span class="hs-identifier hs-var hs-var">ips</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe IP) -&gt; [ByteString] -&gt; [IP]
+</span><a href="#local-6989586621679102967"><span class="hs-identifier hs-var">header</span></a></span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-93"></span><span>    </span><span id="local-6989586621679102964"><span class="annot"><span class="annottext">ips :: [IP]
+</span><a href="#local-6989586621679102964"><span class="hs-identifier hs-var hs-var">ips</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe IP) -&gt; [ByteString] -&gt; [IP]
 forall a b. (a -&gt; Maybe b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">mapMaybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Maybe IP
 forall a. Read a =&gt; String -&gt; Maybe a
@@ -218,14 +218,14 @@ forall (t :: * -&gt; *) a b. Foldable t =&gt; (a -&gt; [b]) -&gt; t a -&gt; [b]
 </span><span class="hs-identifier hs-var">concatMap</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; ByteString -&gt; [ByteString]
 </span><span class="hs-identifier hs-var">B8.split</span></span><span> </span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">','</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[ByteString]
-</span><a href="#local-6989586621679102940"><span class="hs-identifier hs-var">headerVals</span></a></span><span>
-</span><span id="line-94"></span><span>    </span><span id="local-6989586621679102945"><span class="annot"><span class="annottext">nonTrusted :: [IP]
-</span><a href="#local-6989586621679102945"><span class="hs-identifier hs-var hs-var">nonTrusted</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IP -&gt; Bool) -&gt; [IP] -&gt; [IP]
+</span><a href="#local-6989586621679102960"><span class="hs-identifier hs-var">headerVals</span></a></span><span>
+</span><span id="line-94"></span><span>    </span><span id="local-6989586621679102965"><span class="annot"><span class="annottext">nonTrusted :: [IP]
+</span><a href="#local-6989586621679102965"><span class="hs-identifier hs-var hs-var">nonTrusted</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(IP -&gt; Bool) -&gt; [IP] -&gt; [IP]
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="annot"><span class="annottext">(Bool -&gt; Bool) -&gt; (IP -&gt; Bool) -&gt; IP -&gt; Bool
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">IP -&gt; Bool
-</span><a href="#local-6989586621679102946"><span class="hs-identifier hs-var">isTrusted</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[IP]
-</span><a href="#local-6989586621679102944"><span class="hs-identifier hs-var">ips</span></a></span><span>
+</span><a href="#local-6989586621679102966"><span class="hs-identifier hs-var">isTrusted</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[IP]
+</span><a href="#local-6989586621679102964"><span class="hs-identifier hs-var">ips</span></a></span><span>
 </span><span id="line-95"></span></pre></body></html>

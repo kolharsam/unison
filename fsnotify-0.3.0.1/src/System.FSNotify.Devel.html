@@ -35,15 +35,15 @@
 </span><span id="line-35"></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.FSNotify.Listener.html#StopListening"><span class="hs-identifier hs-type">StopListening</span></a></span><span>
 </span><span id="line-36"></span><span id="treeExtExists"><span class="annot"><span class="annottext">treeExtExists :: WatchManager
 -&gt; FilePath -&gt; Text -&gt; (FilePath -&gt; IO ()) -&gt; IO (IO ())
-</span><a href="System.FSNotify.Devel.html#treeExtExists"><span class="hs-identifier hs-var hs-var">treeExtExists</span></a></span></span><span> </span><span id="local-6989586621679046736"><span class="annot"><span class="annottext">WatchManager
-</span><a href="#local-6989586621679046736"><span class="hs-identifier hs-var">man</span></a></span></span><span> </span><span id="local-6989586621679046735"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046735"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679046734"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679046734"><span class="hs-identifier hs-var">ext</span></a></span></span><span> </span><span id="local-6989586621679046733"><span class="annot"><span class="annottext">FilePath -&gt; IO ()
-</span><a href="#local-6989586621679046733"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.FSNotify.Devel.html#treeExtExists"><span class="hs-identifier hs-var hs-var">treeExtExists</span></a></span></span><span> </span><span id="local-6989586621679050619"><span class="annot"><span class="annottext">WatchManager
+</span><a href="#local-6989586621679050619"><span class="hs-identifier hs-var">man</span></a></span></span><span> </span><span id="local-6989586621679050618"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050618"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679050617"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679050617"><span class="hs-identifier hs-var">ext</span></a></span></span><span> </span><span id="local-6989586621679050616"><span class="annot"><span class="annottext">FilePath -&gt; IO ()
+</span><a href="#local-6989586621679050616"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-37"></span><span>  </span><span class="annot"><span class="annottext">WatchManager -&gt; FilePath -&gt; ActionPredicate -&gt; Action -&gt; IO (IO ())
 </span><a href="System.FSNotify.html#watchTree"><span class="hs-identifier hs-var">watchTree</span></a></span><span> </span><span class="annot"><span class="annottext">WatchManager
-</span><a href="#local-6989586621679046736"><span class="hs-identifier hs-var">man</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046735"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; Bool) -&gt; ActionPredicate
+</span><a href="#local-6989586621679050619"><span class="hs-identifier hs-var">man</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050618"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; Bool) -&gt; ActionPredicate
 </span><a href="System.FSNotify.Devel.html#existsEvents"><span class="hs-identifier hs-var">existsEvents</span></a></span><span> </span><span class="annot"><span class="annottext">((FilePath -&gt; Bool) -&gt; ActionPredicate)
 -&gt; (FilePath -&gt; Bool) -&gt; ActionPredicate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -51,12 +51,12 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text -&gt; Bool
 </span><a href="System.FSNotify.Path.html#hasThisExtension"><span class="hs-identifier hs-var">hasThisExtension</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679046734"><span class="hs-identifier hs-var">ext</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; Action
+</span><a href="#local-6989586621679050617"><span class="hs-identifier hs-var">ext</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; Action
 forall (m :: * -&gt; *).
 Monad m =&gt;
 (FilePath -&gt; m ()) -&gt; Event -&gt; m ()
 </span><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-var">doAllEvents</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ()
-</span><a href="#local-6989586621679046733"><span class="hs-identifier hs-var">action</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679050616"><span class="hs-identifier hs-var">action</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-38"></span><span>
 </span><span id="line-39"></span><span class="hs-comment">-- | In the given directory tree, watch for any events for files with the</span><span>
 </span><span id="line-40"></span><span class="hs-comment">-- given file extension</span><span>
@@ -67,15 +67,15 @@ Monad m =&gt;
 </span><span id="line-45"></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="System.FSNotify.Listener.html#StopListening"><span class="hs-identifier hs-type">StopListening</span></a></span><span>
 </span><span id="line-46"></span><span id="treeExtAny"><span class="annot"><span class="annottext">treeExtAny :: WatchManager
 -&gt; FilePath -&gt; Text -&gt; (FilePath -&gt; IO ()) -&gt; IO (IO ())
-</span><a href="System.FSNotify.Devel.html#treeExtAny"><span class="hs-identifier hs-var hs-var">treeExtAny</span></a></span></span><span> </span><span id="local-6989586621679046730"><span class="annot"><span class="annottext">WatchManager
-</span><a href="#local-6989586621679046730"><span class="hs-identifier hs-var">man</span></a></span></span><span> </span><span id="local-6989586621679046729"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046729"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679046728"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679046728"><span class="hs-identifier hs-var">ext</span></a></span></span><span> </span><span id="local-6989586621679046727"><span class="annot"><span class="annottext">FilePath -&gt; IO ()
-</span><a href="#local-6989586621679046727"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.FSNotify.Devel.html#treeExtAny"><span class="hs-identifier hs-var hs-var">treeExtAny</span></a></span></span><span> </span><span id="local-6989586621679050613"><span class="annot"><span class="annottext">WatchManager
+</span><a href="#local-6989586621679050613"><span class="hs-identifier hs-var">man</span></a></span></span><span> </span><span id="local-6989586621679050612"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050612"><span class="hs-identifier hs-var">dir</span></a></span></span><span> </span><span id="local-6989586621679050611"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679050611"><span class="hs-identifier hs-var">ext</span></a></span></span><span> </span><span id="local-6989586621679050610"><span class="annot"><span class="annottext">FilePath -&gt; IO ()
+</span><a href="#local-6989586621679050610"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-47"></span><span>  </span><span class="annot"><span class="annottext">WatchManager -&gt; FilePath -&gt; ActionPredicate -&gt; Action -&gt; IO (IO ())
 </span><a href="System.FSNotify.html#watchTree"><span class="hs-identifier hs-var">watchTree</span></a></span><span> </span><span class="annot"><span class="annottext">WatchManager
-</span><a href="#local-6989586621679046730"><span class="hs-identifier hs-var">man</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046729"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; Bool) -&gt; ActionPredicate
+</span><a href="#local-6989586621679050613"><span class="hs-identifier hs-var">man</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050612"><span class="hs-identifier hs-var">dir</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; Bool) -&gt; ActionPredicate
 </span><a href="System.FSNotify.Devel.html#allEvents"><span class="hs-identifier hs-var">allEvents</span></a></span><span> </span><span class="annot"><span class="annottext">((FilePath -&gt; Bool) -&gt; ActionPredicate)
 -&gt; (FilePath -&gt; Bool) -&gt; ActionPredicate
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -83,68 +83,68 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text -&gt; Bool
 </span><a href="System.FSNotify.Path.html#hasThisExtension"><span class="hs-identifier hs-var">hasThisExtension</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679046728"><span class="hs-identifier hs-var">ext</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; Action
+</span><a href="#local-6989586621679050611"><span class="hs-identifier hs-var">ext</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(FilePath -&gt; IO ()) -&gt; Action
 forall (m :: * -&gt; *).
 Monad m =&gt;
 (FilePath -&gt; m ()) -&gt; Event -&gt; m ()
 </span><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-var">doAllEvents</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ()
-</span><a href="#local-6989586621679046727"><span class="hs-identifier hs-var">action</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679050610"><span class="hs-identifier hs-var">action</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-comment">-- | Turn a 'FilePath' callback into an 'Event' callback that ignores the</span><span>
 </span><span id="line-50"></span><span class="hs-comment">-- 'Event' type and timestamp</span><span>
-</span><span id="line-51"></span><span id="local-6989586621679046747"><span class="annot"><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-type">doAllEvents</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679046747"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679046747"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.FSNotify.Types.html#Event"><span class="hs-identifier hs-type">Event</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679046747"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-51"></span><span id="local-6989586621679050630"><span class="annot"><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-type">doAllEvents</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679050630"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679050630"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="System.FSNotify.Types.html#Event"><span class="hs-identifier hs-type">Event</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679050630"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-52"></span><span id="doAllEvents"><span class="annot"><span class="annottext">doAllEvents :: (FilePath -&gt; m ()) -&gt; Event -&gt; m ()
-</span><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-var hs-var">doAllEvents</span></a></span></span><span> </span><span id="local-6989586621679046726"><span class="annot"><span class="annottext">FilePath -&gt; m ()
-</span><a href="#local-6989586621679046726"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span id="local-6989586621679046725"><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046725"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.FSNotify.Devel.html#doAllEvents"><span class="hs-identifier hs-var hs-var">doAllEvents</span></a></span></span><span> </span><span id="local-6989586621679050609"><span class="annot"><span class="annottext">FilePath -&gt; m ()
+</span><a href="#local-6989586621679050609"><span class="hs-identifier hs-var">action</span></a></span></span><span> </span><span id="local-6989586621679050608"><span class="annot"><span class="annottext">Event
+</span><a href="#local-6989586621679050608"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-53"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046725"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-54"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679046723"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046723"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050608"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-54"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679050606"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050606"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; m ()
-</span><a href="#local-6989586621679046726"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046723"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-55"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679046721"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046721"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050609"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050606"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-55"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679050604"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050604"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; m ()
-</span><a href="#local-6989586621679046726"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046721"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-56"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Removed"><span class="hs-identifier hs-type">Removed</span></a></span><span>  </span><span id="local-6989586621679046719"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046719"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050609"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050604"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-56"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Removed"><span class="hs-identifier hs-type">Removed</span></a></span><span>  </span><span id="local-6989586621679050602"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050602"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; m ()
-</span><a href="#local-6989586621679046726"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046719"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-57"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Unknown"><span class="hs-identifier hs-type">Unknown</span></a></span><span>  </span><span id="local-6989586621679046717"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046717"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050609"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050602"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-57"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Unknown"><span class="hs-identifier hs-type">Unknown</span></a></span><span>  </span><span id="local-6989586621679050600"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050600"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; m ()
-</span><a href="#local-6989586621679046726"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046717"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><a href="#local-6989586621679050609"><span class="hs-identifier hs-var">action</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050600"><span class="hs-identifier hs-var">f</span></a></span><span>
 </span><span id="line-58"></span><span>
 </span><span id="line-59"></span><span class="hs-comment">-- | Turn a 'FilePath' predicate into an 'Event' predicate that accepts</span><span>
 </span><span id="line-60"></span><span class="hs-comment">-- only 'Added' and 'Modified' event types</span><span>
 </span><span id="line-61"></span><span class="annot"><a href="System.FSNotify.Devel.html#existsEvents"><span class="hs-identifier hs-type">existsEvents</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.FSNotify.Types.html#Event"><span class="hs-identifier hs-type">Event</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-62"></span><span id="existsEvents"><span class="annot"><span class="annottext">existsEvents :: (FilePath -&gt; Bool) -&gt; ActionPredicate
-</span><a href="System.FSNotify.Devel.html#existsEvents"><span class="hs-identifier hs-var hs-var">existsEvents</span></a></span></span><span> </span><span id="local-6989586621679046716"><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046716"><span class="hs-identifier hs-var">filt</span></a></span></span><span> </span><span id="local-6989586621679046715"><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046715"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.FSNotify.Devel.html#existsEvents"><span class="hs-identifier hs-var hs-var">existsEvents</span></a></span></span><span> </span><span id="local-6989586621679050599"><span class="annot"><span class="annottext">FilePath -&gt; Bool
+</span><a href="#local-6989586621679050599"><span class="hs-identifier hs-var">filt</span></a></span></span><span> </span><span id="local-6989586621679050598"><span class="annot"><span class="annottext">Event
+</span><a href="#local-6989586621679050598"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-63"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046715"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-64"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679046714"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046714"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050598"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-64"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679050597"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050597"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046716"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046714"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-65"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679046713"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046713"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050599"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050597"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-65"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679050596"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050596"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046716"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046713"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><a href="#local-6989586621679050599"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050596"><span class="hs-identifier hs-var">f</span></a></span><span>
 </span><span id="line-66"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Removed"><span class="hs-identifier hs-type">Removed</span></a></span><span>  </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
@@ -160,33 +160,33 @@ Monad m =&gt;
 </span><span id="line-70"></span><span class="hs-comment">-- any event types</span><span>
 </span><span id="line-71"></span><span class="annot"><a href="System.FSNotify.Devel.html#allEvents"><span class="hs-identifier hs-type">allEvents</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="System.FSNotify.Types.html#Event"><span class="hs-identifier hs-type">Event</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span id="allEvents"><span class="annot"><span class="annottext">allEvents :: (FilePath -&gt; Bool) -&gt; ActionPredicate
-</span><a href="System.FSNotify.Devel.html#allEvents"><span class="hs-identifier hs-var hs-var">allEvents</span></a></span></span><span> </span><span id="local-6989586621679046712"><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046712"><span class="hs-identifier hs-var">filt</span></a></span></span><span> </span><span id="local-6989586621679046711"><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046711"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="System.FSNotify.Devel.html#allEvents"><span class="hs-identifier hs-var hs-var">allEvents</span></a></span></span><span> </span><span id="local-6989586621679050595"><span class="annot"><span class="annottext">FilePath -&gt; Bool
+</span><a href="#local-6989586621679050595"><span class="hs-identifier hs-var">filt</span></a></span></span><span> </span><span id="local-6989586621679050594"><span class="annot"><span class="annottext">Event
+</span><a href="#local-6989586621679050594"><span class="hs-identifier hs-var">event</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-73"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Event
-</span><a href="#local-6989586621679046711"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-74"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679046710"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046710"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050594"><span class="hs-identifier hs-var">event</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-74"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Added"><span class="hs-identifier hs-type">Added</span></a></span><span>    </span><span id="local-6989586621679050593"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050593"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046712"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046710"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-75"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679046709"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046709"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050595"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050593"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-75"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Modified"><span class="hs-identifier hs-type">Modified</span></a></span><span> </span><span id="local-6989586621679050592"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050592"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046712"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046709"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-76"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Removed"><span class="hs-identifier hs-type">Removed</span></a></span><span>  </span><span id="local-6989586621679046708"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046708"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050595"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050592"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-76"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Removed"><span class="hs-identifier hs-type">Removed</span></a></span><span>  </span><span id="local-6989586621679050591"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050591"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046712"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046708"><span class="hs-identifier hs-var">f</span></a></span><span>
-</span><span id="line-77"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Unknown"><span class="hs-identifier hs-type">Unknown</span></a></span><span>  </span><span id="local-6989586621679046707"><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046707"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
+</span><a href="#local-6989586621679050595"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050591"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><span id="line-77"></span><span>    </span><span class="annot"><a href="System.FSNotify.Types.html#Unknown"><span class="hs-identifier hs-type">Unknown</span></a></span><span>  </span><span id="local-6989586621679050590"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050590"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span class="annot"><span class="annottext">UTCTime
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Bool
-</span><a href="#local-6989586621679046712"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
-</span><a href="#local-6989586621679046707"><span class="hs-identifier hs-var">f</span></a></span><span>
+</span><a href="#local-6989586621679050595"><span class="hs-identifier hs-var">filt</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679050590"><span class="hs-identifier hs-var">f</span></a></span><span>
 </span><span id="line-78"></span></pre></body></html>

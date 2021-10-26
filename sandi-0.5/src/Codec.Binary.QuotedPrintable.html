@@ -22,7 +22,7 @@
 </span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BS</span></span><span>
 </span><span id="line-23"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Unsafe</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">BSU</span></span><span>
 </span><span id="line-24"></span><span>
-</span><span id="line-25"></span><span id="local-6989586621679061232"><span id="local-6989586621679061233"><span class="annot"><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-type">castEnum</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Enum</span></span><span> </span><span class="annot"><a href="#local-6989586621679061233"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Enum</span></span><span> </span><span class="annot"><a href="#local-6989586621679061232"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679061233"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679061232"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
+</span><span id="line-25"></span><span id="local-6989586621679061250"><span id="local-6989586621679061251"><span class="annot"><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-type">castEnum</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Enum</span></span><span> </span><span class="annot"><a href="#local-6989586621679061251"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Enum</span></span><span> </span><span class="annot"><a href="#local-6989586621679061250"><span class="hs-identifier hs-type">b</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679061251"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679061250"><span class="hs-identifier hs-type">b</span></a></span></span></span><span>
 </span><span id="line-26"></span><span id="castEnum"><span class="annot"><span class="annottext">castEnum :: a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var hs-var">castEnum</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; b
 forall a. Enum a =&gt; Int -&gt; a
@@ -87,9 +87,9 @@ forall a. Enum a =&gt; a -&gt; Int
 </span><span id="line-74"></span><span>
 </span><span id="line-75"></span><span class="annot"><a href="Codec.Binary.QuotedPrintable.html#qpEnc%27"><span class="hs-identifier hs-type">qpEnc'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word8</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-76"></span><span id="qpEnc%27"><span class="annot"><span class="annottext">qpEnc' :: Word8 -&gt; ByteString -&gt; (ByteString, ByteString)
-</span><a href="Codec.Binary.QuotedPrintable.html#qpEnc%27"><span class="hs-identifier hs-var hs-var">qpEnc'</span></a></span></span><span> </span><span id="local-6989586621679061201"><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679061201"><span class="hs-identifier hs-var">split</span></a></span></span><span> </span><span id="local-6989586621679061200"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061200"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (ByteString, ByteString) -&gt; (ByteString, ByteString)
+</span><a href="Codec.Binary.QuotedPrintable.html#qpEnc%27"><span class="hs-identifier hs-var hs-var">qpEnc'</span></a></span></span><span> </span><span id="local-6989586621679061219"><span class="annot"><span class="annottext">Word8
+</span><a href="#local-6989586621679061219"><span class="hs-identifier hs-var">split</span></a></span></span><span> </span><span id="local-6989586621679061218"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061218"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (ByteString, ByteString) -&gt; (ByteString, ByteString)
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">U.unsafePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO (ByteString, ByteString) -&gt; (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString) -&gt; (ByteString, ByteString)
@@ -99,28 +99,28 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; IO (ByteString, ByteString)
 forall a. ByteString -&gt; (CStringLen -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">BSU.unsafeUseAsCStringLen</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061200"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((CStringLen -&gt; IO (ByteString, ByteString))
+</span><a href="#local-6989586621679061218"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((CStringLen -&gt; IO (ByteString, ByteString))
  -&gt; IO (ByteString, ByteString))
 -&gt; (CStringLen -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679061197"><span class="annot"><span class="annottext">Ptr CChar
-</span><a href="#local-6989586621679061197"><span class="hs-identifier hs-var">inBuf</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061196"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061196"><span class="hs-identifier hs-var">inLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-77"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679061195"><span class="annot"><span class="annottext">maxOutBuf :: Int
-</span><a href="#local-6989586621679061195"><span class="hs-identifier hs-var hs-var">maxOutBuf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679061215"><span class="annot"><span class="annottext">Ptr CChar
+</span><a href="#local-6989586621679061215"><span class="hs-identifier hs-var">inBuf</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061214"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679061214"><span class="hs-identifier hs-var">inLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-77"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679061213"><span class="annot"><span class="annottext">maxOutBuf :: Int
+</span><a href="#local-6989586621679061213"><span class="hs-identifier hs-var hs-var">maxOutBuf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Ord a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-identifier hs-var">max</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">512</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">2</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061196"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-78"></span><span>    </span><span id="local-6989586621679061192"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061192"><span class="hs-identifier hs-var">outBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679061214"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-78"></span><span>    </span><span id="local-6989586621679061210"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061210"><span class="hs-identifier hs-var">outBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO (Ptr Word8)
 forall a. Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">mallocBytes</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061195"><span class="hs-identifier hs-var">maxOutBuf</span></a></span><span>
+</span><a href="#local-6989586621679061213"><span class="hs-identifier hs-var">maxOutBuf</span></a></span><span>
 </span><span id="line-79"></span><span>    </span><span class="annot"><span class="annottext">(Ptr CSize -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
@@ -129,8 +129,8 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
 -&gt; (Ptr CSize -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061189"><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">pOutLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061207"><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061207"><span class="hs-identifier hs-var">pOutLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-80"></span><span>        </span><span class="annot"><span class="annottext">(Ptr (Ptr Word8) -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
@@ -139,8 +139,8 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
 -&gt; (Ptr (Ptr Word8) -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061188"><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">pRemBuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061206"><span class="annot"><span class="annottext">Ptr (Ptr Word8)
+</span><a href="#local-6989586621679061206"><span class="hs-identifier hs-var">pRemBuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-81"></span><span>            </span><span class="annot"><span class="annottext">(Ptr CSize -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
@@ -149,15 +149,15 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
 -&gt; (Ptr CSize -&gt; IO (ByteString, ByteString))
 -&gt; IO (ByteString, ByteString)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061187"><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pRemLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061205"><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061205"><span class="hs-identifier hs-var">pRemLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-82"></span><span>                </span><span class="annot"><span class="annottext">Ptr CSize -&gt; CSize -&gt; IO ()
 forall a. Storable a =&gt; Ptr a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">poke</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><a href="#local-6989586621679061207"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061195"><span class="hs-identifier hs-var">maxOutBuf</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061213"><span class="hs-identifier hs-var">maxOutBuf</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-83"></span><span>                </span><span class="annot"><span class="annottext">Word8
 -&gt; Ptr Word8
 -&gt; CSize
@@ -167,64 +167,64 @@ forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 -&gt; Ptr CSize
 -&gt; IO ()
 </span><a href="Codec.Binary.QuotedPrintable.html#c_qp_enc"><span class="hs-identifier hs-var">c_qp_enc</span></a></span><span> </span><span class="annot"><span class="annottext">Word8
-</span><a href="#local-6989586621679061201"><span class="hs-identifier hs-var">split</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr CChar -&gt; Ptr Word8
+</span><a href="#local-6989586621679061219"><span class="hs-identifier hs-var">split</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr CChar -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Ptr b
 </span><span class="hs-identifier hs-var">castPtr</span></span><span> </span><span class="annot"><span class="annottext">Ptr CChar
-</span><a href="#local-6989586621679061197"><span class="hs-identifier hs-var">inBuf</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><a href="#local-6989586621679061215"><span class="hs-identifier hs-var">inBuf</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061196"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061192"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
-</span><span id="line-84"></span><span>                </span><span id="local-6989586621679061184"><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061184"><span class="hs-identifier hs-var">outLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
+</span><a href="#local-6989586621679061214"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061210"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061207"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
+</span><a href="#local-6989586621679061206"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061205"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
+</span><span id="line-84"></span><span>                </span><span id="local-6989586621679061202"><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679061202"><span class="hs-identifier hs-var">outLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">pOutLen</span></a></span><span>
-</span><span id="line-85"></span><span>                </span><span id="local-6989586621679061182"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679061207"><span class="hs-identifier hs-var">pOutLen</span></a></span><span>
+</span><span id="line-85"></span><span>                </span><span id="local-6989586621679061200"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061200"><span class="hs-identifier hs-var">newOutBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO (Ptr Word8)
 forall a. Ptr a -&gt; Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">reallocBytes</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061192"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061210"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061184"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-86"></span><span>                </span><span id="local-6989586621679061180"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061180"><span class="hs-identifier hs-var">remBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8) -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679061202"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-86"></span><span>                </span><span id="local-6989586621679061198"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061198"><span class="hs-identifier hs-var">remBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8) -&gt; IO (Ptr Word8)
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span>
-</span><span id="line-87"></span><span>                </span><span id="local-6989586621679061179"><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061179"><span class="hs-identifier hs-var">remLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
+</span><a href="#local-6989586621679061206"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span>
+</span><span id="line-87"></span><span>                </span><span id="local-6989586621679061197"><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679061197"><span class="hs-identifier hs-var">remLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
-</span><span id="line-88"></span><span>                </span><span id="local-6989586621679061178"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061178"><span class="hs-identifier hs-var">remBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CStringLen -&gt; IO ByteString
+</span><a href="#local-6989586621679061205"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
+</span><span id="line-88"></span><span>                </span><span id="local-6989586621679061196"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061196"><span class="hs-identifier hs-var">remBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CStringLen -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.packCStringLen</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr CChar
 forall a b. Ptr a -&gt; Ptr b
 </span><span class="hs-identifier hs-var">castPtr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061180"><span class="hs-identifier hs-var">remBuf</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061198"><span class="hs-identifier hs-var">remBuf</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061179"><span class="hs-identifier hs-var">remLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-89"></span><span>                </span><span id="local-6989586621679061176"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061176"><span class="hs-identifier hs-var">outBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO () -&gt; IO ByteString
+</span><a href="#local-6989586621679061197"><span class="hs-identifier hs-var">remLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-89"></span><span>                </span><span id="local-6989586621679061194"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061194"><span class="hs-identifier hs-var">outBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO () -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BSU.unsafePackCStringFinalizer</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061200"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061184"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO ()
+</span><a href="#local-6989586621679061202"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO ()
 forall a. Ptr a -&gt; IO ()
 </span><span class="hs-identifier hs-var">free</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061200"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-90"></span><span>                </span><span class="annot"><span class="annottext">(ByteString, ByteString) -&gt; IO (ByteString, ByteString)
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061176"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061178"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061194"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061196"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-91"></span><span>
 </span><span id="line-92"></span><span class="hs-comment">-- | Decoding function.</span><span>
 </span><span id="line-93"></span><span class="hs-comment">--</span><span>
@@ -279,8 +279,8 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-142"></span><span class="annot"><a href="Codec.Binary.QuotedPrintable.html#qpDecode"><span class="hs-identifier hs-type">qpDecode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">BS.ByteString</span></span><span class="hs-special">)</span><span>
 </span><span id="line-143"></span><span id="qpDecode"><span class="annot"><span class="annottext">qpDecode :: ByteString
 -&gt; Either (ByteString, ByteString) (ByteString, ByteString)
-</span><a href="Codec.Binary.QuotedPrintable.html#qpDecode"><span class="hs-identifier hs-var hs-var">qpDecode</span></a></span></span><span> </span><span id="local-6989586621679061173"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061173"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (Either (ByteString, ByteString) (ByteString, ByteString))
+</span><a href="Codec.Binary.QuotedPrintable.html#qpDecode"><span class="hs-identifier hs-var hs-var">qpDecode</span></a></span></span><span> </span><span id="local-6989586621679061191"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061191"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO (Either (ByteString, ByteString) (ByteString, ByteString))
 -&gt; Either (ByteString, ByteString) (ByteString, ByteString)
 forall a. IO a -&gt; a
 </span><span class="hs-identifier hs-var">U.unsafePerformIO</span></span><span> </span><span class="annot"><span class="annottext">(IO (Either (ByteString, ByteString) (ByteString, ByteString))
@@ -294,21 +294,21 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall a. ByteString -&gt; (CStringLen -&gt; IO a) -&gt; IO a
 </span><span class="hs-identifier hs-var">BSU.unsafeUseAsCStringLen</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061173"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((CStringLen
+</span><a href="#local-6989586621679061191"><span class="hs-identifier hs-var">bs</span></a></span><span> </span><span class="annot"><span class="annottext">((CStringLen
   -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
  -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; (CStringLen
     -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679061172"><span class="annot"><span class="annottext">Ptr CChar
-</span><a href="#local-6989586621679061172"><span class="hs-identifier hs-var">inBuf</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061171"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var">inLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-144"></span><span>    </span><span id="local-6989586621679061170"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061170"><span class="hs-identifier hs-var">outBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO (Ptr Word8)
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679061190"><span class="annot"><span class="annottext">Ptr CChar
+</span><a href="#local-6989586621679061190"><span class="hs-identifier hs-var">inBuf</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061189"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">inLen</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-144"></span><span>    </span><span id="local-6989586621679061188"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">outBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO (Ptr Word8)
 forall a. Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">mallocBytes</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var">inLen</span></a></span><span>
+</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">inLen</span></a></span><span>
 </span><span id="line-145"></span><span>    </span><span class="annot"><span class="annottext">(Ptr CSize
  -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
@@ -320,8 +320,8 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
     -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061169"><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">pOutLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061187"><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pOutLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-146"></span><span>        </span><span class="annot"><span class="annottext">(Ptr (Ptr Word8)
  -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
@@ -333,8 +333,8 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
     -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061168"><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061168"><span class="hs-identifier hs-var">pRemBuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061186"><span class="annot"><span class="annottext">Ptr (Ptr Word8)
+</span><a href="#local-6989586621679061186"><span class="hs-identifier hs-var">pRemBuf</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-147"></span><span>            </span><span class="annot"><span class="annottext">(Ptr CSize
  -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
@@ -346,17 +346,17 @@ forall a b. Storable a =&gt; (Ptr a -&gt; IO b) -&gt; IO b
     -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString)))
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061167"><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061167"><span class="hs-identifier hs-var">pRemLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span> </span><span id="local-6989586621679061185"><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061185"><span class="hs-identifier hs-var">pRemLen</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-148"></span><span>                </span><span class="annot"><span class="annottext">Ptr CSize -&gt; CSize -&gt; IO ()
 forall a. Storable a =&gt; Ptr a -&gt; a -&gt; IO ()
 </span><span class="hs-identifier hs-var">poke</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-149"></span><span>                </span><span id="local-6989586621679061166"><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679061166"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-149"></span><span>                </span><span id="local-6989586621679061184"><span class="annot"><span class="annottext">CInt
+</span><a href="#local-6989586621679061184"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
 -&gt; CSize
 -&gt; Ptr Word8
 -&gt; Ptr CSize
@@ -366,58 +366,58 @@ forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#c_qp_dec"><span class="hs-identifier hs-var">c_qp_dec</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr CChar -&gt; Ptr Word8
 forall a b. Ptr a -&gt; Ptr b
 </span><span class="hs-identifier hs-var">castPtr</span></span><span> </span><span class="annot"><span class="annottext">Ptr CChar
-</span><a href="#local-6989586621679061172"><span class="hs-identifier hs-var">inBuf</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
+</span><a href="#local-6989586621679061190"><span class="hs-identifier hs-var">inBuf</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; CSize
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061170"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061168"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061167"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
-</span><span id="line-150"></span><span>                </span><span id="local-6989586621679061165"><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061165"><span class="hs-identifier hs-var">outLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
+</span><a href="#local-6989586621679061189"><span class="hs-identifier hs-var">inLen</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pOutLen</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
+</span><a href="#local-6989586621679061186"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
+</span><a href="#local-6989586621679061185"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
+</span><span id="line-150"></span><span>                </span><span id="local-6989586621679061183"><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679061183"><span class="hs-identifier hs-var">outLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">pOutLen</span></a></span><span>
-</span><span id="line-151"></span><span>                </span><span id="local-6989586621679061164"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061164"><span class="hs-identifier hs-var">newOutBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679061187"><span class="hs-identifier hs-var">pOutLen</span></a></span><span>
+</span><span id="line-151"></span><span>                </span><span id="local-6989586621679061182"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO (Ptr Word8)
 forall a. Ptr a -&gt; Int -&gt; IO (Ptr a)
 </span><span class="hs-identifier hs-var">reallocBytes</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061170"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061188"><span class="hs-identifier hs-var">outBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061165"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-152"></span><span>                </span><span id="local-6989586621679061163"><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061163"><span class="hs-identifier hs-var">remBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8) -&gt; IO (Ptr Word8)
+</span><a href="#local-6989586621679061183"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-152"></span><span>                </span><span id="local-6989586621679061181"><span class="annot"><span class="annottext">Ptr Word8
+</span><a href="#local-6989586621679061181"><span class="hs-identifier hs-var">remBuf</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8) -&gt; IO (Ptr Word8)
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr (Ptr Word8)
-</span><a href="#local-6989586621679061168"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span>
-</span><span id="line-153"></span><span>                </span><span id="local-6989586621679061162"><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061162"><span class="hs-identifier hs-var">remLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
+</span><a href="#local-6989586621679061186"><span class="hs-identifier hs-var">pRemBuf</span></a></span><span>
+</span><span id="line-153"></span><span>                </span><span id="local-6989586621679061180"><span class="annot"><span class="annottext">CSize
+</span><a href="#local-6989586621679061180"><span class="hs-identifier hs-var">remLen</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr CSize -&gt; IO CSize
 forall a. Storable a =&gt; Ptr a -&gt; IO a
 </span><span class="hs-identifier hs-var">peek</span></span><span> </span><span class="annot"><span class="annottext">Ptr CSize
-</span><a href="#local-6989586621679061167"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
-</span><span id="line-154"></span><span>                </span><span id="local-6989586621679061161"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061161"><span class="hs-identifier hs-var">remBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CStringLen -&gt; IO ByteString
+</span><a href="#local-6989586621679061185"><span class="hs-identifier hs-var">pRemLen</span></a></span><span>
+</span><span id="line-154"></span><span>                </span><span id="local-6989586621679061179"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061179"><span class="hs-identifier hs-var">remBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CStringLen -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BS.packCStringLen</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Ptr CChar
 forall a b. Ptr a -&gt; Ptr b
 </span><span class="hs-identifier hs-var">castPtr</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061163"><span class="hs-identifier hs-var">remBuf</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061181"><span class="hs-identifier hs-var">remBuf</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061162"><span class="hs-identifier hs-var">remLen</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-155"></span><span>                </span><span id="local-6989586621679061160"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061160"><span class="hs-identifier hs-var">outBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO () -&gt; IO ByteString
+</span><a href="#local-6989586621679061180"><span class="hs-identifier hs-var">remLen</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-155"></span><span>                </span><span id="local-6989586621679061178"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061178"><span class="hs-identifier hs-var">outBs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Ptr Word8 -&gt; Int -&gt; IO () -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">BSU.unsafePackCStringFinalizer</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061164"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
+</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CSize -&gt; Int
 forall a b. (Enum a, Enum b) =&gt; a -&gt; b
 </span><a href="Codec.Binary.QuotedPrintable.html#castEnum"><span class="hs-identifier hs-var">castEnum</span></a></span><span> </span><span class="annot"><span class="annottext">CSize
-</span><a href="#local-6989586621679061165"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO ()
+</span><a href="#local-6989586621679061183"><span class="hs-identifier hs-var">outLen</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ptr Word8 -&gt; IO ()
 forall a. Ptr a -&gt; IO ()
 </span><span class="hs-identifier hs-var">free</span></span><span> </span><span class="annot"><span class="annottext">Ptr Word8
-</span><a href="#local-6989586621679061164"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061182"><span class="hs-identifier hs-var">newOutBuf</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-156"></span><span>                </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">CInt
-</span><a href="#local-6989586621679061166"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
+</span><a href="#local-6989586621679061184"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">CInt -&gt; CInt -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">CInt
 </span><span class="hs-number">0</span></span><span>
@@ -433,8 +433,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; Either (ByteString, ByteString) (ByteString, ByteString)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061160"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061161"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061178"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061179"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-158"></span><span>                    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Either (ByteString, ByteString) (ByteString, ByteString)
 -&gt; IO (Either (ByteString, ByteString) (ByteString, ByteString))
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
@@ -447,8 +447,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; Either (ByteString, ByteString) (ByteString, ByteString)
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061160"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061161"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679061178"><span class="hs-identifier hs-var">outBs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061179"><span class="hs-identifier hs-var">remBs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-159"></span><span>
 </span><span id="line-160"></span><span class="hs-comment">-- | Convenient function that calls 'qpEncode' repeatedly until the whole input</span><span>
 </span><span id="line-161"></span><span class="hs-comment">-- data is encoded.</span><span>
@@ -496,7 +496,7 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(ByteString, ByteString)
 -&gt; Either (ByteString, ByteString) ByteString
 forall b. (b, ByteString) -&gt; Either (b, ByteString) b
-</span><a href="#local-6989586621679061153"><span class="hs-identifier hs-var">goR</span></a></span><span> </span><span class="annot"><span class="annottext">(Either (ByteString, ByteString) (ByteString, ByteString)
+</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var">goR</span></a></span><span> </span><span class="annot"><span class="annottext">(Either (ByteString, ByteString) (ByteString, ByteString)
  -&gt; Either (ByteString, ByteString) ByteString)
 -&gt; (ByteString
     -&gt; Either (ByteString, ByteString) (ByteString, ByteString))
@@ -507,17 +507,17 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Either (ByteString, ByteString) (ByteString, ByteString)
 </span><a href="Codec.Binary.QuotedPrintable.html#qpDecode"><span class="hs-identifier hs-var">qpDecode</span></a></span><span>
 </span><span id="line-168"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-169"></span><span>    </span><span id="local-6989586621679061153"><span class="annot"><span class="annottext">goR :: (b, ByteString) -&gt; Either (b, ByteString) b
-</span><a href="#local-6989586621679061153"><span class="hs-identifier hs-var hs-var">goR</span></a></span></span><span> </span><span id="local-6989586621679061152"><span class="annot"><span class="annottext">a :: (b, ByteString)
-</span><a href="#local-6989586621679061152"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679061151"><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679061151"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061150"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061150"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
+</span><span id="line-169"></span><span>    </span><span id="local-6989586621679061171"><span class="annot"><span class="annottext">goR :: (b, ByteString) -&gt; Either (b, ByteString) b
+</span><a href="#local-6989586621679061171"><span class="hs-identifier hs-var hs-var">goR</span></a></span></span><span> </span><span id="local-6989586621679061170"><span class="annot"><span class="annottext">a :: (b, ByteString)
+</span><a href="#local-6989586621679061170"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span id="local-6989586621679061169"><span class="annot"><span class="annottext">b
+</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679061168"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679061168"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Bool
 </span><span class="hs-identifier hs-var">BS.null</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679061150"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">b -&gt; Either (b, ByteString) b
+</span><a href="#local-6989586621679061168"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">b -&gt; Either (b, ByteString) b
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">b
-</span><a href="#local-6989586621679061151"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">(b, ByteString) -&gt; Either (b, ByteString) b
+</span><a href="#local-6989586621679061169"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">(b, ByteString) -&gt; Either (b, ByteString) b
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(b, ByteString)
-</span><a href="#local-6989586621679061152"><span class="hs-identifier hs-var">a</span></a></span><span>
+</span><a href="#local-6989586621679061170"><span class="hs-identifier hs-var">a</span></a></span><span>
 </span><span id="line-170"></span></pre></body></html>

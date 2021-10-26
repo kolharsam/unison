@@ -30,23 +30,23 @@
 </span><span id="line-30"></span><span class="hs-comment">--</span><span>
 </span><span id="line-31"></span><span class="annot"><a href="Network.Wai.Middleware.MethodOverridePost.html#methodOverridePost"><span class="hs-identifier hs-type">methodOverridePost</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Middleware</span></span><span>
 </span><span id="line-32"></span><span id="methodOverridePost"><span class="annot"><span class="annottext">methodOverridePost :: Middleware
-</span><a href="Network.Wai.Middleware.MethodOverridePost.html#methodOverridePost"><span class="hs-identifier hs-var hs-var">methodOverridePost</span></a></span></span><span> </span><span id="local-6989586621679102898"><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102898"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102897"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102897"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102896"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102896"><span class="hs-identifier hs-var">send</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Network.Wai.Middleware.MethodOverridePost.html#methodOverridePost"><span class="hs-identifier hs-var hs-var">methodOverridePost</span></a></span></span><span> </span><span id="local-6989586621679102918"><span class="annot"><span class="annottext">Application
+</span><a href="#local-6989586621679102918"><span class="hs-identifier hs-var">app</span></a></span></span><span> </span><span id="local-6989586621679102917"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102917"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span id="local-6989586621679102916"><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102916"><span class="hs-identifier hs-var">send</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-33"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; Method
 </span><span class="hs-identifier hs-var hs-var">requestMethod</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102897"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; [(HeaderName, Method)] -&gt; Maybe Method
+</span><a href="#local-6989586621679102917"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HeaderName -&gt; [(HeaderName, Method)] -&gt; Maybe Method
 forall a b. Eq a =&gt; a -&gt; [(a, b)] -&gt; Maybe b
 </span><span class="hs-identifier hs-var">lookup</span></span><span> </span><span class="annot"><span class="annottext">HeaderName
 </span><span class="hs-identifier hs-var">hContentType</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Request -&gt; [(HeaderName, Method)]
 </span><span class="hs-identifier hs-var hs-var">requestHeaders</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102897"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102917"><span class="hs-identifier hs-var">req</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-34"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Method
 </span><span class="hs-string">&quot;POST&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="annottext">Method
 </span><span class="hs-string">&quot;application/x-www-form-urlencoded&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO Request
 </span><a href="Network.Wai.Middleware.MethodOverridePost.html#setPost"><span class="hs-identifier hs-var">setPost</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102897"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IO Request
+</span><a href="#local-6989586621679102917"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">IO Request
 -&gt; (Request -&gt; IO ResponseReceived) -&gt; IO ResponseReceived
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 </span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Application
@@ -55,20 +55,20 @@ forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 -&gt; IO ResponseReceived
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102898"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102896"><span class="hs-identifier hs-var">send</span></a></span><span>
+</span><a href="#local-6989586621679102918"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102916"><span class="hs-identifier hs-var">send</span></a></span><span>
 </span><span id="line-35"></span><span>      </span><span class="annot"><span class="annottext">(Method, Maybe Method)
 </span><span class="hs-identifier">_</span></span><span>                                                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Application
-</span><a href="#local-6989586621679102898"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102897"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
-</span><a href="#local-6989586621679102896"><span class="hs-identifier hs-var">send</span></a></span><span>
+</span><a href="#local-6989586621679102918"><span class="hs-identifier hs-var">app</span></a></span><span> </span><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102917"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="annot"><span class="annottext">Response -&gt; IO ResponseReceived
+</span><a href="#local-6989586621679102916"><span class="hs-identifier hs-var">send</span></a></span><span>
 </span><span id="line-36"></span><span>
 </span><span id="line-37"></span><span class="annot"><a href="Network.Wai.Middleware.MethodOverridePost.html#setPost"><span class="hs-identifier hs-type">setPost</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Request</span></span><span>
 </span><span id="line-38"></span><span id="setPost"><span class="annot"><span class="annottext">setPost :: Request -&gt; IO Request
-</span><a href="Network.Wai.Middleware.MethodOverridePost.html#setPost"><span class="hs-identifier hs-var hs-var">setPost</span></a></span></span><span> </span><span id="local-6989586621679102890"><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102890"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-39"></span><span>  </span><span id="local-6989586621679102889"><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102889"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Method] -&gt; Method
+</span><a href="Network.Wai.Middleware.MethodOverridePost.html#setPost"><span class="hs-identifier hs-var hs-var">setPost</span></a></span></span><span> </span><span id="local-6989586621679102910"><span class="annot"><span class="annottext">Request
+</span><a href="#local-6989586621679102910"><span class="hs-identifier hs-var">req</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-39"></span><span>  </span><span id="local-6989586621679102909"><span class="annot"><span class="annottext">Method
+</span><a href="#local-6989586621679102909"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Method] -&gt; Method
 forall a. Monoid a =&gt; [a] -&gt; a
 </span><span class="hs-identifier hs-var">mconcat</span></span><span> </span><span class="annot"><span class="annottext">([Method] -&gt; Method)
 -&gt; (ByteString -&gt; [Method]) -&gt; ByteString -&gt; Method
@@ -78,47 +78,47 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">`fmap`</span></span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">lazyRequestBody</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102890"><span class="hs-identifier hs-var">req</span></a></span><span>
-</span><span id="line-40"></span><span>  </span><span id="local-6989586621679102886"><span class="annot"><span class="annottext">IORef Method
-</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Method -&gt; IO (IORef Method)
+</span><a href="#local-6989586621679102910"><span class="hs-identifier hs-var">req</span></a></span><span>
+</span><span id="line-40"></span><span>  </span><span id="local-6989586621679102906"><span class="annot"><span class="annottext">IORef Method
+</span><a href="#local-6989586621679102906"><span class="hs-identifier hs-var">ref</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Method -&gt; IO (IORef Method)
 forall a. a -&gt; IO (IORef a)
 </span><span class="hs-identifier hs-var">newIORef</span></span><span> </span><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102889"><span class="hs-identifier hs-var">body</span></a></span><span>
-</span><span id="line-41"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102884"><span class="annot"><span class="annottext">rb :: IO Method
-</span><a href="#local-6989586621679102884"><span class="hs-identifier hs-var hs-var">rb</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef Method -&gt; (Method -&gt; (Method, Method)) -&gt; IO Method
+</span><a href="#local-6989586621679102909"><span class="hs-identifier hs-var">body</span></a></span><span>
+</span><span id="line-41"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621679102904"><span class="annot"><span class="annottext">rb :: IO Method
+</span><a href="#local-6989586621679102904"><span class="hs-identifier hs-var hs-var">rb</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IORef Method -&gt; (Method -&gt; (Method, Method)) -&gt; IO Method
 forall a b. IORef a -&gt; (a -&gt; (a, b)) -&gt; IO b
 </span><span class="hs-identifier hs-var">atomicModifyIORef</span></span><span> </span><span class="annot"><span class="annottext">IORef Method
-</span><a href="#local-6989586621679102886"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((Method -&gt; (Method, Method)) -&gt; IO Method)
+</span><a href="#local-6989586621679102906"><span class="hs-identifier hs-var">ref</span></a></span><span> </span><span class="annot"><span class="annottext">((Method -&gt; (Method, Method)) -&gt; IO Method)
 -&gt; (Method -&gt; (Method, Method)) -&gt; IO Method
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102882"><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102882"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Method
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679102902"><span class="annot"><span class="annottext">Method
+</span><a href="#local-6989586621679102902"><span class="hs-identifier hs-var">bs</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Method
 forall a. Monoid a =&gt; a
 </span><span class="hs-identifier hs-var">mempty</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102882"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679102902"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-42"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Method -&gt; Query
 </span><span class="hs-identifier hs-var">parseQuery</span></span><span> </span><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102889"><span class="hs-identifier hs-var">body</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679102909"><span class="hs-identifier hs-var">body</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-43"></span><span>    </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">Method
-</span><span class="hs-string">&quot;_method&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102881"><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102881"><span class="hs-identifier hs-var">newmethod</span></a></span></span><span class="hs-special">)</span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span class="annot"><span class="annottext">Query
+</span><span class="hs-string">&quot;_method&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679102901"><span class="annot"><span class="annottext">Method
+</span><a href="#local-6989586621679102901"><span class="hs-identifier hs-var">newmethod</span></a></span></span><span class="hs-special">)</span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span class="annot"><span class="annottext">Query
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO Request
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Request -&gt; IO Request) -&gt; Request -&gt; IO Request
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102890"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">requestBody :: IO Method
+</span><a href="#local-6989586621679102910"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">requestBody :: IO Method
 </span><span class="hs-identifier hs-var">requestBody</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO Method
-</span><a href="#local-6989586621679102884"><span class="hs-identifier hs-var">rb</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
+</span><a href="#local-6989586621679102904"><span class="hs-identifier hs-var">rb</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">requestMethod :: Method
 </span><span class="hs-identifier hs-var">requestMethod</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Method
-</span><a href="#local-6989586621679102881"><span class="hs-identifier hs-var">newmethod</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679102901"><span class="hs-identifier hs-var">newmethod</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">Query
 </span><span class="hs-identifier">_</span></span><span>                               </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Request -&gt; IO Request
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Request -&gt; IO Request) -&gt; Request -&gt; IO Request
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Request
-</span><a href="#local-6989586621679102890"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">requestBody :: IO Method
+</span><a href="#local-6989586621679102910"><span class="hs-identifier hs-var">req</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">requestBody :: IO Method
 </span><span class="hs-identifier hs-var">requestBody</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">IO Method
-</span><a href="#local-6989586621679102884"><span class="hs-identifier hs-var">rb</span></a></span><span class="hs-special">}</span><span>
+</span><a href="#local-6989586621679102904"><span class="hs-identifier hs-var">rb</span></a></span><span class="hs-special">}</span><span>
 </span><span id="line-45"></span></pre></body></html>

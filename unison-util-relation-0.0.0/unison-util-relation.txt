@@ -138,7 +138,15 @@ collectRan :: Ord a => Ord c => (b -> Maybe c) -> Relation a b -> Relation a c
 foldlStrict :: (a -> b -> a) -> a -> [b] -> a
 map :: (Ord a, Ord b, Ord c, Ord d) => ((a, b) -> (c, d)) -> Relation a b -> Relation c d
 mapDom :: (Ord a, Ord a', Ord b) => (a -> a') -> Relation a b -> Relation a' b
+
+-- | Like <a>mapDom</a>, but takes a function that must be monotonic; i.e.
+--   <tt>compare x y == compare (f x) (f y)</tt>.
+mapDomMonotonic :: (Ord a, Ord a', Ord b) => (a -> a') -> Relation a b -> Relation a' b
 mapRan :: (Ord a, Ord b, Ord b') => (b -> b') -> Relation a b -> Relation a b'
+
+-- | Like <a>mapRan</a>, but takes a function that must be monotonic; i.e.
+--   <tt>compare x y == compare (f x) (f y)</tt>.
+mapRanMonotonic :: (Ord a, Ord b, Ord b') => (b -> b') -> Relation a b -> Relation a b'
 bimap :: (Ord a, Ord b, Ord c, Ord d) => (a -> c) -> (b -> d) -> Relation a b -> Relation c d
 bitraverse :: (Applicative f, Ord a, Ord b, Ord c, Ord d) => (a -> f c) -> (b -> f d) -> Relation a b -> f (Relation c d)
 swap :: Relation a b -> Relation b a
@@ -246,7 +254,15 @@ d12 :: Relation3 a b c -> Relation a b
 d13 :: Relation3 a b c -> Relation a c
 filter :: (Ord a, Ord b, Ord c) => ((a, b, c) -> Bool) -> Relation3 a b c -> Relation3 a b c
 mapD1 :: (Ord a, Ord a', Ord b, Ord c) => (a -> a') -> Relation3 a b c -> Relation3 a' b c
+
+-- | Like <a>mapD1</a>, but takes a function that must be monotonic; i.e.
+--   <tt>compare x y == compare (f x) (f y)</tt>.
+mapD1Monotonic :: (Ord a, Ord a', Ord b, Ord c) => (a -> a') -> Relation3 a b c -> Relation3 a' b c
 mapD2 :: (Ord a, Ord b, Ord b', Ord c) => (b -> b') -> Relation3 a b c -> Relation3 a b' c
+
+-- | Like <a>mapD2</a>, but takes a function that must be monotonic; i.e.
+--   <tt>compare x y == compare (f x) (f y)</tt>.
+mapD2Monotonic :: (Ord a, Ord b, Ord b', Ord c) => (b -> b') -> Relation3 a b c -> Relation3 a b' c
 member :: (Ord a, Ord b, Ord c) => a -> b -> c -> Relation3 a b c -> Bool
 lookupD1 :: (Ord a, Ord b, Ord c) => a -> Relation3 a b c -> Relation b c
 lookupD2 :: (Ord a, Ord b, Ord c) => b -> Relation3 a b c -> Relation a c
@@ -301,6 +317,10 @@ d12s :: (Ord a, Ord b) => Relation4 a b c d -> [(a, b)]
 insert :: (Ord a, Ord b, Ord c, Ord d) => a -> b -> c -> d -> Relation4 a b c d -> Relation4 a b c d
 delete :: (Ord a, Ord b, Ord c, Ord d) => a -> b -> c -> d -> Relation4 a b c d -> Relation4 a b c d
 mapD2 :: (Ord a, Ord b, Ord b', Ord c, Ord d) => (b -> b') -> Relation4 a b c d -> Relation4 a b' c d
+
+-- | Like <a>mapD2</a>, but takes a function that must be monotonic; i.e.
+--   <tt>compare x y == compare (f x) (f y)</tt>.
+mapD2Monotonic :: (Ord a, Ord b, Ord b', Ord c, Ord d) => (b -> b') -> Relation4 a b c d -> Relation4 a b' c d
 insertAll :: Foldable f => Ord a => Ord b => Ord c => Ord d => f (a, b, c, d) -> Relation4 a b c d -> Relation4 a b c d
 instance (GHC.Classes.Ord a, GHC.Classes.Ord b, GHC.Classes.Ord c, GHC.Classes.Ord d) => GHC.Classes.Ord (Unison.Util.Relation4.Relation4 a b c d)
 instance (GHC.Classes.Eq a, GHC.Classes.Eq b, GHC.Classes.Eq c, GHC.Classes.Eq d) => GHC.Classes.Eq (Unison.Util.Relation4.Relation4 a b c d)
