@@ -275,6 +275,7 @@ NoRemoteNamespaceWithHash :: ReadRepo -> ShortBranchHash -> GitCodebaseError h
 RemoteNamespaceHashAmbiguous :: ReadRepo -> ShortBranchHash -> Set h -> GitCodebaseError h
 CouldntLoadRootBranch :: ReadRepo -> h -> GitCodebaseError h
 CouldntLoadSyncedBranch :: ReadRemoteNamespace -> h -> GitCodebaseError h
+CouldntFindRemoteBranch :: ReadRepo -> Path -> GitCodebaseError h
 instance GHC.Show.Show Unison.Codebase.GitError.GitProtocolError
 instance GHC.Show.Show h => GHC.Show.Show (Unison.Codebase.GitError.GitCodebaseError h)
 
@@ -1960,7 +1961,7 @@ isOne :: Branch m -> Bool
 before :: Monad m => Branch m -> Branch m -> m Bool
 lca :: Monad m => Branch m -> Branch m -> m (Maybe (Branch m))
 diff0 :: Monad m => Branch0 m -> Branch0 m -> m BranchDiff
-history :: forall m_a3Cev m_a3CrT. Iso (Branch m_a3Cev) (Branch m_a3CrT) (UnwrappedBranch m_a3Cev) (UnwrappedBranch m_a3CrT)
+history :: forall m_a3Ck9 m_a3Cxx. Iso (Branch m_a3Ck9) (Branch m_a3Cxx) (UnwrappedBranch m_a3Ck9) (UnwrappedBranch m_a3Cxx)
 head :: Branch m -> Branch0 m
 headHash :: Branch m -> Hash
 children :: Lens' (Branch0 m) (Map NameSegment (Branch m))
@@ -1995,7 +1996,7 @@ modifyAtM :: forall n m. Functor n => Applicative m => Path -> (Branch m -> n (B
 children0 :: IndexedTraversal' NameSegment (Branch0 m) (Branch0 m)
 terms :: Lens' (Branch0 m) (Star Referent NameSegment)
 types :: Lens' (Branch0 m) (Star Reference NameSegment)
-edits :: forall m_a3Cer. Lens' (Branch0 m_a3Cer) (Map NameSegment (EditHash, m_a3Cer Patch))
+edits :: forall m_a3Ck5. Lens' (Branch0 m_a3Ck5) (Map NameSegment (EditHash, m_a3Ck5 Patch))
 deepReferents :: Branch0 m -> Set Referent
 deepTypeReferences :: Branch0 m -> Set Reference
 cachedRead :: forall m. MonadIO m => Cache m -> Deserialize m Raw Raw -> (EditHash -> m Patch) -> Hash -> m (Branch m)
@@ -2303,8 +2304,8 @@ CharLiteral :: Element r
 BooleanLiteral :: Element r
 Blank :: Element r
 Var :: Element r
-Reference :: r -> Element r
-Referent :: Referent' r -> Element r
+TypeReference :: r -> Element r
+TermReference :: Referent' r -> Element r
 Op :: SeqOp -> Element r
 AbilityBraces :: Element r
 ControlKeyword :: Element r
@@ -4252,9 +4253,9 @@ Env :: [Type v loc] -> TypeLookup v loc -> Map Name [NamedReference v loc] -> En
 [_ambientAbilities] :: Env v loc -> [Type v loc]
 [_typeLookup] :: Env v loc -> TypeLookup v loc
 [_termsByShortname] :: Env v loc -> Map Name [NamedReference v loc]
-typeLookup :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) (TypeLookup v_a6HIp loc_a6HIq)
-termsByShortname :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) (Map Name [NamedReference v_a6HIp loc_a6HIq])
-ambientAbilities :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) [Type v_a6HIp loc_a6HIq]
+typeLookup :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) (TypeLookup v_a6HPa loc_a6HPb)
+termsByShortname :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) (Map Name [NamedReference v_a6HPa loc_a6HPb])
+ambientAbilities :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) [Type v_a6HPa loc_a6HPb]
 
 -- | Infer the type of a <a>Term</a>, using a function to resolve the type
 --   of <tt>Ref</tt> constructors contained in that term.
