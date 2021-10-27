@@ -3875,10 +3875,10 @@ pretty' :: Var v => Maybe Width -> PrettyPrintEnv -> Type v a -> String
 pretty0 :: forall v a. Var v => PrettyPrintEnv -> Imports -> Int -> Type v a -> Pretty SyntaxText
 prettyRaw :: forall v a. Var v => PrettyPrintEnv -> Imports -> Int -> Type v a -> Pretty SyntaxText
 fmt :: Element r -> Pretty (SyntaxText' r) -> Pretty (SyntaxText' r)
-prettySignatures' :: Var v => PrettyPrintEnv -> [(HashQualified Name, Type v a)] -> [Pretty ColorText]
-prettySignatures'' :: Var v => PrettyPrintEnv -> [(HashQualified Name, Type v a)] -> [Pretty SyntaxText]
+prettySignatures' :: Var v => PrettyPrintEnv -> [(Referent, HashQualified Name, Type v a)] -> [Pretty ColorText]
+prettySignatures'' :: Var v => PrettyPrintEnv -> [(Referent, HashQualified Name, Type v a)] -> [Pretty SyntaxText]
 prettySignaturesAlt' :: Var v => PrettyPrintEnv -> [([HashQualified Name], Type v a)] -> [Pretty ColorText]
-prettySignatures :: Var v => PrettyPrintEnv -> [(HashQualified Name, Type v a)] -> Pretty ColorText
+prettySignatures :: Var v => PrettyPrintEnv -> [(Referent, HashQualified Name, Type v a)] -> Pretty ColorText
 prettySignaturesAlt :: Var v => PrettyPrintEnv -> [([HashQualified Name], Type v a)] -> Pretty ColorText
 
 module Unison.Typechecker.Context
@@ -4253,9 +4253,9 @@ Env :: [Type v loc] -> TypeLookup v loc -> Map Name [NamedReference v loc] -> En
 [_ambientAbilities] :: Env v loc -> [Type v loc]
 [_typeLookup] :: Env v loc -> TypeLookup v loc
 [_termsByShortname] :: Env v loc -> Map Name [NamedReference v loc]
-typeLookup :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) (TypeLookup v_a6HPa loc_a6HPb)
-termsByShortname :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) (Map Name [NamedReference v_a6HPa loc_a6HPb])
-ambientAbilities :: forall v_a6HPa loc_a6HPb. Lens' (Env v_a6HPa loc_a6HPb) [Type v_a6HPa loc_a6HPb]
+typeLookup :: forall v_a6HPy loc_a6HPz. Lens' (Env v_a6HPy loc_a6HPz) (TypeLookup v_a6HPy loc_a6HPz)
+termsByShortname :: forall v_a6HPy loc_a6HPz. Lens' (Env v_a6HPy loc_a6HPz) (Map Name [NamedReference v_a6HPy loc_a6HPz])
+ambientAbilities :: forall v_a6HPy loc_a6HPz. Lens' (Env v_a6HPy loc_a6HPz) [Type v_a6HPy loc_a6HPz]
 
 -- | Infer the type of a <a>Term</a>, using a function to resolve the type
 --   of <tt>Ref</tt> constructors contained in that term.
