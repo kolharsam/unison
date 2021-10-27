@@ -25,7 +25,7 @@ RawMerge :: e -> Set (RawHash h) -> Raw h e
 newtype RawHash a
 RawHash :: Hash -> RawHash a
 [unRawHash] :: RawHash a -> Hash
-head_ :: forall m_amec h_amed e_amee. Lens' (Causal m_amec h_amed e_amee) e_amee
+head_ :: forall m_amdO h_amdP e_amdQ. Lens' (Causal m_amdO h_amdP e_amdQ) e_amdQ
 one :: Hashable e => e -> Causal m h e
 cons :: (Applicative m, Hashable e) => e -> Causal m h e -> Causal m h e
 cons' :: Hashable e => e -> RawHash h -> m (Causal m h e) -> Causal m h e
@@ -1960,7 +1960,7 @@ isOne :: Branch m -> Bool
 before :: Monad m => Branch m -> Branch m -> m Bool
 lca :: Monad m => Branch m -> Branch m -> m (Maybe (Branch m))
 diff0 :: Monad m => Branch0 m -> Branch0 m -> m BranchDiff
-history :: forall m_a3CeT m_a3Csh. Iso (Branch m_a3CeT) (Branch m_a3Csh) (UnwrappedBranch m_a3CeT) (UnwrappedBranch m_a3Csh)
+history :: forall m_a3Cev m_a3CrT. Iso (Branch m_a3Cev) (Branch m_a3CrT) (UnwrappedBranch m_a3Cev) (UnwrappedBranch m_a3CrT)
 head :: Branch m -> Branch0 m
 headHash :: Branch m -> Hash
 children :: Lens' (Branch0 m) (Map NameSegment (Branch m))
@@ -1995,7 +1995,7 @@ modifyAtM :: forall n m. Functor n => Applicative m => Path -> (Branch m -> n (B
 children0 :: IndexedTraversal' NameSegment (Branch0 m) (Branch0 m)
 terms :: Lens' (Branch0 m) (Star Referent NameSegment)
 types :: Lens' (Branch0 m) (Star Reference NameSegment)
-edits :: forall m_a3CeP. Lens' (Branch0 m_a3CeP) (Map NameSegment (EditHash, m_a3CeP Patch))
+edits :: forall m_a3Cer. Lens' (Branch0 m_a3Cer) (Map NameSegment (EditHash, m_a3Cer Patch))
 deepReferents :: Branch0 m -> Set Referent
 deepTypeReferences :: Branch0 m -> Set Reference
 cachedRead :: forall m. MonadIO m => Cache m -> Deserialize m Raw Raw -> (EditHash -> m Patch) -> Hash -> m (Branch m)
@@ -4252,9 +4252,9 @@ Env :: [Type v loc] -> TypeLookup v loc -> Map Name [NamedReference v loc] -> En
 [_ambientAbilities] :: Env v loc -> [Type v loc]
 [_typeLookup] :: Env v loc -> TypeLookup v loc
 [_termsByShortname] :: Env v loc -> Map Name [NamedReference v loc]
-typeLookup :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) (TypeLookup v_a6HIN loc_a6HIO)
-termsByShortname :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) (Map Name [NamedReference v_a6HIN loc_a6HIO])
-ambientAbilities :: forall v_a6HIN loc_a6HIO. Lens' (Env v_a6HIN loc_a6HIO) [Type v_a6HIN loc_a6HIO]
+typeLookup :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) (TypeLookup v_a6HIp loc_a6HIq)
+termsByShortname :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) (Map Name [NamedReference v_a6HIp loc_a6HIq])
+ambientAbilities :: forall v_a6HIp loc_a6HIq. Lens' (Env v_a6HIp loc_a6HIq) [Type v_a6HIp loc_a6HIq]
 
 -- | Infer the type of a <a>Term</a>, using a function to resolve the type
 --   of <tt>Ref</tt> constructors contained in that term.

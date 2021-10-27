@@ -625,32 +625,6 @@ instance GHC.Classes.Eq Unison.Symbol.Symbol
 instance GHC.Classes.Ord Unison.Symbol.Symbol
 instance GHC.Show.Show Unison.Symbol.Symbol
 
-module Unison.OldName
-type OldName = Text
-oldCompareSuffix :: OldName -> OldName -> Ordering
-oldCountSegments :: OldName -> Int
-oldEndsWithSegments :: OldName -> OldName -> Bool
-oldFromSegment :: NameSegment -> OldName
-oldFromString :: String -> OldName
-oldIsAbsolute :: OldName -> Bool
-oldIsPrefixOf :: OldName -> OldName -> Bool
-oldJoinDot :: OldName -> OldName -> OldName
-oldMakeAbsolute :: OldName -> OldName
-oldParent :: OldName -> Maybe OldName
-oldReverseSegments :: OldName -> [NameSegment]
-oldSearchBySuffix :: Ord r => OldName -> Relation OldName r -> Set r
-oldSegments :: OldName -> [NameSegment]
-oldShortestUniqueSuffix :: Ord r => OldName -> r -> Relation OldName r -> OldName
-oldSortNames :: [OldName] -> [OldName]
-oldStripNamePrefix :: OldName -> OldName -> Maybe OldName
-oldSuffixFrom :: OldName -> OldName -> Maybe OldName
-oldSuffixes :: OldName -> [OldName]
-oldToString :: OldName -> String
-oldToVar :: Var v => OldName -> v
-oldUnqualified :: OldName -> OldName
-oldUnsafeFromString :: String -> OldName
-oldUnsafeFromText :: Text -> OldName
-
 module Unison.Name
 
 -- | A name is an absolute-or-relative non-empty list of name segments.
