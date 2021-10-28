@@ -14,20 +14,20 @@
 </span><span id="line-14"></span><span>
 </span><span id="line-15"></span><span class="annot"><a href="Unison.PrettyPrintEnv.Names.html#fromNames"><span class="hs-identifier hs-type">fromNames</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NamesWithHistory</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-type">PrettyPrintEnv</span></a></span><span>
 </span><span id="line-16"></span><span id="fromNames"><span class="annot"><span class="annottext">fromNames :: Int -&gt; NamesWithHistory -&gt; PrettyPrintEnv
-</span><a href="Unison.PrettyPrintEnv.Names.html#fromNames"><span class="hs-identifier hs-var hs-var">fromNames</span></a></span></span><span> </span><span id="local-6989586621681729619"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729619"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span id="local-6989586621681729618"><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729618"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
+</span><a href="Unison.PrettyPrintEnv.Names.html#fromNames"><span class="hs-identifier hs-var hs-var">fromNames</span></a></span></span><span> </span><span id="local-6989586621681742558"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621681742558"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span id="local-6989586621681742557"><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742557"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
 -&gt; (Reference -&gt; Maybe (HashQualified Name)) -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-var">PrettyPrintEnv</span></a></span><span> </span><span class="annot"><span class="annottext">Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729617"><span class="hs-identifier hs-var">terms'</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729616"><span class="hs-identifier hs-var">types'</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-17"></span><span>  </span><span id="local-6989586621681729617"><span class="annot"><span class="annottext">terms' :: Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729617"><span class="hs-identifier hs-var hs-var">terms'</span></a></span></span><span> </span><span id="local-6989586621681729615"><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681729615"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set (HashQualified Name) -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742556"><span class="hs-identifier hs-var">terms'</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742555"><span class="hs-identifier hs-var">types'</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-17"></span><span>  </span><span id="local-6989586621681742556"><span class="annot"><span class="annottext">terms' :: Referent -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742556"><span class="hs-identifier hs-var hs-var">terms'</span></a></span></span><span> </span><span id="local-6989586621681742554"><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681742554"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set (HashQualified Name) -&gt; Maybe (HashQualified Name)
 forall (t :: * -&gt; *).
 Foldable t =&gt;
 t (HashQualified Name) -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729614"><span class="hs-identifier hs-var">shortestName</span></a></span><span> </span><span class="annot"><span class="annottext">(Set (HashQualified Name) -&gt; Maybe (HashQualified Name))
+</span><a href="#local-6989586621681742553"><span class="hs-identifier hs-var">shortestName</span></a></span><span> </span><span class="annot"><span class="annottext">(Set (HashQualified Name) -&gt; Maybe (HashQualified Name))
 -&gt; (Set (HashQualified Name) -&gt; Set (HashQualified Name))
 -&gt; Set (HashQualified Name)
 -&gt; Maybe (HashQualified Name)
@@ -42,16 +42,16 @@ forall a b. Convert a b =&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Referent -&gt; NamesWithHistory -&gt; Set (HashQualified Name)
 </span><span class="hs-identifier hs-var">Names.termName</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729619"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681729615"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729618"><span class="hs-identifier hs-var">names</span></a></span><span>
-</span><span id="line-18"></span><span>  </span><span id="local-6989586621681729616"><span class="annot"><span class="annottext">types' :: Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729616"><span class="hs-identifier hs-var hs-var">types'</span></a></span></span><span> </span><span id="local-6989586621681729609"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681729609"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set (HashQualified Name) -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742558"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681742554"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742557"><span class="hs-identifier hs-var">names</span></a></span><span>
+</span><span id="line-18"></span><span>  </span><span id="local-6989586621681742555"><span class="annot"><span class="annottext">types' :: Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742555"><span class="hs-identifier hs-var hs-var">types'</span></a></span></span><span> </span><span id="local-6989586621681742548"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681742548"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set (HashQualified Name) -&gt; Maybe (HashQualified Name)
 forall (t :: * -&gt; *).
 Foldable t =&gt;
 t (HashQualified Name) -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729614"><span class="hs-identifier hs-var">shortestName</span></a></span><span> </span><span class="annot"><span class="annottext">(Set (HashQualified Name) -&gt; Maybe (HashQualified Name))
+</span><a href="#local-6989586621681742553"><span class="hs-identifier hs-var">shortestName</span></a></span><span> </span><span class="annot"><span class="annottext">(Set (HashQualified Name) -&gt; Maybe (HashQualified Name))
 -&gt; (Set (HashQualified Name) -&gt; Set (HashQualified Name))
 -&gt; Set (HashQualified Name)
 -&gt; Maybe (HashQualified Name)
@@ -66,12 +66,12 @@ forall a b. Convert a b =&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Reference -&gt; NamesWithHistory -&gt; Set (HashQualified Name)
 </span><span class="hs-identifier hs-var">Names.typeName</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729619"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681729609"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729618"><span class="hs-identifier hs-var">names</span></a></span><span>
-</span><span id="line-19"></span><span>  </span><span id="local-6989586621681729614"><span class="annot"><span class="annottext">shortestName :: t (HashQualified Name) -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729614"><span class="hs-identifier hs-var hs-var">shortestName</span></a></span></span><span> </span><span id="local-6989586621681729607"><span class="annot"><span class="annottext">t (HashQualified Name)
-</span><a href="#local-6989586621681729607"><span class="hs-identifier hs-var">ns</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742558"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681742548"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742557"><span class="hs-identifier hs-var">names</span></a></span><span>
+</span><span id="line-19"></span><span>  </span><span id="local-6989586621681742553"><span class="annot"><span class="annottext">shortestName :: t (HashQualified Name) -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742553"><span class="hs-identifier hs-var hs-var">shortestName</span></a></span></span><span> </span><span id="local-6989586621681742546"><span class="annot"><span class="annottext">t (HashQualified Name)
+</span><a href="#local-6989586621681742546"><span class="hs-identifier hs-var">ns</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
 forall (f :: * -&gt; *) a. Foldable f =&gt; f a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">safeHead</span></span><span> </span><span class="annot"><span class="annottext">([HashQualified Name] -&gt; Maybe (HashQualified Name))
 -&gt; [HashQualified Name] -&gt; Maybe (HashQualified Name)
@@ -80,39 +80,39 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">HQ.sortByLength</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">t (HashQualified Name) -&gt; [HashQualified Name]
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
 </span><span class="hs-identifier hs-var">toList</span></span><span> </span><span class="annot"><span class="annottext">t (HashQualified Name)
-</span><a href="#local-6989586621681729607"><span class="hs-identifier hs-var">ns</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681742546"><span class="hs-identifier hs-var">ns</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-20"></span><span>
 </span><span id="line-21"></span><span class="annot"><a href="Unison.PrettyPrintEnv.Names.html#fromSuffixNames"><span class="hs-identifier hs-type">fromSuffixNames</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NamesWithHistory</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-type">PrettyPrintEnv</span></a></span><span>
 </span><span id="line-22"></span><span id="fromSuffixNames"><span class="annot"><span class="annottext">fromSuffixNames :: Int -&gt; NamesWithHistory -&gt; PrettyPrintEnv
-</span><a href="Unison.PrettyPrintEnv.Names.html#fromSuffixNames"><span class="hs-identifier hs-var hs-var">fromSuffixNames</span></a></span></span><span> </span><span id="local-6989586621681729604"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729604"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span id="local-6989586621681729603"><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729603"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
+</span><a href="Unison.PrettyPrintEnv.Names.html#fromSuffixNames"><span class="hs-identifier hs-var hs-var">fromSuffixNames</span></a></span></span><span> </span><span id="local-6989586621681742543"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621681742543"><span class="hs-identifier hs-var">len</span></a></span></span><span> </span><span id="local-6989586621681742542"><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742542"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
 -&gt; (Reference -&gt; Maybe (HashQualified Name)) -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-var">PrettyPrintEnv</span></a></span><span> </span><span class="annot"><span class="annottext">Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729602"><span class="hs-identifier hs-var">terms'</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729601"><span class="hs-identifier hs-var">types'</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-23"></span><span>  </span><span id="local-6989586621681729602"><span class="annot"><span class="annottext">terms' :: Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729602"><span class="hs-identifier hs-var hs-var">terms'</span></a></span></span><span> </span><span id="local-6989586621681729600"><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681729600"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742541"><span class="hs-identifier hs-var">terms'</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742540"><span class="hs-identifier hs-var">types'</span></a></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-23"></span><span>  </span><span id="local-6989586621681742541"><span class="annot"><span class="annottext">terms' :: Referent -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742541"><span class="hs-identifier hs-var hs-var">terms'</span></a></span></span><span> </span><span id="local-6989586621681742539"><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681742539"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
 forall (f :: * -&gt; *) a. Foldable f =&gt; f a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">safeHead</span></span><span> </span><span class="annot"><span class="annottext">([HashQualified Name] -&gt; Maybe (HashQualified Name))
 -&gt; [HashQualified Name] -&gt; Maybe (HashQualified Name)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Referent -&gt; NamesWithHistory -&gt; [HashQualified Name]
 </span><span class="hs-identifier hs-var">Names.suffixedTermName</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729604"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681729600"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729603"><span class="hs-identifier hs-var">names</span></a></span><span>
-</span><span id="line-24"></span><span>  </span><span id="local-6989586621681729601"><span class="annot"><span class="annottext">types' :: Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681729601"><span class="hs-identifier hs-var hs-var">types'</span></a></span></span><span> </span><span id="local-6989586621681729598"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681729598"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742543"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681742539"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742542"><span class="hs-identifier hs-var">names</span></a></span><span>
+</span><span id="line-24"></span><span>  </span><span id="local-6989586621681742540"><span class="annot"><span class="annottext">types' :: Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681742540"><span class="hs-identifier hs-var hs-var">types'</span></a></span></span><span> </span><span id="local-6989586621681742537"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681742537"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[HashQualified Name] -&gt; Maybe (HashQualified Name)
 forall (f :: * -&gt; *) a. Foldable f =&gt; f a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">safeHead</span></span><span> </span><span class="annot"><span class="annottext">([HashQualified Name] -&gt; Maybe (HashQualified Name))
 -&gt; [HashQualified Name] -&gt; Maybe (HashQualified Name)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Reference -&gt; NamesWithHistory -&gt; [HashQualified Name]
 </span><span class="hs-identifier hs-var">Names.suffixedTypeName</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681729604"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681729598"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681729603"><span class="hs-identifier hs-var">names</span></a></span><span>
+</span><a href="#local-6989586621681742543"><span class="hs-identifier hs-var">len</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681742537"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681742542"><span class="hs-identifier hs-var">names</span></a></span><span>
 </span><span id="line-25"></span></pre></body></html>

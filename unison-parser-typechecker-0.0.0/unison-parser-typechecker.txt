@@ -3945,6 +3945,7 @@ Marker :: v -> Element v loc
 data PathElement v loc
 InSynthesize :: Term v loc -> PathElement v loc
 InSubtype :: Type v loc -> Type v loc -> PathElement v loc
+InEquate :: Type v loc -> Type v loc -> PathElement v loc
 InCheck :: Term v loc -> Type v loc -> PathElement v loc
 InInstantiateL :: v -> Type v loc -> PathElement v loc
 InInstantiateR :: Type v loc -> v -> PathElement v loc
@@ -4253,9 +4254,9 @@ Env :: [Type v loc] -> TypeLookup v loc -> Map Name [NamedReference v loc] -> En
 [_ambientAbilities] :: Env v loc -> [Type v loc]
 [_typeLookup] :: Env v loc -> TypeLookup v loc
 [_termsByShortname] :: Env v loc -> Map Name [NamedReference v loc]
-typeLookup :: forall v_a6HOA loc_a6HOB. Lens' (Env v_a6HOA loc_a6HOB) (TypeLookup v_a6HOA loc_a6HOB)
-termsByShortname :: forall v_a6HOA loc_a6HOB. Lens' (Env v_a6HOA loc_a6HOB) (Map Name [NamedReference v_a6HOA loc_a6HOB])
-ambientAbilities :: forall v_a6HOA loc_a6HOB. Lens' (Env v_a6HOA loc_a6HOB) [Type v_a6HOA loc_a6HOB]
+typeLookup :: forall v_a6L6M loc_a6L6N. Lens' (Env v_a6L6M loc_a6L6N) (TypeLookup v_a6L6M loc_a6L6N)
+termsByShortname :: forall v_a6L6M loc_a6L6N. Lens' (Env v_a6L6M loc_a6L6N) (Map Name [NamedReference v_a6L6M loc_a6L6N])
+ambientAbilities :: forall v_a6L6M loc_a6L6N. Lens' (Env v_a6L6M loc_a6L6N) [Type v_a6L6M loc_a6L6N]
 
 -- | Infer the type of a <a>Term</a>, using a function to resolve the type
 --   of <tt>Ref</tt> constructors contained in that term.
