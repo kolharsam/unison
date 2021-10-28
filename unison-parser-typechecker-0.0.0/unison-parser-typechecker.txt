@@ -5052,7 +5052,12 @@ foldedToHtmlSource :: Bool -> EmbeddedSource -> Html ()
 --   words separated by space— useful for rendering to the dom without
 --   creating dom elements for each and every word in the doc, but instead
 --   rely on textNodes
-mergeWords :: [Doc] -> [Doc]
+mergeWords :: Text -> [Doc] -> [Doc]
+
+-- | Merge down Doc to Text by merging Paragraphs and Words. Used for
+--   things like extract an src of an image. I.e something that has to be a
+--   Text and not a Doc
+toText :: Text -> Doc -> Text
 toHtml :: Doc -> Html ()
 
 -- | Unison Doc allows endlessly deep section nesting with titles, but HTML
