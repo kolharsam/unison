@@ -5083,10 +5083,10 @@ NoBranchForHash :: Hash -> BackendError
 CouldntLoadBranch :: Hash -> BackendError
 MissingSignatureForTerm :: Reference -> BackendError
 type Backend m a = ExceptT BackendError m a
-basicNames' :: Branch m -> Path -> (Names, Names)
-basicSuffixifiedNames :: Int -> Branch m -> Path -> PrettyPrintEnv
-basicPrettyPrintNames :: Branch m -> Path -> Names
-basicParseNames :: Branch m -> Path -> Names
+basicNames' :: Branch m -> NameScoping -> (Names, Names)
+basicSuffixifiedNames :: Int -> Branch m -> NameScoping -> PrettyPrintEnv
+basicPrettyPrintNames :: Branch m -> NameScoping -> Names
+basicParseNames :: Branch m -> NameScoping -> Names
 loadReferentType :: (Applicative m, Var v) => Codebase m v Ann -> Referent -> m (Maybe (Type v Ann))
 getRootBranch :: Functor m => Codebase m v Ann -> Backend m (Branch m)
 data TermEntry v a
@@ -5105,7 +5105,7 @@ FoundTermRef :: Referent -> FoundRef
 FoundTypeRef :: Reference -> FoundRef
 fuzzyFind :: Monad m => Path -> Branch m -> String -> [(Alignment, UnisonName, [FoundRef])]
 findShallow :: (Monad m, Var v) => Codebase m v Ann -> Absolute -> Backend m [ShallowListEntry v Ann]
-findShallowReadmeInBranchAndRender :: Var v => Width -> Runtime v -> Codebase IO v Ann -> Branch IO -> Backend IO (Maybe Doc)
+findShallowReadmeInBranchAndRender :: Var v => Width -> Runtime v -> Codebase IO v Ann -> NamesWithHistory -> Branch IO -> Backend IO (Maybe Doc)
 termListEntry :: Monad m => Var v => Codebase m v Ann -> Branch0 m -> Referent -> HQSegment -> Backend m (TermEntry v Ann)
 typeListEntry :: Monad m => Var v => Codebase m v Ann -> Reference -> HQSegment -> Backend m TypeEntry
 typeDeclHeader :: forall v m. Monad m => Var v => Codebase m v Ann -> PrettyPrintEnv -> Reference -> Backend m (DisplayObject SyntaxText SyntaxText)
@@ -5117,8 +5117,21 @@ findShallowInBranch :: (Monad m, Var v) => Codebase m v Ann -> Branch m -> Backe
 termReferencesByShortHash :: Monad m => Codebase m v a -> ShortHash -> m (Set Reference)
 typeReferencesByShortHash :: Monad m => Codebase m v a -> ShortHash -> m (Set Reference)
 termReferentsByShortHash :: Monad m => Codebase m v a -> ShortHash -> m (Set Referent)
-getCurrentPrettyNames :: Path -> Branch m -> NamesWithHistory
-getCurrentParseNames :: Path -> Branch m -> NamesWithHistory
+
+-- | Configure how names will be constructed and filtered. this is
+--   typically used when fetching names for printing source code or when
+--   finding definitions by name.
+data NameScoping
+
+-- | Find all names, making any names which are children of this path,
+--   otherwise leave them absolute.
+AllNames :: Path -> NameScoping
+
+-- | Filter returned names to only include names within this path.
+Within :: Path -> NameScoping
+toAllNames :: NameScoping -> NameScoping
+getCurrentPrettyNames :: NameScoping -> Branch m -> NamesWithHistory
+getCurrentParseNames :: NameScoping -> Branch m -> NamesWithHistory
 fixupNamesRelative :: Absolute -> Names -> Names
 
 -- | A <tt>Search r</tt> is a small bag of functions that is used to power
@@ -5141,7 +5154,7 @@ makeTermSearch :: Int -> NamesWithHistory -> Search Referent
 
 -- | Interpret a <a>Search</a> as a function from name to search results.
 applySearch :: Show r => Search r -> HashQualified Name -> [SearchResult]
-hqNameQuery :: Monad m => Maybe Path -> Branch m -> Codebase m v Ann -> [HashQualified Name] -> m QueryResult
+hqNameQuery :: Monad m => NameScoping -> Branch m -> Codebase m v Ann -> [HashQualified Name] -> m QueryResult
 data DefinitionResults v
 DefinitionResults :: Map Reference (DisplayObject (Type v Ann) (Term v Ann)) -> Map Reference (DisplayObject () (Decl v Ann)) -> [HashQualified Name] -> DefinitionResults v
 [termResults] :: DefinitionResults v -> Map Reference (DisplayObject (Type v Ann) (Term v Ann))
@@ -5153,13 +5166,13 @@ formatType' :: Var v => PrettyPrintEnv -> Width -> Type v a -> SyntaxText
 formatType :: Var v => PrettyPrintEnv -> Width -> Type v a -> SyntaxText
 formatSuffixedType :: Var v => PrettyPrintEnvDecl -> Width -> Type v Ann -> SyntaxText
 mungeSyntaxText :: Functor g => g (Element Reference) -> g Element
-prettyDefinitionsBySuffixes :: forall v. Var v => Maybe Path -> Maybe Hash -> Maybe Width -> Suffixify -> Runtime v -> Codebase IO v Ann -> [HashQualified Name] -> Backend IO DefinitionDisplayResults
+prettyDefinitionsBySuffixes :: forall v. Var v => NameScoping -> Maybe Hash -> Maybe Width -> Suffixify -> Runtime v -> Codebase IO v Ann -> [HashQualified Name] -> Backend IO DefinitionDisplayResults
 renderDoc :: forall v. Var v => PrettyPrintEnvDecl -> Width -> Runtime v -> Codebase IO v Ann -> Reference -> Backend IO [(HashQualifiedName, UnisonHash, Doc)]
 bestNameForTerm :: forall v. Var v => PrettyPrintEnv -> Width -> Referent -> Text
 bestNameForType :: forall v. Var v => PrettyPrintEnv -> Width -> Reference -> Text
 resolveBranchHash :: Monad m => Maybe Hash -> Codebase m v Ann -> Backend m (Branch m)
 resolveRootBranchHash :: Monad m => Maybe ShortBranchHash -> Codebase m v Ann -> Backend m (Branch m)
-definitionsBySuffixes :: forall m v. MonadIO m => Var v => Maybe Path -> Branch m -> Codebase m v Ann -> [HashQualified Name] -> Backend m (DefinitionResults v)
+definitionsBySuffixes :: forall m v. MonadIO m => Var v => NameScoping -> Branch m -> Codebase m v Ann -> [HashQualified Name] -> Backend m (DefinitionResults v)
 termsToSyntax :: Var v => Ord a => Suffixify -> Width -> PrettyPrintEnvDecl -> Map Reference (DisplayObject (Type v a) (Term v a)) -> Map Reference (DisplayObject SyntaxText SyntaxText)
 typesToSyntax :: Var v => Ord a => Suffixify -> Width -> PrettyPrintEnvDecl -> Map Reference (DisplayObject () (Decl v a)) -> Map Reference (DisplayObject SyntaxText SyntaxText)
 loadSearchResults :: (Var v, Applicative m) => Codebase m v Ann -> [SearchResult] -> m [SearchResult' v Ann]

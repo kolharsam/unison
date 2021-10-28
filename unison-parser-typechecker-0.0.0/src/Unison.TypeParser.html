@@ -20,12 +20,12 @@
 </span><span id="line-20"></span><span>
 </span><span id="line-21"></span><span class="hs-comment">-- A parsed type is annotated with its starting and ending position in the</span><span>
 </span><span id="line-22"></span><span class="hs-comment">-- source text.</span><span>
-</span><span id="line-23"></span><span class="hs-keyword">type</span><span> </span><span id="TypeP"><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-var">TypeP</span></a></span></span><span> </span><span id="local-6989586621681735675"><span class="annot"><a href="#local-6989586621681735675"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Parser.html#P"><span class="hs-identifier hs-type">P</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735675"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Type</span></span><span> </span><span class="annot"><a href="#local-6989586621681735675"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="Unison.Parser.Ann.html#Ann"><span class="hs-identifier hs-type">Ann</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-23"></span><span class="hs-keyword">type</span><span> </span><span id="TypeP"><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-var">TypeP</span></a></span></span><span> </span><span id="local-6989586621681735693"><span class="annot"><a href="#local-6989586621681735693"><span class="hs-identifier hs-type">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Parser.html#P"><span class="hs-identifier hs-type">P</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735693"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Type</span></span><span> </span><span class="annot"><a href="#local-6989586621681735693"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="annot"><a href="Unison.Parser.Ann.html#Ann"><span class="hs-identifier hs-type">Ann</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-24"></span><span>
 </span><span id="line-25"></span><span class="hs-comment">-- Value types cannot have effects, unless those effects appear to</span><span>
 </span><span id="line-26"></span><span class="hs-comment">-- the right of a function arrow:</span><span>
 </span><span id="line-27"></span><span class="hs-comment">--   valueType ::= Int | Text | App valueType valueType | Arrow valueType computationType</span><span>
-</span><span id="line-28"></span><span id="local-6989586621681735674"><span class="annot"><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-type">valueType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735674"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735674"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-28"></span><span id="local-6989586621681735692"><span class="annot"><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-type">valueType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735692"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735692"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-29"></span><span id="valueType"><span class="annot"><span class="annottext">valueType :: TypeP v
 </span><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-var hs-var">valueType</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; TypeP v
 forall v. Var v =&gt; TypeP v -&gt; TypeP v
@@ -39,7 +39,7 @@ forall v. Var v =&gt; TypeP v
 </span><span id="line-30"></span><span>
 </span><span id="line-31"></span><span class="hs-comment">-- Computation</span><span>
 </span><span id="line-32"></span><span class="hs-comment">-- computationType ::= [{effect*}] valueType</span><span>
-</span><span id="line-33"></span><span id="local-6989586621681735669"><span class="annot"><a href="Unison.TypeParser.html#computationType"><span class="hs-identifier hs-type">computationType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735669"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735669"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-33"></span><span id="local-6989586621681735687"><span class="annot"><a href="Unison.TypeParser.html#computationType"><span class="hs-identifier hs-type">computationType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735687"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735687"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-34"></span><span id="computationType"><span class="annot"><span class="annottext">computationType :: TypeP v
 </span><a href="Unison.TypeParser.html#computationType"><span class="hs-identifier hs-var hs-var">computationType</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
@@ -49,7 +49,7 @@ forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-var">valueType</span></a></span><span>
 </span><span id="line-35"></span><span>
-</span><span id="line-36"></span><span id="local-6989586621681735666"><span class="annot"><a href="Unison.TypeParser.html#valueTypeLeaf"><span class="hs-identifier hs-type">valueTypeLeaf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735666"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735666"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-36"></span><span id="local-6989586621681735684"><span class="annot"><a href="Unison.TypeParser.html#valueTypeLeaf"><span class="hs-identifier hs-type">valueTypeLeaf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735684"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735684"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-37"></span><span id="valueTypeLeaf"><span class="annot"><span class="annottext">valueTypeLeaf :: TypeP v
 </span><a href="Unison.TypeParser.html#valueTypeLeaf"><span class="hs-identifier hs-var hs-var">valueTypeLeaf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-38"></span><span>  </span><span class="annot"><span class="annottext">TypeP v -&gt; TypeP v
@@ -67,20 +67,20 @@ forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#sequenceTyp"><span class="hs-identifier hs-var">sequenceTyp</span></a></span><span>
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span class="hs-comment">-- Examples: Optional, Optional#abc, woot, #abc</span><span>
-</span><span id="line-41"></span><span id="local-6989586621681735661"><span class="annot"><a href="Unison.TypeParser.html#typeAtom"><span class="hs-identifier hs-type">typeAtom</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735661"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735661"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-41"></span><span id="local-6989586621681735679"><span class="annot"><a href="Unison.TypeParser.html#typeAtom"><span class="hs-identifier hs-type">typeAtom</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735679"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735679"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-42"></span><span id="typeAtom"><span class="annot"><span class="annottext">typeAtom :: TypeP v
 </span><a href="Unison.TypeParser.html#typeAtom"><span class="hs-identifier hs-var hs-var">typeAtom</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">P v (Token (HashQualified Name))
 forall v. Ord v =&gt; P v (Token (HashQualified Name))
 </span><a href="Unison.Parser.html#hqPrefixId"><span class="hs-identifier hs-var">hqPrefixId</span></a></span><span> </span><span class="annot"><span class="annottext">P v (Token (HashQualified Name))
 -&gt; (Token (HashQualified Name) -&gt; TypeP v) -&gt; TypeP v
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
-</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621681735659"><span class="annot"><span class="annottext">Token (HashQualified Name)
-</span><a href="#local-6989586621681735659"><span class="hs-identifier hs-var">tok</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name) -&gt; HashQualified Name
+</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621681735677"><span class="annot"><span class="annottext">Token (HashQualified Name)
+</span><a href="#local-6989586621681735677"><span class="hs-identifier hs-var">tok</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name) -&gt; HashQualified Name
 forall a. Token a -&gt; a
 </span><a href="Unison.Lexer.html#payload"><span class="hs-identifier hs-var hs-var">L.payload</span></a></span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name)
-</span><a href="#local-6989586621681735659"><span class="hs-identifier hs-var">tok</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-43"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">HQ.NameOnly</span></span><span> </span><span id="local-6989586621681735656"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621681735656"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; TypeP v
+</span><a href="#local-6989586621681735677"><span class="hs-identifier hs-var">tok</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-43"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">HQ.NameOnly</span></span><span> </span><span id="local-6989586621681735674"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621681735674"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; TypeP v
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Type v Ann -&gt; TypeP v) -&gt; Type v Ann -&gt; TypeP v
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -89,27 +89,27 @@ forall v a. Ord v =&gt; a -&gt; v -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.var</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token (HashQualified Name) -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name)
-</span><a href="#local-6989586621681735659"><span class="hs-identifier hs-var">tok</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; v
+</span><a href="#local-6989586621681735677"><span class="hs-identifier hs-var">tok</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; v
 forall v. Var v =&gt; Name -&gt; v
 </span><span class="hs-identifier hs-var">Name.toVar</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621681735656"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-44"></span><span>  </span><span id="local-6989586621681735652"><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681735652"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-45"></span><span>    </span><span id="local-6989586621681735651"><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681735651"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(ParsingEnv -&gt; NamesWithHistory)
+</span><a href="#local-6989586621681735674"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-44"></span><span>  </span><span id="local-6989586621681735670"><span class="annot"><span class="annottext">HashQualified Name
+</span><a href="#local-6989586621681735670"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-45"></span><span>    </span><span id="local-6989586621681735669"><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681735669"><span class="hs-identifier hs-var">names</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(ParsingEnv -&gt; NamesWithHistory)
 -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) NamesWithHistory
 forall r (m :: * -&gt; *) a. MonadReader r m =&gt; (r -&gt; a) -&gt; m a
 </span><span class="hs-identifier hs-var">asks</span></span><span> </span><span class="annot"><span class="annottext">ParsingEnv -&gt; NamesWithHistory
 </span><a href="Unison.Parser.html#names"><span class="hs-identifier hs-var hs-var">names</span></a></span><span>
-</span><span id="line-46"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735649"><span class="annot"><span class="annottext">matches :: Set Reference
-</span><a href="#local-6989586621681735649"><span class="hs-identifier hs-var hs-var">matches</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; NamesWithHistory -&gt; Set Reference
+</span><span id="line-46"></span><span>    </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735667"><span class="annot"><span class="annottext">matches :: Set Reference
+</span><a href="#local-6989586621681735667"><span class="hs-identifier hs-var hs-var">matches</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; NamesWithHistory -&gt; Set Reference
 </span><span class="hs-identifier hs-var">Names.lookupHQType</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681735652"><span class="hs-identifier hs-var">hq</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
-</span><a href="#local-6989586621681735651"><span class="hs-identifier hs-var">names</span></a></span><span>
+</span><a href="#local-6989586621681735670"><span class="hs-identifier hs-var">hq</span></a></span><span> </span><span class="annot"><span class="annottext">NamesWithHistory
+</span><a href="#local-6989586621681735669"><span class="hs-identifier hs-var">names</span></a></span><span>
 </span><span id="line-47"></span><span>    </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Set Reference -&gt; Int
 forall a. Set a -&gt; Int
 </span><span class="hs-identifier hs-var">Set.size</span></span><span> </span><span class="annot"><span class="annottext">Set Reference
-</span><a href="#local-6989586621681735649"><span class="hs-identifier hs-var">matches</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+</span><a href="#local-6989586621681735667"><span class="hs-identifier hs-var">matches</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span>
@@ -118,8 +118,8 @@ forall e s (m :: * -&gt; *) a. MonadParsec e s m =&gt; e -&gt; m a
 </span><span class="hs-identifier hs-var">P.customFailure</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token (HashQualified Name) -&gt; Set Reference -&gt; Error v
 forall v. Token (HashQualified Name) -&gt; Set Reference -&gt; Error v
 </span><a href="Unison.Parser.html#UnknownType"><span class="hs-identifier hs-var">UnknownType</span></a></span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name)
-</span><a href="#local-6989586621681735659"><span class="hs-identifier hs-var">tok</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
-</span><a href="#local-6989586621681735649"><span class="hs-identifier hs-var">matches</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735677"><span class="hs-identifier hs-var">tok</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
+</span><a href="#local-6989586621681735667"><span class="hs-identifier hs-var">matches</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-49"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; TypeP v
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Type v Ann -&gt; TypeP v) -&gt; Type v Ann -&gt; TypeP v
@@ -129,12 +129,12 @@ forall v a. Ord v =&gt; a -&gt; Reference -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.ref</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token (HashQualified Name) -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token (HashQualified Name)
-</span><a href="#local-6989586621681735659"><span class="hs-identifier hs-var">tok</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Set Reference -&gt; Reference
+</span><a href="#local-6989586621681735677"><span class="hs-identifier hs-var">tok</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Set Reference -&gt; Reference
 forall a. Set a -&gt; a
 </span><span class="hs-identifier hs-var">Set.findMin</span></span><span> </span><span class="annot"><span class="annottext">Set Reference
-</span><a href="#local-6989586621681735649"><span class="hs-identifier hs-var">matches</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735667"><span class="hs-identifier hs-var">matches</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-50"></span><span>
-</span><span id="line-51"></span><span id="local-6989586621681735783"><span class="annot"><a href="Unison.TypeParser.html#type1"><span class="hs-identifier hs-type">type1</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735783"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735783"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-51"></span><span id="local-6989586621681735801"><span class="annot"><a href="Unison.TypeParser.html#type1"><span class="hs-identifier hs-type">type1</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735801"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735801"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-52"></span><span id="type1"><span class="annot"><span class="annottext">type1 :: TypeP v
 </span><a href="Unison.TypeParser.html#type1"><span class="hs-identifier hs-var hs-var">type1</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; TypeP v
 forall v. Var v =&gt; TypeP v -&gt; TypeP v
@@ -142,7 +142,7 @@ forall v. Var v =&gt; TypeP v -&gt; TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#type2a"><span class="hs-identifier hs-var">type2a</span></a></span><span>
 </span><span id="line-53"></span><span>
-</span><span id="line-54"></span><span id="local-6989586621681735639"><span class="annot"><a href="Unison.TypeParser.html#type2a"><span class="hs-identifier hs-type">type2a</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735639"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735639"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-54"></span><span id="local-6989586621681735657"><span class="annot"><a href="Unison.TypeParser.html#type2a"><span class="hs-identifier hs-type">type2a</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735657"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735657"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-55"></span><span id="type2a"><span class="annot"><span class="annottext">type2a :: TypeP v
 </span><a href="Unison.TypeParser.html#type2a"><span class="hs-identifier hs-var hs-var">type2a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
@@ -152,16 +152,16 @@ forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#type2"><span class="hs-identifier hs-var">type2</span></a></span><span>
 </span><span id="line-56"></span><span>
-</span><span id="line-57"></span><span id="local-6989586621681735636"><span class="annot"><a href="Unison.TypeParser.html#delayed"><span class="hs-identifier hs-type">delayed</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735636"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735636"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-57"></span><span id="local-6989586621681735654"><span class="annot"><a href="Unison.TypeParser.html#delayed"><span class="hs-identifier hs-type">delayed</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735654"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735654"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-58"></span><span id="delayed"><span class="annot"><span class="annottext">delayed :: TypeP v
 </span><a href="Unison.TypeParser.html#delayed"><span class="hs-identifier hs-var hs-var">delayed</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-59"></span><span>  </span><span id="local-6989586621681735635"><span class="annot"><span class="annottext">Token String
-</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
+</span><span id="line-59"></span><span>  </span><span id="local-6989586621681735653"><span class="annot"><span class="annottext">Token String
+</span><a href="#local-6989586621681735653"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
 forall v. Ord v =&gt; String -&gt; P v (Token String)
 </span><a href="Unison.Parser.html#reserved"><span class="hs-identifier hs-var">reserved</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;'&quot;</span></span><span>
-</span><span id="line-60"></span><span>  </span><span id="local-6989586621681735633"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735633"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><span id="line-60"></span><span>  </span><span id="local-6989586621681735651"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735651"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#effect"><span class="hs-identifier hs-var">effect</span></a></span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; TypeP v -&gt; TypeP v
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
@@ -174,31 +174,31 @@ forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><a href="Unison.Parser.Ann.html#Ann"><span class="hs-identifier hs-var">Ann</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token String -&gt; Pos
 forall a. Token a -&gt; Pos
 </span><a href="Unison.Lexer.html#start"><span class="hs-identifier hs-var hs-var">L.start</span></a></span><span> </span><span class="annot"><span class="annottext">Token String
-</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Pos
+</span><a href="#local-6989586621681735653"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Pos
 </span><a href="Unison.Parser.Ann.html#end"><span class="hs-identifier hs-var hs-var">end</span></a></span><span> </span><span class="annot"><span class="annottext">(Ann -&gt; Pos) -&gt; Ann -&gt; Pos
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735633"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735651"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-62"></span><span>                    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a
 </span><a href="Unison.Builtin.Decls.html#unitType"><span class="hs-identifier hs-var">DD.unitType</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token String -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token String
-</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735653"><span class="hs-identifier hs-var">q</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-63"></span><span>                    </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735633"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621681735651"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-64"></span><span>
-</span><span id="line-65"></span><span id="local-6989586621681735627"><span class="annot"><a href="Unison.TypeParser.html#type2"><span class="hs-identifier hs-type">type2</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735627"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735627"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-65"></span><span id="local-6989586621681735645"><span class="annot"><a href="Unison.TypeParser.html#type2"><span class="hs-identifier hs-type">type2</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735645"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735645"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-66"></span><span id="type2"><span class="annot"><span class="annottext">type2 :: TypeP v
 </span><a href="Unison.TypeParser.html#type2"><span class="hs-identifier hs-var hs-var">type2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-67"></span><span>  </span><span id="local-6989586621681735626"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735626"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><span id="line-67"></span><span>  </span><span id="local-6989586621681735644"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735644"><span class="hs-identifier hs-var">hd</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#valueTypeLeaf"><span class="hs-identifier hs-var">valueTypeLeaf</span></a></span><span>
-</span><span id="line-68"></span><span>  </span><span id="local-6989586621681735625"><span class="annot"><span class="annottext">[Type v Ann]
-</span><a href="#local-6989586621681735625"><span class="hs-identifier hs-var">tl</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) [Type v Ann]
+</span><span id="line-68"></span><span>  </span><span id="local-6989586621681735643"><span class="annot"><span class="annottext">[Type v Ann]
+</span><a href="#local-6989586621681735643"><span class="hs-identifier hs-var">tl</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) [Type v Ann]
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f [a]
 </span><span class="hs-identifier hs-var">many</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
@@ -212,34 +212,34 @@ forall v. Var v =&gt; TypeP v
 forall (t :: * -&gt; *) b a.
 Foldable t =&gt;
 (b -&gt; a -&gt; b) -&gt; b -&gt; t a -&gt; b
-</span><span class="hs-identifier hs-var">foldl'</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681735621"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735621"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735620"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann -&gt; Type v Ann -&gt; Type v Ann
+</span><span class="hs-identifier hs-var">foldl'</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681735639"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735639"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735638"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735638"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann -&gt; Type v Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.app</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735621"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735639"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735621"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735626"><span class="hs-identifier hs-var">hd</span></a></span><span> </span><span class="annot"><span class="annottext">[Type v Ann]
-</span><a href="#local-6989586621681735625"><span class="hs-identifier hs-var">tl</span></a></span><span>
+</span><a href="#local-6989586621681735638"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735639"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735638"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735644"><span class="hs-identifier hs-var">hd</span></a></span><span> </span><span class="annot"><span class="annottext">[Type v Ann]
+</span><a href="#local-6989586621681735643"><span class="hs-identifier hs-var">tl</span></a></span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span class="hs-comment">-- ex : {State Text, IO} (List Int)</span><span>
-</span><span id="line-72"></span><span id="local-6989586621681735618"><span class="annot"><a href="Unison.TypeParser.html#effect"><span class="hs-identifier hs-type">effect</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735618"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735618"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-72"></span><span id="local-6989586621681735636"><span class="annot"><a href="Unison.TypeParser.html#effect"><span class="hs-identifier hs-type">effect</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735636"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735636"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-73"></span><span id="effect"><span class="annot"><span class="annottext">effect :: TypeP v
 </span><a href="Unison.TypeParser.html#effect"><span class="hs-identifier hs-var hs-var">effect</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-74"></span><span> </span><span id="local-6989586621681735617"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735617"><span class="hs-identifier hs-var">es</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><span id="line-74"></span><span> </span><span id="local-6989586621681735635"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">es</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#effectList"><span class="hs-identifier hs-var">effectList</span></a></span><span>
-</span><span id="line-75"></span><span> </span><span id="local-6989586621681735616"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735616"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><span id="line-75"></span><span> </span><span id="local-6989586621681735634"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735634"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#type2"><span class="hs-identifier hs-var">type2</span></a></span><span>
 </span><span id="line-76"></span><span> </span><span class="hs-identifier">pure</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann -&gt; Type v Ann -&gt; Type v Ann
@@ -247,25 +247,25 @@ forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.effect1</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735617"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735616"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735617"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735616"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735634"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735635"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735634"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-77"></span><span>
-</span><span id="line-78"></span><span id="local-6989586621681735614"><span class="annot"><a href="Unison.TypeParser.html#effectList"><span class="hs-identifier hs-type">effectList</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735614"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735614"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-78"></span><span id="local-6989586621681735632"><span class="annot"><a href="Unison.TypeParser.html#effectList"><span class="hs-identifier hs-type">effectList</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735632"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735632"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-79"></span><span id="effectList"><span class="annot"><span class="annottext">effectList :: TypeP v
 </span><a href="Unison.TypeParser.html#effectList"><span class="hs-identifier hs-var hs-var">effectList</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-80"></span><span>  </span><span id="local-6989586621681735613"><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735613"><span class="hs-identifier hs-var">open</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token ())
+</span><span id="line-80"></span><span>  </span><span id="local-6989586621681735631"><span class="annot"><span class="annottext">Token ()
+</span><a href="#local-6989586621681735631"><span class="hs-identifier hs-var">open</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token ())
 forall v. Ord v =&gt; String -&gt; P v (Token ())
 </span><a href="Unison.Parser.html#openBlockWith"><span class="hs-identifier hs-var">openBlockWith</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;{&quot;</span></span><span>
-</span><span id="line-81"></span><span>  </span><span id="local-6989586621681735611"><span class="annot"><span class="annottext">[Type v Ann]
-</span><a href="#local-6989586621681735611"><span class="hs-identifier hs-var">es</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token String) -&gt; TypeP v -&gt; P v [Type v Ann]
+</span><span id="line-81"></span><span>  </span><span id="local-6989586621681735629"><span class="annot"><span class="annottext">[Type v Ann]
+</span><a href="#local-6989586621681735629"><span class="hs-identifier hs-var">es</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token String) -&gt; TypeP v -&gt; P v [Type v Ann]
 forall v a b. Ord v =&gt; P v a -&gt; P v b -&gt; P v [b]
 </span><a href="Unison.Parser.html#sepBy"><span class="hs-identifier hs-var">sepBy</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
 forall v. Ord v =&gt; String -&gt; P v (Token String)
@@ -273,8 +273,8 @@ forall v. Ord v =&gt; String -&gt; P v (Token String)
 </span><span class="hs-string">&quot;,&quot;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-var">valueType</span></a></span><span>
-</span><span id="line-82"></span><span>  </span><span id="local-6989586621681735609"><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735609"><span class="hs-identifier hs-var">close</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token ())
+</span><span id="line-82"></span><span>  </span><span id="local-6989586621681735627"><span class="annot"><span class="annottext">Token ()
+</span><a href="#local-6989586621681735627"><span class="hs-identifier hs-var">close</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token ())
 forall v. Ord v =&gt; P v (Token ())
 </span><a href="Unison.Parser.html#closeBlock"><span class="hs-identifier hs-var">closeBlock</span></a></span><span>
 </span><span id="line-83"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; [Type v Ann] -&gt; Type v Ann
@@ -282,40 +282,40 @@ forall v a. Ord v =&gt; a -&gt; [Type v a] -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.effects</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token () -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735613"><span class="hs-identifier hs-var">open</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735631"><span class="hs-identifier hs-var">open</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Token () -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735609"><span class="hs-identifier hs-var">close</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Type v Ann]
-</span><a href="#local-6989586621681735611"><span class="hs-identifier hs-var">es</span></a></span><span>
+</span><a href="#local-6989586621681735627"><span class="hs-identifier hs-var">close</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Type v Ann]
+</span><a href="#local-6989586621681735629"><span class="hs-identifier hs-var">es</span></a></span><span>
 </span><span id="line-84"></span><span>
-</span><span id="line-85"></span><span id="local-6989586621681735606"><span class="annot"><a href="Unison.TypeParser.html#sequenceTyp"><span class="hs-identifier hs-type">sequenceTyp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735606"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735606"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-85"></span><span id="local-6989586621681735624"><span class="annot"><a href="Unison.TypeParser.html#sequenceTyp"><span class="hs-identifier hs-type">sequenceTyp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735624"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735624"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-86"></span><span id="sequenceTyp"><span class="annot"><span class="annottext">sequenceTyp :: TypeP v
 </span><a href="Unison.TypeParser.html#sequenceTyp"><span class="hs-identifier hs-var hs-var">sequenceTyp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-87"></span><span>  </span><span id="local-6989586621681735605"><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735605"><span class="hs-identifier hs-var">open</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token ())
+</span><span id="line-87"></span><span>  </span><span id="local-6989586621681735623"><span class="annot"><span class="annottext">Token ()
+</span><a href="#local-6989586621681735623"><span class="hs-identifier hs-var">open</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token ())
 forall v. Ord v =&gt; String -&gt; P v (Token ())
 </span><a href="Unison.Parser.html#openBlockWith"><span class="hs-identifier hs-var">openBlockWith</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;[&quot;</span></span><span>
-</span><span id="line-88"></span><span>  </span><span id="local-6989586621681735604"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735604"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><span id="line-88"></span><span>  </span><span id="local-6989586621681735622"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735622"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#valueType"><span class="hs-identifier hs-var">valueType</span></a></span><span>
-</span><span id="line-89"></span><span>  </span><span id="local-6989586621681735603"><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735603"><span class="hs-identifier hs-var">close</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token ())
+</span><span id="line-89"></span><span>  </span><span id="local-6989586621681735621"><span class="annot"><span class="annottext">Token ()
+</span><a href="#local-6989586621681735621"><span class="hs-identifier hs-var">close</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">P v (Token ())
 forall v. Ord v =&gt; P v (Token ())
 </span><a href="Unison.Parser.html#closeBlock"><span class="hs-identifier hs-var">closeBlock</span></a></span><span>
-</span><span id="line-90"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735602"><span class="annot"><span class="annottext">a :: Ann
-</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token () -&gt; Ann
+</span><span id="line-90"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735620"><span class="annot"><span class="annottext">a :: Ann
+</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Token () -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735605"><span class="hs-identifier hs-var">open</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735623"><span class="hs-identifier hs-var">open</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Token () -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token ()
-</span><a href="#local-6989586621681735603"><span class="hs-identifier hs-var">close</span></a></span><span>
+</span><a href="#local-6989586621681735621"><span class="hs-identifier hs-var">close</span></a></span><span>
 </span><span id="line-91"></span><span>  </span><span class="annot"><span class="annottext">Type v Ann -&gt; TypeP v
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Type v Ann -&gt; TypeP v) -&gt; Type v Ann -&gt; TypeP v
@@ -323,73 +323,73 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann -&gt; Type v Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.app</span></span><span> </span><span class="annot"><span class="annottext">Ann
-</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann
+</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.list</span></span><span> </span><span class="annot"><span class="annottext">Ann
-</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735604"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621681735620"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735622"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-92"></span><span>
-</span><span id="line-93"></span><span id="local-6989586621681735600"><span class="annot"><a href="Unison.TypeParser.html#tupleOrParenthesizedType"><span class="hs-identifier hs-type">tupleOrParenthesizedType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735600"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735600"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735600"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-93"></span><span id="local-6989586621681735618"><span class="annot"><a href="Unison.TypeParser.html#tupleOrParenthesizedType"><span class="hs-identifier hs-type">tupleOrParenthesizedType</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735618"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735618"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735618"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-94"></span><span id="tupleOrParenthesizedType"><span class="annot"><span class="annottext">tupleOrParenthesizedType :: TypeP v -&gt; TypeP v
-</span><a href="Unison.TypeParser.html#tupleOrParenthesizedType"><span class="hs-identifier hs-var hs-var">tupleOrParenthesizedType</span></a></span></span><span> </span><span id="local-6989586621681735599"><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735599"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><a href="Unison.TypeParser.html#tupleOrParenthesizedType"><span class="hs-identifier hs-var hs-var">tupleOrParenthesizedType</span></a></span></span><span> </span><span id="local-6989586621681735617"><span class="annot"><span class="annottext">TypeP v
+</span><a href="#local-6989586621681735617"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TypeP v
 -&gt; (Ann -&gt; Type v Ann)
 -&gt; (Type v Ann -&gt; Type v Ann -&gt; Type v Ann)
 -&gt; TypeP v
 forall v a. Ord v =&gt; P v a -&gt; (Ann -&gt; a) -&gt; (a -&gt; a -&gt; a) -&gt; P v a
 </span><a href="Unison.Parser.html#tupleOrParenthesized"><span class="hs-identifier hs-var">tupleOrParenthesized</span></a></span><span> </span><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735599"><span class="hs-identifier hs-var">rec</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann
+</span><a href="#local-6989586621681735617"><span class="hs-identifier hs-var">rec</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a
 </span><a href="Unison.Builtin.Decls.html#unitType"><span class="hs-identifier hs-var">DD.unitType</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; Type v Ann -&gt; Type v Ann
 forall v. Ord v =&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
-</span><a href="#local-6989586621681735597"><span class="hs-identifier hs-var">pair</span></a></span><span>
+</span><a href="#local-6989586621681735615"><span class="hs-identifier hs-var">pair</span></a></span><span>
 </span><span id="line-95"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-96"></span><span>    </span><span id="local-6989586621681735597"><span class="annot"><span class="annottext">pair :: Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
-</span><a href="#local-6989586621681735597"><span class="hs-identifier hs-var hs-var">pair</span></a></span></span><span> </span><span id="local-6989586621681735596"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">t1</span></a></span></span><span> </span><span id="local-6989586621681735595"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735595"><span class="hs-identifier hs-var">t2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-97"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735594"><span class="annot"><span class="annottext">a :: Ann
-</span><a href="#local-6989586621681735594"><span class="hs-identifier hs-var hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
+</span><span id="line-96"></span><span>    </span><span id="local-6989586621681735615"><span class="annot"><span class="annottext">pair :: Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735615"><span class="hs-identifier hs-var hs-var">pair</span></a></span></span><span> </span><span id="local-6989586621681735614"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735614"><span class="hs-identifier hs-var">t1</span></a></span></span><span> </span><span id="local-6989586621681735613"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735613"><span class="hs-identifier hs-var">t2</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-97"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735612"><span class="annot"><span class="annottext">a :: Ann
+</span><a href="#local-6989586621681735612"><span class="hs-identifier hs-var hs-var">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">t1</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735614"><span class="hs-identifier hs-var">t1</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735595"><span class="hs-identifier hs-var">t2</span></a></span><span>
+</span><a href="#local-6989586621681735613"><span class="hs-identifier hs-var">t2</span></a></span><span>
 </span><span id="line-98"></span><span>      </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.app</span></span><span> </span><span class="annot"><span class="annottext">Ann
-</span><a href="#local-6989586621681735594"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735612"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.app</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">t1</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735614"><span class="hs-identifier hs-var">t1</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a
 </span><a href="Unison.Builtin.Decls.html#pairType"><span class="hs-identifier hs-var">DD.pairType</span></a></span><span> </span><span class="annot"><span class="annottext">Ann
-</span><a href="#local-6989586621681735594"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">t1</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735595"><span class="hs-identifier hs-var">t2</span></a></span><span>
+</span><a href="#local-6989586621681735612"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735614"><span class="hs-identifier hs-var">t1</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735613"><span class="hs-identifier hs-var">t2</span></a></span><span>
 </span><span id="line-99"></span><span>
 </span><span id="line-100"></span><span class="hs-comment">--  valueType ::= ... | Arrow valueType computationType</span><span>
-</span><span id="line-101"></span><span id="local-6989586621681735592"><span class="annot"><a href="Unison.TypeParser.html#arrow"><span class="hs-identifier hs-type">arrow</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735592"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735592"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735592"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-101"></span><span id="local-6989586621681735610"><span class="annot"><a href="Unison.TypeParser.html#arrow"><span class="hs-identifier hs-type">arrow</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735610"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735610"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-102"></span><span id="arrow"><span class="annot"><span class="annottext">arrow :: TypeP v -&gt; TypeP v
-</span><a href="Unison.TypeParser.html#arrow"><span class="hs-identifier hs-var hs-var">arrow</span></a></span></span><span> </span><span id="local-6989586621681735591"><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735591"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-103"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735590"><span class="annot"><span class="annottext">eff :: ParsecT
+</span><a href="Unison.TypeParser.html#arrow"><span class="hs-identifier hs-var hs-var">arrow</span></a></span></span><span> </span><span id="local-6989586621681735609"><span class="annot"><span class="annottext">TypeP v
+</span><a href="#local-6989586621681735609"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-103"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681735608"><span class="annot"><span class="annottext">eff :: ParsecT
   (Error v)
   Input
   ((-&gt;) ParsingEnv)
   (Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann)
-</span><a href="#local-6989586621681735590"><span class="hs-identifier hs-var hs-var">eff</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe (Term F v Ann)
+</span><a href="#local-6989586621681735608"><span class="hs-identifier hs-var hs-var">eff</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe (Term F v Ann)
 -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v.
 Ord v =&gt;
 Maybe (Term F v Ann)
 -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
-</span><a href="#local-6989586621681735589"><span class="hs-identifier hs-var">mkArr</span></a></span><span> </span><span class="annot"><span class="annottext">(Maybe (Term F v Ann)
+</span><a href="#local-6989586621681735607"><span class="hs-identifier hs-var">mkArr</span></a></span><span> </span><span class="annot"><span class="annottext">(Maybe (Term F v Ann)
  -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann)
 -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) (Maybe (Term F v Ann))
 -&gt; ParsecT
@@ -404,51 +404,51 @@ forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">TypeP v
 forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#effectList"><span class="hs-identifier hs-var">effectList</span></a></span><span>
-</span><span id="line-104"></span><span>      </span><span id="local-6989586621681735589"><span class="annot"><span class="annottext">mkArr :: Maybe (Term F v Ann)
+</span><span id="line-104"></span><span>      </span><span id="local-6989586621681735607"><span class="annot"><span class="annottext">mkArr :: Maybe (Term F v Ann)
 -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
-</span><a href="#local-6989586621681735589"><span class="hs-identifier hs-var hs-var">mkArr</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe (Term F v Ann)
-</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span id="local-6989586621681735586"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735586"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735585"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735585"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735607"><span class="hs-identifier hs-var hs-var">mkArr</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe (Term F v Ann)
+</span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span id="local-6989586621681735604"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735604"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735603"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735603"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.arrow</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735586"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735604"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735585"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735586"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735585"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-105"></span><span>      </span><span class="annot"><a href="#local-6989586621681735589"><span class="hs-identifier hs-var">mkArr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681735584"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735584"><span class="hs-identifier hs-var">es</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621681735583"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735583"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735582"><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735582"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735603"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735604"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735603"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-105"></span><span>      </span><span class="annot"><a href="#local-6989586621681735607"><span class="hs-identifier hs-var">mkArr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681735602"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var">es</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621681735601"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735601"><span class="hs-identifier hs-var">a</span></a></span></span><span> </span><span id="local-6989586621681735600"><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735600"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.arrow</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735583"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735601"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735582"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735583"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
+</span><a href="#local-6989586621681735600"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735601"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Ann -&gt; Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann
 forall v a. Ord v =&gt; a -&gt; Type v a -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.effect1</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735584"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Term F v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735582"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735584"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
-</span><a href="#local-6989586621681735582"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735600"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735602"><span class="hs-identifier hs-var">es</span></a></span><span> </span><span class="annot"><span class="annottext">Term F v Ann
+</span><a href="#local-6989586621681735600"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-106"></span><span>  </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">TypeP v
 -&gt; ParsecT
      (Error v)
@@ -462,7 +462,7 @@ forall v. Var v =&gt; TypeP v
 </span><a href="Unison.TypeParser.html#effect"><span class="hs-identifier hs-var">effect</span></a></span><span> </span><span class="annot"><span class="annottext">TypeP v -&gt; TypeP v -&gt; TypeP v
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
 </span><span class="hs-operator hs-var">&lt;|&gt;</span></span><span> </span><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735591"><span class="hs-identifier hs-var">rec</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
+</span><a href="#local-6989586621681735609"><span class="hs-identifier hs-var">rec</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
 forall v. Ord v =&gt; String -&gt; P v (Token String)
 </span><a href="Unison.Parser.html#reserved"><span class="hs-identifier hs-var">reserved</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;-&gt;&quot;</span></span><span> </span><span class="annot"><span class="annottext">P v (Token String)
@@ -482,15 +482,15 @@ forall (f :: * -&gt; *) a b. Applicative f =&gt; f a -&gt; f b -&gt; f b
   Input
   ((-&gt;) ParsingEnv)
   (Term F v Ann -&gt; Term F v Ann -&gt; Term F v Ann)
-</span><a href="#local-6989586621681735590"><span class="hs-identifier hs-var">eff</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681735608"><span class="hs-identifier hs-var">eff</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-107"></span><span>
 </span><span id="line-108"></span><span class="hs-comment">-- &quot;forall a b . List a -&gt; List b -&gt; Maybe Text&quot;</span><span>
-</span><span id="line-109"></span><span id="local-6989586621681735785"><span class="annot"><a href="Unison.TypeParser.html#forall"><span class="hs-keyword hs-type">forall</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735785"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735785"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735785"><span class="hs-identifier hs-type">v</span></a></span></span><span>
+</span><span id="line-109"></span><span id="local-6989586621681735803"><span class="annot"><a href="Unison.TypeParser.html#forall"><span class="hs-keyword hs-type">forall</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Var</span></span><span> </span><span class="annot"><a href="#local-6989586621681735803"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735803"><span class="hs-identifier hs-type">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.TypeParser.html#TypeP"><span class="hs-identifier hs-type">TypeP</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681735803"><span class="hs-identifier hs-type">v</span></a></span></span><span>
 </span><span id="line-110"></span><span id="forall"><span class="annot"><span class="annottext">forall :: TypeP v -&gt; TypeP v
-</span><a href="Unison.TypeParser.html#forall"><span class="hs-keyword hs-var hs-var">forall</span></a></span></span><span> </span><span id="local-6989586621681735580"><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735580"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-111"></span><span>    </span><span id="local-6989586621681735579"><span class="annot"><span class="annottext">Token String
-</span><a href="#local-6989586621681735579"><span class="hs-identifier hs-var">kw</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
+</span><a href="Unison.TypeParser.html#forall"><span class="hs-keyword hs-var hs-var">forall</span></a></span></span><span> </span><span id="local-6989586621681735598"><span class="annot"><span class="annottext">TypeP v
+</span><a href="#local-6989586621681735598"><span class="hs-identifier hs-var">rec</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-111"></span><span>    </span><span id="local-6989586621681735597"><span class="annot"><span class="annottext">Token String
+</span><a href="#local-6989586621681735597"><span class="hs-identifier hs-var">kw</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; P v (Token String)
 forall v. Ord v =&gt; String -&gt; P v (Token String)
 </span><a href="Unison.Parser.html#reserved"><span class="hs-identifier hs-var">reserved</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;forall&quot;</span></span><span> </span><span class="annot"><span class="annottext">P v (Token String) -&gt; P v (Token String) -&gt; P v (Token String)
@@ -499,8 +499,8 @@ forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f a -&gt; f a
 forall v. Ord v =&gt; String -&gt; P v (Token String)
 </span><a href="Unison.Parser.html#reserved"><span class="hs-identifier hs-var">reserved</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&#8704;&quot;</span></span><span>
-</span><span id="line-112"></span><span>    </span><span id="local-6989586621681735578"><span class="annot"><span class="annottext">[v]
-</span><a href="#local-6989586621681735578"><span class="hs-identifier hs-var">vars</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([Token v] -&gt; [v])
+</span><span id="line-112"></span><span>    </span><span id="local-6989586621681735596"><span class="annot"><span class="annottext">[v]
+</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">vars</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">([Token v] -&gt; [v])
 -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) [Token v]
 -&gt; ParsecT (Error v) Input ((-&gt;) ParsingEnv) [v]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -536,21 +536,21 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;.&quot;</span></span><span> </span><span class="annot"><span class="annottext">Maybe ShortHash
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-114"></span><span>    </span><span id="local-6989586621681735572"><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735572"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
-</span><a href="#local-6989586621681735580"><span class="hs-identifier hs-var">rec</span></a></span><span>
+</span><span id="line-114"></span><span>    </span><span id="local-6989586621681735590"><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735590"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">TypeP v
+</span><a href="#local-6989586621681735598"><span class="hs-identifier hs-var">rec</span></a></span><span>
 </span><span id="line-115"></span><span>    </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">Ann -&gt; [v] -&gt; Type v Ann -&gt; Type v Ann
 forall v a. Ord v =&gt; a -&gt; [v] -&gt; Type v a -&gt; Type v a
 </span><span class="hs-identifier hs-var">Type.foralls</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Token String -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Token String
-</span><a href="#local-6989586621681735579"><span class="hs-identifier hs-var">kw</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
+</span><a href="#local-6989586621681735597"><span class="hs-identifier hs-var">kw</span></a></span><span> </span><span class="annot"><span class="annottext">Ann -&gt; Ann -&gt; Ann
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Type v Ann -&gt; Ann
 forall a. Annotated a =&gt; a -&gt; Ann
 </span><a href="Unison.Parser.html#ann"><span class="hs-identifier hs-var">ann</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735572"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[v]
-</span><a href="#local-6989586621681735578"><span class="hs-identifier hs-var">vars</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
-</span><a href="#local-6989586621681735572"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621681735590"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[v]
+</span><a href="#local-6989586621681735596"><span class="hs-identifier hs-var">vars</span></a></span><span> </span><span class="annot"><span class="annottext">Type v Ann
+</span><a href="#local-6989586621681735590"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-116"></span><span>
 </span><span id="line-117"></span></pre></body></html>
