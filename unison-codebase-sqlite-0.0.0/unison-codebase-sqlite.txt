@@ -408,14 +408,7 @@ instance Database.SQLite.Simple.FromRow.FromRow U.Codebase.Sqlite.Referent.Id
 
 module U.Codebase.Sqlite.Queries
 type DB m = (MonadIO m, MonadReader Connection m)
-type EDB m = (DB m, Err m)
 type Err m = (MonadError Integrity m, HasCallStack)
-debugQuery :: Bool
-debugThread :: Bool
-debugConnection :: Bool
-alwaysTraceOnCrash :: Bool
-crashOnError :: Bool
-throwError :: Err m => Integrity -> m c
 data Integrity
 UnknownHashId :: HashId -> Integrity
 UnknownTextId :: TextId -> Integrity
@@ -429,67 +422,62 @@ MultipleNamespaceRoots :: [CausalHashId] -> Integrity
 NoSchemaVersion :: Integrity
 MultipleSchemaVersions :: [SchemaVersion] -> Integrity
 NoTypeIndexForTerm :: Id -> Integrity
-orError :: Err m => Integrity -> Maybe b -> m b
-type TypeHashReference = Reference' TextId HashId
-createSchema :: (DB m, MonadUnliftIO m) => m ()
-setJournalMode :: DB m => JournalMode -> m ()
-setFlags :: DB m => m ()
-schemaVersion :: DB m => m SchemaVersion
-saveHash :: DB m => Base32Hex -> m HashId
-saveHashHash :: DB m => Hash -> m HashId
-loadHashId :: DB m => Base32Hex -> m (Maybe HashId)
-loadHashIdByHash :: DB m => Hash -> m (Maybe HashId)
-saveCausalHash :: DB m => CausalHash -> m CausalHashId
-saveBranchHash :: DB m => BranchHash -> m BranchHashId
-loadCausalHashIdByCausalHash :: DB m => CausalHash -> m (Maybe CausalHashId)
-loadCausalByCausalHash :: DB m => CausalHash -> m (Maybe (CausalHashId, BranchHashId))
-expectHashIdByHash :: EDB m => Hash -> m HashId
-loadHashHashById :: EDB m => HashId -> m Hash
-loadHashById :: EDB m => HashId -> m Base32Hex
 saveText :: DB m => Text -> m TextId
 loadText :: DB m => Text -> m (Maybe TextId)
 loadTextById :: EDB m => TextId -> m Text
+saveHash :: DB m => Base32Hex -> m HashId
+saveHashHash :: DB m => Hash -> m HashId
+loadHashId :: DB m => Base32Hex -> m (Maybe HashId)
+loadHashById :: EDB m => HashId -> m Base32Hex
+loadHashIdByHash :: DB m => Hash -> m (Maybe HashId)
+expectHashIdByHash :: EDB m => Hash -> m HashId
+saveCausalHash :: DB m => CausalHash -> m CausalHashId
+loadCausalHash :: EDB m => CausalHashId -> m CausalHash
+saveBranchHash :: DB m => BranchHash -> m BranchHashId
 saveHashObject :: DB m => HashId -> ObjectId -> Int -> m ()
-saveObject :: DB m => HashId -> ObjectType -> ByteString -> m ObjectId
-loadObjectById :: EDB m => ObjectId -> m ByteString
-loadObjectWithTypeById :: EDB m => ObjectId -> m (ObjectType, ByteString)
-loadObjectWithHashIdAndTypeById :: EDB m => ObjectId -> m (HashId, ObjectType, ByteString)
+hashIdsForObject :: DB m => ObjectId -> m (NonEmpty HashId)
+hashIdWithVersionForObject :: DB m => ObjectId -> m [(HashId, Int)]
 
 -- | Not all hashes have corresponding objects; e.g., hashes of term types
 expectObjectIdForPrimaryHashId :: EDB m => HashId -> m ObjectId
-maybeObjectIdForPrimaryHashId :: DB m => HashId -> m (Maybe ObjectId)
 expectObjectIdForAnyHashId :: EDB m => HashId -> m ObjectId
+maybeObjectIdForPrimaryHashId :: DB m => HashId -> m (Maybe ObjectId)
 maybeObjectIdForAnyHashId :: DB m => HashId -> m (Maybe ObjectId)
+saveObject :: DB m => HashId -> ObjectType -> ByteString -> m ObjectId
+loadObjectById :: EDB m => ObjectId -> m ByteString
 
 -- | All objects have corresponding hashes.
 loadPrimaryHashByObjectId :: EDB m => ObjectId -> m Base32Hex
-hashIdsForObject :: DB m => ObjectId -> m (NonEmpty HashId)
-hashIdWithVersionForObject :: DB m => ObjectId -> m [(HashId, Int)]
+loadObjectWithTypeById :: EDB m => ObjectId -> m (ObjectType, ByteString)
+loadObjectWithHashIdAndTypeById :: EDB m => ObjectId -> m (HashId, ObjectType, ByteString)
 updateObjectBlob :: DB m => ObjectId -> ByteString -> m ()
+loadMaybeNamespaceRoot :: EDB m => m (Maybe CausalHashId)
+setNamespaceRoot :: forall m. DB m => CausalHashId -> m ()
+loadNamespaceRoot :: EDB m => m CausalHashId
 
 -- | Maybe we would generalize this to something other than NamespaceHash
 --   if we end up wanting to store other kinds of Causals here too.
 saveCausal :: DB m => CausalHashId -> BranchHashId -> m ()
+isCausalHash :: DB m => HashId -> m Bool
+loadCausalHashIdByCausalHash :: DB m => CausalHash -> m (Maybe CausalHashId)
 
 -- | ]
 loadCausalValueHashId :: EDB m => CausalHashId -> m BranchHashId
-loadCausalHash :: EDB m => CausalHashId -> m CausalHash
-loadMaybeCausalValueHashId :: DB m => HashId -> m (Maybe BranchHashId)
-isCausalHash :: DB m => HashId -> m Bool
+loadCausalByCausalHash :: DB m => CausalHash -> m (Maybe (CausalHashId, BranchHashId))
 loadBranchObjectIdByCausalHashId :: EDB m => CausalHashId -> m (Maybe BranchObjectId)
 saveCausalParents :: DB m => CausalHashId -> [CausalHashId] -> m ()
 loadCausalParents :: DB m => CausalHashId -> m [CausalHashId]
-newtype DataVersion
-DataVersion :: Int -> DataVersion
-dataVersion :: DB m => m DataVersion
-loadNamespaceRoot :: EDB m => m CausalHashId
-loadMaybeNamespaceRoot :: EDB m => m (Maybe CausalHashId)
-setNamespaceRoot :: forall m. DB m => CausalHashId -> m ()
+before :: DB m => CausalHashId -> CausalHashId -> m Bool
+lca :: CausalHashId -> CausalHashId -> Connection -> Connection -> IO (Maybe CausalHashId)
 saveWatch :: DB m => WatchKind -> IdH -> ByteString -> m ()
 loadWatch :: DB m => WatchKind -> IdH -> m (Maybe ByteString)
-loadWatchKindsByReference :: DB m => IdH -> m [WatchKind]
 loadWatchesByWatchKind :: DB m => WatchKind -> m [IdH]
+loadWatchKindsByReference :: DB m => IdH -> m [WatchKind]
 clearWatches :: DB m => m ()
+addToDependentsIndex :: DB m => Reference -> Id -> m ()
+getDependentsForDependency :: DB m => Reference -> m [Id]
+getDependenciesForDependent :: DB m => Id -> m [Reference]
+getDependencyIdsForDependent :: DB m => Id -> m [Id]
 addToTypeIndex :: DB m => Reference' TextId HashId -> Id -> m ()
 getReferentsByType :: DB m => Reference' TextId HashId -> m [Id]
 getTypeReferenceForReferent :: EDB m => Id -> m (Reference' TextId HashId)
@@ -497,48 +485,17 @@ getTypeReferencesForComponent :: EDB m => ObjectId -> m [(Reference' TextId Hash
 addToTypeMentionsIndex :: DB m => Reference' TextId HashId -> Id -> m ()
 getReferentsByTypeMention :: DB m => Reference' TextId HashId -> m [Id]
 getTypeMentionsReferencesForComponent :: EDB m => ObjectId -> m [(Reference' TextId HashId, Id)]
-fixupTypeIndexRow :: (Reference' TextId HashId :. Id) -> (Reference' TextId HashId, Id)
-addToDependentsIndex :: DB m => Reference -> Id -> m ()
-getDependentsForDependency :: DB m => Reference -> m [Id]
-getDependenciesForDependent :: DB m => Id -> m [Reference]
-getDependencyIdsForDependent :: DB m => Id -> m [Id]
 objectIdByBase32Prefix :: DB m => ObjectType -> Text -> m [ObjectId]
-causalHashIdByBase32Prefix :: DB m => Text -> m [CausalHashId]
 namespaceHashIdByBase32Prefix :: DB m => Text -> m [BranchHashId]
-before :: DB m => CausalHashId -> CausalHashId -> m Bool
-lca :: CausalHashId -> CausalHashId -> Connection -> Connection -> IO (Maybe CausalHashId)
-ancestorSql :: String
+causalHashIdByBase32Prefix :: DB m => Text -> m [CausalHashId]
+createSchema :: (DB m, MonadUnliftIO m) => m ()
+schemaVersion :: DB m => m SchemaVersion
+setFlags :: DB m => m ()
 
--- | composite input, atomic List output
-queryAtoms :: (DB f, ToRow q, FromField b, Show q, Show b) => Query -> q -> f [b]
-
--- | no input, atomic List output
-queryAtoms_ :: (DB f, FromField b, Show b) => Query -> f [b]
-
--- | composite input, composite Maybe output
-queryMaybe :: (DB f, ToRow q, FromRow b, Show q, Show b) => Query -> q -> f (Maybe b)
-
--- | composite input, atomic Maybe output
-queryAtom :: (DB f, ToRow q, FromField b, Show q, Show b) => Query -> q -> f (Maybe b)
-
--- | Just output
-queryOne :: Functor f => f (Maybe b) -> f b
-
--- | composite input, composite List output
-query :: (DB m, ToRow q, FromRow r, Show q, Show r) => Query -> q -> m [r]
-
--- | no input, composite List output
-query_ :: (DB m, FromRow r, Show r) => Query -> m [r]
-debugHeader :: DB m => m String
-queryTrace :: (MonadUnliftIO m, Show q, Show a) => String -> Query -> q -> m a -> m a
-queryTrace_ :: (MonadUnliftIO m, Show a) => String -> Query -> m a -> m a
-traceConnectionFile :: DB m => m ()
-execute :: (DB m, ToRow q, Show q) => Query -> q -> m ()
-execute_ :: DB m => Query -> m ()
-executeMany :: (DB m, ToRow q, Show q) => Query -> [q] -> m ()
-
--- | transaction that blocks
-withImmediateTransaction :: (DB m, MonadUnliftIO m) => m a -> m a
+-- | The data version will increase if there has been any external
+--   modification to the database since the last observed data version.
+data DataVersion
+dataVersion :: DB m => m DataVersion
 
 -- | low-level transaction stuff
 savepoint :: DB m => String -> m ()
@@ -547,10 +504,11 @@ savepoint :: DB m => String -> m ()
 release :: DB m => String -> m ()
 
 -- | low-level transaction stuff
-rollbackTo :: DB m => String -> m ()
-
--- | low-level transaction stuff
 rollbackRelease :: DB m => String -> m ()
+setJournalMode :: DB m => JournalMode -> m ()
+
+-- | print the active database filename
+traceConnectionFile :: DB m => m ()
 instance GHC.Show.Show U.Codebase.Sqlite.Queries.Integrity
 instance Database.SQLite.Simple.FromField.FromField U.Codebase.Sqlite.Queries.DataVersion
 instance GHC.Show.Show U.Codebase.Sqlite.Queries.DataVersion
@@ -724,24 +682,45 @@ instance GHC.Show.Show U.Codebase.Sqlite.Sync22.DecodeError
 instance GHC.Show.Show U.Codebase.Sqlite.Sync22.Error
 
 module U.Codebase.Sqlite.Operations
-throwError :: Err m => Error -> m a
-debug :: Bool
+dataVersion :: DB m => m DataVersion
+saveRootBranch :: EDB m => Causal m -> m (BranchObjectId, CausalHashId)
+loadMaybeRootCausalHash :: EDB m => m (Maybe CausalHash)
+loadRootCausalHash :: EDB m => m CausalHash
+loadRootCausal :: EDB m => m (Causal m)
+saveBranch :: EDB m => Causal m -> m (BranchObjectId, CausalHashId)
+loadCausalBranchByCausalHash :: EDB m => CausalHash -> m (Maybe (Causal m))
+saveTermComponent :: EDB m => Hash -> [(Term Symbol, Type Symbol)] -> m ObjectId
+loadTermByReference :: EDB m => Id -> MaybeT m (Term Symbol)
+loadTypeOfTermByTermReference :: EDB m => Id -> MaybeT m (Type Symbol)
+saveDeclComponent :: EDB m => Hash -> [Decl Symbol] -> m ObjectId
+loadDeclByReference :: EDB m => Id -> MaybeT m (Decl Symbol)
+getDeclTypeByReference :: EDB m => Id -> m DeclType
+savePatch :: EDB m => PatchHash -> Patch -> m PatchObjectId
+loadPatchById :: EDB m => PatchObjectId -> m Patch
+objectExistsForHash :: DB m => Hash -> m Bool
+loadHashByObjectId :: EDB m => ObjectId -> m Hash
+primaryHashToMaybeObjectId :: DB m => Hash -> m (Maybe ObjectId)
+primaryHashToMaybePatchObjectId :: EDB m => PatchHash -> m (Maybe PatchObjectId)
+saveWatch :: EDB m => WatchKind -> Id -> Term Symbol -> m ()
 
--- | crashOnError can be helpful for debugging. If it is False, the errors
---   will be delivered to the user elsewhere.
-crashOnError :: Bool
-type Err m = (MonadError Error m, HasCallStack)
-type EDB m = (Err m, DB m)
-type ErrString = String
-data DecodeError
-ErrTermElement :: Word64 -> DecodeError
-ErrDeclElement :: Word64 -> DecodeError
-ErrFramedArrayLen :: DecodeError
-ErrTypeOfTerm :: Id -> DecodeError
-ErrWatch :: WatchKind -> Id -> DecodeError
-ErrBranch :: BranchObjectId -> DecodeError
-ErrPatch :: PatchObjectId -> DecodeError
-ErrObjectDependencies :: ObjectType -> ObjectId -> DecodeError
+-- | returns Nothing if the expression isn't cached.
+loadWatch :: EDB m => WatchKind -> Id -> MaybeT m (Term Symbol)
+listWatches :: EDB m => WatchKind -> m [Id]
+clearWatches :: DB m => m ()
+before :: DB m => CausalHash -> CausalHash -> m (Maybe Bool)
+lca :: EDB m => CausalHash -> CausalHash -> Connection -> Connection -> m (Maybe CausalHash)
+componentReferencesByPrefix :: EDB m => ObjectType -> Text -> Maybe Pos -> m [Id]
+termReferentsByPrefix :: EDB m => Text -> Maybe Word64 -> m [Id]
+declReferentsByPrefix :: EDB m => Text -> Maybe Pos -> Maybe ConstructorId -> m [(Hash, Pos, Word64, DeclType, [ConstructorId])]
+causalHashesByPrefix :: EDB m => ShortBranchHash -> m (Set CausalHash)
+
+-- | returns a list of known definitions referencing <tt>r</tt>
+dependents :: EDB m => Reference -> m (Set Id)
+addTypeToIndexForTerm :: EDB m => Id -> Reference -> m ()
+termsHavingType :: EDB m => Reference -> m (Set Id)
+addTypeMentionsToIndexForTerm :: EDB m => Id -> Set Reference -> m ()
+termsMentioningType :: EDB m => Reference -> m (Set Id)
+getCycleLen :: EDB m => Hash -> m Word64
 data Error
 DecodeError :: DecodeError -> ByteString -> ErrString -> Error
 DatabaseIntegrityError :: Integrity -> Error
@@ -752,129 +731,26 @@ ExpectedBranch' :: CausalHashId -> Error
 LegacyUnknownCycleLen :: Hash -> Error
 LegacyUnknownConstructorType :: Hash -> Pos -> Error
 NeedTypeForBuiltinMetadata :: Text -> Error
-getFromBytesOr :: Err m => DecodeError -> Get a -> ByteString -> m a
-liftQ :: Err m => ExceptT Integrity m a -> m a
-lookupTextId :: EDB m => Text -> m TextId
-loadTextById :: EDB m => TextId -> m Text
-
--- | look up an existing object by its primary hash
-primaryHashToExistingObjectId :: EDB m => Hash -> m ObjectId
-primaryHashToMaybeObjectId :: DB m => Hash -> m (Maybe ObjectId)
-primaryHashToMaybePatchObjectId :: EDB m => PatchHash -> m (Maybe PatchObjectId)
-objectExistsForHash :: DB m => Hash -> m Bool
-loadHashByObjectId :: EDB m => ObjectId -> m Hash
-loadHashByHashId :: EDB m => HashId -> m Hash
-loadCausalHashById :: EDB m => CausalHashId -> m CausalHash
-loadValueHashByCausalHashId :: EDB m => CausalHashId -> m BranchHash
-loadRootCausalHash :: EDB m => m CausalHash
-loadMaybeRootCausalHash :: EDB m => m (Maybe CausalHash)
-c2sReference :: EDB m => Reference -> m Reference
-s2cReference :: EDB m => Reference -> m Reference
+data DecodeError
+ErrTermElement :: Word64 -> DecodeError
+ErrDeclElement :: Word64 -> DecodeError
+ErrFramedArrayLen :: DecodeError
+ErrTypeOfTerm :: Id -> DecodeError
+ErrWatch :: WatchKind -> Id -> DecodeError
+ErrBranch :: BranchObjectId -> DecodeError
+ErrPatch :: PatchObjectId -> DecodeError
+ErrObjectDependencies :: ObjectType -> ObjectId -> DecodeError
+type EDB m = (Err m, DB m)
 c2sReferenceId :: EDB m => Id -> m Id
-s2cReferenceId :: EDB m => Id -> m Id
-h2cReferenceId :: EDB m => IdH -> m Id
-h2cReference :: EDB m => ReferenceH -> m Reference
-c2hReference :: DB m => Reference -> MaybeT m ReferenceH
-s2cReferent :: EDB m => Referent -> m Referent
-s2cReferentId :: EDB m => Id -> m Id
 c2sReferentId :: EDB m => Id -> m Id
-h2cReferent :: EDB m => ReferentH -> m Referent
-s2cTermEdit :: EDB m => TermEdit -> m TermEdit
-s2cTyping :: Typing -> Typing
-c2sTyping :: Typing -> Typing
-s2cTypeEdit :: EDB m => TypeEdit -> m TypeEdit
-
--- | assumes that all relevant values are already in the DB
-c2lPatch :: EDB m => Patch -> m (PatchLocalIds, LocalPatch)
 
 -- | produces a diff diff = full - ref; full = diff + ref
 diffPatch :: LocalPatch -> LocalPatch -> LocalPatchDiff
-decodeComponentLengthOnly :: Err m => ByteString -> m Word64
 decodeTermElementWithType :: Err m => Pos -> ByteString -> m (LocalIds, Term, Type)
-decodeTermElementDiscardingTerm :: Err m => Pos -> ByteString -> m (LocalIds, Type)
-decodeTermElementDiscardingType :: Err m => Pos -> ByteString -> m (LocalIds, Term)
-decodeDeclElement :: Err m => Word64 -> ByteString -> m (LocalIds, Decl Symbol)
-getCycleLen :: EDB m => Hash -> m Word64
-getDeclTypeByReference :: EDB m => Id -> m DeclType
-componentByObjectId :: EDB m => ObjectId -> m [Id]
-saveTermComponent :: EDB m => Hash -> [(Term Symbol, Type Symbol)] -> m ObjectId
-
--- | Save the text and hash parts of a Reference to the database and
---   substitute their ids.
-saveReferenceH :: DB m => Reference' Text Hash -> m (Reference' TextId HashId)
-
--- | implementation detail of c2{s,w}Term The Type is optional, because we
---   don't store them for watch expression results.
-c2xTerm :: forall m t d. Monad m => (Text -> m t) -> (Hash -> m d) -> Term Symbol -> Maybe (Type Symbol) -> m (LocalIds' t d, Term, Maybe Type)
 loadTermWithTypeByReference :: EDB m => Id -> MaybeT m (Term Symbol, Type Symbol)
-loadTermByReference :: EDB m => Id -> MaybeT m (Term Symbol)
-loadTypeOfTermByTermReference :: EDB m => Id -> MaybeT m (Type Symbol)
 s2cTermWithType :: EDB m => LocalIds -> Term -> Type -> m (Term Symbol, Type Symbol)
-s2cTerm :: EDB m => LocalIds -> Term -> m (Term Symbol)
-s2cTypeOfTerm :: EDB m => LocalIds -> Type -> m (Type Symbol)
-
--- | implementation detail of {s,w}2c*Term*
-localIdsToLookups :: Monad m => (t -> m Text) -> (d -> m Hash) -> LocalIds' t d -> m (LocalTextId -> Text, LocalDefnId -> Hash)
-
--- | implementation detail of {s,w}2c*Term*
-x2cTerm :: (LocalTextId -> Text) -> (LocalDefnId -> Hash) -> Term -> Term Symbol
-
--- | implementation detail of {s,w}2c*Term*
-x2cTType :: (LocalTextId -> Text) -> (LocalDefnId -> Hash) -> Type -> Type Symbol
-lookupText :: forall m s w t. (MonadState s m, MonadWriter w m, Field1' s (Map t LocalTextId), Field1' w (Seq t), Ord t) => t -> m LocalTextId
-lookupDefn :: forall m s w d. (MonadState s m, MonadWriter w m, Field2' s (Map d LocalDefnId), Field2' w (Seq d), Ord d) => d -> m LocalDefnId
-
--- | shared implementation of lookupTextHelper and lookupDefnHelper Look up
---   a value in the LUT, or append it.
-lookup_ :: (MonadState s m, MonadWriter w m, Ord t) => Lens' s (Map t t') -> Lens' w (Seq t) -> (Word64 -> t') -> t -> m t'
-c2sTerm :: EDB m => Term Symbol -> Type Symbol -> m (LocalIds, Term, Type)
-listWatches :: EDB m => WatchKind -> m [Id]
-
--- | returns Nothing if the expression isn't cached.
-loadWatch :: EDB m => WatchKind -> Id -> MaybeT m (Term Symbol)
-saveWatch :: EDB m => WatchKind -> Id -> Term Symbol -> m ()
-clearWatches :: DB m => m ()
-c2wTerm :: EDB m => Term Symbol -> m (WatchLocalIds, Term)
-w2cTerm :: EDB m => WatchLocalIds -> Term -> m (Term Symbol)
-saveDeclComponent :: EDB m => Hash -> [Decl Symbol] -> m ObjectId
-c2sDecl :: forall m t d. EDB m => (Text -> m t) -> (Hash -> m d) -> Decl Symbol -> m (LocalIds' t d, Decl Symbol)
-loadDeclByReference :: EDB m => Id -> MaybeT m (Decl Symbol)
-s2cBranch :: EDB m => DbBranch -> m (Branch m)
-type BranchSavingState = (Map Text LocalTextId, Map Hash LocalDefnId, Map PatchObjectId LocalPatchObjectId, Map (BranchObjectId, CausalHashId) LocalBranchChildId)
-type BranchSavingWriter = (Seq Text, Seq Hash, Seq PatchObjectId, Seq (BranchObjectId, CausalHashId))
-type BranchSavingConstraint m = (MonadState BranchSavingState m, MonadWriter BranchSavingWriter m)
-type BranchSavingMonad m = StateT BranchSavingState (WriterT BranchSavingWriter m)
-saveRootBranch :: EDB m => Causal m -> m (BranchObjectId, CausalHashId)
-saveBranch :: EDB m => Causal m -> m (BranchObjectId, CausalHashId)
-loadRootCausal :: EDB m => m (Causal m)
-dataVersion :: DB m => m DataVersion
-loadCausalBranchByCausalHash :: EDB m => CausalHash -> m (Maybe (Causal m))
-loadCausalByCausalHashId :: EDB m => CausalHashId -> m (Causal m)
-
--- | is this even a thing? loading a branch by causal hash? yes I guess so.
-loadBranchByCausalHashId :: EDB m => CausalHashId -> m (Maybe (Branch m))
-loadBranchByObjectId :: EDB m => BranchObjectId -> m (Branch m)
-loadPatchById :: EDB m => PatchObjectId -> m Patch
-savePatch :: EDB m => PatchHash -> Patch -> m PatchObjectId
-s2cPatch :: EDB m => Patch -> m Patch
-deserializePatchObject :: EDB m => PatchObjectId -> m PatchFormat
-lca :: EDB m => CausalHash -> CausalHash -> Connection -> Connection -> m (Maybe CausalHash)
-before :: DB m => CausalHash -> CausalHash -> m (Maybe Bool)
-termsHavingType :: EDB m => Reference -> m (Set Id)
-typeReferenceForTerm :: EDB m => Id -> m ReferenceH
-termsMentioningType :: EDB m => Reference -> m (Set Id)
-addTypeToIndexForTerm :: EDB m => Id -> Reference -> m ()
-addTypeMentionsToIndexForTerm :: EDB m => Id -> Set Reference -> m ()
-componentReferencesByPrefix :: EDB m => ObjectType -> Text -> Maybe Pos -> m [Id]
-termReferencesByPrefix :: EDB m => Text -> Maybe Word64 -> m [Id]
 declReferencesByPrefix :: EDB m => Text -> Maybe Word64 -> m [Id]
-termReferentsByPrefix :: EDB m => Text -> Maybe Word64 -> m [Id]
-declReferentsByPrefix :: EDB m => Text -> Maybe Pos -> Maybe ConstructorId -> m [(Hash, Pos, Word64, DeclType, [ConstructorId])]
 branchHashesByPrefix :: EDB m => ShortBranchHash -> m (Set BranchHash)
-causalHashesByPrefix :: EDB m => ShortBranchHash -> m (Set CausalHash)
-
--- | returns a list of known definitions referencing <tt>r</tt>
-dependents :: EDB m => Reference -> m (Set Id)
 
 -- | returns empty set for unknown inputs; doesn't distinguish between term
 --   and decl
