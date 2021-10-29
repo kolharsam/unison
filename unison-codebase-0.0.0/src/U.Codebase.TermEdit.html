@@ -3,7 +3,7 @@
 </span><span id="line-3"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="U.Codebase.Referent.html"><span class="hs-identifier">U.Codebase.Referent</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="U.Codebase.Referent.html#Referent"><span class="hs-identifier">Referent</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-4"></span><span>
 </span><span id="line-5"></span><span class="hs-keyword">data</span><span> </span><span id="TermEdit"><span class="annot"><a href="U.Codebase.TermEdit.html#TermEdit"><span class="hs-identifier hs-var">TermEdit</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Replace"><span class="annot"><a href="U.Codebase.TermEdit.html#Replace"><span class="hs-identifier hs-var">Replace</span></a></span></span><span> </span><span class="annot"><a href="U.Codebase.Referent.html#Referent"><span class="hs-identifier hs-type">Referent</span></a></span><span> </span><span class="annot"><a href="U.Codebase.TermEdit.html#Typing"><span class="hs-identifier hs-type">Typing</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Deprecate"><span class="annot"><a href="U.Codebase.TermEdit.html#Deprecate"><span class="hs-identifier hs-var">Deprecate</span></a></span></span><span>
-</span><span id="line-6"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679114749"><span id="local-6989586621679114751"><span class="annot"><span class="annottext">TermEdit -&gt; TermEdit -&gt; Bool
+</span><span id="line-6"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679114750"><span id="local-6989586621679114752"><span class="annot"><span class="annottext">TermEdit -&gt; TermEdit -&gt; Bool
 (TermEdit -&gt; TermEdit -&gt; Bool)
 -&gt; (TermEdit -&gt; TermEdit -&gt; Bool) -&gt; Eq TermEdit
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -11,7 +11,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: TermEdit -&gt; TermEdit -&gt; Bool
 == :: TermEdit -&gt; TermEdit -&gt; Bool
 $c== :: TermEdit -&gt; TermEdit -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114733"><span id="local-6989586621679114735"><span id="local-6989586621679114737"><span id="local-6989586621679114739"><span id="local-6989586621679114741"><span id="local-6989586621679114743"><span id="local-6989586621679114745"><span class="annot"><span class="annottext">Eq TermEdit
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114734"><span id="local-6989586621679114736"><span id="local-6989586621679114738"><span id="local-6989586621679114740"><span id="local-6989586621679114742"><span id="local-6989586621679114744"><span id="local-6989586621679114746"><span class="annot"><span class="annottext">Eq TermEdit
 Eq TermEdit
 -&gt; (TermEdit -&gt; TermEdit -&gt; Ordering)
 -&gt; (TermEdit -&gt; TermEdit -&gt; Bool)
@@ -49,7 +49,7 @@ $c&lt; :: TermEdit -&gt; TermEdit -&gt; Bool
 compare :: TermEdit -&gt; TermEdit -&gt; Ordering
 $ccompare :: TermEdit -&gt; TermEdit -&gt; Ordering
 $cp1Ord :: Eq TermEdit
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114726"><span id="local-6989586621679114728"><span id="local-6989586621679114730"><span class="annot"><span class="annottext">Int -&gt; TermEdit -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114727"><span id="local-6989586621679114729"><span id="local-6989586621679114731"><span class="annot"><span class="annottext">Int -&gt; TermEdit -&gt; ShowS
 [TermEdit] -&gt; ShowS
 TermEdit -&gt; String
 (Int -&gt; TermEdit -&gt; ShowS)
@@ -68,7 +68,7 @@ $cshowsPrec :: Int -&gt; TermEdit -&gt; ShowS
 </span><span id="line-9"></span><span class="hs-comment">-- Replacements with a Subtype can be automatically propagated but may result in dependents getting more general types, so requires re-inference.</span><span>
 </span><span id="line-10"></span><span class="hs-comment">-- Replacements of a Different type need to be manually propagated by the programmer.</span><span>
 </span><span id="line-11"></span><span class="hs-keyword">data</span><span> </span><span id="Typing"><span class="annot"><a href="U.Codebase.TermEdit.html#Typing"><span class="hs-identifier hs-var">Typing</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Same"><span class="annot"><a href="U.Codebase.TermEdit.html#Same"><span class="hs-identifier hs-var">Same</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Subtype"><span class="annot"><a href="U.Codebase.TermEdit.html#Subtype"><span class="hs-identifier hs-var">Subtype</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="Different"><span class="annot"><a href="U.Codebase.TermEdit.html#Different"><span class="hs-identifier hs-var">Different</span></a></span></span><span>
-</span><span id="line-12"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679114718"><span id="local-6989586621679114720"><span class="annot"><span class="annottext">Typing -&gt; Typing -&gt; Bool
+</span><span id="line-12"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679114719"><span id="local-6989586621679114721"><span class="annot"><span class="annottext">Typing -&gt; Typing -&gt; Bool
 (Typing -&gt; Typing -&gt; Bool)
 -&gt; (Typing -&gt; Typing -&gt; Bool) -&gt; Eq Typing
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -76,7 +76,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Typing -&gt; Typing -&gt; Bool
 == :: Typing -&gt; Typing -&gt; Bool
 $c== :: Typing -&gt; Typing -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114703"><span id="local-6989586621679114705"><span id="local-6989586621679114707"><span id="local-6989586621679114709"><span id="local-6989586621679114711"><span id="local-6989586621679114713"><span id="local-6989586621679114715"><span class="annot"><span class="annottext">Eq Typing
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114704"><span id="local-6989586621679114706"><span id="local-6989586621679114708"><span id="local-6989586621679114710"><span id="local-6989586621679114712"><span id="local-6989586621679114714"><span id="local-6989586621679114716"><span class="annot"><span class="annottext">Eq Typing
 Eq Typing
 -&gt; (Typing -&gt; Typing -&gt; Ordering)
 -&gt; (Typing -&gt; Typing -&gt; Bool)
@@ -114,7 +114,7 @@ $c&lt; :: Typing -&gt; Typing -&gt; Bool
 compare :: Typing -&gt; Typing -&gt; Ordering
 $ccompare :: Typing -&gt; Typing -&gt; Ordering
 $cp1Ord :: Eq Typing
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114697"><span id="local-6989586621679114699"><span id="local-6989586621679114701"><span class="annot"><span class="annottext">Int -&gt; Typing -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679114698"><span id="local-6989586621679114700"><span id="local-6989586621679114702"><span class="annot"><span class="annottext">Int -&gt; Typing -&gt; ShowS
 [Typing] -&gt; ShowS
 Typing -&gt; String
 (Int -&gt; Typing -&gt; ShowS)

@@ -18,72 +18,72 @@
 </span><span id="line-18"></span><span class="hs-comment">-- foo.bar x = bar x</span><span>
 </span><span id="line-19"></span><span class="annot"><a href="Unison.PrettyPrintEnv.Util.html#declarationPPE"><span class="hs-identifier hs-type">declarationPPE</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnvDecl.html#PrettyPrintEnvDecl"><span class="hs-identifier hs-type">PrettyPrintEnvDecl</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-type">PrettyPrintEnv</span></a></span><span>
 </span><span id="line-20"></span><span id="declarationPPE"><span class="annot"><span class="annottext">declarationPPE :: PrettyPrintEnvDecl -&gt; Reference -&gt; PrettyPrintEnv
-</span><a href="Unison.PrettyPrintEnv.Util.html#declarationPPE"><span class="hs-identifier hs-var hs-var">declarationPPE</span></a></span></span><span> </span><span id="local-6989586621681742619"><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span></span><span> </span><span id="local-6989586621681742618"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742618"><span class="hs-identifier hs-var">rd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
+</span><a href="Unison.PrettyPrintEnv.Util.html#declarationPPE"><span class="hs-identifier hs-var hs-var">declarationPPE</span></a></span></span><span> </span><span id="local-6989586621681749649"><span class="annot"><span class="annottext">PrettyPrintEnvDecl
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span></span><span> </span><span id="local-6989586621681749648"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749648"><span class="hs-identifier hs-var">rd</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Referent -&gt; Maybe (HashQualified Name))
 -&gt; (Reference -&gt; Maybe (HashQualified Name)) -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnv.html#PrettyPrintEnv"><span class="hs-identifier hs-var">PrettyPrintEnv</span></a></span><span> </span><span class="annot"><span class="annottext">Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681742616"><span class="hs-identifier hs-var">tm</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681742615"><span class="hs-identifier hs-var">ty</span></a></span><span>
+</span><a href="#local-6989586621681749646"><span class="hs-identifier hs-var">tm</span></a></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681749645"><span class="hs-identifier hs-var">ty</span></a></span><span>
 </span><span id="line-21"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-22"></span><span>    </span><span id="local-6989586621681742614"><span class="annot"><span class="annottext">comp :: Set Reference
-</span><a href="#local-6989586621681742614"><span class="hs-identifier hs-var hs-var">comp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Component -&gt; Set Reference
+</span><span id="line-22"></span><span>    </span><span id="local-6989586621681749644"><span class="annot"><span class="annottext">comp :: Set Reference
+</span><a href="#local-6989586621681749644"><span class="hs-identifier hs-var hs-var">comp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Component -&gt; Set Reference
 </span><span class="hs-identifier hs-var hs-var">Reference.members</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Reference -&gt; Component
 </span><span class="hs-identifier hs-var">Reference.componentFor</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742618"><span class="hs-identifier hs-var">rd</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-23"></span><span>    </span><span id="local-6989586621681742616"><span class="annot"><span class="annottext">tm :: Referent -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681742616"><span class="hs-identifier hs-var hs-var">tm</span></a></span></span><span> </span><span id="local-6989586621681742611"><span class="annot"><span class="annottext">r0 :: Referent
-</span><a href="#local-6989586621681742611"><span class="hs-identifier hs-var">r0</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Referent.Ref</span></span><span> </span><span id="local-6989586621681742609"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742609"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621681749648"><span class="hs-identifier hs-var">rd</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-23"></span><span>    </span><span id="local-6989586621681749646"><span class="annot"><span class="annottext">tm :: Referent -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681749646"><span class="hs-identifier hs-var hs-var">tm</span></a></span></span><span> </span><span id="local-6989586621681749641"><span class="annot"><span class="annottext">r0 :: Referent
+</span><a href="#local-6989586621681749641"><span class="hs-identifier hs-var">r0</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Referent.Ref</span></span><span> </span><span id="local-6989586621681749639"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749639"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-24"></span><span>      </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Set Reference -&gt; Bool
 forall a. Ord a =&gt; a -&gt; Set a -&gt; Bool
 </span><span class="hs-identifier hs-var">Set.member</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742609"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
-</span><a href="#local-6989586621681742614"><span class="hs-identifier hs-var">comp</span></a></span><span>
+</span><a href="#local-6989586621681749639"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
+</span><a href="#local-6989586621681749644"><span class="hs-identifier hs-var">comp</span></a></span><span>
 </span><span id="line-25"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Referent -&gt; Maybe (HashQualified Name)
 </span><a href="Unison.PrettyPrintEnv.html#terms"><span class="hs-identifier hs-var hs-var">terms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#unsuffixifiedPPE"><span class="hs-identifier hs-var hs-var">unsuffixifiedPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681742611"><span class="hs-identifier hs-var">r0</span></a></span><span>
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681749641"><span class="hs-identifier hs-var">r0</span></a></span><span>
 </span><span id="line-26"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Referent -&gt; Maybe (HashQualified Name)
 </span><a href="Unison.PrettyPrintEnv.html#terms"><span class="hs-identifier hs-var hs-var">terms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#suffixifiedPPE"><span class="hs-identifier hs-var hs-var">suffixifiedPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681742611"><span class="hs-identifier hs-var">r0</span></a></span><span>
-</span><span id="line-27"></span><span>    </span><span class="annot"><a href="#local-6989586621681742616"><span class="hs-identifier hs-var">tm</span></a></span><span> </span><span id="local-6989586621681742606"><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681742606"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Referent -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681749641"><span class="hs-identifier hs-var">r0</span></a></span><span>
+</span><span id="line-27"></span><span>    </span><span class="annot"><a href="#local-6989586621681749646"><span class="hs-identifier hs-var">tm</span></a></span><span> </span><span id="local-6989586621681749636"><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681749636"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Referent -&gt; Maybe (HashQualified Name)
 </span><a href="Unison.PrettyPrintEnv.html#terms"><span class="hs-identifier hs-var hs-var">terms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#suffixifiedPPE"><span class="hs-identifier hs-var hs-var">suffixifiedPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
-</span><a href="#local-6989586621681742606"><span class="hs-identifier hs-var">r</span></a></span><span>
-</span><span id="line-28"></span><span>    </span><span id="local-6989586621681742615"><span class="annot"><span class="annottext">ty :: Reference -&gt; Maybe (HashQualified Name)
-</span><a href="#local-6989586621681742615"><span class="hs-identifier hs-var hs-var">ty</span></a></span></span><span> </span><span id="local-6989586621681742605"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742605"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Referent
+</span><a href="#local-6989586621681749636"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><span id="line-28"></span><span>    </span><span id="local-6989586621681749645"><span class="annot"><span class="annottext">ty :: Reference -&gt; Maybe (HashQualified Name)
+</span><a href="#local-6989586621681749645"><span class="hs-identifier hs-var hs-var">ty</span></a></span></span><span> </span><span id="local-6989586621681749635"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749635"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-29"></span><span>      </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Set Reference -&gt; Bool
 forall a. Ord a =&gt; a -&gt; Set a -&gt; Bool
 </span><span class="hs-identifier hs-var">Set.member</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742605"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
-</span><a href="#local-6989586621681742614"><span class="hs-identifier hs-var">comp</span></a></span><span>
+</span><a href="#local-6989586621681749635"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">Set Reference
+</span><a href="#local-6989586621681749644"><span class="hs-identifier hs-var">comp</span></a></span><span>
 </span><span id="line-30"></span><span>        </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Reference -&gt; Maybe (HashQualified Name)
 </span><a href="Unison.PrettyPrintEnv.html#types"><span class="hs-identifier hs-var hs-var">types</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#unsuffixifiedPPE"><span class="hs-identifier hs-var hs-var">unsuffixifiedPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742605"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749635"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-31"></span><span>        </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnv -&gt; Reference -&gt; Maybe (HashQualified Name)
 </span><a href="Unison.PrettyPrintEnv.html#types"><span class="hs-identifier hs-var hs-var">types</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#suffixifiedPPE"><span class="hs-identifier hs-var hs-var">suffixifiedPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742619"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742605"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621681749649"><span class="hs-identifier hs-var">ppe</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749635"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-32"></span><span>
 </span><span id="line-33"></span><span class="hs-comment">-- The suffixed names uses the fully-qualified name for `r`</span><span>
 </span><span id="line-34"></span><span class="annot"><a href="Unison.PrettyPrintEnv.Util.html#declarationPPEDecl"><span class="hs-identifier hs-type">declarationPPEDecl</span></a></span><span> </span><span class="hs-glyph">::</span><span>  </span><span class="annot"><a href="Unison.PrettyPrintEnvDecl.html#PrettyPrintEnvDecl"><span class="hs-identifier hs-type">PrettyPrintEnvDecl</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Reference</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnvDecl.html#PrettyPrintEnvDecl"><span class="hs-identifier hs-type">PrettyPrintEnvDecl</span></a></span><span>
 </span><span id="line-35"></span><span id="declarationPPEDecl"><span class="annot"><span class="annottext">declarationPPEDecl :: PrettyPrintEnvDecl -&gt; Reference -&gt; PrettyPrintEnvDecl
-</span><a href="Unison.PrettyPrintEnv.Util.html#declarationPPEDecl"><span class="hs-identifier hs-var hs-var">declarationPPEDecl</span></a></span></span><span> </span><span id="local-6989586621681742603"><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742603"><span class="hs-identifier hs-var">ppe</span></a></span></span><span> </span><span id="local-6989586621681742602"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742602"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span>
+</span><a href="Unison.PrettyPrintEnv.Util.html#declarationPPEDecl"><span class="hs-identifier hs-var hs-var">declarationPPEDecl</span></a></span></span><span> </span><span id="local-6989586621681749633"><span class="annot"><span class="annottext">PrettyPrintEnvDecl
+</span><a href="#local-6989586621681749633"><span class="hs-identifier hs-var">ppe</span></a></span></span><span> </span><span id="local-6989586621681749632"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749632"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span>
 </span><span id="line-36"></span><span>   </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742603"><span class="hs-identifier hs-var">ppe</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">suffixifiedPPE :: PrettyPrintEnv
+</span><a href="#local-6989586621681749633"><span class="hs-identifier hs-var">ppe</span></a></span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">suffixifiedPPE :: PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnvDecl.html#suffixifiedPPE"><span class="hs-identifier hs-var">suffixifiedPPE</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl -&gt; Reference -&gt; PrettyPrintEnv
 </span><a href="Unison.PrettyPrintEnv.Util.html#declarationPPE"><span class="hs-identifier hs-var">declarationPPE</span></a></span><span> </span><span class="annot"><span class="annottext">PrettyPrintEnvDecl
-</span><a href="#local-6989586621681742603"><span class="hs-identifier hs-var">ppe</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681742602"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">}</span></pre></body></html>
+</span><a href="#local-6989586621681749633"><span class="hs-identifier hs-var">ppe</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681749632"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">}</span></pre></body></html>

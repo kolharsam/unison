@@ -23,33 +23,33 @@
 </span><span id="line-23"></span><span class="hs-comment">-- Give the shortened version of an FQN, if there's been a `use` statement for that FQN.</span><span>
 </span><span id="line-24"></span><span class="annot"><a href="Unison.PrettyPrintEnv.FQN.html#elideFQN"><span class="hs-identifier hs-type">elideFQN</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.PrettyPrintEnv.FQN.html#Imports"><span class="hs-identifier hs-type">Imports</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HQ.HashQualified</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HQ.HashQualified</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Name</span></span><span>
 </span><span id="line-25"></span><span id="elideFQN"><span class="annot"><span class="annottext">elideFQN :: Imports -&gt; HashQualified Name -&gt; HashQualified Name
-</span><a href="Unison.PrettyPrintEnv.FQN.html#elideFQN"><span class="hs-identifier hs-var hs-var">elideFQN</span></a></span></span><span> </span><span id="local-6989586621681742504"><span class="annot"><span class="annottext">Imports
-</span><a href="#local-6989586621681742504"><span class="hs-identifier hs-var">imports</span></a></span></span><span> </span><span id="local-6989586621681742503"><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681742503"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-26"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681742502"><span class="annot"><span class="annottext">hash :: Maybe ShortHash
-</span><a href="#local-6989586621681742502"><span class="hs-identifier hs-var hs-var">hash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; Maybe ShortHash
+</span><a href="Unison.PrettyPrintEnv.FQN.html#elideFQN"><span class="hs-identifier hs-var hs-var">elideFQN</span></a></span></span><span> </span><span id="local-6989586621681749534"><span class="annot"><span class="annottext">Imports
+</span><a href="#local-6989586621681749534"><span class="hs-identifier hs-var">imports</span></a></span></span><span> </span><span id="local-6989586621681749533"><span class="annot"><span class="annottext">HashQualified Name
+</span><a href="#local-6989586621681749533"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-26"></span><span>  </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681749532"><span class="annot"><span class="annottext">hash :: Maybe ShortHash
+</span><a href="#local-6989586621681749532"><span class="hs-identifier hs-var hs-var">hash</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; Maybe ShortHash
 forall n. HashQualified n -&gt; Maybe ShortHash
 </span><span class="hs-identifier hs-var">HQ.toHash</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681742503"><span class="hs-identifier hs-var">hq</span></a></span><span>
-</span><span id="line-27"></span><span>      </span><span id="local-6989586621681742500"><span class="annot"><span class="annottext">name' :: Maybe Name
-</span><a href="#local-6989586621681742500"><span class="hs-identifier hs-var hs-var">name'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span> </span><span id="local-6989586621681742499"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621681742499"><span class="hs-identifier hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; Maybe Name
+</span><a href="#local-6989586621681749533"><span class="hs-identifier hs-var">hq</span></a></span><span>
+</span><span id="line-27"></span><span>      </span><span id="local-6989586621681749530"><span class="annot"><span class="annottext">name' :: Maybe Name
+</span><a href="#local-6989586621681749530"><span class="hs-identifier hs-var hs-var">name'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span> </span><span id="local-6989586621681749529"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621681749529"><span class="hs-identifier hs-var">name</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; Maybe Name
 forall n. HashQualified n -&gt; Maybe n
 </span><span class="hs-identifier hs-var">HQ.toName</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681742503"><span class="hs-identifier hs-var">hq</span></a></span><span>
-</span><span id="line-28"></span><span>                 </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681742497"><span class="annot"><span class="annottext">hit :: Maybe Name
-</span><a href="#local-6989586621681742497"><span class="hs-identifier hs-var hs-var">hit</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Name) -&gt; Maybe Text -&gt; Maybe Name
+</span><a href="#local-6989586621681749533"><span class="hs-identifier hs-var">hq</span></a></span><span>
+</span><span id="line-28"></span><span>                 </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681749527"><span class="annot"><span class="annottext">hit :: Maybe Name
+</span><a href="#local-6989586621681749527"><span class="hs-identifier hs-var hs-var">hit</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Name) -&gt; Maybe Text -&gt; Maybe Name
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">HasCallStack =&gt; Text -&gt; Name
 Text -&gt; Name
 </span><span class="hs-identifier hs-var">Name.unsafeFromText</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; Imports -&gt; Maybe Text
 forall k a. Ord k =&gt; k -&gt; Map k a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Map.lookup</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621681742499"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Imports
-</span><a href="#local-6989586621681742504"><span class="hs-identifier hs-var">imports</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681749529"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Imports
+</span><a href="#local-6989586621681749534"><span class="hs-identifier hs-var">imports</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-29"></span><span>                 </span><span class="hs-comment">-- Cut out the &quot;const id $&quot; to get tracing of FQN elision attempts.</span><span>
-</span><span id="line-30"></span><span>                 </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681742494"><span class="annot"><span class="annottext">t :: a -&gt; a
-</span><a href="#local-6989586621681742494"><span class="hs-identifier hs-var hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a) -&gt; (Any -&gt; Any) -&gt; a -&gt; a
+</span><span id="line-30"></span><span>                 </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681749524"><span class="annot"><span class="annottext">t :: a -&gt; a
+</span><a href="#local-6989586621681749524"><span class="hs-identifier hs-var hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(a -&gt; a) -&gt; (Any -&gt; Any) -&gt; a -&gt; a
 forall a b. a -&gt; b -&gt; a
 </span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; a
 forall a. a -&gt; a
@@ -63,7 +63,7 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Maybe Name -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Maybe Name
-</span><a href="#local-6989586621681742497"><span class="hs-identifier hs-var">hit</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681749527"><span class="hs-identifier hs-var">hit</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; finding: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -71,7 +71,7 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">HashQualified Name
-</span><a href="#local-6989586621681742503"><span class="hs-identifier hs-var">hq</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681749533"><span class="hs-identifier hs-var">hq</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; in imports: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -79,20 +79,20 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Imports -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Imports
-</span><a href="#local-6989586621681742504"><span class="hs-identifier hs-var">imports</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681749534"><span class="hs-identifier hs-var">imports</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-31"></span><span>                 </span><span class="annot"><span class="annottext">Maybe Name -&gt; Maybe Name
 forall a. a -&gt; a
-</span><a href="#local-6989586621681742494"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; Maybe Name
+</span><a href="#local-6989586621681749524"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Name -&gt; Maybe Name
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Name -&gt; Maybe Name) -&gt; Name -&gt; Maybe Name
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Name -&gt; Maybe Name -&gt; Name
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621681742499"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Name
-</span><a href="#local-6989586621681742497"><span class="hs-identifier hs-var">hit</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681749529"><span class="hs-identifier hs-var">name</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Name
+</span><a href="#local-6989586621681749527"><span class="hs-identifier hs-var">hit</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-32"></span><span>  </span><span class="hs-keyword">in</span><span> </span><span class="annot"><span class="annottext">Maybe Name -&gt; Maybe ShortHash -&gt; HashQualified Name
 </span><span class="hs-identifier hs-var">HQ.fromNameHash</span></span><span> </span><span class="annot"><span class="annottext">Maybe Name
-</span><a href="#local-6989586621681742500"><span class="hs-identifier hs-var">name'</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe ShortHash
-</span><a href="#local-6989586621681742502"><span class="hs-identifier hs-var">hash</span></a></span><span>
+</span><a href="#local-6989586621681749530"><span class="hs-identifier hs-var">name'</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe ShortHash
+</span><a href="#local-6989586621681749532"><span class="hs-identifier hs-var">hash</span></a></span><span>
 </span><span id="line-33"></span></pre></body></html>
