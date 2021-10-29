@@ -36,43 +36,43 @@
 </span><span id="line-36"></span><span class="hs-comment">-- Left is some parse error tbd</span><span>
 </span><span id="line-37"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parsePath%27"><span class="hs-identifier hs-type">parsePath'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span>
 </span><span id="line-38"></span><span id="parsePath%27"><span class="annot"><span class="annottext">parsePath' :: String -&gt; Either String Path'
-</span><a href="Unison.Codebase.Path.Parse.html#parsePath%27"><span class="hs-identifier hs-var hs-var">parsePath'</span></a></span></span><span> </span><span id="local-6989586621681758155"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758155"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
+</span><a href="Unison.Codebase.Path.Parse.html#parsePath%27"><span class="hs-identifier hs-var hs-var">parsePath'</span></a></span></span><span> </span><span id="local-6989586621681758162"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758162"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
 </span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var">parsePathImpl'</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758155"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-39"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621681758154"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758154"><span class="hs-identifier hs-var">e</span></a></span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
+</span><a href="#local-6989586621681758162"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-39"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621681758161"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758161"><span class="hs-identifier hs-var">e</span></a></span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758154"><span class="hs-identifier hs-var">e</span></a></span><span>
-</span><span id="line-40"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758153"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758153"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758161"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><span id="line-40"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758160"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758160"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Path' -&gt; Either String Path'
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758153"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-41"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758152"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758152"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758151"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758151"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
+</span><a href="#local-6989586621681758160"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-41"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758159"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758159"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758158"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758158"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
 </span><a href="Unison.Codebase.Path.Parse.html#parseSegment"><span class="hs-identifier hs-var">parseSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758151"><span class="hs-identifier hs-var">rem</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-42"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758149"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758149"><span class="hs-identifier hs-var">seg</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758158"><span class="hs-identifier hs-var">rem</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-42"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758156"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758156"><span class="hs-identifier hs-var">seg</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Path' -&gt; Either String Path'
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Split' -&gt; Path'
 </span><a href="Unison.Codebase.Path.html#unsplit%27"><span class="hs-identifier hs-var">unsplit'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758152"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; NameSegment
+</span><a href="#local-6989586621681758159"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; NameSegment
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; NameSegment) -&gt; (String -&gt; Text) -&gt; String -&gt; NameSegment
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; NameSegment) -&gt; String -&gt; NameSegment
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758149"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758156"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-43"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758145"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758145"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758152"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758152"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-44"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
@@ -81,7 +81,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Path' -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758152"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758159"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -89,12 +89,12 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758145"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-45"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758143"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758143"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
+</span><a href="#local-6989586621681758152"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-45"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758150"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758150"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758143"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621681758150"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-46"></span><span>
 </span><span id="line-47"></span><span class="hs-comment">-- implementation detail of parsePath' and parseSplit'</span><span>
 </span><span id="line-48"></span><span class="hs-comment">-- foo.bar.baz.34 becomes `Right (foo.bar.baz, &quot;34&quot;)</span><span>
@@ -104,9 +104,9 @@ forall a b. a -&gt; Either a b
 </span><span id="line-52"></span><span class="hs-comment">-- TODO: Get rid of this thing.</span><span>
 </span><span id="line-53"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-type">parsePathImpl'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span>
 </span><span id="line-54"></span><span id="parsePathImpl%27"><span class="annot"><span class="annottext">parsePathImpl' :: String -&gt; Either String (Path', String)
-</span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var hs-var">parsePathImpl'</span></a></span></span><span> </span><span id="local-6989586621681758142"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758142"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758142"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var hs-var">parsePathImpl'</span></a></span></span><span> </span><span id="local-6989586621681758149"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758149"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758149"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-55"></span><span>  </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;.&quot;</span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Path', String) -&gt; Either String (Path', String)
 forall a b. b -&gt; Either a b
@@ -122,8 +122,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Unison.Codebase.Path.html#absoluteEmpty"><span class="hs-identifier hs-var">absoluteEmpty</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-56"></span><span>  </span><span class="annot"><span class="annottext">Char
-</span><span class="hs-char">'.'</span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621681758139"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758139"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ASetter ([NameSegment], String) (Path', String) [NameSegment] Path'
+</span><span class="hs-char">'.'</span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621681758146"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758146"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ASetter ([NameSegment], String) (Path', String) [NameSegment] Path'
 -&gt; ([NameSegment] -&gt; Path')
 -&gt; ([NameSegment], String)
 -&gt; (Path', String)
@@ -153,10 +153,10 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Either String (Path', String)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
-</span><a href="#local-6989586621681758135"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758139"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-57"></span><span>  </span><span id="local-6989586621681758134"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758134"><span class="hs-identifier hs-var">p</span></a></span></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ASetter ([NameSegment], String) (Path', String) [NameSegment] Path'
+</span><a href="#local-6989586621681758142"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758146"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-57"></span><span>  </span><span id="local-6989586621681758141"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758141"><span class="hs-identifier hs-var">p</span></a></span></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ASetter ([NameSegment], String) (Path', String) [NameSegment] Path'
 -&gt; ([NameSegment] -&gt; Path')
 -&gt; ([NameSegment], String)
 -&gt; (Path', String)
@@ -186,18 +186,18 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Either String (Path', String)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
-</span><a href="#local-6989586621681758135"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758134"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621681758142"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758141"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-58"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-59"></span><span>  </span><span id="local-6989586621681758132"><span class="annot"><span class="annottext">go :: (t -&gt; Either String (String, String))
+</span><span id="line-59"></span><span>  </span><span id="local-6989586621681758139"><span class="annot"><span class="annottext">go :: (t -&gt; Either String (String, String))
 -&gt; t -&gt; Either String ([NameSegment], String)
-</span><a href="#local-6989586621681758132"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span id="local-6989586621681758131"><span class="annot"><span class="annottext">t -&gt; Either String (String, String)
-</span><a href="#local-6989586621681758131"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621681758130"><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621681758130"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">t -&gt; Either String (String, String)
-</span><a href="#local-6989586621681758131"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
-</span><a href="#local-6989586621681758130"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-60"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758129"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758129"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758139"><span class="hs-identifier hs-var hs-var">go</span></a></span></span><span> </span><span id="local-6989586621681758138"><span class="annot"><span class="annottext">t -&gt; Either String (String, String)
+</span><a href="#local-6989586621681758138"><span class="hs-identifier hs-var">f</span></a></span></span><span> </span><span id="local-6989586621681758137"><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621681758137"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">t -&gt; Either String (String, String)
+</span><a href="#local-6989586621681758138"><span class="hs-identifier hs-var">f</span></a></span><span> </span><span class="annot"><span class="annottext">t
+</span><a href="#local-6989586621681758137"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-60"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758136"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758136"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">[Text] -&gt; Maybe ([Text], Text)
 forall s a. Snoc s s a a =&gt; s -&gt; Maybe (s, a)
 </span><span class="hs-identifier hs-var">Lens.unsnoc</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; [Text]
@@ -205,43 +205,43 @@ forall s a. Snoc s s a a =&gt; s -&gt; Maybe (s, a)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758129"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681758136"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-61"></span><span>      </span><span class="annot"><span class="annottext">Maybe ([Text], Text)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;empty path&quot;</span></span><span>
-</span><span id="line-62"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758126"><span class="annot"><span class="annottext">[Text]
-</span><a href="#local-6989586621681758126"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758125"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758125"><span class="hs-identifier hs-var">last</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">([NameSegment], String) -&gt; Either String ([NameSegment], String)
+</span><span id="line-62"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758133"><span class="annot"><span class="annottext">[Text]
+</span><a href="#local-6989586621681758133"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758132"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758132"><span class="hs-identifier hs-var">last</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">([NameSegment], String) -&gt; Either String ([NameSegment], String)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; NameSegment
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; NameSegment) -&gt; [Text] -&gt; [NameSegment]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Text]
-</span><a href="#local-6989586621681758126"><span class="hs-identifier hs-var">segs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
+</span><a href="#local-6989586621681758133"><span class="hs-identifier hs-var">segs</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758125"><span class="hs-identifier hs-var">last</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-63"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758123"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758123"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char
-</span><span class="hs-char">'.'</span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621681758122"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758122"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
-</span><span id="line-64"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681758121"><span class="annot"><span class="annottext">segs' :: [Text]
-</span><a href="#local-6989586621681758121"><span class="hs-identifier hs-var hs-var">segs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text]
+</span><a href="#local-6989586621681758132"><span class="hs-identifier hs-var">last</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-63"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758130"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758130"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Char
+</span><span class="hs-char">'.'</span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621681758129"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758129"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-64"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681758128"><span class="annot"><span class="annottext">segs' :: [Text]
+</span><a href="#local-6989586621681758128"><span class="hs-identifier hs-var hs-var">segs'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">NameSegment.segments'</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758123"><span class="hs-identifier hs-var">segs</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758130"><span class="hs-identifier hs-var">segs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-65"></span><span>      </span><span class="hs-keyword">in</span><span>  </span><span class="annot"><span class="annottext">([NameSegment], String) -&gt; Either String ([NameSegment], String)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; NameSegment
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; NameSegment) -&gt; [Text] -&gt; [NameSegment]
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Text]
-</span><a href="#local-6989586621681758121"><span class="hs-identifier hs-var">segs'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758122"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-66"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758120"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758120"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758119"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758119"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621681758128"><span class="hs-identifier hs-var">segs'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758129"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-66"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758127"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758127"><span class="hs-identifier hs-var">segs</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758126"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758126"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-67"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String ([NameSegment], String))
@@ -251,7 +251,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;extra characters after &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758120"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758127"><span class="hs-identifier hs-var">segs</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -259,27 +259,27 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758119"><span class="hs-identifier hs-var">rem</span></a></span><span>
-</span><span id="line-68"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758118"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758118"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
+</span><a href="#local-6989586621681758126"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><span id="line-68"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758125"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758125"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String ([NameSegment], String)
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758118"><span class="hs-identifier hs-var">e</span></a></span><span>
-</span><span id="line-69"></span><span>  </span><span id="local-6989586621681758135"><span class="annot"><span class="annottext">segs :: String -&gt; Either String ([NameSegment], String)
-</span><a href="#local-6989586621681758135"><span class="hs-identifier hs-var hs-var">segs</span></a></span></span><span> </span><span id="local-6989586621681758117"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758117"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String (String, String))
+</span><a href="#local-6989586621681758125"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><span id="line-69"></span><span>  </span><span id="local-6989586621681758142"><span class="annot"><span class="annottext">segs :: String -&gt; Either String ([NameSegment], String)
+</span><a href="#local-6989586621681758142"><span class="hs-identifier hs-var hs-var">segs</span></a></span></span><span> </span><span id="local-6989586621681758124"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758124"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String (String, String))
 -&gt; String -&gt; Either String ([NameSegment], String)
 forall t.
 (t -&gt; Either String (String, String))
 -&gt; t -&gt; Either String ([NameSegment], String)
-</span><a href="#local-6989586621681758132"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
+</span><a href="#local-6989586621681758139"><span class="hs-identifier hs-var">go</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
 </span><a href="Unison.Codebase.Path.Parse.html#parseSegment"><span class="hs-identifier hs-var">parseSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758117"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621681758124"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-70"></span><span>
 </span><span id="line-71"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parseSegment"><span class="hs-identifier hs-type">parseSegment</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span>
 </span><span id="line-72"></span><span id="parseSegment"><span class="annot"><span class="annottext">parseSegment :: String -&gt; Either String (String, String)
-</span><a href="Unison.Codebase.Path.Parse.html#parseSegment"><span class="hs-identifier hs-var hs-var">parseSegment</span></a></span></span><span> </span><span id="local-6989586621681758116"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758116"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Unison.Codebase.Path.Parse.html#parseSegment"><span class="hs-identifier hs-var hs-var">parseSegment</span></a></span></span><span> </span><span id="local-6989586621681758123"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758123"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-73"></span><span>  </span><span class="annot"><span class="annottext">(Err -&gt; String)
 -&gt; Either Err (String, String) -&gt; Either String (String, String)
 forall (p :: * -&gt; * -&gt; *) a b c.
@@ -322,37 +322,37 @@ forall a b. a -&gt; Either a b
 </span><span class="hs-string">&quot;I expected an identifier but found &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758116"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758123"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-77"></span><span>    </span><span class="annot"><span class="annottext">(String -&gt; Either String (String, String))
 -&gt; String -&gt; Either String (String, String)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>  </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758116"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621681758123"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-78"></span><span>
 </span><span id="line-79"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#wordyNameSegment"><span class="hs-identifier hs-type">wordyNameSegment</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-type">definitionNameSegment</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">NameSegment</span></span><span>
 </span><span id="line-80"></span><span id="wordyNameSegment"><span class="annot"><span class="annottext">wordyNameSegment :: String -&gt; Either String NameSegment
-</span><a href="Unison.Codebase.Path.Parse.html#wordyNameSegment"><span class="hs-identifier hs-var hs-var">wordyNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758111"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758111"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either Err (String, String)
+</span><a href="Unison.Codebase.Path.Parse.html#wordyNameSegment"><span class="hs-identifier hs-var hs-var">wordyNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758118"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758118"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either Err (String, String)
 </span><a href="Unison.Lexer.html#wordyId0"><span class="hs-identifier hs-var">Lexer.wordyId0</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758111"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-81"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758109"><span class="annot"><span class="annottext">Err
-</span><a href="#local-6989586621681758109"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758118"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-81"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758116"><span class="annot"><span class="annottext">Err
+</span><a href="#local-6989586621681758116"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Err -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Err
-</span><a href="#local-6989586621681758109"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-82"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758108"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758108"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758116"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-82"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758115"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758115"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; Either String NameSegment
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; NameSegment
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758108"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-83"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758107"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758106"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758106"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621681758115"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-83"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758114"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758114"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758113"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758113"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-84"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String NameSegment)
@@ -364,7 +364,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758114"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -372,17 +372,17 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758106"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758113"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-85"></span><span>
 </span><span id="line-86"></span><span class="hs-comment">-- Parse a name segment like &quot;()&quot;</span><span>
 </span><span id="line-87"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#unit%27"><span class="hs-identifier hs-type">unit'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span class="hs-special">)</span><span>
 </span><span id="line-88"></span><span id="unit%27"><span class="annot"><span class="annottext">unit' :: String -&gt; Either String (String, String)
-</span><a href="Unison.Codebase.Path.Parse.html#unit%27"><span class="hs-identifier hs-var hs-var">unit'</span></a></span></span><span> </span><span id="local-6989586621681758105"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758105"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Maybe String
+</span><a href="Unison.Codebase.Path.Parse.html#unit%27"><span class="hs-identifier hs-var hs-var">unit'</span></a></span></span><span> </span><span id="local-6989586621681758112"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758112"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Maybe String
 forall a. Eq a =&gt; [a] -&gt; [a] -&gt; Maybe [a]
 </span><span class="hs-identifier hs-var">stripPrefix</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;()&quot;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758105"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681758112"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-89"></span><span>  </span><span class="annot"><span class="annottext">Maybe String
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
 forall a b. a -&gt; Either a b
@@ -393,20 +393,20 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Expected () but found: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758105"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-90"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681758104"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758104"><span class="hs-identifier hs-var">rem</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(String, String) -&gt; Either String (String, String)
+</span><a href="#local-6989586621681758112"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-90"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681758111"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758111"><span class="hs-identifier hs-var">rem</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(String, String) -&gt; Either String (String, String)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;()&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758104"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758111"><span class="hs-identifier hs-var">rem</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-91"></span><span>
 </span><span id="line-92"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#unit"><span class="hs-keyword hs-type">unit</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">NameSegment</span></span><span>
 </span><span id="line-93"></span><span id="unit"><span class="annot"><span class="annottext">unit :: String -&gt; Either String NameSegment
-</span><a href="Unison.Codebase.Path.Parse.html#unit"><span class="hs-keyword hs-var hs-var">unit</span></a></span></span><span> </span><span id="local-6989586621681758102"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758102"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
+</span><a href="Unison.Codebase.Path.Parse.html#unit"><span class="hs-keyword hs-var hs-var">unit</span></a></span></span><span> </span><span id="local-6989586621681758109"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758109"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (String, String)
 </span><a href="Unison.Codebase.Path.Parse.html#unit%27"><span class="hs-identifier hs-var">unit'</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758102"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681758109"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-94"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; Either String NameSegment
@@ -418,8 +418,8 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;()&quot;</span></span><span>
 </span><span id="line-95"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758101"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758101"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758108"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758108"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String NameSegment)
 -&gt; String -&gt; Either String NameSegment
@@ -430,7 +430,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758101"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758108"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-96"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
@@ -441,48 +441,48 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;I don't know how to parse &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758102"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621681758109"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-97"></span><span>
 </span><span id="line-98"></span><span>
 </span><span id="line-99"></span><span id="definitionNameSegment"><span class="annot"><span class="annottext">definitionNameSegment :: String -&gt; Either String NameSegment
-</span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var hs-var">definitionNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758100"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var hs-var">definitionNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758107"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#wordyNameSegment"><span class="hs-identifier hs-var">wordyNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Either String NameSegment
+</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Either String NameSegment
 -&gt; Either String NameSegment -&gt; Either String NameSegment
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
-</span><a href="#local-6989586621681758099"><span class="hs-identifier hs-var">symbolyNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Either String NameSegment
+</span><a href="#local-6989586621681758106"><span class="hs-identifier hs-var">symbolyNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">Either String NameSegment
 -&gt; Either String NameSegment -&gt; Either String NameSegment
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#unit"><span class="hs-keyword hs-var">unit</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621681758107"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-100"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-101"></span><span>  </span><span id="local-6989586621681758099"><span class="annot"><span class="annottext">symbolyNameSegment :: String -&gt; Either String NameSegment
-</span><a href="#local-6989586621681758099"><span class="hs-identifier hs-var hs-var">symbolyNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758098"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758098"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either Err (String, String)
+</span><span id="line-101"></span><span>  </span><span id="local-6989586621681758106"><span class="annot"><span class="annottext">symbolyNameSegment :: String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758106"><span class="hs-identifier hs-var hs-var">symbolyNameSegment</span></a></span></span><span> </span><span id="local-6989586621681758105"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758105"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either Err (String, String)
 </span><a href="Unison.Lexer.html#symbolyId0"><span class="hs-identifier hs-var">Lexer.symbolyId0</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758098"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-102"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621681758096"><span class="annot"><span class="annottext">Err
-</span><a href="#local-6989586621681758096"><span class="hs-identifier hs-var">e</span></a></span></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758105"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-102"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621681758103"><span class="annot"><span class="annottext">Err
+</span><a href="#local-6989586621681758103"><span class="hs-identifier hs-var">e</span></a></span></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Err -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Err
-</span><a href="#local-6989586621681758096"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-103"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758095"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758095"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758103"><span class="hs-identifier hs-var">e</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-103"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758102"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758102"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; Either String NameSegment
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; NameSegment
 </span><span class="hs-identifier hs-var">NameSegment</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758095"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-104"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758094"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758093"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758093"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621681758102"><span class="hs-identifier hs-var">a</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-104"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681758101"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758101"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758100"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-105"></span><span>      </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String NameSegment)
@@ -494,7 +494,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758101"><span class="hs-identifier hs-var">a</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
@@ -502,7 +502,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758093"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758100"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-106"></span><span>
 </span><span id="line-107"></span><span class="hs-comment">-- parseSplit' wordyNameSegment &quot;foo.bar.baz&quot; returns Right (foo.bar, baz)</span><span>
 </span><span id="line-108"></span><span class="hs-comment">-- parseSplit' wordyNameSegment &quot;foo.bar.+&quot; returns Left err</span><span>
@@ -512,33 +512,33 @@ forall a. Show a =&gt; a -&gt; String
 </span><span id="line-112"></span><span>            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Path.html#Split%27"><span class="hs-identifier hs-type">Split'</span></a></span><span>
 </span><span id="line-113"></span><span id="parseSplit%27"><span class="annot"><span class="annottext">parseSplit' :: (String -&gt; Either String NameSegment)
 -&gt; String -&gt; Either String Split'
-</span><a href="Unison.Codebase.Path.Parse.html#parseSplit%27"><span class="hs-identifier hs-var hs-var">parseSplit'</span></a></span></span><span> </span><span id="local-6989586621681758092"><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
-</span><a href="#local-6989586621681758092"><span class="hs-identifier hs-var">lastSegment</span></a></span></span><span> </span><span id="local-6989586621681758091"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758091"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-114"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758090"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758090"><span class="hs-identifier hs-var">p'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758089"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758089"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
+</span><a href="Unison.Codebase.Path.Parse.html#parseSplit%27"><span class="hs-identifier hs-var hs-var">parseSplit'</span></a></span></span><span> </span><span id="local-6989586621681758099"><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758099"><span class="hs-identifier hs-var">lastSegment</span></a></span></span><span> </span><span id="local-6989586621681758098"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758098"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-114"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758097"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758097"><span class="hs-identifier hs-var">p'</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758096"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758096"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
 </span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var">parsePathImpl'</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758091"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-115"></span><span>  </span><span id="local-6989586621681758088"><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758088"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
-</span><a href="#local-6989586621681758092"><span class="hs-identifier hs-var">lastSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758089"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758098"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-115"></span><span>  </span><span id="local-6989586621681758095"><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758095"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758099"><span class="hs-identifier hs-var">lastSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758096"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-116"></span><span>  </span><span class="hs-identifier">pure</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758090"><span class="hs-identifier hs-var">p'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758088"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758097"><span class="hs-identifier hs-var">p'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758095"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parseShortHashOrHQSplit%27"><span class="hs-identifier hs-type">parseShortHashOrHQSplit'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SH.ShortHash</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Path.html#HQSplit%27"><span class="hs-identifier hs-type">HQSplit'</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-119"></span><span id="parseShortHashOrHQSplit%27"><span class="annot"><span class="annottext">parseShortHashOrHQSplit' :: String -&gt; Either String (Either ShortHash HQSplit')
-</span><a href="Unison.Codebase.Path.Parse.html#parseShortHashOrHQSplit%27"><span class="hs-identifier hs-var hs-var">parseShortHashOrHQSplit'</span></a></span></span><span> </span><span id="local-6989586621681758087"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758087"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Unison.Codebase.Path.Parse.html#parseShortHashOrHQSplit%27"><span class="hs-identifier hs-var hs-var">parseShortHashOrHQSplit'</span></a></span></span><span> </span><span id="local-6989586621681758094"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-120"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; (Text, Text)
 </span><span class="hs-identifier hs-var">Text.breakOn</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;#&quot;</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; (Text, Text)) -&gt; Text -&gt; (Text, Text)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758087"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-121"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Either ShortHash HQSplit')
@@ -550,40 +550,40 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;encountered empty string parsing '&quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758087"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;'&quot;</span></span><span>
-</span><span id="line-122"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758084"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758084"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Text
+</span><span id="line-122"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758091"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758091"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-123"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621681758083"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758083"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758082"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758082"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
+</span><span id="line-123"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621681758090"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758090"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758089"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758089"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
 </span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var">parsePathImpl'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758084"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-124"></span><span>      </span><span id="local-6989586621681758081"><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758081"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758091"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-124"></span><span>      </span><span id="local-6989586621681758088"><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758088"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var">definitionNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758082"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758089"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-125"></span><span>      </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">HQSplit' -&gt; Either ShortHash HQSplit'
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758083"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; HashQualified NameSegment
+</span><a href="#local-6989586621681758090"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; HashQualified NameSegment
 forall n. n -&gt; HashQualified n
 </span><span class="hs-identifier hs-var">HQ'.NameOnly</span></span><span> </span><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758081"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758088"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-126"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
-</span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758079"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758079"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-127"></span><span>      </span><span id="local-6989586621681758078"><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758078"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe ShortHash -&gt; Either String ShortHash
+</span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758086"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758086"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-127"></span><span>      </span><span id="local-6989586621681758085"><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681758085"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe ShortHash -&gt; Either String ShortHash
 forall b a. b -&gt; Maybe a -&gt; Either b a
 </span><span class="hs-identifier hs-var">maybeToRight</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; String
 forall a. (Semigroup a, IsString a) =&gt; a -&gt; a
-</span><a href="#local-6989586621681758076"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758087"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe ShortHash -&gt; Either String ShortHash)
+</span><a href="#local-6989586621681758083"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe ShortHash -&gt; Either String ShortHash)
 -&gt; (Text -&gt; Maybe ShortHash) -&gt; Text -&gt; Either String ShortHash
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe ShortHash
@@ -591,43 +591,43 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Text -&gt; Either String ShortHash
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758079"><span class="hs-identifier hs-var">sh</span></a></span><span>
+</span><a href="#local-6989586621681758086"><span class="hs-identifier hs-var">sh</span></a></span><span>
 </span><span id="line-128"></span><span>      </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; Either ShortHash HQSplit'
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758078"><span class="hs-identifier hs-var">sh</span></a></span><span>
-</span><span id="line-129"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758074"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758074"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758073"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758073"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-130"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621681758072"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758072"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758071"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758071"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
+</span><a href="#local-6989586621681758085"><span class="hs-identifier hs-var">sh</span></a></span><span>
+</span><span id="line-129"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758081"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758081"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758080"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758080"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-130"></span><span>      </span><span class="hs-special">(</span><span id="local-6989586621681758079"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758079"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758078"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758078"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
 </span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var">parsePathImpl'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758074"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-131"></span><span>      </span><span id="local-6989586621681758070"><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758070"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758081"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-131"></span><span>      </span><span id="local-6989586621681758077"><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758077"><span class="hs-identifier hs-var">seg</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var">definitionNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758071"><span class="hs-identifier hs-var">rem</span></a></span><span>
-</span><span id="line-132"></span><span>      </span><span id="local-6989586621681758069"><span class="annot"><span class="annottext">HQSplit'
-</span><a href="#local-6989586621681758069"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe HQSplit' -&gt; Either String HQSplit'
+</span><a href="#local-6989586621681758078"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><span id="line-132"></span><span>      </span><span id="local-6989586621681758076"><span class="annot"><span class="annottext">HQSplit'
+</span><a href="#local-6989586621681758076"><span class="hs-identifier hs-var">hq</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe HQSplit' -&gt; Either String HQSplit'
 forall b a. b -&gt; Maybe a -&gt; Either b a
 </span><span class="hs-identifier hs-var">maybeToRight</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; String
 forall a. (Semigroup a, IsString a) =&gt; a -&gt; a
-</span><a href="#local-6989586621681758076"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758087"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe HQSplit' -&gt; Either String HQSplit')
+</span><a href="#local-6989586621681758083"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758094"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe HQSplit' -&gt; Either String HQSplit')
 -&gt; (Text -&gt; Maybe HQSplit') -&gt; Text -&gt; Either String HQSplit'
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span>
 </span><span id="line-133"></span><span>        </span><span class="annot"><span class="annottext">(ShortHash -&gt; HQSplit') -&gt; Maybe ShortHash -&gt; Maybe HQSplit'
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681758068"><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758072"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; ShortHash -&gt; HashQualified NameSegment
+</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681758075"><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681758075"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758079"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; ShortHash -&gt; HashQualified NameSegment
 forall n. n -&gt; ShortHash -&gt; HashQualified n
 </span><span class="hs-identifier hs-var">HQ'.HashQualified</span></span><span> </span><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758070"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">sh</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe ShortHash -&gt; Maybe HQSplit')
+</span><a href="#local-6989586621681758077"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681758075"><span class="hs-identifier hs-var">sh</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Maybe ShortHash -&gt; Maybe HQSplit')
 -&gt; (Text -&gt; Maybe ShortHash) -&gt; Text -&gt; Maybe HQSplit'
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span>
@@ -635,33 +635,33 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-identifier hs-var">SH.fromText</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Either String HQSplit') -&gt; Text -&gt; Either String HQSplit'
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758073"><span class="hs-identifier hs-var">sh</span></a></span><span>
+</span><a href="#local-6989586621681758080"><span class="hs-identifier hs-var">sh</span></a></span><span>
 </span><span id="line-135"></span><span>      </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="annot"><span class="annottext">HQSplit' -&gt; Either ShortHash HQSplit'
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">HQSplit'
-</span><a href="#local-6989586621681758069"><span class="hs-identifier hs-var">hq</span></a></span><span>
+</span><a href="#local-6989586621681758076"><span class="hs-identifier hs-var">hq</span></a></span><span>
 </span><span id="line-136"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-137"></span><span>  </span><span id="local-6989586621681758076"><span class="annot"><span class="annottext">shError :: a -&gt; a
-</span><a href="#local-6989586621681758076"><span class="hs-identifier hs-var hs-var">shError</span></a></span></span><span> </span><span id="local-6989586621681758066"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681758066"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
+</span><span id="line-137"></span><span>  </span><span id="local-6989586621681758083"><span class="annot"><span class="annottext">shError :: a -&gt; a
+</span><a href="#local-6989586621681758083"><span class="hs-identifier hs-var hs-var">shError</span></a></span></span><span> </span><span id="local-6989586621681758073"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681758073"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-string">&quot;couldn't parse shorthash from &quot;</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681758066"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621681758073"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-138"></span><span>
 </span><span id="line-139"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parseHQSplit"><span class="hs-identifier hs-type">parseHQSplit</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Path.html#HQSplit"><span class="hs-identifier hs-type">HQSplit</span></a></span><span>
 </span><span id="line-140"></span><span id="parseHQSplit"><span class="annot"><span class="annottext">parseHQSplit :: String -&gt; Either String HQSplit
-</span><a href="Unison.Codebase.Path.Parse.html#parseHQSplit"><span class="hs-identifier hs-var hs-var">parseHQSplit</span></a></span></span><span> </span><span id="local-6989586621681758065"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758065"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit'
+</span><a href="Unison.Codebase.Path.Parse.html#parseHQSplit"><span class="hs-identifier hs-var hs-var">parseHQSplit</span></a></span></span><span> </span><span id="local-6989586621681758072"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758072"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit'
 </span><a href="Unison.Codebase.Path.Parse.html#parseHQSplit%27"><span class="hs-identifier hs-var">parseHQSplit'</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758065"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-141"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Relative"><span class="hs-identifier hs-type">Relative</span></a></span><span> </span><span id="local-6989586621681758064"><span class="annot"><span class="annottext">Path
-</span><a href="#local-6989586621681758064"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758063"><span class="annot"><span class="annottext">HashQualified NameSegment
-</span><a href="#local-6989586621681758063"><span class="hs-identifier hs-var">hqseg</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HQSplit -&gt; Either String HQSplit
+</span><a href="#local-6989586621681758072"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-141"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Relative"><span class="hs-identifier hs-type">Relative</span></a></span><span> </span><span id="local-6989586621681758071"><span class="annot"><span class="annottext">Path
+</span><a href="#local-6989586621681758071"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758070"><span class="annot"><span class="annottext">HashQualified NameSegment
+</span><a href="#local-6989586621681758070"><span class="hs-identifier hs-var">hqseg</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">HQSplit -&gt; Either String HQSplit
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path
-</span><a href="#local-6989586621681758064"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HashQualified NameSegment
-</span><a href="#local-6989586621681758063"><span class="hs-identifier hs-var">hqseg</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758071"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HashQualified NameSegment
+</span><a href="#local-6989586621681758070"><span class="hs-identifier hs-var">hqseg</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-142"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span class="hs-special">{</span><span class="hs-special">}</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">HashQualified NameSegment
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-143"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit
@@ -673,26 +673,26 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Sorry, you can't use an absolute name like &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758065"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758072"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; here.&quot;</span></span><span>
-</span><span id="line-144"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758062"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758062"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit
+</span><span id="line-144"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758069"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758069"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758062"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><a href="#local-6989586621681758069"><span class="hs-identifier hs-var">e</span></a></span><span>
 </span><span id="line-145"></span><span>
 </span><span id="line-146"></span><span class="annot"><a href="Unison.Codebase.Path.Parse.html#parseHQSplit%27"><span class="hs-identifier hs-type">parseHQSplit'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Path.html#HQSplit%27"><span class="hs-identifier hs-type">HQSplit'</span></a></span><span>
 </span><span id="line-147"></span><span id="parseHQSplit%27"><span class="annot"><span class="annottext">parseHQSplit' :: String -&gt; Either String HQSplit'
-</span><a href="Unison.Codebase.Path.Parse.html#parseHQSplit%27"><span class="hs-identifier hs-var hs-var">parseHQSplit'</span></a></span></span><span> </span><span id="local-6989586621681758061"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; (Text, Text)
+</span><a href="Unison.Codebase.Path.Parse.html#parseHQSplit%27"><span class="hs-identifier hs-var hs-var">parseHQSplit'</span></a></span></span><span> </span><span id="local-6989586621681758068"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; (Text, Text)
 </span><span class="hs-identifier hs-var">Text.breakOn</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;#&quot;</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; (Text, Text)) -&gt; Text -&gt; (Text, Text)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-148"></span><span>  </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String HQSplit'
@@ -704,7 +704,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;encountered empty string parsing '&quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;'&quot;</span></span><span>
@@ -714,53 +714,53 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Sorry, you can't use a hash-only reference here.&quot;</span></span><span>
-</span><span id="line-150"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758060"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758060"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
+</span><span id="line-150"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758067"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758067"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-151"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758059"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758059"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758058"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758058"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either String (Path', String)
-</span><a href="#local-6989586621681758057"><span class="hs-identifier hs-var">parsePath</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758060"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-152"></span><span>    </span><span id="local-6989586621681758056"><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758056"><span class="hs-identifier hs-var">seg</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><span id="line-151"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758066"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758066"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758065"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758065"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either String (Path', String)
+</span><a href="#local-6989586621681758064"><span class="hs-identifier hs-var">parsePath</span></a></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758067"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-152"></span><span>    </span><span id="local-6989586621681758063"><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758063"><span class="hs-identifier hs-var">seg</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var">definitionNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758058"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758065"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-153"></span><span>    </span><span class="hs-identifier">pure</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758059"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; HashQualified NameSegment
+</span><a href="#local-6989586621681758066"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; HashQualified NameSegment
 forall n. n -&gt; HashQualified n
 </span><span class="hs-identifier hs-var">HQ'.NameOnly</span></span><span> </span><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758056"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-154"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758055"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758055"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758054"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758054"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-155"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758053"><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758053"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758052"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758052"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either String (Path', String)
-</span><a href="#local-6989586621681758057"><span class="hs-identifier hs-var">parsePath</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758055"><span class="hs-identifier hs-var">n</span></a></span><span>
-</span><span id="line-156"></span><span>    </span><span id="local-6989586621681758051"><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758051"><span class="hs-identifier hs-var">seg</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
+</span><a href="#local-6989586621681758063"><span class="hs-identifier hs-var">seg</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-154"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681758062"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758062"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758061"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">sh</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-155"></span><span>    </span><span class="hs-special">(</span><span id="local-6989586621681758060"><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758060"><span class="hs-identifier hs-var">p</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681758059"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758059"><span class="hs-identifier hs-var">rem</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either String (Path', String)
+</span><a href="#local-6989586621681758064"><span class="hs-identifier hs-var">parsePath</span></a></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758062"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-156"></span><span>    </span><span id="local-6989586621681758058"><span class="annot"><span class="annottext">NameSegment
+</span><a href="#local-6989586621681758058"><span class="hs-identifier hs-var">seg</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String NameSegment
 </span><a href="Unison.Codebase.Path.Parse.html#definitionNameSegment"><span class="hs-identifier hs-var">definitionNameSegment</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758052"><span class="hs-identifier hs-var">rem</span></a></span><span>
+</span><a href="#local-6989586621681758059"><span class="hs-identifier hs-var">rem</span></a></span><span>
 </span><span id="line-157"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; Maybe HQSplit' -&gt; Either String HQSplit'
 forall b a. b -&gt; Maybe a -&gt; Either b a
 </span><span class="hs-identifier hs-var">maybeToRight</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; String
 forall a. (Semigroup a, IsString a) =&gt; a -&gt; a
-</span><a href="#local-6989586621681758050"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758057"><span class="hs-identifier hs-var">shError</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758068"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-158"></span><span>      </span><span class="annot"><span class="annottext">(Maybe HQSplit' -&gt; Either String HQSplit')
 -&gt; (Text -&gt; Maybe HQSplit') -&gt; Text -&gt; Either String HQSplit'
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; HQSplit') -&gt; Maybe ShortHash -&gt; Maybe HQSplit'
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681758049"><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758049"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
-</span><a href="#local-6989586621681758053"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; ShortHash -&gt; HashQualified NameSegment
+</span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">\</span><span id="local-6989586621681758056"><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681758056"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
+</span><a href="#local-6989586621681758060"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">NameSegment -&gt; ShortHash -&gt; HashQualified NameSegment
 forall n. n -&gt; ShortHash -&gt; HashQualified n
 </span><span class="hs-identifier hs-var">HQ'.HashQualified</span></span><span> </span><span class="annot"><span class="annottext">NameSegment
-</span><a href="#local-6989586621681758051"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681758049"><span class="hs-identifier hs-var">sh</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681758058"><span class="hs-identifier hs-var">seg</span></a></span><span> </span><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681758056"><span class="hs-identifier hs-var">sh</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-159"></span><span>      </span><span class="annot"><span class="annottext">(Maybe ShortHash -&gt; Maybe HQSplit')
 -&gt; (Text -&gt; Maybe ShortHash) -&gt; Text -&gt; Maybe HQSplit'
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
@@ -769,38 +769,38 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-160"></span><span>      </span><span class="annot"><span class="annottext">(Text -&gt; Either String HQSplit') -&gt; Text -&gt; Either String HQSplit'
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758054"><span class="hs-identifier hs-var">sh</span></a></span><span>
+</span><a href="#local-6989586621681758061"><span class="hs-identifier hs-var">sh</span></a></span><span>
 </span><span id="line-161"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-162"></span><span>  </span><span id="local-6989586621681758050"><span class="annot"><span class="annottext">shError :: a -&gt; a
-</span><a href="#local-6989586621681758050"><span class="hs-identifier hs-var hs-var">shError</span></a></span></span><span> </span><span id="local-6989586621681758048"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681758048"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
+</span><span id="line-162"></span><span>  </span><span id="local-6989586621681758057"><span class="annot"><span class="annottext">shError :: a -&gt; a
+</span><a href="#local-6989586621681758057"><span class="hs-identifier hs-var hs-var">shError</span></a></span></span><span> </span><span id="local-6989586621681758055"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681758055"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">a
 </span><span class="hs-string">&quot;couldn't parse shorthash from &quot;</span></span><span> </span><span class="annot"><span class="annottext">a -&gt; a -&gt; a
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681758048"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-163"></span><span>  </span><span id="local-6989586621681758057"><span class="annot"><span class="annottext">parsePath :: Text -&gt; Either String (Path', String)
-</span><a href="#local-6989586621681758057"><span class="hs-identifier hs-var hs-var">parsePath</span></a></span></span><span> </span><span id="local-6989586621681758047"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758047"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-164"></span><span>    </span><span id="local-6989586621681758046"><span class="annot"><span class="annottext">(Path', String)
-</span><a href="#local-6989586621681758046"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
+</span><a href="#local-6989586621681758055"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-163"></span><span>  </span><span id="local-6989586621681758064"><span class="annot"><span class="annottext">parsePath :: Text -&gt; Either String (Path', String)
+</span><a href="#local-6989586621681758064"><span class="hs-identifier hs-var hs-var">parsePath</span></a></span></span><span> </span><span id="local-6989586621681758054"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681758054"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-164"></span><span>    </span><span id="local-6989586621681758053"><span class="annot"><span class="annottext">(Path', String)
+</span><a href="#local-6989586621681758053"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String (Path', String)
 </span><a href="Unison.Codebase.Path.Parse.html#parsePathImpl%27"><span class="hs-identifier hs-var">parsePathImpl'</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Either String (Path', String))
 -&gt; String -&gt; Either String (Path', String)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681758047"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621681758054"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-165"></span><span>    </span><span class="hs-identifier">pure</span><span> </span><span class="hs-operator">$</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Path', String)
-</span><a href="#local-6989586621681758046"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-166"></span><span>      </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758045"><span class="annot"><span class="annottext">Absolute
-</span><a href="#local-6989586621681758045"><span class="hs-identifier hs-var">e</span></a></span></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681758053"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-166"></span><span>      </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Codebase.Path.html#Path%27"><span class="hs-identifier hs-type">Path'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621681758052"><span class="annot"><span class="annottext">Absolute
+</span><a href="#local-6989586621681758052"><span class="hs-identifier hs-var">e</span></a></span></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Absolute
-</span><a href="#local-6989586621681758045"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Absolute -&gt; Absolute -&gt; Bool
+</span><a href="#local-6989586621681758052"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Absolute -&gt; Absolute -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Absolute
 </span><a href="Unison.Codebase.Path.html#absoluteEmpty"><span class="hs-identifier hs-var">absoluteEmpty</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Path'
 </span><a href="Unison.Codebase.Path.html#relativeEmpty%27"><span class="hs-identifier hs-var">relativeEmpty'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;.&quot;</span></span><span class="hs-special">)</span><span>
-</span><span id="line-167"></span><span>      </span><span id="local-6989586621681758043"><span class="annot"><span class="annottext">(Path', String)
-</span><a href="#local-6989586621681758043"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Path', String)
-</span><a href="#local-6989586621681758043"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-167"></span><span>      </span><span id="local-6989586621681758050"><span class="annot"><span class="annottext">(Path', String)
+</span><a href="#local-6989586621681758050"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Path', String)
+</span><a href="#local-6989586621681758050"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-168"></span></pre></body></html>

@@ -41,18 +41,18 @@
 </span><span id="line-41"></span><span class="annot"><a href="Unison.Codebase.Editor.Input.html#parseBranchId"><span class="hs-identifier hs-type">parseBranchId</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Codebase.Editor.Input.html#BranchId"><span class="hs-identifier hs-type">BranchId</span></a></span><span>
 </span><span id="line-42"></span><span id="parseBranchId"><span class="annot"><span class="annottext">parseBranchId :: String -&gt; Either String BranchId
 </span><a href="Unison.Codebase.Editor.Input.html#parseBranchId"><span class="hs-identifier hs-var hs-var">parseBranchId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char
-</span><span class="hs-char">'#'</span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621681781572"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681781572"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe ShortBranchHash
+</span><span class="hs-char">'#'</span></span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span id="local-6989586621681781585"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681781585"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe ShortBranchHash
 </span><a href="Unison.Codebase.ShortBranchHash.html#fromText"><span class="hs-identifier hs-var">SBH.fromText</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681781572"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681781585"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-43"></span><span>  </span><span class="annot"><span class="annottext">Maybe ShortBranchHash
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String BranchId
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Invalid hash, expected a base32hex string.&quot;</span></span><span>
-</span><span id="line-44"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681781569"><span class="annot"><span class="annottext">ShortBranchHash
-</span><a href="#local-6989586621681781569"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">BranchId -&gt; Either String BranchId
+</span><span id="line-44"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681781582"><span class="annot"><span class="annottext">ShortBranchHash
+</span><a href="#local-6989586621681781582"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">BranchId -&gt; Either String BranchId
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(BranchId -&gt; Either String BranchId)
 -&gt; BranchId -&gt; Either String BranchId
@@ -60,16 +60,16 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShortBranchHash -&gt; BranchId
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">ShortBranchHash
-</span><a href="#local-6989586621681781569"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-45"></span><span class="annot"><a href="Unison.Codebase.Editor.Input.html#parseBranchId"><span class="hs-identifier hs-var">parseBranchId</span></a></span><span> </span><span id="local-6989586621681781568"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681781568"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Path' -&gt; BranchId
+</span><a href="#local-6989586621681781582"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-45"></span><span class="annot"><a href="Unison.Codebase.Editor.Input.html#parseBranchId"><span class="hs-identifier hs-var">parseBranchId</span></a></span><span> </span><span id="local-6989586621681781581"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681781581"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Path' -&gt; BranchId
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">(Path' -&gt; BranchId)
 -&gt; Either String Path' -&gt; Either String BranchId
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Either String Path'
 </span><a href="Unison.Codebase.Path.Parse.html#parsePath%27"><span class="hs-identifier hs-var">Path.parsePath'</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681781568"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621681781581"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-46"></span><span>
 </span><span id="line-47"></span><span class="hs-keyword">data</span><span> </span><span id="Input"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#Input"><span class="hs-identifier hs-var">Input</span></a></span></span><span>
 </span><span id="line-48"></span><span>  </span><span class="hs-comment">-- names stuff:</span><span>
@@ -178,14 +178,14 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span id="line-151"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DebugClearWatchI"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#DebugClearWatchI"><span class="hs-identifier hs-var">DebugClearWatchI</span></a></span></span><span>
 </span><span id="line-152"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="QuitI"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#QuitI"><span class="hs-identifier hs-var">QuitI</span></a></span></span><span>
 </span><span id="line-153"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="UiI"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#UiI"><span class="hs-identifier hs-var">UiI</span></a></span></span><span>
-</span><span id="line-154"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681781480"><span id="local-6989586621681781482"><span class="annot"><span class="annottext">Input -&gt; Input -&gt; Bool
+</span><span id="line-154"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681781493"><span id="local-6989586621681781495"><span class="annot"><span class="annottext">Input -&gt; Input -&gt; Bool
 (Input -&gt; Input -&gt; Bool) -&gt; (Input -&gt; Input -&gt; Bool) -&gt; Eq Input
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 /= :: Input -&gt; Input -&gt; Bool
 $c/= :: Input -&gt; Input -&gt; Bool
 == :: Input -&gt; Input -&gt; Bool
 $c== :: Input -&gt; Input -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681781473"><span id="local-6989586621681781475"><span id="local-6989586621681781477"><span class="annot"><span class="annottext">Int -&gt; Input -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681781486"><span id="local-6989586621681781488"><span id="local-6989586621681781490"><span class="annot"><span class="annottext">Int -&gt; Input -&gt; ShowS
 [Input] -&gt; ShowS
 Input -&gt; String
 (Int -&gt; Input -&gt; ShowS)
@@ -206,7 +206,7 @@ $cshowsPrec :: Int -&gt; Input -&gt; ShowS
 </span><span id="line-159"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="LatestFileLocation"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#LatestFileLocation"><span class="hs-identifier hs-var">LatestFileLocation</span></a></span></span><span>
 </span><span id="line-160"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="FileLocation"><span class="annot"><a href="Unison.Codebase.Editor.Input.html#FileLocation"><span class="hs-identifier hs-var">FileLocation</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
 </span><span id="line-161"></span><span>  </span><span class="hs-comment">-- ClipboardLocation</span><span>
-</span><span id="line-162"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681781465"><span id="local-6989586621681781467"><span class="annot"><span class="annottext">OutputLocation -&gt; OutputLocation -&gt; Bool
+</span><span id="line-162"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681781478"><span id="local-6989586621681781480"><span class="annot"><span class="annottext">OutputLocation -&gt; OutputLocation -&gt; Bool
 (OutputLocation -&gt; OutputLocation -&gt; Bool)
 -&gt; (OutputLocation -&gt; OutputLocation -&gt; Bool) -&gt; Eq OutputLocation
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -214,7 +214,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: OutputLocation -&gt; OutputLocation -&gt; Bool
 == :: OutputLocation -&gt; OutputLocation -&gt; Bool
 $c== :: OutputLocation -&gt; OutputLocation -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681781459"><span id="local-6989586621681781461"><span id="local-6989586621681781463"><span class="annot"><span class="annottext">Int -&gt; OutputLocation -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681781472"><span id="local-6989586621681781474"><span id="local-6989586621681781476"><span class="annot"><span class="annottext">Int -&gt; OutputLocation -&gt; ShowS
 [OutputLocation] -&gt; ShowS
 OutputLocation -&gt; String
 (Int -&gt; OutputLocation -&gt; ShowS)

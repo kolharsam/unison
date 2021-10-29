@@ -8,22 +8,22 @@
 </span><span id="line-8"></span><span>
 </span><span id="line-9"></span><span class="annot"><a href="Unison.Util.Less.html#less"><span class="hs-identifier hs-type">less</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-10"></span><span id="less"><span class="annot"><span class="annottext">less :: String -&gt; IO ()
-</span><a href="Unison.Util.Less.html#less"><span class="hs-identifier hs-var hs-var">less</span></a></span></span><span> </span><span id="local-6989586621681759737"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681759737"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-11"></span><span>  </span><span id="local-6989586621681759736"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621681759736"><span class="hs-identifier hs-var">inEmacs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO (Maybe String)
+</span><a href="Unison.Util.Less.html#less"><span class="hs-identifier hs-var hs-var">less</span></a></span></span><span> </span><span id="local-6989586621681759744"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681759744"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-11"></span><span>  </span><span id="local-6989586621681759743"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621681759743"><span class="hs-identifier hs-var">inEmacs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO (Maybe String)
 </span><span class="hs-identifier hs-var">lookupEnv</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;INSIDE_EMACS&quot;</span></span><span>
 </span><span id="line-12"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621681759736"><span class="hs-identifier hs-var">inEmacs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681759743"><span class="hs-identifier hs-var">inEmacs</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-13"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; IO ()
 </span><span class="hs-identifier hs-var">putStr</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681759737"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><a href="#local-6989586621681759744"><span class="hs-identifier hs-var">str</span></a></span><span>
 </span><span id="line-14"></span><span>    </span><span class="annot"><span class="annottext">Maybe String
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-15"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681759734"><span class="annot"><span class="annottext">args :: [String]
-</span><a href="#local-6989586621681759734"><span class="hs-identifier hs-var hs-var">args</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">String
+</span><span id="line-15"></span><span>      </span><span class="hs-keyword">let</span><span> </span><span id="local-6989586621681759741"><span class="annot"><span class="annottext">args :: [String]
+</span><a href="#local-6989586621681759741"><span class="hs-identifier hs-var hs-var">args</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;--no-init&quot;</span></span><span>            </span><span class="hs-comment">-- don't clear the screen on exit</span><span>
 </span><span id="line-16"></span><span>                 </span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;--raw-control-chars&quot;</span></span><span>  </span><span class="hs-comment">-- pass through colors and stuff</span><span>
@@ -32,17 +32,17 @@
 </span><span id="line-18"></span><span>                 </span><span class="hs-special">,</span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;--quit-if-one-screen&quot;</span></span><span> </span><span class="hs-comment">-- self-explanatory</span><span>
 </span><span id="line-19"></span><span>                 </span><span class="hs-special">]</span><span>
-</span><span id="line-20"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681759733"><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621681759733"><span class="hs-identifier hs-var">stdin</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759732"><span class="annot"><span class="annottext">Maybe Handle
-</span><a href="#local-6989586621681759732"><span class="hs-identifier hs-var">_stdout</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759731"><span class="annot"><span class="annottext">Maybe Handle
-</span><a href="#local-6989586621681759731"><span class="hs-identifier hs-var">_stderr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759730"><span class="annot"><span class="annottext">ProcessHandle
-</span><a href="#local-6989586621681759730"><span class="hs-identifier hs-var">pid</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-20"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681759740"><span class="annot"><span class="annottext">Handle
+</span><a href="#local-6989586621681759740"><span class="hs-identifier hs-var">stdin</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759739"><span class="annot"><span class="annottext">Maybe Handle
+</span><a href="#local-6989586621681759739"><span class="hs-identifier hs-var">_stdout</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759738"><span class="annot"><span class="annottext">Maybe Handle
+</span><a href="#local-6989586621681759738"><span class="hs-identifier hs-var">_stderr</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681759737"><span class="annot"><span class="annottext">ProcessHandle
+</span><a href="#local-6989586621681759737"><span class="hs-identifier hs-var">pid</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-21"></span><span>        </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">CreateProcess
 -&gt; IO (Maybe Handle, Maybe Handle, Maybe Handle, ProcessHandle)
 </span><span class="hs-identifier hs-var">createProcess</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; [String] -&gt; CreateProcess
 </span><span class="hs-identifier hs-var">proc</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;less&quot;</span></span><span> </span><span class="annot"><span class="annottext">[String]
-</span><a href="#local-6989586621681759734"><span class="hs-identifier hs-var">args</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">std_in :: StdStream
+</span><a href="#local-6989586621681759741"><span class="hs-identifier hs-var">args</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">std_in :: StdStream
 </span><span class="hs-identifier hs-var">std_in</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">StdStream
 </span><span class="hs-identifier hs-var">CreatePipe</span></span><span> </span><span class="hs-special">}</span><span>
 </span><span id="line-22"></span><span>
@@ -52,8 +52,8 @@
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; String -&gt; IO ()
 </span><span class="hs-identifier hs-var">hPutStr</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621681759733"><span class="hs-identifier hs-var">stdin</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621681759737"><span class="hs-identifier hs-var">str</span></a></span><span>
+</span><a href="#local-6989586621681759740"><span class="hs-identifier hs-var">stdin</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621681759744"><span class="hs-identifier hs-var">str</span></a></span><span>
 </span><span id="line-25"></span><span>
 </span><span id="line-26"></span><span>      </span><span class="hs-comment">-- If `less` has already exited, hClose throws an exception.</span><span>
 </span><span id="line-27"></span><span>      </span><span class="annot"><span class="annottext">IO () -&gt; IO ()
@@ -61,7 +61,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Handle -&gt; IO ()
 </span><span class="hs-identifier hs-var">hClose</span></span><span> </span><span class="annot"><span class="annottext">Handle
-</span><a href="#local-6989586621681759733"><span class="hs-identifier hs-var">stdin</span></a></span><span>
+</span><a href="#local-6989586621681759740"><span class="hs-identifier hs-var">stdin</span></a></span><span>
 </span><span id="line-28"></span><span>
 </span><span id="line-29"></span><span>      </span><span class="hs-comment">-- Wait for `less` to exit.</span><span>
 </span><span id="line-30"></span><span>      </span><span class="annot"><span class="annottext">IO ExitCode -&gt; IO ()
@@ -70,5 +70,5 @@ forall (f :: * -&gt; *) a. Functor f =&gt; f a -&gt; f ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ProcessHandle -&gt; IO ExitCode
 </span><span class="hs-identifier hs-var">waitForProcess</span></span><span> </span><span class="annot"><span class="annottext">ProcessHandle
-</span><a href="#local-6989586621681759730"><span class="hs-identifier hs-var">pid</span></a></span><span>
+</span><a href="#local-6989586621681759737"><span class="hs-identifier hs-var">pid</span></a></span><span>
 </span><span id="line-31"></span></pre></body></html>

@@ -46,13 +46,13 @@
 </span><span id="line-46"></span><span class="hs-comment">-- Used for both terms and types. Doesn't distinguish between them.</span><span>
 </span><span id="line-47"></span><span class="hs-comment">--</span><span>
 </span><span id="line-48"></span><span class="hs-comment">-- Other used defined things like local variables don't get @Reference@s.</span><span>
-</span><span id="line-49"></span><span id="local-6989586621681745772"><span id="local-6989586621681745773"></span></span><span class="hs-keyword">data</span><span> </span><span id="Reference"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-var">Reference</span></a></span></span><span>
+</span><span id="line-49"></span><span id="local-6989586621681745779"><span id="local-6989586621681745780"></span></span><span class="hs-keyword">data</span><span> </span><span id="Reference"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-var">Reference</span></a></span></span><span>
 </span><span id="line-50"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="Builtin"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-var">Builtin</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text.Text</span></span><span>
 </span><span id="line-51"></span><span>  </span><span class="hs-comment">-- `Derived` can be part of a strongly connected component.</span><span>
 </span><span id="line-52"></span><span>  </span><span class="hs-comment">-- The `Pos` refers to a particular element of the component</span><span>
 </span><span id="line-53"></span><span>  </span><span class="hs-comment">-- and the `Size` is the number of elements in the component.</span><span>
 </span><span id="line-54"></span><span>  </span><span class="hs-comment">-- Using an ugly name so no one tempted to use this</span><span>
-</span><span id="line-55"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DerivedId"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">DerivedId</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745768"><span id="local-6989586621681745770"><span class="annot"><span class="annottext">Reference -&gt; Reference -&gt; Bool
+</span><span id="line-55"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="DerivedId"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">DerivedId</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745775"><span id="local-6989586621681745777"><span class="annot"><span class="annottext">Reference -&gt; Reference -&gt; Bool
 (Reference -&gt; Reference -&gt; Bool)
 -&gt; (Reference -&gt; Reference -&gt; Bool) -&gt; Eq Reference
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -60,7 +60,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Reference -&gt; Reference -&gt; Bool
 == :: Reference -&gt; Reference -&gt; Bool
 $c== :: Reference -&gt; Reference -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="local-6989586621681745752"><span id="local-6989586621681745754"><span id="local-6989586621681745756"><span id="local-6989586621681745758"><span id="local-6989586621681745760"><span id="local-6989586621681745762"><span id="local-6989586621681745764"><span class="annot"><span class="annottext">Eq Reference
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span id="local-6989586621681745759"><span id="local-6989586621681745761"><span id="local-6989586621681745763"><span id="local-6989586621681745765"><span id="local-6989586621681745767"><span id="local-6989586621681745769"><span id="local-6989586621681745771"><span class="annot"><span class="annottext">Eq Reference
 Eq Reference
 -&gt; (Reference -&gt; Reference -&gt; Ordering)
 -&gt; (Reference -&gt; Reference -&gt; Bool)
@@ -112,12 +112,12 @@ $cfrom :: forall x. Reference -&gt; Rep Reference x
 </span><span id="line-58"></span><span class="hs-keyword">pattern</span><span> </span><span id="%24bDerived"><span id="%24mDerived"><span id="Derived"><span class="annot"><span class="annottext">$bDerived :: Hash -&gt; Pos -&gt; Pos -&gt; Reference
 $mDerived :: forall r.
 Reference -&gt; (Hash -&gt; Pos -&gt; Pos -&gt; r) -&gt; (Void# -&gt; r) -&gt; r
-</span><a href="Unison.Hashing.V2.Reference.html#%24bDerived"><span class="hs-identifier hs-var hs-var hs-var">Derived</span></a></span></span></span></span><span> </span><span class="annot"><a href="#local-6989586621681745745"><span class="hs-identifier hs-type">h</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681745744"><span class="hs-identifier hs-type">i</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681745743"><span class="hs-identifier hs-type">n</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745745"><span class="annot"><a href="#local-6989586621681745745"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745744"><span class="annot"><a href="#local-6989586621681745744"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745743"><span class="annot"><a href="#local-6989586621681745743"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span>
+</span><a href="Unison.Hashing.V2.Reference.html#%24bDerived"><span class="hs-identifier hs-var hs-var hs-var">Derived</span></a></span></span></span></span><span> </span><span class="annot"><a href="#local-6989586621681745752"><span class="hs-identifier hs-type">h</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681745751"><span class="hs-identifier hs-type">i</span></a></span><span> </span><span class="annot"><a href="#local-6989586621681745750"><span class="hs-identifier hs-type">n</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745752"><span class="annot"><a href="#local-6989586621681745752"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745751"><span class="annot"><a href="#local-6989586621681745751"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745750"><span class="annot"><a href="#local-6989586621681745750"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span>
 </span><span id="line-59"></span><span>
 </span><span id="line-60"></span><span class="hs-pragma">{-# COMPLETE</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-pragma hs-type">Builtin</span></a></span><span class="hs-pragma">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-pragma hs-type">Derived</span></a></span><span> </span><span class="hs-pragma">#-}</span><span>
 </span><span id="line-61"></span><span>
 </span><span id="line-62"></span><span class="hs-comment">-- | @Pos@ is a position into a cycle of size @Size@, as cycles are hashed together.</span><span>
-</span><span id="line-63"></span><span id="local-6989586621681745740"><span id="local-6989586621681745741"></span></span><span class="hs-keyword">data</span><span> </span><span id="Id"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Id"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Pos"><span class="hs-identifier hs-type">Pos</span></a></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Size"><span class="hs-identifier hs-type">Size</span></a></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(forall x. Id -&gt; Rep Id x)
+</span><span id="line-63"></span><span id="local-6989586621681745747"><span id="local-6989586621681745748"></span></span><span class="hs-keyword">data</span><span> </span><span id="Id"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Id"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Pos"><span class="hs-identifier hs-type">Pos</span></a></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Size"><span class="hs-identifier hs-type">Size</span></a></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(forall x. Id -&gt; Rep Id x)
 -&gt; (forall x. Rep Id x -&gt; Id) -&gt; Generic Id
 forall x. Rep Id x -&gt; Id
 forall x. Id -&gt; Rep Id x
@@ -129,8 +129,8 @@ $cfrom :: forall x. Id -&gt; Rep Id x
 </span><span id="line-64"></span><span>
 </span><span id="line-65"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#unsafeId"><span class="hs-identifier hs-type">unsafeId</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span>
 </span><span id="line-66"></span><span id="unsafeId"><span class="annot"><span class="annottext">unsafeId :: Reference -&gt; Id
-</span><a href="Unison.Hashing.V2.Reference.html#unsafeId"><span class="hs-identifier hs-var hs-var">unsafeId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745737"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745737"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Unison.Hashing.V2.Reference.html#unsafeId"><span class="hs-identifier hs-var hs-var">unsafeId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745744"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745744"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-67"></span><span>  </span><span class="annot"><span class="annottext">[Char] -&gt; Id
 forall a. HasCallStack =&gt; [Char] -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">([Char] -&gt; Id) -&gt; [Char] -&gt; Id
@@ -140,13 +140,13 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745737"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
+</span><a href="#local-6989586621681745744"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;.&quot;</span></span><span>
-</span><span id="line-68"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#unsafeId"><span class="hs-identifier hs-var">unsafeId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745734"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745734"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745734"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-68"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#unsafeId"><span class="hs-identifier hs-var">unsafeId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745741"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745741"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745741"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-69"></span><span>
 </span><span id="line-70"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#idToShortHash"><span class="hs-identifier hs-type">idToShortHash</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShortHash</span></span><span>
 </span><span id="line-71"></span><span id="idToShortHash"><span class="annot"><span class="annottext">idToShortHash :: Id -&gt; ShortHash
@@ -160,42 +160,42 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-74"></span><span class="hs-comment">-- but Show Reference currently depends on SH</span><span>
 </span><span id="line-75"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-type">toShortHash</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShortHash</span></span><span>
 </span><span id="line-76"></span><span id="toShortHash"><span class="annot"><span class="annottext">toShortHash :: Reference -&gt; ShortHash
-</span><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var hs-var">toShortHash</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745732"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745732"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ShortHash
+</span><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var hs-var">toShortHash</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745739"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745739"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ShortHash
 </span><span class="hs-identifier hs-var">SH.Builtin</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745732"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-77"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745730"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745730"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745739"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-77"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745737"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745737"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Maybe Text -&gt; ShortHash
 </span><span class="hs-identifier hs-var">SH.ShortHash</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Text
 </span><span class="hs-identifier hs-var">H.base32Hex</span></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745730"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745737"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Text
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="annot"><span class="annottext">Maybe Text
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-78"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745727"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745727"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745726"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745726"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745725"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745725"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Maybe Text -&gt; ShortHash
+</span><span id="line-78"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745734"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745734"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745733"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745733"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745732"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745732"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Maybe Text -&gt; ShortHash
 </span><span class="hs-identifier hs-var">SH.ShortHash</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Text
 </span><span class="hs-identifier hs-var">H.base32Hex</span></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745727"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Text
-</span><a href="#local-6989586621681745724"><span class="hs-identifier hs-var">index</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745734"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745731"><span class="hs-identifier hs-var">index</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Text
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-79"></span><span>  </span><span class="hs-keyword">where</span><span>
 </span><span id="line-80"></span><span>    </span><span class="hs-comment">-- todo: remove `n` parameter; must also update readSuffix</span><span>
-</span><span id="line-81"></span><span>    </span><span id="local-6989586621681745724"><span class="annot"><span class="annottext">index :: Maybe Text
-</span><a href="#local-6989586621681745724"><span class="hs-identifier hs-var hs-var">index</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text
+</span><span id="line-81"></span><span>    </span><span id="local-6989586621681745731"><span class="annot"><span class="annottext">index :: Maybe Text
+</span><a href="#local-6989586621681745731"><span class="hs-identifier hs-var hs-var">index</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Maybe Text) -&gt; Text -&gt; Maybe Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Pos -&gt; Text
 </span><a href="Unison.Hashing.V2.Reference.html#showSuffix"><span class="hs-identifier hs-var">showSuffix</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745726"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745725"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621681745733"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745732"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-82"></span><span>
 </span><span id="line-83"></span><span class="hs-comment">-- toShortHash . fromJust . fromShortHash == id and</span><span>
 </span><span id="line-84"></span><span class="hs-comment">-- fromJust . fromShortHash . toShortHash == id</span><span>
@@ -205,60 +205,60 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-88"></span><span class="hs-comment">-- try Referent.fromShortHash</span><span>
 </span><span id="line-89"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-type">fromShortHash</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShortHash</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span>
 </span><span id="line-90"></span><span id="fromShortHash"><span class="annot"><span class="annottext">fromShortHash :: ShortHash -&gt; Maybe Reference
-</span><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var hs-var">fromShortHash</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.Builtin</span></span><span> </span><span id="local-6989586621681745723"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745723"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe Reference
+</span><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var hs-var">fromShortHash</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.Builtin</span></span><span> </span><span id="local-6989586621681745730"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745730"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe Reference
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-var">Builtin</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745723"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-91"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var">fromShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.ShortHash</span></span><span> </span><span id="local-6989586621681745722"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745722"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621681745721"><span class="annot"><span class="annottext">Maybe Text
-</span><a href="#local-6989586621681745721"><span class="hs-identifier hs-var">cycle</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745730"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-91"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var">fromShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.ShortHash</span></span><span> </span><span id="local-6989586621681745729"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745729"><span class="hs-identifier hs-var">prefix</span></a></span></span><span> </span><span id="local-6989586621681745728"><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745728"><span class="hs-identifier hs-var">cycle</span></a></span></span><span> </span><span class="annot"><span class="annottext">Maybe Text
 </span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-92"></span><span>  </span><span id="local-6989586621681745720"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745720"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Hash
+</span><span id="line-92"></span><span>  </span><span id="local-6989586621681745727"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745727"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Hash
 </span><span class="hs-identifier hs-var">H.fromBase32Hex</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745722"><span class="hs-identifier hs-var">prefix</span></a></span><span>
+</span><a href="#local-6989586621681745729"><span class="hs-identifier hs-var">prefix</span></a></span><span>
 </span><span id="line-93"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe Text
-</span><a href="#local-6989586621681745721"><span class="hs-identifier hs-var">cycle</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681745728"><span class="hs-identifier hs-var">cycle</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-94"></span><span>    </span><span class="annot"><span class="annottext">Maybe Text
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Maybe Reference
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-var">Derived</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745720"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745727"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-95"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681745718"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745718"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; [Text]
+</span><span id="line-95"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681745725"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745725"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">Text.splitOn</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;c&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745718"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-96"></span><span>      </span><span class="hs-special">[</span><span id="local-6989586621681745716"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745716"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621681745715"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745715"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Reference
+</span><a href="#local-6989586621681745725"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-96"></span><span>      </span><span class="hs-special">[</span><span id="local-6989586621681745723"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745723"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">,</span><span id="local-6989586621681745722"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745722"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-var">Derived</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745720"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">(Pos -&gt; Pos -&gt; Reference) -&gt; Maybe Pos -&gt; Maybe (Pos -&gt; Reference)
+</span><a href="#local-6989586621681745727"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">(Pos -&gt; Pos -&gt; Reference) -&gt; Maybe Pos -&gt; Maybe (Pos -&gt; Reference)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Maybe Pos
 forall a. Read a =&gt; [Char] -&gt; Maybe a
 </span><span class="hs-identifier hs-var">readMay</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745716"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe (Pos -&gt; Reference) -&gt; Maybe Pos -&gt; Maybe Reference
+</span><a href="#local-6989586621681745723"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe (Pos -&gt; Reference) -&gt; Maybe Pos -&gt; Maybe Reference
 forall (f :: * -&gt; *) a b. Applicative f =&gt; f (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;*&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Maybe Pos
 forall a. Read a =&gt; [Char] -&gt; Maybe a
 </span><span class="hs-identifier hs-var">readMay</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745715"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745722"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span>      </span><span class="annot"><span class="annottext">[Text]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Reference
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-98"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var">fromShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.ShortHash</span></span><span> </span><span id="local-6989586621681745712"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745712"><span class="hs-identifier hs-var">_prefix</span></a></span></span><span> </span><span id="local-6989586621681745711"><span class="annot"><span class="annottext">Maybe Text
-</span><a href="#local-6989586621681745711"><span class="hs-identifier hs-var">_cycle</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681745710"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745710"><span class="hs-identifier hs-var">_cid</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Reference
+</span><span id="line-98"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromShortHash"><span class="hs-identifier hs-var">fromShortHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">SH.ShortHash</span></span><span> </span><span id="local-6989586621681745719"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745719"><span class="hs-identifier hs-var">_prefix</span></a></span></span><span> </span><span id="local-6989586621681745718"><span class="annot"><span class="annottext">Maybe Text
+</span><a href="#local-6989586621681745718"><span class="hs-identifier hs-var">_cycle</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621681745717"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745717"><span class="hs-identifier hs-var">_cid</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Reference
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
 </span><span id="line-99"></span><span>
@@ -266,15 +266,15 @@ forall a. Maybe a
 </span><span id="line-101"></span><span class="hs-comment">-- (0,93) encoded as &quot;0c93&quot;</span><span>
 </span><span id="line-102"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#showSuffix"><span class="hs-identifier hs-type">showSuffix</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Pos"><span class="hs-identifier hs-type">Pos</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Size"><span class="hs-identifier hs-type">Size</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
 </span><span id="line-103"></span><span id="showSuffix"><span class="annot"><span class="annottext">showSuffix :: Pos -&gt; Pos -&gt; Text
-</span><a href="Unison.Hashing.V2.Reference.html#showSuffix"><span class="hs-identifier hs-var hs-var">showSuffix</span></a></span></span><span> </span><span id="local-6989586621681745709"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745709"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745708"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745708"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Text
+</span><a href="Unison.Hashing.V2.Reference.html#showSuffix"><span class="hs-identifier hs-var hs-var">showSuffix</span></a></span></span><span> </span><span id="local-6989586621681745716"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745716"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745715"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745715"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">([Char] -&gt; Text) -&gt; [Char] -&gt; Text
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Pos -&gt; [Char]
 forall a. Show a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745709"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
+</span><a href="#local-6989586621681745716"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-string">&quot;c&quot;</span></span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; [Char] -&gt; [Char]
@@ -282,39 +282,39 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Pos -&gt; [Char]
 forall a. Show a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745708"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621681745715"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-104"></span><span>
 </span><span id="line-105"></span><span class="hs-comment">-- todo: don't read or return size; must also update showSuffix and fromText</span><span>
 </span><span id="line-106"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#readSuffix"><span class="hs-identifier hs-type">readSuffix</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Pos"><span class="hs-identifier hs-type">Pos</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Size"><span class="hs-identifier hs-type">Size</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-107"></span><span id="readSuffix"><span class="annot"><span class="annottext">readSuffix :: Text -&gt; Either [Char] (Pos, Pos)
-</span><a href="Unison.Hashing.V2.Reference.html#readSuffix"><span class="hs-identifier hs-var hs-var">readSuffix</span></a></span></span><span> </span><span id="local-6989586621681745704"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745704"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; (Text, Text)
+</span><a href="Unison.Hashing.V2.Reference.html#readSuffix"><span class="hs-identifier hs-var hs-var">readSuffix</span></a></span></span><span> </span><span id="local-6989586621681745711"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745711"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; (Text, Text)
 </span><span class="hs-identifier hs-var">Text.breakOn</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;c&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745704"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-108"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681745702"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745702"><span class="hs-identifier hs-var">pos</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text -&gt; Text
+</span><a href="#local-6989586621681745711"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-108"></span><span>  </span><span class="hs-special">(</span><span id="local-6989586621681745709"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745709"><span class="hs-identifier hs-var">pos</span></a></span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text -&gt; Text
 </span><span class="hs-identifier hs-var">Text.drop</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span id="local-6989586621681745700"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745700"><span class="hs-identifier hs-var">size</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; Bool
+</span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span id="local-6989586621681745707"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745707"><span class="hs-identifier hs-var">size</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; Bool
 </span><span class="hs-identifier hs-var">Text.all</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isDigit</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745702"><span class="hs-identifier hs-var">pos</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621681745709"><span class="hs-identifier hs-var">pos</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; Bool
 </span><span class="hs-identifier hs-var">Text.all</span></span><span> </span><span class="annot"><span class="annottext">Char -&gt; Bool
 </span><span class="hs-identifier hs-var">isDigit</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745700"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="#local-6989586621681745707"><span class="hs-identifier hs-var">size</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-109"></span><span>    </span><span class="annot"><span class="annottext">(Pos, Pos) -&gt; Either [Char] (Pos, Pos)
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[Char] -&gt; Pos
 forall a. Read a =&gt; [Char] -&gt; a
 </span><span class="hs-identifier hs-var">read</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745702"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Pos
+</span><a href="#local-6989586621681745709"><span class="hs-identifier hs-var">pos</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Pos
 forall a. Read a =&gt; [Char] -&gt; a
 </span><span class="hs-identifier hs-var">read</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745700"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745707"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-110"></span><span>  </span><span class="annot"><span class="annottext">(Text, Text)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Either [Char] (Pos, Pos)
 forall a b. a -&gt; Either a b
@@ -323,13 +323,13 @@ forall a b. a -&gt; Either a b
 </span><span id="line-111"></span><span>
 </span><span id="line-112"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#isPrefixOf"><span class="hs-identifier hs-type">isPrefixOf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShortHash</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
 </span><span id="line-113"></span><span id="isPrefixOf"><span class="annot"><span class="annottext">isPrefixOf :: ShortHash -&gt; Reference -&gt; Bool
-</span><a href="Unison.Hashing.V2.Reference.html#isPrefixOf"><span class="hs-identifier hs-var hs-var">isPrefixOf</span></a></span></span><span> </span><span id="local-6989586621681745696"><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681745696"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span id="local-6989586621681745695"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745695"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; ShortHash -&gt; Bool
+</span><a href="Unison.Hashing.V2.Reference.html#isPrefixOf"><span class="hs-identifier hs-var hs-var">isPrefixOf</span></a></span></span><span> </span><span id="local-6989586621681745703"><span class="annot"><span class="annottext">ShortHash
+</span><a href="#local-6989586621681745703"><span class="hs-identifier hs-var">sh</span></a></span></span><span> </span><span id="local-6989586621681745702"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681745702"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; ShortHash -&gt; Bool
 </span><span class="hs-identifier hs-var">SH.isPrefixOf</span></span><span> </span><span class="annot"><span class="annottext">ShortHash
-</span><a href="#local-6989586621681745696"><span class="hs-identifier hs-var">sh</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Reference -&gt; ShortHash
+</span><a href="#local-6989586621681745703"><span class="hs-identifier hs-var">sh</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Reference -&gt; ShortHash
 </span><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745695"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745702"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-114"></span><span>
 </span><span id="line-115"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toText"><span class="hs-identifier hs-type">toText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
 </span><span id="line-116"></span><span id="toText"><span class="annot"><span class="annottext">toText :: Reference -&gt; Text
@@ -342,14 +342,14 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#showShort"><span class="hs-identifier hs-type">showShort</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
 </span><span id="line-119"></span><span id="showShort"><span class="annot"><span class="annottext">showShort :: Int -&gt; Reference -&gt; Text
-</span><a href="Unison.Hashing.V2.Reference.html#showShort"><span class="hs-identifier hs-var hs-var">showShort</span></a></span></span><span> </span><span id="local-6989586621681745692"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681745692"><span class="hs-identifier hs-var">numHashChars</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; Text
+</span><a href="Unison.Hashing.V2.Reference.html#showShort"><span class="hs-identifier hs-var hs-var">showShort</span></a></span></span><span> </span><span id="local-6989586621681745699"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621681745699"><span class="hs-identifier hs-var">numHashChars</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; Text
 </span><span class="hs-identifier hs-var">SH.toText</span></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; Text)
 -&gt; (Reference -&gt; ShortHash) -&gt; Reference -&gt; Text
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; ShortHash -&gt; ShortHash
 </span><span class="hs-identifier hs-var">SH.take</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621681745692"><span class="hs-identifier hs-var">numHashChars</span></a></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; ShortHash)
+</span><a href="#local-6989586621681745699"><span class="hs-identifier hs-var">numHashChars</span></a></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; ShortHash)
 -&gt; (Reference -&gt; ShortHash) -&gt; Reference -&gt; ShortHash
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Reference -&gt; ShortHash
@@ -364,16 +364,16 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-126"></span><span class="hs-comment">-- Gives the component (dependency cycle) that the reference is a part of</span><span>
 </span><span id="line-127"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#componentFor"><span class="hs-identifier hs-type">componentFor</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Component"><span class="hs-identifier hs-type">Component</span></a></span><span>
 </span><span id="line-128"></span><span id="componentFor"><span class="annot"><span class="annottext">componentFor :: Reference -&gt; Component
-</span><a href="Unison.Hashing.V2.Reference.html#componentFor"><span class="hs-identifier hs-var hs-var">componentFor</span></a></span></span><span> </span><span id="local-6989586621681745689"><span class="annot"><span class="annottext">b :: Reference
-</span><a href="#local-6989586621681745689"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set Reference -&gt; Component
+</span><a href="Unison.Hashing.V2.Reference.html#componentFor"><span class="hs-identifier hs-var hs-var">componentFor</span></a></span></span><span> </span><span id="local-6989586621681745696"><span class="annot"><span class="annottext">b :: Reference
+</span><a href="#local-6989586621681745696"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-glyph">@</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Set Reference -&gt; Component
 </span><a href="Unison.Hashing.V2.Reference.html#Component"><span class="hs-identifier hs-var">Component</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Reference -&gt; Set Reference
 forall a. a -&gt; Set a
 </span><span class="hs-identifier hs-var">Set.singleton</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745689"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-129"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#componentFor"><span class="hs-identifier hs-var">componentFor</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745687"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745687"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681745686"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745686"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621681745696"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-129"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#componentFor"><span class="hs-identifier hs-var">componentFor</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745694"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745694"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681745693"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745693"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-130"></span><span>  </span><span class="annot"><span class="annottext">Set Reference -&gt; Component
 </span><a href="Unison.Hashing.V2.Reference.html#Component"><span class="hs-identifier hs-var">Component</span></a></span><span> </span><span class="annot"><span class="annottext">(Set Reference -&gt; Component) -&gt; Set Reference -&gt; Component
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -381,35 +381,35 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Ord a =&gt; [a] -&gt; Set a
 </span><span class="hs-identifier hs-var">Set.fromList</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-var">Derived</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745687"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745684"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745686"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621681745684"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745684"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Pos] -&gt; [Pos]
+</span><a href="#local-6989586621681745694"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745691"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745693"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621681745691"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745691"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; [Pos] -&gt; [Pos]
 forall a. Int -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">take</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Pos -&gt; Int
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745686"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745693"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">..</span><span class="hs-special">]</span><span class="hs-special">]</span><span>
 </span><span id="line-131"></span><span>
 </span><span id="line-132"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#derivedBase32Hex"><span class="hs-identifier hs-type">derivedBase32Hex</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Pos"><span class="hs-identifier hs-type">Pos</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Size"><span class="hs-identifier hs-type">Size</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span>
 </span><span id="line-133"></span><span id="derivedBase32Hex"><span class="annot"><span class="annottext">derivedBase32Hex :: Text -&gt; Pos -&gt; Pos -&gt; Reference
-</span><a href="Unison.Hashing.V2.Reference.html#derivedBase32Hex"><span class="hs-identifier hs-var hs-var">derivedBase32Hex</span></a></span></span><span> </span><span id="local-6989586621681745682"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745682"><span class="hs-identifier hs-var">b32Hex</span></a></span></span><span> </span><span id="local-6989586621681745681"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745681"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745680"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745680"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Reference
+</span><a href="Unison.Hashing.V2.Reference.html#derivedBase32Hex"><span class="hs-identifier hs-var hs-var">derivedBase32Hex</span></a></span></span><span> </span><span id="local-6989586621681745689"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745689"><span class="hs-identifier hs-var">b32Hex</span></a></span></span><span> </span><span id="local-6989586621681745688"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745688"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745687"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745687"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">DerivedId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Id
 </span><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Maybe Hash -&gt; Hash
 forall a. a -&gt; Maybe a -&gt; a
 </span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="annot"><span class="annottext">Hash
 forall a. a
-</span><a href="#local-6989586621681745678"><span class="hs-identifier hs-var">msg</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Hash
-</span><a href="#local-6989586621681745677"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745681"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745680"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745685"><span class="hs-identifier hs-var">msg</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe Hash
+</span><a href="#local-6989586621681745684"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745688"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745687"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-134"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-135"></span><span>  </span><span id="local-6989586621681745678"><span class="annot"><span class="annottext">msg :: a
-</span><a href="#local-6989586621681745678"><span class="hs-identifier hs-var hs-var">msg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; a
+</span><span id="line-135"></span><span>  </span><span id="local-6989586621681745685"><span class="annot"><span class="annottext">msg :: a
+</span><a href="#local-6989586621681745685"><span class="hs-identifier hs-var hs-var">msg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; a
 forall a. HasCallStack =&gt; [Char] -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">([Char] -&gt; a) -&gt; [Char] -&gt; a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -419,11 +419,11 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe Hash -&gt; [Char]
 forall a. Show a =&gt; a -&gt; [Char]
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Maybe Hash
-</span><a href="#local-6989586621681745677"><span class="hs-identifier hs-var">h</span></a></span><span>
-</span><span id="line-136"></span><span>  </span><span id="local-6989586621681745677"><span class="annot"><span class="annottext">h :: Maybe Hash
-</span><a href="#local-6989586621681745677"><span class="hs-identifier hs-var hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Hash
+</span><a href="#local-6989586621681745684"><span class="hs-identifier hs-var">h</span></a></span><span>
+</span><span id="line-136"></span><span>  </span><span id="local-6989586621681745684"><span class="annot"><span class="annottext">h :: Maybe Hash
+</span><a href="#local-6989586621681745684"><span class="hs-identifier hs-var hs-var">h</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Hash
 </span><span class="hs-identifier hs-var">H.fromBase32Hex</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745682"><span class="hs-identifier hs-var">b32Hex</span></a></span><span>
+</span><a href="#local-6989586621681745689"><span class="hs-identifier hs-var">b32Hex</span></a></span><span>
 </span><span id="line-137"></span><span>
 </span><span id="line-138"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#unsafeFromText"><span class="hs-identifier hs-type">unsafeFromText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span>
 </span><span id="line-139"></span><span id="unsafeFromText"><span class="annot"><span class="annottext">unsafeFromText :: Text -&gt; Reference
@@ -442,10 +442,10 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-140"></span><span>
 </span><span id="line-141"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#idFromText"><span class="hs-identifier hs-type">idFromText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span>
 </span><span id="line-142"></span><span id="idFromText"><span class="annot"><span class="annottext">idFromText :: Text -&gt; Maybe Id
-</span><a href="Unison.Hashing.V2.Reference.html#idFromText"><span class="hs-identifier hs-var hs-var">idFromText</span></a></span></span><span> </span><span id="local-6989586621681745674"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745674"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either [Char] Reference
+</span><a href="Unison.Hashing.V2.Reference.html#idFromText"><span class="hs-identifier hs-var hs-var">idFromText</span></a></span></span><span> </span><span id="local-6989586621681745681"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745681"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either [Char] Reference
 </span><a href="Unison.Hashing.V2.Reference.html#fromText"><span class="hs-identifier hs-var">fromText</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745674"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681745681"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-143"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">[Char]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Id
 forall a. Maybe a
@@ -454,19 +454,19 @@ forall a. Maybe a
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Id
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-145"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745673"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745673"><span class="hs-identifier hs-var">id</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Maybe Id
+</span><span id="line-145"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745680"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745680"><span class="hs-identifier hs-var">id</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Maybe Id
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745673"><span class="hs-identifier hs-var">id</span></a></span><span>
+</span><a href="#local-6989586621681745680"><span class="hs-identifier hs-var">id</span></a></span><span>
 </span><span id="line-146"></span><span>
 </span><span id="line-147"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toId"><span class="hs-identifier hs-type">toId</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span>
 </span><span id="line-148"></span><span id="toId"><span class="annot"><span class="annottext">toId :: Reference -&gt; Maybe Id
-</span><a href="Unison.Hashing.V2.Reference.html#toId"><span class="hs-identifier hs-var hs-var">toId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745672"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745672"><span class="hs-identifier hs-var">id</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Maybe Id
+</span><a href="Unison.Hashing.V2.Reference.html#toId"><span class="hs-identifier hs-var hs-var">toId</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span id="local-6989586621681745679"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745679"><span class="hs-identifier hs-var">id</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Maybe Id
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745672"><span class="hs-identifier hs-var">id</span></a></span><span>
+</span><a href="#local-6989586621681745679"><span class="hs-identifier hs-var">id</span></a></span><span>
 </span><span id="line-149"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#toId"><span class="hs-identifier hs-var">toId</span></a></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Maybe Id
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
@@ -478,59 +478,59 @@ forall a. Maybe a
 </span><span id="line-155"></span><span class="hs-comment">-- todo: take a (Reference -&gt; CycleSize) so that `readSuffix` doesn't have to parse the size from the text.</span><span>
 </span><span id="line-156"></span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#fromText"><span class="hs-identifier hs-type">fromText</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span>
 </span><span id="line-157"></span><span id="fromText"><span class="annot"><span class="annottext">fromText :: Text -&gt; Either [Char] Reference
-</span><a href="Unison.Hashing.V2.Reference.html#fromText"><span class="hs-identifier hs-var hs-var">fromText</span></a></span></span><span> </span><span id="local-6989586621681745671"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745671"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; [Text]
+</span><a href="Unison.Hashing.V2.Reference.html#fromText"><span class="hs-identifier hs-var hs-var">fromText</span></a></span></span><span> </span><span id="local-6989586621681745678"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745678"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">Text.split</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'#'</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745671"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621681745678"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-158"></span><span>  </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
-</span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745669"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745669"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Either [Char] Reference
+</span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745676"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745676"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Either [Char] Reference
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-var">Builtin</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745669"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745676"><span class="hs-identifier hs-var">b</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-159"></span><span>  </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745668"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745668"><span class="hs-identifier hs-var">h</span></a></span></span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; [Text]
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745675"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745675"><span class="hs-identifier hs-var">h</span></a></span></span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">(Char -&gt; Bool) -&gt; Text -&gt; [Text]
 </span><span class="hs-identifier hs-var">Text.split</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Char -&gt; Char -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span class="annot"><span class="annottext">Char
 </span><span class="hs-char">'.'</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745668"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-160"></span><span>    </span><span class="hs-special">[</span><span id="local-6989586621681745667"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745667"><span class="hs-identifier hs-var">hash</span></a></span></span><span class="hs-special">]</span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Either [Char] Reference
+</span><a href="#local-6989586621681745675"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-160"></span><span>    </span><span class="hs-special">[</span><span id="local-6989586621681745674"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745674"><span class="hs-identifier hs-var">hash</span></a></span></span><span class="hs-special">]</span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Reference -&gt; Either [Char] Reference
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; Pos -&gt; Pos -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#derivedBase32Hex"><span class="hs-identifier hs-var">derivedBase32Hex</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745667"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745674"><span class="hs-identifier hs-var">hash</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span>
-</span><span id="line-161"></span><span>    </span><span class="hs-special">[</span><span id="local-6989586621681745666"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745666"><span class="hs-identifier hs-var">hash</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745665"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745665"><span class="hs-identifier hs-var">suffix</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Pos -&gt; Pos -&gt; Reference) -&gt; (Pos, Pos) -&gt; Reference
+</span><span id="line-161"></span><span>    </span><span class="hs-special">[</span><span id="local-6989586621681745673"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745673"><span class="hs-identifier hs-var">hash</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745672"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745672"><span class="hs-identifier hs-var">suffix</span></a></span></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">(Pos -&gt; Pos -&gt; Reference) -&gt; (Pos, Pos) -&gt; Reference
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; Pos -&gt; Pos -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#derivedBase32Hex"><span class="hs-identifier hs-var">derivedBase32Hex</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745666"><span class="hs-identifier hs-var">hash</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((Pos, Pos) -&gt; Reference)
+</span><a href="#local-6989586621681745673"><span class="hs-identifier hs-var">hash</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((Pos, Pos) -&gt; Reference)
 -&gt; Either [Char] (Pos, Pos) -&gt; Either [Char] Reference
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Either [Char] (Pos, Pos)
 </span><a href="Unison.Hashing.V2.Reference.html#readSuffix"><span class="hs-identifier hs-var">readSuffix</span></a></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745665"><span class="hs-identifier hs-var">suffix</span></a></span><span>
+</span><a href="#local-6989586621681745672"><span class="hs-identifier hs-var">suffix</span></a></span><span>
 </span><span id="line-162"></span><span>    </span><span class="annot"><span class="annottext">[Text]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Either [Char] Reference
 forall b. Either [Char] b
-</span><a href="#local-6989586621681745663"><span class="hs-identifier hs-var">bail</span></a></span><span>
+</span><a href="#local-6989586621681745670"><span class="hs-identifier hs-var">bail</span></a></span><span>
 </span><span id="line-163"></span><span>  </span><span class="annot"><span class="annottext">[Text]
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Either [Char] Reference
 forall b. Either [Char] b
-</span><a href="#local-6989586621681745663"><span class="hs-identifier hs-var">bail</span></a></span><span>
-</span><span id="line-164"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745663"><span class="annot"><span class="annottext">bail :: Either [Char] b
-</span><a href="#local-6989586621681745663"><span class="hs-identifier hs-var hs-var">bail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Either [Char] b
+</span><a href="#local-6989586621681745670"><span class="hs-identifier hs-var">bail</span></a></span><span>
+</span><span id="line-164"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745670"><span class="annot"><span class="annottext">bail :: Either [Char] b
+</span><a href="#local-6989586621681745670"><span class="hs-identifier hs-var hs-var">bail</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Char] -&gt; Either [Char] b
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">([Char] -&gt; Either [Char] b) -&gt; [Char] -&gt; Either [Char] b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -539,53 +539,53 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; [Char]
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745671"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><a href="#local-6989586621681745678"><span class="hs-identifier hs-var">t</span></a></span><span>
 </span><span id="line-165"></span><span>
-</span><span id="line-166"></span><span id="local-6989586621681745828"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#component"><span class="hs-identifier hs-type">component</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681745828"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745828"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
+</span><span id="line-166"></span><span id="local-6989586621681745835"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#component"><span class="hs-identifier hs-type">component</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681745835"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745835"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
 </span><span id="line-167"></span><span id="component"><span class="annot"><span class="annottext">component :: Hash -&gt; [k] -&gt; [(k, Id)]
-</span><a href="Unison.Hashing.V2.Reference.html#component"><span class="hs-identifier hs-var hs-var">component</span></a></span></span><span> </span><span id="local-6989586621681745661"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745661"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745660"><span class="annot"><span class="annottext">[k]
-</span><a href="#local-6989586621681745660"><span class="hs-identifier hs-var">ks</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span>
-</span><span id="line-168"></span><span>  </span><span id="local-6989586621681745659"><span class="annot"><span class="annottext">size :: Pos
-</span><a href="#local-6989586621681745659"><span class="hs-identifier hs-var hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Pos
+</span><a href="Unison.Hashing.V2.Reference.html#component"><span class="hs-identifier hs-var hs-var">component</span></a></span></span><span> </span><span id="local-6989586621681745668"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745668"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745667"><span class="annot"><span class="annottext">[k]
+</span><a href="#local-6989586621681745667"><span class="hs-identifier hs-var">ks</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">let</span><span>
+</span><span id="line-168"></span><span>  </span><span id="local-6989586621681745666"><span class="annot"><span class="annottext">size :: Pos
+</span><a href="#local-6989586621681745666"><span class="hs-identifier hs-var hs-var">size</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Pos
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[k] -&gt; Int
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
 </span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[k]
-</span><a href="#local-6989586621681745660"><span class="hs-identifier hs-var">ks</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621681745667"><span class="hs-identifier hs-var">ks</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-169"></span><span>  </span><span class="hs-keyword">in</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">k
-</span><a href="#local-6989586621681745657"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Id
+</span><a href="#local-6989586621681745664"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Pos -&gt; Pos -&gt; Id
 </span><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-var">Id</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745661"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745656"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745659"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745657"><span class="annot"><span class="annottext">k
-</span><a href="#local-6989586621681745657"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745656"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745656"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[k]
-</span><a href="#local-6989586621681745660"><span class="hs-identifier hs-var">ks</span></a></span><span> </span><span class="annot"><span class="annottext">[k] -&gt; [Pos] -&gt; [(k, Pos)]
+</span><a href="#local-6989586621681745668"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745663"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745666"><span class="hs-identifier hs-var">size</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745664"><span class="annot"><span class="annottext">k
+</span><a href="#local-6989586621681745664"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745663"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745663"><span class="hs-identifier hs-var">i</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[k]
+</span><a href="#local-6989586621681745667"><span class="hs-identifier hs-var">ks</span></a></span><span> </span><span class="annot"><span class="annottext">[k] -&gt; [Pos] -&gt; [(k, Pos)]
 forall a b. [a] -&gt; [b] -&gt; [(a, b)]
 </span><span class="hs-operator hs-var">`zip`</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-number">0</span></span><span class="hs-glyph">..</span><span class="hs-special">]</span><span class="hs-special">]</span><span>
 </span><span id="line-170"></span><span>
-</span><span id="line-171"></span><span id="local-6989586621681745655"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#components"><span class="hs-identifier hs-type">components</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681745655"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745655"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
+</span><span id="line-171"></span><span id="local-6989586621681745662"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#components"><span class="hs-identifier hs-type">components</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">H.Hash</span></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621681745662"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745662"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span></span><span>
 </span><span id="line-172"></span><span id="components"><span class="annot"><span class="annottext">components :: [(Hash, [k])] -&gt; [(k, Id)]
-</span><a href="Unison.Hashing.V2.Reference.html#components"><span class="hs-identifier hs-var hs-var">components</span></a></span></span><span> </span><span id="local-6989586621681745654"><span class="annot"><span class="annottext">[(Hash, [k])]
-</span><a href="#local-6989586621681745654"><span class="hs-identifier hs-var">sccs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Hash -&gt; [k] -&gt; [(k, Id)]) -&gt; (Hash, [k]) -&gt; [(k, Id)]
+</span><a href="Unison.Hashing.V2.Reference.html#components"><span class="hs-identifier hs-var hs-var">components</span></a></span></span><span> </span><span id="local-6989586621681745661"><span class="annot"><span class="annottext">[(Hash, [k])]
+</span><a href="#local-6989586621681745661"><span class="hs-identifier hs-var">sccs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Hash -&gt; [k] -&gt; [(k, Id)]) -&gt; (Hash, [k]) -&gt; [(k, Id)]
 forall a b c. (a -&gt; b -&gt; c) -&gt; (a, b) -&gt; c
 </span><span class="hs-identifier hs-var">uncurry</span></span><span> </span><span class="annot"><span class="annottext">Hash -&gt; [k] -&gt; [(k, Id)]
 forall k. Hash -&gt; [k] -&gt; [(k, Id)]
 </span><a href="Unison.Hashing.V2.Reference.html#component"><span class="hs-identifier hs-var">component</span></a></span><span> </span><span class="annot"><span class="annottext">((Hash, [k]) -&gt; [(k, Id)]) -&gt; [(Hash, [k])] -&gt; [(k, Id)]
 forall (m :: * -&gt; *) a b. Monad m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b
 </span><span class="hs-operator hs-var">=&lt;&lt;</span></span><span> </span><span class="annot"><span class="annottext">[(Hash, [k])]
-</span><a href="#local-6989586621681745654"><span class="hs-identifier hs-var">sccs</span></a></span><span>
+</span><a href="#local-6989586621681745661"><span class="hs-identifier hs-var">sccs</span></a></span><span>
 </span><span id="line-173"></span><span>
-</span><span id="line-174"></span><span id="local-6989586621681745652"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#groupByComponent"><span class="hs-identifier hs-type">groupByComponent</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745652"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745652"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">]</span></span><span>
+</span><span id="line-174"></span><span id="local-6989586621681745659"><span class="annot"><a href="Unison.Hashing.V2.Reference.html#groupByComponent"><span class="hs-identifier hs-type">groupByComponent</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745659"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="#local-6989586621681745659"><span class="hs-identifier hs-type">k</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">]</span></span><span>
 </span><span id="line-175"></span><span id="groupByComponent"><span class="annot"><span class="annottext">groupByComponent :: [(k, Reference)] -&gt; [[(k, Reference)]]
-</span><a href="Unison.Hashing.V2.Reference.html#groupByComponent"><span class="hs-identifier hs-var hs-var">groupByComponent</span></a></span></span><span> </span><span id="local-6989586621681745651"><span class="annot"><span class="annottext">[(k, Reference)]
-</span><a href="#local-6989586621681745651"><span class="hs-identifier hs-var">refs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(k, Reference)] -&gt; [[(k, Reference)]]
+</span><a href="Unison.Hashing.V2.Reference.html#groupByComponent"><span class="hs-identifier hs-var hs-var">groupByComponent</span></a></span></span><span> </span><span id="local-6989586621681745658"><span class="annot"><span class="annottext">[(k, Reference)]
+</span><a href="#local-6989586621681745658"><span class="hs-identifier hs-var">refs</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(k, Reference)] -&gt; [[(k, Reference)]]
 forall b (t :: * -&gt; *) a.
 (Ord b, Foldable t) =&gt;
 t [(a, b)] -&gt; [[(a, b)]]
-</span><a href="#local-6989586621681745650"><span class="hs-identifier hs-var">done</span></a></span><span> </span><span class="annot"><span class="annottext">(Map (Either Reference Hash) [(k, Reference)]
+</span><a href="#local-6989586621681745657"><span class="hs-identifier hs-var">done</span></a></span><span> </span><span class="annot"><span class="annottext">(Map (Either Reference Hash) [(k, Reference)]
  -&gt; [[(k, Reference)]])
 -&gt; Map (Either Reference Hash) [(k, Reference)]
 -&gt; [[(k, Reference)]]
@@ -603,18 +603,18 @@ Foldable t =&gt;
 forall a.
 Map (Either Reference Hash) [(a, Reference)]
 -&gt; (a, Reference) -&gt; Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745648"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(k, Reference)]
+</span><a href="#local-6989586621681745655"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(k, Reference)]
 forall k a. Map k a
 </span><span class="hs-identifier hs-var">Map.empty</span></span><span> </span><span class="annot"><span class="annottext">[(k, Reference)]
-</span><a href="#local-6989586621681745651"><span class="hs-identifier hs-var">refs</span></a></span><span>
+</span><a href="#local-6989586621681745658"><span class="hs-identifier hs-var">refs</span></a></span><span>
 </span><span id="line-176"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-177"></span><span>    </span><span id="local-6989586621681745648"><span class="annot"><span class="annottext">insert :: Map (Either Reference Hash) [(a, Reference)]
+</span><span id="line-177"></span><span>    </span><span id="local-6989586621681745655"><span class="annot"><span class="annottext">insert :: Map (Either Reference Hash) [(a, Reference)]
 -&gt; (a, Reference) -&gt; Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745648"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span id="local-6989586621681745646"><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745646"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745645"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681745645"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745644"><span class="annot"><span class="annottext">r :: Reference
-</span><a href="#local-6989586621681745644"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745643"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745643"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745655"><span class="hs-identifier hs-var hs-var">insert</span></a></span></span><span> </span><span id="local-6989586621681745653"><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
+</span><a href="#local-6989586621681745653"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745652"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681745652"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745651"><span class="annot"><span class="annottext">r :: Reference
+</span><a href="#local-6989586621681745651"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Derived"><span class="hs-identifier hs-type">Derived</span></a></span><span> </span><span id="local-6989586621681745650"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745650"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-178"></span><span>      </span><span class="annot"><span class="annottext">([(a, Reference)] -&gt; [(a, Reference)] -&gt; [(a, Reference)])
@@ -625,19 +625,19 @@ forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; Map k a -&gt; Map k a -&gt; Ma
 </span><span class="hs-identifier hs-var">Map.unionWith</span></span><span> </span><span class="annot"><span class="annottext">[(a, Reference)] -&gt; [(a, Reference)] -&gt; [(a, Reference)]
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745646"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(Either Reference Hash, [(a, Reference)])]
+</span><a href="#local-6989586621681745653"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(Either Reference Hash, [(a, Reference)])]
 -&gt; Map (Either Reference Hash) [(a, Reference)]
 forall k a. Ord k =&gt; [(k, a)] -&gt; Map k a
 </span><span class="hs-identifier hs-var">Map.fromList</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; Either Reference Hash
 forall a b. b -&gt; Either a b
 </span><span class="hs-identifier hs-var">Right</span></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745643"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681745645"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745644"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-179"></span><span>    </span><span class="annot"><a href="#local-6989586621681745648"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span id="local-6989586621681745640"><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745640"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745639"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681745639"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745638"><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745638"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621681745650"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681745652"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681745651"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-179"></span><span>    </span><span class="annot"><a href="#local-6989586621681745655"><span class="hs-identifier hs-var">insert</span></a></span><span> </span><span id="local-6989586621681745647"><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
+</span><a href="#local-6989586621681745647"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621681745646"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681745646"><span class="hs-identifier hs-var">k</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621681745645"><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681745645"><span class="hs-identifier hs-var">r</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-180"></span><span>      </span><span class="annot"><span class="annottext">([(a, Reference)] -&gt; [(a, Reference)] -&gt; [(a, Reference)])
 -&gt; Map (Either Reference Hash) [(a, Reference)]
 -&gt; Map (Either Reference Hash) [(a, Reference)]
@@ -646,18 +646,18 @@ forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; Map k a -&gt; Map k a -&gt; Ma
 </span><span class="hs-identifier hs-var">Map.unionWith</span></span><span> </span><span class="annot"><span class="annottext">[(a, Reference)] -&gt; [(a, Reference)] -&gt; [(a, Reference)]
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span> </span><span class="annot"><span class="annottext">Map (Either Reference Hash) [(a, Reference)]
-</span><a href="#local-6989586621681745640"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(Either Reference Hash, [(a, Reference)])]
+</span><a href="#local-6989586621681745647"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(Either Reference Hash, [(a, Reference)])]
 -&gt; Map (Either Reference Hash) [(a, Reference)]
 forall k a. Ord k =&gt; [(k, a)] -&gt; Map k a
 </span><span class="hs-identifier hs-var">Map.fromList</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">Reference -&gt; Either Reference Hash
 forall a b. a -&gt; Either a b
 </span><span class="hs-identifier hs-var">Left</span></span><span> </span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745638"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621681745639"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Reference
-</span><a href="#local-6989586621681745638"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-181"></span><span>    </span><span id="local-6989586621681745650"><span class="annot"><span class="annottext">done :: t [(a, b)] -&gt; [[(a, b)]]
-</span><a href="#local-6989586621681745650"><span class="hs-identifier hs-var hs-var">done</span></a></span></span><span> </span><span id="local-6989586621681745637"><span class="annot"><span class="annottext">t [(a, b)]
-</span><a href="#local-6989586621681745637"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((a, b) -&gt; b) -&gt; [(a, b)] -&gt; [(a, b)]
+</span><a href="#local-6989586621681745645"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">,</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621681745646"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">,</span><span class="annot"><span class="annottext">Reference
+</span><a href="#local-6989586621681745645"><span class="hs-identifier hs-var">r</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-181"></span><span>    </span><span id="local-6989586621681745657"><span class="annot"><span class="annottext">done :: t [(a, b)] -&gt; [[(a, b)]]
+</span><a href="#local-6989586621681745657"><span class="hs-identifier hs-var hs-var">done</span></a></span></span><span> </span><span id="local-6989586621681745644"><span class="annot"><span class="annottext">t [(a, b)]
+</span><a href="#local-6989586621681745644"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">((a, b) -&gt; b) -&gt; [(a, b)] -&gt; [(a, b)]
 forall b a. Ord b =&gt; (a -&gt; b) -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">sortOn</span></span><span> </span><span class="annot"><span class="annottext">(a, b) -&gt; b
 forall a b. (a, b) -&gt; b
@@ -666,10 +666,10 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">t [(a, b)] -&gt; [[(a, b)]]
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
 </span><span class="hs-identifier hs-var">toList</span></span><span> </span><span class="annot"><span class="annottext">t [(a, b)]
-</span><a href="#local-6989586621681745637"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621681745644"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-182"></span><span>
-</span><span id="line-183"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745630"><span id="local-6989586621681745633"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745628"><span class="annot"><span class="annottext">show :: Id -&gt; [Char]
-</span><a href="#local-6989586621681745628"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; [Char]
+</span><span id="line-183"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745637"><span id="local-6989586621681745640"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745635"><span class="annot"><span class="annottext">show :: Id -&gt; [Char]
+</span><a href="#local-6989586621681745635"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; [Char]
 </span><span class="hs-identifier hs-var">SH.toString</span></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; [Char]) -&gt; (Id -&gt; ShortHash) -&gt; Id -&gt; [Char]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; ShortHash -&gt; ShortHash
@@ -681,8 +681,8 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Id -&gt; Reference
 </span><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-var">DerivedId</span></a></span><span>
-</span><span id="line-184"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745622"><span id="local-6989586621681745625"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745621"><span class="annot"><span class="annottext">show :: Reference -&gt; [Char]
-</span><a href="#local-6989586621681745621"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; [Char]
+</span><span id="line-184"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745629"><span id="local-6989586621681745632"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745628"><span class="annot"><span class="annottext">show :: Reference -&gt; [Char]
+</span><a href="#local-6989586621681745628"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShortHash -&gt; [Char]
 </span><span class="hs-identifier hs-var">SH.toString</span></span><span> </span><span class="annot"><span class="annottext">(ShortHash -&gt; [Char])
 -&gt; (Reference -&gt; ShortHash) -&gt; Reference -&gt; [Char]
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
@@ -695,61 +695,61 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><a href="Unison.Hashing.V2.Reference.html#toShortHash"><span class="hs-identifier hs-var">toShortHash</span></a></span><span>
 </span><span id="line-185"></span><span>
 </span><span id="line-186"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Hashable.Hashable</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Reference"><span class="hs-identifier hs-type">Reference</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-187"></span><span>  </span><span id="local-6989586621681745618"><span class="annot"><span class="annottext">tokens :: Reference -&gt; [Token h]
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745616"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745616"><span class="hs-identifier hs-var">txt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><span id="line-187"></span><span>  </span><span id="local-6989586621681745625"><span class="annot"><span class="annottext">tokens :: Reference -&gt; [Token h]
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">tokens</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Builtin"><span class="hs-identifier hs-type">Builtin</span></a></span><span> </span><span id="local-6989586621681745623"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621681745623"><span class="hs-identifier hs-var">txt</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Tag</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">0</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Token h
 forall h. Text -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Text</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621681745616"><span class="hs-identifier hs-var">txt</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-188"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">tokens</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745613"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745613"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745612"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745612"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745611"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745611"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
+</span><a href="#local-6989586621681745623"><span class="hs-identifier hs-var">txt</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-188"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">tokens</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#DerivedId"><span class="hs-identifier hs-type">DerivedId</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745620"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745620"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745619"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745619"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span id="local-6989586621681745618"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745618"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Word8 -&gt; Token h
 forall h. Word8 -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Tag</span></span><span> </span><span class="annot"><span class="annottext">Word8
 </span><span class="hs-number">1</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Token h
 forall h. ByteString -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Bytes</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Hash -&gt; ByteString
 </span><span class="hs-identifier hs-var">H.toByteString</span></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745613"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Token h
+</span><a href="#local-6989586621681745620"><span class="hs-identifier hs-var">h</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Token h
 forall h. Pos -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Nat</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745612"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Token h
+</span><a href="#local-6989586621681745619"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Token h
 forall h. Pos -&gt; Token h
 </span><span class="hs-identifier hs-var">Hashable.Nat</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745611"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621681745618"><span class="hs-identifier hs-var">n</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-189"></span><span>
 </span><span id="line-190"></span><span class="hs-comment">-- | Two references mustn't differ in cycle length only.</span><span>
-</span><span id="line-191"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745605"><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745604"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745604"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621681745603"><span class="annot"><span class="annottext">== :: Id -&gt; Id -&gt; Bool
-</span><span class="hs-operator hs-var hs-var hs-var hs-var">==</span></span></span><span> </span><span id="local-6989586621681745602"><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745602"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Id -&gt; Ordering
+</span><span id="line-191"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745612"><span class="annot"><span class="hs-identifier hs-type">Eq</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621681745611"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745611"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621681745610"><span class="annot"><span class="annottext">== :: Id -&gt; Id -&gt; Bool
+</span><span class="hs-operator hs-var hs-var hs-var hs-var">==</span></span></span><span> </span><span id="local-6989586621681745609"><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745609"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Id -&gt; Id -&gt; Ordering
 forall a. Ord a =&gt; a -&gt; a -&gt; Ordering
 </span><span class="hs-identifier hs-var">compare</span></span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745604"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Id
-</span><a href="#local-6989586621681745602"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Ordering -&gt; Ordering -&gt; Bool
+</span><a href="#local-6989586621681745611"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Id
+</span><a href="#local-6989586621681745609"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Ordering -&gt; Ordering -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Ordering
 </span><span class="hs-identifier hs-var">EQ</span></span><span>
-</span><span id="line-192"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745587"><span id="local-6989586621681745589"><span id="local-6989586621681745591"><span id="local-6989586621681745593"><span id="local-6989586621681745595"><span id="local-6989586621681745597"><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745586"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745586"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745585"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745585"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681745584"><span class="annot"><span class="annottext">compare :: Id -&gt; Id -&gt; Ordering
-</span><a href="#local-6989586621681745584"><span class="hs-operator hs-var hs-var hs-var hs-var">`compare`</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745583"><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745583"><span class="hs-identifier hs-var">h2</span></a></span></span><span> </span><span id="local-6989586621681745582"><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745582"><span class="hs-identifier hs-var">i2</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><span id="line-192"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621681745594"><span id="local-6989586621681745596"><span id="local-6989586621681745598"><span id="local-6989586621681745600"><span id="local-6989586621681745602"><span id="local-6989586621681745604"><span class="annot"><span class="hs-identifier hs-type">Ord</span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span></span></span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745593"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745593"><span class="hs-identifier hs-var">h</span></a></span></span><span> </span><span id="local-6989586621681745592"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745592"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621681745591"><span class="annot"><span class="annottext">compare :: Id -&gt; Id -&gt; Ordering
+</span><a href="#local-6989586621681745591"><span class="hs-operator hs-var hs-var hs-var hs-var">`compare`</span></a></span></span><span> </span><span class="annot"><a href="Unison.Hashing.V2.Reference.html#Id"><span class="hs-identifier hs-type">Id</span></a></span><span> </span><span id="local-6989586621681745590"><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745590"><span class="hs-identifier hs-var">h2</span></a></span></span><span> </span><span id="local-6989586621681745589"><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745589"><span class="hs-identifier hs-var">i2</span></a></span></span><span> </span><span class="annot"><span class="annottext">Pos
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Hash -&gt; Hash -&gt; Ordering
 forall a. Ord a =&gt; a -&gt; a -&gt; Ordering
 </span><span class="hs-identifier hs-var">compare</span></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745586"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
-</span><a href="#local-6989586621681745583"><span class="hs-identifier hs-var">h2</span></a></span><span> </span><span class="annot"><span class="annottext">Ordering -&gt; Ordering -&gt; Ordering
+</span><a href="#local-6989586621681745593"><span class="hs-identifier hs-var">h</span></a></span><span> </span><span class="annot"><span class="annottext">Hash
+</span><a href="#local-6989586621681745590"><span class="hs-identifier hs-var">h2</span></a></span><span> </span><span class="annot"><span class="annottext">Ordering -&gt; Ordering -&gt; Ordering
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Pos -&gt; Pos -&gt; Ordering
 forall a. Ord a =&gt; a -&gt; a -&gt; Ordering
 </span><span class="hs-identifier hs-var">compare</span></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745585"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
-</span><a href="#local-6989586621681745582"><span class="hs-identifier hs-var">i2</span></a></span><span>
+</span><a href="#local-6989586621681745592"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Pos
+</span><a href="#local-6989586621681745589"><span class="hs-identifier hs-var">i2</span></a></span><span>
 </span><span id="line-193"></span></pre></body></html>

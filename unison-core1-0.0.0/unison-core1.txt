@@ -634,9 +634,9 @@ convert :: Convert a b => a -> b
 class Parse a b
 parse :: Parse a b => a -> Maybe b
 
--- | Cons a name segment onto the head of a relative name. Monotonic with
---   respect to ordering: it is safe to use <tt>cons s</tt> as the first
---   argument to <tt>Map.mapKeysMonotonic</tt>.
+-- | Cons a name segment onto the head of a relative name. Not monotonic
+--   with respect to ordering! It is not safe to use <tt>cons s</tt> as the
+--   first argument to <tt>Map.mapKeysMonotonic</tt>!
 --   
 --   <i>Precondition</i>: the name is relative
 --   
